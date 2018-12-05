@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/index.less"],"names":[],"mappings":"AAAA,KACE,Y","file":"assets/builds/bundle.css","sourcesContent":["body {\n  margin: 50px;\n}"],"sourceRoot":""}
