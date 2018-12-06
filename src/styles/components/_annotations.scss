@@ -1,0 +1,164 @@
+$popover-tip-size: 8px; // Size of triangle
+$popover-offset: 8px; // Distance from anchor
+$popover-padding: 20px;
+
+$total-popover-offset: $popover-tip-size + $popover-offset;
+$corner-popover-offset: $popover-padding + $popover-tip-size;
+
+.image-annotated {
+  position: relative;
+  margin: 0 auto;
+  img {
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem -0.5rem rgba($neutral-10, 0.1);
+  }
+}
+
+.annotations {
+  @extend %font-sans-extended;
+  font-size: 0.65rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+
+  // The anchor point
+  .annotation {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    animation: 0.5s zoomIn ease;
+
+    &[data-direction="top"] {
+      transform-origin: top;
+      .annotation-popover {
+        transform: translate3d(-50%, #{$total-popover-offset}, 0);
+        &:before {
+          left: 50%;
+          top: -#{$popover-tip-size};
+          transform: translateX(-50%) rotate(45deg);
+        }
+      }
+    }
+
+    &[data-direction="top-left"] {
+      transform-origin: top left;
+      .annotation-popover {
+        transform: translate3d(-#{$corner-popover-offset}, #{$total-popover-offset}, 0);
+        &:before {
+          left: $popover-padding;
+          top: -#{$popover-tip-size};
+          transform: rotate(45deg);
+        }
+      }
+    }
+ 
+    &[data-direction="top-right"] {
+      transform-origin: top right;
+      .annotation-popover {
+        transform: translate3d(calc(-100% + #{$corner-popover-offset}), #{$total-popover-offset}, 0);
+        &:before {
+          left: calc(100% - #{$popover-padding} - (#{$popover-tip-size} * 2));
+          top: -#{$popover-tip-size};
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &[data-direction="right"] {
+      transform-origin: right;
+      .annotation-popover {
+        transform: translate3d(calc(-100% - #{$total-popover-offset}), -50%, 0);
+        &:before {
+          top: 50%;
+          right: -#{$popover-tip-size};
+          transform: translateY(-50%) rotate(45deg);
+        }
+      }
+    }
+
+    &[data-direction="bottom"] {
+      transform-origin: bottom;
+      .annotation-popover {
+        transform: translate3d(-50%, calc(-100% - #{$total-popover-offset}), 0);
+        &:before {
+          left: 50%;
+          bottom: -#{$popover-tip-size};
+          transform: translateX(-50%) rotate(45deg);
+        }
+      }
+    }
+
+    &[data-direction="bottom-left"] {
+      transform-origin: bottom left;
+      .annotation-popover {
+        transform: translate3d(-#{$corner-popover-offset}, calc(-100% - #{$total-popover-offset}), 0);
+        &:before {
+          left: $popover-padding;
+          bottom: -#{$popover-tip-size};
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &[data-direction="left"] {
+      transform-origin: left;
+      .annotation-popover {
+        transform: translate3d(#{$total-popover-offset}, -50%, 0);
+        &:before {
+          top: 50%;
+          left: -#{$popover-tip-size};
+          transform: translateY(-50%) rotate(45deg);
+        }
+      }
+    }
+  }
+
+  .annotation-popover {
+    background: $neutral-0;
+    padding: $popover-padding;
+    line-height: 1.4;
+    border-radius: 0.4rem;
+    display: inline-block;
+    box-shadow: 0 6px 36px 8px rgba(0,0,0,0.1);
+    position: absolute;
+    z-index: 10;
+    width: 11rem;
+    @include media-min(900px) {
+      width: 15rem;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: ($popover-tip-size * 2) + 2px;
+      height: ($popover-tip-size * 2) + 2px;
+      border-radius: 2px;
+      background: $neutral-0;
+      text-align: center;
+      position: absolute;
+      text-indent: 0px;
+    }
+  }
+
+  @include media-max(540px) {
+    display: none;
+  }
+}
+
+@include media-min(540px) {
+  .desktop-annotations-note {
+    display: none;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

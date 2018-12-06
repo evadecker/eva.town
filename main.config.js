@@ -8,8 +8,8 @@ const path = require('path')
  * The builds folder in www/assets is auto cleaned after each build.
  */
 const entries = {
-  'src/index.js': 'www/assets/builds/bundle.js',
-  'src/index.less': 'www/assets/builds/bundle.css'
+  'src/js/index.js': 'www/assets/builds/bundle.js',
+  'src/styles/index.scss': 'www/assets/builds/bundle.css'
 }
 
 /**
@@ -21,7 +21,7 @@ const css = {
   // Be sure to have your entries and sourcefiles named with the good file ext
   // —> .scss for sass / .less for less / .styl for stylus
   // Set to 'manual' to handle css yourself (using css-next for instance)
-  preprocessor: 'less'
+  preprocessor: 'sass'
 }
 
 /**

@@ -1,0 +1,71 @@
+.marquee {
+  box-sizing: content-box;
+  position: relative;
+  height: 220px;
+  padding: 2rem 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+.empty-state {
+  img {
+    margin-left: 10vw;
+    animation: 6s bounce infinite alternate-reverse ease-in-out;
+    width: 220px;
+    height: 220px;
+  }
+  &:nth-child(2n) {
+    img {
+      animation-delay: -1s;
+      animation-duration: 5s;
+    }
+  }
+  &:nth-child(5n) {
+    img {
+      animation-delay: -2.5s;
+    }
+  }
+  &:nth-child(4n) {
+    img {
+      animation-delay: -3s;
+      animation-duration: 4s;
+    }
+  }
+  &:nth-child(3n) {
+    img {
+      animation-delay: -4.5s;
+    }
+  }
+  &:nth-child(6n) {
+    img {
+      animation-delay: -0.5s;
+      animation-duration: 7s;
+    }
+  }
+  &:nth-child(4), &:nth-child(6), &:nth-child(9), &:nth-child(11) {
+    img {
+      margin-left: 1vw;
+      margin-top: -3rem;
+      width: 160px;
+      height: 160px;
+    }
+  }
+  &:nth-child(1), &:nth-child(3), &:nth-child(8) {
+    img {
+      margin-bottom: -2rem;
+      margin-left: 1vw;
+      margin-right: 4vw;
+      width: 190px;
+      height: 190px;
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate3d(0, -15%, 0) scale(0.9);
+  }
+  100% {
+    transform: translate3d(0, 15%, 0) scale(1);
+  }
+}

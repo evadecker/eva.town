@@ -1,0 +1,130 @@
+.quotes {
+  position: relative;
+  background-color: $neutral-1;
+  margin: 0;
+  height: 480px;
+  .wrapper {
+    position: relative;
+    height: 100%;
+  }
+}
+
+.quote {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $color-text;
+  margin: 0;
+  opacity: 0;
+  padding-bottom: 2rem;
+  transition: 1s ease;
+
+  &.active {
+    opacity: 1;
+  }
+
+  .quote-text {
+    margin-bottom: $spacing-unit;
+    display: block;
+  }
+
+  .quote-author, .quote-source {
+    display: block;
+  }
+
+  .quote-author {
+    @extend %font-sans-extended;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+  }
+
+  .quote-source {
+    margin-top: 0.2em;
+    font-style: italic;
+  }
+
+  p {
+    max-width: 700px;
+    font-size: 1.4em;
+    &:first-of-type:before {
+      content: '“';
+    }
+    &:last-of-type:after {
+      content: '”';
+    }
+  }
+}
+
+.quote-controls {
+  position: absolute;
+  bottom: 2rem;
+  height: 2.5rem;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .quote-arrow {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    border: none;
+    text-align: center;
+    border-radius: 50%;
+    color: $color-text-light;
+    background: transparent;
+    display: block;
+    pointer-events: auto;
+    cursor: pointer;
+    fill: currentColor;
+  
+    &:hover {
+      color: $color-text;
+    }
+  }
+
+  .quote-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 1rem;
+  
+    .quote-dot {
+      width: 18px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      display: block;
+      position: relative;
+      border-radius: 50%;
+      cursor: pointer;
+  
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        border-radius: 50%;
+        background-color: $neutral-3;
+        width: 10px;
+        height: 10px;
+      }
+  
+      &.active:before {
+        background-color: $neutral-6;
+      }
+    }
+  }
+}
