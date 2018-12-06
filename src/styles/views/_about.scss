@@ -1,0 +1,95 @@
+ul.social-links {
+  @extend %font-sans;
+  font-size: 0.8em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+  li:before, li:after {
+    display: none;
+  }
+
+  .social-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    a {
+      color: $color-text-light;
+      padding: 10px;
+      border-radius: 50%;
+      text-decoration: none;
+      &:hover {
+        color: $color-text;
+      }
+    }
+  }
+
+  .svg-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    display: block;
+  }
+}
+
+.download-and-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  flex-direction: row;
+
+  form {
+    flex: 1;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
+  @include media-max(1060px) {
+    flex-direction: column;
+    form {
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+  }
+
+  @include media-max($column-breakpoint) {
+    flex-direction: row;
+    justify-content: center;
+    form {
+      margin-bottom: 0;
+      margin-right: 1rem;
+    }
+  }
+
+  @include media-max(580px) {
+    flex-direction: column;
+    form {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.button-download {
+  @extend %font-sans;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: block;
+  background: $neutral-0;
+  border: 1px solid $neutral-3;
+  border-radius: 4px;
+  color: $color-text;
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  &:hover {
+    border-color: $neutral-4;
+    color: $color-blue;
+  }
+}

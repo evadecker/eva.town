@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-  <title><?php echo $site->title()->html() ?> | <?php echo $page->title()->html() ?></title>
-  <?php echo liveCSS('assets/builds/bundle.css') ?>
-</head>
-<body>
+<header class="site-header" role="banner">
+	<div class="wrapper">
+		<a class="site-title page-link page-link-home" rel="author" href="<?= url() ?>"><?= $site->author()->html() ?></a>
+		<nav class="site-nav" role="navigation">
+      <?php foreach($pages->visible() as $p): ?>
+        <a class="page-link <?php e($p->isOpen(), 'active') ?>" href="<?= $p->url() ?>"><?php echo $p->title()->html() ?></a>
+      <?php endforeach ?>
+    </nav>
+	</div>
+</header>

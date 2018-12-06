@@ -1,0 +1,261 @@
+.page-home {
+  background-color: $neutral-1;
+  .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.home-hero {
+  min-height: 100vh;
+  padding: 4rem 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-heading {
+  padding-bottom: 0.8rem;
+  font-size: 13vw;
+  transition: transform 0.3s ease;
+  text-align: center;
+
+  .lines {
+    display: block;
+
+    .line {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .letter {
+      animation: 0.6s letterIn ease;
+      animation-fill-mode: both;
+      display: inline-block;
+
+      @for $i from 1 to 36 {
+        &.letter-#{$i} {
+          animation-delay: $i * 0.03s;
+        }
+      }
+    }
+  }
+
+  .two-lines {
+    display: none;
+  }
+}
+
+.page-home #synth {
+  animation: 0.8s slideInSynth ease;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  width: 100%;
+}
+
+.home-projects {
+  @extend %font-sans;
+  padding: 2rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: top;
+}
+
+.home-project {
+  background-color: $neutral-0;
+  color: $color-text;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem 1.5rem 5rem;
+  transition: 0.2s ease;
+  position: relative;
+  box-shadow: 0 0.5rem 1rem -0.5rem rgba($neutral-10, 0.1);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background-color: $neutral-9;
+    z-index: 0;
+  }
+
+  > * {
+    z-index: 1;
+  }
+
+  &:hover, &:focus {
+    box-shadow: 0 2rem 1rem -1rem rgba($neutral-10, 0.08);
+    transform: translate3d(0, -0.5rem, 0);
+    .project-arrow {
+      transform: translate3d(0.2rem, 0, 0);
+    }
+  }
+
+  h3 {
+    @extend %font-sans;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  .project-arrow {
+    display: inline-block;
+    width: 0.8rem;
+    fill: $color-text-light;
+    transition: transform 0.2s ease;
+  }
+
+  p {
+    flex: 1;
+  }
+
+  .project-logo {
+    text-align: right;
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    top: calc(50% + 0.25rem);
+    left: calc(-120px + 4rem);
+    display: flex;
+    justify-content: flex-end;
+    transform: translate3d(0, -50%, 0);
+    
+    .svg-logo {
+      height: 100%;
+      width: auto;
+      path {
+        fill: $neutral-3;
+      }
+    }
+  }
+
+  &.color-red {
+    &:before {
+      background-color: $color-red;
+    }
+  }
+
+  &.color-blue {
+    &:before {
+      background-color: $color-blue;
+    }
+  }
+
+  &.color-yellow {
+    &:before {
+      background-color: $color-yellow;
+    }
+  }
+
+  &.home-project-about:hover {
+    .svg-logo {
+      animation: rotate 4s infinite linear;
+    }
+  }
+}
+
+@include media-min(540px) {
+  .home-heading {
+    font-size: 8.4vw;
+
+    .two-lines {
+      display: block;
+      width: 100%;
+      transform: translate3d(50%, 0, 0);
+      .line {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+  
+    .three-lines {
+      display: none;
+    }
+  }
+
+  .page-home #synth {
+    width: 80%;
+  }
+}
+
+@include media-min(930px) {
+  .home-hero {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .home-heading, .page-home #synth {
+    width: calc(50% - 1rem);
+  }
+  
+  .home-heading {
+    font-size: 6.9vw;
+    text-align: left;
+
+    .two-lines {
+      display: none;
+    }
+  
+    .three-lines {
+      display: block;
+    }
+  }
+
+  .home-projects {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .home-project {
+    width: calc(50% - 1rem);
+  }
+}
+
+@include media-min(1200px) {
+  .home-heading {
+    font-size: 4rem;
+  }
+}
+
+@keyframes letterIn {
+  0% {
+    transform: translate3d(0, 50%, 0) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    color: $color-text;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes slideInSynth {
+  0% {
+    transform: translate3d(0, 25%, 0) scale(0.92);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }  
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

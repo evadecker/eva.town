@@ -1,0 +1,157 @@
+table {
+  @extend %font-sans;
+  font-size: 0.65rem;
+  margin-bottom: $spacing-unit;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  thead, th {
+    @extend %font-sans-extended;
+    letter-spacing: 0.05em;
+    text-align: left;
+  }
+
+  thead {
+    font-weight: 600;
+  }
+
+  th {
+    font-weight: 400;
+  }
+
+  thead {
+    tr td {
+      white-space: nowrap;
+    }
+    .table-rotate {
+      overflow: visible;
+      position: relative;
+      height: 4rem;
+      > div {
+        position: absolute;
+        left: calc(100% + 1px);
+        bottom: 0;
+        transform: rotate(-30deg);
+        transform-origin: left bottom;
+        border-bottom: 1px solid $neutral-3;
+        padding: 0.3em 0.5em;
+        padding-right: 0;
+      }
+    }
+  }
+
+  tbody {
+    tr.table-section-divider {
+      border-bottom: 1px solid $neutral-3;
+      td, th {
+        padding: 0;
+        height: 0;
+      }
+    }
+    td {
+      border-right: 1px solid $neutral-3;
+    }
+  }
+}
+
+.table-background-toggle {
+  display: flex;
+  justify-content: flex-end;
+
+  input[value="white"] ~ .radio-button {
+    background-color: $neutral-3;
+  }
+  input[value="blue"] ~ .radio-button {
+    background-color: $color-blue;
+  }
+  input[value="black"] ~ .radio-button {
+    background-color: $neutral-7;
+  }
+}
+
+.icon-table {
+  margin-bottom: $spacing-unit;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $neutral-0;
+    box-shadow: 0 1px 0 rgba($neutral-10, 0.1);
+    padding: 0.5rem 0;
+    margin-top: -0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  &[data-color="white"] {
+    table {
+      background-color: $neutral-1;
+    }
+  }
+
+  &[data-color="black"] {
+    table {
+      background-color: $neutral-9;
+      color: $neutral-5;
+      * {
+        border-color: $neutral-8;
+      }
+    }
+    .svg-icon {
+      fill: $neutral-0;
+    }
+  }
+
+  &[data-color="blue"] {
+    table {
+      background-color: #0083E3;
+      color: rgba($neutral-0, 0.7);
+      * {
+        border-color: darken(#0083E3, 6);
+      }
+    }
+    .svg-icon {
+      fill: $neutral-0;
+    }
+  }
+
+  table {
+    background-color: $neutral-0;
+    transition: 0.4s ease;
+    text-align: center;
+    margin-bottom: 0;
+
+    * {
+      transition: border-color 0.4s ease;
+    }
+
+    .svg-icon {
+      width: 40px;
+      height: 40px;
+      display: block;
+      transition: fill 0.4s ease;
+    }
+
+    .table-toggle {
+      text-align: right;
+    }
+
+    .icon-col {
+      width: calc(40px + 1rem);
+    }
+
+    .label-col {
+      width: auto;
+    }
+
+    tbody {
+      td, th {
+        padding: 0.5rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}

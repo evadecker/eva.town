@@ -1,0 +1,340 @@
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.4 !default;
+
+%font-serif {
+	font-family: minion-pro, Times, serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+%font-serif-condensed {
+	font-family: minion-pro-condensed-subhead, Times, serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+%font-sans {
+	font-family: nimbus-sans, Helvetica, Arial, sans-serif;
+  font-style: normal;
+}
+
+%font-sans-extended {
+  font-family: nimbus-sans-extended, Helvetica, Arial, sans-serif;
+  font-style: normal;
+  a:after {
+    bottom: 0 !important;
+  }
+}
+
+::selection {
+	background-color: $color-blue-light;
+}
+
+html, body, ul, ol, li, p, form, fieldset, legend {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+	@extend %font-serif;
+	color: $color-text;
+  font-size: 18px;
+  line-height: 1.35;
+	@include media-min(400px) { font-size: 19px; }
+	@include media-min(500px) { font-size: 20px; }
+	@include media-min(620px) { font-size: 21px; }
+	// @include media-min(820px) { font-size: 21px; }
+}
+
+h2, h3, h4 {
+	@extend %font-serif-condensed;
+  margin: 0;
+}
+
+h1 {
+  @extend %font-sans;
+  line-height: 1;
+  text-align: left;
+  font-size: 4rem;
+}
+
+h2 {
+  line-height: 1.2;
+	font-size: 1.8rem;
+	@include media-min(600px) {
+		font-size: 2rem;
+  }
+}
+
+h3 {
+	font-size: 1em;
+	margin: 0;
+}
+
+h4 {
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 0.85em;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol, ul { list-style: none; }
+
+hr {
+  border: none;
+  color: $neutral-3;
+  background-color: $neutral-3;
+  height: 1px;
+}
+
+blockquote {
+	margin: 0;
+	p {
+		margin: 0;
+	}
+}
+
+figcaption {
+  @extend %font-sans-extended;
+  font-size: 0.65rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  color: $color-text;
+  hyphens: auto;
+  margin-top: 1em;
+}
+
+figure {
+  display: block;
+  position: relative;
+  margin: 0;
+}
+
+dl {
+  margin: 0;
+  dt {
+    font-weight: bold;
+    float: left;
+    margin-right: 0.5em;
+  }
+  dd {
+    font-style: italic;
+    margin: 0;
+  }
+}
+
+.uppercase {
+  font-variant-caps: all-small-caps;
+  font-feature-settings: "c2sc", "smcp";
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.post {
+	@extend %font-serif;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 8rem;
+  font-variant-numeric: oldstyle-nums;
+  font-feature-settings: "onum";
+
+  table {
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum";
+  }
+
+  .post-content > {
+    h1, h2, h3, h4, p, ul, ol,
+    blockquote, hr, .timeline,
+    figure:not(.figure-wide),
+    .post-callout, .download-and-social {
+      @include media-min($column-breakpoint) {
+        width: $text-width;
+        margin-left: auto;
+      }
+    }
+
+    hr {
+      text-align: right; // Cross-browser compatibility
+      margin-right: 0;
+    }
+
+    p {
+      text-indent: 1.5rem;
+      hyphens: auto;
+    }
+
+    h1 + p, h2 + p, figure p,
+    .post-callout p:first-child,
+    // To account for floats and asides
+    // between header and first paragraph
+    h1 + *:not(p) + p, h2 + *:not(p) + p {
+      text-indent: 0;
+    }
+  }
+
+  @include media-max($column-breakpoint) {
+    .post-content {
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    aside {
+      margin-top: 2rem;
+    }
+
+    aside:not(.mobile-fullwidth) {
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  h1, h2, h3, h4 {
+    text-align: left;
+  }
+  
+	h2 {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+		&:first-of-type { margin-top: 0; }
+  }
+
+  .full-width + h2 {
+    margin-top: 2rem;
+  }
+
+  h3, figure, hr,
+  blockquote, .post-callout,
+  .highlighter-rouge  {
+    margin-bottom: 2rem;
+  }
+
+  h3, figure, hr, .timeline,
+  blockquote, .post-callout,
+  .highlighter-rouge {
+    margin-top: 2rem;
+  }
+
+  @include media-max($column-breakpoint) {
+    blockquote {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+  }
+
+  aside blockquote {
+    margin-left: 0;
+  }
+
+  aside figure {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $color-text;
+    text-decoration: underline;
+    &:hover {
+      color: $color-blue-dark;
+    }
+  }
+
+  ul, ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    li {
+      padding-left: 1.5rem;
+      position: relative;
+      &:before {
+        position: absolute;
+        text-align: right;
+        width: 0.9rem;
+        top: 0;
+        left: 0;
+      }
+    }  
+  }
+  
+  ul {
+    li:before {
+      content: '•';
+    }
+  }
+  
+  ol {
+    li {
+      counter-increment: step-counter;
+      &:before {
+        content: counter(step-counter);
+        font-variant-numeric: tabular-nums;
+        font-feature-settings: "tnum";
+      }
+    }
+  }
+
+  .post-callout li {
+    margin-top: 1rem;
+  }
+
+  @include media-min($column-breakpoint) {
+    aside {
+      width: $aside-width;
+      float: left;
+      margin-top: 0;
+      margin-right: auto;
+      clear: both;
+      blockquote {
+        margin-top: 0;
+      }
+    }
+    figcaption {
+      width: 100%;
+    }
+  }
+
+  .figure-wide figcaption {
+    width: 440px;
+    max-width: 100%;
+    @include media-min($column-breakpoint) {
+      width: $aside-width;
+    }
+  }
+  
+	blockquote {
+    padding: 0;
+		font-style: italic;
+    p {
+      quotes: "“" "”" "‘" "’";
+      font-size: 1.4rem;
+      line-height: 1.95rem;
+      text-indent: -0.4em;
+      &:before {
+        content: open-quote;
+      }
+      &:after  {
+        content: close-quote;
+        margin: -0.1em; // Kern it in, baby
+      }
+    }
+	}
+}

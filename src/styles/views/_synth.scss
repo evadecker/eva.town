@@ -1,0 +1,183 @@
+$lcd-bg: #8DB48E;
+$lcd-dark: #6D786D;
+$lcd-light: #A2D4A4;
+$lcd-hover: #4D5B4D;
+
+#synth {
+  max-width: 540px;
+}
+
+#synth.loading {
+  pointer-events: none;
+}
+
+.lcd-bg {
+  fill: $lcd-bg;
+}
+
+.lcd-base, .notehead {
+  fill: $lcd-dark;
+}
+
+.lcd-highlight {
+  fill: $lcd-light;
+}
+
+.synth-base {
+  fill: $neutral-9;
+}
+
+.synth-between-keys {
+  fill: $neutral-3;
+}
+
+.synth-endcap,
+.lcd-outline,
+.synth-keys-outline {
+  fill: $neutral-10;
+}
+
+.synth-shadow, .synth-keys-shadow {
+  fill: black;
+  opacity: 0.1;
+}
+
+.synth-instruments,
+.instrument,
+.synth-staff,
+.notehead {
+  display: none;
+}
+
+#synth-start {
+  cursor: pointer;
+  &:not(:hover) .lcd-base {
+    animation: pressStart 2s infinite;
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+    &:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+    &:nth-child(6) {
+      animation-delay: 1s;
+    }
+  }
+
+  &:hover .lcd-base {
+    fill: $lcd-hover;
+  }
+}
+
+@keyframes pressStart {
+  0%, 10% {
+    fill: $lcd-hover;
+  }
+  100% {
+    fill: $lcd-dark;
+  }
+}
+
+.synth-key {
+  cursor: pointer;
+  transition: fill 0.4s ease-out;
+  
+  .pressed-overlay, .crack {
+    fill: $neutral-10;
+  }
+  
+  .pressed-overlay {
+    transform: translateY(2px);
+    transition: transform 0.1s ease-out;
+  }
+  
+  .crack {
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+  }
+  
+  &.white {
+    .base {
+      fill: $neutral-0;
+    }
+  }
+  
+  &.black {
+    .base {
+      fill: $neutral-10;
+    }
+    .highlight {
+      fill: rgba(255,255,255,0.2);
+    }
+  }
+  
+  .base {
+     transition: fill 0.4s ease-out;
+  }
+  
+  &.pressed {
+    .base {
+      transition: none;
+      fill: $color-purple;
+    }
+    &.black .base {
+      fill: desaturate(darken($color-purple, 15), 10);
+    }
+    .pressed-overlay {
+      transition: none;
+      transform: translateY(0);
+    }
+    .crack {
+      transition: none;
+      opacity: 1;
+    }
+  }
+}
+
+.key-letter {
+  fill: rgba($neutral-10, 0.3);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: 0.4s ease-out;
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &.fadeout {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    transition-delay: 0.2s;
+  }
+}
+
+.synth-instrument {
+  cursor: pointer;
+  .synth-randomize {
+    visibility: hidden;
+  }
+}
+
+// Hover-only
+body:not(.has-touch) {
+  .synth-instrument:hover {
+    .synth-randomize {
+      visibility: visible;
+    }
+    .instrument {
+      visibility: hidden;
+    }
+  }
+}
+
+.instrument-arrow {
+  cursor: pointer;
+  &:hover .lcd-base {
+    fill: $lcd-hover;
+  }
+}

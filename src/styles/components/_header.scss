@@ -1,0 +1,51 @@
+.site-header {
+  @extend %font-sans;
+  padding: 1rem 0;
+  z-index: 30;
+  pointer-events: none;
+
+  .wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .site-title {
+    margin-left: -0.5rem;
+  }
+
+  .page-link {
+    position: relative;
+    padding: 0.5rem;
+    color: $color-text-light;
+    pointer-events: auto;
+    transition: color 0.2s ease;
+
+    &:after {
+      content: '';
+      width: calc(100% - 1rem);
+      height: 2px;
+      background: $color-red;
+      position: absolute;
+      bottom: 0.25rem;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+      opacity: 0;
+      transition: 0.2s ease;
+      will-change: opacity;
+    }
+
+    &:hover, &:focus, &.active {
+      color: $color-text;
+      box-shadow: none;
+    }
+
+    &.active:after {
+      opacity: 1;
+    }
+
+    &:last-child {
+      margin-right: -0.5rem;
+    }
+  }
+}

@@ -49,12 +49,12 @@
     "fs-extra": "^7.0.0",
     "github-download": "^0.5.0",
     "kool-shell": "^2.1.0",
-    "less": "^3.8.1",
-    "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.10.0",
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "resolve-url-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "tail": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
@@ -64,7 +64,15 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.2"
+    "@babel/runtime": "^7.1.2",
+    "devtools-detect": "^2.2.0",
+    "howler": "^2.0.15",
+    "imagesloaded": "^4.1.4",
+    "jquery": "^3.3.1",
+    "jquery.marquee": "^1.5.0",
+    "lazysizes": "^4.1.4",
+    "swup": "^1.7.14",
+    "wowjs": "^1.1.3"
   },
   "private": false
 }

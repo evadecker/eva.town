@@ -1,5 +1,9 @@
+<?php snippet('head') ?>
 <?php snippet('header') ?>
 
-<h1><?php echo $page->title()->html() ?></h1>
+<main id="swup" class="page-content transition-fade" aria-label="Content">
+
+</main>
 
 <?php snippet('footer') ?>
+

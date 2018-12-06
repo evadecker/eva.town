@@ -1,5 +1,5 @@
 const user = require('./scripts/utils/format-config')(require('./main.config.js'))
-const { EnvironmentPlugin } = require('webpack')
+const { ProvidePlugin, EnvironmentPlugin } = require('webpack')
 
 const CSSLoaders = [
   {
@@ -39,7 +39,9 @@ const webpack = {
     chunkFilename: '[name].[id].chunk.js'
   },
   resolve: {
-    alias: {}
+    alias: {
+      jquery: 'jquery/src/jquery'
+    }
   },
   module: {
     rules: [
@@ -51,7 +53,11 @@ const webpack = {
     ]
   },
   plugins: [
-    new EnvironmentPlugin(['NODE_ENV'])
+    new EnvironmentPlugin(['NODE_ENV']),
+    new ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
   ]
 }
 
