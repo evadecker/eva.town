@@ -10,7 +10,7 @@
       <div class="project-basics">
         <div class="project-info">
           <time class="project-year"><?= $page->year() ?></time>
-          <a class="project-website" href="<?= $page->website() ?>"><?= $page->website() ?></a>
+          <a class="project-website" href="https://<?= $page->website() ?>"><?= $page->website() ?></a>
         </div>
         <div class="project-pagination">
           <a class="project-arrow prev" href="#"><?php snippet('arrow-l') ?></a>

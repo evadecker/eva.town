@@ -56,14 +56,5 @@
         </a>
       </li>
     <?php endif ?>
-
-    <?php if($site->youtube()): ?>
-      <li class="social-link">
-        <a href="https://youtube.com/<?= $site->youtube() ?>">
-          <svg class="svg-icon"><use xlink:href="assets/images/social-icons.svg#YouTube"></use></svg>
-          <span class="visually-hidden">YouTube</span>
-        </a>
-      </li>
-    <?php endif ?>
   </ul>
 <div>

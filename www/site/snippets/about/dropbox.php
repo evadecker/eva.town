@@ -1,12 +1,12 @@
 <aside>
   <figure>
     <picture>
-      <source data-srcset="taskbar-icons.webp" type="image/webp">
-      <source data-srcset="taskbar-icons.png" type="image/png"> 
+      <source data-srcset="<?= $page->file('taskbar-icons.webp')->url() ?>" type="image/webp">
+      <source data-srcset="<?= $page->image('taskbar-icons.png')->url() ?>" type="image/png"> 
       <img
         class="lazyload blur-up"
-        data-src="taskbar-icons.png"
-        src="taskbar-icons.svg"
+        data-src="<?= $page->image('taskbar-icons.png')->url() ?>"
+        src="<?= $page->image('taskbar-icons.svg')->url() ?>"
         alt="Dropbox taskbar icons on Mac and Windows."
       />
     </picture>
