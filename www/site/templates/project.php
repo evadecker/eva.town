@@ -13,8 +13,16 @@
           <a class="project-website" href="https://<?= $page->website() ?>"><?= $page->website() ?></a>
         </div>
         <div class="project-pagination">
-          <a class="project-arrow prev" href="#"><?php snippet('arrow-l') ?></a>
-          <a class="project-arrow next" href="#"><?php snippet('arrow-r') ?></a>
+          <?php if($prev = $page->prevVisible()): ?>
+            <a class="project-arrow prev" href="<?= $prev->url() ?>"><?php snippet('arrow-l') ?></a>
+          <?php else: ?>
+            <a class="project-arrow prev" href="<?= $page->siblings()->visible()->last()->url() ?>"><?php snippet('arrow-l') ?></a>
+          <?php endif ?>
+          <?php if($next = $page->nextVisible()): ?>
+            <a class="project-arrow next" href="<?= $next->url() ?>"><?php snippet('arrow-r') ?></a>
+          <?php else: ?>
+            <a class="project-arrow next" href="<?= $page->siblings()->visible()->first()->url() ?>"><?php snippet('arrow-r') ?></a>
+          <?php endif ?>
         </div>
       </div>
       <div class="project-challenge">
