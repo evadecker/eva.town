@@ -28,7 +28,15 @@
     </aside>
 
     <div class="post-content e-content" itemprop="articleBody">
+    <?php if($page->isPasswordProtected() == '1'): ?>
+      <?php if($site->user()): ?>
+        <?= $page->text()->kirbytext() ?>
+      <?php else: ?>
+        <?php snippet('login') ?>
+      <?php endif ?>
+    <?php else: ?>
       <?= $page->text()->kirbytext() ?>
+    <?php endif ?>
     </div>
 
     <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

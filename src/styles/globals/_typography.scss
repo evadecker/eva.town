@@ -162,7 +162,8 @@ dl {
     h1, h2, h3, h4, p, ul, ol,
     blockquote, hr, .timeline,
     figure:not(.figure-wide),
-    .post-callout, .download-and-social {
+    .post-callout, .download-and-social,
+    .encrypted-post {
       @include media-min($column-breakpoint) {
         width: $text-width;
         margin-left: auto;
@@ -222,7 +223,7 @@ dl {
 
   h3, figure, hr,
   blockquote, .post-callout,
-  .highlighter-rouge  {
+  .highlighter-rouge {
     margin-bottom: 2rem;
   }
 

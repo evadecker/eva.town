@@ -10,10 +10,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-self: flex-end;
-  max-width: $text-width;
-  margin-left: auto;
+  max-width: 640px !important;
   margin-bottom: 2rem;
   border-bottom: 1px solid $neutral-3;
+
+  @include media-min($column-breakpoint) {
+    max-width: $text-width;
+    margin-left: auto;
+  }
 
   .project-basics {
     width: 100%;
@@ -91,5 +95,98 @@ ul.emoji-list li {
     font-size: 1.3em;
     margin-top: -0.1em;
     font-style: normal;
+  }
+}
+
+.encrypted-post {
+  .garbled {
+    color: $neutral-2;
+    line-height: 1.75;
+    user-select: none;
+    + .garbled {
+      margin-top: 1rem;
+      text-indent: 1.5rem;
+    }
+    &:last-child {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.password-required {
+  background: $color-red-light;
+  border-top: 4px solid $color-red;
+  padding: 1.5rem;
+  margin: 2rem 0;
+
+  .password-submit {
+    position: relative;
+
+    input[type='text'] {
+      background: $neutral-0;
+      border: none;
+      height: 2rem;
+      line-height: 2rem;
+      border-radius: 1rem;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    &.try-again input[type='text'] {
+      animation: 1s tryAgain ease;
+    }
+
+    input[type='submit'] {
+      display: none;
+    }
+  }
+
+  form {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+@keyframes tryAgain {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  0%, 50% {
+    box-shadow: 0 0 0 3px $color-red;
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    box-shadow: 0 0 0 3px transparent;
   }
 }
