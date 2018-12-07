@@ -1,8 +1,8 @@
 <div class="encrypted-post">
   <h2 class="garbled" aria-hidden="true">▙▗▚▟▟▜▘ ▙▗▚▟ ▟▜▘ ▘▙▗ ▚▟▟▜</h2>
   <div class="password-required">
-    <h2>This project is restricted</h2>
-    <p>Due to some legal mumbo-jumbo, I can’t publicly share this case study. If you’re a recruiter or potential employer, email <a href="mailto:kyle@kyledecker.me">kyle@kyledecker.me</a> and I’ll hook you up with the passphrase. Otherwise, check out my <a href="/work/swiftype">Swiftype</a> and <a href="/work/wintr-mx">Wintr.mx</a> case studies, which are both openly available.</p>
+    <h2>This case study is restricted</h2>
+    <p>I can’t share this project because of some legal mumbo-jumbo. If you’re a recruiter or potential employer, you can grab the secret passphrase by emailing <a href="mailto:kyle@kyledecker.me">kyle@kyledecker.me</a>. Otherwise, check out my openly available case studies for <a href="/work/swiftype">Swiftype</a> and <a href="/work/wintr-mx">Wintr.mx</a>.</p>
     <form method="post">
       <input type="hidden" id="username" name="username" value="guest">
       <div class="password-submit <?php if($error) echo 'try-again' ?>">
