@@ -32,6 +32,19 @@ $base-line-height: 1.4 !default;
 	background-color: $color-blue-light;
 }
 
+::placeholder {
+  color: $neutral-4;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $neutral-4;
+}
+
+::-ms-input-placeholder {
+  color: $neutral-4;
+}
+
 html, body, ul, ol, li, p, form, fieldset, legend {
 	margin: 0;
 	padding: 0;
@@ -54,6 +67,10 @@ html, body {
 	@include media-min(500px) { font-size: 20px; }
 	@include media-min(620px) { font-size: 21px; }
 	// @include media-min(820px) { font-size: 21px; }
+}
+
+input {
+  color: $color-text;
 }
 
 h2, h3, h4 {

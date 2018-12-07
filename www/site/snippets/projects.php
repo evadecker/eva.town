@@ -2,11 +2,9 @@
   <?php foreach($site->find('work')->children()->visible() as $project): ?>
     <?php if($project != $page): ?>
       <a class="home-project <?= 'color-'.$project->color() ?>" href="<?= $project->url() ?>">
-        <?php if($image = $project->image('logo.svg')): ?>
-          <span class="project-logo">
-            <?php echo $image->url() ?>
-          </span>
-        <?php endif ?>
+        <span class="project-logo">
+          <?php snippet($project->slug().'/logo') ?>
+        </span>
         <h3><?= $project->title()->html() ?> <span class="project-arrow"><?php snippet('arrow-r') ?></span></h3>
         <p><?= $project->tagline()->html() ?></p>
       </a>

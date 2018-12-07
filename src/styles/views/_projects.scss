@@ -99,6 +99,7 @@ ul.emoji-list li {
 }
 
 .encrypted-post {
+  margin-bottom: -6rem;
   .garbled {
     color: $neutral-2;
     line-height: 1.75;
@@ -152,7 +153,7 @@ ul.emoji-list li {
   }
 
   form {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     width: 100%;
   }
 }
