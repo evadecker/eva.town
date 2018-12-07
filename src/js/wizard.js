@@ -98,7 +98,7 @@ export default function () {
         setTimeout(function () {
           var text = '%c' + dialogue[i][0]
 
-          if (dialogue[i][2] == 'italic') {
+          if (dialogue[i][2] === 'italic') {
             styles = 'font-size:14px; font-style:italic;'
           } else {
             styles = 'font-size:14px; font-weight:bold;'

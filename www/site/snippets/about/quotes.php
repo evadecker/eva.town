@@ -1,4 +1,4 @@
-<div class="quotes">
+<div id="quotes">
   <div class="wrapper">
     <?php foreach($site->find('quotes')->children()->visible() as $quote): ?>
       <blockquote class="quote">
@@ -6,8 +6,8 @@
           <?= $quote->quote()->kirbytext()->widont() ?>
         </span>
         <cite>
-          <span class="quote-author"><?= $quote->author()->kirbytext() ?></span>
-          <span class="quote-source"><?= $quote->source()->kirbytext() ?></span>
+          <span class="quote-author"><?= $quote->author()->text() ?></span>
+          <span class="quote-source"><?= $quote->source()->text() ?></span>
         </cite>
       </blockquote>
     <?php endforeach ?>
