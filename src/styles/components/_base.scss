@@ -152,6 +152,10 @@ iframe {
   z-index: 4;
 }
 
+input {
+  @extend %font-sans;
+}
+
 input[type=radio] {
   position: absolute;
   opacity: 0;
