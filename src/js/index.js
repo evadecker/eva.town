@@ -3,8 +3,8 @@
 import WOW from 'wowjs'
 import Swup from 'swup'
 import 'lazysizes'
+import 'flickity'
 // import * as Synth from './synth.js'
-// import './quotes.js'
 // import './wizard.js'
 // var imagesLoaded = require('imagesloaded')
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     // About Page
     // ---------------------------------------------
     if (document.body.classList.contains('page-about')) {
-      // quotes.init()
+
     }
 
     // ---------------------------------------------
