@@ -32,9 +32,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
     // Swiftype Page
     // ---------------------------------------------
     if (document.body.classList.contains('page-swiftype')) {
-      // ---------------------------------------------
+      // Color changing icon table
+      document.querySelector('.table-background-toggle').addEventListener('click', () => {
+        document.querySelector('.icon-table').setAttribute('data-color', document.querySelector('.table-background-toggle input:checked').value)
+      })
+
       // Reveal annotations on scroll
-      // ---------------------------------------------
       var wow = new WOW.WOW(
         {
           boxClass: 'annotation',
@@ -43,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       )
       wow.init()
 
-      // ---------------------------------------------
       // Marquee empty states
-      // ---------------------------------------------
       // $('.marquee').imagesLoaded(function () {
       //   $('.marquee').marquee({
       //     speed: 50,
@@ -54,14 +55,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
       //     startVisible: true
       //   })
       // })
-
-      // ---------------------------------------------
-      // Color changing icon table
-      // ---------------------------------------------
-      document.querySelector('.table-background-toggle').addEventListener('click', () => {
-        document.querySelector('.icon-table').setAttribute('data-color', document.querySelector('.table-background-toggle input:checked').value)
-      })
     }
+
+    // Rewrite this to be event to-swiftype, event from-swiftype using SWUP
+    // Else removal scripts will be run on every page load
   }
 
   // ---------------------------------------------
@@ -82,6 +79,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
   const swup = new Swup(options)
 
   swup.on('contentReplaced', function () {
-    // init()
+    init()
   })
 })

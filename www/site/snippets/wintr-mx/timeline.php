@@ -1,6 +1,6 @@
 <div class="timeline">
   <div class="timeline-entry">
-    <img src="{{site.url}}/assets/images/wintr-mx/timeline-2009-icon.svg" class="timeline-image">
+    <img src="<?= $page->image('timeline-2009-icon.svg')->url() ?>" class="timeline-image">
     <div class="timeline-text text">
       <time class="timeline-date">2009&ndash;10</time>
       <ul class="timeline-list">
@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="timeline-entry">
-    <img src="{{site.url}}/assets/images/wintr-mx/timeline-2011-icon.svg" class="timeline-image">
+    <img src="<?= $page->image('timeline-2011-icon.svg')->url() ?>" class="timeline-image">
     <div class="timeline-text text">
       <time class="timeline-date">2011</time>
       <ul class="timeline-list">
@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="timeline-entry">
-    <img src="{{site.url}}/assets/images/wintr-mx/timeline-2012-icon.svg" class="timeline-image">
+    <img src="<?= $page->image('timeline-2012-icon.svg')->url() ?>" class="timeline-image">
     <div class="timeline-text text">
       <time class="timeline-date">2012</time>
       <ul class="timeline-list">
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="timeline-entry">
-    <img src="{{site.url}}/assets/images/wintr-mx/timeline-2013-icon.svg" class="timeline-image">
+    <img src="<?= $page->image('timeline-2013-icon.svg')->url() ?>" class="timeline-image">
     <div class="timeline-text text">
       <time class="timeline-date">2013</time>
       <ul class="timeline-list">
@@ -43,7 +43,7 @@
     </div>
   </div>
   <div class="timeline-entry">
-    <img src="{{site.url}}/assets/images/wintr-mx/timeline-2014-icon.svg" class="timeline-image">
+    <img src="<?= $page->image('timeline-2014-icon.svg')->url() ?>" class="timeline-image">
     <div class="timeline-text text">
       <time class="timeline-date">2014&ndash;Now</time>
       <ul class="timeline-list">
