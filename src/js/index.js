@@ -69,9 +69,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
       })
     }
 
-    if (document.querySelector('.marquee') !== null) {
-      imagesLoaded(document.querySelector('.marquee'), function () {
-        // Marquee
+    if (document.querySelector('.empty-state') !== null) {
+      var empties = new Rellax('.empty-state', {
+        center: true
+      })
+
+      swup.on('willReplaceContent', function () {
+        empties.destroy()
       })
     }
   }

@@ -1,71 +1,43 @@
-.marquee {
-  box-sizing: content-box;
+.empties {
   position: relative;
-  height: 220px;
-  padding: 2rem 0;
-  overflow: hidden;
   user-select: none;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .empty-state {
+  //animation: 6s bounce infinite alternate-reverse ease-in-out;
+  max-width: 220px;
+  margin: 0 3vw;
+  display: inline-block;
   img {
-    margin-left: 10vw;
-    animation: 6s bounce infinite alternate-reverse ease-in-out;
+    max-width: 100%;
+  }
+  &.foreground {
     width: 220px;
-    height: 220px;
   }
-  &:nth-child(2n) {
-    img {
-      animation-delay: -1s;
-      animation-duration: 5s;
-    }
-  }
-  &:nth-child(5n) {
-    img {
-      animation-delay: -2.5s;
-    }
-  }
-  &:nth-child(4n) {
-    img {
-      animation-delay: -3s;
-      animation-duration: 4s;
-    }
+  &.midground {
+    width: 190px;
+  }  
+  &.background {
+    width: 160px;
   }
   &:nth-child(3n) {
-    img {
-      animation-delay: -4.5s;
-    }
+    margin-bottom: -20px;
+    margin-left: 20px;
+  }
+  &:nth-child(4n) {
+    margin-top: -40px;
+    margin-right: -40px;
+  }
+  &:nth-child(5n) {
+    margin-top: -80px;
+    margin-right: -30px;
   }
   &:nth-child(6n) {
-    img {
-      animation-delay: -0.5s;
-      animation-duration: 7s;
-    }
-  }
-  &:nth-child(4), &:nth-child(6), &:nth-child(9), &:nth-child(11) {
-    img {
-      margin-left: 1vw;
-      margin-top: -3rem;
-      width: 160px;
-      height: 160px;
-    }
-  }
-  &:nth-child(1), &:nth-child(3), &:nth-child(8) {
-    img {
-      margin-bottom: -2rem;
-      margin-left: 1vw;
-      margin-right: 4vw;
-      width: 190px;
-      height: 190px;
-    }
-  }
-}
-
-@keyframes bounce {
-  0% {
-    transform: translate3d(0, -15%, 0) scale(0.9);
-  }
-  100% {
-    transform: translate3d(0, 15%, 0) scale(1);
+    margin-bottom: -60px;
+    margin-left: -40px;
   }
 }
