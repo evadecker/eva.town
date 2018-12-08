@@ -1,9 +1,11 @@
 @charset "utf-8";
 
 @import
-  "vendor/normalize",
-
   "globals/variables",
+
+  "vendor/normalize",
+  "vendor/flickity",
+
   "globals/mixins",
   "globals/typography",
   "globals/animations",

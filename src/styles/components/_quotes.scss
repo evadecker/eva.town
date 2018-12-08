@@ -1,8 +1,12 @@
-#quotes {
+.quotes-carousel {
   position: relative;
   background-color: $neutral-1;
   margin: 0;
   height: 480px;
+  overflow-y: hidden;
+  &:focus {
+    box-shadow: none;
+  }
   .wrapper {
     position: relative;
     height: 100%;
@@ -10,9 +14,6 @@
 }
 
 .quote {
-  position: absolute;
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,12 +21,14 @@
   text-align: center;
   color: $color-text;
   margin: 0;
-  opacity: 0;
-  padding-bottom: 2rem;
-  transition: 1s ease;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
 
-  &.active {
+  &.is-selected {
     opacity: 1;
+    transform: scaleX(1);
   }
 
   .quote-text {
@@ -58,73 +61,6 @@
     }
     &:last-of-type:after {
       content: '”';
-    }
-  }
-}
-
-.quote-controls {
-  position: absolute;
-  bottom: 2rem;
-  height: 2.5rem;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .quote-arrow {
-    width: 2rem;
-    height: 2rem;
-    padding: 0.5rem;
-    border: none;
-    text-align: center;
-    border-radius: 50%;
-    color: $color-text-light;
-    background: transparent;
-    display: block;
-    pointer-events: auto;
-    cursor: pointer;
-    fill: currentColor;
-  
-    &:hover {
-      color: $color-text;
-    }
-  }
-
-  .quote-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 0 1rem;
-  
-    .quote-dot {
-      width: 18px;
-      height: 18px;
-      background: transparent;
-      border: none;
-      padding: 0;
-      display: block;
-      position: relative;
-      border-radius: 50%;
-      cursor: pointer;
-  
-      &:before {
-        content: '';
-        position: absolute;
-        display: block;
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0);
-        border-radius: 50%;
-        background-color: $neutral-3;
-        width: 10px;
-        height: 10px;
-      }
-  
-      &.active:before {
-        background-color: $neutral-6;
-      }
     }
   }
 }
