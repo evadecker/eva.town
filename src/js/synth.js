@@ -1,11 +1,12 @@
-import { $, jQuery } from 'jquery'
-import { Howl, Howler } from 'howler'
+'use strict'
 
-export function start () {
+import * as $ from 'jquery'
+import { Howl } from 'howler'
+
+(function () {
   // ---------------------------------------------
   // SYNTH CONFIG
   // ---------------------------------------------
-
   const STAFF_TYPE_PREFIX = 'staff-'
   const NOTEHEAD_PREFIX = 'note-'
   const SOUNDS_DIRECTORY = '/assets/sounds/'
@@ -244,7 +245,6 @@ export function start () {
   // ---------------------------------------------
   // STATE
   // ---------------------------------------------
-
   var activeInstrument = 0
   var isMouseDown = false
   var isTouching = false
@@ -255,11 +255,6 @@ export function start () {
   // ---------------------------------------------
   // HELPERS
   // ---------------------------------------------
-
-  jQuery.fn.reverse = function () {
-    return this.pushStack(this.get().reverse(), arguments)
-  }
-
   function randomIntFromInterval (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
@@ -305,7 +300,6 @@ export function start () {
   // ---------------------------------------------
   // INSTRUMENT CHOOSER
   // ---------------------------------------------
-
   function setRandomInstrument () {
     var r = $.Deferred();
 
@@ -377,8 +371,6 @@ export function start () {
   // ---------------------------------------------
   // MUSICAL STAFF
   // ---------------------------------------------
-
-  // Reveals the currently pressed note on the staff.
   function showActiveNotehead (noteName) {
     // Clear existing fadeout timer, if one exists
     clearTimeout(noteFadeOut)
@@ -448,7 +440,7 @@ export function start () {
 
       if (x >= posXStart && x <= posXEnd && y >= posYStart && y <= posYEnd) {
         releaseAllKeys()
-        noteName = $(this).attr('id')
+        var noteName = $(this).attr('id')
         playNote(noteName)
         $(this).addClass('pressed')
       }
@@ -481,7 +473,7 @@ export function start () {
   // START 'ER UP!
   // ---------------------------------------------
 
-  synth.startSynth = function () {
+  function init () {
     $('#synth-start').hide()
     $('.synth-instruments, .synth-staff').show()
 
@@ -758,12 +750,8 @@ export function start () {
     }
     e.preventDefault()
   })
-}
 
-$('#synth-start').click(function () {
-  start()
-})
-
-export function stop () {
-  Howler.unload()
-}
+  $('#synth-start').click(function () {
+    init()
+  })
+})()
