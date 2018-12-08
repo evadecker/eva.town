@@ -1,6 +1,6 @@
 import 'devtools-detect'
 
-export default function () {
+(function () {
   // Talk to the man behind the curtain once the console is opened
   window.addEventListener('devtoolschange', function (e) {
     var yearText
@@ -94,19 +94,16 @@ export default function () {
     if (e.detail.open) {
       for (let i = 0; i < dialogue.length; i++) {
         let delay = dialogue[i][1]
-
         setTimeout(function () {
           var text = '%c' + dialogue[i][0]
-
           if (dialogue[i][2] === 'italic') {
             styles = 'font-size:14px; font-style:italic;'
           } else {
             styles = 'font-size:14px; font-weight:bold;'
           }
-
           console.log(text, styles)
         }, totalDelay += delay)
       }
     }
   })
-}
+})()

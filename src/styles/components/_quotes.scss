@@ -22,7 +22,8 @@
   color: $color-text;
   margin: 0 5%;
   width: 90%;
-  height: calc(100% - 1rem);
+  height: 100%;
+  padding-bottom: 1rem;
   opacity: 0.4;
   transition: opacity 0.2s ease;
 
@@ -62,11 +63,5 @@
     &:last-of-type:after {
       content: '”';
     }
-  }
-}
-
-@include media-max($column-breakpoint) {
-  .flickity-prev-next-button {
-    display: none;
   }
 }

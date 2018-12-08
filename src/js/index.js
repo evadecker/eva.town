@@ -2,11 +2,13 @@
 
 import WOW from 'wowjs'
 import Swup from 'swup'
+import Flickity from 'flickity'
 import 'lazysizes'
-import 'flickity'
-// import * as Synth from './synth.js'
-// import './wizard.js'
+import './wizard.js'
+import './synth.js'
 // var imagesLoaded = require('imagesloaded')
+
+var flickity
 
 document.addEventListener('DOMContentLoaded', function (event) {
   function init () {
@@ -25,7 +27,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
     // About Page
     // ---------------------------------------------
     if (document.body.classList.contains('page-about')) {
-
+      flickity = new Flickity('.quotes-carousel', {
+        autoPlay: 4000,
+        wrapAround: true,
+        selectedAttraction: 0.04,
+        friction: 0.35,
+        arrowShape: 'M100 58.9998426 36.0499178 58.9998426 65.088158 85.4765278 53.6014289 100 0 50.1043963 53.6348574 0 65.0600993 14.7597671 36.09408 41.0436272 100 41.0436272z'
+      })
     }
 
     // ---------------------------------------------
@@ -41,10 +49,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
       var wow = new WOW.WOW(
         {
           boxClass: 'annotation',
-          offset: 120
+          offset: 60
         }
       )
       wow.init()
+      wow.sync()
 
       // Marquee empty states
       // $('.marquee').imagesLoaded(function () {
@@ -56,9 +65,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
       //   })
       // })
     }
-
-    // Rewrite this to be event to-swiftype, event from-swiftype using SWUP
-    // Else removal scripts will be run on every page load
   }
 
   // ---------------------------------------------
@@ -80,5 +86,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   swup.on('contentReplaced', function () {
     init()
+  })
+
+  swup.on('animationOutDone', function () {
+    flickity.destroy()
   })
 })
