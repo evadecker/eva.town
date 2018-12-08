@@ -1,15 +1,17 @@
 <div class="full-width transparent">
-  <div class='marquee' data-duration='5000' data-gap='10' data-duplicated='true'>
-    <?php foreach($page->images() as $image): ?>
+  <div class="marquee">
+    <?php $emptystates = yaml($page->children()->find('empty-states')->emptyStates()) ?>
+    <?php foreach($emptystates as $emptystate): ?>
+      <?php $filename = $emptystate['filename'] ?>
       <picture class="empty-state">
-        <source data-srcset="{{site.url}}/assets/images/swiftype/empty-states/{{empty-state.filename}}.webp" type="image/webp">
-        <source data-srcset="{{site.url}}/assets/images/swiftype/empty-states/{{empty-state.filename}}.png" type="image/png"> 
+        <source data-srcset="<?= $page->find('empty-states')->file($filename.'.webp')->url() ?>" type="image/webp">
+        <source data-srcset="<?= $page->find('empty-states')->image($filename.'.png')->url() ?>" type="image/png">
         <img
           class="lazyload blur-up"
           data-expand="600"
-          data-src="{{site.url}}/assets/images/swiftype/empty-states/{{empty-state.filename}}.png"
-          src="{{site.url}}/assets/images/swiftype/empty-states/{{empty-state.filename}}.svg"
-          alt="{{empty-state.alt | escape}}"
+          data-src="<?= $page->find('empty-states')->image($filename.'.png')->url() ?>"
+          src="<?= $page->find('empty-states')->image($filename.'.svg')->url() ?>"
+          alt="Blah"
         />
       </picture>
     <?php endforeach ?>

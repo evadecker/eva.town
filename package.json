@@ -72,6 +72,7 @@
     "jquery": "^3.3.1",
     "jquery.marquee": "^1.5.0",
     "lazysizes": "^4.1.4",
+    "rellax": "^1.7.1",
     "swup": "^1.7.14",
     "wowjs": "^1.1.3"
   },

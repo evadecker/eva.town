@@ -3,92 +3,84 @@
 import WOW from 'wowjs'
 import Swup from 'swup'
 import Flickity from 'flickity'
+import Rellax from 'rellax'
 import 'lazysizes'
 import './wizard.js'
 import './synth.js'
-// var imagesLoaded = require('imagesloaded')
-
-var flickity
+var imagesLoaded = require('imagesloaded')
 
 document.addEventListener('DOMContentLoaded', function (event) {
+  // Swup page transitions
+  const swup = new Swup({
+    scroll: true,
+    animateScroll: false,
+    debugMode: true
+  })
+
   function init () {
-    // ---------------------------------------------
-    // Home Page
-    // ---------------------------------------------
-    if (document.body.classList.contains('page-home')) {
-      // Synth.start()
+    if (document.querySelector('#synth') !== null) {
+      // Synth init
+      swup.on('willReplaceContent', function () {
+        // Synth exit
+      })
     }
 
-    if (!document.body.classList.contains('page-home')) {
-      // Synth.stop()
-    }
-
-    // ---------------------------------------------
-    // About Page
-    // ---------------------------------------------
-    if (document.body.classList.contains('page-about')) {
-      flickity = new Flickity('.quotes-carousel', {
+    if (document.querySelector('.quotes-carousel') !== null) {
+      var flickity = new Flickity('.quotes-carousel', {
         autoPlay: 4000,
         wrapAround: true,
         selectedAttraction: 0.04,
         friction: 0.35,
         arrowShape: 'M100 58.9998426 36.0499178 58.9998426 65.088158 85.4765278 53.6014289 100 0 50.1043963 53.6348574 0 65.0600993 14.7597671 36.09408 41.0436272 100 41.0436272z'
       })
+
+      swup.on('willReplaceContent', function () {
+        flickity.destroy()
+      })
     }
 
-    // ---------------------------------------------
-    // Swiftype Page
-    // ---------------------------------------------
-    if (document.body.classList.contains('page-swiftype')) {
+    if (document.querySelector('.icon-table') !== null) {
       // Color changing icon table
       document.querySelector('.table-background-toggle').addEventListener('click', () => {
         document.querySelector('.icon-table').setAttribute('data-color', document.querySelector('.table-background-toggle input:checked').value)
       })
+    }
 
+    if (document.querySelector('.annotation') !== null) {
       // Reveal annotations on scroll
-      var wow = new WOW.WOW(
-        {
-          boxClass: 'annotation',
-          offset: 60
-        }
-      )
+      var wow = new WOW.WOW({
+        boxClass: 'annotation',
+        offset: 60
+      })
       wow.init()
-      wow.sync()
 
-      // Marquee empty states
-      // $('.marquee').imagesLoaded(function () {
-      //   $('.marquee').marquee({
-      //     speed: 50,
-      //     delayBeforeStart: 0,
-      //     direction: 'right',
-      //     startVisible: true
-      //   })
-      // })
+      swup.on('willReplaceContent', function () {
+        wow.destroy()
+      })
+    }
+
+    if (document.querySelector('.rellax') !== null) {
+      var rellax = new Rellax('.rellax', {
+        center: true
+      })
+
+      swup.on('willReplaceContent', function () {
+        rellax.destroy()
+      })
+    }
+
+    if (document.querySelector('.marquee') !== null) {
+      imagesLoaded(document.querySelector('.marquee'), function () {
+        // Marquee
+      })
     }
   }
 
-  // ---------------------------------------------
   // Run once
-  // ---------------------------------------------
-
   init()
 
-  // ---------------------------------------------
-  // Page Transitions
-  // ---------------------------------------------
-  let options = {
-    scroll: true,
-    animateScroll: false,
-    debugMode: true
-  }
-
-  const swup = new Swup(options)
-
+  // Handle loading and killing scripts on page transitions
   swup.on('contentReplaced', function () {
     init()
-  })
-
-  swup.on('animationOutDone', function () {
-    flickity.destroy()
   })
 })

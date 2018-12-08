@@ -469,22 +469,7 @@ import { Howl } from 'howler'
     }
   }
 
-  // ---------------------------------------------
-  // START 'ER UP!
-  // ---------------------------------------------
-
-  function init () {
-    $('#synth-start').hide()
-    $('.synth-instruments, .synth-staff').show()
-
-    loadAllSounds()
-
-    if (isTouchDevice()) {
-      $('body').addClass('has-touch')
-    }
-
-    setRandomInstrument().done(revealKeyboardLetters)
-
+  function _bindEvents () {
     $('.instrument-prev').click(function (e) {
       e.preventDefault()
       prevInstrument()
@@ -514,7 +499,7 @@ import { Howl } from 'howler'
       releaseKey(this.id)
     })
 
-    $(window).mouseup(function (e) {
+    $(window).mouseup(function () {
       isMouseDown = false
       releaseAllKeys()
     })
@@ -536,7 +521,7 @@ import { Howl } from 'howler'
     $(window).on('touchend', function (e) {
       isTouching = false
       releaseAllKeys()
-    });
+    })
 
     $key.bind('touchmove', function (e) {
       var touch = e.originalEvent.touches[0]
@@ -553,203 +538,194 @@ import { Howl } from 'howler'
     $('.synth-instrument').click(function () {
       setRandomInstrument()
     })
-  }
 
-  $(document).keydown(function (e) {
-    if (!isLoading) {
-      hideKeyboardLetters()
+    $(document).keydown(function (e) {
+      if (!isLoading) {
+        hideKeyboardLetters()
+        switch (e.key) {
+          case 'ArrowLeft':
+            e.preventDefault()
+            prevInstrument()
+            break
+          case 'ArrowRight':
+            e.preventDefault()
+            nextInstrument()
+            break
+          case 'a':
+          case 'A':
+            e.preventDefault()
+            pressKey('C3')
+            break
+          case 'w':
+          case 'W':
+            e.preventDefault()
+            pressKey('Csharp3')
+            break
+          case 's':
+          case 'S':
+            e.preventDefault()
+            pressKey('D3')
+            break
+          case 'e':
+          case 'E':
+            e.preventDefault()
+            pressKey('Dsharp3')
+            break
+          case 'd':
+          case 'D':
+            e.preventDefault()
+            pressKey('E3')
+            break
+          case 'f':
+          case 'F':
+            e.preventDefault()
+            pressKey('F3')
+            break
+          case 't':
+          case 'T':
+            e.preventDefault()
+            pressKey('Fsharp3')
+            break
+          case 'g':
+          case 'G':
+            e.preventDefault()
+            pressKey('G3')
+            break
+          case 'y':
+          case 'Y':
+            e.preventDefault()
+            pressKey('Gsharp3')
+            break
+          case 'h':
+          case 'H':
+            e.preventDefault()
+            pressKey('A3')
+            break
+          case 'u':
+          case 'U':
+            e.preventDefault()
+            pressKey('Asharp3')
+            break
+          case 'j':
+          case 'J':
+            e.preventDefault()
+            pressKey('B3')
+            break
+          case 'k':
+          case 'K':
+            e.preventDefault()
+            pressKey('C4')
+            break
+          case 'o':
+          case 'O':
+            e.preventDefault()
+            pressKey('Csharp4')
+            break
+          case 'l':
+          case 'L':
+            e.preventDefault()
+            pressKey('D4')
+            break
+          case 'p':
+          case 'P':
+            e.preventDefault()
+            pressKey('Dsharp4')
+            break
+          case ';':
+            e.preventDefault()
+            pressKey('E4')
+            break
+        }
+      }
+    })
 
+    $(document).keyup(function (e) {
       switch (e.key) {
-        case 'ArrowLeft':
-          prevInstrument()
-          break
-
-        case 'ArrowRight':
-          nextInstrument()
-          break
-
         case 'a':
         case 'A':
-          pressKey('C3')
+          releaseKey('C3')
           break
-
         case 'w':
         case 'W':
-          pressKey('Csharp3')
+          releaseKey('Csharp3')
           break
-
         case 's':
         case 'S':
-          pressKey('D3')
+          releaseKey('D3')
           break
-
         case 'e':
         case 'E':
-          pressKey('Dsharp3')
+          releaseKey('Dsharp3')
           break
-
         case 'd':
         case 'D':
-          pressKey('E3')
+          releaseKey('E3')
           break
-
         case 'f':
         case 'F':
-          pressKey('F3')
+          releaseKey('F3')
           break
-
         case 't':
         case 'T':
-          pressKey('Fsharp3')
+          releaseKey('Fsharp3')
           break
-
         case 'g':
         case 'G':
-          pressKey('G3')
+          releaseKey('G3')
           break
-
         case 'y':
         case 'Y':
-          pressKey('Gsharp3')
+          releaseKey('Gsharp3')
           break
-
         case 'h':
         case 'H':
-          pressKey('A3')
+          releaseKey('A3')
           break
-
         case 'u':
         case 'U':
-          pressKey('Asharp3')
+          releaseKey('Asharp3')
           break
-
         case 'j':
         case 'J':
-          pressKey('B3')
+          releaseKey('B3')
           break
-
         case 'k':
         case 'K':
-          pressKey('C4')
+          releaseKey('C4')
           break
-
         case 'o':
         case 'O':
-          pressKey('Csharp4')
+          releaseKey('Csharp4')
           break
-
         case 'l':
         case 'L':
-          pressKey('D4')
+          releaseKey('D4')
           break
-
         case 'p':
-          pressKey('Dsharp4')
+        case 'P':
+          releaseKey('Dsharp4')
           break
-
         case ';':
-          pressKey('E4')
+          releaseKey('E4')
           break
-
-        default:
-          return
       }
+    })
+  }
+
+  // ---------------------------------------------
+  // START 'ER UP!
+  // ---------------------------------------------
+  function init () {
+    $('#synth-start').hide()
+    $('.synth-instruments, .synth-staff').show()
+    if (isTouchDevice()) {
+      $('body').addClass('has-touch')
     }
 
-    e.preventDefault()
-  })
+    _bindEvents()
 
-  $(document).keyup(function (e) {
-    switch (e.key) {
-      case 'a':
-      case 'A':
-        releaseKey('C3')
-        break
-
-      case 'w':
-      case 'W':
-        releaseKey('Csharp3')
-        break
-
-      case 's':
-      case 'S':
-        releaseKey('D3')
-        break
-
-      case 'e':
-      case 'E':
-        releaseKey('Dsharp3')
-        break
-
-      case 'd':
-      case 'D':
-        releaseKey('E3')
-        break
-
-      case 'f':
-      case 'F':
-        releaseKey('F3')
-        break
-
-      case 't':
-      case 'T':
-        releaseKey('Fsharp3')
-        break
-
-      case 'g':
-      case 'G':
-        releaseKey('G3')
-        break
-
-      case 'y':
-      case 'Y':
-        releaseKey('Gsharp3')
-        break
-
-      case 'h':
-      case 'H':
-        releaseKey('A3')
-        break
-
-      case 'u':
-      case 'U':
-        releaseKey('Asharp3')
-        break
-
-      case 'j':
-      case 'J':
-        releaseKey('B3')
-        break
-
-      case 'k':
-      case 'K':
-        releaseKey('C4')
-        break
-
-      case 'o':
-      case 'O':
-        releaseKey('Csharp4')
-        break
-
-      case 'l':
-      case 'L':
-        releaseKey('D4')
-        break
-
-      case 'p':
-      case 'P':
-        releaseKey('Dsharp4')
-        break
-
-      case ';':
-        releaseKey('E4')
-        break
-
-      default:
-        return
-    }
-    e.preventDefault()
-  })
+    setRandomInstrument().done(revealKeyboardLetters)
+  }
 
   $('#synth-start').click(function () {
     init()
