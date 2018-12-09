@@ -130,8 +130,25 @@ ul.emoji-list li {
   padding: 1.5rem;
   margin: 2rem 0;
 
+  .error-message {
+    @extend %font-sans-extended;
+    font-size: 0.65rem;
+    color: $color-red;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
   .password-submit {
     position: relative;
+    &:before {
+      content: url('/assets/images/lock.svg');
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translate3d(0, -50%, 0);
+      z-index: 2;
+      line-height: 0;
+    }
 
     input[type='text'] {
       background: $neutral-0;
@@ -139,16 +156,15 @@ ul.emoji-list li {
       height: 2rem;
       line-height: 2rem;
       border-radius: 1rem;
-      padding: 0 1rem;
+      padding: 0 1rem 0 calc(1.75rem + 18px);
       width: 100%;
     }
 
-    &.try-again input[type='text'] {
-      animation: 1s tryAgain ease;
-    }
-
-    input[type='submit'] {
-      display: none;
+    &.try-again {
+      animation: 1s tryAgain cubic-bezier(.36,.07,.19,.97) both;
+      input[type='text'] {
+        animation: 4s temporaryRedBorder ease;
+      }
     }
   }
 
@@ -159,35 +175,28 @@ ul.emoji-list li {
 }
 
 @keyframes tryAgain {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  10%, 90% {
+    transform: translate3d(-0.2rem, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(0.4rem, 0, 0);
   }
 
-  0%, 50% {
+  30%, 50%, 70% {
+    transform: translate3d(-0.6rem, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(0.8rem, 0, 0);
+  }
+}
+
+@keyframes temporaryRedBorder {
+  from, 80% {
     box-shadow: 0 0 0 3px $color-red;
   }
-
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  20%,
-  40%,
-  60%,
-  80% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
-  }
-
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  to {
     box-shadow: 0 0 0 3px transparent;
   }
 }

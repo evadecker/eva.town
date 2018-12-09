@@ -109,13 +109,20 @@
     font-size: 1.5rem;
     margin: 0;
     padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
   }
 
   .project-arrow {
-    display: inline-block;
     width: 0.8rem;
+    margin-left: 0.5rem;
     fill: $color-text-light;
     transition: transform 0.2s ease;
+  }
+
+  .project-locked {
+    margin-left: auto;
   }
 
   p {
