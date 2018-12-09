@@ -5,7 +5,13 @@
         <span class="project-logo">
           <?php snippet($project->slug().'/logo') ?>
         </span>
-        <h3><?= $project->title()->html() ?> <span class="project-arrow"><?php snippet('arrow-r') ?></span></h3>
+        <h3>
+          <?= $project->title()->html() ?>
+          <span class="project-arrow"><?php snippet('arrow-r') ?></span>
+          <?php if($project->isPasswordProtected() == '1' && !$site->user()): ?>
+            <img src="<?= $site->url() ?>/assets/images/lock.svg" class="project-locked"/>
+          <?php endif ?>
+        </h3>
         <p><?= $project->tagline()->html() ?></p>
       </a>
     <?php endif ?>

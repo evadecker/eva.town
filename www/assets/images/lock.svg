@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="20px" viewBox="0 0 18 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>lock</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M3,8 L3,6 C3,2.6862915 5.6862915,0 9,0 C12.3137085,0 15,2.6862915 15,6 L15,8 L16,8 C17.1045695,8 18,8.8954305 18,10 L18,18 C18,19.1045695 17.1045695,20 16,20 L2,20 C0.8954305,20 0,19.1045695 0,18 L0,10 C0,8.8954305 0.8954305,8 2,8 L3,8 Z M6,8 L12,8 L12,6 C12,4.34314575 10.6568542,3 9,3 C7.34314575,3 6,4.34314575 6,6 L6,8 Z" id="lock" fill="#40445E"></path>
+    </g>
+</svg>

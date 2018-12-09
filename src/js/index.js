@@ -7,7 +7,6 @@ import Rellax from 'rellax'
 import 'lazysizes'
 import './wizard.js'
 import './synth.js'
-var imagesLoaded = require('imagesloaded')
 
 document.addEventListener('DOMContentLoaded', function (event) {
   // Swup page transitions
