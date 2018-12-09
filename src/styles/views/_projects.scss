@@ -102,12 +102,28 @@ ul.emoji-list li {
   margin-bottom: -6rem;
   .garbled {
     color: $neutral-2;
-    line-height: 1.75;
+    line-height: 1.5;
     user-select: none;
+    word-break: break-all;
+    // animation: glitchText 15s infinite;
+    // animation-timing-function: steps(10, end);
+    position: relative;
+    overflow: hidden;
     + .garbled {
       margin-top: 1rem;
-      text-indent: 1.5rem;
     }
+    // &:before {
+    //   content: '';
+    //   width: 100%;
+    //   height: 100%;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   background: linear-gradient(to bottom, $neutral-0, $neutral-0 10%, transparent 10%, transparent 50%, $neutral-0, $neutral-0 60%, transparent 60%, transparent 90%, $neutral-0 90%, $neutral-0 100%);
+    //   opacity: 0.4;
+    //   background-size: 100% 10px;
+    //   animation: scan 2s infinite linear;
+    // }
     &:last-child {
       position: relative;
       &:after {
@@ -124,6 +140,26 @@ ul.emoji-list li {
   }
 }
 
+// @keyframes glitchText {
+//   0%, 89%, 100% {
+//     text-shadow: none;
+//     color: $neutral-2;
+//   }
+//   90% {
+//     text-shadow: -4px 0 0 $neutral-2;
+//     color: $neutral-0;
+//   }
+// }
+
+// @keyframes scan {
+//   0% {
+//     background-position: 0%;
+//   }
+//   100% {
+//     background-position: 100%;
+//   }
+// }
+
 .password-required {
   background: $color-red-light;
   border-top: 4px solid $color-red;
@@ -135,23 +171,27 @@ ul.emoji-list li {
     font-size: 0.65rem;
     color: $color-red;
     letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
   }
 
   .password-submit {
     position: relative;
-    &:before {
-      content: url('/assets/images/lock.svg');
-      position: absolute;
-      top: 50%;
-      left: 1rem;
-      transform: translate3d(0, -50%, 0);
-      z-index: 2;
-      line-height: 0;
+
+    label {
+      @extend %font-sans-extended;
+      letter-spacing: 0.05em;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
     }
 
     input[type='text'] {
       background: $neutral-0;
+      background-image: url('/assets/images/lock.svg');
+      background-repeat: no-repeat;
+      background-position: 1rem center;
       border: none;
       height: 2rem;
       line-height: 2rem;
