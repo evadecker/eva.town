@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   // Swup page transitions
   const swup = new Swup({
     scroll: true,
-    animateScroll: false,
-    debugMode: true
+    animateScroll: false
   })
 
   function init () {
