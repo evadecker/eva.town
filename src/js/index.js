@@ -7,6 +7,7 @@ import Rellax from 'rellax'
 import 'lazysizes'
 import './wizard.js'
 import './synth.js'
+import swapTwo from './swaptwo.js'
 
 document.addEventListener('DOMContentLoaded', function (event) {
   // Swup page transitions
@@ -75,6 +76,22 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
       swup.on('willReplaceContent', function () {
         empties.destroy()
+      })
+    }
+
+    if (document.querySelector('.garbled') !== null) {
+      var garbled = document.querySelectorAll('.garbled')
+      var garbler
+      garbled.forEach((garbled) => {
+        garbler = setTimeout(function swap () {
+          var text = [...garbled.innerHTML]
+          garbled.innerHTML = swapTwo(text)
+          garbler = setTimeout(swap, 200)
+        }, 200)
+      })
+
+      swup.on('willReplaceContent', function () {
+        clearTimeout(garbler)
       })
     }
   }
