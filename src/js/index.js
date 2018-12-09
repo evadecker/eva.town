@@ -81,13 +81,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     if (document.querySelector('.garbled') !== null) {
       var garbled = document.querySelectorAll('.garbled')
+      var randomRange
       var garbler
       garbled.forEach((garbled) => {
         garbler = setTimeout(function swap () {
           var text = [...garbled.innerHTML]
+          randomRange = Math.floor(Math.random() * (2000 - 400) + 400)
           garbled.innerHTML = swapTwo(text)
-          garbler = setTimeout(swap, 200)
-        }, 200)
+          garbler = setTimeout(swap, randomRange)
+        }, randomRange)
       })
 
       swup.on('willReplaceContent', function () {
