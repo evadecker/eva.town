@@ -202,6 +202,9 @@ ul.emoji-list li {
 
     &.try-again {
       animation: 1s tryAgain cubic-bezier(.36,.07,.19,.97) both;
+      label {
+        animation: 4.2s temporaryRedText ease;
+      }
       input[type='text'] {
         animation: 4s temporaryRedBorder ease;
       }
@@ -229,6 +232,12 @@ ul.emoji-list li {
 
   40%, 60% {
     transform: translate3d(0.8rem, 0, 0);
+  }
+}
+
+@keyframes temporaryRedText {
+  from, 80% {
+    color: $color-red;
   }
 }
 

@@ -1,4 +1,4 @@
-<aside>
+<aside class="mobile-fullwidth">
   <figure>
     <picture>
       <source data-srcset="<?= $page->file('wintrmx-moleskine.webp')->url() ?>" type="image/webp">

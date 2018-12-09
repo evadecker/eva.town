@@ -213,7 +213,7 @@ dl {
       margin-right: auto;
     }
 
-    aside {
+    aside:not(:first-child) {
       margin-top: 2rem;
     }
 
