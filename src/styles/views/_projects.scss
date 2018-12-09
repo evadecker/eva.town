@@ -246,6 +246,6 @@ ul.emoji-list li {
     box-shadow: 0 0 0 3px $color-red;
   }
   to {
-    box-shadow: 0 0 0 3px transparent;
+    box-shadow: 0 0 0 3px inherit;
   }
 }
