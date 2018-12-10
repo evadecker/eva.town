@@ -7,17 +7,6 @@ html.is-animating .transition-fade {
   opacity: 0;
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 200%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 .blur-up {
   -webkit-filter: blur(6px);
   filter: blur(6px);
@@ -26,13 +15,4 @@ html.is-animating .transition-fade {
 
 .blur-up.lazyloaded {
   filter: blur(0);
-}
-
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.fade-in.lazyloaded {
-  opacity: 1;
 }

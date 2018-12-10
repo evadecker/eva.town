@@ -10,10 +10,11 @@ import './synth.js'
 import swapTwo from './swaptwo.js'
 
 document.addEventListener('DOMContentLoaded', function (event) {
-  // Swup page transitions
   const swup = new Swup({
+    elements: ['#swup', '#header'],
     scroll: true,
-    animateScroll: false
+    animateScroll: false,
+    debugMode: true
   })
 
   function init () {
@@ -45,18 +46,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
       })
     }
 
-    if (document.querySelector('.annotation') !== null) {
-      // Reveal annotations on scroll
-      var wow = new WOW.WOW({
-        boxClass: 'annotation',
-        offset: 60
-      })
-      wow.init()
+    // if (document.querySelector('.annotation') !== null) {
+    //   // Reveal annotations on scroll
+    //   var wow = new WOW.WOW({
+    //     boxClass: 'annotation',
+    //     offset: 60
+    //   })
+    //   wow.init()
 
-      swup.on('willReplaceContent', function () {
-        wow.destroy()
-      })
-    }
+    //   swup.on('willReplaceContent', function () {
+    //     wow.destroy()
+    //   })
+    // }
 
     if (document.querySelector('.rellax') !== null) {
       var rellax = new Rellax('.rellax', {

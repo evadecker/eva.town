@@ -45,7 +45,7 @@
   <div class="timeline-entry">
     <img src="<?= $page->image('timeline-2014-icon.svg')->url() ?>" class="timeline-image">
     <div class="timeline-text text">
-      <time class="timeline-date">2014&ndash;Now</time>
+      <time class="timeline-date">2014&ndash;</time>
       <ul class="timeline-list">
         <li>Hosted on new domain&mdash;<a href="http://wintr.mx">wintr.mx</a></li>
         <li>Updated layout featuring fixed sidebar</li>

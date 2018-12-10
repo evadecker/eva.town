@@ -1,4 +1,4 @@
-.site-header {
+#header {
   @extend %font-sans;
   padding: 1rem 0;
   z-index: 30;
@@ -12,11 +12,13 @@
 
   .site-title {
     margin-left: -0.5rem;
+    margin-right: auto;
   }
 
   .page-link {
     position: relative;
     padding: 0.5rem;
+    line-height: 1.5rem;
     color: $color-text-light;
     pointer-events: auto;
     transition: color 0.2s ease;
@@ -27,21 +29,20 @@
       height: 2px;
       background: $color-red;
       position: absolute;
-      bottom: 0.25rem;
+      bottom: 0.5rem;
       left: 50%;
-      transform: translate3d(-50%, 0, 0);
       opacity: 0;
-      transition: 0.2s ease;
-      will-change: opacity;
+      transform: translate3d(-50%, 0, 0) scaleX(0);
+      transition: opacity 0.2s, transform 0.2s;
     }
 
     &:hover, &:focus, &.active {
       color: $color-text;
       box-shadow: none;
-    }
-
-    &.active:after {
-      opacity: 1;
+      &:after {
+        transform: translate3d(-50%, 0, 0) scaleX(1);
+        opacity: 1;
+      }
     }
 
     &:last-child {

@@ -22,10 +22,11 @@
     <meta property="og:image" content="http://kyledecker.me/assets/images/facebook-preview.png"/>
     <meta name="author" content="<?= $site->author()->html() ?>" />
     
-    <link rel="icon" type="image/png" href="{{ '/favicon-32x32.png' | relative_url }}" sizes="32x32" />
-    <link rel="icon" type="image/png" href="{{ '/favicon-16x16.png' | relative_url }}" sizes="16x16" />
+    <link rel="icon" type="image/png" href="<?= $site->url() ?>/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="<?= $site->url() ?>/favicon-16x16.png" sizes="16x16" />
     
     <link rel="stylesheet" href="https://use.typekit.net/exn3vdd.css">
     <?php echo liveCSS('assets/builds/bundle.css') ?>
+    <?php echo js('assets/builds/bundle.js', ['defer' => true]) ?>
   </head>
   <body class="page-<?= $page->uid() ?>">

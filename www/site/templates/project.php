@@ -47,7 +47,7 @@
     <?php endif ?>
     </div>
 
-    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+    <a class="u-url" href="<?= $page->url() ?>" hidden></a>
   </article>
 
 </main>

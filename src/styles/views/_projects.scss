@@ -81,7 +81,7 @@
   h3 {
     @extend %font-sans-extended;
     margin: 0;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 1rem;
   }
@@ -105,25 +105,11 @@ ul.emoji-list li {
     line-height: 1.5;
     user-select: none;
     word-break: break-all;
-    // animation: glitchText 15s infinite;
-    // animation-timing-function: steps(10, end);
     position: relative;
     overflow: hidden;
     + .garbled {
       margin-top: 1rem;
     }
-    // &:before {
-    //   content: '';
-    //   width: 100%;
-    //   height: 100%;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   background: linear-gradient(to bottom, $neutral-0, $neutral-0 10%, transparent 10%, transparent 50%, $neutral-0, $neutral-0 60%, transparent 60%, transparent 90%, $neutral-0 90%, $neutral-0 100%);
-    //   opacity: 0.4;
-    //   background-size: 100% 10px;
-    //   animation: scan 2s infinite linear;
-    // }
     &:last-child {
       position: relative;
       &:after {
@@ -139,26 +125,6 @@ ul.emoji-list li {
     }
   }
 }
-
-// @keyframes glitchText {
-//   0%, 89%, 100% {
-//     text-shadow: none;
-//     color: $neutral-2;
-//   }
-//   90% {
-//     text-shadow: -4px 0 0 $neutral-2;
-//     color: $neutral-0;
-//   }
-// }
-
-// @keyframes scan {
-//   0% {
-//     background-position: 0%;
-//   }
-//   100% {
-//     background-position: 100%;
-//   }
-// }
 
 .password-required {
   background: $color-red-light;
