@@ -46,11 +46,14 @@ $timeline-breakpoint: 600px;
 }
 
 .timeline-date {
+  font-weight: 600;
   text-align: right;
   width: 150px;
   padding-right: 3rem;
   position: absolute;
   left: -150px;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
 }
 
 ul.timeline-list {
