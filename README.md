@@ -12,15 +12,14 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 - [iTerm2](https://www.iterm2.com/) for command lining
 
 **Libraries, Plugins, etc.**
-- [Jekyll](https://jekyllrb.com/) for creating a generating static sites
+- [Kirby](https://getkirby.com/) and [kirby-webpack](https://github.com/brocessing/kirby-webpack) for easy-as-heck flat-file content management
 - [Howler.js](https://howlerjs.com/) for serving audio
 - [Audiosprite](https://github.com/tonistiigi/audiosprite) for generating audio sprite files
-- [Swup](https://github.com/gmrchk/swup) for CSS-powered page transitions
-- [Wow.js](https://github.com/matthieua/WOW) for revealing animations on scroll
-- [jQuery Marquee](https://github.com/aamirafridi/jQuery.Marquee) for the Swiftype illustration marquee
-- [imagesLoaded](https://github.com/desandro/imagesloaded) for detecting when images... have loaded
+- [Swup](https://github.com/gmrchk/swup) for CSS-powered page transitions, caching, and pre-rendering
+- [Rellax](https://github.com/dixonandmoe/rellax) for buttery-smooth parallax
+- [Flickity](https://flickity.metafizzy.co/) for touch-responsive carousels
 - [Lazysizes](https://github.com/aFarkas/lazysizes) for progressively loading images
-- [jekyll-compress-html](https://github.com/penibelst/jekyll-compress-html) for minifying HTML
+
 
 **Synth Samples**
 - Toy Piano by [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71)
@@ -38,9 +37,8 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 - [Nimbus Sans](https://fonts.adobe.com/fonts/nimbus-sans) by [URW++](https://www.urwtype.com/en/)
 
 **Hosting**
-- [Github](https://github.com/) (duh) for version control
-- [Github Sites](https://pages.github.com/) for hosting
-- [Namecheap](https://www.namecheap.com/) for domain registration
+- [Github](https://github.com/) for version control
+- [Namecheap](https://www.namecheap.com/) for domain registration and hosting
 - [Adobe Fonts](https://fonts.adobe.com/) for serving web fonts
 - [Cloudflare](https://www.cloudflare.com/) for faster speed and increased security
 
