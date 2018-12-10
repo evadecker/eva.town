@@ -1,13 +1,12 @@
 'use strict'
 
-import WOW from 'wowjs'
 import Swup from 'swup'
 import Flickity from 'flickity'
 import Rellax from 'rellax'
+import swapTwo from './swaptwo.js'
 import 'lazysizes'
 import './wizard.js'
 import './synth.js'
-import swapTwo from './swaptwo.js'
 
 document.addEventListener('DOMContentLoaded', function (event) {
   const swup = new Swup({
@@ -59,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
     //   })
     // }
 
-    if (document.querySelector('.rellax') !== null) {
-      var rellax = new Rellax('.rellax', {
+    if (document.querySelector('.annotation') !== null) {
+      var rellax = new Rellax('.annotation', {
         center: true
       })
 
