@@ -1,6 +1,8 @@
 $timeline-breakpoint: 600px;
 
 .timeline {
+  @extend %font-sans-extended;
+  font-size: 0.8em;
   max-width: 800px;
   margin-bottom: -2rem;
   position: relative;
@@ -44,8 +46,6 @@ $timeline-breakpoint: 600px;
 }
 
 .timeline-date {
-  @extend %font-sans;
-  font-size: 0.85em;
   text-align: right;
   width: 150px;
   padding-right: 3rem;
@@ -62,6 +62,7 @@ ul.timeline-list {
   li {
     position: relative;
     padding-left: 0;
+    margin-bottom: 0.25rem;
     &:before {
       content: '';
       width: 8px;
