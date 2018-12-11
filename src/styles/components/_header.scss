@@ -21,7 +21,7 @@
     line-height: 1.5rem;
     color: $color-text-light;
     pointer-events: auto;
-    transition: color 0.2s ease;
+    transition: 0.2s ease;
 
     &:after {
       content: '';
@@ -39,6 +39,9 @@
     &:hover, &:focus, &.active {
       color: $color-text;
       box-shadow: none;
+    }
+
+    &.active {
       &:after {
         transform: translate3d(-50%, 0, 0) scaleX(1);
         opacity: 1;
@@ -48,5 +51,13 @@
     &:last-child {
       margin-right: -0.5rem;
     }
+  }
+}
+
+html.is-animating #header .page-link.active {
+  color: $color-text-light;
+  &:after {
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0) scaleX(0);
   }
 }

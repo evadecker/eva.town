@@ -44,6 +44,13 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 
 ## Notes to self
 
+### Starting kirby-webpack
+
+```zsh
+cd kyledecker.me
+npm run start
+```
+
 ### How To Add A New Synth Sound
 
 1. **Download your samples.**

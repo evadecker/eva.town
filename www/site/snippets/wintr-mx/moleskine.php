@@ -1,12 +1,12 @@
 <aside class="mobile-fullwidth">
   <figure>
     <picture>
-      <source data-srcset="<?= $page->file('wintrmx-moleskine.webp')->url() ?>" type="image/webp">
-      <source data-srcset="<?= $page->image('wintrmx-moleskine.jpg')->url() ?>" type="image/jpeg"> 
+      <source data-srcset="<?= $page->file('transitions.webp')->url() ?>" type="image/webp">
+      <source data-srcset="<?= $page->image('transitions.png')->url() ?>" type="image/png"> 
       <img
         class="lazyload blur-up"
-        data-src="<?= $page->image('wintrmx-moleskine.jpg')->url() ?>"
-        src="<?= $page->image('wintrmx-moleskine.svg')->url() ?>"
+        data-src="<?= $page->image('transitions.png')->url() ?>"
+        src="<?= $page->image('transitions.svg')->url() ?>"
         alt="A photo of a Moleskine notebook with written start and end keys of various songs."
       />
     </picture>

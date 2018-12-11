@@ -6,9 +6,7 @@ Text:
 
 (snippet: about/selfie)
 
-## I help make peoples' lives&nbsp;easier.
-
-That's the goal, at least.
+## I tidy the web.
 
 My name is Kyle—I design and build digital products that are intuitive, beautiful, accessible, and fun. I've done this professionally since 2012, and I've been designing for the web since 2007.
 
@@ -20,7 +18,7 @@ Most recently, I worked at [Dropbox](https://www.dropbox.com/), where I helped d
 
 (snippet: about/dropbox)
 
-**I’m currently seeking a new full-time role in <span class="uppercase">NYC</span>** that will allow me to contribute front-end engineering and design skills toward voting reform, urban planning, the arts, social and environmental justice, or other progressive causes.
+**I’m currently seeking a new full-time role in <span class="uppercase">NYC</span>** that will allow me to contribute design and front-end engineering skills toward voting reform, urban planning, the arts, social and environmental justice, or other progressive causes.
 
 If you think I might be a good fit for your team... *hello!* Here’s my email: <kyle@kyledecker.me>. I’m always happy to grab drinks and chat. Say hi.
 
