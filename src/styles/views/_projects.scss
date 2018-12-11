@@ -81,7 +81,7 @@
   h3 {
     @extend %font-sans-extended;
     margin: 0;
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: 600;
     margin-bottom: 1rem;
   }
@@ -103,6 +103,7 @@ ul.emoji-list li {
   .garbled {
     color: $neutral-2;
     line-height: 1.5;
+    letter-spacing: -0.01em;
     user-select: none;
     word-break: break-all;
     position: relative;

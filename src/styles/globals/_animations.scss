@@ -8,9 +8,8 @@ html.is-animating .transition-fade {
 }
 
 .blur-up {
-  -webkit-filter: blur(6px);
   filter: blur(6px);
-  transition: filter 0.3s, -webkit-filter 0.3s;
+  transition: filter 0.3s;
 }
 
 .blur-up.lazyloaded {

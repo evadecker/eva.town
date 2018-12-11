@@ -9,5 +9,5 @@
       alt="A photo of my team at Dropbox, standing in front of the San Francisco Bay."
     />
   </picture>
-  <figcaption>My first week at Dropbox, my team went hiking on Angel Island in the San Francisco Bay. Pictured: 2 product managers, 1 product analyst, 7 engineers, 1 Kyle (behind the camera).</figcaption>
+  <figcaption>My first week at Dropbox, my team went hiking on Angel Island in the San Francisco Bay. Pictured: 7 engineers, 2 product managers, 1 product analyst. Not pictured: 1 Kyle, behind the camera.</figcaption>
 </figure>

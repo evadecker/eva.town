@@ -112,6 +112,21 @@ a {
 
 ol, ul { list-style: none; }
 
+dfn {
+  font-style: inherit;
+  position: relative;
+  cursor: help;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    border-bottom: 1px dotted $color-text-light;
+  }
+}
+
 hr {
   border: none;
   color: $neutral-3;
@@ -334,7 +349,7 @@ dl {
     width: 440px;
     max-width: 100%;
     @include media-min($column-breakpoint) {
-      width: $aside-width;
+      width: 75%;
     }
   }
   
