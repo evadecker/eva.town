@@ -5,6 +5,7 @@ import 'devtools-detect'
   window.addEventListener('devtoolschange', function (e) {
     var yearText
     var daysLeft
+    var daysLeftText
     var year = new Date().getFullYear()
 
     if (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0)) {
@@ -20,44 +21,47 @@ import 'devtools-detect'
 
     daysLeft = Math.ceil((endOfYear.getTime() - today.getTime()) / (oneDay))
 
+    if (daysLeft > 1) {
+      daysLeftText = 'Only ' + daysLeft + ' days left...'
+    } else {
+      daysLeftText = 'Today’s the last day. Hallelujah!'
+    }
+
     var dialogue = [
-      ['???: AHHHH!!!', 500],
-      ['* Something heavy shatters. *', 1000, 'italic'],
-      ['* You hear a muffled curse and the footsteps of someone approaching. *', 2000, 'italic'],
-      ['???: ...Who’s there?', 2000],
-      ['* A door opens, revealing a grisled old man with an unkempt beard. *', 2000, 'italic'],
-      ['* His robe is tattered and matted with cat hair. *', 3000, 'italic'],
-      ['OLD MAN: You startled me.', 2000],
+      ['???: AAAAAHHHHHH!!!', 3000],
+      ['Something heavy shatters.', 1500, 'italic'],
+      ['You hear a muffled curse and the footsteps of someone approaching.', 2500, 'italic'],
+      ['???: ...Who’s there?', 2500],
+      ['A door creaks open, revealing a grisled old man with an unkempt beard.', 2500, 'italic'],
+      ['His robe is tattered and matted with cat hair.', 3000, 'italic'],
+      ['OLD MAN: You startled me.', 2500],
       ['OLD MAN: I don’t get visitors often.', 3000],
-      ['OLD MAN: You must’ve come a long way.', 2000],
+      ['OLD MAN: You must’ve come a long way.', 2500],
+      ['Corkscrewing his pinky finger in his ear, he dislodges a large wad of earwax.', 2500, 'italic'],
       ['OLD MAN: I suppose I should introduce myself.', 4000],
-      ['OLD MAN: I’m the man behind the curtain.', 1500],
-      ['OLD MAN: You can call me THE WIZARD.', 1500],
-      ['* He dusts some cat hair off his robe. *', 2000, 'italic'],
-      ['THE WIZARD: Sorry I’m not really dressed for the occasion.', 2000],
-      ['THE WIZARD: I do have nicer clothes.', 2000],
-      ['THE WIZARD: Really.', 2000],
-      ['* You ask what he does. *', 3000, 'italic'],
-      ['THE WIZARD: What do I do?', 3000],
+      ['He dusts some cat hair off his robe.', 2000, 'italic'],
+      ['OLD MAN: I’m the man behind the console.', 3000],
+      ['OLD MAN: You can call me THE WIZARD.', 2000],
+      ['He does halfhearted jazz hands.', 3000, 'italic'],
+      ['THE WIZARD: Sorry I’m not really dressed for the occasion.', 3000],
+      ['THE WIZARD: See, you caught me in the middle of work.', 3000],
       ['THE WIZARD: I make this website run.', 3000],
-      ['THE WIZARD: Day and night, 24 hours a day, 365 days a year.', 2000],
+      ['THE WIZARD: Day and night!', 2000],
+      ['THE WIZARD: 24 hours a day, 365 days a year.', 2000],
       ['THE WIZARD: ' + yearText, 1500],
-      ['THE WIZARD: Only ' + daysLeft + ' days left...', 1000],
+      ['THE WIZARD: ' + daysLeftText, 2000],
       ['THE WIZARD: Not that anyone’s counting.', 1000],
-      ['THE WIZARD: But yeah, that’s my job.', 1000],
+      ['THE WIZARD: Yep. That’s my job.', 1000],
       ['THE WIZARD: Everything look ok?', 3000],
       ['THE WIZARD: Buttons working?', 1500],
       ['THE WIZARD: Images loading?', 1200],
       ['THE WIZARD: Animations animating?', 1000],
-      ['THE WIZARD: No typos?', 800],
-      ['THE WIZARD: No glitches?', 600],
-      ['THE WIZARD: No rogue orcs?', 400],
-      ['THE WIZARD: ...', 400],
-      ['THE WIZARD: ....', 400],
-      ['THE WIZARD: .....', 400],
-      ['THE WIZARD: ......', 400],
-      ['THE WIZARD: .......', 400],
-      ['THE WIZARD: If you find anything, would you please let me know?', 4000],
+      ['THE WIZARD: No typos?', 1000],
+      ['THE WIZARD: No glitches?', 1000],
+      ['THE WIZARD: No rogue orcs?', 1000],
+      ['THE WIZARD: ...', 1000],
+      ['THE WIZARD: Those orcs are a real headache, I tell ya.', 3000],
+      ['THE WIZARD: If you find anything, would you please let me know?', 2500],
       ['THE WIZARD: My master is rather... particular.', 2400],
       ['THE WIZARD: He likes to keep things tidy.', 3000],
       ['THE WIZARD: I take mail at this address: thewizard@kyledecker.me', 2000],
@@ -72,18 +76,17 @@ import 'devtools-detect'
       ['THE WIZARD: Uh, hm, never mind. Just thinking to myself.', 6000],
       ['THE WIZARD: Anyways.', 3000],
       ['THE WIZARD: Thanks for coming by.', 1500],
-      ['THE WIZARD: If you wanna hang out some time, you can find me here:', 2000],
+      ['THE WIZARD: If you’d like to say hello some time, here’s my address:', 2000],
       ['THE WIZARD: https://github.com/kybradeck/', 1500],
-      ['THE WIZARD: You’ve probably got stuff to do.', 2000],
+      ['THE WIZARD: You probably have things to do.', 2000],
       ['THE WIZARD: Me?', 3000],
       ['THE WIZARD: I’ve gotta keep putting the ‘fun’ in ‘functions’!!!', 3000],
-      ['* He expels a loud, forced laugh at his own joke. *', 2000, 'italic'],
-      ['* He smiles awkwardly. *', 6000, 'italic'],
-      ['* Neither of you are sure what to do. *', 4000, 'italic'],
-      ['* THE WIZARD vanishes in a puff of smoke without saying goodbye. *', 5000, 'italic'],
-      ['* The smoke leaves behind a sour odor. *', 5000, 'italic'],
-      ['* ...yup, he’s gone. *', 12000, 'italic'],
-      ['* This smell is really lingering. *', 6000, 'italic'],
+      ['He expels a loud, forced laugh at his own joke.', 2000, 'italic'],
+      ['He smiles awkwardly.', 6000, 'italic'],
+      ['THE WIZARD vanishes in a puff of smoke without saying goodbye.', 5000, 'italic'],
+      ['The smoke leaves behind a sour odor.', 5000, 'italic'],
+      ['...yup, he’s really gone.', 12000, 'italic'],
+      ['This smell sure is lingering.', 8000, 'italic'],
       ['THE WIZARD, UNSEEN: What are you still doing here, kid?!', 30000],
       ['THE WIZARD: Get off the computer! Go live your life!', 2000]
     ]

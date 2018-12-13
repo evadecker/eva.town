@@ -56,11 +56,12 @@ picture {
 pre, code {
   border: 1px solid $neutral-3;
   border-radius: 3px;
-  background-color: #eef;
+  background-color: $neutral-1;
 }
 
 code {
   padding: 1px 5px;
+  font-size: 0.85em;
 }
 
 pre {
