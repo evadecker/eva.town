@@ -99,7 +99,7 @@
   }
 
   &:hover, &:focus {
-    box-shadow: 0 2rem 1rem -1rem rgba($neutral-10, 0.08);
+    box-shadow: 0 1.5rem 1.5rem -1rem rgba($neutral-10, 0.08);
     transform: translate3d(0, -0.5rem, 0);
     .project-arrow {
       transform: translate3d(0.2rem, 0, 0);
