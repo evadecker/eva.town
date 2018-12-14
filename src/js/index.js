@@ -3,8 +3,10 @@
 import Swup from 'swup'
 import Flickity from 'flickity'
 import Rellax from 'rellax'
+import WOW from 'wowjs'
 import swapTwo from './swaptwo.js'
 import synth from './synth.js'
+import imagesLoaded from 'imagesloaded'
 import 'lazysizes'
 import './wizard.js'
 
@@ -12,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
   const swup = new Swup({
     elements: ['#swup', '#header'],
     scroll: true,
-    animateScroll: false,
-    debugMode: true
+    animateScroll: false
+    // debugMode: true
   })
 
   function init () {
@@ -47,26 +49,23 @@ document.addEventListener('DOMContentLoaded', function (event) {
       })
     }
 
-    // if (document.querySelector('.annotation') !== null) {
-    //   // Reveal annotations on scroll
-    //   var wow = new WOW.WOW({
-    //     boxClass: 'annotation',
-    //     offset: 60
-    //   })
-    //   wow.init()
+    if (document.querySelector('.annotations') !== null) {
+      imagesLoaded('.annotations', function () {
+        var wow = new WOW.WOW({
+          boxClass: 'annotation',
+          offset: 60
+        })
+        wow.init()
 
-    //   swup.on('willReplaceContent', function () {
-    //     wow.destroy()
-    //   })
-    // }
+        var rellax = new Rellax('.annotation-rellax', {
+          speed: -0.5,
+          center: true
+        })
 
-    if (document.querySelector('.annotation') !== null) {
-      var rellax = new Rellax('.annotation', {
-        center: true
-      })
-
-      swup.on('willReplaceContent', function () {
-        rellax.destroy()
+        swup.on('willReplaceContent', function () {
+          wow.destroy()
+          rellax.destroy()
+        })
       })
     }
 

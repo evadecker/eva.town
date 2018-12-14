@@ -24,13 +24,6 @@
   width: 90%;
   height: 100%;
   padding-bottom: 1rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-
-  &.is-selected {
-    opacity: 1;
-    transform: scaleX(1);
-  }
 
   .quote-text {
     margin-bottom: $spacing-unit;
@@ -64,4 +57,28 @@
       content: '”';
     }
   }
+}
+
+// HACK: Fade instead of slide
+// Pending official Flickity support for fades:
+// https://github.com/metafizzy/flickity/issues/26
+
+.flickity-slider {
+  transform: none !important;
+}
+
+.quote {
+  left: 0 !important;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+  &.is-selected {
+    opacity: 1;
+    transition: opacity 1s ease;
+    z-index: 2;
+  }
+}
+
+.flickity-prev-next-button {
+  z-index: 3;
 }
