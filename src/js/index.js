@@ -4,7 +4,7 @@ import Swup from 'swup'
 import Flickity from 'flickity'
 import Rellax from 'rellax'
 import swapTwo from './swaptwo.js'
-import { synthStart, synthStop } from './synth.js'
+import synth from './synth.js'
 import 'lazysizes'
 import './wizard.js'
 
@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
   function init () {
     if (document.querySelector('#synth') !== null) {
       document.querySelector('#synth-start').addEventListener('click', () => {
-        synthStart()
+        synth.start()
       })
       swup.on('willReplaceContent', function () {
-        synthStop()
+        synth.stop()
       })
     }
 
