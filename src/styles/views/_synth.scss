@@ -5,10 +5,23 @@ $lcd-hover: #4D5B4D;
 
 #synth {
   max-width: 540px;
-}
-
-#synth.loading {
-  pointer-events: none;
+  
+  &[data-loading="true"] {
+    pointer-events: none;
+  }
+  
+  &[data-enabled="true"] {
+    #synth-start {
+      display: none;
+    }
+  }
+  
+  &[data-enabled="false"] {
+    .synth-instruments,
+    .synth-staff {
+      display: none;
+    }
+  }
 }
 
 .lcd-bg {
@@ -31,6 +44,10 @@ $lcd-hover: #4D5B4D;
   fill: $neutral-3;
 }
 
+.instrument, .notehead {
+  display: none;
+}
+
 .synth-endcap,
 .lcd-outline,
 .synth-keys-outline {
@@ -40,13 +57,6 @@ $lcd-hover: #4D5B4D;
 .synth-shadow, .synth-keys-shadow {
   fill: black;
   opacity: 0.1;
-}
-
-.synth-instruments,
-.instrument,
-.synth-staff,
-.notehead {
-  display: none;
 }
 
 #synth-start {

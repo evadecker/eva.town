@@ -38,11 +38,6 @@ const webpack = {
     filename: '[name].js',
     chunkFilename: '[name].[id].chunk.js'
   },
-  resolve: {
-    alias: {
-      jquery: 'jquery/src/jquery'
-    }
-  },
   module: {
     rules: [
       {
@@ -51,14 +46,7 @@ const webpack = {
         exclude: /(node_modules)/
       }
     ]
-  },
-  plugins: [
-    new EnvironmentPlugin(['NODE_ENV']),
-    new ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    })
-  ]
+  }
 }
 
 module.exports = { CSSLoaders, webpack, user }
