@@ -8,14 +8,14 @@ import swapTwo from './swaptwo.js'
 import synth from './synth.js'
 import imagesLoaded from 'imagesloaded'
 import 'lazysizes'
-import './wizard.js'
+// import './wizard.js'
 
 document.addEventListener('DOMContentLoaded', function (event) {
   const swup = new Swup({
     elements: ['#swup', '#header'],
     scroll: true,
-    animateScroll: false
-    // debugMode: true
+    animateScroll: false,
+    debugMode: true
   })
 
   function init () {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       document.querySelector('#synth-start').addEventListener('click', () => {
         synth.start()
       })
-      swup.on('willReplaceContent', function () {
+      document.addEventListener('swup:willReplaceContent', function () {
         synth.stop()
       })
     }
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         arrowShape: 'M100 58.9998426 36.0499178 58.9998426 65.088158 85.4765278 53.6014289 100 0 50.1043963 53.6348574 0 65.0600993 14.7597671 36.09408 41.0436272 100 41.0436272z'
       })
 
-      swup.on('willReplaceContent', function () {
+      document.addEventListener('swup:willReplaceContent', function () {
         flickity.destroy()
       })
     }
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
           center: true
         })
 
-        swup.on('willReplaceContent', function () {
+        document.addEventListener('swup:willReplaceContent', function () {
           wow.destroy()
           rellax.destroy()
         })
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }, randomRange)
       })
 
-      swup.on('willReplaceContent', function () {
+      document.addEventListener('swup:willReplaceContent', function () {
         clearTimeout(garbler)
       })
     }
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   init()
 
   // Handle loading and killing scripts on page transitions
-  swup.on('contentReplaced', function () {
+  document.addEventListener('swup:contentReplaced', function () {
     init()
   })
 })

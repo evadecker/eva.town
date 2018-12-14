@@ -1,13 +1,15 @@
 .marquee {
   user-select: none;
   white-space: nowrap;
-  padding-top: 5rem;
+  padding-top: 2rem;
   padding-bottom: 5rem;
   overflow: hidden;
 }
 
 .marquee-half {
   display: inline-block;
+  margin: 0;
+  line-height: 0;
   white-space: nowrap;
   animation: 30s marquee -4s linear infinite;
 }
@@ -15,7 +17,7 @@
 .empty-state {
   //animation: 6s bounce infinite alternate-reverse ease-in-out;
   max-width: 220px;
-  margin: 0 5vw;
+  margin-right: 1vw;
   display: inline-block;
   animation: 8s bounce infinite alternate-reverse ease-in-out;
   img {
@@ -30,22 +32,15 @@
     width: 190px;
     animation-delay: -4s;
     animation-duration: 6s;
-    margin-right: -1vw;
-    margin-top: -3rem;
+    margin-right: 4vw;
+    margin-top: 3rem;
   }  
   &.background {
     width: 160px;
     animation-delay: -1s;
     animation-duration: 7s;
     margin-bottom: -2rem;
-    margin-left: 1vw;
-    margin-right: -4vw;
-  }
-  &:nth-child(3n) {
-    animation-delay: -4.5s;
-  }
-  &:nth-child(4n) {
-    animation-delay: -2.5s;
+    margin-right: 2vw;
   }
 }
 
