@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     if (document.querySelector('.annotations') !== null) {
-      imagesLoaded('.annotations', function () {
+      imagesLoaded('body', function () {
         var wow = new WOW.WOW({
           boxClass: 'annotation',
           offset: 60
@@ -66,16 +66,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
           wow.destroy()
           rellax.destroy()
         })
-      })
-    }
-
-    if (document.querySelector('.empty-state') !== null) {
-      var empties = new Rellax('.empty-state', {
-        center: true
-      })
-
-      swup.on('willReplaceContent', function () {
-        empties.destroy()
       })
     }
 
