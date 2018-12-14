@@ -39,7 +39,7 @@ import 'devtools-detect'
       ['OLD MAN: You must’ve come a long way.', 2500],
       ['Corkscrewing his pinky finger in his ear, he dislodges a large wad of earwax.', 2500, 'italic'],
       ['OLD MAN: I suppose I should introduce myself.', 4000],
-      ['He dusts some cat hair off his robe.', 2000, 'italic'],
+      ['He brushes cat hair off his robe.', 2000, 'italic'],
       ['OLD MAN: I’m the man behind the console.', 3000],
       ['OLD MAN: You can call me THE WIZARD.', 2000],
       ['He does halfhearted jazz hands.', 3000, 'italic'],
