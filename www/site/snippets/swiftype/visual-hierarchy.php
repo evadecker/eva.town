@@ -1,4 +1,4 @@
-<figure>
+<figure class="figure-wide">
   <picture>
     <source data-srcset="<?= $page->file('visual-hierarchy.webp')->url() ?>" type="image/webp">
     <source data-srcset="<?= $page->image('visual-hierarchy.png')->url() ?>" type="image/png"> 

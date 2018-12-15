@@ -27,18 +27,17 @@
       content: '';
       width: calc(100% - 1rem);
       height: 2px;
-      background: $color-red;
+      background: $color-text;
       position: absolute;
       bottom: 0.5rem;
       left: 50%;
       opacity: 0;
       transform: translate3d(-50%, 0, 0) scaleX(0);
-      transition: opacity 0.2s, transform 0.2s;
+      transition: 0.2s ease;
     }
 
-    &:hover, &:focus, &.active {
+    &:hover, &.active {
       color: $color-text;
-      box-shadow: none;
     }
 
     &.active {

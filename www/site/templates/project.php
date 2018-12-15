@@ -1,30 +1,28 @@
 <?php snippet('head') ?>
 <?php snippet('header') ?>
 
-<main id="swup" class="page-content transition-fade" aria-label="Content">
+<main id="swup" class="page-content" aria-label="Content">
 
-  <article class="post wrapper h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="project-overview">
+    <?php
+      $page->hasPrevVisible() ? $prev = $page->prevVisible() : $prev = $page->siblings()->visible()->last();
 
-    <aside class="project-overview">
+      $page->hasNextVisible() ? $next = $page->nextVisible() : $next = $page->siblings()->visible()->first();
+    ?>
+    <div class="project-pagination">
+      <a class="project-arrow prev" href="<?= $prev->url() ?>" data-swup-transition="prev-project"><?php snippet('arrow-l') ?><span class="tooltip"><?= $prev->title() ?></span></a>
+      <a class="project-arrow next" href="<?= $next->url() ?>" data-swup-transition="next-project"><?php snippet('arrow-r') ?><span class="tooltip"><?= $next->title() ?></span></a>
+    </div>
+    <div class="project-info transition-swipe">
+      <time class="project-year"><?= $page->year() ?></time>
       <h1 class="project-title" itemprop="name headline"><?= $page->title() ?></h1>
-      <div class="project-basics">
-        <div class="project-info">
-          <time class="project-year"><?= $page->year() ?></time>
-          <a class="project-website" href="https://<?= $page->website() ?>"><?= $page->website() ?></a>
-        </div>
-        <div class="project-pagination">
-          <?php if($prev = $page->prevVisible()): ?>
-            <a class="project-arrow prev" href="<?= $prev->url() ?>"><?php snippet('arrow-l') ?></a>
-          <?php else: ?>
-            <a class="project-arrow prev" href="<?= $page->siblings()->visible()->last()->url() ?>"><?php snippet('arrow-l') ?></a>
-          <?php endif ?>
-          <?php if($next = $page->nextVisible()): ?>
-            <a class="project-arrow next" href="<?= $next->url() ?>"><?php snippet('arrow-r') ?></a>
-          <?php else: ?>
-            <a class="project-arrow next" href="<?= $page->siblings()->visible()->first()->url() ?>"><?php snippet('arrow-r') ?></a>
-          <?php endif ?>
-        </div>
-      </div>
+      <a class="project-website" href="https://<?= $page->website() ?>" target="_blank"><?= $page->website() ?></a>
+    </div>
+  </div>
+
+  <article class="post wrapper h-entry transition-swipe" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-content e-content" itemprop="articleBody">
+    <aside class="post-callout">
       <div class="project-challenge">
         <strong class="project-overview-label">The challenge</strong>
         <?= $page->challenge() ?>
@@ -34,8 +32,6 @@
         <?= $page->role() ?>
       </div>
     </aside>
-
-    <div class="post-content e-content" itemprop="articleBody">
     <?php if($page->isPasswordProtected() == '1'): ?>
       <?php if($site->user()): ?>
         <?= $page->text()->kirbytext() ?>

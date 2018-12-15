@@ -7,13 +7,13 @@ table {
   border-collapse: collapse;
 
   thead, th {
-    @extend %font-sans-extended;
-    letter-spacing: 0.05em;
     text-align: left;
   }
 
   thead {
+    @extend %font-sans-extended;
     font-weight: 600;
+    letter-spacing: 0.05em;
   }
 
   th {
