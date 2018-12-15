@@ -17,8 +17,13 @@ img {
 
 *:focus {
   outline: none !important;
-  box-shadow: 0 0 0 4px rgba($color-blue, 0.5);
   border-radius: 3px;
+}
+
+html:not(.is-animating) {
+  *:focus {
+    box-shadow: 0 0 0 4px rgba($color-blue, 0.5);
+  }
 }
 
 button::-moz-focus-inner {
