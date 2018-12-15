@@ -75,11 +75,14 @@
     .project-website {
       padding: 0.2rem 1rem 0.3rem;
       border-radius: 2rem;
-      transition: 0.2s ease;
       &:hover, &:focus {
         background: $color-blue-light;
         color: $color-blue;
       }
+    }
+
+    .project-year, .project-website {
+      display: inline-block;
     }
     
     .project-title {
@@ -334,19 +337,82 @@ ul.emoji-list li {
   }
 }
 
+@keyframes glitch {
+  0%, 11%, 75%, 100% {
+    transform: translate3d(0,0,0);
+  }
+  10% {
+    transform: translate3d(-1rem, 0, 0);
+  }
+  70% {
+    transform: translate3d(-0.5rem, 0, 0);
+  }
+}
+
+@keyframes glitch2 {
+  0%, 61% {
+    transform: translate3d(0,0,0);
+  }
+  60% {
+    transform: translate3d(2rem, 0, 0);
+  }
+}
+
+@keyframes glitch3 {
+  0%, 50% {
+    transform: translate3d(0,0,0);
+  }
+  40% {
+    transform: translate3d(1rem, -0.4rem, 0);
+  }
+}
+
+@keyframes glitch4 {
+  0%, 64% {
+    transform: translate3d(0,0,0);
+  }
+  60% {
+    transform: translate3d(-1rem, -4rem, 0);
+  }
+}
+
 .encrypted-post {
   margin-bottom: -6rem;
   .garbled {
     color: $neutral-2;
-    line-height: 1.5;
     letter-spacing: -0.01em;
     user-select: none;
     word-break: break-all;
     position: relative;
     overflow: hidden;
-    + .garbled {
-      margin-top: 1rem;
+    &:nth-child(1), &:nth-child(4) {
+      animation: 13s glitch step-end infinite alternate-reverse;
     }
+    &:nth-child(4) {
+      animation-duration: 15s;
+      animation-delay: -4s;
+    }
+    &:nth-child(2), &:nth-child(5) {
+      animation: 12s glitch2 step-end infinite alternate-reverse;
+    }
+    &:nth-child(5) {
+      animation-duration: 11s;
+      animation-delay: -3s;
+    }
+    &:nth-child(3), &:nth-child(6) {
+      animation: 14s glitch3 step-end infinite alternate-reverse;
+    }
+    &:nth-child(6) {
+      animation-duration: 11s;
+      animation-delay: -4s;
+    }    
+    &:nth-child(7), &:nth-child(8) {
+      animation: 20s glitch4 step-end infinite alternate-reverse;
+    }
+    &:nth-child(8) {
+      animation-duration: 23s;
+      animation-delay: -6s;
+    }   
     &:last-child {
       position: relative;
       &:after {
@@ -364,9 +430,18 @@ ul.emoji-list li {
 }
 
 .password-required {
+  background: $neutral-10;
+  color: $neutral-2;
+  a {
+    color: $neutral-2;
+    &:hover {
+      color: $neutral-0;
+    }
+  }
   h2 {
     @extend %font-sans-extended;
     font-size: 1rem;
+    color: $neutral-0;
   }
   .error-message {
     @extend %font-sans-extended;
