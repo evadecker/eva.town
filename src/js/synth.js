@@ -303,14 +303,18 @@ var synth = (function () {
   var numInstruments = sounds.instruments.length - 1
 
   function _enableSynth () {
-    synth.dataset.enabled = 'true'
-    _loadSounds()
-    setRandomInstrument(revealKeyboardLetters)
+    if (synth.dataset.enabled !== 'true') {
+      synth.dataset.enabled = 'true'
+      _loadSounds()
+      setRandomInstrument(revealKeyboardLetters)
+    }
   }
 
   function _disableSynth () {
-    synth.dataset.enabled = 'false'
-    _unloadSounds()
+    if (synth.dataset.enabled !== 'false') {
+      synth.dataset.enabled = 'false'
+      _unloadSounds()
+    }
   }
 
   // Instrument Chooser -----------------------------------------//
@@ -753,8 +757,13 @@ var synth = (function () {
     document.removeEventListener('keyup', handleKeyUp)
   }
 
-  function start () {
+  function init () {
+    // Init always has to run in order
+    // to cache DOM elements
     _cacheDOM()
+  }
+
+  function start () {
     _enableSynth()
     _bindEvents()
   }
@@ -765,6 +774,7 @@ var synth = (function () {
   }
 
   return {
+    init: init,
     start: start,
     stop: stop
   }

@@ -18,10 +18,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   function init () {
     if (document.querySelector('#synth') !== null) {
+      synth.init()
       document.querySelector('#synth-start').addEventListener('click', () => {
         synth.start()
       })
-      swup.on('willReplaceContent', function () {
+      swup.on('animationOutStart', function () {
         synth.stop()
       })
     }
