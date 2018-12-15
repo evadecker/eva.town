@@ -73,7 +73,7 @@ input {
   color: $color-text;
 }
 
-h2, h3, h4 {
+h2, h3  {
 	@extend %font-serif-condensed;
   margin: 0;
 }
@@ -99,11 +99,13 @@ h3 {
 }
 
 h4 {
+  @extend %font-sans-extended;
 	font-style: normal;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	font-size: 0.85em;
+  font-size: 0.65em;
+  margin: 0;
 }
 
 a {
@@ -143,10 +145,10 @@ blockquote {
 
 figcaption {
   @extend %font-sans-extended;
+  color: $color-text-light;
   font-size: 0.65rem;
   line-height: 1.5;
-  letter-spacing: 0.05em;
-  color: $color-text;
+  letter-spacing: 0.02em;
   hyphens: auto;
   margin-top: 1em;
 }
