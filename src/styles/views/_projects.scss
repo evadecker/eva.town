@@ -22,15 +22,20 @@
     border-radius: 50%;
     transition: 0.2s ease;
 
-    &:hover {
-      background: $color-blue-light;
-      color: $color-blue;
+    &:hover, &:focus {
+      background: $neutral-10;
+      color: $neutral-0;
+      box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2);
       &.prev, &.next {
         .tooltip {
           opacity: 1;
           transform: none;
         }
       }
+    }
+
+    &:focus {
+      box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2), 0 0 0 4px rgba($color-blue, 0.5);
     }
 
     &.prev {
@@ -55,8 +60,9 @@
       @extend %font-sans-extended;
       font-weight: 600;
       font-size: 0.65rem;
-      background: $color-blue-light;
-      color: $color-blue;
+      background: $neutral-10;
+      color: $neutral-0;
+      box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2);
       height: 1.5rem;
       line-height: 1.5rem;
       padding: 0 0.75rem;
@@ -378,6 +384,17 @@ ul.emoji-list li {
 
 .encrypted-post {
   margin-bottom: -6rem;
+  position: relative;
+  &:after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: -2rem;
+    right: -2rem;
+    top: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    z-index: 1;
+  }
   .garbled {
     color: $neutral-2;
     letter-spacing: -0.01em;
@@ -412,19 +429,6 @@ ul.emoji-list li {
     &:nth-child(8) {
       animation-duration: 23s;
       animation-delay: -6s;
-    }   
-    &:last-child {
-      position: relative;
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-        z-index: 1;
-      }
     }
   }
 }
@@ -432,6 +436,8 @@ ul.emoji-list li {
 .password-required {
   background: $neutral-10;
   color: $neutral-2;
+  position: relative;
+  z-index: 4;
   a {
     color: $neutral-2;
     &:hover {
