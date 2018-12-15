@@ -68,12 +68,10 @@
     "devtools-detect": "^2.2.0",
     "flickity": "^2.1.2",
     "howler": "^2.0.15",
-    "imagesloaded": "^4.1.4",
     "is-touch-device": "^1.0.1",
     "lazysizes": "^4.1.4",
     "rellax": "^1.7.1",
-    "swup": "^1.7.14",
-    "wowjs": "^1.1.3"
+    "swup": "^1.7.14"
   },
   "private": false
 }

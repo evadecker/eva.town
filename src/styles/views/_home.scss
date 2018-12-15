@@ -106,6 +106,10 @@
     }
   }
 
+  &:focus {
+    box-shadow: 0 1.5rem 1.5rem -1rem rgba($neutral-10, 0.08), 0 0 0 4px rgba($color-blue, 0.5);
+  }
+
   h3 {
     @extend %font-sans;
     font-weight: 600;
@@ -171,9 +175,11 @@
     }
   }
 
-  &.home-project-about:hover {
-    .svg-logo {
-      animation: rotate 4s infinite linear;
+  &.home-project-about {
+    &:hover, &:focus {
+      .svg-logo {
+        animation: rotate 4s infinite linear;
+      }
     }
   }
 }

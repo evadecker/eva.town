@@ -3,9 +3,9 @@
   <div class="password-required">
     <h2>This case study is restricted</h2>
     <p>I can’t share this project because of some legal mumbo-jumbo. If you’re a recruiter or potential employer, grab the passphrase by emailing <a href="mailto:kyle@kyledecker.me">kyle@kyledecker.me</a>. Otherwise, please check out my openly available case studies for <a href="/work/swiftype">Swiftype</a> and <a href="/work/wintr-mx">Wintr.mx</a>.</p>
-    <form method="post">
+    <form method="post" <?php if($error) echo 'class="try-again"' ?>>
       <input type="hidden" id="username" name="username" value="guest">
-      <div class="password-submit <?php if($error) echo 'try-again' ?>">
+      <div class="password-submit">
         <label for="password">Enter the secret passphrase</label>
         <input class="password-submit" type="text" id="password" name="password" maxlength="48" placeholder="Knock, knock…">
       </div>
