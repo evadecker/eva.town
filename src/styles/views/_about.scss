@@ -19,12 +19,21 @@ ul.social-links {
     padding: 0;
     a {
       color: $color-text-light;
-      padding: 10px;
+      height: 48px;
+      width: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
       text-decoration: none;
-      &:hover {
-        color: $color-text;
+      transition: 0.2s ease;
+      &:hover, &:focus {
+        background: $color-blue-light;
+        color: $color-blue;
       }
+    }
+    + .social-link {
+      margin-left: 0.25rem;
     }
   }
 
@@ -66,7 +75,7 @@ ul.social-links {
     }
   }
 
-  @include media-max(580px) {
+  @include media-max(630px) {
     flex-direction: column;
     form {
       margin-right: 0;
@@ -80,16 +89,21 @@ ul.social-links {
   font-size: 0.85rem;
   font-weight: 600;
   display: block;
-  background: $neutral-0;
-  border: 1px solid $neutral-3;
-  border-radius: 4px;
+  background: $neutral-1;
+  border: none;
+  //box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2);
+  border-radius: 2rem;
   color: $color-text;
   width: 100%;
   margin: 0;
-  padding: 0.75rem 2rem;
+  height: 48px;
+  line-height: 50px;
+  padding: 0 2rem;
+  white-space: nowrap;
+  transition: 0.2s ease;
   cursor: pointer;
-  &:hover {
-    border-color: $neutral-4;
+  &:hover, &:focus {
+    background: $color-blue-light;
     color: $color-blue;
   }
 }

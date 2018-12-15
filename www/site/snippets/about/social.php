@@ -5,7 +5,7 @@
   <ul class="social-links">
     <?php if($site->codepen()): ?>
       <li class="social-link">
-        <a href="https://codepen.io/<?= $site->codepen() ?>">
+        <a href="https://codepen.io/<?= $site->codepen() ?>" target="_blank">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#CodePen"></use></svg>
           <span class="visually-hidden">CodePen</span>
         </a>
@@ -14,7 +14,7 @@
 
     <?php if($site->dribbble()): ?>
       <li class="social-link">
-        <a href="https://dribbble.com/<?= $site->dribbble() ?>">
+        <a href="https://dribbble.com/<?= $site->dribbble() ?>" target="_blank">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#Dribbble"></use></svg>
           <span class="visually-hidden">Dribbble</span>
         </a>
@@ -23,7 +23,7 @@
     
     <?php if($site->github()): ?>
       <li class="social-link">
-        <a href="https://github.com/<?= $site->github() ?>">
+        <a href="https://github.com/<?= $site->github() ?>" target="_blank">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#Github"></use></svg>
           <span class="visually-hidden">Github</span>
         </a>
@@ -32,7 +32,7 @@
 
     <?php if($site->goodreads()): ?>
       <li class="social-link">
-        <a href="https://www.goodreads.com/<?= $site->goodreads() ?>">
+        <a href="https://www.goodreads.com/<?= $site->goodreads() ?>" target="_blank">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#Goodreads"></use></svg>
           <span class="visually-hidden">Goodreads</span>
         </a>
@@ -41,7 +41,7 @@
     
     <?php if($site->linkedin()): ?>
       <li class="social-link">
-        <a href="https://www.linkedin.com/in/<?= $site->linkedin() ?>">
+        <a href="https://www.linkedin.com/in/<?= $site->linkedin() ?>" target="_blank">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#LinkedIn"></use></svg>
           <span class="visually-hidden">LinkedIn</span>
         </a>
@@ -50,7 +50,7 @@
     
     <?php if($site->twitter()): ?>
       <li class="social-link">
-        <a href="https://www.twitter.com/<?= $site->twitter() ?>">
+        <a href="https://www.twitter.com/<?= $site->twitter() ?>" target="_blank">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#Twitter"></use></svg>
           <span class="visually-hidden">Twitter</span>
         </a>

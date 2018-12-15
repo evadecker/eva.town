@@ -101,7 +101,7 @@
 
 .project-overview-label,
 .project-year, .project-website {
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   font-size: 0.9em;
   font-weight: 600;
   margin: 0;
@@ -225,7 +225,7 @@
   }
 
   a {
-    color: $color-text;
+    color: inherit;
     text-decoration: underline;
     &:hover {
       color: $color-blue-dark;
@@ -316,6 +316,7 @@
   @extend %font-sans-extended;
   background-color: $neutral-1;
   padding: 1.5rem;
+  line-height: 1.4;
   font-size: 0.8em;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -452,7 +453,7 @@ ul.emoji-list li {
   .error-message {
     @extend %font-sans-extended;
     font-size: 0.65rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
     margin-top: 1rem;
   }
 
@@ -461,7 +462,7 @@ ul.emoji-list li {
 
     label {
       @extend %font-sans-extended;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.02em;
       font-size: 0.65rem;
       font-weight: 600;
       text-transform: uppercase;
