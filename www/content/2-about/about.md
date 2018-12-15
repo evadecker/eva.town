@@ -10,6 +10,8 @@ Text:
 
 My name is Kyle—I design and build digital products that are intuitive, beautiful, accessible, and fun. I've done this professionally since 2012, and I've been designing for the web since 2007.
 
+This is my portfolio. It's a way for me to show off the things I've done and how I've done them, but beyond that, it's a way to teach. At relevant moments in each case study, I'll detour to summarize topics ranging from typesetting to front-end architecture to music theory. My work should be understood by anyone who visits the site, designer or not, and I want everyone to leave having learned something new.
+
 I believe in moving at a sustainable pace and fixing what’s broken.
 
 (snippet: about/beliefs)
