@@ -11,6 +11,8 @@
 
   .project-info {
     .project-website {
+      color: inherit;
+      margin-top: 0.2rem;
       padding: 0.2rem 1rem 0.3rem;
       border-radius: 2rem;
       &:hover, &:focus {
@@ -21,6 +23,7 @@
 
     .project-year, .project-website {
       display: inline-block;
+      font-weight: 600;
     }
     
     .project-title {
@@ -42,7 +45,7 @@
   top: 50%;
   transform: translate3d(0, -50%, 0);
   border-radius: 50%;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
 
   &.prev {
     left: 1rem;
@@ -78,7 +81,7 @@
     top: 0.25rem;
     z-index: 10;
     opacity: 0;
-    transition: 0.2s ease;
+    transition: 0.25s ease;
     pointer-events: none;
   }
 }
@@ -106,21 +109,11 @@ html:not(.is-animating) .project-arrow {
   }
 }
 
-.project-overview-label,
-.project-year, .project-website {
-  letter-spacing: 0.02em;
-  font-size: 0.9em;
-  font-weight: 600;
-  margin: 0;
-  color: $color-text;
-}
-
 .project-role {
   margin-top: 1rem;
 }
 
 .project-overview-label {
-  margin-bottom: 0.5rem;
   display: block;
 }
 
