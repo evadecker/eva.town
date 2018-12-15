@@ -10,53 +10,25 @@
     justify-content: space-between;
   }
 
-  .site-title {
-    margin-left: -0.5rem;
-    margin-right: auto;
-  }
-
   .page-link {
     position: relative;
     padding: 0.5rem;
-    line-height: 1.5rem;
+    line-height: 1rem;
     color: $color-text-light;
     pointer-events: auto;
     transition: 0.2s ease;
-
-    &:after {
-      content: '';
-      width: calc(100% - 1rem);
-      height: 2px;
-      background: $color-text;
-      position: absolute;
-      bottom: 0.5rem;
-      left: 50%;
-      opacity: 0;
-      transform: translate3d(-50%, 0, 0) scaleX(0);
-      transition: 0.2s ease;
-    }
 
     &:hover, &.active {
       color: $color-text;
     }
 
-    &.active {
-      &:after {
-        transform: translate3d(-50%, 0, 0) scaleX(1);
-        opacity: 1;
-      }
-    }
-
     &:last-child {
       margin-right: -0.5rem;
     }
-  }
-}
 
-html.is-animating #header .page-link.active {
-  color: $color-text-light;
-  &:after {
-    opacity: 0;
-    transform: translate3d(-50%, 0, 0) scaleX(0);
+    &.site-title {
+      margin-left: -0.5rem;
+      margin-right: auto;
+    }
   }
 }

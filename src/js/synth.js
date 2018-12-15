@@ -302,8 +302,19 @@ var synth = (function () {
   var noteFadeOut
   var numInstruments = sounds.instruments.length - 1
 
+  function _enableSynth () {
+    synth.dataset.enabled = 'true'
+    _loadSounds()
+    setRandomInstrument(revealKeyboardLetters)
+  }
+
+  function _disableSynth () {
+    synth.dataset.enabled = 'false'
+    _unloadSounds()
+  }
+
   // Instrument Chooser -----------------------------------------//
-  function setRandomInstrument () {
+  function setRandomInstrument (callback) {
     synth.dataset.loading = 'true'
 
     const baseSpeed = randomIntFromInterval(30, 50) // Lower is faster
@@ -323,6 +334,9 @@ var synth = (function () {
         sounds.ui.ding.howl.play()
         synth.dataset.loading = 'false'
         clearTimeout(timeout)
+        if (callback) {
+          callback()
+        }
       } else {
         speed *= friction
         if (i <= force) {
@@ -393,8 +407,8 @@ var synth = (function () {
   // Keyboard ----------------------------------------------------//
   function revealKeyboardLetters () {
     // Only show keyboard on non-touch devices
-    if (!isTouchDevice()) {
-      Array.from(keyLetters).forEach(letter => function (i) {
+    if (!isTouchDevice) {
+      Array.from(keyLetters).forEach(function (letter, i) {
         setTimeout(function () {
           letter.classList.add('visible')
         }, i * 30)
@@ -503,7 +517,7 @@ var synth = (function () {
     }
   }
 
-  var handleTouchMove = function () {
+  var handleTouchMove = function (e) {
     var touch = e.originalEvent.touches[0]
     pressKeyMatchingCoords(touch.clientX, touch.clientY)
   }
@@ -741,17 +755,12 @@ var synth = (function () {
 
   function start () {
     _cacheDOM()
-    synth.dataset.enabled = 'true'
-    _loadSounds()
-    setRandomInstrument(() =>
-      revealKeyboardLetters()
-    )
+    _enableSynth()
     _bindEvents()
   }
 
   function stop () {
-    synth.dataset.enabled = 'false'
-    _unloadSounds()
+    _disableSynth()
     _unbindEvents()
   }
 

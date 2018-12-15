@@ -364,15 +364,14 @@ ul.emoji-list li {
 }
 
 .password-required {
-  background: $color-red-light;
-  border-top: 4px solid $color-red;
+  background: $neutral-1;
+  border-top: 4px solid $color-text;
   padding: 1.5rem;
   margin: 2rem 0;
 
   .error-message {
     @extend %font-sans-extended;
     font-size: 0.65rem;
-    color: $color-red;
     letter-spacing: 0.05em;
     margin-top: 1rem;
   }
@@ -402,21 +401,19 @@ ul.emoji-list li {
       padding: 0 1rem 0 calc(1.75rem + 18px);
       width: 100%;
     }
-
-    &.try-again {
-      animation: 1s tryAgain cubic-bezier(.36,.07,.19,.97) both;
-      label {
-        animation: 4.2s temporaryRedText ease;
-      }
-      input[type='text'] {
-        animation: 4s temporaryRedBorder ease;
-      }
-    }
   }
 
   form {
     margin-top: 1.5rem;
     width: 100%;
+    &.try-again {
+      label, .error-message {
+        animation: 4.2s temporaryRedText ease;
+      }
+      input[type='text'] {
+        animation: 1s tryAgain cubic-bezier(.36,.07,.19,.97) both, 4s temporaryRedBorder ease;
+      }
+    }
   }
 }
 

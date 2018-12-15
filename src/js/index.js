@@ -3,12 +3,10 @@
 import Swup from 'swup'
 import Flickity from 'flickity'
 import Rellax from 'rellax'
-import WOW from 'wowjs'
 import swapTwo from './swaptwo.js'
 import synth from './synth.js'
-import imagesLoaded from 'imagesloaded'
 import 'lazysizes'
-// import './wizard.js'
+import './wizard.js'
 
 document.addEventListener('DOMContentLoaded', function (event) {
   const swup = new Swup({
@@ -23,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       document.querySelector('#synth-start').addEventListener('click', () => {
         synth.start()
       })
-      document.addEventListener('swup:willReplaceContent', function () {
+      swup.on('willReplaceContent', function () {
         synth.stop()
       })
     }
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         arrowShape: 'M100 58.9998426 36.0499178 58.9998426 65.088158 85.4765278 53.6014289 100 0 50.1043963 53.6348574 0 65.0600993 14.7597671 36.09408 41.0436272 100 41.0436272z'
       })
 
-      document.addEventListener('swup:willReplaceContent', function () {
+      swup.on('willReplaceContent', function () {
         flickity.destroy()
       })
     }
@@ -50,22 +48,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     if (document.querySelector('.annotations') !== null) {
-      imagesLoaded('body', function () {
-        var wow = new WOW.WOW({
-          boxClass: 'annotation',
-          offset: 60
-        })
-        wow.init()
+      var rellax = new Rellax('.annotation-rellax', {
+        speed: -0.5,
+        center: true
+      })
 
-        var rellax = new Rellax('.annotation-rellax', {
-          speed: -0.5,
-          center: true
-        })
-
-        document.addEventListener('swup:willReplaceContent', function () {
-          wow.destroy()
-          rellax.destroy()
-        })
+      swup.on('willReplaceContent', function () {
+        rellax.destroy()
       })
     }
 
@@ -82,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }, randomRange)
       })
 
-      document.addEventListener('swup:willReplaceContent', function () {
+      swup.on('willReplaceContent', function () {
         clearTimeout(garbler)
       })
     }
