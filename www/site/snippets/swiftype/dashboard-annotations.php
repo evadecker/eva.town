@@ -1,4 +1,4 @@
-<div class="full-width">
+<div class="full-width transparent">
   <figure class="figure-wide wrapper">
     <div class="image-annotated">
       <picture>

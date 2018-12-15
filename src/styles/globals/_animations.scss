@@ -1,10 +1,43 @@
 .transition-fade {
-  transition: .2s;
+  transition: .2s ease;
   opacity: 1;
 }
 
 html.is-animating .transition-fade {
   opacity: 0;
+}
+
+.transition-swipe {
+  transition: .3s ease;
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+html.is-animating .transition-swipe {
+  opacity: 0;
+}
+
+// Animate prev in from left
+html.is-animating.to-prev-project .transition-swipe {
+  transform: translate3d(-4rem, 0, 0);
+  .project-overview .project-arrow.prev {
+    background: red;
+  }
+}
+
+// Move current page right
+html.is-leaving.to-prev-project .transition-swipe {
+  transform: translate3d(4rem, 0, 0);
+}
+
+// Animate next in from right
+html.is-animating.to-next-project .transition-swipe {
+  transform: translate3d(4rem, 0, 0);
+}
+
+// Move current page left
+html.is-leaving.to-next-project .transition-swipe {
+  transform: translate3d(-4rem, 0, 0);
 }
 
 .blur-up {

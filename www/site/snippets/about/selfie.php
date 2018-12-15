@@ -9,6 +9,6 @@
         alt="Portrait of the guy who made this site."
       />
     </picture>
-    <figcaption>Sketch by Winston Vicinte.</figcaption>
+    <figcaption>Sketch by <a href="https://www.youtube.com/watch?v=d6gBu2Zd7Bc" target="_blank">Winston Vicinte</a>.</figcaption>
   </figure>
 </aside>

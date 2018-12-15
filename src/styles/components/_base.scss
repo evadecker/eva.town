@@ -47,7 +47,8 @@ picture {
   right: 50%;
   margin: 2rem -50vw;
   background-color: $neutral-1;
-  display: inline-block; // Prevent margin collapsing
+  display: block;
+  padding: 1px 0; // Prevent margin collapse
   &.transparent {
     background-color: transparent;
   }
