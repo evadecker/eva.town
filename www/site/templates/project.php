@@ -13,10 +13,10 @@
       <a class="project-arrow prev" href="<?= $prev->url() ?>" data-swup-transition="prev-project"><?php snippet('arrow-l') ?><span class="tooltip"><?= $prev->title() ?></span></a>
       <a class="project-arrow next" href="<?= $next->url() ?>" data-swup-transition="next-project"><?php snippet('arrow-r') ?><span class="tooltip"><?= $next->title() ?></span></a>
     </div>
-    <div class="project-info transition-swipe">
-      <time class="project-year"><?= $page->year() ?></time>
-      <h1 class="project-title" itemprop="name headline"><?= $page->title() ?></h1>
-      <a class="project-website" href="https://<?= $page->website() ?>" target="_blank"><?= $page->website() ?></a>
+    <div class="project-info">
+      <time class="project-year transition-swipe"><?= $page->year() ?></time>
+      <h1 class="project-title transition-swipe" itemprop="name headline"><?= $page->title() ?></h1>
+      <a class="project-website transition-swipe" href="https://<?= $page->website() ?>" target="_blank"><?= $page->website() ?></a>
     </div>
   </div>
 

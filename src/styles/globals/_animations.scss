@@ -8,10 +8,14 @@ html.is-animating .transition-fade {
 }
 
 .transition-swipe {
-  transition: .3s ease;
+  transition: .3s;
   transform: translate3d(0, 0, 0);
   opacity: 1;
 }
+
+.transition-swipe.project-title { transition-delay: .1s; }
+.transition-swipe.project-website { transition-delay: .15s; }
+.transition-swipe.post { transition-delay: .2s; }
 
 html.is-animating .transition-swipe {
   opacity: 0;
@@ -20,24 +24,25 @@ html.is-animating .transition-swipe {
 // Animate prev in from left
 html.is-animating.to-prev-project .transition-swipe {
   transform: translate3d(-4rem, 0, 0);
-  .project-overview .project-arrow.prev {
-    background: red;
-  }
+  transition-timing-function: ease-out;
 }
 
 // Move current page right
 html.is-leaving.to-prev-project .transition-swipe {
   transform: translate3d(4rem, 0, 0);
+  transition-timing-function: ease-in;
 }
 
 // Animate next in from right
 html.is-animating.to-next-project .transition-swipe {
   transform: translate3d(4rem, 0, 0);
+  transition-timing-function: ease-out;
 }
 
 // Move current page left
 html.is-leaving.to-next-project .transition-swipe {
   transform: translate3d(-4rem, 0, 0);
+  transition-timing-function: ease-in;
 }
 
 .blur-up {

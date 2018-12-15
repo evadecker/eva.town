@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
   const swup = new Swup({
     elements: ['#swup', '#header'],
     scroll: true,
-    animateScroll: false,
-    debugMode: true
+    animateScroll: false
+    // debugMode: true
   })
 
   function init () {

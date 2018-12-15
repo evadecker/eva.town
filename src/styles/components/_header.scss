@@ -6,7 +6,7 @@
 
   .wrapper {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -29,6 +29,12 @@
     &.site-title {
       margin-left: -0.5rem;
       margin-right: auto;
+      svg {
+        display: block;
+        path {
+          fill: currentColor;
+        }
+      } 
     }
   }
 }
