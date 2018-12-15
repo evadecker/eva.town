@@ -7,7 +7,7 @@
         </span>
         <h3>
           <?= $project->title()->html() ?>
-          <span class="project-arrow"><?php snippet('arrow-r') ?></span>
+          <span class="arrow"><?php snippet('arrow-r') ?></span>
           <?php if($project->isPasswordProtected() == '1' && !$site->user()): ?>
             <img src="<?= $site->url() ?>/assets/images/lock.svg" class="project-locked"/>
           <?php endif ?>
@@ -18,7 +18,7 @@
   <?php endforeach ?>
   <a class="home-project home-project-about" href="<?= $site->find('about')->url() ?>">
     <span class="project-logo"><?php snippet('about/logo') ?></span>
-    <h3>About <span class="project-arrow"><?php snippet('arrow-r') ?></span></h3>
+    <h3>About <span class="arrow"><?php snippet('arrow-r') ?></span></h3>
     <p>On the most viewed thing I’ve ever created, plus: social links, design principles, contact info.</p>
   </a>
 </div>
