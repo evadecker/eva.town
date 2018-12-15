@@ -364,11 +364,10 @@ ul.emoji-list li {
 }
 
 .password-required {
-  background: $neutral-1;
-  border-top: 4px solid $color-text;
-  padding: 1.5rem;
-  margin: 2rem 0;
-
+  h2 {
+    @extend %font-sans-extended;
+    font-size: 1rem;
+  }
   .error-message {
     @extend %font-sans-extended;
     font-size: 0.65rem;

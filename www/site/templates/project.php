@@ -20,25 +20,22 @@
     </div>
   </div>
 
+  
   <article class="post wrapper h-entry transition-swipe" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="post-content e-content" itemprop="articleBody">
-    <aside class="post-callout">
-      <div class="project-challenge">
-        <strong class="project-overview-label">The challenge</strong>
-        <?= $page->challenge() ?>
-      </div>
-      <div class="project-role">
-        <strong class="project-overview-label">My role</strong>
-        <?= $page->role() ?>
-      </div>
-    </aside>
-    <?php if($page->isPasswordProtected() == '1'): ?>
-      <?php if($site->user()): ?>
-        <?= $page->text()->kirbytext() ?>
-      <?php else: ?>
-        <?php snippet('login') ?>
-      <?php endif ?>
+    <?php if($page->isPasswordProtected() == '1' && !$site->user()): ?>
+      <?php snippet('login') ?>
     <?php else: ?>
+      <aside class="post-callout">
+        <div class="project-challenge">
+          <strong class="project-overview-label">The challenge</strong>
+          <?= $page->challenge() ?>
+        </div>
+        <div class="project-role">
+          <strong class="project-overview-label">My role</strong>
+          <?= $page->role() ?>
+        </div>
+      </aside>
       <?= $page->text()->kirbytext() ?>
     <?php endif ?>
     </div>
