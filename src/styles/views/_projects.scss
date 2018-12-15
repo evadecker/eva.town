@@ -9,74 +9,6 @@
   padding: 4rem 0;
   position: relative;
 
-  .project-arrow {
-    background: $neutral-0;
-    color: $color-text;
-    width: 2rem;
-    height: 2rem;
-    padding: 0.5rem;
-    fill: currentColor;
-    position: absolute;
-    top: 50%;
-    transform: translate3d(0, -50%, 0);
-    border-radius: 50%;
-    transition: 0.2s ease;
-
-    &:hover, &:focus {
-      background: $neutral-10;
-      color: $neutral-0;
-      box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2);
-      &.prev, &.next {
-        .tooltip {
-          opacity: 1;
-          transform: none;
-        }
-      }
-    }
-
-    &:focus {
-      box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2), 0 0 0 4px rgba($color-blue, 0.5);
-    }
-
-    &.prev {
-      left: 1rem;
-      .tooltip {
-        left: calc(100% + 0.5rem);
-        transform: rotate(20deg);
-        transform-origin: -1.5rem center;
-      }
-    }
-
-    &.next {
-      right: 1rem;
-      .tooltip {
-        right: calc(100% + 0.5rem);
-        transform: rotate(-20deg);
-        transform-origin: calc(100% + 1.5rem) center;
-      }
-    }
-
-    .tooltip {
-      @extend %font-sans-extended;
-      font-weight: 600;
-      font-size: 0.65rem;
-      background: $neutral-10;
-      color: $neutral-0;
-      box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2);
-      height: 1.5rem;
-      line-height: 1.5rem;
-      padding: 0 0.75rem;
-      border-radius: 2rem;
-      display: inline-block;
-      position: absolute;
-      top: 0.25rem;
-      z-index: 10;
-      opacity: 0;
-      transition: 0.2s ease;
-      pointer-events: none;
-    }
-  }
-
   .project-info {
     .project-website {
       padding: 0.2rem 1rem 0.3rem;
@@ -96,6 +28,81 @@
       margin-bottom: 0.4rem;
       text-align: center;
     }
+  }
+}
+
+.project-arrow {
+  background: $neutral-0;
+  color: $color-text;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  fill: currentColor;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  border-radius: 50%;
+  transition: 0.2s ease;
+
+  &.prev {
+    left: 1rem;
+    .tooltip {
+      left: calc(100% + 0.5rem);
+      transform: rotate(20deg);
+      transform-origin: -1.5rem center;
+    }
+  }
+
+  &.next {
+    right: 1rem;
+    .tooltip {
+      right: calc(100% + 0.5rem);
+      transform: rotate(-20deg);
+      transform-origin: calc(100% + 1.5rem) center;
+    }
+  }
+
+  .tooltip {
+    @extend %font-sans-extended;
+    font-weight: 600;
+    font-size: 0.65rem;
+    background: $neutral-10;
+    color: $neutral-0;
+    box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2);
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding: 0 0.75rem;
+    border-radius: 2rem;
+    display: inline-block;
+    position: absolute;
+    top: 0.25rem;
+    z-index: 10;
+    opacity: 0;
+    transition: 0.2s ease;
+    pointer-events: none;
+  }
+}
+
+html.is-animating .project-arrow {
+  pointer-events: none;
+  cursor: default;
+}
+
+html:not(.is-animating) .project-arrow {
+  &:hover, &:focus {
+    background: $neutral-10;
+    color: $neutral-0;
+    box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2);
+    &.prev, &.next {
+      .tooltip {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2), 0 0 0 4px rgba($color-blue, 0.5);
   }
 }
 
