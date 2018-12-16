@@ -100,10 +100,10 @@ ul.timeline-list {
 
 @keyframes pulse {
   from {
-    box-shadow: 0 0 0 3px $neutral-0, 0 0 0 0 rgba($color-red, 0.8);
+    box-shadow: 0 0 0 0 rgba($color-red, 0.8), 0 0 0 3px $neutral-0;
   }
   to {
-    box-shadow: 0 0 0 3px $neutral-0, 0 0 0 1rem rgba($color-red, 0);
+    box-shadow: 0 0 0 0.75rem rgba($color-red, 0), 0 0 0 3px $neutral-0;
   }
 }
 
