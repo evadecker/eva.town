@@ -9,7 +9,7 @@ $timeline-breakpoint: 600px;
   z-index: 1;
   &:before, &:after {
     content: '';
-    width: 2px;
+    width: 3px;
     height: 100px;
     display: block;
     position: relative;
@@ -18,8 +18,8 @@ $timeline-breakpoint: 600px;
       left: 150px;
     }
   }
-  &:before { background: linear-gradient(to bottom, transparentize($color-red, 1) 0%, $color-red 100%); }
-  &:after {  background: $color-red; }
+  &:before { background: linear-gradient(to bottom, transparentize($color-red-medium, 1) 0%, $color-red-medium 100%); }
+  &:after {  background: $color-red-medium; }
 }
 
 .timeline + .full-width {
@@ -31,7 +31,7 @@ $timeline-breakpoint: 600px;
 }
 
 .timeline-entry {
-  border-left: 2px solid $color-red;
+  border-left: 3px solid $color-red-medium;
   padding-bottom: 2rem;
   padding-left: 1.5rem;
   margin-left: 84px;
@@ -68,29 +68,23 @@ ul.timeline-list {
     margin-bottom: 0.25rem;
     &:before {
       content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 4px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
       background: $color-red;
+      box-shadow: 0 0 0 2px $neutral-0;
       display: block;
       position: absolute;
       top: 0.5rem;
-      left: calc(-4px - 1px - 1.5rem);
-      transition: all 0.3s cubic-bezier(.75,0,.25,1);
+      left: calc(-4px - 1.5rem);
     }
 
     &:first-child:before {
-      width: 16px;
-      height: 16px;
-      border-radius: 8px;
-      background: $neutral-0;
-      border: 2px solid $color-red;
-      box-shadow: 0 0 0 4px $neutral-0;
-      display: block;
-      position: absolute;
-      top: 0.25rem;
-      left: calc(-8px - 1px - 1.5rem);
-      transition: all 0.3s cubic-bezier(.75,0,.25,1);
+      box-shadow: 0 0 0 3px $neutral-0;
+      width: 11px;
+      height: 11px;
+      top: 0.3rem;
+      left: calc(-7px - 1.5rem);
     }
   }
 }
@@ -99,9 +93,17 @@ ul.timeline-list {
   ul.timeline-list {
     li:last-child { margin-bottom: 0; }
     li:first-child:before {
-      box-shadow: 0 0 0 4px $color-red, 0 0 0 12px transparentize($color-red, 0.8);
-      border-color: $neutral-0;
+      animation: 2s pulse infinite ease;
     }
+  }
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 0 3px $neutral-0, 0 0 0 0 rgba($color-red, 0.8);
+  }
+  to {
+    box-shadow: 0 0 0 3px $neutral-0, 0 0 0 1rem rgba($color-red, 0);
   }
 }
 
