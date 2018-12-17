@@ -87,6 +87,9 @@ ul.social-links {
 .seeking-job {
   background: $color-green-light;
   color: $color-green-dark;
+  &::selection, ::selection {
+    background-color: darken($color-green-light, 6);
+  }
 }
 
 .button-download {

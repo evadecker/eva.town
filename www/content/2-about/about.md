@@ -18,7 +18,7 @@ This is my portfolio. It's a way for me to show off the things I've made and how
 
 Most recently, I worked at [Dropbox](/work/dropbox), where I helped develop a better way to coordinate the way we message users, [among](https://dribbble.com/shots/4138623-Fit-Fill-Icon-Design-Process) [some](https://dribbble.com/shots/4309432-Design-Session-Cheat-Sheet) [other](https://dribbble.com/shots/3288748-Dropbox-Design-Book-Club) [things](https://dribbble.com/shots/3689574-Menu-Loader).
 
-<span class="seeking-job">**I’m currently seeking a new full-time role in <span class="uppercase">NYC</span>** that will allow me to contribute design and front-end engineering skills toward voting reform, urban planning, the arts, social and environmental justice, or other progressive causes.</span>
+<strong class="seeking-job">I’m currently seeking a new full-time role in <span class="uppercase">NYC</span></strong> that will allow me to contribute design and front-end engineering skills toward voting reform, urban planning, the arts, social and environmental justice, or other progressive causes.
 
 You can message me at <kyle@kyledecker.me>. I’m always happy chat, preferably over drinks if you're in NYC. :) Say hi!
 
