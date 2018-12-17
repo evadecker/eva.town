@@ -122,13 +122,13 @@ ul.timeline-list {
   }
 }
 
-$default-connection: rgba($neutral-10, 0.05);
+$default-connection: rgba($color-yellow-dark, 0.05);
 
-$halfstepup-color: $color-red;
-$halfstepdown-color: $color-purple;
+$halfstepup-color: $color-orange;
+$halfstepdown-color: $color-orange-dark;
 $wholestep-color: $color-yellow;
-$dominant-color: $color-blue;
-$subdominant-color: $color-green;
+$dominant-color: $color-red-dark;
+$subdominant-color: $color-red;
 
 .color-dominant { color: $dominant-color; }
 .color-subdominant { color: $subdominant-color; }
@@ -155,7 +155,7 @@ $subdominant-color: $color-green;
   }
 
   .cof-circle {
-    border: 4px solid $color-text;
+    border: 6px solid $color-yellow-dark;
   }
 
   .cof-letter, .cof-connection,
@@ -191,13 +191,13 @@ $subdominant-color: $color-green;
       }
 
       input[type=radio]:not(:checked) ~ .cof-letter-name:hover {
-        color: $color-blue;
+        color: $color-orange;
       }
 
       input[type=radio]:checked {
 
         ~ .cof-letter-name {
-          color: $color-text;
+          color: $color-yellow-dark;
         }
 
         ~ .cof-connections .cof-connection {

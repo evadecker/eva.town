@@ -7,7 +7,7 @@ import swapTwo from './swaptwo.js'
 import handlePasswordSubmit from './submit.js'
 import synth from './synth.js'
 import 'lazysizes'
-import './wizard.js'
+// import './wizard.js'
 
 document.addEventListener('DOMContentLoaded', function (event) {
   const swup = new Swup({
@@ -80,22 +80,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     if (document.getElementById('protected') !== null) {
       var form = document.getElementById('protected')
-
-      if (form.classList.contains('try-again')) {
-        form.classList.remove('try-again')
-      }
-
-      if (form.classList.contains('error')) {
-        form.classList.remove('error')
-      }
-
+      form.classList.remove('try-again', 'error')
       if (form.addEventListener) {
-        // Modern browsers
         form.addEventListener('submit', handlePasswordSubmit, false)
       } else if (form.attachEvent) {
-        // Old IE
         form.attachEvent('onsubmit', handlePasswordSubmit)
       }
+
+      swup.on('willReplaceContent', function () {
+        form.removeEventListener('submit', handlePasswordSubmit)
+      })
     }
   }
 

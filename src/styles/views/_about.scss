@@ -29,7 +29,7 @@ ul.social-links {
       transition: 0.2s ease;
       &:hover, &:focus {
         background: $color-blue-light;
-        color: $color-blue;
+        color: $color-blue-dark;
       }
     }
     + .social-link {
@@ -109,6 +109,6 @@ ul.social-links {
   cursor: pointer;
   &:hover, &:focus {
     background: $color-blue-light;
-    color: $color-blue;
+    color: $color-blue-dark;
   }
 }

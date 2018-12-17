@@ -130,6 +130,9 @@
 
   .project-locked {
     margin-left: auto;
+    svg path {
+      fill: $color-text-light;
+    }
   }
 
   p {

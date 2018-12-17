@@ -2,46 +2,50 @@ export default function handlePasswordSubmit (e) {
   e.preventDefault()
 
   var form = document.getElementById('protected')
-  var name = document.getElementById('username').value
-  var pass = document.getElementById('password').value
+  var url = form.action + '.json'
+  var usernameField = document.getElementById('username')
+  var passwordField = document.getElementById('password')
+  var usernameText = usernameField.value
+  var passwordText = passwordField.value
 
-  if (form.classList.contains('try-again')) {
-    form.classList.remove('try-again')
-  }
+  var xhr = new XMLHttpRequest()
+  xhr.open('POST', url, true)
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+  xhr.send({
+    username: usernameText,
+    password: passwordText
+  })
 
-  var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP')
-  xhr.open('POST', window.location.href, true)
-  xhr.setRequestHeader('Content-Type', 'application/json')
-  xhr.send(JSON.stringify({
-    username: name,
-    password: pass
-  }))
+  form.classList.remove('try-again')
 
-  if (xhr.status === 200) {
-    document.getElementById('password').disabled = true
-    if (form.classList.contains('error')) {
-      form.classList.remove('error')
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        // Check if password is a match: if no, insert
+        // error message text into .message div
+        // If yes, insert success message
+        // into .message div and redirect after 4000ms
+
+        // passwordField.disabled = true
+        // form.classList.remove('error', 'try-again')
+        // form.classList.add('success')
+        // setTimeout(function () {
+        //   // redirect
+        // }, 3000)
+        // console.log('OK ' + xhr.responseText)
+
+        //
+        // form.classList.add('error')
+        // void form.offsetWidth // This is needed to reset the CSS animations
+        // form.classList.add('try-again')
+        // setTimeout(function () {
+        //   // Clear input field when the shake animation starts shakin'
+        //   passwordField.value = ''
+        // }, 250)
+        // console.log('Request failed.  Returned status of ' + xhr.status)
+      } else {
+        console.log('Something went wrong. Please try again.')
+      }
     }
-    if (form.classList.contains('try-again')) {
-      form.classList.remove('try-again')
-    }
-    if (!form.classList.contains('success')) {
-      form.classList.add('success')
-    }
-    setTimeout(function () {
-      // redirect
-    }, 3000)
-    console.log('OK ' + xhr.responseText)
-  } else if (xhr.status !== 200) {
-    if (!form.classList.contains('error')) {
-      form.classList.add('error')
-    }
-    void form.offsetWidth // This is needed to reset the CSS animations
-    form.classList.add('try-again')
-    setTimeout(function () {
-      // Clear input field when the shake animation starts shakin'
-      document.getElementById('password').value = ''
-    }, 200)
-    console.log('Request failed.  Returned status of ' + xhr.status)
   }
 }

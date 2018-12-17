@@ -91,7 +91,6 @@
 
     input[type='text'] {
       background: $neutral-0;
-      background-image: url('/assets/images/lock.svg');
       background-repeat: no-repeat;
       background-position: 1rem center;
       border: none;
@@ -100,6 +99,20 @@
       border-radius: 1rem;
       padding: 0 1rem 0 calc(1.75rem + 18px);
       width: 100%;
+    }
+  }
+
+  .password-input-wrapper {
+    position: relative;
+    svg	{
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      path {
+        fill: $neutral-8;
+        transition: 0.2s ease;
+      }
     }
   }
 
@@ -126,15 +139,35 @@
         opacity: 1;
         max-height: 3rem;        
       }
+      .password-input-wrapper svg {
+        path {
+          fill: $color-green;
+        }
+        #handle {
+          transform: translateY(-2px);
+        }
+        #base {
+          transform: translateY(1px);
+        }
+      }
     }
 
     // Removed on a timer for re-animation
     &.try-again {
       label, .error-message {
-        animation: 4.2s temporaryRedText ease;
+        animation: 3.2s temporaryRedText ease;
+        animation-delay: 0.25s;
+      }
+      .password-input-wrapper {
+        animation: 0.8s tryAgain cubic-bezier(.36,.07,.19,.97) both;
+        svg path {
+          animation: 3.2s temporaryRedFill ease;
+          animation-delay: 0.25s;
+        }
       }
       input[type='text'] {
-        animation: 0.8s tryAgain cubic-bezier(.36,.07,.19,.97) both, 4s temporaryRedBorder ease;
+        animation: 3s temporaryRedBorder ease;
+        animation-delay: 0.25s;
       }
     }
   }
@@ -180,7 +213,11 @@
 }
 
 @keyframes tryAgain {
-  10%, 25% {
+  10% {
+    transform: translate3d(-0.7rem, 0, 0);
+  }
+  
+  30% {
     transform: translate3d(-0.8rem, 0, 0);
   }
   
@@ -210,13 +247,19 @@
 }
 
 @keyframes temporaryRedText {
-  from, 80% {
+  from, 60% {
     color: $color-red;
   }
 }
 
+@keyframes temporaryRedFill {
+  from, 60% {
+    fill: $color-red;
+  }
+}
+
 @keyframes temporaryRedBorder {
-  from, 80% {
+  from, 60% {
     box-shadow: 0 0 0 3px $color-red;
   }
   to {

@@ -37,7 +37,7 @@ $lcd-hover: #4D5B4D;
 }
 
 .synth-base {
-  fill: $neutral-9;
+  fill: $neutral-8;
 }
 
 .synth-between-keys {
@@ -50,8 +50,10 @@ $lcd-hover: #4D5B4D;
 
 .synth-endcap,
 .lcd-outline,
-.synth-keys-outline {
-  fill: $neutral-10;
+.synth-keys-outline,
+.synth-key .pressed-overlay,
+.synth-key .crack {
+  fill: $neutral-9;
 }
 
 .synth-shadow, .synth-keys-shadow {
@@ -98,10 +100,6 @@ $lcd-hover: #4D5B4D;
   cursor: pointer;
   transition: fill 0.4s ease-out;
   
-  .pressed-overlay, .crack {
-    fill: $neutral-10;
-  }
-  
   .pressed-overlay {
     transform: translateY(2px);
     transition: transform 0.1s ease-out;
@@ -120,7 +118,7 @@ $lcd-hover: #4D5B4D;
   
   &.black {
     .base {
-      fill: $neutral-10;
+      fill: $neutral-9;
     }
     .highlight {
       fill: rgba(255,255,255,0.2);

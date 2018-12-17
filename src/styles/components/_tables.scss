@@ -94,10 +94,10 @@ table {
 
   &[data-color="black"] {
     table {
-      background-color: $neutral-8;
+      background-color: $neutral-9;
       color: $neutral-4;
       * {
-        border-color: $neutral-9;
+        border-color: $neutral-8;
       }
     }
     .svg-icon {
@@ -110,7 +110,7 @@ table {
       background-color: #0083E3;
       color: rgba($neutral-0, 0.7);
       * {
-        border-color: darken(#0083E3, 6);
+        border-color: darken(#0083E3, 8);
       }
     }
     .svg-icon {
