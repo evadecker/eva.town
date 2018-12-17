@@ -314,12 +314,17 @@ html:not(.is-animating) .project-arrow {
   @extend %font-sans-extended;
   background-color: $color-yellow-light;
   color: $color-yellow-dark;
-  border-top: 3px solid $color-yellow;
+  border-top: 6px solid $color-yellow;
   padding: 1.5rem;
   line-height: 1.4;
   font-size: 0.8rem;
   margin-top: 2em;
   margin-bottom: 2em;
+
+  ::selection {
+    background-color: darken($color-yellow-light, 8);
+  }
+
   *:last-child {
     margin-bottom: 0;
   }

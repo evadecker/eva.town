@@ -7,6 +7,9 @@ $timeline-breakpoint: 600px;
   margin-bottom: -2rem;
   position: relative;
   z-index: 1;
+  ::selection {
+    background-color: lighten($color-red-medium, 4);
+  }
   &:before, &:after {
     content: '';
     width: 3px;
@@ -124,11 +127,11 @@ ul.timeline-list {
 
 $default-connection: rgba($color-yellow-dark, 0.05);
 
-$halfstepup-color: $color-orange;
-$halfstepdown-color: $color-orange-dark;
+$halfstepup-color: $color-red;
+$halfstepdown-color: $color-purple;
 $wholestep-color: $color-yellow;
-$dominant-color: $color-red-dark;
-$subdominant-color: $color-red;
+$dominant-color: $color-blue;
+$subdominant-color: $color-green;
 
 .color-dominant { color: $dominant-color; }
 .color-subdominant { color: $subdominant-color; }
@@ -155,12 +158,12 @@ $subdominant-color: $color-red;
   }
 
   .cof-circle {
-    border: 6px solid $color-yellow-dark;
+    box-shadow: inset 0 0 0 0.1rem rgba($color-yellow-dark, 0.2);
   }
 
   .cof-letter, .cof-connection,
   .cof-connection:before, .cof-connection:after {
-    transition: 0.6s ease;
+    transition: 3s ease;
   }
 
   .cof-scale-degree {
@@ -191,7 +194,7 @@ $subdominant-color: $color-red;
       }
 
       input[type=radio]:not(:checked) ~ .cof-letter-name:hover {
-        color: $color-orange;
+        color: $color-yellow-dark;
       }
 
       input[type=radio]:checked {
@@ -206,27 +209,27 @@ $subdominant-color: $color-red;
           // Transition delays
           &.wholestepdown {
             &:before, &:after {
-              transition-delay: 0.05s;
+              transition-delay: 0.2s;
             }
           }
 
           &.halfstepup {
-            transition-delay: 0.1s;
+            transition-delay: 0.4s;
           }
 
           &.halfstepdown {
-            transition-delay: 0.15s;
+            transition-delay: 0.6s;
           }
 
           &.wholestepup {
             &:before, &:after {
-              transition-delay: 0.2s;
+              transition-delay: 0.8s;
             }
           }
 
           &.dominant {
             &:before, &:after {
-              transition-delay: 0.25s;
+              transition-delay: 1s;
             }
           }
 
@@ -234,17 +237,17 @@ $subdominant-color: $color-red;
           // Colors
           &.halfstepup{
             background-color: $halfstepup-color;
-            box-shadow: 0 0 0 4px rgba($halfstepup-color, 0.4);
+            box-shadow: 0 0 4px $halfstepup-color;
           }
 
           &.halfstepdown {
             background-color: $halfstepdown-color;
-            box-shadow: 0 0 0 4px rgba($halfstepdown-color, 0.4);
+            box-shadow: 0 0 4px $halfstepdown-color;
           }
 
           &.dominant {
             &:before {
-              box-shadow: 0 0 0 4px rgba($dominant-color, 0.4), inset 0 0 0 4px rgba($dominant-color, 0.4);
+              box-shadow: 0 0 4px $dominant-color, inset 0 0 4px $dominant-color;
             }
             &:after {
               border-color: $dominant-color;
@@ -253,7 +256,7 @@ $subdominant-color: $color-red;
             
           &.subdominant {
             &:before {
-              box-shadow: 0 0 0 4px rgba($subdominant-color, 0.4), inset 0 0 0 4px rgba($subdominant-color, 0.4);
+              box-shadow: 0 0 4px $subdominant-color, inset 0 0 4px $subdominant-color;
             }
             &:after {
               border-color: $subdominant-color;
@@ -262,7 +265,7 @@ $subdominant-color: $color-red;
           
           &.wholestepup {
             &:before {
-              box-shadow: 0 0 0 4px rgba($wholestep-color, 0.4), inset 0 0 0 4px rgba($wholestep-color, 0.4);
+              box-shadow: 0 0 4px $wholestep-color, inset 0 0 4px $wholestep-color;
             }
             &:after {
               border-color: $wholestep-color;
@@ -271,7 +274,7 @@ $subdominant-color: $color-red;
             
           &.wholestepdown {
             &:before {
-              box-shadow: 0 0 0 4px rgba($wholestep-color, 0.4), inset 0 0 0 4px rgba($wholestep-color, 0.4);
+              box-shadow: 0 0 4px $wholestep-color, inset 0 0 4px $wholestep-color;
             }
             &:after {
               border-color: $wholestep-color;
@@ -283,7 +286,7 @@ $subdominant-color: $color-red;
   }
 
   .cof-letter-name {
-    color: $color-text-light;
+    color: rgba($color-yellow-dark, 0.4);
     position: absolute;
     top: -2.5rem;
     width: 2rem;
@@ -321,8 +324,8 @@ $subdominant-color: $color-red;
         content: '';
         position: absolute;
         width: 100%;
-        height: 16%;
-        top: -8%;
+        height: 12%;
+        top: -5.5%;
         left: 0;
         border-radius: 50%;
       }
