@@ -1,0 +1,234 @@
+.encrypted-post {
+  margin-bottom: -6rem;
+  position: relative;
+  &:after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: -2rem;
+    right: -2rem;
+    top: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    z-index: 1;
+  }
+  .garbled {
+    color: $neutral-2;
+    letter-spacing: -0.01em;
+    user-select: none;
+    word-break: break-all;
+    position: relative;
+    overflow: hidden;
+    &:nth-child(1), &:nth-child(4) {
+      animation: 13s glitch step-end infinite alternate-reverse;
+    }
+    &:nth-child(4) {
+      animation-duration: 15s;
+      animation-delay: -4s;
+    }
+    &:nth-child(2), &:nth-child(5) {
+      animation: 12s glitch2 step-end infinite alternate-reverse;
+    }
+    &:nth-child(5) {
+      animation-duration: 11s;
+      animation-delay: -3s;
+    }
+    &:nth-child(3), &:nth-child(6) {
+      animation: 14s glitch3 step-end infinite alternate-reverse;
+    }
+    &:nth-child(6) {
+      animation-duration: 11s;
+      animation-delay: -4s;
+    }    
+    &:nth-child(7), &:nth-child(8) {
+      animation: 20s glitch4 step-end infinite alternate-reverse;
+    }
+    &:nth-child(8) {
+      animation-duration: 23s;
+      animation-delay: -6s;
+    }
+  }
+}
+
+.password-required {
+  background: $neutral-10;
+  color: $neutral-2;
+  position: relative;
+  z-index: 4;
+
+  a:hover {
+    color: $neutral-0;
+  }
+
+  h2 {
+    @extend %font-sans-extended;
+    font-size: 1rem;
+    color: $neutral-0;
+  }
+
+  .message {
+    @extend %font-sans-extended;
+    font-size: 0.65rem;
+    letter-spacing: 0.02em;
+    margin-top: 0;
+    opacity: 0;
+    max-height: 0;
+    transition: 0.3s ease;
+    transition-delay: 0.2s;
+  }
+
+  .password-submit {
+    position: relative;
+
+    label {
+      @extend %font-sans-extended;
+      letter-spacing: 0.02em;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    input[type='text'] {
+      background: $neutral-0;
+      background-image: url('/assets/images/lock.svg');
+      background-repeat: no-repeat;
+      background-position: 1rem center;
+      border: none;
+      height: 2rem;
+      line-height: 2rem;
+      border-radius: 1rem;
+      padding: 0 1rem 0 calc(1.75rem + 18px);
+      width: 100%;
+    }
+  }
+
+  form {
+    margin-top: 1.5rem;
+    width: 100%;
+    // Added once and then never removed
+    &.error {
+      .error-message {
+        margin-top: 1rem;
+        opacity: 1;
+        max-height: 3rem;
+      }
+    }
+    &.success {
+      label, .success-message {
+        color: $color-green;
+      }
+      input[type='text'] {
+        animation: 0.4s winnerWinner alternate-reverse infinite;
+      }
+      .success-message {
+        margin-top: 1rem;
+        opacity: 1;
+        max-height: 3rem;        
+      }
+    }
+
+    // Removed on a timer for re-animation
+    &.try-again {
+      label, .error-message {
+        animation: 4.2s temporaryRedText ease;
+      }
+      input[type='text'] {
+        animation: 0.8s tryAgain cubic-bezier(.36,.07,.19,.97) both, 4s temporaryRedBorder ease;
+      }
+    }
+  }
+}
+
+@keyframes glitch {
+  0%, 11%, 75%, 100% {
+    transform: translate3d(0,0,0);
+  }
+  10% {
+    transform: translate3d(-1rem, 0, 0);
+  }
+  70% {
+    transform: translate3d(-0.5rem, 0, 0);
+  }
+}
+
+@keyframes glitch2 {
+  0%, 61% {
+    transform: translate3d(0,0,0);
+  }
+  60% {
+    transform: translate3d(2rem, 0, 0);
+  }
+}
+
+@keyframes glitch3 {
+  0%, 50% {
+    transform: translate3d(0,0,0);
+  }
+  40% {
+    transform: translate3d(1rem, -0.4rem, 0);
+  }
+}
+
+@keyframes glitch4 {
+  0%, 64% {
+    transform: translate3d(0,0,0);
+  }
+  60% {
+    transform: translate3d(-1rem, -4rem, 0);
+  }
+}
+
+@keyframes tryAgain {
+  10%, 25% {
+    transform: translate3d(-0.8rem, 0, 0);
+  }
+  
+  40% {
+    transform: translate3d(1.2rem, 0, 0);
+  }
+  
+  50% {
+    transform: translate3d(-1rem, 0, 0);
+  }
+    
+  60% {
+    transform: translate3d(0.8rem, 0, 0);
+  }
+
+  70% {
+    transform: translate3d(-0.4rem, 0, 0);
+  }
+
+  80% {
+    transform: translate3d(0.3rem, 0, 0);
+  }
+  
+  90% {
+    transform: translate3d(-0.2rem, 0, 0)
+  }
+}
+
+@keyframes temporaryRedText {
+  from, 80% {
+    color: $color-red;
+  }
+}
+
+@keyframes temporaryRedBorder {
+  from, 80% {
+    box-shadow: 0 0 0 3px $color-red;
+  }
+  to {
+    box-shadow: 0 0 0 3px inherit;
+  }
+}
+
+@keyframes winnerWinner {
+  from {
+    box-shadow: 0 0 0 3px transparent;
+  }
+  to {
+    box-shadow: 0 0 0 3px $color-green;
+  }
+}

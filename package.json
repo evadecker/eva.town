@@ -71,7 +71,7 @@
     "is-touch-device": "^1.0.1",
     "lazysizes": "^4.1.4",
     "rellax": "^1.7.1",
-    "swup": "^1.7.14"
+    "swup": "^1.7.17"
   },
   "private": false
 }
