@@ -8,8 +8,8 @@
         <h3>
           <?= $project->title()->html() ?>
           <span class="arrow"><?php snippet('arrow-r') ?></span>
-          <?php if($project->isPasswordProtected() == '1' && !$site->user()): ?>
-            <img src="<?= $site->url() ?>/assets/images/lock.svg" class="project-locked"/>
+          <?php if ($project->isPasswordProtected() == '1' && !$site->user()): ?>
+            <span class="project-locked"><?php snippet('icons/lock') ?></span>
           <?php endif ?>
         </h3>
         <p><?= $project->tagline()->html() ?></p>

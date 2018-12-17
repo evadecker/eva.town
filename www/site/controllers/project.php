@@ -1,24 +1,23 @@
 <?php
 
 return function($site, $pages, $page) {
-  // handle the form submission
   if(r::is('post') and get('login')) {
+    $invalidMessage = 'Incorrect passphrase. Try again, and be sure to include spaces.';
+    $successMessage = 'Correct! And they control our government at the highest level!<br/>Redirecting&hellip; 🐍🐍🐍';
 
-    // fetch the user by username and run the
-    // login method with the password
     if($user = $site->user(get('username')) and $user->login(get('password'))) {
+      $message = $successMessage;
       return;
     } else {
-      // make sure the alert is being
-      // displayed in the template
-      $error = true;
+      $message = $invalidMessage;
     }
 
-  } else {
-    // nothing has been submitted
-    // nothing has gone wrong
-    $error = false;
+    $response = array(
+      'username' => get('username'),
+      'password' => get('password'),
+      'message'  => $message
+    );
   }
 
-  return array('error' => $error);
+  return $response;
 };

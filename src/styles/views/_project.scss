@@ -1,6 +1,5 @@
 .project-overview {
   @extend %font-sans-extended;
-  //background: $neutral-1;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -16,8 +15,9 @@
       padding: 0.2rem 1rem 0.3rem;
       border-radius: 2rem;
       &:hover, &:focus {
+        transition-delay: 0 !important;
         background: $color-blue-light;
-        color: $color-blue;
+        color: $color-blue-dark;
       }
     }
 
@@ -46,6 +46,7 @@
   transform: translate3d(0, -50%, 0);
   border-radius: 50%;
   transition: 0.3s ease;
+  transition-property: background-color, fill, color;
 
   &.prev {
     left: 1rem;
@@ -71,7 +72,6 @@
     font-size: 0.65rem;
     background: $neutral-10;
     color: $neutral-0;
-    box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2);
     height: 1.5rem;
     line-height: 1.5rem;
     padding: 0 0.75rem;
@@ -81,7 +81,7 @@
     top: 0.25rem;
     z-index: 10;
     opacity: 0;
-    transition: 0.25s ease;
+    transition: 0.2s ease;
     pointer-events: none;
   }
 }
@@ -95,7 +95,6 @@ html:not(.is-animating) .project-arrow {
   &:hover, &:focus {
     background: $neutral-10;
     color: $neutral-0;
-    box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2);
     &.prev, &.next {
       .tooltip {
         opacity: 1;
@@ -104,9 +103,9 @@ html:not(.is-animating) .project-arrow {
     }
   }
 
-  &:focus {
-    box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2), 0 0 0 4px rgba($color-blue, 0.5);
-  }
+  // &:focus {
+  //   box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2), 0 0 0 4px rgba($color-blue, 0.5);
+  // }
 }
 
 .project-role {
@@ -313,7 +312,9 @@ html:not(.is-animating) .project-arrow {
 
 .post-callout {
   @extend %font-sans-extended;
-  background-color: $neutral-1;
+  background-color: $color-yellow-light;
+  color: $color-yellow-dark;
+  border-top: 3px solid $color-yellow;
   padding: 1.5rem;
   line-height: 1.4;
   font-size: 0.8rem;
