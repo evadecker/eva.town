@@ -1,5 +1,5 @@
-<aside class="post-callout password-required mobile-fullwidth">
-  <h2>This case study is restricted</h2>
+<aside class="password-required mobile-fullwidth">
+  <h2>This case study is&nbsp;restricted</h2>
   <p>I can’t share this project because laws. If you’re a recruiter or potential employer, grab the passphrase by emailing <a href="mailto:kyle@kyledecker.me">kyle@kyledecker.me</a>. Otherwise, check out my openly available case studies for <a href="/work/swiftype">Swiftype</a> and <a href="/work/wintr-mx">Wintr.mx</a>.</p>
   <form id="protected" method="post">
     <input type="hidden" id="username" name="username" value="guest">

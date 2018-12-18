@@ -42,6 +42,10 @@ Twitter: kybradeck
 
 ----
 
+LinkedIn: kybradeck
+
+----
+
 Street: 519 Court St Apt #2
 
 ----

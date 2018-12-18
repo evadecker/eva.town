@@ -71,6 +71,9 @@ html, body {
 
 input {
   color: $color-text;
+  &::selection {
+    background-color: lighten($color-blue, 25) !important;
+  }
 }
 
 h2, h3  {
