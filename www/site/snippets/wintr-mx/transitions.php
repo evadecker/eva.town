@@ -102,7 +102,7 @@
     <li><strong>Go to the <span class="color-subdominant">subdominant (up a fourth)</span>.</strong> Very common. Bridges and middle sections of songs are often in the subdominant.</li>
     <li><strong>Go to the <span class="color-dominant">dominant (up a fifth)</span>.</strong> Also common. Often used to build tension before resolving back to the home key.</li>
     <li><strong>Go <span class="color-halfstepup">up a half-step</span>.</strong> Ups the ante. <a href="https://www.youtube.com/watch?v=Js-6Lx-SZso">Hokey if overused.</a></li>
-    <li><strong>Go <span class="color-halfstepdown">down a half-step</span>.</strong> Feels like sinking into a big, plush armchair. Can relax tension elevate mysteriousness.</li>
+    <li><strong>Go <span class="color-halfstepdown">down a half-step</span>.</strong> Feels like sinking into a big, plush armchair. Can relax tension or elevate mysteriousness.</li>
     <li><strong>Go <span class="color-wholestep">up or down a whole-step</span>.</strong> Similar to modulating by half-step, but more stable and triumphant.</li>
   </ul>
 </div>

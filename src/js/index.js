@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       garbled.forEach((garbled) => {
         garbler = setTimeout(function swap () {
           var text = [...garbled.innerHTML]
-          randomRange = Math.floor(Math.random() * (2000 - 400) + 400)
+          randomRange = Math.floor(Math.random() * (3200 - 1000) + 1000)
           garbled.innerHTML = swapTwo(text)
           garbler = setTimeout(swap, randomRange)
         }, randomRange)

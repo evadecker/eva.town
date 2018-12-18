@@ -8,11 +8,11 @@
     left: -2rem;
     right: -2rem;
     top: 50%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%);
     z-index: 1;
   }
   .garbled {
-    color: $neutral-2;
+    color: $neutral-3;
     letter-spacing: -0.01em;
     user-select: none;
     word-break: break-all;
@@ -23,37 +23,49 @@
     }
     &:nth-child(4) {
       animation-duration: 15s;
-      animation-delay: -4s;
+      animation-delay: -8s;
     }
     &:nth-child(2), &:nth-child(5) {
-      animation: 12s glitch2 step-end infinite alternate-reverse;
+      animation: 16s glitch2 step-end infinite alternate;
     }
     &:nth-child(5) {
-      animation-duration: 11s;
+      animation-duration: 15s;
       animation-delay: -3s;
     }
     &:nth-child(3), &:nth-child(6) {
-      animation: 14s glitch3 step-end infinite alternate-reverse;
+      animation: 17s glitch3 step-end infinite alternate-reverse;
     }
     &:nth-child(6) {
-      animation-duration: 11s;
+      animation-duration: 13s;
       animation-delay: -4s;
     }    
     &:nth-child(7), &:nth-child(8) {
-      animation: 20s glitch4 step-end infinite alternate-reverse;
+      animation: 22s glitch4 step-end infinite alternate;
     }
     &:nth-child(8) {
-      animation-duration: 23s;
+      animation-duration: 25s;
       animation-delay: -6s;
     }
   }
 }
 
 .password-required {
+  @extend %font-sans-extended;
+  padding: 1.5rem;
+  line-height: 1.4;
+  font-size: 0.8rem;
   background: $neutral-10;
   color: $neutral-2;
   position: relative;
   z-index: 4;
+
+  ::selection {
+    background: $neutral-4;
+  }
+
+  *:focus {
+    box-shadow: 0 0 0 3px rgba($color-blue, 0.8);
+  }
 
   a:hover {
     color: $neutral-0;
@@ -132,7 +144,7 @@
         color: $color-green;
       }
       input[type='text'] {
-        animation: 0.4s winnerWinner alternate-reverse infinite;
+        animation: 0.4s winnerWinner alternate infinite;
       }
       .success-message {
         margin-top: 1rem;
@@ -174,7 +186,7 @@
 }
 
 @keyframes glitch {
-  0%, 11%, 75%, 100% {
+  0%, 11%, 72%, 100% {
     transform: translate3d(0,0,0);
   }
   10% {
@@ -195,7 +207,7 @@
 }
 
 @keyframes glitch3 {
-  0%, 50% {
+  0%, 43% {
     transform: translate3d(0,0,0);
   }
   40% {
@@ -204,7 +216,7 @@
 }
 
 @keyframes glitch4 {
-  0%, 64% {
+  0%, 62% {
     transform: translate3d(0,0,0);
   }
   60% {
