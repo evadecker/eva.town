@@ -6,7 +6,7 @@ import Rellax from 'rellax'
 import swapTwo from './swaptwo.js'
 import synth from './synth.js'
 import 'lazysizes'
-// import './wizard.js'
+import './wizard.js'
 
 const swup = new Swup({
   elements: ['#swup', '#header'],
