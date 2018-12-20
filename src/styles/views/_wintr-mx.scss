@@ -68,7 +68,9 @@ ul.timeline-list {
   li {
     position: relative;
     padding-left: 0;
-    margin-bottom: 0.25rem;
+    &:not(:last-child) {
+      margin-bottom: 0.25rem;
+    }
     &:before {
       content: '';
       width: 5px;
@@ -89,24 +91,6 @@ ul.timeline-list {
       top: 0.3rem;
       left: calc(-7px - 1.5rem);
     }
-  }
-}
-
-.timeline-entry:last-child {
-  ul.timeline-list {
-    li:last-child { margin-bottom: 0; }
-    li:first-child:before {
-      animation: 2s pulse infinite ease;
-    }
-  }
-}
-
-@keyframes pulse {
-  from {
-    box-shadow: 0 0 0 0 rgba($color-red, 0.8), 0 0 0 3px $neutral-0;
-  }
-  to {
-    box-shadow: 0 0 0 0.75rem rgba($color-red, 0), 0 0 0 3px $neutral-0;
   }
 }
 
