@@ -5,7 +5,7 @@
     <form class="cof-circle">
       <div class="cof-scale-degree">
         <label class="cof-letter">
-          <input type="radio" name="letter" value="C" checked>
+          <input type="radio" name="letter" value="C">
           <div class="cof-letter-name">C</div>
           <?php snippet('wintr-mx/connections') ?>
         </label>
@@ -91,7 +91,7 @@
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter">
-          <input type="radio" name="letter" value="F">
+          <input type="radio" name="letter" value="F" checked>
           <div class="cof-letter-name">F</div>
           <?php snippet('wintr-mx/connections') ?>
         </label>
