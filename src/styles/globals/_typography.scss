@@ -37,6 +37,10 @@ $base-line-height: 1.4 !default;
   opacity: 1;
 }
 
+input::-webkit-input-placeholder {
+  line-height: normal !important;
+}
+
 :-ms-input-placeholder {
   color: $neutral-5;
 }
