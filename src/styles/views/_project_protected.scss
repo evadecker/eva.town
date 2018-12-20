@@ -129,6 +129,18 @@
   form {
     margin-top: 1.5rem;
     width: 100%;
+    &:after {
+      // Loading bar
+      content: '';
+      height: 6px;
+      width: 100%;
+      background: $color-green;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
     &:not(.error):not(.success) .message {
       margin-top: 0;
       opacity: 0;
@@ -147,7 +159,7 @@
         color: $color-green;
       }
       input[type='text'] {
-        animation: 0.4s winnerWinner alternate infinite;
+        box-shadow: 0 0 0 3px $color-green;
       }
       .message {
         margin-top: 1rem;
@@ -164,6 +176,9 @@
         #base {
           transform: translateY(1px);
         }
+      }
+      &:after {
+        animation: load 3s cubic-bezier(0,.55,.33,-0.21) forwards;
       }
     }
 
@@ -279,11 +294,8 @@
   }
 }
 
-@keyframes winnerWinner {
-  from {
-    box-shadow: 0 0 0 3px transparent;
-  }
+@keyframes load {
   to {
-    box-shadow: 0 0 0 3px $color-green;
+    transform: scaleX(1);
   }
 }
