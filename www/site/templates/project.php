@@ -20,7 +20,6 @@
     </div>
   </div>
 
-  
   <article class="post wrapper h-entry transition-swipe" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="post-content e-content" itemprop="articleBody">
     <?php if($page->isPasswordProtected() == '1' && !$site->user()): ?>
