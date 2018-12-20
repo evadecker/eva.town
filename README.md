@@ -40,7 +40,6 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 - [Github](https://github.com/) for version control
 - [Namecheap](https://www.namecheap.com/) for domain registration and hosting
 - [Adobe Fonts](https://fonts.adobe.com/) for serving web fonts
-- [Cloudflare](https://www.cloudflare.com/) for faster speed and increased security
 
 ## Notes to self
 
@@ -49,6 +48,16 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 ```zsh
 cd kyledecker.me
 npm run start
+```
+
+### Deploying
+
+```zsh
+cd Sites/kyledecker.me
+git pull
+npm run build
+cd www
+rsync -av -e "ssh -p 21098" --delete ./ kyle@premium68.web-hosting.com:~/public_html
 ```
 
 ### How To Add A New Synth Sound

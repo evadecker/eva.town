@@ -58,6 +58,7 @@
   color: $neutral-2;
   position: relative;
   z-index: 4;
+  margin-bottom: 2rem;
 
   ::selection {
     background: $neutral-4;
@@ -105,9 +106,11 @@
       background-position: 1rem center;
       border: none;
       height: 2rem;
-      line-height: 2rem;
+      font-size: 16px; // This has to be set to 16px to prevent
+                       // input zooming on iOS because reasons
+      line-height: 1;
       border-radius: 1rem;
-      padding: 0 1rem 0 calc(1.75rem + 18px);
+      padding: 0.5rem 1rem 0.5rem calc(1.75rem + 18px);
       width: 100%;
     }
   }
