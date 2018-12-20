@@ -55,27 +55,3 @@
     }
   }
 }
-
-// HACK: Fade instead of slide
-// Pending official Flickity support for fades:
-// https://github.com/metafizzy/flickity/issues/26
-
-.flickity-slider {
-  transform: none !important;
-}
-
-.quote {
-  left: 0 !important;
-  opacity: 0;
-  transition: opacity 1s ease;
-  z-index: 1;
-  &.is-selected {
-    opacity: 1;
-    transition: opacity 1s ease;
-    z-index: 2;
-  }
-}
-
-.flickity-prev-next-button {
-  z-index: 3;
-}
