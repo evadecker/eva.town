@@ -50,11 +50,8 @@
   p {
     max-width: 700px;
     font-size: 1.4em;
-    &:first-of-type:before {
-      content: '“';
-    }
-    &:last-of-type:after {
-      content: '”';
+    @include media-max(460px) {
+      font-size: 1.2em;
     }
   }
 }
