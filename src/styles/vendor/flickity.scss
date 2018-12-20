@@ -32,17 +32,6 @@ https://flickity.metafizzy.co
           user-select: none;
 }
 
-// .flickity-enabled.is-draggable .flickity-viewport {
-//   cursor: move;
-//   cursor: -webkit-grab;
-//   cursor: grab;
-// }
-
-// .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
-//   cursor: -webkit-grabbing;
-//   cursor: grabbing;
-// }
-
 /* ---- flickity-button ---- */
 
 .flickity-button {
@@ -127,9 +116,9 @@ https://flickity.metafizzy.co
 
 .flickity-page-dots .dot {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 8px;
+  width: 6px;
+  height: 6px;
+  margin: 0 6px;
   background: $color-text;
   border-radius: 50%;
   opacity: 0.25;
