@@ -1,23 +1,17 @@
 <?php
 
 return function($site, $pages, $page) {
-  if(r::is('post') and get('login')) {
-    $invalidMessage = 'Incorrect passphrase. Try again, and be sure to include spaces.';
-    $successMessage = 'Correct! And they control our government at the highest level!<br/>Redirecting&hellip; 🐍🐍🐍';
+  $response = [];
 
-    if($user = $site->user(get('username')) and $user->login(get('password'))) {
-      $message = $successMessage;
-      return;
+  if(r::is('post')) {
+    if(($user = $site->user('guest')) && $user->login(get('password'))) {
+      $response['success'] = true;
+      $response['message'] = "Correct! And they control our government at the highest level! Redirecting&hellip; 🐍🐍🐍";
     } else {
-      $message = $invalidMessage;
+      $response['success'] = false;
+      $response['message'] =  "Incorrect passphrase. Try again, and be sure to include spaces.";
     }
-
-    $response = array(
-      'username' => get('username'),
-      'password' => get('password'),
-      'message'  => $message
-    );
   }
 
-  return $response;
+  return compact('response');
 };
