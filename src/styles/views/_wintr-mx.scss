@@ -461,6 +461,9 @@ $subdominant-color: $color-green;
       display: flex;
       align-items: baseline;
       justify-content: space-between;
+      @include media-max($column-breakpoint) {
+        font-size: 0.65rem;
+      }
     }
 
     .album-year {
