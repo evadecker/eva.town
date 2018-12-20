@@ -116,14 +116,22 @@ function handlePasswordSubmit (e) {
       console.log(json)
       if (json.success === false) {
         message.innerHTML = json.message
+        // Remove blinking cursor for animation since it glitches on iOS
+        passwordField.disabled = true
+        // Add classes for styling and animations
         form.classList.add('error')
         form.classList.remove('try-again')
-        void form.offsetWidth // This is needed to reset the CSS animations
+        // Needed to reset unfinished CSS animations
+        void form.offsetWidth
         form.classList.add('try-again')
         setTimeout(function () {
           // Clear input field when the shake animation starts shakin'
           passwordField.value = ''
         }, 250)
+        // Re-enable password field
+        passwordField.disabled = false
+        // Re-focus field
+        passwordField.focus()
       } else if (json.success === true) {
         message.innerHTML = json.message
         passwordField.disabled = true
