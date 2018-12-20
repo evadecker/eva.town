@@ -3,7 +3,7 @@
 
 <main id="swup" class="page-content" aria-label="Content">
 
-  <div class="project-overview">
+  <div class="project-hero">
     <?php
       $page->hasPrevVisible() ? $prev = $page->prevVisible() : $prev = $page->siblings()->visible()->last();
 
@@ -25,7 +25,7 @@
     <?php if($page->isPasswordProtected() == '1' && !$site->user()): ?>
       <?php snippet('login') ?>
     <?php else: ?>
-      <aside class="post-callout">
+      <aside class="project-overview mobile-fullwidth">
         <div class="project-challenge">
           <strong class="project-overview-label">The challenge</strong>
           <?= $page->challenge() ?>

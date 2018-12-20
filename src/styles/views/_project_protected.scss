@@ -113,6 +113,11 @@
       border-radius: 1rem;
       padding: 0.5rem 1rem 0.5rem calc(1.75rem + 18px);
       width: 100%;
+      &[disabled] {
+        -webkit-text-fill-color: $color-text; // Override iOS/Android font color change
+        -webkit-opacity: 1; // Override iOS opacity change affecting text 
+        color: $color-text;
+      }
     }
   }
 
