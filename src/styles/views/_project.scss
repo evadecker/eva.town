@@ -237,12 +237,6 @@ html:not(.is-animating) .project-arrow {
     margin-top: 0;
   }
 
-  @include media-max(400px) {
-    p, .post-callout {
-      hyphens: auto;
-    }
-  }
-
   p:last-child {
     margin-bottom: 0;
   }
