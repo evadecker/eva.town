@@ -25,7 +25,9 @@ $corner-popover-offset: $popover-padding + $popover-tip-size;
     position: absolute;
     width: 1px;
     height: 1px;
-    animation: 0.5s zoomIn ease;
+    &.animated {
+      animation: 0.5s zoomIn ease;
+    }
 
     &[data-direction="top"] {
       transform-origin: top;
