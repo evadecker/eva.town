@@ -2,7 +2,6 @@
   position: relative;
   background-color: $neutral-1;
   margin: 0;
-  height: 480px;
   overflow-y: hidden;
   &:focus {
     box-shadow: none;
@@ -11,6 +10,10 @@
     position: relative;
     height: 100%;
   }
+}
+
+.quotes-carousel, .quote {
+  height: 480px;
 }
 
 .quote {
@@ -22,7 +25,6 @@
   color: $color-text;
   margin: 0 5%;
   width: 90%;
-  height: 100%;
   padding-bottom: 1rem;
 
   .quote-text {
