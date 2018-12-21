@@ -116,7 +116,7 @@ As part of the redesign, I created an entirely new icon set to increase legibili
 
 The existing icons had been drawn at 48px for use on the marketing site, later scaled down for use on the dashboard. This rendered them fuzzy on non-<dfn title="Retina displays, or HiDPI displays, have a higher resolution (number of pixels) than traditional displays.">retina</dfn> displays. Most icons also included a glyph inside a square or round container, which made the glyph itself miniscule and muddied the icons' silhouettes.
 
-I began by illustrating icons at the intended display size. The first iteration was modeled after the single-pixel stroke icons [found on Dropbox](https://dribbble.com/shots/1437544-Dropbox-File-Icons) or Finder at the time. They were too too delicate, and they didn't work well on a dark background.
+I began by illustrating icons at the intended display size. The first iteration was modeled after the single-pixel stroke icons [found on Dropbox](https://dribbble.com/shots/1437544-Dropbox-File-Icons) or Finder at the time. They were too delicate, and they didn't work well on a dark background.
 
 The second iteration slightly enlarged the icons and only used a single color, but the plump, round forms came across as childish. The synonyms icon also shapeshifted into what appeared to be two slices of bacon, and I really prefer to keep my icons cruelty-free.
 
