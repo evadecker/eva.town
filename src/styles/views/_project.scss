@@ -331,10 +331,13 @@ html:not(.is-animating) .project-arrow {
 
 .font-specimen {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
   > * {
     background: $neutral-1;
+  }
+
+  img {
+    width: 100%;
   }
 
   @include media-max($column-breakpoint) {
