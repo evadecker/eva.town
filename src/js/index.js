@@ -2,12 +2,12 @@
 
 import Swup from 'swup'
 import Flickity from 'flickity'
-import Rellax from 'rellax'
 import swapTwo from './swaptwo.js'
 import synth from './synth.js'
 import 'lazysizes'
 import './wizard.js'
 
+const WOW = require('wowjs')
 const swup = new Swup({
   elements: ['#swup', '#header'],
   scroll: true,
@@ -55,13 +55,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     if (document.querySelector('.annotations') !== null) {
-      var rellax = new Rellax('.annotation-rellax', {
-        speed: -0.5,
-        center: true
+      var wow = new WOW.WOW({
+        boxClass: 'annotation',
+        offset: 60,
+        live: false
       })
 
+      wow.init()
+
       swup.on('willReplaceContent', function () {
-        rellax.destroy()
+        wow.destroy()
       })
     }
 
@@ -93,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
   }
 
-  // Run once
+  // Run on initial load
   init()
 
   // Handle loading and killing scripts on page transitions
