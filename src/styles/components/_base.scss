@@ -160,6 +160,26 @@ iframe {
   z-index: 4;
 }
 
+.iframe-embed {
+  background: $neutral-0;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 2rem -0.5rem rgba($neutral-10, 0.1);
+  height: 660px;
+  overflow: hidden;
+  position: relative;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-overflow-scrolling: touch !important;
+  overflow-y: scroll !important;
+  iframe {
+    height: 100%;
+  }
+  @include media-max(800px) {
+    height: 500px;
+  }
+}
+
 input {
   @extend %font-sans;
 }

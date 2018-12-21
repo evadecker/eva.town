@@ -60,8 +60,9 @@ html {
 html, body {
 	@extend %font-serif;
 	color: $color-text;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.35;
+  @include media-min(400px) { font-size: 20px; }
 	@include media-min(620px) { font-size: 21px; }
 	@include media-min(820px) { font-size: 22px; }
 }
