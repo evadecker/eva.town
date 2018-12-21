@@ -13,7 +13,7 @@
     <div class="timeline-text text">
       <time class="timeline-date">2011</time>
       <ul class="timeline-list">
-        <li><a href="http://wintr.mx/archive/2011/" target="_blank">Mini-site hosted on Tumblr</a></li>
+        <li><a href="http://wintr.mx/archive/2011/">Mini-site hosted on Tumblr</a></li>
       </ul>
     </div>
   </div>
@@ -22,7 +22,7 @@
     <div class="timeline-text text">
       <time class="timeline-date">2012</time>
       <ul class="timeline-list">
-        <li><a href="http://wintr.mx/archive/2012/" target="_blank">Redesigned mini-site</a></li>
+        <li><a href="http://wintr.mx/archive/2012/">Redesigned mini-site</a></li>
         <li>Moved to subdomain of kyledecker.me</li>
         <li>Added download links to past mixes</li>
         <li>Added comments via Disqus</li>
@@ -34,7 +34,7 @@
     <div class="timeline-text text">
       <time class="timeline-date">2013</time>
       <ul class="timeline-list">
-        <li><a href="http://wintr.mx/archive/2013/" target="_blank">Completely rebuilt responsive site</a></li>
+        <li><a href="http://wintr.mx/archive/2013/">Completely rebuilt responsive site</a></li>
         <li>Touch-friendly slider layout</li>
         <li>Displayed complete tracklists for each year</li>
         <li>Implemented basic audio streaming</li>

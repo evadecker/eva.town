@@ -16,7 +16,7 @@
     <div class="project-info">
       <time class="project-year transition-swipe"><?= $page->year() ?></time>
       <h1 class="project-title transition-swipe" itemprop="name headline"><?= $page->title() ?></h1>
-      <a class="project-website transition-swipe" href="https://<?= $page->website() ?>" target="_blank"><?= $page->website() ?></a>
+      <a class="project-website transition-swipe" href="https://<?= $page->website() ?>"><?= $page->website() ?></a>
     </div>
   </div>
 
