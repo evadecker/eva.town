@@ -16,7 +16,7 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 - [Howler.js](https://howlerjs.com/) for serving audio
 - [Audiosprite](https://github.com/tonistiigi/audiosprite) for generating audio sprite files
 - [Swup](https://github.com/gmrchk/swup) for CSS-powered page transitions, caching, and pre-rendering
-- [Rellax](https://github.com/dixonandmoe/rellax) for buttery-smooth parallax
+- [WOW.js](https://github.com/matthieua/WOW) for animations on scroll
 - [Flickity](https://flickity.metafizzy.co/) for touch-responsive carousels
 - [Lazysizes](https://github.com/aFarkas/lazysizes) for progressively loading images
 
@@ -56,8 +56,7 @@ npm run start
 cd Sites/kyledecker.me
 git pull
 npm run build
-cd www
-rsync -av -e "ssh -p 21098" --delete ./ kyle@premium68.web-hosting.com:~/public_html
+rsync -av -e "ssh -p 21098" --delete /www kyle@premium68.web-hosting.com:~/v3.kyledecker.me
 ```
 
 ### How To Add A New Synth Sound
