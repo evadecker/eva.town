@@ -1,4 +1,4 @@
-<div class="full-width transparent">
+<div class="full-width swiftype">
   <figure class="figure-wide wrapper">
     <div class="image-annotated">
       <picture>
@@ -35,5 +35,5 @@
       </div>
     </div>
     <figcaption class="desktop-annotations-note">*View on a larger screen to see annotations</figcaption>
-  </figure>  
+  </figure>
 </div>

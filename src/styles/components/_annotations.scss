@@ -8,10 +8,6 @@ $corner-popover-offset: $popover-padding + $popover-tip-size;
 .image-annotated {
   position: relative;
   margin: 0 auto;
-  img {
-    border-radius: 0.5rem;
-    box-shadow: 0 1rem 2rem -0.5rem rgba($neutral-10, 0.1);
-  }
 }
 
 .annotations {
