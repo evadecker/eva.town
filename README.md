@@ -56,7 +56,7 @@ npm run start
 cd Sites/kyledecker.me
 git pull
 npm run build
-rsync -av -e "ssh -p 21098" --delete /www kyle@premium68.web-hosting.com:~/v3.kyledecker.me
+rsync -av -e "ssh -p 21098" --delete www/ kyle@premium68.web-hosting.com:~/v3.kyledecker.me
 ```
 
 ### How To Add A New Synth Sound
