@@ -237,7 +237,7 @@ html:not(.is-animating) .project-arrow {
     margin-top: 0;
   }
 
-  @include media-max(520px) {
+  @include media-max(400px) {
     p, .post-callout {
       hyphens: auto;
     }
@@ -349,7 +349,7 @@ html:not(.is-animating) .project-arrow {
       margin-top: 1rem;
     }
   }
-  
+
   @include media-min($column-breakpoint) {
     > * {
       background: $neutral-1;
