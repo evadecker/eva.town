@@ -335,6 +335,29 @@ html:not(.is-animating) .project-arrow {
 	}
 }
 
+.font-specimen {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  > * {
+    background: $neutral-1;
+  }
+
+  @include media-max($column-breakpoint) {
+    flex-direction: column;
+    > * + * {
+      margin-top: 1rem;
+    }
+  }
+  
+  @include media-min($column-breakpoint) {
+    > * {
+      background: $neutral-1;
+      width: calc(50% - 1rem);
+    }
+  }
+}
+
 .post-callout {
   @extend %font-sans-extended;
   background-color: $color-yellow-light;
