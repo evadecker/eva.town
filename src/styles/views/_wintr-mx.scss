@@ -94,21 +94,6 @@ ul.timeline-list {
   }
 }
 
-.wintr-mx-embed {
-  background: $neutral-0;
-  border-radius: 0.5rem;
-  box-shadow: 0 1rem 2rem -0.5rem rgba($neutral-10, 0.1);
-  height: 660px;
-  overflow: hidden;
-  position: relative;
-  iframe {
-    height: 100%;
-  }
-  @include media-max(800px) {
-    height: 500px;
-  }
-}
-
 $default-connection: rgba($color-yellow-dark, 0.05);
 
 $halfstepup-color: $color-red;

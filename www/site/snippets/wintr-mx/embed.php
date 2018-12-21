@@ -1,6 +1,6 @@
 <div class="full-width">
   <figure class="figure-wide wrapper">
-    <div class="wintr-mx-embed">
+    <div class="iframe-embed">
       <iframe class="lazyload" allowfullscreen="" data-src="https://wintr.mx">
         Couldn't load wintr.mx embed.
         <a href="http://wintr.mx">Visit the site</a>
