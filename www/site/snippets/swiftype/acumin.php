@@ -1,7 +1,18 @@
 <figure class="figure-wide">
-  <video cover="<?= $page->image('acumin-cover.png')->url() ?>" autoplay loop muted>
-    <source src="<?= $page->video('acumin.mp4')->url() ?>" type="video/mp4">
-  </video>
+<div class="font-specimen">
+    <picture>
+      <img
+        src="<?= $page->image('acumin-specimen-1.svg')->url() ?>"
+        alt="A font specimen for Acumin, showing its display in all-caps settings."
+      />
+    </picture>
+    <picture>
+      <img
+        src="<?= $page->image('acumin-specimen-2.svg')->url() ?>"
+        alt="A font specimen for Acumin, showing its display in paragraphs and headings."
+      />
+    </picture>
+  </div>
   <figcaption>
   Acumin Pro, designed by Robert Slimbach of <a href="https://www.adobe.com/products/type.html">Adobe</a>.
   </figcaption>

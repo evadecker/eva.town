@@ -1,7 +1,18 @@
 <figure class="figure-wide">
-  <video cover="<?= $page->image('national-cover.png')->url() ?>" autoplay loop muted>
-    <source src="<?= $page->video('national.mp4')->url() ?>" type="video/mp4">
-  </video>
+  <div class="font-specimen">
+    <picture>
+      <img
+        src="<?= $page->image('national-specimen-1.svg')->url() ?>"
+        alt="A font specimen for National, showing its display in all-caps settings."
+      />
+    </picture>
+    <picture>
+      <img
+        src="<?= $page->image('national-specimen-2.svg')->url() ?>"
+        alt="A font specimen for National, showing its display in paragraphs and headings."
+      />
+    </picture>
+  </div>
   <figcaption>
   National, designed by Kris Sowersby of <a href="https://klim.co.nz/">Klim Foundry</a>.
   </figcaption>
