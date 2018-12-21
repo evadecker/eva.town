@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="92px" height="55px" viewBox="0 0 92 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>timeline-2011-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="14" y="5" width="62" height="38" rx="1"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="62" height="38" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="24" y="13" width="22" height="22" rx="1"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="22" height="22" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="48" y="13" width="18" height="4" rx="1"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18" height="4" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <rect id="path-7" x="48" y="19" width="18" height="4" rx="1"></rect>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18" height="4" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <rect id="path-9" x="48" y="25" width="18" height="4" rx="1"></rect>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18" height="4" fill="white">
+            <use xlink:href="#path-9"></use>
+        </mask>
+        <rect id="path-11" x="48" y="31" width="18" height="4" rx="1"></rect>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18" height="4" fill="white">
+            <use xlink:href="#path-11"></use>
+        </mask>
+    </defs>
+    <g id="Case-Studies" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Wintr.mx" transform="translate(-408.000000, -2097.000000)">
+            <g id="Timeline" transform="translate(273.000000, 1935.000000)">
+                <g id="2011" transform="translate(46.000000, 163.000000)">
+                    <g id="timeline-2011-icon" transform="translate(90.000000, 0.000000)">
+                        <path d="M81,47 L81,4.00989318 C81,1.79405245 79.2094011,0 77.0005854,0 L12.9994146,0 C10.7977484,0 9,1.79529033 9,4.00989318 L9,47 L0.995349011,47 C0.441796035,47 1.66533454e-15,47.4435864 1.66533454e-15,47.990778 L1.66533454e-15,51.0020869 C1.66533454e-15,52.1017394 0.898100948,53 2.00596461,53 L87.9940354,53 C89.1092384,53 90,52.1055038 90,51.0020869 L90,47.990778 C90,47.4509752 89.5543671,47 89.004651,47 L81,47 Z" id="Rectangle-66" stroke="#C5C8D6" stroke-width="2" stroke-linecap="square" fill="#F6F8F9"></path>
+                        <use id="Rectangle-70" stroke="#C5C8D6" mask="url(#mask-2)" stroke-width="2" stroke-linecap="square" fill="#FFFFFF" xlink:href="#path-1"></use>
+                        <use id="Rectangle-71" stroke="#C5C8D6" mask="url(#mask-4)" stroke-width="2" stroke-linecap="square" fill="#FFFFFF" xlink:href="#path-3"></use>
+                        <use id="Rectangle-72" stroke="#C5C8D6" mask="url(#mask-6)" stroke-width="2" stroke-linecap="square" fill="#FFFFFF" xlink:href="#path-5"></use>
+                        <use id="Rectangle-72" stroke="#C5C8D6" mask="url(#mask-8)" stroke-width="2" stroke-linecap="square" fill="#FFFFFF" xlink:href="#path-7"></use>
+                        <use id="Rectangle-72" stroke="#C5C8D6" mask="url(#mask-10)" stroke-width="2" stroke-linecap="square" fill="#FFFFFF" xlink:href="#path-9"></use>
+                        <use id="Rectangle-72" stroke="#C5C8D6" mask="url(#mask-12)" stroke-width="2" stroke-linecap="square" fill="#FFFFFF" xlink:href="#path-11"></use>
+                        <rect id="Rectangle-94" fill="#C5C8D6" x="8" y="47" width="72" height="1"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
