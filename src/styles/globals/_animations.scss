@@ -47,9 +47,11 @@
 
 .blur-up {
   filter: blur(6px);
-  transition: filter 0.3s;
+  opacity: 0.4;
+  transition: filter 0.3s, opacity 0.3s;
 }
 
 .blur-up.lazyloaded {
   filter: blur(0);
+  opacity: 1;
 }

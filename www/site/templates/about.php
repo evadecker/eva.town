@@ -4,7 +4,7 @@
 <main id="swup" class="page-content transition-fade" aria-label="Content">
   <article class="post wrapper about-page">
     <div class="announcement">
-      This site just launched! Please email <a href="mailto:kyle@kyledecker.me">kyle@kyledecker.me</a> if you find anything misspelled, misplaced, misguided, or malfunctioning.
+      <strong>This site just launched!</strong> If you find anything misspelled, misplaced, misguided, or malfunctioning, please tell <a href="mailto:kyle@kyledecker.me">kyle@kyledecker.me</a>.
     </div>
     <h1 class="visually-hidden"><?= $page->title() ?></h1>
     <div class="post-content">
