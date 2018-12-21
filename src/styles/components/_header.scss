@@ -1,10 +1,10 @@
 #header {
   @extend %font-sans;
-  padding: 1rem 0;
   z-index: 30;
   pointer-events: none;
 
-  .wrapper {
+  .site-nav {
+    padding: 1rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
