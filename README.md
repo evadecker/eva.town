@@ -19,7 +19,7 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 - [WOW.js](https://github.com/matthieua/WOW) for animations on scroll
 - [Flickity](https://flickity.metafizzy.co/) for touch-responsive carousels
 - [Lazysizes](https://github.com/aFarkas/lazysizes) for progressively loading images
-
+- [EmojiOne](https://www.emojione.com/) for beautiful, free cross-platform emojis
 
 **Synth Samples**
 - Toy Piano by [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71)

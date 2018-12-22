@@ -126,7 +126,7 @@ The final, two-tone icons struck a balance between the former two. Large areas o
 
 In 2014, scientists were awarded the Nobel Prize for discovering that [our brains have a sort of built-in GPS](https://www.youtube.com/watch?v=jYCR0pQLd_U). Located in the entorhinal cortex, it's composed of *grid cells* and *place cells* arranged in a repeating triangular array, which fire predictably depending on our location, our destination, and which direction we're facing. Thanks to these cells, we can orient ourselves in physical space.
 
-But what happens when we need to orient ourselves in a *digital* space? What points us in the right direction? Within a screen, how do we find our location and set a course toward our destination?
+What happens when we need to orient ourselves in two-dimensional space? What points us in the right direction? Within a screen, how do we find our location and set a course toward our destination?
 
 The answer is *hierarchy*.
 

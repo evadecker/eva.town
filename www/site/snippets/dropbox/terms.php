@@ -40,7 +40,7 @@
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f9d9.png">
       <dl>
         <dt>Stormcrow</dt>
-        <dd>an system for feature gating; whether a user is "Stormcrowed in" determines whether or not they can see a feature on Dropbox</dd>
+        <dd>a system for feature gating; whether a user is "Stormcrowed in" determines whether or not they can see a feature on Dropbox</dd>
       </dl>
     </li>
     <li>
