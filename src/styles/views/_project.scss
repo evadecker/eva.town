@@ -265,7 +265,7 @@ html:not(.is-animating) .project-arrow {
     }  
   }
   
-  ul:not(.emoji-list) {
+  > ul {
     li:before {
       content: '•';
     }
@@ -379,6 +379,10 @@ html:not(.is-animating) .project-arrow {
     margin: 0;
     font-size: 1em;
     font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  p {
     margin-bottom: 1rem;
   }
 }

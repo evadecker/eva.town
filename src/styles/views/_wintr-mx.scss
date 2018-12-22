@@ -38,6 +38,7 @@ $timeline-breakpoint: 600px;
   padding-bottom: 2rem;
   padding-left: 1.5rem;
   margin-left: 84px;
+  list-style: none;
   @include media-min($timeline-breakpoint) {
     margin-left: 150px;
   }
@@ -132,7 +133,7 @@ $subdominant-color: $color-green;
 
   .cof-letter, .cof-connection,
   .cof-connection:before, .cof-connection:after {
-    transition: 3s ease;
+    transition: 1s ease;
   }
 
   .cof-scale-degree {
@@ -174,27 +175,27 @@ $subdominant-color: $color-green;
           // Transition delays
           &.wholestepdown {
             &:before, &:after {
-              transition-delay: 0.2s;
+              transition-delay: 0.1s;
             }
           }
 
           &.halfstepup {
-            transition-delay: 0.4s;
+            transition-delay: 0.2s;
           }
 
           &.halfstepdown {
-            transition-delay: 0.6s;
+            transition-delay: 0.3s;
           }
 
           &.wholestepup {
             &:before, &:after {
-              transition-delay: 0.8s;
+              transition-delay: 0.4s;
             }
           }
 
           &.dominant {
             &:before, &:after {
-              transition-delay: 1s;
+              transition-delay: 0.5s;
             }
           }
 
