@@ -89,21 +89,20 @@ ul.social-links {
   font-size: 0.65rem;
   background: $color-green-light;
   color: $color-green-dark;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.75rem 0.5rem calc(1rem + 24px);
   border-radius: 4px;
   margin-top: -1rem;
   margin-bottom: 2rem;
   position: relative;
-  // &:before {
-  //   content: '🐛';
-  //   font-size: 1rem;
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 0;
-  //   width: 2.25rem; // Bigger than 2rem to visually center
-  //   text-align: center;
-  //   transform: translateY(-50%);
-  // }
+  .emoji {
+    content: '🐛';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 0.6rem;
+    transform: translateY(-50%);
+  }
   &::selection, ::selection {
     background-color: darken($color-green-light, 6);
   }
