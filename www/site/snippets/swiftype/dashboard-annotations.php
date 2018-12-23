@@ -4,12 +4,7 @@
       <picture>
         <source data-srcset="<?= $page->file('dashboard.webp')->url() ?>" type="image/webp">
         <source data-srcset="<?= $page->image('dashboard.png')->url() ?>" type="image/png"> 
-        <img
-          class="lazyload blur-up"
-          data-src="<?= $page->image('dashboard.png')->url() ?>"
-          src="<?= $page->image('dashboard.svg')->url() ?>"
-          alt="The new Swiftype dashboard."
-        >
+        <img class="lazyload blur-up" data-src="<?= $page->image('dashboard.png')->url() ?>" src="<?= $page->image('dashboard.svg')->url() ?>" alt="The new Swiftype dashboard.">
       </picture>
       <div class="annotations">
         <div class="annotation" style="top: 2%; left: 20%" data-direction="left">
