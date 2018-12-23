@@ -9,7 +9,7 @@
           data-src="<?= $page->image('swiftype-home.png')->url() ?>"
           src="<?= $page->image('swiftype-home.svg')->url() ?>"
           alt="The new Swiftype dashboard home."
-        />
+        >
       </picture>
       <div class="annotations">
         <div class="annotation" style="top: 16%; left: 30%" data-direction="bottom-left">
