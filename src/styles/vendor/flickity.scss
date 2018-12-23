@@ -103,24 +103,27 @@ https://flickity.metafizzy.co
 .flickity-page-dots {
   position: absolute;
   width: 100%;
-  bottom: 2rem;
+  bottom: 0;
+  height: 2rem;
   padding: 0;
   margin: 0;
   list-style: none;
   text-align: center;
   line-height: 1;
   z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flickity-rtl .flickity-page-dots { direction: rtl; }
 
 .flickity-page-dots .dot {
-  display: inline-block;
   width: 6px;
   height: 6px;
-  margin: 0 6px;
+  margin: 0 4px;
   background: $color-text;
-  border-radius: 50%;
+  border-radius: 3px;
   opacity: 0.25;
   cursor: pointer;
 }

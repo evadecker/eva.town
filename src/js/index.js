@@ -39,7 +39,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
         wrapAround: true,
         selectedAttraction: 0.04,
         friction: 0.35,
-        arrowShape: 'M100 58.9998426 36.0499178 58.9998426 65.088158 85.4765278 53.6014289 100 0 50.1043963 53.6348574 0 65.0600993 14.7597671 36.09408 41.0436272 100 41.0436272z'
+        prevNextButtons: false
+        // arrowShape: 'M100 58.9998426 36.0499178 58.9998426 65.088158 85.4765278 53.6014289 100 0 50.1043963 53.6348574 0 65.0600993 14.7597671 36.09408 41.0436272 100 41.0436272z'
+      })
+
+      flickity.on('staticClick', function (event, pointer, cellElement, cellIndex) {
+        if (cellElement) {
+          flickity.selectCell(cellElement, true, false)
+        }
       })
 
       swup.on('willReplaceContent', function () {
