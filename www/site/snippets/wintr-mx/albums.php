@@ -8,7 +8,7 @@
         data-src="<?= $page->image('albumart-2009.jpg')->url() ?>"
         src="<?= $page->image('albumart-2009.svg')->url() ?>"
         alt="A vintage postcard of Chicago."
-      />
+      >
     </picture>
     <div class="album-info">
       <time class="album-year">2009</time>
@@ -24,7 +24,7 @@
         data-src="<?= $page->image('albumart-2010.jpg')->url() ?>"
         src="<?= $page->image('albumart-2010.svg')->url() ?>"
         alt="A vintage postcard of the Biltmore Estate near Asheville, NC."
-      />
+      >
     </picture>
     <div class="album-info">
       <time class="album-year">2010</time>
@@ -40,7 +40,7 @@
         data-src="<?= $page->image('albumart-2011.jpg')->url() ?>"
         src="<?= $page->image('albumart-2011.svg')->url() ?>"
         alt="A vintage postcard of the Blue Ridge mountains."
-      />
+      >
     </picture>
     <div class="album-info">
       <time class="album-year">2011</time>
@@ -56,7 +56,7 @@
         data-src="<?= $page->image('albumart-2012.jpg')->url() ?>"
         src="<?= $page->image('albumart-2012.svg')->url() ?>"
         alt="A vintage postcard of Key West, FL."
-      />
+      >
     </picture>
     <div class="album-info">
       <time class="album-year">2012</time>
@@ -72,7 +72,7 @@
         data-src="<?= $page->image('albumart-2013.jpg')->url() ?>"
         src="<?= $page->image('albumart-2013.svg')->url() ?>"
         alt="A vintage postcard of cherry blossoms in front of the Washington monument."
-      />
+      >
     </picture>
     <div class="album-info">
       <time class="album-year">2013</time>
@@ -88,7 +88,7 @@
         data-src="<?= $page->image('albumart-2014.jpg')->url() ?>"
         src="<?= $page->image('albumart-2014.svg')->url() ?>"
         alt="A vintage postcard of the Eiffel Tower in Paris, France."
-      />
+      >
     </picture>
     <div class="album-info">
       <time class="album-year">2014</time>

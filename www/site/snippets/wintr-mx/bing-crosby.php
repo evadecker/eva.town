@@ -8,7 +8,7 @@
         data-src="<?= $page->image('bing-crosby.jpg')->url() ?>"
         src="<?= $page->image('bing-crosby.svg')->url() ?>"
         alt='The record "White Christmas" by Bing Crosby, released in 1942.'
-      />
+      >
     </picture>
     <figcaption>Why is this still a thing.</figcaption>
   </figure>
