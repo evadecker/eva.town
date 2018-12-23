@@ -8,7 +8,7 @@ Text:
 
 ## I believe in moving at a sustainable pace and fixing what’s broken.
 
-My name is Kyle. I design and build digital products that are intuitive, beautiful, accessible, and fun. I've done this professionally since 2012, and I've been designing for the web since 2007.
+My name is Kyle. I design and build digital products that are intuitive, accessible, beautiful, and fun. I've done this professionally since 2012, and I've been designing for the web since 2007.
 
 This is a home for things I've made and how I made them. My goal is for anyone (and anyone's grandma) who visits this website to understand what I've written. Although the focus is on my design and the process behind it, case studies will occasionally detour to explore interesting, relevant topics. I hope you learn something new.
 

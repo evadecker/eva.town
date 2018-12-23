@@ -11,7 +11,7 @@
     </li>
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f4ca.png" alt="Bar chart emoji">
-      <strong>Taking a stance becomes easier with data.</strong> Numbers reveal invisible truths. Use them to make improvements, but never let data lead you to abuse inborn addictive tendencies.
+      <strong>Taking a stance becomes easier with data.</strong> Numbers reveal invisible truths.
     </li>
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f418.png" alt="Elephant emoji">
