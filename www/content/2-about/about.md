@@ -10,7 +10,7 @@ Text:
 
 My name is Kyle. I design and build digital products that are intuitive, beautiful, accessible, and fun. I've done this professionally since 2012, and I've been designing for the web since 2007.
 
-This is my portfolio. It's a home for things I make and how I make them. It's also a way to teach. Scattered thoughout my case studies are detours into topical subjects ranging from typesetting to front-end architecture to music theory. I want you (or your grandmother), no matter your background, to understand what I've written—and maybe even learn something new.
+This is a home for things I've made and how I made them. My goal is for anyone (and anyone's grandma) who visits this website to understand what I've written. Although the focus is on my design and the process behind it, case studies will occasionally detour to explore interesting, relevant topics. I hope you learn something new.
 
 (snippet: about/beliefs)
 
