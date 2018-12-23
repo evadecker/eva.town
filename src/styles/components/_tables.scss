@@ -1,7 +1,7 @@
 table {
   @extend %font-sans;
   font-size: 0.65rem;
-  margin-bottom: $spacing-unit;
+  margin-bottom: 2rem;
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
@@ -73,7 +73,7 @@ table {
 }
 
 .icon-table {
-  margin-bottom: $spacing-unit;
+  margin-bottom: 2rem;
 
   header {
     display: flex;

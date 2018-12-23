@@ -1,9 +1,8 @@
 .quotes-carousel {
   position: relative;
   background-color: $neutral-1;
-  max-width: $content-width;
-  margin: 0 auto;
   overflow-y: hidden;
+  padding: 2rem 0;
   &:focus {
     box-shadow: none;
   }
@@ -13,23 +12,33 @@
   }
 }
 
-.quotes-carousel, .quote {
-  height: 480px;
-}
-
 .quote {
+  background: $neutral-0;
+  border-radius: 0.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: $color-text;
-  margin: 0 5%;
+  margin: 0 1rem;
   width: 90%;
-  padding-bottom: 1rem;
+  padding: 0 5%;
+  max-width: 800px;
+  height: 480px;
+  box-shadow: 0 1.5rem 1.5rem -1rem rgba($neutral-10, 0.2);
+  transition: 0.2s opacity;
+
+  &:not(.is-selected) {
+    opacity: 0.4;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 
   .quote-text {
-    margin-bottom: $spacing-unit;
+    margin-bottom: 1.5rem;
     display: block;
   }
 
