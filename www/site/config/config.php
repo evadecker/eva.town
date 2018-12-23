@@ -18,12 +18,4 @@ c::set('content.file.extension', 'md');
 c::set('cache.ignore', array('sitemap'));
 c::set('smartypants', true);
 c::set('markdown.extra', true);
-
-c::set('routes', array(
-	array(
-		'pattern' => 'sitemap.xml',
-		'action'  => function() {
-			tpl::load(kirby()->roots()->templates() . DS . 'sitemap.php', array( 'pages' => site()->pages() ), false );
-		}
-	),
-));
+c::set('sitemap.include.images', false);
