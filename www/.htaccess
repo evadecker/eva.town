@@ -45,15 +45,10 @@ RewriteRule ^(.*) index.php [L]
 
 </IfModule>
 
-# Additional recommended values
-# Remove comments for those you want to use.
-#
-# AddDefaultCharset UTF-8
-#
-# php_flag short_open_tag on
+AddDefaultCharset UTF-8
 
 # Redirect old pages
-# Redirect 301 /quotes.php /about.php
-# Redirect 301 /work/catnap.php /work.php
-# Redirect 301 /work/misc.php /work.php
+Redirect 301 /quotes /about
+Redirect 301 /work/catnap /work
+Redirect 301 /work/misc /work
 
