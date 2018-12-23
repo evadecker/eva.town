@@ -42,12 +42,8 @@ table {
   }
 
   tbody {
-    tr.table-section-divider {
-      border-bottom: 1px solid $neutral-3;
-      td, th {
-        padding: 0;
-        height: 0;
-      }
+    tr.new-section {
+      border-top: 1px solid $neutral-3;
     }
     td {
       border-right: 1px solid $neutral-3;

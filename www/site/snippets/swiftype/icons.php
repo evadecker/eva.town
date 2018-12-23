@@ -57,15 +57,7 @@
             <th>Search Preview</th>
           </tr>
 
-          <tr class="table-section-divider">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <th></th>
-          </tr>
-
-          <tr>
+          <tr class="new-section">
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('original-icons.svg')->url().'#analytics' ?>"></use></svg></td>
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('v1-icons.svg')->url().'#analytics' ?>"></use></svg></td>
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('v2-icons.svg')->url().'#analytics' ?>"></use></svg></td>
@@ -80,15 +72,7 @@
             <th>Insights</th>
           </tr>
 
-          <tr class="table-section-divider">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <th></th>
-          </tr>
-
-          <tr>
+          <tr class="new-section">
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('original-icons.svg')->url().'#result-rankings' ?>"></use></svg></td>
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('v1-icons.svg')->url().'#result-rankings' ?>"></use></svg></td>
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('v2-icons.svg')->url().'#result-rankings' ?>"></use></svg></td>
@@ -110,15 +94,7 @@
             <th>Synonyms</th>
           </tr>
 
-          <tr class="table-section-divider">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <th></th>
-          </tr>
-
-          <tr>
+          <tr class="new-section">
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('original-icons.svg')->url().'#content' ?>"></use></svg></td>
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('v1-icons.svg')->url().'#content' ?>"></use></svg></td>
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('v2-icons.svg')->url().'#content' ?>"></use></svg></td>
@@ -140,15 +116,7 @@
             <th>Team</th>
           </tr>
 
-          <tr class="table-section-divider">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <th></th>
-          </tr>
-
-          <tr>
+          <tr class="new-section">
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('original-icons.svg')->url().'#install' ?>"></use></svg></td>
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('v1-icons.svg')->url().'#install' ?>"></use></svg></td>
             <td><svg class="svg-icon"><use xlink:href="<?= $page->image('v2-icons.svg')->url().'#install' ?>"></use></svg></td>
