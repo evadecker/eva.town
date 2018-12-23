@@ -56,8 +56,14 @@ table {
 }
 
 .table-background-toggle {
-  display: flex;
-  justify-content: flex-end;
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+    label {
+      float: left;
+    }
+  }
 
   input[value="white"] ~ .radio-button {
     background-color: $neutral-3;
@@ -83,6 +89,15 @@ table {
     position: sticky;
     top: 0;
     z-index: 10;
+    h3 {
+      @extend %font-sans-extended;
+      font-style: normal;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.65em;
+      margin: 0;
+    }
   }
 
   &[data-color="white"] {
