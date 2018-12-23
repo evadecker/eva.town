@@ -6,7 +6,6 @@
   align-items: center;
   padding: 4rem 0;
   position: relative;
-  overflow-x: hidden;
 
   .project-info {
     .project-website {
@@ -141,7 +140,6 @@ html:not(.is-animating) .project-arrow {
   margin: 0 auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  overflow-x: hidden;
   font-variant-numeric: oldstyle-nums;
   font-feature-settings: "onum";
 
@@ -192,7 +190,7 @@ html:not(.is-animating) .project-arrow {
     }
 
     aside:not(.mobile-fullwidth) {
-      max-width: 440px;
+      max-width: 344px;
       margin-left: auto;
       margin-right: auto;
     }
