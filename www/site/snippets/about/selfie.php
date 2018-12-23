@@ -9,7 +9,7 @@
         data-src="<?= $page->image('kyle-decker-portrait-sketch.png')->url() ?>"
         src="<?= $page->image('kyle-decker-portrait-sketch.svg')->url() ?>"
         alt="Portrait of the guy who made this site."
-      />
+      >
     </picture>
     <figcaption>Sketch by <a href="https://www.youtube.com/watch?v=d6gBu2Zd7Bc">Winston Vicinte</a>.</figcaption>
   </figure>

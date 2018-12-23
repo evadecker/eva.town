@@ -7,7 +7,7 @@
       data-src="<?= $page->image('visual-hierarchy.png')->url() ?>"
       src="<?= $page->image('visual-hierarchy.svg')->url() ?>"
       alt="The original Swiftype dashboard had site navigation on the left, child to the engine selector, on the right, child to the engines link, a tiny bit of text next to links for docs and support."
-    />
+    >
   </picture>
   <figcaption>Swiftype dashboard, Nov 2015. An example of poor visual hierarchy. The active tab is also difficult to spot.</figcaption>
 </figure>

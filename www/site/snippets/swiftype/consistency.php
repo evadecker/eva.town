@@ -8,7 +8,7 @@
         data-src="<?= $page->image('consistency-to-do.png')->url() ?>"
         src="<?= $page->image('consistency-to-do.svg')->url() ?>"
         alt='A hand-written to-do list of items like "active icon color" and "empty state illustrations".'
-      />
+      >
     </picture>
     <figcaption>Consistency tweaks.</figcaption>
   </figure>

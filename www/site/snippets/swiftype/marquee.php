@@ -23,7 +23,7 @@
             <img
               src="<?= $page->find('empty-states')->image($filename.'.svg')->url() ?>"
               alt="<?= $emptystate['alt'] ?>"
-            />
+            >
           </picture>
         <?php endforeach ?>
       </div>

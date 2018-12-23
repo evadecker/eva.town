@@ -8,7 +8,7 @@
         data-src="<?= $page->image('responsive-nav.gif')->url() ?>"
         src="<?= $page->image('responsive-nav.svg')->url() ?>"
         alt="An animated image of the new Swiftype dashboard, showing how the layout changes at different breakpoints."
-      />
+      >
     </picture>
     <figcaption>Below a certain width, the sidebar condenses to a top bar with drop-down menus, making the most of any screen size. This is all accomplished with CSS—there is only one nav component.</figcaption>
   </figure>
