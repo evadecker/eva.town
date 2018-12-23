@@ -1,4 +1,4 @@
-<div class="full-width swiftype">
+<div class="full-width">
   <figure class="figure-wide wrapper">
     <div class="image-annotated">
       <picture>
