@@ -20,10 +20,7 @@
           <picture class="empty-state <?= $classname ?>">
             <source srcset="<?= $page->find('empty-states')->file($filename.'.webp')->url() ?>" type="image/webp">
             <source srcset="<?= $page->find('empty-states')->image($filename.'.png')->url() ?>" type="image/png">
-            <img
-              src="<?= $page->find('empty-states')->image($filename.'.svg')->url() ?>"
-              alt="<?= $emptystate['alt'] ?>"
-            >
+            <img src="<?= $page->find('empty-states')->image($filename.'.svg')->url() ?>" alt="<?= $emptystate['alt'] ?>">
           </picture>
         <?php endforeach ?>
       </div>
