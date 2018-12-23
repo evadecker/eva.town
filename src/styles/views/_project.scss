@@ -6,6 +6,7 @@
   align-items: center;
   padding: 4rem 0;
   position: relative;
+  overflow-x: hidden;
 
   .project-info {
     .project-website {
@@ -140,6 +141,7 @@ html:not(.is-animating) .project-arrow {
   margin: 0 auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  overflow-x: hidden;
   font-variant-numeric: oldstyle-nums;
   font-feature-settings: "onum";
 
