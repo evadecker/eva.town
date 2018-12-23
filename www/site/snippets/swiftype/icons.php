@@ -2,23 +2,26 @@
   <figure class="icon-table" data-color="white">
     <div class="table-sticky">
       <header>
-        <h4>Dashboard icons</h4>
+        <h3>Dashboard icons</h3>
         <form class="table-background-toggle">
-          <label>
-            <input type="radio" name="background" value="white" checked>
-            <span class="radio-button"></span>
-            <span class="visually-hidden">White</span>
-          </label>
-          <label>
-            <input type="radio" name="background" value="black">
-            <span class="radio-button"></span>
-            <span class="visually-hidden">Black</span>
-          </label>
-          <label>
-            <input type="radio" name="background" value="blue">
-            <span class="radio-button"></span>
-            <span class="visually-hidden">Blue</span>
-          </label>
+          <fieldset>
+            <legend class="visually-hidden">Background color</legend>
+            <label>
+              <input type="radio" name="background" value="white" checked>
+              <span class="radio-button"></span>
+              <span class="visually-hidden">White</span>
+            </label>
+            <label>
+              <input type="radio" name="background" value="black">
+              <span class="radio-button"></span>
+              <span class="visually-hidden">Black</span>
+            </label>
+            <label>
+              <input type="radio" name="background" value="blue">
+              <span class="radio-button"></span>
+              <span class="visually-hidden">Blue</span>
+            </label>
+          </fieldset>
         </form>
       </header>
       <table>

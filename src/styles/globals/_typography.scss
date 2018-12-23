@@ -98,16 +98,6 @@ h3 {
 	margin: 0;
 }
 
-h4 {
-  @extend %font-sans-extended;
-	font-style: normal;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-  font-size: 0.65em;
-  margin: 0;
-}
-
 a {
   text-decoration: none;
 }
