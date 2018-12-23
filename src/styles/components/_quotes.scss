@@ -1,7 +1,8 @@
 .quotes-carousel {
   position: relative;
   background-color: $neutral-1;
-  margin: 0;
+  max-width: $content-width;
+  margin: 0 auto;
   overflow-y: hidden;
   &:focus {
     box-shadow: none;
