@@ -244,3 +244,30 @@ input[type=radio] {
     display: block;
   }
 }
+
+.site-footer {
+  @extend %font-sans-extended;
+  color: $color-text-light;
+  font-size: 0.65rem;
+  text-align: center;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logo {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    svg {
+      display: block;
+      width: 52px;
+    }
+    path {
+      fill: $neutral-4;
+      transition: 0.2s fill ease;
+    }
+    &:hover path {
+      fill: $neutral-5;
+    }
+  }
+}
