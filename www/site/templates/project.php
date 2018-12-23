@@ -13,7 +13,7 @@
       <a class="project-arrow next" href="<?= $next->url() ?>" data-swup-transition="next-project"><?php snippet('arrow-r') ?><span class="tooltip"><?= $next->title() ?></span></a>
     </div>
     <div class="project-info">
-      <time class="project-year transition-swipe"><?= $page->year() ?></time>
+      <div class="project-year transition-swipe"><?= $page->year() ?></div>
       <h1 class="project-title transition-swipe"><?= $page->title() ?></h1>
       <a class="project-website transition-swipe" href="https://<?= $page->website() ?>"><?= $page->website() ?></a>
     </div>

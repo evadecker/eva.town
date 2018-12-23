@@ -8,7 +8,7 @@
         data-src="<?= $page->image('transitions.png')->url() ?>"
         src="<?= $page->image('transitions.svg')->url() ?>"
         alt="A photo of a Moleskine notebook with written start and end keys of various songs."
-      />
+      >
     </picture>
     <figcaption>
     Where to next? I let music theory dictate the track order.
