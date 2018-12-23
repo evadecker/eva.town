@@ -242,6 +242,7 @@ $subdominant-color: $color-green;
   .cof-letter-name {
     color: rgba($color-yellow-dark, 0.4);
     position: absolute;
+    display: block;
     top: -2.5rem;
     width: 2rem;
     left: calc(50% - 1rem);
@@ -250,6 +251,9 @@ $subdominant-color: $color-green;
     pointer-events: auto;
     cursor: pointer;
     transition: color 0.2s ease;
+    span {
+      display: block;
+    }
   }
 
   .cof-letter.enharmonic .cof-letter-name {

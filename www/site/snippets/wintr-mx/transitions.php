@@ -6,93 +6,93 @@
       <div class="cof-scale-degree">
         <label class="cof-letter">
           <input type="radio" name="letter" value="C">
-          <div class="cof-letter-name">C</div>
+          <span class="cof-letter-name">C</span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter">
           <input type="radio" name="letter" value="G">
-          <div class="cof-letter-name">G</div>
+          <span class="cof-letter-name">G</span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter">
           <input type="radio" name="letter" value="D">
-          <div class="cof-letter-name">D</div>
+          <span class="cof-letter-name">D</span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter">
           <input type="radio" name="letter" value="A">
-          <div class="cof-letter-name">A</div>
+          <span class="cof-letter-name">A</span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter">
           <input type="radio" name="letter" value="E">
-          <div class="cof-letter-name">E</div>
+          <span class="cof-letter-name">E</span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter enharmonic">
           <input type="radio" name="letter" value="B or C flat">
-          <div class="cof-letter-name">
-            <div>B</div>
-            <div style="transform: translateX(25%)">C<?php snippet('wintr-mx/flat') ?></div>
-          </div>
+          <span class="cof-letter-name">
+            <span>B</span>
+            <span style="transform: translateX(25%)">C<?php snippet('wintr-mx/flat') ?></span>
+          </span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter enharmonic">
           <input type="radio" name="letter" value="F sharp or G flat">
-          <div class="cof-letter-name">
-            <div>F<?php snippet('wintr-mx/sharp') ?></div>
-            <div>G<?php snippet('wintr-mx/flat') ?></div>
-          </div>
+          <span class="cof-letter-name">
+            <span>F<?php snippet('wintr-mx/sharp') ?></span>
+            <span>G<?php snippet('wintr-mx/flat') ?></span>
+          </span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter enharmonic">
           <input type="radio" name="letter" value="C sharp or D flat">
-          <div class="cof-letter-name">
-            <div>C<?php snippet('wintr-mx/sharp') ?></div>
-            <div style="transform: translateX(-25%)">D<?php snippet('wintr-mx/flat') ?></div>
-          </div>
+          <span class="cof-letter-name">
+            <span>C<?php snippet('wintr-mx/sharp') ?></span>
+            <span style="transform: translateX(-25%)">D<?php snippet('wintr-mx/flat') ?></span>
+          </span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter">
           <input type="radio" name="letter" value="A flat">
-          <div class="cof-letter-name">A<?php snippet('wintr-mx/flat') ?></div>
+          <span class="cof-letter-name">A<?php snippet('wintr-mx/flat') ?></span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter">
           <input type="radio" name="letter" value="E flat">
-          <div class="cof-letter-name">E<?php snippet('wintr-mx/flat') ?></div>
+          <span class="cof-letter-name">E<?php snippet('wintr-mx/flat') ?></span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter">
           <input type="radio" name="letter" value="B flat">
-          <div class="cof-letter-name">B<?php snippet('wintr-mx/flat') ?></div>
+          <span class="cof-letter-name">B<?php snippet('wintr-mx/flat') ?></span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
       <div class="cof-scale-degree">
         <label class="cof-letter">
           <input type="radio" name="letter" value="F" checked>
-          <div class="cof-letter-name">F</div>
+          <span class="cof-letter-name">F</span>
           <?php snippet('wintr-mx/connections') ?>
         </label>
       </div>
