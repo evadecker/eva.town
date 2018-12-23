@@ -360,11 +360,15 @@ html:not(.is-animating) .project-arrow {
   background-color: $color-yellow-light;
   color: $color-yellow-dark;
   border-top: 6px solid $color-yellow;
-  padding: 1.5rem;
+  padding: 1rem;
   line-height: 1.4;
   font-size: 0.8rem;
   margin-top: 2em;
   margin-bottom: 2em;
+
+  @include media-min(420px) {
+    padding: 1.5rem;
+  }
 
   ::selection {
     background-color: darken($color-yellow-light, 8);
