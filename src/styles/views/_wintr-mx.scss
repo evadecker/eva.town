@@ -2,7 +2,7 @@ $timeline-breakpoint: 600px;
 
 .timeline {
   @extend %font-sans-extended;
-  font-size: 0.8em;
+  font-size: 0.85rem;
   max-width: 800px;
   margin-bottom: -2rem;
   position: relative;
@@ -16,10 +16,7 @@ $timeline-breakpoint: 600px;
     height: 100px;
     display: block;
     position: relative;
-    left: 84px;
-    @include media-min($timeline-breakpoint) {
-      left: 150px;
-    }
+    left: 2rem;
   }
   &:before { background: linear-gradient(to bottom, transparentize($color-red-medium, 1) 0%, $color-red-medium 100%); }
   &:after {  background: $color-red-medium; }
@@ -35,13 +32,10 @@ $timeline-breakpoint: 600px;
 
 .timeline-entry {
   border-left: 3px solid $color-red-medium;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   padding-left: 1.5rem;
-  margin-left: 84px;
   list-style: none;
-  @include media-min($timeline-breakpoint) {
-    margin-left: 150px;
-  }
+  margin-left: 2rem;
   &:last-child { padding-bottom: 0; }
 }
 
@@ -49,22 +43,17 @@ $timeline-breakpoint: 600px;
   position: relative;
 }
 
-.timeline-date {
-  font-weight: 600;
-  text-align: right;
-  width: 150px;
-  padding-right: 3rem;
-  position: absolute;
-  left: -150px;
-  font-feature-settings: "tnum";
-  font-variant-numeric: tabular-nums;
-}
-
 ul.timeline-list {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 0;
   position: relative;
+
+  time {
+    font-weight: 600;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+  }
 
   li {
     position: relative;

@@ -4,6 +4,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   transition: background-color 0.2s ease;
+  overflow-x: hidden;
 }
 
 .page-content {
