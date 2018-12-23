@@ -53,7 +53,7 @@ RewriteRule ^(.*) index.php [L]
 # php_flag short_open_tag on
 
 # Redirect old pages
-Redirect 301 /quotes /about
-Redirect 301 /work/catnap /work
-Redirect 301 /work/misc /work
+# Redirect 301 /quotes.php /about.php
+# Redirect 301 /work/catnap.php /work.php
+# Redirect 301 /work/misc.php /work.php
 

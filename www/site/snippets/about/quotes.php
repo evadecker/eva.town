@@ -1,5 +1,5 @@
 <div class="quotes-carousel">
-  <?php foreach($site->find('quotes')->children()->visible() as $quote): ?>
+  <?php foreach($site->find('quotes')->children() as $quote): ?>
     <blockquote class="quote">
       <span class="quote-text">
         <?= $quote->quote()->kirbytext()->widont() ?>
