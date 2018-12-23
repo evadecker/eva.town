@@ -1,6 +1,6 @@
 <div class="timeline">
   <div class="timeline-entry">
-    <img src="<?= $page->image('timeline-2009-icon.svg')->url() ?>" class="timeline-image">
+    <img src="<?= $page->image('timeline-2009-icon.svg')->url() ?>" class="timeline-image" alt="An illustration of a CD case">
     <div class="timeline-text text">
       <time class="timeline-date"></time>
       <ul class="timeline-list">
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="timeline-entry">
-    <img src="<?= $page->image('timeline-2011-icon.svg')->url() ?>" class="timeline-image">
+    <img src="<?= $page->image('timeline-2011-icon.svg')->url() ?>" class="timeline-image" alt="An illustration of a laptop with a two-column grid">
     <div class="timeline-text text">
       <ul class="timeline-list">
         <li><time>2011</time></li>
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="timeline-entry">
-    <img src="<?= $page->image('timeline-2012-icon.svg')->url() ?>" class="timeline-image">
+    <img src="<?= $page->image('timeline-2012-icon.svg')->url() ?>" class="timeline-image" alt="An illustration of a laptop with a three-column grid">
     <div class="timeline-text text">
       <ul class="timeline-list">
         <li><time>2012</time></li>
@@ -31,7 +31,7 @@
     </div>
   </div>
   <div class="timeline-entry">
-    <img src="<?= $page->image('timeline-2013-icon.svg')->url() ?>" class="timeline-image">
+    <img src="<?= $page->image('timeline-2013-icon.svg')->url() ?>" class="timeline-image" alt="An illustration of a laptop, tablet, and phone with a slider layout">
     <div class="timeline-text text">
       <ul class="timeline-list">
         <li><time>2013</time></li>
@@ -44,7 +44,7 @@
     </div>
   </div>
   <div class="timeline-entry">
-    <img src="<?= $page->image('timeline-2014-icon.svg')->url() ?>" class="timeline-image">
+    <img src="<?= $page->image('timeline-2014-icon.svg')->url() ?>" class="timeline-image" alt="An illustration of a laptop, tablet, and phone with a scrolling layout">
     <div class="timeline-text text">
       <ul class="timeline-list">
         <li><time>2014&ndash;Now</time></li>
