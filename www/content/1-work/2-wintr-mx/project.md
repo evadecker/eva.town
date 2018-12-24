@@ -90,4 +90,4 @@ Who knows what next winter has in store?
 
 ---
 
-I do *actual* work, too. Check out the [Dropbox](/work/dropbox) and [Swiftype](/work/swiftype) case studies, which do not include holiday puns. [Read about me](/about) or go [play Jingle Bells](/).
+I do actual work sometimes, too. Check out the [Dropbox](/work/dropbox) and [Swiftype](/work/swiftype) case studies, which do not include holiday puns. [Read about me](/about) or go [play Jingle Bells](/).
