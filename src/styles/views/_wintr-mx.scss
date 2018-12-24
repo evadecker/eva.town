@@ -16,7 +16,7 @@ $timeline-breakpoint: 600px;
     height: 100px;
     display: block;
     position: relative;
-    left: 2rem;
+    left: 1rem;
   }
   &:before { background: linear-gradient(to bottom, transparentize($color-red-medium, 1) 0%, $color-red-medium 100%); }
   &:after {  background: $color-red-medium; }
@@ -35,7 +35,7 @@ $timeline-breakpoint: 600px;
   padding-bottom: 3rem;
   padding-left: 1.5rem;
   list-style: none;
-  margin-left: 2rem;
+  margin-left: 1rem;
   &:last-child { padding-bottom: 0; }
 }
 

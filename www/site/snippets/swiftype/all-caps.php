@@ -11,7 +11,7 @@
     </li>
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f92c.png" alt="Yelling emoji">
-      <strong>IT FEELS <a href="https://youtu.be/IBO8c7v7guI?t=29">SHOUTY.</a></strong> Please stop yelling.
+      <strong>IT FEELS <a href="https://youtu.be/IBO8c7v7guI?t=29">SHOUTY</a>.</strong> Please stop yelling.
     </li>
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f449.png" alt="Finger pointing right emoji">
