@@ -8,6 +8,9 @@ $lcd-hover: #4D5B4D;
   
   &[data-loading="true"] {
     pointer-events: none;
+    .synth-instrument .synth-randomize {
+      visibility: hidden;
+    }    
   }
   
   &[data-enabled="true"] {
