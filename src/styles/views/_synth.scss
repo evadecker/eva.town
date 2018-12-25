@@ -8,9 +8,9 @@ $lcd-hover: #4D5B4D;
   
   &[data-loading="true"] {
     pointer-events: none;
-    .synth-instrument .synth-randomize {
-      visibility: hidden;
-    }    
+    .synth-randomize {
+      display: none;
+    }
   }
   
   &[data-enabled="true"] {
@@ -167,18 +167,24 @@ $lcd-hover: #4D5B4D;
 .synth-instrument {
   cursor: pointer;
   .synth-randomize {
-    visibility: hidden;
+    display: none;
+  }
+}
+
+body.has-touch {
+  .synth-randomize {
+    display: none;
   }
 }
 
 // Hover-only
-body:not(.has-touch) {
+@media not all and (pointer: coarse) {
   .synth-instrument:hover {
     .synth-randomize {
-      visibility: visible;
+      display: block;
     }
     .instrument {
-      visibility: hidden;
+      display: none !important;
     }
   }
 }
