@@ -2,7 +2,7 @@
   position: relative;
   background-color: $neutral-1;
   overflow-y: hidden;
-  padding: 3rem 0;
+  padding: 0;
   &:focus {
     box-shadow: none;
   }
@@ -21,13 +21,13 @@
   justify-content: center;
   text-align: center;
   color: $color-text;
-  margin: 0 1rem;
+  margin: 2rem 1rem 4rem;
   width: 90%;
   padding: 0 5%;
   max-width: 800px;
   height: 480px;
-  box-shadow: 0 1.5rem 1.5rem -1rem rgba($neutral-10, 0.2);
-  transition: 0.2s opacity;
+  box-shadow: 0 2rem 4rem -2rem rgba($neutral-10, 0.1);
+  transition: 0.3s opacity;
 
   &:not(.is-selected) {
     opacity: 0.4;
