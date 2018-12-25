@@ -1,7 +1,10 @@
 'use strict'
 
 import { Howl } from 'howler'
-import { isTouchDevice } from 'is-touch-device'
+
+var isTouchDevice = require('is-touch-device')
+var assert = require('assert')
+assert.strictEqual(typeof isTouchDevice(), 'boolean')
 
 // Helpers -----------------------------------------------------//
 function randomIntFromInterval (min, max) {
