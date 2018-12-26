@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     if (document.querySelector('.quotes-carousel') !== null) {
       var flickity = new Flickity('.quotes-carousel', {
-        autoPlay: 4000,
         wrapAround: true,
         selectedAttraction: 0.04,
         friction: 0.35,
@@ -101,33 +100,28 @@ document.addEventListener('DOMContentLoaded', function (event) {
         form.removeEventListener('submit', handlePasswordSubmit)
       })
     }
-
-    if (document.querySelector('#colophon') !== null) {
-      var credits = document.getElementById('credits')
-      var colophon = document.getElementById('colophon')
-      var close = colophon.querySelector('.close')
-      var overlay = colophon.querySelector('.colophon-overlay')
-      var toggleOverlay = function () {
-        if (colophon.dataset.visible === 'true') {
-          colophon.dataset.visible = 'false'
-          document.body.classList.remove('noscroll')
-          setTimeout(function () {
-            colophon.style.display = 'none'
-          }, 300)
-        } else {
-          colophon.dataset.visible = 'true'
-          colophon.style.display = 'block'
-          document.body.classList.add('noscroll')
-        }
-      }
-      credits.addEventListener('click', toggleOverlay)
-      close.addEventListener('click', toggleOverlay)
-      overlay.addEventListener('click', toggleOverlay)
-    }
   }
 
   // Run on initial load
   init()
+
+  // Do not nest within init() because the footer is not contained
+  // within the swup object
+  if (document.querySelector('#colophon') !== null) {
+    var trigger = document.getElementById('credits')
+    var colophon = document.getElementById('colophon')
+    var close = colophon.querySelector('.close')
+    var overlay = colophon.querySelector('.colophon-overlay')
+
+    var toggleOverlay = function () {
+      colophon.classList.toggle('is-visible')
+      document.body.classList.toggle('noscroll')
+    }
+
+    trigger.addEventListener('click', toggleOverlay)
+    close.addEventListener('click', toggleOverlay)
+    overlay.addEventListener('click', toggleOverlay)
+  }
 
   // Handle loading and killing scripts on page transitions
   document.addEventListener('swup:contentReplaced', function () {

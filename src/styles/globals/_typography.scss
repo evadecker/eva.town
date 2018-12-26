@@ -125,9 +125,20 @@ figcaption dfn:after {
 
 hr {
   border: none;
-  color: $neutral-3;
-  background-color: $neutral-3;
-  height: 1px;
+  height: 1rem;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 3px);
+    transform: translate3d(-50%, -50%, 0);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: $color-text-light;
+    box-shadow: 7px 12px 0 $color-text-light, -7px 12px 0 $color-text-light;
+  }
 }
 
 blockquote {
