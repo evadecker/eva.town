@@ -48,7 +48,7 @@
                 <h3>Build Tools</h3>
                 <ul class="emoji-list">
                   <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1F49E.png" alt="Revolving heart emoji" class="emoji">
+                    <img src="<?= $site->url() ?>/assets/emoji/1f49e.png" alt="Revolving heart emoji" class="emoji">
                     <a href="https://github.com/brocessing/kirby-webpack">kirby-webpack</a> for browser reloading, asset bundling, and minification
                   </li>
                   
@@ -90,7 +90,7 @@
                     <a href="https://github.com/aFarkas/lazysizes">Lazysizes</a> for progressively loading images
                   </li>
                   <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f61C.png" alt="Winking face with tongue emoji" class="emoji">
+                    <img src="<?= $site->url() ?>/assets/emoji/1f61c.png" alt="Winking face with tongue emoji" class="emoji">
                     <a href="https://www.emojione.com/">EmojiOne</a> for beautiful, free cross-platform emojis
                   </li>
                 </ul>
