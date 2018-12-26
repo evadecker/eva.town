@@ -59,7 +59,3 @@ State: NY
 ----
 
 Zip: 11231
-
-----
-
-Copyright: I work hard; please don't steal. :)

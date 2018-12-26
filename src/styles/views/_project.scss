@@ -282,10 +282,6 @@ html:not(.is-animating) .project-arrow {
     }
   }
 
-  .post-callout li {
-    margin-top: 1rem;
-  }
-
   @include media-min($column-breakpoint) {
     aside {
       width: $aside-width;
@@ -392,7 +388,8 @@ html:not(.is-animating) .project-arrow {
 
 ul.emoji-list li {
   position: relative;
-  padding-left: 2rem;
+  padding-left: calc(24px + 0.5rem);
+  margin-top: 0.5rem;
   .emoji {
     width: 24px;
     height: 24px;
