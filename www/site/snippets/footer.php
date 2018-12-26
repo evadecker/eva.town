@@ -5,11 +5,11 @@
           &copy; Kyle Decker, <?= date("Y") ?><span class="dot"></span><button id="credits">Credits</button>
         </div>
       </div>
-      <div id="colophon" data-visible="false">
+      <div id="colophon" aria-hidden="true">
         <div class="colophon-overlay"></div>
         <div class="colophon-content">
           <div class="colophon-header wrapper">
-            <p>This site exists thanks to these tools and resources:</p>
+            <h2>Credits</h2>
             <button class="close">
               <svg viewBox="0 0 22 22">
                 <path d="M11.0710678,8.94974747 L18.1421356,1.87867966 L20.263456,4 L13.1923882,11.0710678 L20.263456,18.1421356 L18.1421356,20.263456 L11.0710678,13.1923882 L4,20.263456 L1.87867966,18.1421356 L8.94974747,11.0710678 L1.87867966,4 L4,1.87867966 L11.0710678,8.94974747 Z"></path>
@@ -194,7 +194,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="disclaimer">All other content &copy; Kyle Decker, <?= date("Y") ?>.</div>
+              <div class="disclaimer">All other content &copy; Kyle Decker, <?= date("Y") ?>. Stealing is lame! Don’t do it!</div>
             </div>
           </div> 
         </div>

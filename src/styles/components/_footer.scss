@@ -116,8 +116,16 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 0;
+
       @include media-max(500px) {
         padding: 1rem 0;
+      }
+
+      h2 {
+        @extend %font-sans;
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin: 0;
       }
     }
 
@@ -158,19 +166,15 @@
       }
     }
   
-    h2 {
-      @extend %font-sans-extended;
-      margin: 0;
-    }
-  
     h3 {
       @extend %font-sans-extended;
       background: $neutral-0;
-      padding-bottom: 0.25rem;
+      padding-bottom: 0.5rem;
       box-shadow: 0 1px 0 rgba($neutral-10, 0.1);
       position: sticky;
       top: 0;
       z-index: 5;
+      line-height: 1;
       + * {
         margin-top: 1rem;
       }
@@ -181,7 +185,7 @@
     }
   }
 
-  &.is-visible {
+  &[aria-hidden="false"] {
     opacity: 1;
     visibility: visible;
     transition: visibility 0s linear 0s, opacity 0.5s ease 0s;
