@@ -361,7 +361,6 @@ html:not(.is-animating) .project-arrow {
   color: $color-yellow-dark;
   border-top: 6px solid $color-yellow;
   padding: 1rem;
-  line-height: 1.4;
   font-size: 0.8rem;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -393,7 +392,7 @@ html:not(.is-animating) .project-arrow {
 
 ul.emoji-list li {
   position: relative;
-  margin-bottom: 1rem;
+  padding-left: 2rem;
   .emoji {
     width: 24px;
     height: 24px;

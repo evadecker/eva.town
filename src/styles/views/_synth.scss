@@ -151,10 +151,12 @@ $lcd-hover: #4D5B4D;
 .key-letter {
   fill: rgba($neutral-10, 0.3);
   opacity: 0;
+  display: none;
   transform: translateY(4px);
   transition: 0.4s ease-out;
   &.visible {
     opacity: 1;
+    display: block;
     transform: translateY(0);
   }
   &.fadeout {
