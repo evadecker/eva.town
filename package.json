@@ -70,6 +70,7 @@
     "howler": "^2.0.15",
     "is-touch-device": "^1.0.1",
     "lazysizes": "^4.1.4",
+    "micromodal": "^0.3.2",
     "rellax": "^1.7.1",
     "swup": "^1.7.17",
     "wowjs": "^1.1.3"

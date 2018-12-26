@@ -2,15 +2,15 @@
       <div class="footer-content wrapper">
         <a href="<?= $site->url() ?>" class="logo"><span class="visually-hidden"><?= $site->title() ?></span><?php snippet('logo') ?></a>
         <div class="footer-copyright">
-          &copy; Kyle Decker, <?= date("Y") ?><span class="dot"></span><button id="credits">Credits</button>
+          &copy; Kyle Decker, <?= date("Y") ?><span class="dot"></span><button data-micromodal-trigger="colophon" class="credits">Credits</button>
         </div>
       </div>
       <div id="colophon" aria-hidden="true">
-        <div class="colophon-overlay"></div>
-        <div class="colophon-content">
+        <div class="colophon-overlay" tabindex="-1" data-micromodal-close></div>
+        <div role="dialog" aria-modal="true" aria-labelledby="credits-title" class="colophon-content">
           <div class="colophon-header wrapper">
-            <h2>Credits</h2>
-            <button class="close">
+            <h2 id="credits-title">Credits</h2>
+            <button aria-label="Close modal" data-micromodal-close>
               <svg viewBox="0 0 22 22">
                 <path d="M11.0710678,8.94974747 L18.1421356,1.87867966 L20.263456,4 L13.1923882,11.0710678 L20.263456,18.1421356 L18.1421356,20.263456 L11.0710678,13.1923882 L4,20.263456 L1.87867966,18.1421356 L8.94974747,11.0710678 L1.87867966,4 L4,1.87867966 L11.0710678,8.94974747 Z"></path>
               </svg>
@@ -50,6 +50,11 @@
                     <img src="<?= $site->url() ?>/assets/emoji/1f301.png" alt="Foggy picture emoji" class="emoji">
                     <a href="https://github.com/aFarkas/lazysizes">Lazysizes</a> for progressively loading images
                   </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/274e.png" alt="X emoji" class="emoji">
+                    <a href="https://micromodal.now.sh/">Micromodal.js</a> for accessible modals like this one
+                  </li>
+                  
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f4a8.png" alt="Dash emoji" class="emoji">
                     <a href="https://github.com/gmrchk/swup">Swup</a> for page transitions, caching, and pre-rendering
