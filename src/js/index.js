@@ -2,6 +2,7 @@
 
 import Swup from 'swup'
 import Flickity from 'flickity'
+import MicroModal from 'micromodal'
 import swapTwo from './swaptwo.js'
 import synth from './synth.js'
 import 'lazysizes'
@@ -104,25 +105,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   // Run on initial load
   init()
-
-  // Do not nest within init() because the footer is not contained
-  // within the swup object
-  if (document.querySelector('#colophon') !== null) {
-    var trigger = document.getElementById('credits')
-    var colophon = document.getElementById('colophon')
-    var close = colophon.querySelector('.close')
-    var overlay = colophon.querySelector('.colophon-overlay')
-
-    var toggleOverlay = function () {
-      var aria = colophon.attributes['aria-hidden'].value
-      document.body.classList.toggle('noscroll')
-      aria === 'true' ? colophon.setAttribute('aria-hidden', 'false') : colophon.setAttribute('aria-hidden', 'true')
-    }
-
-    trigger.addEventListener('click', toggleOverlay)
-    close.addEventListener('click', toggleOverlay)
-    overlay.addEventListener('click', toggleOverlay)
-  }
+  MicroModal.init({
+    onShow: function () { document.body.setAttribute('data-noscroll', '') },
+    onClose: function () { document.body.removeAttribute('data-noscroll') },
+    awaitCloseAnimation: true
+  })
 
   // Handle loading and killing scripts on page transitions
   document.addEventListener('swup:contentReplaced', function () {

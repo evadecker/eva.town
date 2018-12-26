@@ -45,7 +45,7 @@
 }
 
 // Colophon toggle button
-#credits {
+.credits {
   padding: 0;
   border: none;
   color: $color-text-light;
@@ -64,9 +64,7 @@
   right: 0;
   bottom: 0;
   z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease 0s, visibility 0s linear 0.3s;
+  display: none;
 
   .colophon-overlay {
     background: linear-gradient($color-red, $color-orange, $color-yellow, $color-green, $color-teal, $color-blue, $color-purple, $color-red);
@@ -93,8 +91,6 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 1rem 2rem -0.5rem rgba($neutral-10, 0.15);
-    transform: scale(0.95);
-    transition: 0.2s transform ease;
 
     .colophon-scrollarea {
       flex: 1;
@@ -129,7 +125,7 @@
       }
     }
 
-    .close {
+    button[data-micromodal-close] {
       width: 26px;
       height: 26px;
       background: transparent;
@@ -141,6 +137,7 @@
       margin-left: 2rem;
       cursor: pointer;
       svg {
+        pointer-events: none;
         width: 100%;
         path {
           fill: $color-text-light;
@@ -185,13 +182,27 @@
     }
   }
 
-  &[aria-hidden="false"] {
+  &.is-open {
+    display: block;
     opacity: 1;
-    visibility: visible;
-    transition: visibility 0s linear 0s, opacity 0.5s ease 0s;
+    transition: opacity 0.5s ease 0s;
+  }
 
+  &[aria-hidden="false"] {
+    .colophon-overlay {
+      animation: 0.5s fadeIn forwards;
+    }
     .colophon-content {
-      transform: scale(1);
+      animation: 0.3s growIn forwards;
+    }
+  }
+
+  &[aria-hidden="true"] {
+    .colophon-overlay {
+      animation: 0.3s fadeOut forwards;
+    }
+    .colophon-content {
+      animation: 0.3s fadeOut forwards;
     }
   }
 }
@@ -202,5 +213,28 @@
   }
   to {
     background-position: 0 -100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes growIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95)
+  }
+  to {
+    opacity: 1;
+    transform: scale(1)
   }
 }
