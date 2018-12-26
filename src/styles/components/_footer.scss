@@ -12,6 +12,21 @@
     justify-content: space-between;
   }
 
+  a, .credits {
+    color: $color-text-light;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Colophon toggle button
+  .credits {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
   .footer-copyright {
     display: flex;
     align-items: center;
@@ -41,18 +56,6 @@
     &:hover path {
       fill: $neutral-5;
     }
-  }
-}
-
-// Colophon toggle button
-.credits {
-  padding: 0;
-  border: none;
-  color: $color-text-light;
-  background: transparent;
-  cursor: pointer;
-  &:hover {
-    text-decoration: underline;
   }
 }
 

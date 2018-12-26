@@ -2,7 +2,7 @@
       <div class="footer-content wrapper">
         <a href="<?= $site->url() ?>" class="logo"><span class="visually-hidden"><?= $site->title() ?></span><?php snippet('logo') ?></a>
         <div class="footer-copyright">
-          &copy; Kyle Decker, <?= date("Y") ?><span class="dot"></span><button data-micromodal-trigger="colophon" class="credits">Credits</button>
+          &copy;&nbsp;<a href="<?= $site->page('about')->url() ?>">Kyle Decker</a>, <?= date("Y") ?><span class="dot"></span><button data-micromodal-trigger="colophon" class="credits">Credits</button>
         </div>
       </div>
       <div id="colophon" aria-hidden="true">
