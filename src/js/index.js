@@ -114,8 +114,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
     var overlay = colophon.querySelector('.colophon-overlay')
 
     var toggleOverlay = function () {
-      colophon.classList.toggle('is-visible')
+      var aria = colophon.attributes['aria-hidden'].value
       document.body.classList.toggle('noscroll')
+      aria === 'true' ? colophon.setAttribute('aria-hidden', 'false') : colophon.setAttribute('aria-hidden', 'true')
     }
 
     trigger.addEventListener('click', toggleOverlay)
