@@ -145,7 +145,7 @@
                 <ul class="emoji-list">
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f524.png" alt="ABC emoji" class="emoji">
-                    04b by <a href="http://www.04.jp.org/">Yuji Oshimoto</a>
+                    <a href="https://www.dafont.com/04b-30.font">04b</a> by <a href="http://www.04.jp.org/">Yuji Oshimoto</a>
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f524.png" alt="ABC emoji" class="emoji">
