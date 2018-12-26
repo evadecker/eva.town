@@ -101,6 +101,29 @@ document.addEventListener('DOMContentLoaded', function (event) {
         form.removeEventListener('submit', handlePasswordSubmit)
       })
     }
+
+    if (document.querySelector('#colophon') !== null) {
+      var credits = document.getElementById('credits')
+      var colophon = document.getElementById('colophon')
+      var close = colophon.querySelector('.close')
+      var overlay = colophon.querySelector('.colophon-overlay')
+      var toggleOverlay = function () {
+        if (colophon.dataset.visible === 'true') {
+          colophon.dataset.visible = 'false'
+          document.body.classList.remove('noscroll')
+          setTimeout(function () {
+            colophon.style.display = 'none'
+          }, 300)
+        } else {
+          colophon.dataset.visible = 'true'
+          colophon.style.display = 'block'
+          document.body.classList.add('noscroll')
+        }
+      }
+      credits.addEventListener('click', toggleOverlay)
+      close.addEventListener('click', toggleOverlay)
+      overlay.addEventListener('click', toggleOverlay)
+    }
   }
 
   // Run on initial load

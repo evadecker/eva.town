@@ -437,10 +437,8 @@ var synth = (function () {
 
   function pressKey (noteName) {
     var keyId = document.getElementById(noteName)
-    if (keyId.classList.contains('pressed')) {
-      // Do not repeat keydown
-    } else {
-      document.getElementById(noteName).classList.add('pressed')
+    if (!keyId.classList.contains('pressed')) {
+      keyId.classList.add('pressed')
       playNote(noteName)
       showActiveNotehead(noteName)
     }
@@ -449,7 +447,7 @@ var synth = (function () {
   function pressKeyMatchingCoords (x, y) {
     Array.from(keys).forEach(key => {
       var posXStart = key.offset().left
-      var posYStart = key.offset().top - $(window).scrollTop()
+      var posYStart = key.offset().top - window.scrollTop()
       var posXEnd =
         key.offset().left + key[0].getBoundingClientRect().width
       var posYEnd =
@@ -635,6 +633,7 @@ var synth = (function () {
           pressKey('Dsharp4')
           break
         case ';':
+        case ':':
           e.preventDefault()
           pressKey('E4')
           break
@@ -709,6 +708,7 @@ var synth = (function () {
         releaseKey('Dsharp4')
         break
       case ';':
+      case ':':
         releaseKey('E4')
         break
     }
