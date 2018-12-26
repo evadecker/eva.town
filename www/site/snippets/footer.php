@@ -19,23 +19,6 @@
           <div class="colophon-scrollarea">
             <div class="wrapper">
               <div class="colophon-block">
-                <h3>Software</h3>
-                <ul class="emoji-list">
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f48e.png" alt="Gem stone emoji" class="emoji">
-                    <a href="https://www.sketchapp.com/"">Sketch</a> for designing and exporting SVGs
-                  </li>
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f19a.png" alt="VS emoji" class="emoji">
-                    <a href="https://code.visualstudio.com/">VS Code</a> for&hellip; coding
-                  </li>
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f5a5.png" alt="Computer emoji" class="emoji">
-                    <a href="https://www.iterm2.com/">iTerm2</a> for hacking into the mainframe
-                  </li>
-                </ul>
-              </div>
-              <div class="colophon-block">
                 <h3>Content Management</h3>
                 <ul class="emoji-list">
                   <li>
@@ -45,33 +28,27 @@
                 </ul>
               </div>
               <div class="colophon-block">
-                <h3>Build Tools</h3>
-                <ul class="emoji-list">
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f49e.png" alt="Revolving heart emoji" class="emoji">
-                    <a href="https://github.com/brocessing/kirby-webpack">kirby-webpack</a> for browser reloading, asset bundling, and minification
-                  </li>
-                  
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f47e.png" alt="Alien sprite emoji" class="emoji">
-                    <a href="https://github.com/tonistiigi/audiosprite">Audiosprite</a> for generating audio sprite files
-                  </li>
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f32b.png" alt="Fog emoji" class="emoji">
-                    <a href="https://github.com/technopagan/sqip">SQIP</a> for generating low-quality SVG image placeholders
-                  </li>
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/2728.png" alt="Sparkles emoji" class="emoji">
-                    <a href="https://developers.google.com/speed/webp/docs/api">libwebp</a> for generating WEBP images from PNGs, JPEGs and GIFs
-                  </li>
-                </ul>
-              </div>
-              <div class="colophon-block">
                 <h3>Libraries</h3>
                 <ul class="emoji-list">
                   <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f61c.png" alt="Winking face with tongue emoji" class="emoji">
+                    <a href="https://www.emojione.com/">EmojiOne</a> for beautiful, free cross-platform emojis
+                  </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f446.png" alt="Finger pointing up emoji" class="emoji">
+                    <a href="https://flickity.metafizzy.co/">Flickity</a> for touch-responsive carousels
+                  </li>
+                  <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f50a.png" alt="Loud speaker emoji" class="emoji">
                     <a href="https://howlerjs.com/">Howler.js</a> for serving audio
+                  </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f5fa.png" alt="Map emoji" class="emoji">
+                    <a href="https://github.com/pedroborges/kirby-xml-sitemap">kirby-xml-sitemap</a> for automatic sitemap generation
+                  </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f301.png" alt="Foggy picture emoji" class="emoji">
+                    <a href="https://github.com/aFarkas/lazysizes">Lazysizes</a> for progressively loading images
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f4a8.png" alt="Dash emoji" class="emoji">
@@ -81,17 +58,43 @@
                     <img src="<?= $site->url() ?>/assets/emoji/1f415.png" alt="Doge emoji" class="emoji">
                     <a href="https://github.com/matthieua/WOW">WOW.js</a> for animations on scroll
                   </li>
+                </ul>
+              </div>
+              <div class="colophon-block">
+                <h3>Software</h3>
+                <ul class="emoji-list">
                   <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f446.png" alt="Finger pointing up emoji" class="emoji">
-                    <a href="https://flickity.metafizzy.co/">Flickity</a> for touch-responsive carousels
+                    <img src="<?= $site->url() ?>/assets/emoji/1f5a5.png" alt="Computer emoji" class="emoji">
+                    <a href="https://www.iterm2.com/">iTerm2</a> for hacking into the mainframe
                   </li>
                   <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f301.png" alt="Foggy picture emoji" class="emoji">
-                    <a href="https://github.com/aFarkas/lazysizes">Lazysizes</a> for progressively loading images
+                    <img src="<?= $site->url() ?>/assets/emoji/1f48e.png" alt="Gem stone emoji" class="emoji">
+                    <a href="https://www.sketchapp.com/"">Sketch</a> for designing and exporting SVGs
                   </li>
                   <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f61c.png" alt="Winking face with tongue emoji" class="emoji">
-                    <a href="https://www.emojione.com/">EmojiOne</a> for beautiful, free cross-platform emojis
+                    <img src="<?= $site->url() ?>/assets/emoji/1f19a.png" alt="VS emoji" class="emoji">
+                    <a href="https://code.visualstudio.com/">VS Code</a> for&hellip; coding
+                  </li>
+                </ul>
+              </div>
+              <div class="colophon-block">
+                <h3>Build Tools</h3>
+                <ul class="emoji-list">
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f47e.png" alt="Alien sprite emoji" class="emoji">
+                    <a href="https://github.com/tonistiigi/audiosprite">Audiosprite</a> for generating audio sprite files
+                  </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f49e.png" alt="Revolving heart emoji" class="emoji">
+                    <a href="https://github.com/brocessing/kirby-webpack">kirby-webpack</a> for browser reloading, asset bundling, and minification
+                  </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/2728.png" alt="Sparkles emoji" class="emoji">
+                    <a href="https://developers.google.com/speed/webp/docs/api">libwebp</a> for generating WEBP images from PNGs, JPEGs and GIFs
+                  </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f32b.png" alt="Fog emoji" class="emoji">
+                    <a href="https://github.com/technopagan/sqip">SQIP</a> for generating low-quality SVG image placeholders
                   </li>
                 </ul>
               </div>
@@ -153,16 +156,16 @@
                 <h3>Hosting</h3>
                 <ul class="emoji-list">
                   <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f170.png" alt="Red A emoji" class="emoji">
+                    <a href="https://fonts.adobe.com/">Adobe Fonts</a> for serving web fonts
+                  </li>
+                  <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f419.png" alt="Octopus emoji" class="emoji">
                     <a href="https://github.com/">Github</a> for version control
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f4be.png" alt="Floppy disk emoji" class="emoji">
                     <a href="https://www.namecheap.com/">Namecheap</a> for domain registration and hosting 
-                  </li>
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f170.png" alt="Red A emoji" class="emoji">
-                    <a href="https://fonts.adobe.com/">Adobe Fonts</a> for serving web fonts
                   </li>
                 </ul>
               </div>
@@ -174,16 +177,16 @@
                     <a href="https://humaan.com/checklist/">Humaan's QA checklist</a> for launching a website
                   </li>
                   <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f197.png" alt="OK emoji" class="emoji">
-                    <a href="https://validator.w3.org/">W3 HTML5 and CSS3 validator</a> for ensuring semantic code
-                  </li>
-                  <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f4a1.png" alt="Lightbulb emoji" class="emoji">
                     <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> for auditing website performance and best practices
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f30a.png" alt="Wave emoji" class="emoji">
                     <a href="http://wave.webaim.org/">WAVE</a> for evaluating web accessibility
+                  </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f197.png" alt="OK emoji" class="emoji">
+                    <a href="https://validator.w3.org/">W3 HTML5 and CSS3 validator</a> for ensuring semantic code
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f970.png" alt="Smiling face with hearts emoji" class="emoji">
