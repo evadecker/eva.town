@@ -51,6 +51,9 @@
   color: $color-text-light;
   background: transparent;
   cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 #colophon {
