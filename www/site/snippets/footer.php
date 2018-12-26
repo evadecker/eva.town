@@ -199,7 +199,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="disclaimer">All other content &copy; Kyle Decker, <?= date("Y") ?>. Stealing is lame! Don’t do it!</div>
+              <div class="disclaimer">All other content &copy; Kyle Decker, <?= date("Y") ?>. Stealing is lame!</div>
             </div>
           </div> 
         </div>

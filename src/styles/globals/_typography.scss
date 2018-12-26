@@ -131,13 +131,12 @@ hr {
     content: '';
     position: absolute;
     left: 50%;
-    top: calc(50% - 3px);
+    top: calc(50% - 6px);
     transform: translate3d(-50%, -50%, 0);
     height: 6px;
     width: 6px;
-    border-radius: 50%;
-    background: $color-text-light;
-    box-shadow: 7px 12px 0 $color-text-light, -7px 12px 0 $color-text-light;
+    background: $neutral-4;
+    box-shadow: 6px 6px 0 $neutral-4, -6px 6px 0 $neutral-4, 0 12px 0 $neutral-4;
   }
 }
 
