@@ -99,6 +99,7 @@
     .colophon-scrollarea {
       flex: 1;
       overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
       padding-bottom: 1.5rem;
       @include media-max(500px) {
         padding-bottom: 1rem;
