@@ -94,7 +94,7 @@
     flex-direction: column;
     box-shadow: 0 1rem 2rem -0.5rem rgba($neutral-10, 0.15);
     transform: scale(0.95);
-    transition: 0.3s transform ease;
+    transition: 0.2s transform ease;
 
     .colophon-scrollarea {
       flex: 1;
@@ -183,7 +183,7 @@
   &.is-visible {
     opacity: 1;
     visibility: visible;
-    transition: visibility 0s linear 0s, opacity 0.3s ease 0s;
+    transition: visibility 0s linear 0s, opacity 0.5s ease 0s;
 
     .colophon-content {
       transform: scale(1);
