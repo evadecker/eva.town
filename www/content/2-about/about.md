@@ -16,7 +16,7 @@ This is a home for things I've made and how I've made them. My goal is for anyon
 
 (snippet: about/dropbox)
 
-Most recently, I worked at [Dropbox](/work/dropbox), where I helped develop a better way to coordinate the way we message users, [among](https://dribbble.com/shots/4138623-Fit-Fill-Icon-Design-Process) [some](https://dribbble.com/shots/4309432-Design-Session-Cheat-Sheet) [other](https://dribbble.com/shots/3288748-Dropbox-Design-Book-Club) [things](https://dribbble.com/shots/3689574-Menu-Loader).
+Most recently, I worked at [Dropbox](/work/dropbox), where I helped develop a better way to coordinate the way we message users, [among](https://dribbble.com/shots/4138623-Fit-Fill-Icon-Design-Process) [some](https://dribbble.com/shots/4309432-Design-Session-Cheat-Sheet) [other](https://dribbble.com/shots/3288748-Dropbox-Design-Book-Club) [things](https://dribbble.com/shots/3689574-Menu-Loader). In October, I designed and built a site for the poet and drag performer, [Wo Chan](https://wo.bingo/).
 
 **I’m currently seeking a new full-time role in <span class="uppercase">NYC</span>** that will allow me to contribute design and front-end engineering skills toward voting reform, urban planning, the arts, social and environmental justice, or other progressive causes.
 
