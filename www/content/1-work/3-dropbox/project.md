@@ -83,7 +83,7 @@ Imagine that, but then picture that there are 50,000 Pee Wees. And different pin
 
 Journey Builder takes some input (a user, a user group, an experiment) and gives some output (an email on this date, a push notification after this action). That's all there is to it. What I needed to design was a visual, understandable way to link it all together.
 
-## Research: background and competitive analysis
+## Preliminary research
 
 I began by asking what work had been done here before. There was a version before this: what was it like? Did people use it? If not, why not? What were the biggest problems that users dealt with day-to-day?
 
@@ -103,7 +103,7 @@ I wrote out some of the questions I hoped to solve.
 
 What similar products existed in the wild? Within the marketing automation industry, products like [Campaign Monitor](https://www.campaignmonitor.com/), [ActiveCampaign](https://www.activecampaign.com/), and [SendGrid](https://www.autopilothq.com/) all have different takes on this UX. Outside of marketing, inspiration was drawn from diagramming tools like [LucidChart](https://www.lucidchart.com/), automation-based tools like [Automator](https://support.apple.com/guide/automator/welcome/mac) and [IFTTT](https://ifttt.com/), and even audio tools like [Minihost Modular](https://www.image-line.com/support/flstudio_online_manual/html/plugins/Minihost%20Modular.htm), which allows users to chain together audio effects and plugins.
 
-## Research: drawing mental maps
+## Co-creation
 
 Our existing solution was incredibly complex. Achieving even the simplest things required jumping through an absurd number of hoops.
 
@@ -131,9 +131,14 @@ The opportunity to work on an interface that went beyond gridded lists, cards, a
 
 ## Principles and goals
 
-Early on, my design lead, [Kurt](http://kurtvarner.com/) saw me going ham and encouraged me to take a step back. This was a complex product; failing to do our due diligence up-front could come back and bite us later.
+Early on, my design lead, [Kurt](http://kurtvarner.com/) saw how eagerly I had jumped in and encouraged me to take a step back. This was a complex product; failing to do our due diligence up-front could come back and bite us later.
 
 He said I should work with the team to establish [design principles](https://medium.com/the-year-of-the-looking-glass/a-matter-of-principle-4f5e6ad076bb). A good design principle "helps resolve real-world questions", "imparts a human-oriented sense of *why*", and "has a point of view that a rational person could disagree with".
+
+<div class="post-callout">
+Why makes a good design principle?
+Julie Zhuo lists things...
+</div>
 
 Based on this, we determined that a journey should communicate what it does at a glance by having the most pertinent details viewable at the highest level. Anyone viewing a journey for the first time (regardless of their experience with the tool) should be able to understand what is happening without having to dig into menus, detail panes, help articles, or other parts of Megaphone. It should encourage experimentation, providing actionable analytics and building space to tinker without fear. And it should unify the fragmented, integrating all the tools they need should into one coherent, usable whole.
 
@@ -148,6 +153,21 @@ Throughout the process, I documented changes in [Dropbox Paper](https://paper.dr
 [Annotations - where did we land]
 
 [Icons iteration - goal of using Maestro, Dropbox component library, behind the scenes as well and contributing to the repo]
+
+An important part of this process was involving the engineering team: they had released earlier versions of the product which suffered from poor adoption and usability.
+
+<div class="post-callout">
+How to involve engineers in the design process
+The value of treating engineers as designers
+
+Everyone is a designer, and the only deliverable that matters is your final product. That means the designs that people will *see* and *use* will likely be implemented by engineers. It's important to involve them in the design process in order to ensure a polished experience.
+
+It helps to have "bridges" between the disciplines—designers who understand engineering, and engineers who understand design, so that teams can communicate effectively.
+
+- Involve engineers in ideation and critique. They're the ones who know problems inside and out, and they're very good at isolating edge cases and proposing inventive solutions.
+- Encourage them that all ideas are valid: many engineers I've worked with downplay their own design skills and think their ideas are worthless. The very same engineers have proposed some of the best, most interesting concepts during design sessions, when given the freedom to ideate without fear.
+
+</div>
 
 Workflow: We acted like a startup within a startup. Very little oversight, ability to move quickly, direct line of communication with our users (Dropboxers down the hall).
 
@@ -198,7 +218,7 @@ I learned the value of educating everyone on the value of design. It was incredi
 
 Success metrics???
 
-## Future: what's next?
+## What's next?
 
 There are also little things that came up along the way: for example, delaying with a specific date, in practice, is only ever done at the start of a journey, not in the middle: so it really makes more sense for that option to live in the journey settings, rather than in the delay steps.
 
@@ -210,4 +230,4 @@ I learned the value of establishing design principles
 
 ---
 
-Thanks for reading. I've published additional case studies for [Swiftype](/work/swiftype) and a personal project, [Wintr.mx](/work/wintr-mx). [Read about me](/about) or [go make some fart sounds](/).
+Thanks for reading. I've published additional case studies for [Swiftype](/work/swiftype) and a personal project, [Wintr.mx](/work/wintr-mx). [Read about me](/about) or [journey to some fart sounds](/).
