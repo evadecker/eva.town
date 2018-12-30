@@ -1,5 +1,5 @@
-Title: Page Not Found
+title: Page Not Found
 
 ----
 
-Text: It doesn't look like that page exists. My website is small, so you should be able to locate whatever you were looking for using the navigation at the top. If you still can't find it, (email: kyle@kyledecker.me text: shoot me an email) and I'll do my best to help. ♥
+text: Ain't a thing here. Check your spelling—if you still can't find what you're looking for, (email: kyle@kyledecker.me text: email me) and we'll sort it out.
