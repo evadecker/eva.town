@@ -43,16 +43,16 @@
     flex-direction: column;
     justify-content: center;
     max-width: 600px;
-  }
 
-  h2 {
-    @extend %font-sans-extended;
-    margin: 1rem 0;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: underline;
+    h2 {
+      @extend %font-sans-extended;
+      margin: 1rem 0;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
   }
 }
 
