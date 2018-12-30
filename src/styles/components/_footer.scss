@@ -79,7 +79,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.95;
+    opacity: 0.92;
     animation: 60s rainbow linear infinite;
   }
 
@@ -190,24 +190,19 @@
   &.is-open {
     display: block;
     opacity: 1;
-    transition: opacity 0.5s ease 0s;
   }
 
   &[aria-hidden="false"] {
-    .colophon-overlay {
-      animation: 0.5s fadeIn forwards;
-    }
+    animation: 0.2s fadeIn ease forwards;
     .colophon-content {
-      animation: 0.3s growIn forwards;
+      animation: 0.3s growIn ease forwards;
     }
   }
 
   &[aria-hidden="true"] {
-    .colophon-overlay {
-      animation: 0.3s fadeOut forwards;
-    }
+    animation: 0.3s fadeOut ease forwards;
     .colophon-content {
-      animation: 0.3s fadeOut forwards;
+      animation: 0.3s fadeOut ease forwards;
     }
   }
 }
