@@ -34,21 +34,19 @@ text:
 
 ## It's November 2009. Bing Crosby's "White Christmas" snakes its way into my&nbsp;ear.
 
-I don't remember where I was, exactly. Probably inside a Target. Maybe a Borders. It doesn't really matter: like clockwork, Bing and his posse brazenly make themselves heard no matter who you are, where you live, or what you do.
+I don't remember where I was, exactly. Probably inside a Target. Maybe a Borders. It doesn't really matter: like clockwork, Bing and his ilk make themselves heard no matter who you are, where you live, or what you do. Crosby is the ghost of Christmas past, present, and future, immortal, unchanging, crooning year after year the same as the year before.
 
-Crosby & co. never change, never age: crooning the same old lines year after year for your grandparents and your parents and you, your children and grandchildren and great-grandchildren and on and on. And on. And on.
+Truthfully, congratulations are in order: you've done it, Bing! You won Christmas. You planted your sound in 1942 and your voice has echoed through supermarkets across America ever since. You're what every musician strives to be: timeless. Quentessential!
+
+Unfortunately, nothing is timeless—least of all, music.
 
 (snippet: wintr-mx/bing-crosby)
 
-Now, I don't hate Christmas music: take me to any Broadway musical and you'll see how much I love a good, oversentimental number.
+Why do we continue to salve an addiction to decades-old seasonal pageantry? Are we homesick? Lazy? (What's comfortable comes easier than what's new.) Could be nostalgia: a desire for a simpler time, colored by hazy memories of childhood warped by the childhoods *we've* seen portrayed in film. More cynically, perhaps it's an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
 
-No, this isn't music. This is torture.
+*What's the reason for the wheezin'?*
 
-It begs the question: why do we do this to ourselves? Is it nostalgia? Homesickness? Maybe laziness. Or perhaps an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
-
-*What's the reason for the wheezin'?* 
-
-Too many talented musicians exist for us to keep stabbing ourselves in our collective ear holes. I was determined to do something about it.
+I may sound bitter, but too many talented musicians exist for us to keep stabbing ourselves in our collective ear holes. I was determined to do something about it.
 
 I cobbled together a playlist—20 tracks—of the freshest, least-beaten-to-death holiday tunes I could find. I burned <span class="uppercase">CD</span>s for family and friends, designed album art, assembled paper sleeves, and wrote well-wishes alongside poorly-drawn snowmen. I creatively titled it *Kyle's Winter Mix*. But people seemed to like it, word spread, so I made another one the next year. And the year after that. Until six years had passed and I'd compiled 120 tunes. 
 
