@@ -3,7 +3,7 @@
   <ul class="emoji-list">
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f629.png" alt="Weary emoji">
-      <strong>It makes <a href="http://practicaltypography.com/all-caps.html">reading</a> more difficult</strong> since there are no ascenders or descenders to form distinct silhouettes.
+      <strong><a href="http://practicaltypography.com/all-caps.html">It makes reading more difficult</a></strong> since there are no ascenders or descenders to form distinct silhouettes.
     </li>
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f520.png" alt="ABCD emoji">
@@ -11,11 +11,11 @@
     </li>
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f92c.png" alt="Yelling emoji">
-      <strong>IT FEELS <a href="https://youtu.be/IBO8c7v7guI?t=29">SHOUTY</a>.</strong> Please stop yelling.
+      <strong>IT FEELS <a href="https://youtu.be/IBO8c7v7guI?t=29">SHOUTY</a>.</strong>
     </li>
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f449.png" alt="Finger pointing right emoji">
-      <em>This applies to situations with lots of text, like a user interface or the content of a blog post. Headlines and other short phrases often look superb in all-caps—just be sure to <a href="https://practicaltypography.com/letterspacing.html">letterspace</a>.</em>
+      <em>This applies to situations with lots of text, like a user interface or the content of a blog post. Short phrases often look superb capitalized; just be sure to <a href="https://practicaltypography.com/letterspacing.html">letterspace</a>.</em>
     </li>
   </ul>  
 </div>

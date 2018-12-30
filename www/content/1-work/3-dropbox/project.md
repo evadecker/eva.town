@@ -38,7 +38,9 @@ Text:
 
 ## It looked atrocious. I could hardly contain my excitement.
 
-This was sinful. Nobody would be able to use this. And this was v2! I winced thinking about what v1 must've looked like...
+Frankly, this looked—to put it mildly—like a disaster.
+
+Nobody would be able to use this. And this was v2! I winced thinking about what v1 must've looked like...
 
 (image: tracks.png caption: "Tracks", v2, no onboarding. Use this product. Go.)
 
@@ -46,11 +48,13 @@ I needed a lot of help decoding this. For example, what does "SC" mean? "BN"? Wh
 
 ## Background
 
-When I joined Dropbox, I was placed on the Growth Platform team. Historically engineering-driven, Growth Platform was responsible for building and maintaining the internal tools that Dropbox used to email, send push notifications, and display in-product ads. This included the "platform"—i.e., the developer <dfn title="Application Program Interface">APIs</dfn> used to accomplish these things—as well as a <dfn title="Graphical User Interface">GUI</dfn> that various teams used to create, manage, and send messages.
+When I joined Dropbox, I was placed on the Growth Platform team. Historically engineering-driven, Growth Platform was responsible for building our communication tools—the things we use to email users, send push notifications, and display ads within Dropbox on the web, mobile app, and desktop tray. The "platform" part of Growth Platform referred to developer <dfn title="Application Program Interface">APIs</dfn> that other teams at Dropbox used, but the team also maintained a <dfn title="Graphical User Interface">GUI</dfn> that others (mostly "growth" teams) used to create, manage, and send messages without needing to code.
 
-When I joined, there were eight engineers and two product managers. I was the first designer the team would ever have.
+There were eight engineers and two product managers. I was their first designer.
 
 (snippet: dropbox/growth-platform)
+
+At the beginning, I spent most of the time trying to understand what all these tools were, how they were used, why we built them, and why we decided to give everything indecipherable codenames. I'll save you some trouble.
 
 (snippet: dropbox/terms)
 
@@ -60,11 +64,9 @@ It wasn't long before I began to take a holistic look at Megaphone—our product
 
 The engineers, bless their hearts. Their intentions were good, but product design was clearly not in their wheelhouse. Not even on the same planet.
 
-I didn't say that, of course. In fact, for every question they answered, the more excited I grew.
+I didn't say that, of course. In fact, for every question they answered, the more excited I grew. By the end of our conversation I had already sketched a full page of ideas.
 
-In spite of the poor design (or perhaps because of it), by the end of our conversation I had already sketched a full page of ideas. The opportunity to work on an interface that went beyond gridded lists, cards, and tables immediately piqued my interest. This could be dynamic! Expressive!
-
-At the heart of this mess was a gem. A cool, powerful gem which held the potential to make work easier, faster, and smarter. All we needed was to dust off the crud and make that gem shine, so people could see it for what it was.
+At the heart of this mess was a gem which held the potential to make work easier, faster, and smarter. All we needed was to dust off the crud and make that gem shine, so people could see it for what it was.
 
 <aside>
 <figure>
@@ -73,17 +75,13 @@ At the heart of this mess was a gem. A cool, powerful gem which held the potenti
 </figure>
 </aside>
 
-What exactly *was* it?
+The question I got most often when first explaining this product to other designers at Dropbox was... what exactly *was* it?
 
-You know the [breakfast machine](https://www.youtube.com/watch?v=KVdqwD_bcPs) from *Pee Wee Herman's Big Adventure*? It starts with Pee Wee blowing on a pinwheel and ends with a full breakfast, smiley pancake and all.
+You know the breakfast machine from *Pee Wee Herman's Big Adventure*? It starts with Pee Wee blowing on a pinwheel and ends with a full breakfast, smiley pancake and all.
 
-Imagine that, but then picture that there are 5,000 Pee Wees. And different pinwheels make different breakfasts. And that the breakfasts are really emails? And some Pee Wees have let us know they really, really don't like breakfast.
+Imagine that, but then picture that there are 50,000 Pee Wees. And different pinwheels make different breakfasts. And that the breakfasts are really emails? And some Pee Wees have let us know they really, really don't like breakfast.
 
-That's it. That's the product.
-
-It takes some input (a user, a user group, an experiment) and gives some output (an email on this date, a push notification after this action). That's all there is to it. Tracks—eventually renamed to Journey Builder—is just a visual way to link those all together.
-
-(Sketch of nodes being linked together? - to illustrate)
+Journey Builder takes some input (a user, a user group, an experiment) and gives some output (an email on this date, a push notification after this action). That's all there is to it. What I needed to design was a visual, understandable way to link it all together.
 
 ## Research: background and competitive analysis
 
@@ -122,6 +120,8 @@ Growth Platform didn't have a researcher, so if we wanted to do this, we'd have 
 [Video of user research sessions]
 
 ## Early concepts
+
+The opportunity to work on an interface that went beyond gridded lists, cards, and tables immediately piqued my interest. This could be dynamic! Expressive!
 
 (image: early-notes.png)
 
