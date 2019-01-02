@@ -19,7 +19,7 @@
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f4e9.png" alt="Envelope with arrow pointing down emoji">
       <dl>
         <dt>Bluemail</dt>
-        <dd>an email creation and delivery system; if you’ve ever gotten an email about file activity in Dropbox, that came from Bluemail</dd>
+        <dd>an email creation and delivery system (if you’ve ever gotten an email about file activity in Dropbox, that came from Bluemail)</dd>
       </dl>
     </li>
     <li>
@@ -40,14 +40,14 @@
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f9d9.png" alt="Wizard emoji">
       <dl>
         <dt>Stormcrow</dt>
-        <dd>a system for feature gating; whether a user is "Stormcrowed in" determines whether or not they can see a feature on Dropbox</dd>
+        <dd>a system for grouping Dropbox users, often used to limit access to new features</dd>
       </dl>
     </li>
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f6e4.png" alt="Train tracks emoji">
       <dl>
         <dt>Journey Builder</dt>
-        <dd>originally known as Tracks; the system that ties together Bluemail, Bluenote, and Prompt; it’s what this case study is about</dd>
+        <dd>(the topic of this case study!) originally known as Tracks; the system that ties together Bluemail, Bluenote, and Prompt</dd>
       </dl>
     </li>
   </ul>

@@ -42,10 +42,6 @@ Frankly, this looked—to put it mildly—like a disaster.
 
 Nobody would be able to use this. And this was v2! I winced thinking about what v1 must've looked like...
 
-(image: tracks.png caption: "Tracks", v2, no onboarding. Use this product. Go.)
-
-I needed a lot of help decoding this. For example, what does "SC" mean? "BN"? What about that red and black dot? What's a "StormcrowNode"? Does anything happen if I click the little unlabeled circle? Why is there an exclamation mark in the circle at the top?
-
 ## Background
 
 When I joined Dropbox, I was placed on the Growth Platform team. Historically engineering-driven, Growth Platform was responsible for building our communication tools—the things we use to email users, send push notifications, and display ads within Dropbox on the web, mobile app, and desktop tray. The "platform" part of Growth Platform referred to developer <dfn title="Application Program Interface">APIs</dfn> that other teams at Dropbox used, but the team also maintained a <dfn title="Graphical User Interface">GUI</dfn> that others (mostly "growth" teams) used to create, manage, and send messages without needing to code.
@@ -58,11 +54,13 @@ At the beginning, I spent most of the time trying to understand what all these t
 
 (snippet: dropbox/terms)
 
-It wasn't long before I began to take a holistic look at Megaphone—our product suite—to analyze how the parts fit together and where there might be room for improvement. Seeing the Tracks prototype was the spark that lit the flame.
-
 ## Getting started
 
 The engineers, bless their hearts. Their intentions were good, but product design was clearly not in their wheelhouse. Not even on the same planet.
+
+(image: tracks.png caption: "Tracks", v2, no onboarding. Use this product. Go.)
+
+I needed a lot of help decoding this. For example, what does "SC" mean? "BN"? What about that red and black dot? What's a "StormcrowNode"? Does anything happen if I click the little unlabeled circle? Why is there an exclamation mark in the circle at the top?
 
 I didn't say that, of course. In fact, for every question they answered, the more excited I grew. By the end of our conversation I had already sketched a full page of ideas.
 
@@ -70,7 +68,7 @@ At the heart of this mess was a gem which held the potential to make work easier
 
 The question I got most often when first explaining this product to other designers at Dropbox was... what exactly *was* it?
 
-You know the breakfast machine from *Pee Wee Herman's Big Adventure*? It starts with Pee Wee blowing on a pinwheel and ends with a full breakfast, smiley pancake and all.
+You know the breakfast machine from *Pee Wee Herman's Big Adventure*? It starts with Pee Wee turning on a fan which blows a pinwheel and ends with a full breakfast, smiley pancake and all.
 
 (snippet: dropbox/peewee)
 
@@ -96,7 +94,7 @@ I wrote out some of the questions I hoped to solve.
 
 (image: automator.png caption: Automator)
 
-What similar products existed in the wild? Within the marketing automation industry, products like [Campaign Monitor](https://www.campaignmonitor.com/), [ActiveCampaign](https://www.activecampaign.com/), and [SendGrid](https://www.autopilothq.com/) all have different takes on this UX. Outside of marketing, inspiration was drawn from diagramming tools like [LucidChart](https://www.lucidchart.com/), automation-based tools like [Automator](https://support.apple.com/guide/automator/welcome/mac) and [IFTTT](https://ifttt.com/), and even audio tools like [Minihost Modular](https://www.image-line.com/support/flstudio_online_manual/html/plugins/Minihost%20Modular.htm), which allows users to chain together audio effects and plugins.
+What similar products existed in the wild? Within the marketing automation industry, products like [Campaign Monitor](https://www.campaignmonitor.com/), [ActiveCampaign](https://www.activecampaign.com/), and [SendGrid](https://www.autopilothq.com/) all have different takes on this experience. Outside of marketing, inspiration was drawn from diagramming tools like [LucidChart](https://www.lucidchart.com/), automation-based tools like [Automator](https://support.apple.com/guide/automator/welcome/mac) and [IFTTT](https://ifttt.com/), and even audio tools like [Minihost Modular](https://www.image-line.com/support/flstudio_online_manual/html/plugins/Minihost%20Modular.htm), which allows users to chain together audio effects and plugins.
 
 ## Co-creation
 
@@ -118,7 +116,9 @@ Growth Platform didn't have a researcher, so if we wanted to do this, we'd have 
 
 The opportunity to work on an interface that went beyond gridded lists, cards, and tables immediately piqued my interest. This could be dynamic! Expressive!
 
+<aside>
 (image: early-notes.png)
+</aside>
 
 [Sketches - what worked? What didn't?]
 
@@ -128,12 +128,9 @@ The opportunity to work on an interface that went beyond gridded lists, cards, a
 
 Early on, my design lead, [Kurt](http://kurtvarner.com/) saw how eagerly I had jumped in and encouraged me to take a step back. This was a complex product; failing to do our due diligence up-front could come back and bite us later.
 
-He said I should work with the team to establish [design principles](https://medium.com/the-year-of-the-looking-glass/a-matter-of-principle-4f5e6ad076bb). A good design principle "helps resolve real-world questions", "imparts a human-oriented sense of *why*", and "has a point of view that a rational person could disagree with".
+He said I should work with the team to establish design principles.
 
-<div class="post-callout">
-Why makes a good design principle?
-Julie Zhuo lists things...
-</div>
+(snippet: dropbox/principles)
 
 Based on this, we determined that a journey should communicate what it does at a glance by having the most pertinent details viewable at the highest level. Anyone viewing a journey for the first time (regardless of their experience with the tool) should be able to understand what is happening without having to dig into menus, detail panes, help articles, or other parts of Megaphone. It should encourage experimentation, providing actionable analytics and building space to tinker without fear. And it should unify the fragmented, integrating all the tools they need should into one coherent, usable whole.
 
@@ -151,18 +148,7 @@ Throughout the process, I documented changes in [Dropbox Paper](https://paper.dr
 
 An important part of this process was involving the engineering team: they had released earlier versions of the product which suffered from poor adoption and usability.
 
-<div class="post-callout">
-How to involve engineers in the design process
-The value of treating engineers as designers
-
-Everyone is a designer, and the only deliverable that matters is your final product. That means the designs that people will *see* and *use* will likely be implemented by engineers. It's important to involve them in the design process in order to ensure a polished experience.
-
-It helps to have "bridges" between the disciplines—designers who understand engineering, and engineers who understand design, so that teams can communicate effectively.
-
-- Involve engineers in ideation and critique. They're the ones who know problems inside and out, and they're very good at isolating edge cases and proposing inventive solutions.
-- Encourage them that all ideas are valid: many engineers I've worked with downplay their own design skills and think their ideas are worthless. The very same engineers have proposed some of the best, most interesting concepts during design sessions, when given the freedom to ideate without fear.
-
-</div>
+(snippet: dropbox/engineers)
 
 Workflow: We acted like a startup within a startup. Very little oversight, ability to move quickly, direct line of communication with our users (Dropboxers down the hall).
 
@@ -184,20 +170,23 @@ Eventually frustrated by this, and told by other engineers that it wasn't a prio
 
 After we launched the first version of the product and people began using it, the biggest question we got back was "is this journey successful?" The process of creating and managing journeys was smooth—people loved it, but it was what came *afterwards* that needed help. So we set out to build sensible analytics.
 
+(snippet: dropbox/lifecycle)
+
 Megaphone already had a basic form of analytics baked into Bluemail and Bluenote. Just a table of numbers, no visualizations, ill-defined terms. When asked about the existing analytics, the unanimous response was: "I ignore them". They were described as "untrustworthy" and "wrong".
 
 We obviously needed to fix the underlying metrics so that they accurately reflected the numbers users saw in tools like [Hive](https://hive.apache.org/). Beyond that, I wanted to use data to tell a story.
 
-<aside>
-Photo of Tufte book
-</aside>
+(snippet: dropbox/tufte)
 
 Design session with engineers, who came up with some amazing ideas: better than the designers!
 
 Around this time, I was reading a lot of [Edward Tufte](https://www.edwardtufte.com/tufte/), "the Leonardo da Vinci of data." I was thinking about how we could use successful data visualization to inspire confidence. I explored a lot of different methods for displaying the information:
 
-[Analytics explorations]
+(snippet: dropbox/dataviz)
+
 Box-and-whisker plots, read times, an aggregate "impact" metric, comparing across categories... these were all ideas.
+
+(snippet: dropbox/upgood)
 
 [Annotation of analytics]
 
@@ -207,7 +196,7 @@ We officially launched v1 of Journey Builder to Dropbox on [date].
 
 [Email sent to Dropboxers]
 
-[Launch video]
+(snippet: dropbox/launch-vid)
 
 I learned the value of educating everyone on the value of design. It was incredible to see the reaction of engineers on the team, seeing their idea take shape and seeing how excited others' got about it. It was the same concept as what existed before, and solved the same problems, but because it did it in a way that was clean, understandable, and delightful, people loved it (I don't use that verb lightly) in a way that was never possible with the original design.
 
