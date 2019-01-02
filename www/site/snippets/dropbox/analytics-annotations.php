@@ -1,9 +1,9 @@
-<div class="full-width">
+<div class="full-width transparent">
   <figure class="figure-wide wrapper">
     <div class="image-annotated">
       <picture>
         <source data-srcset="<?= $page->image('analytics.png')->url() ?>" type="image/png"> 
-        <img class="lazyload blur-up" data-src="<?= $page->image('analytics.png')->url() ?>" src="<?= $page->image('analytics.svg')->url() ?>" alt="The new Swiftype dashboard home.">
+        <img class="lazyload blur-up" data-src="<?= $page->image('analytics.png')->url() ?>" src="<?= $page->image('analytics.svg')->url() ?>" alt="Analytics within Journey Builder">
       </picture>
       <div class="annotations">
         <div class="annotation" style="top: 9.5%; left: 29%" data-direction="left">

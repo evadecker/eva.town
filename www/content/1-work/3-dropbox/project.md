@@ -46,13 +46,15 @@ Nobody would be able to use this. And this was v2! I winced thinking about what 
 
 When I joined Dropbox, I was placed on the Growth Platform team. Historically engineering-driven, Growth Platform was responsible for building our communication tools—the things we use to email users, send push notifications, and display ads within Dropbox on the web, mobile app, and desktop tray. The "platform" part of Growth Platform referred to developer <dfn title="Application Program Interface">APIs</dfn> that other teams at Dropbox used, but the team also maintained a <dfn title="Graphical User Interface">GUI</dfn> that others (mostly "growth" teams) used to create, manage, and send messages without needing to code.
 
-There were eight engineers and two product managers. I was their first designer.
+There were eight engineers and two product managers. I would be their first designer.
 
 (snippet: dropbox/growth-platform)
 
-At the beginning, I spent most of the time trying to understand what all these tools were, how they were used, why we built them, and why we decided to give everything indecipherable codenames. I'll save you some trouble.
+At the beginning, I spent most of my time trying to understand all these tools. Why had we built them? How were they used? Who used them? And why had we decided to give everything an indecipherable codename?
 
 (snippet: dropbox/terms)
+
+It was during this process of discovering and understanding existing tools that I was introduced to a new one, codenamed Tracks.
 
 ## Getting started
 
@@ -82,19 +84,9 @@ I began by asking what work had been done here before. There was a version befor
 
 I wrote out some of the questions I hoped to solve.
 
-<aside>
-(image: active-campaign.png caption: Active Campaign.)
-
-(image: active-campaign.webp caption: Autopilot.)
-
-(image: minihost-modular.png caption: A similar design pattern can be found in music tools.)
-</aside>
-
-(image: campaign-monitor.png caption: Campaign Monitor.)
-
-(image: automator.png caption: Automator)
-
 What similar products existed in the wild? Within the marketing automation industry, products like [Campaign Monitor](https://www.campaignmonitor.com/), [ActiveCampaign](https://www.activecampaign.com/), and [SendGrid](https://www.autopilothq.com/) all have different takes on this experience. Outside of marketing, inspiration was drawn from diagramming tools like [LucidChart](https://www.lucidchart.com/), automation-based tools like [Automator](https://support.apple.com/guide/automator/welcome/mac) and [IFTTT](https://ifttt.com/), and even audio tools like [Minihost Modular](https://www.image-line.com/support/flstudio_online_manual/html/plugins/Minihost%20Modular.htm), which allows users to chain together audio effects and plugins.
+
+(snippet: dropbox/automation-products)
 
 ## Co-creation
 
@@ -116,11 +108,7 @@ Growth Platform didn't have a researcher, so if we wanted to do this, we'd have 
 
 The opportunity to work on an interface that went beyond gridded lists, cards, and tables immediately piqued my interest. This could be dynamic! Expressive!
 
-<aside>
-(image: early-notes.png)
-</aside>
-
-[Sketches - what worked? What didn't?]
+(snippet: dropbox/sketches)
 
 [Mockups]
 
@@ -142,7 +130,7 @@ Throughout the process, I documented changes in [Dropbox Paper](https://paper.dr
 
 [Image of one design update post - include helpful alt text]
 
-[Annotations - where did we land]
+(snippet: dropbox/journey-annotations)
 
 [Icons iteration - goal of using Maestro, Dropbox component library, behind the scenes as well and contributing to the repo]
 
@@ -184,9 +172,7 @@ Around this time, I was reading a lot of [Edward Tufte](https://www.edwardtufte.
 
 (snippet: dropbox/dataviz)
 
-Box-and-whisker plots, read times, an aggregate "impact" metric, comparing across categories... these were all ideas.
-
-(snippet: dropbox/upgood)
+Box-and-whisker plots, read times, an aggregate "impact" metric, comparing across categories... these were all ideas. The end goal of Journey Builder isn't to send the *most* emails, but to send the *right* emails to the the right users at the right time, so I wanted the analytics to nudge users toward "better" rather than just "more".
 
 (snippet: dropbox/analytics-annotations)
 
