@@ -40,7 +40,7 @@
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f50a.png" alt="Loud speaker emoji" class="emoji">
-                    <a href="https://howlerjs.com/">Howler.js</a> for serving audio
+                    <a href="https://howlerjs.com/">Howler</a> for serving audio
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f5fa.png" alt="Map emoji" class="emoji">
@@ -52,16 +52,19 @@
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/274e.png" alt="X emoji" class="emoji">
-                    <a href="https://micromodal.now.sh/">Micromodal.js</a> for accessible modals like this one
+                    <a href="https://micromodal.now.sh/">Micromodal</a> for accessible modals like this one
                   </li>
-                  
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f4fd.png" alt="Video projector emoji" class="emoji">
+                    <a href="https://plyr.io/">Plyr</a> for simple, accessible video embeds
+                  </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f4a8.png" alt="Dash emoji" class="emoji">
                     <a href="https://github.com/gmrchk/swup">Swup</a> for page transitions, caching, and pre-rendering
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f415.png" alt="Doge emoji" class="emoji">
-                    <a href="https://github.com/matthieua/WOW">WOW.js</a> for animations on scroll
+                    <a href="https://github.com/matthieua/WOW">WOW</a> for animations on scroll
                   </li>
                 </ul>
               </div>
