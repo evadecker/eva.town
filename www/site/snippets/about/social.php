@@ -1,5 +1,5 @@
 <div class="download-and-social">
-  <form method="get" action="<?= $site->url() ?>/assets/downloads/Kyle%20Decker%20Resume.pdf">
+  <form method="get" action="<?= $site->url() ?>/assets/downloads/KyleDeckerResume.pdf">
   <button type="submit" class="button-download">Download Resume</button>
   </form>
   <ul class="social-links">

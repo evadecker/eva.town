@@ -132,7 +132,7 @@ He said I should work with the team to establish design principles.
 
 (snippet: dropbox/principles)
 
-Based on this, we determined that a journey should communicate what it does at a glance by having the most pertinent details viewable at the highest level. Anyone viewing a journey for the first time (regardless of their experience with the tool) should be able to understand what is happening without having to dig into menus, detail panes, help articles, or other parts of Megaphone. It should encourage experimentation, providing actionable analytics and building space to tinker without fear. And it should unify the fragmented, integrating all the tools they need should into one coherent, usable whole.
+Based on this, we determined that a journey should communicate what it does at a glance by having the most pertinent details viewable at the highest level. Anyone viewing a journey for the first time should be able to read it like a choose-your-own-adventure guide. It should encourage experimentation, providing actionable analytics and building space to tinker without fear. And it should unify the fragmented, integrating all the tools they need should into one coherent, usable whole.
 
 We also wanted to reduce the messaging error rate, reduce coordination tax, and enable sending smarter campaigns.
 

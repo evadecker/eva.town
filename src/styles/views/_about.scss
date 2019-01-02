@@ -104,25 +104,24 @@ ul.social-links {
 }
 
 .button-download {
-  @extend %font-sans;
-  font-size: 0.85rem;
+  @extend %font-sans-extended;
   font-weight: 600;
+  font-size: 0.75rem;
   display: block;
-  background: $neutral-1;
+  background: $neutral-9;
+  color: $neutral-0;
   border: none;
-  //box-shadow: 0 0.3rem 0.5rem -0.2rem rgba($neutral-10, 0.2);
+  box-shadow: 0 0.1rem 0.5rem -0.1rem rgba($neutral-10, 0.1), 0 0 0.1rem rgba($neutral-10, 0.1);
   border-radius: 2rem;
-  color: $color-text;
   width: 100%;
   margin: 0;
   height: 48px;
-  line-height: 50px;
+  line-height: 48px;
   padding: 0 2rem;
   white-space: nowrap;
   transition: 0.2s ease;
   cursor: pointer;
   &:hover, &:focus {
-    background: $color-blue-light;
-    color: $color-blue-dark;
+    background: $neutral-10;
   }
 }
