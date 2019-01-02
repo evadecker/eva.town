@@ -21,6 +21,11 @@
   opacity: 0;
 }
 
+// Prevent swipe animation from causing horizontal scroll
+body.is-animating {
+  overflow-x: hidden;
+}
+
 // Animate prev in from left
 .is-animating.to-prev-project .transition-swipe {
   transform: translate3d(-4rem, 0, 0);

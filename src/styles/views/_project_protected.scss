@@ -21,30 +21,42 @@
     word-break: break-all;
     position: relative;
     overflow: hidden;
+
+    &p {
+      margin: 0;
+    }
+
     &:nth-child(1), &:nth-child(4) {
       animation: 13s glitch step-end infinite alternate-reverse;
     }
+
     &:nth-child(4) {
       animation-duration: 15s;
       animation-delay: -8s;
     }
+
     &:nth-child(2), &:nth-child(5) {
       animation: 16s glitch2 step-end infinite alternate;
     }
+
     &:nth-child(5) {
       animation-duration: 15s;
       animation-delay: -3s;
     }
+
     &:nth-child(3), &:nth-child(6) {
       animation: 17s glitch3 step-end infinite alternate-reverse;
     }
+
     &:nth-child(6) {
       animation-duration: 13s;
       animation-delay: -4s;
     }    
+
     &:nth-child(7), &:nth-child(8) {
       animation: 22s glitch4 step-end infinite alternate;
     }
+    
     &:nth-child(8) {
       animation-duration: 25s;
       animation-delay: -6s;
