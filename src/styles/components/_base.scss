@@ -2,6 +2,7 @@ body {
   background-color: $neutral-0;
   display: flex;
   min-height: 100vh;
+  max-width: 100vw;
   flex-direction: column;
   transition: background-color 0.2s ease;
   overflow-x: hidden;

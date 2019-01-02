@@ -76,8 +76,6 @@ import 'devtools-detect'
       ['THE WIZARD: Uh, hm, never mind. Just thinking to myself.', 6000],
       ['THE WIZARD: Anyways.', 3000],
       ['THE WIZARD: Thanks for coming by.', 1500],
-      ['THE WIZARD: If you’d like to say hello some time, here’s my address:', 2000],
-      ['THE WIZARD: https://github.com/kybradeck/', 1500],
       ['THE WIZARD: You probably have things to do.', 2000],
       ['THE WIZARD: Me?', 3000],
       ['THE WIZARD: I’ve gotta keep putting the ‘fun’ in ‘functions’!!!', 3000],
