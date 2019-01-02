@@ -10,6 +10,7 @@ $corner-popover-offset: $popover-padding + $popover-tip-size;
   margin: 0 auto;
   img {
     border-radius: 0.4rem;
+    box-shadow: 0 1.5rem 3rem -1rem rgba($neutral-10, 0.08);
   }
 }
 
@@ -118,7 +119,7 @@ $corner-popover-offset: $popover-padding + $popover-tip-size;
   }
 
   .annotation-popover {
-    background: $neutral-0;
+    background: rgba($neutral-0, 0.95);
     padding: $popover-padding;
     border-radius: 0.4rem;
     display: inline-block;

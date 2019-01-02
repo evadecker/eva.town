@@ -151,7 +151,7 @@ html:not(.is-animating) .project-arrow {
   .post-content > {
     h1, h2, h3, h4, p, ul, ol,
     blockquote, hr, .timeline,
-    figure:not(.figure-wide),
+    figure:not(.figure-wide):not(.figure-full),
     div.post-callout, .download-and-social,
     .encrypted-post {
       @include media-min($column-breakpoint) {
@@ -298,12 +298,24 @@ html:not(.is-animating) .project-arrow {
     }
   }
 
-  .figure-wide figcaption {
-    width: 440px;
-    max-width: 100%;
-    @include media-min($column-breakpoint) {
-      width: $text-width;
+  .figure-wide, .figure-full {
+      figcaption {
+      width: 440px;
+      max-width: 100%;
+      @include media-min($column-breakpoint) {
+        width: $text-width;
+      }
     }
+  }
+
+  .figure-full {
+    width: 100vw;
+    position: relative;
+    clear: both;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
   }
   
 	blockquote {
