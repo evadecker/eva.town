@@ -3,6 +3,7 @@
 import Swup from 'swup'
 import Flickity from 'flickity'
 import MicroModal from 'micromodal'
+import Plyr from 'plyr'
 import swapTwo from './swaptwo.js'
 import synth from './synth.js'
 import 'lazysizes'
@@ -100,6 +101,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
       swup.on('willReplaceContent', function () {
         form.removeEventListener('submit', handlePasswordSubmit)
       })
+    }
+
+    if (document.querySelector('.js-player') !== null) {
+      const players = Plyr.setup('.js-player')
     }
   }
 

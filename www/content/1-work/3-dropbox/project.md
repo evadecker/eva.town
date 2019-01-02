@@ -68,18 +68,13 @@ I didn't say that, of course. In fact, for every question they answered, the mor
 
 At the heart of this mess was a gem which held the potential to make work easier, faster, and smarter. All we needed was to dust off the crud and make that gem shine, so people could see it for what it was.
 
-<aside>
-<figure>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KVdqwD_bcPs?start=75" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<figcaption>Product design.</figcaption>
-</figure>
-</aside>
-
 The question I got most often when first explaining this product to other designers at Dropbox was... what exactly *was* it?
 
 You know the breakfast machine from *Pee Wee Herman's Big Adventure*? It starts with Pee Wee blowing on a pinwheel and ends with a full breakfast, smiley pancake and all.
 
-Imagine that, but then picture that there are 50,000 Pee Wees. And different pinwheels make different breakfasts. And that the breakfasts are really emails? And some Pee Wees have let us know they really, really don't like breakfast.
+(snippet: dropbox/peewee)
+
+Imagine that, but then picture that there are 50,000 Pee Wees. And that different pinwheels make different breakfasts. And that the breakfasts are really emails? And some Pee Wees have let us know they really, really don't like breakfast.
 
 Journey Builder takes some input (a user, a user group, an experiment) and gives some output (an email on this date, a push notification after this action). That's all there is to it. What I needed to design was a visual, understandable way to link it all together.
 
