@@ -1,5 +1,5 @@
 <figure class="figure-wide">
-<div class="font-specimen">
+  <div class="font-specimen">
     <picture>
       <img src="<?= $page->image('acumin-specimen-2.svg')->url() ?>" alt="A font specimen for Acumin, showing its display in paragraphs and headings.">
     </picture>
