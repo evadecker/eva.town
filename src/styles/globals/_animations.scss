@@ -22,8 +22,8 @@
 }
 
 // Prevent swipe animation from causing horizontal scroll
-body.is-animating {
-  overflow-x: hidden;
+html.is-animating body {
+  overflow: hidden;
 }
 
 // Animate prev in from left

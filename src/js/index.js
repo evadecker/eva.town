@@ -70,10 +70,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
       })
 
       wow.init()
-
-      swup.on('willReplaceContent', function () {
-        wow.destroy()
-      })
     }
 
     if (document.querySelector('.garbled') !== null) {
