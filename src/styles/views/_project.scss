@@ -360,6 +360,7 @@ html:not(.is-animating) .project-arrow {
   font-size: 0.8rem;
   margin-top: 2em;
   margin-bottom: 2em;
+  overflow: hidden;
 
   @include media-min(420px) {
     padding: 1.5rem;

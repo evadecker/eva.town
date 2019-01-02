@@ -32,13 +32,13 @@ role: Research, listen, mix, design, develop, and promote.
 
 text:
 
-## It's November 2009. Bing Crosby's "White Christmas" snakes its way into my&nbsp;ear.
+## It's November 2009. Bing&nbsp;Crosby's "White Christmas" snakes its way into my&nbsp;ear.
 
 I don't remember where I was, exactly. Probably inside a Target. Maybe a Borders. It doesn't really matter: like clockwork, Bing and his ilk make themselves heard no matter who you are, where you live, or what you do. Crosby is the ghost of Christmas past, present, and future, immortal, unchanging, crooning year after year the same as the year before.
 
-Truthfully, congratulations are in order: you've done it, Bing! You won Christmas. You planted your sound in 1942 and your voice has echoed through supermarkets across America ever since. You're what every musician strives to be: timeless. Quentessential!
+Truthfully, congratulations are in order: you've done it, Bing! You won Christmas. You planted your sound in 1942 and your voice has echoed through supermarkets across America ever since. You're what every musician strives to be: timeless. Quentessential.
 
-Unfortunately, nothing is timeless—least of all, music.
+But dude, it's time to [let it go](https://www.youtube.com/watch?v=moSFlvxnbgk).
 
 (snippet: wintr-mx/bing-crosby)
 
