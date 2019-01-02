@@ -15,7 +15,7 @@
       <strong>Imparts a human-oriented sense of “why?”</strong> that is easy for everybody — including non-designers — to understand.
     </li>
     <li>
-      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/261D.png" alt="Index finger pointing up emoji">
+      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/261d.png" alt="Index finger pointing up emoji">
       <strong>Has a point of view</strong> and a sense of prioritization that a rational person could disagree with.
     </li>
     <li>
