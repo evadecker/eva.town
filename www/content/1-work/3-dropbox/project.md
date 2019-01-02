@@ -188,7 +188,7 @@ Box-and-whisker plots, read times, an aggregate "impact" metric, comparing acros
 
 (snippet: dropbox/upgood)
 
-[Annotation of analytics]
+(snippet: dropbox/analytics-annotations)
 
 ## Results
 
