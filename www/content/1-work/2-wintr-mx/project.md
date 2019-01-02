@@ -42,7 +42,7 @@ But dude, it's time to [let it go](https://www.youtube.com/watch?v=moSFlvxnbgk).
 
 (snippet: wintr-mx/bing-crosby)
 
-Why do we continue to salve an addiction to decades-old seasonal pageantry? Are we homesick? Lazy? (What's comfortable comes easier than what's new.) It could be nostalgia: a desire for a simpler time, colored by hazy memories of childhood warped by the childhoods *we've* seen portrayed in film. More cynically, it's likely an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
+Why do we continue to salve an addiction to decades-old seasonal pageantry? Are we homesick? Lazy? (What's comfortable is easier than what's new.) It could be nostalgia: a desire for a simpler time, colored by hazy memories of childhood warped by the childhoods *we've* seen portrayed in film. More cynically, it's likely an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
 
 *What's the reason for the wheezin'?*
 
