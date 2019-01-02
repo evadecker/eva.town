@@ -42,13 +42,13 @@ But dude, it's time to [let it go](https://www.youtube.com/watch?v=moSFlvxnbgk).
 
 (snippet: wintr-mx/bing-crosby)
 
-Why do we continue to salve an addiction to decades-old seasonal pageantry? Are we homesick? Lazy? (What's comfortable comes easier than what's new.) Could be nostalgia: a desire for a simpler time, colored by hazy memories of childhood warped by the childhoods *we've* seen portrayed in film. More cynically, perhaps it's an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
+Why do we continue to salve an addiction to decades-old seasonal pageantry? Are we homesick? Lazy? (What's comfortable comes easier than what's new.) It could be nostalgia: a desire for a simpler time, colored by hazy memories of childhood warped by the childhoods *we've* seen portrayed in film. More cynically, it's likely an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
 
 *What's the reason for the wheezin'?*
 
-I may sound bitter, but too many talented musicians exist for us to keep stabbing ourselves in our collective ear holes. I was determined to do something about it.
+I asked myself all these questions, and came to the conclusion that the answer really doesn't matter. Because it's 2009, and there's better stuff we could be listening to, and there are too many talented musicians for us to keep stabbing ourselves in our ear holes.
 
-I cobbled together a playlist—20 tracks—of the freshest, least-beaten-to-death holiday tunes I could find. I burned <span class="uppercase">CD</span>s for family and friends, designed album art, assembled paper sleeves, and wrote well-wishes alongside poorly-drawn snowmen. I creatively titled it *Kyle's Winter Mix*. But people seemed to like it, word spread, so I made another one the next year. And the year after that. Until six years had passed and I'd compiled 120 tunes. 
+So I cobbled together a playlist—20 tracks—of the freshest, least-beaten-to-death holiday tunes I could find. I burned <span class="uppercase">CD</span>s for family and friends, designed album art, assembled paper sleeves, and wrote well-wishes alongside poorly-drawn snowmen. I creatively titled it *Kyle's Winter Mix*. But people seemed to like it, word spread, so I made another one the next year. And the year after that. Until six years had passed and I'd compiled 120 tunes. 
 
 ## How the project&nbsp;evolved
 
