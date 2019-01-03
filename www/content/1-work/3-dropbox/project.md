@@ -72,7 +72,7 @@ So... what exactly was this thing my team had built?
 
 Let me see if I can help explain.
 
-You know the breakfast machine from *Pee Wee Herman's Big Adventure*? It starts with Pee Wee turning on a fan, which blows a pinwheel, which rolls an egg down a tube and pushes a dinosaur across a clothesline and somehow makes a life-sized model of Abraham Lincoln flip pancakes and ends with a full breakfast spread, smiley bacon face and all.
+You know the breakfast machine from *Pee Wee Herman's Big Adventure*? It starts with Pee Wee turning on a fan, which blows a pinwheel, which rolls an egg down a tube that pushes a dinosaur across a clothesline who makes a life-sized model of Abraham Lincoln flip pancakes until Pee Wee is delivered a full breakfast spread, smiley bacon face and all.
 
 (snippet: dropbox/peewee)
 
