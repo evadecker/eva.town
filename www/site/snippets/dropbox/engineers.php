@@ -23,7 +23,7 @@
     </li>
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f680.png" alt="Rocket ship emoji">
-      <strong>Bonus: code yourself.</strong> The live product is the only deliverable that matters. A beautiful, organized design file is worthless if it doesn't translate into equally beautiful, organized code. Learning to code will teach you so much about how engineers work and think, which, as a designer, is truly an invaluable skill to have.
+      <strong>Bonus: code yourself.</strong> The live product is the only deliverable that matters. A beautiful, organized design file is worthless if it doesn't translate into equally beautiful, organized code. Learning to code will teach you so much about how engineers work and think, which as a designer, is truly an invaluable skill to have.
     </li>
   </ul>
 </div>

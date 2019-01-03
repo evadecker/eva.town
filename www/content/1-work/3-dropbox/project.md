@@ -104,9 +104,9 @@ The opportunity to work on an interface that went beyond gridded lists, cards, a
 
 Our existing, journey-less solution was incredibly complex. Achieving even the simplest things required jumping through an absurd number of hoops.
 
-Any sufficiently complex model requires users to create stories of their own: images they keep in their head to help guide them through byzantine processes and connect all the dots. I was curious: what did this mental image look like? How could we make a new product match that image as closely as possible?
+To deal with this complexity, users must’ve formed images of their own. Mental maps to help connect all the dots. I was curious: if you wanted to draw this map, what would it look like? How could we make a new product mirror that map as closely as possible?
 
-To better understand this, I proposed conducting research sessions which asked users to visualize just that: their internal maps. The pictures in their heads.
+To understand this, I proposed conducting research sessions which asked users to visualize just that: their internal maps. The pictures in their heads.
 
 Growth Platform didn't have a researcher, so we'd have to bootstrap it. I chatted with other teams' researchers to understand best practices and how *they'd* go about this, given the chance. I took their knowledge and conducted three separate hour-long sketching sessions with users who had experience with the existing tools. An observation room was set up so engineers and other team members could see and hear firsthand the problems our users faced.
 
@@ -175,17 +175,17 @@ We obviously needed to fix the underlying metrics so that they accurately reflec
 
 (snippet: dropbox/tufte)
 
-Around this time, I was reading through [Edward Tufte](https://www.edwardtufte.com/tufte/)'s data visualization books. I was thinking about how we could use successful "visual explanations" to enlighten and inspire confidence. I explored several different methods for displaying information, including box-and-whisker plots, small multiples, donut charts, and an aggregate "impact" metric.
+Around this time, I was reading through [Edward Tufte](https://www.edwardtufte.com/tufte/)'s data visualization books. I was thinking about how we could use data to enlighten and inspire confidence. I explored several different methods for displaying information, including box-and-whisker plots, small multiples, donut charts, and an aggregate "impact" metric.
 
 (snippet: dropbox/dataviz)
 
-I wanted analytics to nudge users toward "better" rather than "more". Journey Builder was built to send the *right* emails, not the most emails. In fact, our internal motto on Growth Platform—the phrase we considered our North Star—was "right message, right user, right time."
+I wanted analytics to nudge users toward "better" rather than "more". Journey Builder was built to send the *right* emails, not the most emails. In fact, our motto on Growth Platform was "right message, right user, right time."
 
 (snippet: dropbox/analytics-annotations)
 
 ## Results
 
-One of the most incredible things to me about this project was seeing engineers release Journey Builder into the wild and have others meet it with genuine *excitement*. It solved the same problems as before, but because the new release presented things understandably and delightfully, people loved it in a way they never loved the previous "undesigned" versions. It was a joy to witness.
+One of the most incredible things to me about this project was seeing engineers release Journey Builder into the wild and have others meet it with genuine excitement. It solved the same problems as before, but because the new release presented things understandably and delightfully, people loved it in a way they never loved the previous "undesigned" versions. It was a joy to witness.
 
 Journey Builder is now the de-facto way to create and manage campaigns at Dropbox. Last I heard, legacy tools like Scheduler were in the process of being deprecated so that Journey Builder could handle the scheduling of all messages.
 
