@@ -1,4 +1,4 @@
-.quotes-carousel {
+.carousel {
   position: relative;
   background-color: $neutral-1;
   overflow-y: hidden;
@@ -12,14 +12,12 @@
   }
 }
 
-.quote {
+.carousel-item {
   background: $neutral-0;
   border-radius: 0.4rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
   color: $color-text;
   margin: 2rem 1rem 4rem;
   width: 90%;
@@ -59,11 +57,15 @@
     font-style: italic;
   }
 
-  p {
-    max-width: 700px;
-    font-size: 1.4em;
-    @include media-max(460px) {
-      font-size: 1.2em;
+  &blockquote {
+    text-align: center;
+    align-items: center;
+    p {
+      max-width: 700px;
+      font-size: 1.4em;
+      @include media-max(460px) {
+        font-size: 1.2em;
+      }
     }
   }
 }

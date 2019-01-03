@@ -48,7 +48,7 @@
     <div class="timeline-text text">
       <ul class="timeline-list">
         <li><time>2014&ndash;Now</time></li>
-        <li>Hosted on new domain&mdash;<a href="http://wintr.mx">wintr.mx</a></li>
+        <li>Hosted on new domain&mdash;wintr.mx</li>
         <li>Updated layout featuring fixed sidebar</li>
         <li>Switched from slider to scroll for easier navigation</li>
         <li>Optimized audio files for streaming and download</li>

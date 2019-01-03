@@ -40,7 +40,7 @@
             <td class="table-rotate"><div>Final</div></td>
             <td></td>
           </tr>
-      </thead>
+        </thead>
         <tbody>
           <tr>
             <td><svg class="svg-icon"><use xlink:href="<?= $page->file('original-icons.svg')->url().'#overview' ?>"></use></svg></td>

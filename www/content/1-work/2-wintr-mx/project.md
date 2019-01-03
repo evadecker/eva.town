@@ -36,17 +36,17 @@ text:
 
 I don't remember where I was, exactly. Probably inside a Target. Maybe a Borders. It doesn't really matter: like clockwork, Bing and his ilk make themselves heard no matter who you are, where you live, or what you do. Crosby is the ghost of Christmas past, present, and future, immortal, unchanging, crooning year after year the same as the year before.
 
-Truthfully, congratulations are in order: you've done it, Bing! You won Christmas. You planted your sound in 1942 and your voice has echoed through supermarkets across America ever since. You're what every musician strives to be: timeless. Quentessential.
+Truthfully, congratulations are in order: you've done it, Bing! You won Christmas. You planted your sound in 1942 and your voice has echoed through supermarkets across America ever since. You're what every musician strives to be: timeless. Quintessential.
 
 But dude, it's time to [let it go](https://www.youtube.com/watch?v=moSFlvxnbgk).
 
 (snippet: wintr-mx/bing-crosby)
 
-Why do we continue to salve an addiction to decades-old seasonal pageantry? Are we homesick? Lazy? (What's comfortable is easier than what's new.) It could be nostalgia: a desire for a simpler time, colored by hazy memories of childhood warped by the childhoods *we've* seen portrayed in film. More cynically, it's likely an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
+Why do we continue to feed an addiction to decades-old seasonal pageantry? Are we homesick? Lazy? (What's comfortable is easier than what's new.) It could be nostalgia: a desire for a simpler time, colored by hazy memories of childhood warped by the childhoods *we've* seen portrayed in film. More cynically, it's likely an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
 
-*What's the reason for the wheezin'?*
+What's the reason for the wheezin'?
 
-I asked myself all these questions, and came to the conclusion that the answer really doesn't matter. Because it's 2009, and there's better stuff we could be listening to, and there are too many talented musicians for us to keep stabbing ourselves in our ear holes.
+Bah humbug! It's 2009, and there's better stuff we could be listening to, and there are too many talented musicians for us to keep stabbing ourselves in our ear holes.
 
 So I cobbled together a playlist—20 tracks—of the freshest, least-beaten-to-death holiday tunes I could find. I burned <span class="uppercase">CD</span>s for family and friends, designed album art, assembled paper sleeves, and wrote well-wishes alongside poorly-drawn snowmen. I creatively titled it *Kyle's Winter Mix*. But people seemed to like it, word spread, so I made another one the next year. And the year after that. Until six years had passed and I'd compiled 120 tunes. 
 

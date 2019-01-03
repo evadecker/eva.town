@@ -36,21 +36,23 @@ Ispasswordprotected: 1
 
 Text: 
 
-## It looked atrocious. I could hardly contain my excitement.
+## Nobody would be able to use this. And this was v2.
 
-Frankly, this looked—to put it mildly—like a disaster.
+I shuddered thinking about how v1 must’ve looked... frankly, this was a usability nightmare.
 
-Nobody would be able to use this. And this was v2! I winced thinking about what v1 must've looked like...
+But in spite of it all—or maybe *because* of it all—I was excited. I couldn't wait to dive in.
 
 ## Background
 
-When I joined Dropbox, I was placed on the Growth Platform team. Historically engineering-driven, Growth Platform was responsible for building our communication tools—the things we use to email users, send push notifications, and display ads within Dropbox on the web, mobile app, and desktop tray. The "platform" part of Growth Platform referred to developer <dfn title="Application Program Interface">APIs</dfn> that other teams at Dropbox used, but the team also maintained a <dfn title="Graphical User Interface">GUI</dfn> that others (mostly "growth" teams) used to create, manage, and send messages without needing to code.
+When I joined Dropbox, I was placed on the Growth Platform team. Historically engineering-driven, Growth Platform was responsible for building our communication tools—the things we use to email users, send push notifications, and display ads within Dropbox on the web, the mobile app, and the desktop tray.
 
-There were eight engineers and two product managers. I would be their first designer.
+The "platform" part of Growth Platform referred to developer <dfn title="Application Program Interface">APIs</dfn> that other teams used and a <dfn title="Graphical User Interface">GUI</dfn> that could be used to create, manage, and send messages without code.
+
+There were eight engineers and two product managers; I would be their first designer.
 
 (snippet: dropbox/growth-platform)
 
-At the beginning, I spent most of my time trying to understand all these tools. Why had we built them? How were they used? Who used them? And why had we decided to give everything an indecipherable codename?
+At the beginning, I spent most of my time trying to understand our tools. Why had we built them? How were they used? Who used them? And why had we given everything codenames?
 
 (snippet: dropbox/terms)
 
@@ -58,51 +60,43 @@ It was during this process of discovering and understanding existing tools that 
 
 ## Getting started
 
-The engineers, bless their hearts. Their intentions were good, but product design was clearly not in their wheelhouse. Not even on the same planet.
+The engineers, bless their hearts. Their intentions were good, but product design was not in their wheelhouse. Not even on the same planet.
 
 (image: tracks.png caption: "Tracks", v2, no onboarding. Use this product. Go.)
 
-I needed a lot of help decoding this. For example, what does "SC" mean? "BN"? What about that red and black dot? What's a "StormcrowNode"? Does anything happen if I click the little unlabeled circle? Why is there an exclamation mark in the circle at the top?
+I didn't say that, of course, but I did need a lot of help decoding what they showed me. What *is* Tracks? What does it do? What does "SC" mean? What about "BN"? What's a "StormcrowNode"? Why is there an lonely little exclamation mark in the top circle?
 
-I didn't say that, of course. In fact, for every question they answered, the more excited I grew. By the end of our conversation I had already sketched a full page of ideas.
+For every question they answered (and there were many), the more excited I grew. By the end of our conversation I had already sketched a full page of ideas.
 
-At the heart of this mess was a gem which held the potential to make work easier, faster, and smarter. All we needed was to dust off the crud and make that gem shine, so people could see it for what it was.
+I was convinced: this mess held the potential to make work easier, faster, and smarter. First, we just needed to make it understandable.
 
-The question I got most often when first explaining this product to other designers at Dropbox was... what exactly *was* it?
+---
 
-You know the breakfast machine from *Pee Wee Herman's Big Adventure*? It starts with Pee Wee turning on a fan which blows a pinwheel and ends with a full breakfast, smiley pancake and all.
+So... what *was* this thing my team had built?
+
+Let me see if I can help explain.
+
+You know the breakfast machine from *Pee Wee Herman's Big Adventure*? It starts with Pee Wee turning on a fan which blows a pinwheel which rolls an egg down a tube and pushes a dinosaur across a clothesline and ends with a full breakfast, smiley pancake and all.
 
 (snippet: dropbox/peewee)
 
-Imagine that, but then picture that there are 50,000 Pee Wees. And that different pinwheels make different breakfasts. And that the breakfasts are really emails? And some Pee Wees have let us know they really, really don't like breakfast.
+Imagine that, but picture that there are 50,000 Pee Wees. And that different pinwheels make different breakfasts. And that *you* have the power to line up the tubes and dinosaurs and clotheslines so that *this pinwheel* makes *this breakfast*.
 
-Journey Builder takes some input (a user, a user group, an experiment) and gives some output (an email on this date, a push notification after this action). That's all there is to it. What I needed to design was a visual, understandable way to link it all together.
+Also, the breakfasts are really emails. And some Pee Wees have let us know they really, really don't want breakfast.
+
+Make sense?
+
+Tracks—renamed *Journey Builder*—takes some input (a user, a user group, an experiment) and gives some output (an email on this date, a push notification after this action). That's all there is to it. What I needed to design was a visual, intuitive way to link it all together.
 
 ## Preliminary research
 
-I began by asking what work had been done here before. There was a version before this: what was it like? Did people use it? If not, why not? What were the biggest problems that users dealt with day-to-day?
+I began by asking what work had been done before. The first version of Tracks, still live at this point, was a mess of nested tables and dropdowns which suffered depressingly low usage. The second version, as shown above, was a step in the right direction, but it was still a far cry from a pleasant experience.
 
-I wrote out some of the questions I hoped to solve.
+Talks with the Dropboxers who created and sent marketing campaigns revealed that their biggest frustration was coordinating between tools. The prospect that something like Tracks could solve this problem excited them, but they were skeptical.
 
-What similar products existed in the wild? Within the marketing automation industry, products like [Campaign Monitor](https://www.campaignmonitor.com/), [ActiveCampaign](https://www.activecampaign.com/), and [SendGrid](https://www.autopilothq.com/) all have different takes on this experience. Outside of marketing, inspiration was drawn from diagramming tools like [LucidChart](https://www.lucidchart.com/), automation-based tools like [Automator](https://support.apple.com/guide/automator/welcome/mac) and [IFTTT](https://ifttt.com/), and even audio tools like [Minihost Modular](https://www.image-line.com/support/flstudio_online_manual/html/plugins/Minihost%20Modular.htm), which allows users to chain together audio effects and plugins.
+Competitive analysis uncovered a whole industry of products dubbed *marketing automation*, home to [Campaign Monitor](https://www.campaignmonitor.com/), [ActiveCampaign](https://www.activecampaign.com/), and [SendGrid](https://www.autopilothq.com/), which all have different takes on this experience. Inspiration was drawn from diagramming tools like [LucidChart](https://www.lucidchart.com/), automation-based tools like [Automator](https://support.apple.com/guide/automator/welcome/mac) and [IFTTT](https://ifttt.com/), and even music tools like [Minihost Modular](https://www.image-line.com/support/flstudio_online_manual/html/plugins/Minihost%20Modular.htm) which allow chaining together audio effects and plugins.
 
 (snippet: dropbox/automation-products)
-
-## Co-creation
-
-Our existing solution was incredibly complex. Achieving even the simplest things required jumping through an absurd number of hoops.
-
-For example, say you wanted to send out a welcome email immediately after someone registers for your app. After a week, you'd like to send a follow-up email: if they haven't taken any actions, the email should provide links to support; if they've been active, it should highlight features to check out. Companies like Dropbox regularly do this.
-
-Here's a simplified version of what it took to do that in the old system: you'd create one email as desired, then duplicate it and make edits to the second variant. Once you had both of your emails ready, you'd go to **Hive** to export a list of users who will receive the first test batch. Take that exported list and split it 50/50. Go to the 
-
-[Image of existing workflow]
-
-Any sufficiently complex model requires users to create stories of their own. Given this complexity, users must have some internal image they use to connect all the dots. **What did their mental image look like, and how could we make a new product match that as closely as possible?** To understand this, I proposed conducting research sessions which asked them to visualize just that.
-
-Growth Platform didn't have a researcher, so if we wanted to do this, we'd have to bootstrap it. Dropbox had plenty. 
-
-[Video of user research sessions]
 
 ## Early concepts
 
@@ -111,6 +105,25 @@ The opportunity to work on an interface that went beyond gridded lists, cards, a
 (snippet: dropbox/sketches)
 
 [Mockups]
+
+## Co-creation
+
+Our existing solution was incredibly complex. Achieving even the simplest things required jumping through an absurd number of hoops.
+
+Any sufficiently complex model requires users to create stories of their own: images they keep in their head to help guide them through byzantine processes and connect all the dots. I was curious: what did this mental image look like? How could we make a new product match that image as closely as possible?
+
+To better understand this, I proposed conducting research sessions which asked users to visualize just that: their internal maps. The pictures in their heads.
+
+Growth Platform didn't have a researcher, so we'd have to bootstrap it. I chatted with other teams' researchers to understand best practices and how *they'd* go about this, given the chance. I took their knowledge and conducted three hour-long interview sessions with users who had experience with the existing tools. An observation room was set up so engineers and other team members could see and hear firsthand the problems our users faced.
+
+[Video of user research sessions]
+
+The research learnings were then synthesized and summarized:
+
+(snippet: dropbox/research-learnings)
+
+The results of the research guided our prioritization of features for the initial release and gave the whole team new ideas for features to build. Without this research, small and scrappy as it was, Journey Builder would have solved fewer problems, and done so in a much clumsier way.
+
 
 ## Principles and goals
 
@@ -122,37 +135,35 @@ He said I should work with the team to establish design principles.
 
 Based on this, we determined that a journey should communicate what it does at a glance by having the most pertinent details viewable at the highest level. Anyone viewing a journey for the first time should be able to read it like a choose-your-own-adventure guide. It should encourage experimentation, providing actionable analytics and building space to tinker without fear. And it should unify the fragmented, integrating all the tools they need should into one coherent, usable whole.
 
-We also wanted to reduce the messaging error rate, reduce coordination tax, and enable sending smarter campaigns.
+We also wanted to lower the messaging error rate, reduce coordination tax, and enable sending smarter campaigns.
 
-## Iteration
+## Development
 
 Throughout the process, I documented changes in [Dropbox Paper](https://paper.dropbox.com/). The principles were pasted at the top of the doc as a continuous reminder, and design updates were written in a journal-style log.
 
-[Image of one design update post - include helpful alt text]
+(snippet: dropbox/journal)
 
-(snippet: dropbox/journey-annotations)
+(snippet: dropbox/vertical-alignment)
 
-[Icons iteration - goal of using Maestro, Dropbox component library, behind the scenes as well and contributing to the repo]
+After some toying with display size and layout, we decided that each step should take the same format: a simple rectangle with a fixed height, icon, and line of text. This would force us to simplify the representation of each step until it could be communicated in a few words, the hope being that even large, complex journeys would become easy to read and navigate if that was the case. It also helped shore up vertical alignment across different paths, which easily got out of whack when different steps had different heights.
 
-An important part of this process was involving the engineering team: they had released earlier versions of the product which suffered from poor adoption and usability.
+(image: nodes.png caption: Icon colors establish logical groups and enable quicker scanning of journeys.)
+
+An important part of this process was actively involving the engineering team. After all, Journey Builder was *their* brainchild. I knew the sorts of things good design could achieve and the type of reactions it could evoke. Many engineers on the team had worked exclusively on platform or "behind-the-scenes" efforts, so this was their first time collaborating with a designer. I wanted to leave a good impression.
+
+The most successful teams I've been a part of have engineers and designers working side-by-side, sharing the same space and collaborating closely. The least successful ones have been where designers and developers segregate themselves and toss work back and forth over a wall, or worse, view each other as adversaries.
 
 (snippet: dropbox/engineers)
 
-Workflow: We acted like a startup within a startup. Very little oversight, ability to move quickly, direct line of communication with our users (Dropboxers down the hall).
+We acted like a startup within a startup. Because our product was not Dropbox-user-facing, we had massive leeway to take a more rapid pace than most of the rest of the company. And *our* users were a skip down the hall, in desks just like ours. If we had a research question, we could run over to whoever was available and ask it.
 
-## Engineering
+After less than five months of design and development, we launched the alpha version of Journey Builder in June 2017:
 
-I paired closely with our front-end engineers to rapidly ship changes. For example, one of my goals was that journeys should use a consistent, immovable display logic. By displaying "nodes" in one place and one place only, we would a) speed up the creation and management of journeys (whole segments wouldn't need to be dragged to a new place if a node gets added in the middle), b) reduce coordination tax (since if two people create the same journey, they'll look identical too). This came at the cost of additional engineering work upfront, but the benefit to users was worth it.
+(snippet: dropbox/journey-annotations)
 
-I paired closely with [Gianluca](https://github.com/gianluca-venturini), one of our front-end devs, to implement a layout logic.
+Our team's product managers created this charming video to announce the launch.
 
-[Image of layout logic sketches]
-
-We were dealing with a lot of tech debt that was causing us to write complex overrides and add `!important` declarations in CSS just to display simple things. We were importing something like 6 different CSS libraries and they were all conflicting in the global namespace.
-
-Eventually frustrated by this, and told by other engineers that it wasn't a priority and it would require a lot of time to fix, I took it upon myself to rip out all the old libraries and keep the few lines that were needed. It was surprisingly easy. It took about a day of my time, plus some bugfixes over the next week or so. And it made life so much better.
-
-[Email I sent out]
+(snippet: dropbox/launch-vid)
 
 ## Analytics
 
@@ -162,27 +173,21 @@ After we launched the first version of the product and people began using it, th
 
 Megaphone already had a basic form of analytics baked into Bluemail and Bluenote. Just a table of numbers, no visualizations, ill-defined terms. When asked about the existing analytics, the unanimous response was: "I ignore them". They were described as "untrustworthy" and "wrong".
 
-We obviously needed to fix the underlying metrics so that they accurately reflected the numbers users saw in tools like [Hive](https://hive.apache.org/). Beyond that, I wanted to use data to tell a story.
+We obviously needed to fix the underlying metrics so that they accurately reflected the numbers users saw elsewhere—and we would. Beyond that, I aspired to use data to tell a story.
 
 (snippet: dropbox/tufte)
 
-Design session with engineers, who came up with some amazing ideas: better than the designers!
-
-Around this time, I was reading a lot of [Edward Tufte](https://www.edwardtufte.com/tufte/), "the Leonardo da Vinci of data." I was thinking about how we could use successful data visualization to inspire confidence. I explored a lot of different methods for displaying the information:
+Around this time, I was reading through [Edward Tufte](https://www.edwardtufte.com/tufte/)'s data visualization books. I was thinking about how we could use successful "visual explanations" to enlighten and inspire confidence. I explored several different methods for displaying information, including box-and-whisker plots, average read times, an aggregate "impact" metric, comparisons across categories...
 
 (snippet: dropbox/dataviz)
 
-Box-and-whisker plots, read times, an aggregate "impact" metric, comparing across categories... these were all ideas. The end goal of Journey Builder isn't to send the *most* emails, but to send the *right* emails to the the right users at the right time, so I wanted the analytics to nudge users toward "better" rather than just "more".
+Above all, I wanted the analytics to nudge users toward "better" rather than just "more". The end goal of Journey Builder isn't to send the *most* emails, but to send the *right* emails to the the right users at the right time.
 
 (snippet: dropbox/analytics-annotations)
 
 ## Results
 
-We officially launched v1 of Journey Builder to Dropbox on [date].
-
 [Email sent to Dropboxers]
-
-(snippet: dropbox/launch-vid)
 
 I learned the value of educating everyone on the value of design. It was incredible to see the reaction of engineers on the team, seeing their idea take shape and seeing how excited others' got about it. It was the same concept as what existed before, and solved the same problems, but because it did it in a way that was clean, understandable, and delightful, people loved it (I don't use that verb lightly) in a way that was never possible with the original design.
 

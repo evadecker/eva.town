@@ -10,7 +10,7 @@ Text:
 
 My name is Kyle. I design and build digital products that are intuitive, accessible, beautiful, and fun. I've done this professionally since 2012, and I've been designing for the web since 2007.
 
-This is a home for things I've made and how I've made them. My goal is for anyone (and anyone's grandma) to understand what I've written. Although the focus is on my design and the process behind it, case studies occasionally detour to explore interesting, relevant topics. I hope you learn something new.
+This is a home for things I've made and how I've made them. My goal is for anyone (and anyone's grandma) to understand what I've written. Although the focus is on my design and the process behind it, case studies occasionally detour to explore interesting, relevant topics.
 
 (snippet: about/beliefs)
 
@@ -20,6 +20,6 @@ Most recently, I worked at [Dropbox](/work/dropbox), where I helped develop a be
 
 **I’m currently seeking a new full-time role in <span class="uppercase">NYC</span>** that will allow me to contribute design and front-end engineering skills toward voting reform, urban planning, the arts, social and environmental justice, or other progressive causes.
 
-Message me at <kyle@kyledecker.me>. I’m always happy to chat, preferably over drinks if you're in New York. :) Say hi.
+Message me at <kyle@kyledecker.me>. I’m always happy to chat over coffee or drinks if you're in New York. Say hi.
 
 (snippet: about/social)
