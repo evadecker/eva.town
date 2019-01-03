@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
       })
     }
 
-    if (document.querySelector('.quotes-carousel') !== null) {
-      var flickity = new Flickity('.quotes-carousel', {
+    if (document.querySelector('.carousel') !== null) {
+      var flickity = new Flickity('.carousel', {
         wrapAround: true,
         selectedAttraction: 0.04,
         friction: 0.35,

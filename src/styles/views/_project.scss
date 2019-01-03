@@ -249,7 +249,7 @@ html:not(.is-animating) .project-arrow {
     }
   }
 
-  ul, ol {
+  > ul, > ol {
     margin-top: 1rem;
     margin-bottom: 1rem;
     li {
@@ -271,7 +271,7 @@ html:not(.is-animating) .project-arrow {
     }
   }
   
-  ol {
+  > ol {
     li {
       counter-increment: step-counter;
       &:before {
@@ -399,10 +399,17 @@ html:not(.is-animating) .project-arrow {
   }
 }
 
-ul.emoji-list li {
-  position: relative;
-  padding-left: calc(24px + 0.5rem);
-  margin-top: 0.5rem;
+ul.emoji-list {
+  margin-top: 1rem;
+  
+  li {
+    position: relative;
+    padding-left: calc(24px + 0.5rem);
+    &:not(:first-child) {
+      margin-top: 0.5rem;
+    }
+  }
+
   .emoji {
     width: 24px;
     height: 24px;

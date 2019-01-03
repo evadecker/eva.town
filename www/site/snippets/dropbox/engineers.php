@@ -1,26 +1,29 @@
 <div class="post-callout">
-  <h3>Why (and how) to be best friends with engineers</h3>
-  <p>The most successful teams I've been a part of have engineers and designers working side-by-side, sharing the same space and collaborating closely. The least successful ones have been where designers and developers segregate themselves and toss work back and forth over a wall. Here's why (and how) not to do that.</p>
+  <h3>As a designer, how do you work with engineers?</h3>
   <ul class="emoji-list">
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f308.png" alt="Rainbow emoji">
-      <p><strong>Everyone is a designer.</strong> I strongly believe this. Code is designed. Processes are designed. Team meetings are designed.</p>
-      <p><em>Involve engineers in your ideation and critiques. Some engineers I've worked with downplay their own design skills and profess that their ideas are worthless; encourage upfront that everyone's ideas are valid. The very same engineers have proposed some of the best, most interesting concepts when given the freedom to ideate without fear.</em></p>
+      <strong>Recognize that everyone is a designer.</strong> Code is designed. Processes are designed. Team meetings are designed. At it's core, design is just fancy problem-solving, and anyone can do that.
     </li>
     <li>
-      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f55a.png" alt="Clock emoji">
-      <p><strong>Designers can't design everything.</strong> There are too many decisions to be made!</p>
-      <p><em>Explain the logic behind decision-making. A button isn't just a button; it serves a purpose. By educating others and working collaboratively to invent solutions, everyone becomes empowered to problem solve on their own.</em></p>
+      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/203c.png" alt="Double exclamation mark emoji">
+      <strong>Assert that everyone is a designer.</strong> Some developers I've worked with downplay their skills, professing that their ideas are worthless. Given space to ideate without fear, I've seen the very same people propose incredibly inventive, clever solutions. Remind them that it's okay (encouraged, even) to have ugly sketches.
     </li>
     <li>
-      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f381.png" alt="Wrapped gift emoji">
-      <p><strong>The live product is the only deliverable that matters.</strong> A beautiful, organized design file is worthless if it doesn't translate into equally beautiful, organized code.</p>
-      <p><em>Involve engineers throughout the design process so they can understand guiding logic and put it into practice.</em></p>
+      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f4dd.png" alt="Memo emoji">
+      <strong>Involve engineers early.</strong> Don't wait until your mockups are pixel-perfect before sharing with a developer. Ideate with them. Critique with them. They're very good at pointing out cases which could save you two weeks of work.
     </li>
     <li>
-      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f601.png" alt="Beaming face with smiling eyes emoji">
-      <p><strong>It's more fun.</strong> Speaking the same language makes work easier. Bridges between the disciplines—designers who understand engineering, and engineers who understand design—help teams communicate more effectively.</p>
-      <p><em>Get excited about code. Get engineers excited about design. Host sessions to share knowledge and create the space to ask dumb questions.</em></p>
+      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f9e0.png" alt="Brain emoji">
+      <strong>Explain your logic.</strong> Engineers like knowing <em>why</em> things work. A button isn't just a button; it serves a purpose. Understanding the <em>why</em> allows them to extrapolate in the future when you aren't there. (You won't always be.)
+    </li>
+    <li>
+      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f310.png" alt="Globe with meridians emoji">
+      <strong>Learn their language.</strong> Communication goes both ways. Be the bridge between the disciplines. Get excited about code. Get engineers excited about design. Host sessions to share knowledge and create the space to ask beginner questions.
+    </li>
+    <li>
+      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f680.png" alt="Rocket ship emoji">
+      <strong>Bonus: code yourself.</strong> The live product is the only deliverable that matters. A beautiful, organized design file is worthless if it doesn't translate into equally beautiful, organized code. Learning to code will teach you so much about how engineers work and think, which, as a designer, is truly an invaluable skill to have.
     </li>
   </ul>
 </div>

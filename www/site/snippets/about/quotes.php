@@ -1,6 +1,6 @@
-<div class="quotes-carousel">
+<div class="carousel">
   <?php foreach($site->find('quotes')->children() as $quote): ?>
-    <blockquote class="quote">
+    <blockquote class="carousel-item">
       <span class="quote-text">
         <?= $quote->quote()->kirbytext()->widont() ?>
       </span>

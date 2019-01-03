@@ -21,7 +21,7 @@
             <div class="annotation-popover" style="width: 10rem">Stats are nested, listed in descending order. Descriptive tooltips explain vague labels.</div>
           </div>
         </div>
-        <div class="annotation" style="top: 68.5%; left: 5%" data-direction="top-left">
+        <div class="annotation" style="top: 69%; left: 5%" data-direction="top-left">
           <div class="annotation-rellax">
             <div class="annotation-popover">Statistically significant deviations from the norm appear in red.</div>
           </div>
