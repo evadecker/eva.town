@@ -1,6 +1,8 @@
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36543481-1"></script>
 <script>
-  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-  ga('create', 'UA-XXXXX-Y', 'auto');
-  ga('send', 'pageview');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36543481-1');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
