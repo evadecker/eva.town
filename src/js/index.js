@@ -1,6 +1,7 @@
 'use strict'
 
 import Swup from 'swup'
+import swupGaPlugin from 'swup/plugins/swupGaPlugin'
 import Flickity from 'flickity'
 import MicroModal from 'micromodal'
 import Plyr from 'plyr'
@@ -11,6 +12,9 @@ import './wizard.js'
 
 const WOW = require('wowjs')
 const swup = new Swup({
+  plugins: [
+    swupGaPlugin
+  ],
   elements: ['#swup', '#header'],
   scroll: true,
   animateScroll: false
@@ -20,10 +24,15 @@ const swup = new Swup({
 document.addEventListener('DOMContentLoaded', function (event) {
   function init () {
     // Open all external links in new tab
-    for (var c = document.getElementsByTagName('a'), a = 0;a < c.length; a++) {
+    for (var c = document.getElementsByTagName('a'), a = 0; a < c.length; a++) {
       var b = c[a]
       b.getAttribute('href') && b.hostname !== window.location.hostname && (b.target = '_blank')
     }
+
+    // Google Analytics
+    window.ga('set', 'title', document.title)
+    window.ga('set', 'page', window.location.pathname + window.location.search)
+    window.ga('send', 'pageview')
 
     if (document.querySelector('#synth') !== null) {
       synth.init()
