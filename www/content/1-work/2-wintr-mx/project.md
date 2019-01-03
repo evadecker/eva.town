@@ -22,7 +22,7 @@ tagline: On breaking from tradition, iterating for 6 years, and how to improve p
 
 ----
 
-challenge: Find and share fresh and diverse holiday music.
+challenge: Find and share fresh, diverse holiday music.
 
 ----
 
