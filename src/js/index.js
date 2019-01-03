@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
       b.getAttribute('href') && b.hostname !== window.location.hostname && (b.target = '_blank')
     }
 
-    // Google Analytics
-    window.ga('set', 'title', document.title)
-    window.ga('set', 'page', window.location.pathname + window.location.search)
-    window.ga('send', 'pageview')
+    window.gtag('config', 'UA-36543481-1', {
+      'page_title': document.title,
+      'page_path': window.location.pathname + window.location.search
+    })
 
     if (document.querySelector('#synth') !== null) {
       synth.init()
