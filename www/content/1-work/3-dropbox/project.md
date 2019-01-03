@@ -121,7 +121,7 @@ The results of the research guided our prioritization of features for the initia
 
 ## Principles and goals
 
-Around this time, I began to create high-fidelity mockups and collect feedback during design critiques. Taking note, my design lead [Kurt](http://kurtvarner.com/) pulled my aside after one session. He said I was doing great work, but encouraged me to take a step back. This was a complex product—rushing the start could come back and bite us later.
+Around this time, I began to create high-fidelity mockups and collect feedback during design critiques. Taking note, my design lead [Kurt](http://kurtvarner.com/) pulled me aside after one session. He said I was doing great work, but encouraged me to take a step back. This was a complex product—rushing the start could come back and bite us later.
 
 He said I should work with the team to establish design principles.
 
@@ -149,11 +149,11 @@ I extended the official Dropbox icon set to include [specific glyphs needed for 
 
 An important part of this process was actively involving the engineering team. After all, Journey Builder was *their* brainchild. Many developers on the team had worked exclusively on platform or "behind-the-scenes" efforts, so this was their first time collaborating with a designer. I wanted to leave a good impression.
 
-The most successful teams I've been a part of have engineers and designers working side-by-side, sharing the same space and collaborating closely. The least successful ones have been where disciplines segregate themselves and toss work back and forth over a wall, or worse, view each other as adversaries.
+The most successful teams I've been on have engineers and designers working side-by-side, sharing the same space and collaborating closely. The least successful ones have been where disciplines segregate themselves and toss work back and forth over a wall, or worse, view each other as adversaries.
 
 (snippet: dropbox/engineers)
 
-We acted like a startup within a startup. Because our product was not outward-facing, we had leeway to take a more rapid pace than the rest of the company. *Our* users were a skip down the hall, in desks just like ours; if we had a research question, we could run over to whoever was available and ask it.
+We operated like a startup within a startup. Because our product was not outward-facing, we had leeway to take a more rapid pace than the rest of the company. *Our* users were a skip down the hall, in desks just like ours; if we had a research question, we could run over to whoever was available and ask it.
 
 After less than five months of design and development, we launched the alpha version of Journey Builder in June 2017.
 
