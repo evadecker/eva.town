@@ -109,7 +109,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     if (document.querySelector('.js-player') !== null) {
-      Plyr.setup('.js-player')
+      const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, {
+        controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'pip', 'airplay', 'fullscreen'],
+        tooltips: {
+          controls: true
+        }
+      }))
+
+      players.forEach(function (player) {
+        player.on('play', function () {
+          this.classList.add('plyr--init-play')
+        })
+      })
     }
   }
 
