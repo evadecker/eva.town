@@ -110,10 +110,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     if (document.querySelector('.js-player') !== null) {
       const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, {
-        controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'pip', 'airplay', 'fullscreen'],
-        tooltips: {
-          controls: true
-        }
+        controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'pip', 'airplay', 'fullscreen']
       }))
 
       players.forEach(function (player) {
