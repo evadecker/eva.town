@@ -32,25 +32,29 @@ role: Research, listen, mix, design, develop, and promote.
 
 text:
 
-## It's November 2009. Bing&nbsp;Crosby's "White Christmas" snakes its way into my&nbsp;ear.
+## It begins like clockwork each November.
 
-I don't remember where I was, exactly. Probably inside a Target. Maybe a Borders. It doesn't really matter: like clockwork, Bing and his ilk make themselves heard no matter who you are, where you live, or what you do. Crosby is the ghost of Christmas past, present, and future, immortal, unchanging, crooning year after year the same as the year before.
+Bing Crosby and his posse make themselves heard. It doesn't matter who you are, where you live, or what you do: Bing attacks indiscriminately. (For me, it was the home goods section of a Target in North Carolina.)
 
-Truthfully, congratulations are in order: you've done it, Bing! You won Christmas. You planted your sound in 1942 and your voice has echoed through supermarkets across America ever since. You're what every musician strives to be: timeless. Quintessential.
-
-But dude, it's time to [let it go](https://www.youtube.com/watch?v=moSFlvxnbgk).
+It may be a "White Christmas" here, a "Silver Bells" there, but one way or another, an anointed bunch of 70-year old recordings will find their way into your ear. Crosby is the ghost of Christmas past, present, and future. Immortal, unchanging, crooning year after year the same as the year before.
 
 (snippet: wintr-mx/bing-crosby)
 
-Why do we continue to feed an addiction to decades-old seasonal pageantry? Are we homesick? Lazy? (What's comfortable is easier than what's new.) It could be nostalgia: a desire for a simpler time, colored by hazy memories of childhood warped by the childhoods *we've* seen portrayed in film. More cynically, it's likely an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
+Truthfully, congratulations are in order. You've done it, Bing. You won Christmas. You planted your sound in 1942 and your voice has echoed through supermarkets across America ever since. You're what every musician strives to be: timeless. Quintessential.
+
+Our addiction to this decades-old seasonal pageantry is fascinating and bewildering. Why do we do it? 
+
+Are we homesick? Lazy? (What's comfortable is easier than what's new.) It could be nostalgia: a desire for a simpler time, colored by hazy memories of childhood warped by the childhoods *we've* seen portrayed in film. More cynically: it's an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
 
 What's the reason for the wheezin'?
 
-Bah humbug! It's 2009, and there's better stuff we could be listening to, and there are too many talented musicians for us to keep stabbing ourselves in our ear holes.
+Bah humbug! It's time to [let it go](https://www.youtube.com/watch?v=moSFlvxnbgk). There are too many talented musicians for us to keep stabbing ourselves in our ear holes.
 
-So I cobbled together a playlist—20 tracks—of the freshest, least-beaten-to-death holiday tunes I could find. I burned <span class="uppercase">CD</span>s for family and friends, designed album art, assembled paper sleeves, and wrote well-wishes alongside poorly-drawn snowmen. I creatively titled it *Kyle's Winter Mix*. But people seemed to like it, word spread, so I made another one the next year. And the year after that. Until six years had passed and I'd compiled 120 tunes. 
+## Background
 
-## How the project&nbsp;evolved
+In 2009, I took matters into my own hands. I cobbled together 20 tracks of the freshest, least-beaten-to-death holiday tunes I could find. I burned <span class="uppercase">CD</span>s for family and friends (Sharpie-ing on poorly-drawn snowmen) and designed album art which I printed on computer paper and scotch taped together. I creatively titled it *Kyle's Winter Mix*.
+
+People seemed to like it, word spread, so I made another one the next year. And the year after that. Until six years had passed and I'd compiled 120 tunes. 
 
 In 2011, after two years of distributing <span class="uppercase">CD</span>s, I moved to a new city. To keep the tradition alive, I developed a website to offer downloads. Year by year, that initial site has been destroyed, rebuilt, and reshaped up to its current form.
 
@@ -80,12 +84,12 @@ Each album cover features a vintage postcard of somewhere I visited that year. I
 
 ## Results
 
-This project has always been simply a way to spread music I enjoy to the people I love, and in that regard I couldn't be more pleased with its success: I've had friends who I haven't seen since high school message me and say how much they love listening to the mix each December. Family members halfway across the globe telling me how glad they are for it.
+This project has always been simply a way to spread music I enjoy to the people I love, and in that regard I couldn't be more pleased with its success: I've had friends who I haven't seen since high school message me and say how much they love listening to my mix each December. Family members halfway across the globe telling me which songs brought them joy.
 
-I took a break from producing mixes in 2015, and returned in 2018. Listen to the latest mix and read the reason for my break on [Wintr.mx](http://wintr.mx).
+Seeking out new music each year has led me to discover talented artists I wouldn't have known about otherwise. I've even come across recordings from Bing Crosby's era that are rarely played today—ones that don't carry the weight of familiarity.
 
-Who knows what next winter has in store?
+Ten years later, dear old Bing's omnipresence seems diminished, if only slightly. Despite fierce, repeated protests, my mom put on his album this past winter when I was home. Maybe it's because I'm an adult now, living on my own in a city hundreds of miles from home, but for a moment, listening to "White Christmas" in my parents' living room, I understood why his music has stayed with us for so long.
 
 ---
 
-I do actual work sometimes, too. Check out the [Dropbox](/work/dropbox) and [Swiftype](/work/swiftype) case studies, which do not include holiday puns. [Read about me](/about) or go [play Jingle Bells](/).
+I do actual work, too. Check out the [Dropbox](/work/dropbox) and [Swiftype](/work/swiftype) case studies, which do not include holiday puns. [Read about me](/about) or go [play Jingle Bells](/).
