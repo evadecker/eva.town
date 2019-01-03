@@ -160,6 +160,39 @@ html:not(.is-animating) .project-arrow {
       }
     }
 
+    ul, ol {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      li {
+        padding-left: 2rem;
+        position: relative;
+        &:before {
+          position: absolute;
+          text-align: right;
+          width: 1rem;
+          top: 0;
+          left: 0;
+        }
+      }  
+    }
+    
+    ul {
+      li:before {
+        content: '•';
+      }
+    }
+    
+    ol {
+      li {
+        counter-increment: step-counter;
+        &:before {
+          content: counter(step-counter);
+          font-variant-numeric: tabular-nums;
+          font-feature-settings: "tnum";
+        }
+      }
+    }
+
     hr {
       text-align: left; // Cross-browser compatibility
       margin-left: 0;
@@ -246,39 +279,6 @@ html:not(.is-animating) .project-arrow {
     text-decoration: underline;
     &:hover {
       color: $color-blue-dark;
-    }
-  }
-
-  > ul, > ol {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    li {
-      padding-left: 2rem;
-      position: relative;
-      &:before {
-        position: absolute;
-        text-align: right;
-        width: 0.9rem;
-        top: 0;
-        left: 0;
-      }
-    }  
-  }
-  
-  > ul {
-    li:before {
-      content: '•';
-    }
-  }
-  
-  > ol {
-    li {
-      counter-increment: step-counter;
-      &:before {
-        content: counter(step-counter);
-        font-variant-numeric: tabular-nums;
-        font-feature-settings: "tnum";
-      }
     }
   }
 
