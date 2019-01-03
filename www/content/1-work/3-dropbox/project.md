@@ -153,7 +153,7 @@ The most successful teams I've been on have engineers and designers working side
 
 (snippet: dropbox/engineers)
 
-We operated like a startup within a startup. Because our product was not outward-facing, we had leeway to take a more rapid pace than the rest of the company. *Our* users were a skip down the hall, in desks just like ours; if we had a research question, we could run over to whoever was available and ask it.
+We operated like a startup within a startup. Because our product was not outward-facing, we had leeway to take a more rapid pace than the rest of the company. Our users were a skip down the hall, in desks just like ours; if we had a research question, we could run over to whoever was available and ask it.
 
 After less than five months of design and development, we launched the alpha version of Journey Builder in June 2017.
 
