@@ -88,7 +88,7 @@ We explored some more aspirational directions as well, which I'll share at the e
 
 What makes a good interface font?
 
-First, it must be versatile. A typeface needs to accomodate buttons, inputs, labels, tooltips, large heading text, and small descriptive text. Data-heavy products like Swiftype also require dense tables, data visualizations, and snippets of code.
+First, it must be versatile. A typeface needs to accommodate buttons, inputs, labels, tooltips, large heading text, and small descriptive text. Data-heavy products like Swiftype also require dense tables, data visualizations, and snippets of code.
 
 Versatility manifests as *plainness*, and indeed—you generally want something unremarkable. Unfussy. A nondescript font that will communicate clearly without getting in the way. Something with a large <dfn title="A font's x-height is the distance between its baseline and the mean line of lowercase letters—typically, the height of the letter x.">x-height</dfn> and open <dfn title="A counter is the area of a letter that is entirely or partially enclosed.">counters</dfn> to improve legibility at small sizes. And ideally, something that includes condensed widths (good for space-constrained areas like tables) and a variety of weights from light to heavy (for fine-grained control over visual hierarchy). If there's a monospaced version for code, even better.
 
@@ -96,7 +96,7 @@ Swiftype used the font National everywhere. As the product evolved, it began to 
 
 (snippet: swiftype/national)
 
-[National](https://klim.co.nz/retail-fonts/national/) is a beautiful font that shines in large, light weights, and it worked marvelously on the Swiftype marketing site for a long time. On the dashboard, however, its distinctive curved feet appeared more fiddly than charming, the jump between weights was sporadic, and bizarrely, it consistently appeared 10–20% smaller than other system fonts. (These are fixed in the completely-redrawn 2017 release, [National 2](https://klim.co.nz/blog/national-2-design-information/).) To compensate for these quirks and a lack of wide or condensed widths, text had often been set in <span class="uppercase">all caps</span>.
+[National](https://klim.co.nz/retail-fonts/national/) is a beautiful font that shines in large, light weights, and it worked marvelously on the Swiftype marketing site for a long time. On the dashboard, however, its distinctive curved feet appeared more fiddly than charming, the jump between weights was sporadic, and bizarrely, it consistently appeared 10–20% smaller than other system fonts. (These are fixed in the completely redrawn 2017 release, [National 2](https://klim.co.nz/blog/national-2-design-information/).) To compensate for these quirks and a lack of wide or condensed widths, text had often been set in <span class="uppercase">all caps</span>.
 
 (snippet: swiftype/all-caps)
 
@@ -114,7 +114,7 @@ In the end, we settled on the humble and utilitarian [Acumin Pro](http://acumin.
 
 As part of the redesign, I created an entirely new icon set to increase legibility at small sizes and on non-retina screens. As with the font choice, these icons went through several iterations in an effort to accurately convey meaning and maintain continuity with our existing voice.
 
-The existing icons had been drawn at 48px for use on the marketing site, later scaled down for use on the dashboard. This rendered them fuzzy on non-<dfn title="Retina displays, or HiDPI displays, have a higher resolution (number of pixels) than traditional displays.">retina</dfn> displays. Most icons also included a glyph inside a square or round container, which made the glyph itself miniscule and muddied the icons' silhouettes.
+The existing icons had been drawn at 48px for use on the marketing site, later scaled down for use on the dashboard. This rendered them fuzzy on non-<dfn title="Retina displays, or HiDPI displays, have a higher resolution (number of pixels) than traditional displays.">retina</dfn> displays. Most icons also included a glyph inside a square or round container, which made the glyph itself minuscule and muddied the icons' silhouettes.
 
 I began by illustrating icons at the intended display size. The first iteration was modeled after the single-pixel stroke icons [found on Dropbox](https://dribbble.com/shots/1437544-Dropbox-File-Icons) or Finder at the time. They were too delicate, and they didn't work well on a dark background.
 
@@ -156,7 +156,7 @@ After all the incremental edits and final reskin, here's where we ended.
 
 ## Rethinking home
 
-The original dashboard home displayed all of a user's engines in a three-column grid of cards. Each card included the number of pages indexed and the total of searches and autocompletes in the last seven days. Below the cards was recent account activity, and to the right was a sidebar of static links. All in all, fairly sparse.
+The original dashboard home displayed all of a user's engines in a three column grid of cards. Each card included the number of pages indexed and the total of searches and autocompletes in the last seven days. Below the cards was recent account activity, and to the right was a sidebar of static links. All in all, fairly sparse.
 
 (snippet: swiftype/old-dashboard-home)
 

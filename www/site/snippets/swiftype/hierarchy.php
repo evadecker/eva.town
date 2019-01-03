@@ -12,7 +12,7 @@
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f441.png" alt="Eye emoji">
       <dl>
         <dt>visual hierarchy</dt>
-        <dd>the organization of content on-screen; normally mirrors content hierarchy, but not always; positioning, size, weight, color, motion, and context all help establish visual hierarchy</dd>
+        <dd>the organization of content onscreen; normally mirrors content hierarchy, but not always; positioning, size, weight, color, motion, and context all help establish visual hierarchy</dd>
       </dl>
     </li>
   </ul>
