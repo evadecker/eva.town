@@ -66,7 +66,7 @@ Wintr.mx is a single page site. It's responsive; the track titles and artists ar
 
 ## Mastering transitions
 
-In 2011, I had assembled all the tracks I liked, but listening to the album as a whole, the flow just wasn't there. I shuffled and reshuffled, groping through the dark and hoping to latch onto a solution, when suddenly I was struck: *what if I used music theory to guide which track comes next?*
+In 2011, I had assembled all the tracks I liked, but listening to the album as a whole, the flow just wasn't there. I shuffled and reshuffled, groping through the dark and hoping to latch onto a solution, when suddenly I was struck: what if I used music theory to guide which track comes next?
 
 (snippet: wintr-mx/moleskine)
 
