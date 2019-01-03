@@ -23,7 +23,7 @@
                 <ul class="emoji-list">
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f497.png" alt="Growing heart emoji" class="emoji">
-                    <a href="https://getkirby.com/">Kirby</a> for easy-as-heck flat-file content management
+                    <a href="https://getkirby.com/">Kirby</a> for easy-as-heck file-based content management
                   </li>
                 </ul>
               </div>
@@ -102,7 +102,7 @@
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f32b.png" alt="Fog emoji" class="emoji">
-                    <a href="https://github.com/technopagan/sqip">SQIP</a> for generating low-quality SVG image placeholders
+                    <a href="https://github.com/technopagan/sqip">SQIP</a> for generating low quality SVG image placeholders
                   </li>
                 </ul>
               </div>
@@ -198,7 +198,7 @@
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f970.png" alt="Smiling face with hearts emoji" class="emoji">
-                    Gracious friends and family for proof-reading, bug-testing, and continued feedback and encouragement
+                    Gracious friends and family for proofreading, bug testing, and continued feedback and encouragement
                   </li>
                 </ul>
               </div>

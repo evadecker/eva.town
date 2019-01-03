@@ -147,11 +147,9 @@ function handlePasswordSubmit (e) {
         void form.offsetWidth
         form.classList.add('try-again')
         setTimeout(function () {
-          // Clear input field when the shake animation starts shakin'
           passwordField.value = ''
         }, 250)
         setTimeout(function () {
-          // Re-focus field
           passwordField.focus()
         }, 800)
       } else if (json.success === true) {
@@ -163,8 +161,6 @@ function handlePasswordSubmit (e) {
           window.location.reload()
         }, 3000)
       }
-    } else {
-      console.log('Something went wrong. Please try again.')
     }
   }
 }
