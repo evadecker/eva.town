@@ -30,8 +30,10 @@
     <link rel="icon" type="image/png" href="<?= $site->url() ?>/favicon-16x16.png" sizes="16x16" />
     <link rel="apple-touch-icon" href="<?= $site->url() ?>/touch-icon-ipad.png" sizes="180x180" />
     
-    <link rel="stylesheet" href="https://use.typekit.net/exn3vdd.css">
+    <?php snippet('analytics') ?>
+
     <?php echo liveCSS('assets/builds/bundle.css') ?>
+    <link rel="stylesheet" href="https://use.typekit.net/exn3vdd.css">
     <?php echo js('assets/builds/bundle.js', ['defer' => true]) ?>
   </head>
   <body class="page-<?= $page->uid() ?>">
