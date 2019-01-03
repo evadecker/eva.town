@@ -1,8 +1,7 @@
 table {
-  background-color: $neutral-1;
-  font-size: 0.85rem;
+  @extend %font-sans;
+  font-size: 0.65rem;
   margin-bottom: 2rem;
-  margin-top: 2rem;
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
@@ -42,19 +41,12 @@ table {
     }
   }
 
-  td, th {
-    padding: 0.5rem 1rem;
-    vertical-align: top;
-    border-bottom: 1px solid $neutral-3;
-  }
-
-  th {
-    padding-top: 0;
-  }
-
   tbody {
     tr.new-section {
       border-top: 1px solid $neutral-3;
+    }
+    td {
+      border-right: 1px solid $neutral-3;
     }
   }
 }
@@ -81,9 +73,7 @@ table {
 }
 
 .icon-table {
-  @extend %font-sans;
   margin-bottom: 2rem;
-  font-size: 0.65rem;
 
   header {
     display: flex;
@@ -168,9 +158,6 @@ table {
     }
 
     tbody {
-      td {
-        border-right: 1px solid $neutral-3;
-      }
       td, th {
         padding: 0.5rem;
         vertical-align: middle;
