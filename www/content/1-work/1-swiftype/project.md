@@ -215,9 +215,13 @@ Perhaps, the best navigation is no navigation at all.
 
 ---
 
-I didn't start the way you're supposed to. I skipped some steps. I probably missed out on insights that would've steered the project in a smarter, more impactful direction. But hey!—it turned out alright, didn't it?
+Toward the end of 2016, I remember taking a walk with Casey to a Peet's Coffee in downtown San Francisco. He pointed out how much I'd grown as a designer since I'd joined. Reflecting back, I was shocked at all the things I hadn't known and had never done a brief year prior.
 
-(snippet: swiftype/lessons)
+I'm infinitely grateful that Casey and the rest of the Swiftype team took a chance on this junior designer during a time dozens of others declined.
+
+Projects don't always start the way they're "supposed" to, but maybe that's okay. What's important is forward progress. The bigger your steps, the harder it becomes to adjust course once they've been made.
+
+You scale a mountain one step at a time.
 
 ---
 
