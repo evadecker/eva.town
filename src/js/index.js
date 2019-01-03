@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     if (document.querySelector('.js-player') !== null) {
-      const players = Plyr.setup('.js-player')
+      Plyr.setup('.js-player')
     }
   }
 

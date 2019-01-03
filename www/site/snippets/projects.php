@@ -19,6 +19,6 @@
   <a class="home-project home-project-about" href="<?= $site->find('about')->url() ?>">
     <span class="project-logo"><?php snippet('about/logo') ?></span>
     <h2>About <span class="arrow"><?php snippet('arrow-r') ?></span></h2>
-    <p>On the most viewed thing I’ve ever created, plus: social links, design principles, contact info.</p>
+    <p>On the most viewed thing I’ve ever created, plus social links, design ideology, and contact info.</p>
   </a>
 </div>
