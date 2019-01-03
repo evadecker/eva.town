@@ -6,13 +6,12 @@
     background: transparent;
     border: 0;
     border-radius: $plyr-control-radius;
-    color: inherit;
+    color: $neutral-1;
     cursor: pointer;
     flex-shrink: 0;
     overflow: visible; // IE11
     padding: $plyr-control-padding;
     position: relative;
-    transition: all 0.3s ease;
 
     svg {
         display: block;
@@ -92,7 +91,6 @@ a.plyr__control {
     &.plyr__tab-focus,
     &:hover,
     &[aria-expanded='true'] {
-        background: $plyr-video-control-bg-hover;
         color: $plyr-video-control-color-hover;
     }
 }
