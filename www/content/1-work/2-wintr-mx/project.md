@@ -48,7 +48,7 @@ Are we homesick? Lazy? (What's comfortable is easier than what's new.) It could 
 
 What's the reason for the wheezin'?
 
-Bah humbug! It's time to [let it go](https://www.youtube.com/watch?v=moSFlvxnbgk). There are too many talented musicians for us to keep stabbing ourselves in our ear holes.
+Bah humbug! It's time to [let it go](https://www.youtube.com/watch?v=moSFlvxnbgk). There are too many talented musicians for us to keep on stabbing our ear holes.
 
 ## Background
 
