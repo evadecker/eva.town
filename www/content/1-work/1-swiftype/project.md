@@ -32,32 +32,35 @@ role: Research, interface design, typesetting, iconography, illustration, and fr
 
 text:
 
-## I'll be honest. I didn't start this project the way you're supposed&nbsp;to.
+## I didn't start this project the way you're supposed&nbsp;to.
 
-I didn't conduct user research. I didn't write a problem definition. I didn't name the goals we aimed to achieve or how to measure them. I did sketch, a little. And I looked at <dfn title="Dribbble is an online design community infamous for flashy interfaces that look great but are totally unusable in practice.">Dribbble</dfn>. And then I immediately dove into a full-fledged redesign of a large, complex product.
+To be honest, I didn't know how projects were supposed to start. I was a junior product designer; any part of me that knew about things like problem definitions and success metrics assumed that they were formalities for people who wanted to look important and thorough. The *real* work is the designing itself, right?
 
-I sought out inspiration, and boy, did I find it. One moment swayed by a sexy interface on Behance, the next, lurching to emulate a slick effect seen on CodePen, I manifested a nervous energy that raced toward every whim and fancy.
+My assignment was to redesign the Swiftype dashboard. Make it more usable; more consistent; more pretty. With dozens of different views and components that I had the opportunity to rethink all at once, this was a substantial undertaking. I dove in without a second thought.
 
-To be honest, I didn't really know how projects were *supposed* to start. I was a junior product designer;  common-practice things like defining problems and success metrics weren't in my wheelhouse. The part of me that did have some vague idea about them just assumed that they were formalities for people who wanted to look important and thorough. The *real* work is the designing itself, right?
+Sketching a little by hand, I'd mock up some slick-looking interfaces on my fancy new computer then repeat as inspiration struck. I was having a blast, but before long, I found myself adrift. With so many potential directions, how do you decide which one is best? Where do you even begin with such a large redesign? A sense of overwhelm steadily crept over me.
 
 (snippet: swiftype/process)
 
-I was keeping myself busy, but I was adrift. My design lead [Casey](http://zumwa.lt/) could see. One morning he approached me and keenly posed a challenge:
+My design lead [Casey](http://zumwa.lt/) recognized what was happening. My revisions had become cyclical: a change in one design would trigger an edit to another until I ended up more or less where I had started, minus the hours spent. I wasn't making forward progress.
+
+One morning he approached me and keenly posed a challenge:
 
 > Find one thing you can improve by the end of the day. Then <dfn title="'Shipping' is tech lingo for launching or releasing a product update.">ship it</dfn>.
 
-I eagerly accepted his call-to-arms. The user settings menu had been bugging me—it was in an odd place, and there was a clear place to move it to that'd be much better. Casey agreed. I created a <dfn title="In version control tools, a branch is a copy of the codebase that lets you make edits independently before merging in your changes.">branch</dfn> and tweaked some code to reposition the menu, we did some testing, and then we pushed it live. It took a couple of hours from start to finish.
+This felt like a breath of fresh air. One little thing? I could do that. Gladly.
+
+The user settings menu had been bugging me; it was in an odd place and the labels were unclear. Casey agreed. I created a <dfn title="In version control tools, a branch is a copy of the codebase that lets you make edits independently before merging in your changes.">branch</dfn>, tweaked some code to reposition the menu, ran tests, and then we pushed it live. It took a couple of hours from start to finish.
 
 *The product is better! You did that! People are using it right now.*
 
-How amazing it felt!
+It felt amazing.
 
-*You eat an elephant one bite at a time.*
+Weeks spent envisioning grand, sweeping redesigns paled in comparison to this simple little tweak. *This* was real. *This* had impact.
 
-What a massive revelation.
+*Aha! You scale a mountain one step at a time.*
 
-Throughout the project, we maintained this ethos. Make a small improvement. Ship it. Repeat. By the time we had finished, there was an entirely new dashboard. Much better than the original, and much better than any of my attempts to swallow an elephant whole.
-
+In writing, it sounds obvious. But feeling that contrast firsthand and seeing the eventual success it brought has stuck with me and continues to guide my design ethos to this day.
 
 ## What is&nbsp;Swiftype?
 

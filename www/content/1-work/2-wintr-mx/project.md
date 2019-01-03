@@ -18,7 +18,7 @@ website: wintr.mx
 
 ----
 
-tagline: On bad Christmas music, iterating for 6 years, and how music theory can improve mixtapes.
+tagline: On breaking from tradition, iterating for 6 years, and how to improve playlists with music theory.
 
 ----
 

@@ -18,11 +18,11 @@ Website: dropbox.com
 
 ----
 
-Tagline: On working with engineers, "startups within startups", and the value of a well-run team retrospective.
+Tagline: On scrappy research, writing good design principles, and the value of treating engineers as designers.
 
 ----
 
-Challenge: Unify the Dropbox communication channels to improve the user experience and reduce error.
+Challenge: Create an automation tool to make sending messages to Dropbox users easier and less error-prone.
 
 ----
 
