@@ -189,21 +189,15 @@ Internally, over 96% of the <dfn class="uppercase" title="Cascading Style Sheets
 
 ## Results
 
-<aside class="mobile-fullwidth">
-<blockquote><p>Love having this level of detailed control over search results, laid out in a very user-friendly way.</p></blockquote>
-</aside>
-
-All of the changes our team made were received positively from users, and we actually received several complimentary emails from customers, as well as kind notes during our scheduled customer feedback survey. A clean codebase will simplify future improvements and expansions to the dashboard.
+All of the changes our team made were received positively from users, and we actually received several complimentary emails from customers, as well as kind notes during our scheduled customer feedback survey. One response read: "love having this level of detailed control over search results, laid out in a very user-friendly way." A clean codebase will simplify future improvements and expansions to the dashboard.
 
 ## Where to&nbsp;next?
 
-The best answer to that question probably lies at [swiftype.com](https://swiftype.com/). They've been up to a lot of cool stuff since I left in 2016, including a recent acquisition by [Elastic](https://www.elastic.co/).
-
-But if you asked me what *I* think...
+The Swiftype team has been making some seriously cool stuff since I left in 2016, and they were recently acquired by [Elastic](https://www.elastic.co/). [See what they've been up to.](https://swiftype.com/)
 
 Casey and I did a great job making the existing navigation the best it could be. We left the visual hierarchy in a much better place, but the content hierarchy—the foundation—was left untouched.
 
-Why have a dozen pages for managing search? Why not have *one*?
+I'd love to see us dig even deeper. Why have a dozen pages for managing search? Why not have *one*?
 
 (snippet: swiftype/unified-sketches)
 
