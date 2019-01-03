@@ -5,6 +5,6 @@
     <img class="lazyload blur-up" data-src="<?= $page->image('sketches.png')->url() ?>" src="<?= $page->image('sketches.svg')->url() ?>" alt='Many sketches and sticky notes from early in development.'>
   </picture>
   <div class="wrapper">
-    <figcaption>Early sketches, mostly in the form of notes or questions posed by others who had experience using the existing tools.</figcaption>
+    <figcaption>Early sketches document ideation around layout logic and the appearance of individual steps. Sticky notes and other scribbled marginalia track questions, concerns, and wishes for the new product.</figcaption>
   </div>
 </figure>

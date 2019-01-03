@@ -3,11 +3,11 @@
   <ul class="emoji-list">
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f308.png" alt="Rainbow emoji">
-      <strong>Recognize that everyone is a designer.</strong> Code is designed. Processes are designed. Team meetings are designed. At it's core, design is just fancy problem-solving, and anyone can do that.
+      <strong>Recognize that everyone is a designer.</strong> Code is designed. Processes are designed. Team meetings are designed. Design is nothing more than a fancy word for problem-solving, and anyone can do that.
     </li>
     <li>
-      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/203c.png" alt="Double exclamation mark emoji">
-      <strong>Assert that everyone is a designer.</strong> Some developers I've worked with downplay their skills, professing that their ideas are worthless. Given space to ideate without fear, I've seen the very same people propose incredibly inventive, clever solutions. Remind them that it's okay (encouraged, even) to have ugly sketches.
+      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f601.png" alt="Beaming face with smiling eyes emoji">
+      <strong>Encourage design skills in everyone.</strong> Some developers I've worked with downplay their skills, professing that their ideas are worthless. Given space to ideate without fear, I've seen the very same people propose incredibly inventive, clever solutions. Remind them that it's okay (encouraged, even) to have ugly sketches.
     </li>
     <li>
       <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f4dd.png" alt="Memo emoji">

@@ -103,3 +103,8 @@ gif2webp input.gif -o output.webp
 # All files in a directory
 for file in *.gif; do gif2webp "$file" -o "${file%.gif}".webp; done
 ```
+
+MP4 to WEBM
+```zsh
+ffmpeg -i input.mp4 -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis output.webm
+```
