@@ -78,7 +78,7 @@ You know the breakfast machine from *Pee Wee Herman's Big Adventure*? It starts 
 
 Picture that.
 
-Now picture that there are 50,000 Pee Wees. And that different pinwheels which make different breakfasts. And that *you* have the power to line up the tubes and dinosaurs and Abraham Lincolns so that *this pinwheel* makes *this breakfast*.
+Now picture that there are 50,000 Pee Wees. And that different pinwheels make different breakfasts. And that you have the power to line up the tubes and dinosaurs and Abraham Lincolns so that *this pinwheel* makes *this breakfast*.
 
 Also, the breakfasts are really emails. And some Pee Wees have let us know they really, really don't want breakfast.
 
