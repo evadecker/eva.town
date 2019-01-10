@@ -42,7 +42,7 @@ It may be a "White Christmas" here, a "Silver Bells" there, but one way or anoth
 
 Truthfully, congratulations are in order. You've done it, Bing. You won Christmas. You planted your sound in 1942 and your voice has echoed through supermarkets across America ever since. You're what every musician strives to be: timeless. Quintessential.
 
-Our addiction to this decades-old seasonal pageantry is fascinating and bewildering. Why do we do it? 
+Our addiction to this decades-old seasonal pageantry fascinates me. Why do we do it? 
 
 Are we homesick? Lazy? (What's comfortable is easier than what's new.) It could be nostalgia: a desire for a simpler time, colored by hazy memories of childhood warped by the childhoods *we've* seen portrayed in film. More cynically: it's an almagamation of modern-day capitalism, copyright law, and romanticization of the American dream.
 
