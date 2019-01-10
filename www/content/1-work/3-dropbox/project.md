@@ -104,11 +104,11 @@ The opportunity to work on an interface that went beyond gridded lists, cards, a
 
 Our existing, journey-less solution was incredibly complex. Achieving even the simplest things required jumping through an absurd number of hoops.
 
-To deal with this complexity, users must’ve formed images of their own. Mental maps to help connect all the dots. I was curious: if you wanted to draw this map, what would it look like? How could we make a new product mirror that map as closely as possible?
+To deal with this complexity, Dropboxers must’ve formed images of their own. Mental maps to help connect all the dots. I was curious: if you wanted to draw this map, what would it look like? How could we make a new product mirror that map as closely as possible?
 
-To understand this, I proposed conducting research sessions which asked users to visualize just that: their internal maps. The pictures in their heads.
+To understand this, I proposed conducting research sessions which asked them to visualize just that: their internal maps. The pictures in their heads.
 
-Growth Platform didn't have a researcher, so we'd have to bootstrap it. I chatted with other teams' researchers to understand best practices and how *they'd* go about this, given the chance. I took their knowledge and conducted three separate hour-long sketching sessions with users who had experience with the existing tools. An observation room was set up so engineers and other team members could see and hear firsthand the problems our users faced.
+Growth Platform didn't have a researcher, so we'd have to bootstrap it. I chatted with other teams' researchers to understand best practices and how *they'd* go about this, given the chance. I took their knowledge and conducted three separate hour-long sketching sessions with Dropboxers who had experience with the existing tools. An observation room was set up so engineers and other team members could see and hear firsthand the problems being faced.
 
 (snippet: dropbox/research-video)
 
@@ -127,7 +127,7 @@ He said I should work with the team to establish design principles.
 
 (snippet: dropbox/principles)
 
-We determined that a journey should communicate what it does at a glance by having the most pertinent details viewable at the highest level. Anyone viewing a journey for the first time should be able to read it like a choose-your-own-adventure guide. It should encourage experimentation, providing actionable analytics and building space to tinker without fear. And it should unify the fragmented, integrating all the tools they need should into one coherent, usable whole.
+We determined that a journey should communicate what it does at a glance by having the most pertinent details viewable at the highest level. Anyone viewing a journey for the first time should be able to read it like a choose-your-own-adventure guide. It should encourage experimentation, providing actionable analytics and building space to tinker without fear. And it should unify the fragmented, integrating needed tools into a coherent, usable whole.
 
 We also wanted to lower the messaging error rate, reduce coordination tax, and enable sending smarter campaigns.
 
@@ -171,7 +171,7 @@ The release of Journey Builder was met with massive enthusiasm. Once people bega
 
 Megaphone already had basic analytics baked into Bluemail and Bluenote—a simple numerical table of send and receive stats. When asked about these existing analytics, the unanimous response was, "I ignore them." They were described as "untrustworthy" and "wrong".
 
-We obviously needed to fix the underlying metrics so that they accurately reflected the numbers users saw elsewhere—and we would. Beyond that, I aspired to use data to tell a story.
+We obviously needed to fix the underlying metrics so that they accurately reflected the numbers Dropboxers saw elsewhere—and we would. Beyond that, I aspired to use data to tell a story.
 
 (snippet: dropbox/tufte)
 
@@ -179,7 +179,7 @@ Around this time, I was reading through [Edward Tufte](https://www.edwardtufte.c
 
 (snippet: dropbox/dataviz)
 
-I wanted analytics to nudge users toward "better" rather than "more". Journey Builder was built to send the *right* emails, not the most emails. In fact, our motto on Growth Platform was "right message, right user, right time."
+I wanted analytics to nudge toward "better" rather than "more". Journey Builder was built to send the *right* emails, not the most emails. In fact, our motto on Growth Platform was "right message, right user, right time."
 
 (snippet: dropbox/analytics-annotations)
 
@@ -191,9 +191,9 @@ Journey Builder is now the de-facto way to create and manage campaigns at Dropbo
 
 ## What's next?
 
-There are ample opportunities for better integration with Bluemail and Bluenote, the content creation tools. Right now the creation of email and push messages are completely detached from the journey building experience, and must be linked together during journey creation.
+There are ample opportunities for better integration with Bluemail and Bluenote, the content creation tools. Right now message creation is completely detached from journey building, and must be linked together during journey creation.
 
-How might we run robust, safe experiments from within Journey Builder? Managed A/B tests could distribute a percentage of users between two or more paths, and then send all remaining users to the winning path. (Dropbox can currently do this, but not from within Journey Builder, and it requires hefty setup.)
+How might we run robust, safe experiments from within Journey Builder? Managed A/B tests could distribute a percentage of users between two or more paths, and then send all remaining users to the winning path. (Dropbox can currently do this, but not from within Journey Builder, and it requires hefty manual setup.)
 
 There's a lot of fascinating potential for loops within journeys, or even journeys that lead to or nest within other journeys. Aaron, the engineer who originally built Tracks, once told me that the ultimate iteration of his product could encapsulate every message sent to every Dropbox user.
 
