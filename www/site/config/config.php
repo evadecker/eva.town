@@ -16,6 +16,7 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 
 c::set('content.file.extension', 'md');
 c::set('cache.ignore', array('sitemap'));
+c::set('autobuster', true);
 c::set('smartypants', true);
 c::set('markdown.extra', true);
 c::set('sitemap.include.images', false);
