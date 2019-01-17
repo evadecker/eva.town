@@ -1,5 +1,5 @@
 .page-home {
-  background-color: $neutral-1;
+  background-color: var(--color-bg-alt);
   #header {
     position: absolute;
     top: 0;
@@ -68,8 +68,8 @@
 }
 
 .home-project {
-  background-color: $neutral-0;
-  color: $color-text;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   border-radius: 0.5rem;
   overflow: hidden;
   display: flex;
@@ -81,7 +81,7 @@
   padding: 1.5rem 1.5rem 1.5rem 5rem;
   transition: 0.2s ease;
   position: relative;
-  box-shadow: 0 0.5rem 1rem -0.5rem rgba($neutral-10, 0.1);
+  box-shadow: var(--shadow-medium)
 
   &:before {
     content: '';
@@ -90,7 +90,7 @@
     left: 0;
     right: 0;
     height: 0.5rem;
-    background-color: $neutral-9;
+    background-color: var(--color-text);
     z-index: 0;
   }
 
@@ -99,7 +99,7 @@
   }
 
   &:hover, &:focus {
-    box-shadow: 0 1.5rem 1.5rem -1rem rgba($neutral-10, 0.08);
+    box-shadow: 0 1.5rem 1.5rem -1rem rgba(black, 0.08);
     transform: translate3d(0, -0.5rem, 0);
     .arrow {
       transform: translate3d(0.2rem, 0, 0);
@@ -107,7 +107,7 @@
   }
 
   &:focus {
-    box-shadow: 0 1.5rem 1.5rem -1rem rgba($neutral-10, 0.08), 0 0 0 4px rgba($color-blue, 0.5);
+    box-shadow: 0 1.5rem 1.5rem -1rem rgba(black, 0.08), 0 0 0 4px rgba(var(--color-blue), 0.5);
   }
 
   h2 {
@@ -124,14 +124,14 @@
   .arrow {
     width: 0.8rem;
     margin-left: 0.5rem;
-    fill: $color-text-light;
+    fill: var(--color-text-light);
     transition: transform 0.2s ease;
   }
 
   .project-locked {
     margin-left: auto;
     svg path {
-      fill: $color-text-light;
+      fill: var(--color-text-light);
     }
   }
 
@@ -155,26 +155,26 @@
       height: 100%;
       width: auto;
       path {
-        fill: $neutral-3;
+        fill: var(--color-border);
       }
     }
   }
 
   &.color-red {
     &:before {
-      background-color: $color-red;
+      background-color: var(--color-red);
     }
   }
 
   &.color-blue {
     &:before {
-      background-color: $color-blue;
+      background-color: var(--color-blue);
     }
   }
 
   &.color-yellow {
     &:before {
-      background-color: $color-yellow;
+      background-color: var(--color-yellow);
     }
   }
 
@@ -265,7 +265,7 @@
     opacity: 0;
   }
   100% {
-    color: $color-text;
+    color: var(--color-text);
     transform: translate3d(0, 0, 0) scale(1);
   }
 }

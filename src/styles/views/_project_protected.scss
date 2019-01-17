@@ -8,13 +8,13 @@
     left: -2rem;
     right: -2rem;
     top: 50%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%);
+    background: linear-gradient(to bottom, rgba(var(--color-bg), 0) 0%, rgba(var(--color-bg), 1) 90%);
     z-index: 1;
   }
 
   .garbled {
     font-family: Helvetica, Arial, sans-serif;
-    color: $neutral-3;
+    color: var(--color-border);
     letter-spacing: -0.01em;
     line-height: 1;
     user-select: none;
@@ -68,28 +68,28 @@
   @extend %font-sans-extended;
   padding: 1.5rem;
   font-size: 0.8rem;
-  background: $neutral-10;
-  color: $neutral-2;
+  background: var(--color-neutral-10);
+  color: var(--color-neutral-2);
   position: relative;
   z-index: 4;
   margin-bottom: 2rem;
 
   ::selection {
-    background: $neutral-4;
+    background: var(--color-neutral-4);
   }
 
   *:focus {
-    box-shadow: 0 0 0 3px rgba($color-blue, 0.8);
+    box-shadow: 0 0 0 3px rgba(var(--color-blue), 0.8);
   }
 
   a:hover {
-    color: $neutral-0;
+    color: var(--color-neutral-0);
   }
 
   h2 {
     @extend %font-sans-extended;
     font-size: 1rem;
-    color: $neutral-0;
+    color: var(--color-neutral-0);
   }
 
   .message {
@@ -115,7 +115,7 @@
     }
 
     input[type='text'] {
-      background: $neutral-0;
+      background: var(--color-bg-input);
       background-repeat: no-repeat;
       background-position: 1rem center;
       border: none;
@@ -126,9 +126,9 @@
       padding: 0.5rem 1rem 0.5rem calc(1.75rem + 18px);
       width: 100%;
       &[disabled] {
-        -webkit-text-fill-color: $color-text; // Override iOS/Android font color change
+        -webkit-text-fill-color: var(--color-text); // Override iOS/Android font color change
         -webkit-opacity: 1; // Override iOS opacity change affecting text 
-        color: $color-text;
+        color: var(--color-text);
       }
     }
   }
@@ -141,7 +141,7 @@
       top: 50%;
       transform: translateY(-50%);
       path {
-        fill: $neutral-8;
+        fill: var(--color-text);
         transition: 0.2s ease;
       }
     }
@@ -155,7 +155,7 @@
       content: '';
       height: 6px;
       width: 100%;
-      background: $color-green;
+      background: var(--color-green);
       position: absolute;
       bottom: 0;
       left: 0;
@@ -177,10 +177,10 @@
     }
     &.success {
       label, .message {
-        color: $color-green;
+        color: var(--color-green);
       }
       input[type='text'] {
-        box-shadow: 0 0 0 3px $color-green;
+        box-shadow: 0 0 0 3px var(--color-green);
       }
       .message {
         margin-top: 1rem;
@@ -189,7 +189,7 @@
       }
       .password-input-wrapper svg {
         path {
-          fill: $color-green;
+          fill: var(--color-green);
         }
         #handle {
           transform: translateY(-2px);
@@ -296,19 +296,19 @@
 
 @keyframes temporaryRedText {
   from, 60% {
-    color: $color-red;
+    color: var(--color-red);
   }
 }
 
 @keyframes temporaryRedFill {
   from, 60% {
-    fill: $color-red;
+    fill: var(--color-red);
   }
 }
 
 @keyframes temporaryRedBorder {
   from, 60% {
-    box-shadow: 0 0 0 3px $color-red;
+    box-shadow: 0 0 0 3px var(--color-red);
   }
   to {
     box-shadow: 0 0 0 3px inherit;

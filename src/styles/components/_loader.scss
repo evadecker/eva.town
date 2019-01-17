@@ -24,17 +24,17 @@
   
   .loader-triangle {
     animation-delay: -0.5s;
-    fill: $color-red;
+    fill: var(--color-red);
   }
   
   .loader-square {
     animation-delay: -1s;
-    fill: $color-blue;
+    fill: var(--color-blue);
   }
 
   .loader-pentagon {
     animation-delay: 0s;
-    fill: $color-yellow;
+    fill: var(--color-yellow);
   }
 }
 

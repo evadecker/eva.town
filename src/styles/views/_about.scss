@@ -1,5 +1,5 @@
 .page-about #footer {
-  background: $neutral-1;
+  background: var(--color-bg-alt);
 }
 
 ul.social-links {
@@ -22,7 +22,7 @@ ul.social-links {
     margin: 0;
     padding: 0;
     a {
-      color: $color-text-light;
+      color: var(--color-text-light);
       height: 48px;
       width: 48px;
       display: flex;
@@ -32,8 +32,8 @@ ul.social-links {
       text-decoration: none;
       transition: 0.2s ease;
       &:hover, &:focus {
-        background: $color-blue-light;
-        color: $color-blue-dark;
+        background: var(--color-bg-link-hover);
+        color: var(--color-text-link-hover);
       }
     }
     + .social-link {
@@ -91,15 +91,15 @@ ul.social-links {
 .announcement {
   @extend %font-sans-extended;
   font-size: 0.65rem;
-  background: $color-green-light;
-  color: $color-green-dark;
+  background: var(--color-announcement-bg);
+  color: var(--color-announcement-text);
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   margin-top: -1rem;
   margin-bottom: 2rem;
   position: relative;
   &::selection, ::selection {
-    background-color: darken($color-green-light, 6);
+    background-color: var(--color-announcement-selection);
   }
 }
 
@@ -108,10 +108,10 @@ ul.social-links {
   font-weight: 600;
   font-size: 0.75rem;
   display: block;
-  background: $neutral-9;
-  color: $neutral-0;
+  background: var(--color-button-bg);
+  color: var(--color-button-text);
   border: none;
-  box-shadow: 0 0.1rem 0.5rem -0.1rem rgba($neutral-10, 0.1), 0 0 0.1rem rgba($neutral-10, 0.1);
+  box-shadow: 0 0.1rem 0.5rem -0.1rem rgba(black, 0.1), 0 0 0.1rem rgba(black, 0.1);
   border-radius: 2rem;
   width: 100%;
   margin: 0;
@@ -122,6 +122,6 @@ ul.social-links {
   transition: 0.2s ease;
   cursor: pointer;
   &:hover, &:focus {
-    background: $neutral-10;
+    background: var(--color-button-bg-hover);
   }
 }

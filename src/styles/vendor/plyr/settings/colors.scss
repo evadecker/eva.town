@@ -2,8 +2,8 @@
 // Colors
 // ==========================================================================
 
-$plyr-color-main: $neutral-0 !default;
-$plyr-color-gunmetal: $neutral-9 !default;
-$plyr-color-fiord: $neutral-7 !default;
-$plyr-color-lynch: $neutral-6 !default;
-$plyr-color-heather: $neutral-2 !default;
+$plyr-color-main: var(--color-neutral-0) !default;
+$plyr-color-gunmetal: var(--color-neutral-9) !default;
+$plyr-color-fiord: var(--color-neutral-7) !default;
+$plyr-color-lynch: var(--color-neutral-6) !default;
+$plyr-color-heather: var(--color-neutral-2) !default;

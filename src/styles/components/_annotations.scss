@@ -10,7 +10,7 @@ $corner-popover-offset: $popover-padding + $popover-tip-size;
   margin: 0 auto;
   img {
     border-radius: 0.4rem;
-    box-shadow: 0 1.5rem 5rem -0.5rem rgba($neutral-10, 0.1), 0 0 1rem rgba($neutral-10, 0.05);
+    box-shadow: 0 1.5rem 5rem -0.5rem rgba(black, 0.1), 0 0 1rem rgba(black, 0.05);
   }
 }
 
@@ -119,7 +119,7 @@ $corner-popover-offset: $popover-padding + $popover-tip-size;
   }
 
   .annotation-popover {
-    background: $neutral-0;
+    background: var(--color-neutral-0);
     padding: $popover-padding;
     border-radius: 0.4rem;
     display: inline-block;
@@ -137,7 +137,7 @@ $corner-popover-offset: $popover-padding + $popover-tip-size;
       width: ($popover-tip-size * 2) + 2px;
       height: ($popover-tip-size * 2) + 2px;
       border-radius: 2px;
-      background: $neutral-0;
+      background: var(--color-neutral-0);
       text-align: center;
       position: absolute;
       text-indent: 0px;
