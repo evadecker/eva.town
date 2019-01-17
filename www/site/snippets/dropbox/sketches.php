@@ -1,4 +1,4 @@
-<figure class="figure-full">
+<figure class="figure-full dark-invert">
   <picture>
     <source data-srcset="<?= $page->file('sketches.webp')->url() ?>" type="image/webp">
     <source data-srcset="<?= $page->image('sketches.png')->url() ?>" type="image/png"> 

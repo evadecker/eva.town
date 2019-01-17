@@ -68,8 +68,8 @@
   @extend %font-sans-extended;
   padding: 1.5rem;
   font-size: 0.8rem;
-  background: var(--color-neutral-10);
-  color: var(--color-neutral-2);
+  background: var(--color-protected-bg);
+  color: var(--color-protected-text);
   position: relative;
   z-index: 4;
   margin-bottom: 2rem;
@@ -79,17 +79,17 @@
   }
 
   *:focus {
-    box-shadow: 0 0 0 3px rgba(var(--color-blue), 0.8);
+    box-shadow: var(--focus-ring);
   }
 
   a:hover {
-    color: var(--color-neutral-0);
+    color: var(--color-protected-text-header);
   }
 
   h2 {
     @extend %font-sans-extended;
     font-size: 1rem;
-    color: var(--color-neutral-0);
+    color: var(--color-protected-text-header);
   }
 
   .message {
@@ -115,9 +115,10 @@
     }
 
     input[type='text'] {
-      background: var(--color-bg-input);
+      background: var(--color-protected-input-bg);
       background-repeat: no-repeat;
       background-position: 1rem center;
+      color: var(--color-protected-input-text);
       border: none;
       height: 2rem;
       font-size: 16px; // This has to be set to 16px to prevent
@@ -126,9 +127,9 @@
       padding: 0.5rem 1rem 0.5rem calc(1.75rem + 18px);
       width: 100%;
       &[disabled] {
-        -webkit-text-fill-color: var(--color-text); // Override iOS/Android font color change
+        -webkit-text-fill-color: var(--color-protected-input-text); // Override iOS/Android font color change
         -webkit-opacity: 1; // Override iOS opacity change affecting text 
-        color: var(--color-text);
+        color: var(--color-protected-input-text);
       }
     }
   }
@@ -141,7 +142,7 @@
       top: 50%;
       transform: translateY(-50%);
       path {
-        fill: var(--color-text);
+        fill: var(--color-protected-input-text);
         transition: 0.2s ease;
       }
     }
