@@ -2,7 +2,7 @@
       <div class="footer-content wrapper">
         <a href="<?= $site->url() ?>" class="logo"><span class="visually-hidden"><?= $site->title() ?></span><?php snippet('logo') ?></a>
         <div class="footer-copyright">
-          &copy;&nbsp;<a href="<?= $site->page('about')->url() ?>">Kyle Decker</a>, <?= date("Y") ?><span class="dot"></span><button data-micromodal-trigger="colophon" class="credits">Credits</button><span class="dot"></span><button id="darkmode" title="Toggle dark mode"><?php snippet('icons/sun') ?><?php snippet('icons/moon') ?></button>
+          &copy;&nbsp;<a href="<?= $site->page('about')->url() ?>">Kyle Decker</a>, <?= date("Y") ?><span class="dot"></span><button data-micromodal-trigger="colophon" class="credits">Credits</button><span class="dot"></span><button id="darkmode" title="Toggle dark mode"><?php snippet('icons/moon') ?><?php snippet('icons/sun') ?></button>
         </div>
       </div>
       <div id="colophon" aria-hidden="true">
@@ -118,7 +118,7 @@
                     Harp by <a href="https://freesound.org/people/Samulis/">Samulis</a> on <a href="https://freesound.org/people/Samulis/packs/21029/">Freesound</a>
                   </li>
                   <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f3b5.png" alt="Musical note emoji" class="emoji">
+                    <img src="<?= $site->url() ?>/assets/emoji/1f965.png" alt="Coconut emoji" class="emoji">
                     Xylophone by <a href="https://soundpacks.com/free-sound-packs/xylophone-samples-pack/">Soundpacks</a>
                   </li>
                   <li>
@@ -178,7 +178,7 @@
                 </ul>
               </div>
               <div class="colophon-block">
-                <h3>Misc</h3>
+                <h3>Quality Assurance</h3>
                 <ul class="emoji-list">
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/2705.png" alt="Checkmark emoji" class="emoji">
@@ -202,7 +202,24 @@
                   </li>
                 </ul>
               </div>
-              <div class="disclaimer">All other content &copy; Kyle Decker, <?= date("Y") ?>. Stealing is lame!</div>
+              <div class="colophon-block">
+                <h3>Featured In</h3>
+                <ul class="emoji-list">
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f3c6.png" alt="Trophy emoji" class="emoji">
+                    <a href="https://www.awwwards.com/sites/kyle-decker">Awwwards</a> (Honorable Mention)
+                  </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f524.png" alt="ABC emoji" class="emoji">
+                    <a href="https://fontsinuse.com/uses/24596/kyle-decker-portfolio">Fonts In Use</a>
+                  </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/1f604.png" alt="Grinning face with smiling eyes emoji" class="emoji">
+                    <a href="https://www.bestfolios.com/portfolio/kyledecker">Bestfolios</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="disclaimer">All other content &copy; Kyle Decker, <?= date("Y") ?>. Stealing is lame.</div>
             </div>
           </div> 
         </div>

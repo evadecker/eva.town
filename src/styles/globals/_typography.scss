@@ -59,11 +59,14 @@ html {
 
 html, body {
 	@extend %font-serif;
-	color: var(--color-text);
   font-size: 20px;
   line-height: 1.4;
 	@include media-min(620px) { font-size: 21px; }
 	@include media-min(820px) { font-size: 22px; }
+}
+
+body {
+  color: var(--color-text);
 }
 
 body[data-darkmode='true'] {

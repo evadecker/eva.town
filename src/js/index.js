@@ -134,7 +134,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   function getCookie (cname) {
     var name = cname + '='
-    var ca = document.cookie.split(';')
+    var decodedCookie = decodeURIComponent(document.cookie)
+    var ca = decodedCookie.split(';')
     for (var i = 0; i < ca.length; i++) {
       var c = ca[i]
       while (c.charAt(0) === ' ') {
@@ -168,10 +169,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   document.getElementById('darkmode').addEventListener('click', () => {
     document.body.getAttribute('data-darkmode') === 'true' ? disableDarkMode() : enableDarkMode()
-    document.body.setAttribute('data-is-transitioning', 'true')
-    setTimeout(function () {
-      document.body.removeAttribute('data-is-transitioning')
-    }, 2000)
   })
 
   // Handle loading and killing scripts on page transitions

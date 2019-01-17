@@ -4,22 +4,16 @@ body {
   min-height: 100vh;
   max-width: 100vw;
   flex-direction: column;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.4s ease;
   overflow-x: hidden;
+
   &[data-noscroll] {
     overflow: hidden;
   }
+
   &[data-darkmode='true'] {
     .dark-invert {
       filter: invert(90%);
-    }
-  }
-  &[data-is-transitioning='true'] {
-    &, * {
-      transition-property: all !important;
-      transition-delay: 0s !important;
-      transition-duration: 1s !important;
-      transition-timing-function: ease-in-out !important;
     }
   }
 }
