@@ -1,4 +1,4 @@
-<aside class="mobile-fullwidth">
+<aside class="mobile-fullwidth dark-invert">
   <figure>
     <picture>
       <source data-srcset="<?= $page->file('unified-sketches.webp')->url() ?>" type="image/webp">

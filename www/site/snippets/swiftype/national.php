@@ -1,4 +1,4 @@
-<figure class="figure-wide">
+<figure class="figure-wide dark-invert">
   <div class="font-specimen">
     <picture>
       <img src="<?= $page->image('national-specimen-2.svg')->url() ?>" alt="A font specimen for National, showing its display in paragraphs and headings.">

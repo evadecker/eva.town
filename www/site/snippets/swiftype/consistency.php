@@ -1,4 +1,4 @@
-<aside class="mobile-fullwidth">
+<aside class="mobile-fullwidth dark-invert">
   <figure>
     <picture>
       <source data-srcset="<?= $page->file('consistency-to-do.webp')->url() ?>" type="image/webp">

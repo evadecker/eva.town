@@ -30,7 +30,7 @@
       </dl>
     </li>
     <li>
-      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f51d.png" alt="Arrow pointing up with the word TOP emoji">
+      <img class="emoji" src="<?= $site->url() ?>/assets/emoji/1f4af.png" alt="100 points emoji">
       <dl>
         <dt>result ranking</dt>
         <dd>a feature allowing users to manually reposition search results for a query</dd>

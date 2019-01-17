@@ -66,7 +66,7 @@ html, body {
 	@include media-min(820px) { font-size: 22px; }
 }
 
-body[data-dark] {
+body[data-darkmode='true'] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -103,7 +103,7 @@ h3 {
 	margin: 0;
 }
 
-h1, h2, h3 {
+h1, h2 {
   color: var(--color-text-header);
 }
 

@@ -333,7 +333,7 @@ html:not(.is-animating) .project-arrow {
   display: flex;
   justify-content: space-between;
   > * {
-    background: var(--color-bg-alt);
+    background: var(--color-neutral-2);
   }
 
   img {
@@ -349,7 +349,6 @@ html:not(.is-animating) .project-arrow {
 
   @include media-min($column-breakpoint) {
     > * {
-      background: var(--color-bg-alt);
       width: calc(50% - 1rem);
     }
   }
