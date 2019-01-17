@@ -18,8 +18,8 @@ $timeline-breakpoint: 600px;
     position: relative;
     left: 1rem;
   }
-  &:before { background: linear-gradient(to bottom, rgba(var(--color-red-medium), 0) 0%, var(--color-red-medium) 100%); }
-  &:after {  background: var(--color-red-medium); }
+  &:before { background: linear-gradient(to bottom, transparent 0%, var(--color-timeline-line) 100%); }
+  &:after {  background: var(--color-timeline-line); }
 }
 
 .timeline + .full-width {
@@ -29,10 +29,13 @@ $timeline-breakpoint: 600px;
 .timeline-image {
   user-select: none;
   margin-bottom: 0.5rem;
+  body[data-darkmode='true'] & {
+    opacity: 0.5;
+  }
 }
 
 .timeline-entry {
-  border-left: 3px solid var(--color-red-medium);
+  border-left: 3px solid var(--color-timeline-line);
   padding-bottom: 3rem;
   padding-left: 1.5rem;
   list-style: none;
@@ -51,6 +54,7 @@ ul.timeline-list {
   position: relative;
 
   time {
+    color: var(--color-text-header);
     font-weight: 600;
     font-feature-settings: "tnum";
     font-variant-numeric: tabular-nums;
@@ -67,11 +71,10 @@ ul.timeline-list {
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: var(--color-red);
-      box-shadow: 0 0 0 2px var(--color-bg);
+      background: var(--color-timeline-dot);
       display: block;
       position: absolute;
-      top: 0.5rem;
+      top: calc(1px + 0.5rem);
       left: calc(-4px - 1.5rem);
     }
 
@@ -79,13 +82,13 @@ ul.timeline-list {
       box-shadow: 0 0 0 3px var(--color-bg);
       width: 11px;
       height: 11px;
-      top: 0.3rem;
+      top: calc(2px + 0.3rem);
       left: calc(-7px - 1.5rem);
     }
   }
 }
 
-$default-connection: rgba(var(--color-callout-text), 0.05);
+$default-connection: var(--color-callout-text);
 
 $halfstepup-color: var(--color-red);
 $halfstepdown-color: var(--color-purple);
@@ -118,7 +121,7 @@ $subdominant-color: var(--color-green);
   }
 
   .cof-circle {
-    box-shadow: inset 0 0 0 0.1rem rgba(var(--color-callout-text), 0.2);
+    box-shadow: 0 0 0 0.2rem var(--color-callout-text);
   }
 
   .cof-letter, .cof-connection,
@@ -150,13 +153,13 @@ $subdominant-color: var(--color-green);
       cursor: default;
 
       input[type=radio]:not(:checked) ~ .cof-letter-name:hover {
-        color: var(--color-callout-text);
+        opacity: 1;
       }
 
       input[type=radio]:checked {
 
         ~ .cof-letter-name {
-          color: var(--color-callout-text);
+          opacity: 1;
         }
 
         ~ .cof-connections .cof-connection {
@@ -193,46 +196,56 @@ $subdominant-color: var(--color-green);
           &.halfstepup{
             background-color: $halfstepup-color;
             box-shadow: 0 0 4px $halfstepup-color;
+            opacity: 1;
           }
 
           &.halfstepdown {
             background-color: $halfstepdown-color;
             box-shadow: 0 0 4px $halfstepdown-color;
+            opacity: 1;
           }
 
           &.dominant {
             &:before {
               box-shadow: 0 0 4px $dominant-color, inset 0 0 4px $dominant-color;
+              opacity: 1;
             }
             &:after {
               border-color: $dominant-color;
+              opacity: 1;
             }
           }
             
           &.subdominant {
             &:before {
               box-shadow: 0 0 4px $subdominant-color, inset 0 0 4px $subdominant-color;
+              opacity: 1;
             }
             &:after {
               border-color: $subdominant-color;
+              opacity: 1;
             }
           }
           
           &.wholestepup {
             &:before {
               box-shadow: 0 0 4px $wholestep-color, inset 0 0 4px $wholestep-color;
+              opacity: 1;
             }
             &:after {
               border-color: $wholestep-color;
+              opacity: 1;
             }
           }
             
           &.wholestepdown {
             &:before {
               box-shadow: 0 0 4px $wholestep-color, inset 0 0 4px $wholestep-color;
+              opacity: 1;
             }
             &:after {
               border-color: $wholestep-color;
+              opacity: 1;
             }
           }
         }
@@ -241,7 +254,8 @@ $subdominant-color: var(--color-green);
   }
 
   .cof-letter-name {
-    color: rgba(var(--color-callout-text), 0.4);
+    color: var(--color-callout-text);
+    opacity: 0.4;
     position: absolute;
     display: block;
     top: -2.5rem;
@@ -251,7 +265,7 @@ $subdominant-color: var(--color-green);
     z-index: 10;
     pointer-events: auto;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: opacity 0.2s ease;
     span {
       display: block;
     }
@@ -303,6 +317,7 @@ $subdominant-color: var(--color-green);
         top: -5.5%;
         left: 0;
         border-radius: 50%;
+        opacity: 0.05;
       }
       &:before {
         border: 0.1rem solid transparent;
@@ -328,6 +343,7 @@ $subdominant-color: var(--color-green);
       width: 0.1rem;
       left: calc(50% - 0.05rem);
       transform-origin: top center;
+      opacity: 0.05;
     }
 
     &.halfstepup {
@@ -337,7 +353,6 @@ $subdominant-color: var(--color-green);
     &.halfstepdown {
       transform: rotate(-15deg);
     }
-
 
     &.wholestepup, &.wholestepdown {
       height: 100%;
@@ -351,6 +366,7 @@ $subdominant-color: var(--color-green);
         top: -15%;
         left: 0;
         border-radius: 50%;
+        opacity: 0.05;
       }
       &:before {
         border: 0.1rem solid transparent;
@@ -375,7 +391,7 @@ $subdominant-color: var(--color-green);
   height: 1em;
   width: 0.5em;
   margin-left: 0.05em;
-  display: inline;
+  display: inline-block;
   path {
     fill: currentColor;
   }

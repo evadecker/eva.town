@@ -107,7 +107,13 @@
   }
 
   &:focus {
-    box-shadow: 0 1.5rem 1.5rem -1rem rgba(black, 0.08), 0 0 0 4px rgba(var(--color-blue), 0.5);
+    box-shadow: 0 1.5rem 1.5rem -1rem rgba(black, 0.08), 0 0 0 4px rgba(63, 151, 255, 0.5);
+  }
+
+  body[data-darkmode='true'] & {
+    &:focus {
+      box-shadow: 0 1.5rem 1.5rem -1rem rgba(black, 0.08), 0 0 0 4px rgba(63, 151, 255, 0.8);
+    }
   }
 
   h2 {

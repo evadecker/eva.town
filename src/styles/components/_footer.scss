@@ -19,12 +19,29 @@
     }
   }
 
-  // Colophon toggle button
-  .credits {
+  button {
+    color: var(--color-text-light);
     padding: 0;
     border: none;
     background: transparent;
     cursor: pointer;
+    svg path {
+      fill: currentColor;
+    }
+  }
+
+  #darkmode {
+    display: flex;
+    body[data-darkmode='false'] & {
+      .sun-icon {
+        display: none;
+      }
+    }
+    body[data-darkmode='true'] & {
+      .moon-icon {
+        display: none;
+      }
+    }
   }
 
   .footer-copyright {

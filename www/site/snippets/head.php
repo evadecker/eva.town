@@ -36,4 +36,4 @@
     <?php echo liveCSS('assets/builds/bundle.css') ?>
     <?php echo js('assets/builds/bundle.js', ['defer' => true]) ?>
   </head>
-  <body class="page-<?= $page->uid() ?>" data-dark>
+  <body class="page-<?= $page->uid() ?>">

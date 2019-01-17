@@ -9,6 +9,19 @@ body {
   &[data-noscroll] {
     overflow: hidden;
   }
+  &[data-darkmode='true'] {
+    .dark-invert {
+      filter: invert(90%);
+    }
+  }
+  &[data-is-transitioning='true'] {
+    &, * {
+      transition-property: all !important;
+      transition-delay: 0s !important;
+      transition-duration: 1s !important;
+      transition-timing-function: ease-in-out !important;
+    }
+  }
 }
 
 .page-content {
