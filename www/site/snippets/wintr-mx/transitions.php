@@ -1,6 +1,6 @@
 <div class="post-callout">
   <h3>What makes a "good" transition?</h3>
-  <p>Music has no rules! But it does have conventions. Click or tap the letter names on the circle of fifths to see common key changes between major keys.</p>
+  <p>Music has no rules, but it does have conventions. Click or tap the letter names on the circle of fifths to see common key changes between major keys.</p>
   <div class="circle-of-fifths">
     <form class="cof-circle">
       <div class="cof-scale-degree">

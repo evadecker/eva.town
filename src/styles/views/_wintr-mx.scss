@@ -29,9 +29,6 @@ $timeline-breakpoint: 600px;
 .timeline-image {
   user-select: none;
   margin-bottom: 0.5rem;
-  body[data-darkmode='true'] & {
-    opacity: 0.5;
-  }
 }
 
 .timeline-entry {
@@ -121,7 +118,10 @@ $subdominant-color: var(--color-green);
   }
 
   .cof-circle {
-    box-shadow: 0 0 0 0.2rem var(--color-callout-text);
+    box-shadow: 0 0 0 0.2rem rgba(66, 56, 26, 0.4);
+    body[data-darkmode="true"] & {
+      box-shadow: 0 0 0 0.2rem var(--color-neutral-7);
+    }
   }
 
   .cof-letter, .cof-connection,

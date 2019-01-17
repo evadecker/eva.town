@@ -21,6 +21,48 @@ const swup = new Swup({
   // debugMode: true
 })
 
+// Dark mode
+checkCookie()
+
+function getCookie (cname) {
+  var name = cname + '='
+  var decodedCookie = decodeURIComponent(document.cookie)
+  var ca = decodedCookie.split(';')
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i]
+    while (c.charAt(0) === ' ') {
+      c = c.substring(1)
+    }
+    if (c.indexOf(name) === 0) {
+      return c.substring(name.length, c.length)
+    }
+  }
+  return ''
+}
+
+function checkCookie () {
+  var darkmode = getCookie('darkmode')
+  if (darkmode === 'off') {
+    disableDarkMode()
+  } else {
+    enableDarkMode()
+  }
+}
+
+function enableDarkMode () {
+  document.cookie = 'darkmode = on;  expires = Fri, 31 Dec 9999 23:59:59 GMT'
+  document.body.setAttribute('data-darkmode', 'true')
+}
+
+function disableDarkMode () {
+  document.cookie = 'darkmode = off;  expires = Fri, 31 Dec 9999 23:59:59 GMT'
+  document.body.setAttribute('data-darkmode', 'false')
+}
+
+document.getElementById('darkmode').addEventListener('click', () => {
+  document.body.getAttribute('data-darkmode') === 'true' ? disableDarkMode() : enableDarkMode()
+})
+
 document.addEventListener('DOMContentLoaded', function (event) {
   function init () {
     // Open all external links in new tab
@@ -127,48 +169,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
     onShow: function () { document.body.setAttribute('data-noscroll', '') },
     onClose: function () { document.body.removeAttribute('data-noscroll') },
     awaitCloseAnimation: true
-  })
-
-  // Dark mode
-  checkCookie()
-
-  function getCookie (cname) {
-    var name = cname + '='
-    var decodedCookie = decodeURIComponent(document.cookie)
-    var ca = decodedCookie.split(';')
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i]
-      while (c.charAt(0) === ' ') {
-        c = c.substring(1)
-      }
-      if (c.indexOf(name) === 0) {
-        return c.substring(name.length, c.length)
-      }
-    }
-    return ''
-  }
-
-  function checkCookie () {
-    var darkmode = getCookie('darkmode')
-    if (darkmode === 'off') {
-      disableDarkMode()
-    } else {
-      enableDarkMode()
-    }
-  }
-
-  function enableDarkMode () {
-    document.cookie = 'darkmode = on;  expires = Fri, 31 Dec 9999 23:59:59 GMT'
-    document.body.setAttribute('data-darkmode', 'true')
-  }
-
-  function disableDarkMode () {
-    document.cookie = 'darkmode = off;  expires = Fri, 31 Dec 9999 23:59:59 GMT'
-    document.body.setAttribute('data-darkmode', 'false')
-  }
-
-  document.getElementById('darkmode').addEventListener('click', () => {
-    document.body.getAttribute('data-darkmode') === 'true' ? disableDarkMode() : enableDarkMode()
   })
 
   // Handle loading and killing scripts on page transitions

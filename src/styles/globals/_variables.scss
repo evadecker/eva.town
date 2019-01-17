@@ -5,25 +5,25 @@ $aside-width: calc(33.3333% - 1rem);
 $column-breakpoint: 960px;
 
 :root {
-  --color-red-dark: rgb(94, 19, 19);
-  --color-red: rgb(255, 62, 62);
-  --color-red-medium: rgb(247, 210, 219);
+  --color-red-dark: #5e1313;
+  --color-red: #ff3e3e;
+  --color-red-medium: #f7d2db;
   --color-red-light: #FCF3F7;
   --color-orange: #EB760D;
   --color-orange-dark: #8F4400;
   --color-yellow-dark: #443818;
   --color-yellow: #FFD220;
-  --color-yellow-border: rgb(235, 221, 184);
+  --color-yellow-border: #ebddb8;
   --color-yellow-light: #FFF9E9;
-  --color-blue-dark: #396BA6;
+  --color-blue-dark: #004da5;
   --color-blue: #3F97FF;
   --color-blue-light: #EAF3FF;
   --color-teal: #75DEE4;
   --color-green-dark: #0D6C1E;
   --color-green: #5CD874;
-  --color-green-border: rgb(205, 235, 210);
+  --color-green-border: #cdebd2;
   --color-green-light: #E9F4EB;
-  --color-purple-dark: rgb(88, 11, 212);
+  --color-purple-dark: #470bd4;
   --color-purple: #7C60FF;
 
   --color-neutral-0: #FFFFFF; // White
@@ -39,9 +39,9 @@ $column-breakpoint: 960px;
   --color-neutral-10: #000; // Black
 
   --color-lcd-bg: #8DB48E;
-  --color-lcd-dark: #607060;
+  --color-lcd-dark: #466b46;
   --color-lcd-light: #A2D4A4;
-  --color-lcd-hover: #4D5B4D;
+  --color-lcd-hover: #325732;
 
   --shadow-small: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   --shadow-medium: 0 0.5rem 1rem -0.5rem rgba(0, 0, 0, 0.1);
@@ -89,6 +89,12 @@ body {
   --color-timeline-line: var(--color-red-medium);
   --color-timeline-dot: var(--color-red);
 
+  --color-protected-bg: var(--color-neutral-10);
+  --color-protected-text: var(--color-neutral-2);
+  --color-protected-text-header: var(--color-neutral-0);
+  --color-protected-input-bg: var(--color-neutral-0);
+  --color-protected-input-text: var(--color-neutral-9);
+
   --color-synth-base: var(--color-neutral-8);
   --color-synth-endcap: var(--color-neutral-9);
   --color-synth-outline: var(--color-neutral-9);
@@ -112,9 +118,9 @@ body[data-darkmode='true'] {
   --color-border-overlay: rgba(255, 255, 255, 0.1);
   --color-border-overlay-dark: rgba(255, 255, 255, 0.2);
 
-  --color-text: var(--color-neutral-4);
+  --color-text: var(--color-neutral-3);
   --color-text-light: var(--color-neutral-5);
-  --color-text-header: var(--color-neutral-1);
+  --color-text-header: var(--color-neutral-0);
 
   --color-bg-link-hover: var(--color-blue);
   --color-text-link-hover: var(--color-neutral-0);
@@ -138,11 +144,22 @@ body[data-darkmode='true'] {
   --color-timeline-line: var(--color-neutral-8);
   --color-timeline-dot: var(--color-neutral-3);
 
+  --color-protected-bg: var(--color-neutral-0);
+  --color-protected-text: var(--color-neutral-9);
+  --color-protected-text-header: var(--color-neutral-10);
+  --color-protected-input-bg: var(--color-neutral-1);
+  --color-protected-input-text: var(--color-neutral-9);
+
   --color-synth-base: var(--color-neutral-2);
   --color-synth-endcap: var(--color-neutral-0);
   --color-synth-outline: var(--color-neutral-9);
-  --color-synth-whitekey-pressed: var(--color-purple);
-  --color-synth-blackkey-pressed: var(--color-purple-dark);
+  --color-synth-whitekey-pressed: var(--color-blue);
+  --color-synth-blackkey-pressed: var(--color-blue-dark);
+
+  --color-lcd-bg: #dcf3ff;
+  --color-lcd-dark: #3899c0;
+  --color-lcd-light: #ffffff;
+  --color-lcd-hover: #137daa;
 
   --focus-ring: 0 0 0 4px rgba(63, 151, 255, 0.8);
 }
