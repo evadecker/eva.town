@@ -13,6 +13,9 @@
 
 .carousel-item {
   background: var(--color-bg-alt);
+  body[data-darkmode="true"] & {
+    background-color: var(--color-neutral-9);
+  }
   border-radius: 0.4rem;
   display: flex;
   flex-direction: column;

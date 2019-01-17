@@ -23,7 +23,7 @@ $column-breakpoint: 960px;
   --color-green: #5CD874;
   --color-green-border: rgb(205, 235, 210);
   --color-green-light: #E9F4EB;
-  --color-purple-dark: rgb(51, 33, 129);
+  --color-purple-dark: rgb(88, 11, 212);
   --color-purple: #7C60FF;
 
   --color-neutral-0: #FFFFFF; // White
@@ -47,7 +47,9 @@ $column-breakpoint: 960px;
   --shadow-medium: 0 0.5rem 1rem -0.5rem rgba(0, 0, 0, 0.1);
   --shadow-large: 0 1rem 2rem -0.5rem rgba(0, 0, 0, 0.15);
   --shadow-xlarge: 0 2rem 4rem -2rem rgba(0, 0, 0, 0.1);
+}
 
+body {
   --color-bg: var(--color-neutral-0);
   --color-bg-alt: var(--color-neutral-1);
   --color-bg-radio-selected: var(--color-blue);
@@ -58,6 +60,8 @@ $column-breakpoint: 960px;
   --color-border: var(--color-neutral-3);
   --color-border-darker: var(--color-neutral-4);
   --color-border-darker-hover: var(--color-neutral-5);
+  --color-border-overlay: rgba(0, 0, 0, 0.1);
+  --color-border-overlay-dark: rgba(0, 0, 0, 0.2);
 
   --color-text: var(--color-neutral-9);
   --color-text-light: var(--color-neutral-7);
@@ -96,7 +100,7 @@ $column-breakpoint: 960px;
 
 body[data-darkmode='true'] {
   --color-bg: #191919;
-  --color-bg-alt: #1f1f1f;
+  --color-bg-alt: #111;
 
   --color-bg-input: var(--color-neutral-0);
 
@@ -105,10 +109,12 @@ body[data-darkmode='true'] {
   --color-border: var(--color-neutral-8);
   --color-border-darker: var(--color-neutral-7);
   --color-border-darker-hover: var(--color-neutral-6);
+  --color-border-overlay: rgba(255, 255, 255, 0.1);
+  --color-border-overlay-dark: rgba(255, 255, 255, 0.2);
 
   --color-text: var(--color-neutral-4);
   --color-text-light: var(--color-neutral-5);
-  --color-text-header: var(--color-neutral-2);
+  --color-text-header: var(--color-neutral-1);
 
   --color-bg-link-hover: var(--color-blue);
   --color-text-link-hover: var(--color-neutral-0);
@@ -132,8 +138,8 @@ body[data-darkmode='true'] {
   --color-timeline-line: var(--color-neutral-8);
   --color-timeline-dot: var(--color-neutral-3);
 
-  --color-synth-base: var(--color-yellow);
-  --color-synth-endcap: var(--color-blue);
+  --color-synth-base: var(--color-neutral-2);
+  --color-synth-endcap: var(--color-neutral-0);
   --color-synth-outline: var(--color-neutral-9);
   --color-synth-whitekey-pressed: var(--color-purple);
   --color-synth-blackkey-pressed: var(--color-purple-dark);

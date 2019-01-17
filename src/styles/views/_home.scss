@@ -1,5 +1,7 @@
 .page-home {
-  background-color: var(--color-bg-alt);
+  &[data-darkmode="false"] {
+    background-color: var(--color-bg-alt);
+  }
   #header {
     position: absolute;
     top: 0;
@@ -69,6 +71,9 @@
 
 .home-project {
   background-color: var(--color-bg);
+  body[data-darkmode="true"] & {
+    background-color: var(--color-neutral-9);
+  }
   color: var(--color-text);
   border-radius: 0.5rem;
   overflow: hidden;

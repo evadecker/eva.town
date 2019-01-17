@@ -37,7 +37,7 @@ $timeline-breakpoint: 600px;
 .timeline-entry {
   border-left: 3px solid var(--color-timeline-line);
   padding-bottom: 3rem;
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
   list-style: none;
   margin-left: 1rem;
   &:last-child { padding-bottom: 0; }
@@ -68,14 +68,14 @@ ul.timeline-list {
     }
     &:before {
       content: '';
-      width: 5px;
-      height: 5px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--color-timeline-dot);
       display: block;
       position: absolute;
-      top: calc(1px + 0.5rem);
-      left: calc(-4px - 1.5rem);
+      top: 0.5rem;
+      left: calc(-5px - 1.2rem);
     }
 
     &:first-child:before {
@@ -83,7 +83,7 @@ ul.timeline-list {
       width: 11px;
       height: 11px;
       top: calc(2px + 0.3rem);
-      left: calc(-7px - 1.5rem);
+      left: calc(-7px - 1.2rem);
     }
   }
 }
