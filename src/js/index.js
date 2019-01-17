@@ -42,10 +42,10 @@ function getCookie (cname) {
 
 function checkCookie () {
   var darkmode = getCookie('darkmode')
-  if (darkmode === 'off') {
-    disableDarkMode()
-  } else {
+  if (darkmode === 'on') {
     enableDarkMode()
+  } else {
+    disableDarkMode()
   }
 }
 
