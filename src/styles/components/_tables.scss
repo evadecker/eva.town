@@ -99,6 +99,13 @@ table {
   &[data-color="white"] {
     table {
       background-color: var(--color-neutral-1);
+      color: var(--color-neutral-7);
+      * {
+        border-color: var(--color-neutral-3);
+      }
+    }
+    .svg-icon {
+      fill: var(--color-neutral-9);
     }
   }
 
@@ -118,7 +125,7 @@ table {
   &[data-color="blue"] {
     table {
       background-color: #0083E3;
-      color: rgba(var(--color-neutral-0), 0.7);
+      color: rgba(white, 0.7);
       * {
         border-color: darken(#0083E3, 8);
       }

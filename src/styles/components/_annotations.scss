@@ -120,6 +120,7 @@ $corner-popover-offset: $popover-padding + $popover-tip-size;
 
   .annotation-popover {
     background: var(--color-neutral-0);
+    color: var(--color-neutral-9);
     padding: $popover-padding;
     border-radius: 0.4rem;
     display: inline-block;

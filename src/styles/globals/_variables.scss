@@ -59,6 +59,7 @@ body {
 
   --color-text: var(--color-neutral-9);
   --color-text-light: var(--color-neutral-7);
+  --color-text-header: var(--color-neutral-9);
 
   --color-bg-link-hover: var(--color-blue-light);
   --color-text-link-hover: var(--color-blue-dark);
@@ -81,6 +82,7 @@ body {
 
   --color-synth-base: var(--color-neutral-8);
   --color-synth-endcap: var(--color-neutral-9);
+  --color-synth-outline: var(--color-neutral-9);
   --color-synth-whitekey-pressed: var(--color-purple);
   --color-synth-blackkey-pressed: var(--color-purple-dark);
 
@@ -106,9 +108,10 @@ body[data-dark] {
 
   --color-text: var(--color-neutral-4);
   --color-text-light: var(--color-neutral-5);
+  --color-text-header: var(--color-neutral-2);
 
   --color-bg-link-hover: var(--color-blue);
-  --color-text-link-hover: var(--neutral-0);
+  --color-text-link-hover: var(--color-neutral-0);
 
   --color-button-bg: var(--color-neutral-9);
   --color-button-text: var(--color-neutral-0);
@@ -123,11 +126,12 @@ body[data-dark] {
 
   --color-callout-bg: var(--color-neutral-9);
   --color-callout-border: var(--color-neutral-7);
-  --color-callout-text: var(--color-neutral-2);
+  --color-callout-text: var(--color-neutral-3);
   --color-callout-selection: var(--color-selection);
 
-  --color-synth-base: var(--color-neutral-8);
-  --color-synth-endcap: var(--color-neutral-9);
+  --color-synth-base: var(--color-yellow);
+  --color-synth-endcap: var(--color-blue);
+  --color-synth-outline: var(--color-neutral-9);
   --color-synth-whitekey-pressed: var(--color-purple);
   --color-synth-blackkey-pressed: var(--color-purple-dark);
 }

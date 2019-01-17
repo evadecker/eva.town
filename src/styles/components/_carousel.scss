@@ -48,6 +48,7 @@
 
   .quote-author {
     @extend %font-sans-extended;
+    color: var(--color-text-header);
     text-transform: uppercase;
     font-size: 0.8em;
     font-weight: 600;

@@ -81,7 +81,7 @@
   padding: 1.5rem 1.5rem 1.5rem 5rem;
   transition: 0.2s ease;
   position: relative;
-  box-shadow: var(--shadow-medium)
+  box-shadow: var(--shadow-medium);
 
   &:before {
     content: '';
@@ -265,7 +265,7 @@
     opacity: 0;
   }
   100% {
-    color: var(--color-text);
+    color: var(--color-text-header);
     transform: translate3d(0, 0, 0) scale(1);
   }
 }
