@@ -8,7 +8,7 @@ $timeline-breakpoint: 600px;
   position: relative;
   z-index: 1;
   ::selection {
-    background-color: lighten($color-red-medium, 4);
+    background-color: var(--color-red-medium);
   }
   &:before, &:after {
     content: '';
@@ -18,8 +18,8 @@ $timeline-breakpoint: 600px;
     position: relative;
     left: 1rem;
   }
-  &:before { background: linear-gradient(to bottom, transparentize($color-red-medium, 1) 0%, $color-red-medium 100%); }
-  &:after {  background: $color-red-medium; }
+  &:before { background: linear-gradient(to bottom, rgba(var(--color-red-medium), 0) 0%, var(--color-red-medium) 100%); }
+  &:after {  background: var(--color-red-medium); }
 }
 
 .timeline + .full-width {
@@ -32,7 +32,7 @@ $timeline-breakpoint: 600px;
 }
 
 .timeline-entry {
-  border-left: 3px solid $color-red-medium;
+  border-left: 3px solid var(--color-red-medium);
   padding-bottom: 3rem;
   padding-left: 1.5rem;
   list-style: none;
@@ -67,8 +67,8 @@ ul.timeline-list {
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: $color-red;
-      box-shadow: 0 0 0 2px $neutral-0;
+      background: var(--color-red);
+      box-shadow: 0 0 0 2px var(--color-bg);
       display: block;
       position: absolute;
       top: 0.5rem;
@@ -76,7 +76,7 @@ ul.timeline-list {
     }
 
     &:first-child:before {
-      box-shadow: 0 0 0 3px $neutral-0;
+      box-shadow: 0 0 0 3px var(--color-bg);
       width: 11px;
       height: 11px;
       top: 0.3rem;
@@ -85,13 +85,13 @@ ul.timeline-list {
   }
 }
 
-$default-connection: rgba($color-yellow-dark, 0.05);
+$default-connection: rgba(var(--color-callout-text), 0.05);
 
-$halfstepup-color: $color-red;
-$halfstepdown-color: $color-purple;
-$wholestep-color: $color-yellow;
-$dominant-color: $color-blue;
-$subdominant-color: $color-green;
+$halfstepup-color: var(--color-red);
+$halfstepdown-color: var(--color-purple);
+$wholestep-color: var(--color-yellow);
+$dominant-color: var(--color-blue);
+$subdominant-color: var(--color-green);
 
 .color-dominant { color: $dominant-color; }
 .color-subdominant { color: $subdominant-color; }
@@ -118,7 +118,7 @@ $subdominant-color: $color-green;
   }
 
   .cof-circle {
-    box-shadow: inset 0 0 0 0.1rem rgba($color-yellow-dark, 0.2);
+    box-shadow: inset 0 0 0 0.1rem rgba(var(--color-callout-text), 0.2);
   }
 
   .cof-letter, .cof-connection,
@@ -150,13 +150,13 @@ $subdominant-color: $color-green;
       cursor: default;
 
       input[type=radio]:not(:checked) ~ .cof-letter-name:hover {
-        color: $color-yellow-dark;
+        color: var(--color-callout-text);
       }
 
       input[type=radio]:checked {
 
         ~ .cof-letter-name {
-          color: $color-yellow-dark;
+          color: var(--color-callout-text);
         }
 
         ~ .cof-connections .cof-connection {
@@ -241,7 +241,7 @@ $subdominant-color: $color-green;
   }
 
   .cof-letter-name {
-    color: rgba($color-yellow-dark, 0.4);
+    color: rgba(var(--color-callout-text), 0.4);
     position: absolute;
     display: block;
     top: -2.5rem;
@@ -417,7 +417,7 @@ $subdominant-color: $color-green;
       @extend %font-sans-extended;
       font-size: 0.85rem;
       line-height: 1;
-      color: $neutral-0;
+      color: var(--color-neutral-0);
       position: absolute;
       bottom: 0.5rem;
       left: 0.5rem;
@@ -441,7 +441,7 @@ $subdominant-color: $color-green;
 
     .album-image {
       border-radius: 4px;
-      box-shadow: 0 1rem 2rem -0.5rem rgba($neutral-10, 0.1);
+      box-shadow: var(--shadow-large);
     }
   }
 }

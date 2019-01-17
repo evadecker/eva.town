@@ -1,6 +1,6 @@
 .carousel {
   position: relative;
-  background-color: $neutral-1;
+  background-color: var(--color-bg-alt);
   overflow-y: hidden;
   padding: 0;
   &:focus {
@@ -13,20 +13,20 @@
 }
 
 .carousel-item {
-  background: $neutral-0;
+  background: var(--color-bg);
   border-radius: 0.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: $color-text;
+  color: var(--color-text);
   margin: 2rem 1rem 4rem;
   width: 90%;
   padding: 0 5%;
   max-width: 800px;
   height: 480px;
-  box-shadow: 0 2rem 4rem -2rem rgba($neutral-10, 0.1);
+  box-shadow: var(--shadow-xlarge);
   transition: 0.3s opacity;
 
   &:not(.is-selected) {

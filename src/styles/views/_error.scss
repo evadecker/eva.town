@@ -24,15 +24,15 @@
 
     &:before {
       left: 0.4vw;
-      text-shadow: -0.2vw 0 $color-red;
-      background: $neutral-0;
+      text-shadow: -0.2vw 0 var(--color-red);
+      background: var(--color-bg);
       animation: glitch-anim-1 3s infinite step-end alternate;
     }
 
     &:after {
       left: -0.4vw;
-      text-shadow: -0.2vw 0 $color-blue;
-      background: $neutral-0;
+      text-shadow: -0.2vw 0 var(--color-blue);
+      background: var(--color-bg);
       animation: glitch-anim-2 3s infinite step-end alternate;
     }
   }

@@ -2,7 +2,7 @@
 // Tooltips
 // ==========================================================================
 
-$plyr-tooltip-bg: $neutral-0 !default;
+$plyr-tooltip-bg: var(--color-neutral-0) !default;
 $plyr-tooltip-color: $plyr-color-fiord !default;
 $plyr-tooltip-padding: ($plyr-control-spacing / 2) !default;
 $plyr-tooltip-arrow-size: 4px !default;

@@ -1,5 +1,5 @@
 body {
-  background-color: $neutral-0;
+  background-color: var(--color-bg);
   display: flex;
   min-height: 100vh;
   max-width: 100vw;
@@ -27,7 +27,7 @@ img {
 
 :not(.is-animating) {
   *:focus {
-    box-shadow: 0 0 0 4px rgba($color-blue, 0.5);
+    box-shadow: var(--focus-ring);
   }
 }
 
@@ -56,7 +56,7 @@ picture {
   left: 50%;
   right: 50%;
   margin: 2rem -50vw;
-  background-color: $neutral-1;
+  background-color: var(--color-bg-alt);
   display: block;
   padding: 1px 0; // Prevent margin collapse
   &.transparent {
@@ -65,9 +65,9 @@ picture {
 }
 
 pre, code {
-  border: 1px solid $neutral-3;
+  border: 1px solid var(--color-border);
   border-radius: 3px;
-  background-color: $neutral-1;
+  background-color: var(--color-bg-alt);
 }
 
 code {
@@ -83,70 +83,6 @@ pre {
     border: 0;
     padding-right: 0;
     padding-left: 0;
-  }
-}
-
-.toggle {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-    background-color: $neutral-3;
-    transition: 0.2s;
-    overflow: hidden;
-
-    &:before {
-      position: absolute;
-      content: '';
-      height: 16px;
-      width: 16px;
-      border-radius: 8px;
-      left: 2px;
-      bottom: 2px;
-      background-color: $neutral-0;
-      box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
-      transition: 0.2s;
-      z-index: 2;
-    }
-
-    &:after {
-      content: '';
-      background-color: transparent;
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      transition: 0.2s;
-      top: 0;
-      left: 0;
-      transform: translateX(-20px);
-    }
-  }
-  
-  input:checked + .slider {
-    &:before {
-      transform: translateX(20px);
-    }
-    &:after {
-      background-color: $color-green;
-      transform: translateX(0);
-    }
   }
 }
 
@@ -166,9 +102,9 @@ iframe {
 }
 
 .iframe-embed {
-  background: $neutral-0;
+  background: var(--color-bg);
   border-radius: 0.5rem;
-  box-shadow: 0 1rem 2rem -0.5rem rgba($neutral-10, 0.1);
+  box-shadow: var(--shadow-large);
   height: 660px;
   overflow: hidden;
   position: relative;
@@ -195,13 +131,13 @@ input[type=radio] {
   width: 0;
   height: 0;
   &:checked + .radio-button {
-    background-color: $color-blue;
+    background-color: var(--color-bg-radio-selected);
     &:after {
       transform: scale(1);
     }
   }
   &:focus + .radio-button {
-    box-shadow: 0 0 0 4px rgba($color-blue, 0.5);
+    box-shadow: var(--focus-ring);
   }
 }
 
@@ -212,7 +148,7 @@ input[type=radio] {
   height: 20px;
   margin: 4px;
   border-radius: 10px;
-  background-color: $neutral-3;
+  background-color: var(--color-neutral-3);
   transition: box-shadow 0.2s ease;
   cursor: pointer;
   &:after {
@@ -223,15 +159,15 @@ input[type=radio] {
     border-radius: 8px;
     left: 5px;
     bottom: 5px;
-    background-color: $neutral-0;
-    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2);
+    background-color: var(--color-neutral-0);
+    box-shadow: var(--shadow-small);
     transition: 0.2s;
     transform: scale(0);
   }
 }
 
 .svg-icon {
-  fill: #{$neutral-8};
+  fill: var(--color-text);
 }
 
 .ratio-box {

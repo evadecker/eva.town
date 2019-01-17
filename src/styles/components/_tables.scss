@@ -34,7 +34,7 @@ table {
         bottom: 0;
         transform: rotate(-30deg);
         transform-origin: left bottom;
-        border-bottom: 1px solid $neutral-3;
+        border-bottom: 1px solid var(--color-border);
         padding: 0.3em 0.5em;
         padding-right: 0;
       }
@@ -43,10 +43,10 @@ table {
 
   tbody {
     tr.new-section {
-      border-top: 1px solid $neutral-3;
+      border-top: 1px solid var(--color-border);
     }
     td {
-      border-right: 1px solid $neutral-3;
+      border-right: 1px solid var(--color-border);
     }
   }
 }
@@ -62,13 +62,13 @@ table {
   }
 
   input[value="white"] ~ .radio-button {
-    background-color: $neutral-3;
+    background-color: var(--color-neutral-3);
   }
   input[value="blue"] ~ .radio-button {
-    background-color: $color-blue;
+    background-color: var(--color-blue);
   }
   input[value="black"] ~ .radio-button {
-    background-color: $neutral-7;
+    background-color: var(--color-neutral-7);
   }
 }
 
@@ -79,7 +79,7 @@ table {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: $neutral-0;
+    background: var(--color-bg);
     padding: 0.5rem 0;
     margin-top: -0.5rem;
     position: sticky;
@@ -98,38 +98,38 @@ table {
 
   &[data-color="white"] {
     table {
-      background-color: $neutral-1;
+      background-color: var(--color-neutral-1);
     }
   }
 
   &[data-color="black"] {
     table {
-      background-color: $neutral-9;
-      color: $neutral-4;
+      background-color: var(--color-neutral-9);
+      color: var(--color-neutral-4);
       * {
-        border-color: $neutral-8;
+        border-color: var(--color-neutral-8);
       }
     }
     .svg-icon {
-      fill: $neutral-0;
+      fill: var(--color-neutral-0);
     }
   }
 
   &[data-color="blue"] {
     table {
       background-color: #0083E3;
-      color: rgba($neutral-0, 0.7);
+      color: rgba(var(--color-neutral-0), 0.7);
       * {
         border-color: darken(#0083E3, 8);
       }
     }
     .svg-icon {
-      fill: $neutral-0;
+      fill: var(--color-neutral-0);
     }
   }
 
   table {
-    background-color: $neutral-0;
+    background-color: var(--color-bg);
     transition: 0.4s ease;
     text-align: center;
     margin-bottom: 0;

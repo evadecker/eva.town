@@ -1,7 +1,4 @@
-$lcd-bg: #8DB48E;
-$lcd-dark: #607060;
-$lcd-light: #A2D4A4;
-$lcd-hover: #4D5B4D;
+
 
 #synth {
   max-width: 540px;
@@ -28,35 +25,38 @@ $lcd-hover: #4D5B4D;
 }
 
 .lcd-bg {
-  fill: $lcd-bg;
+  fill: var(--color-lcd-bg);
 }
 
 .lcd-base, .notehead {
-  fill: $lcd-dark;
+  fill: var(--color-lcd-dark);
 }
 
 .lcd-highlight {
-  fill: $lcd-light;
+  fill: var(--color-lcd-light);
 }
 
 .synth-base {
-  fill: $neutral-8;
+  fill: var(--color-synth-base);
 }
 
 .synth-between-keys {
-  fill: $neutral-3;
+  fill: var(--color-neutral-3);
 }
 
 .instrument, .notehead {
   display: none;
 }
 
-.synth-endcap,
+.synth-endcap {
+  fill: var(--color-synth-endcap);
+}
+
 .lcd-outline,
 .synth-keys-outline,
 .synth-key .pressed-overlay,
 .synth-key .crack {
-  fill: $neutral-9;
+  fill: var(--color-neutral-9);
 }
 
 .synth-shadow, .synth-keys-shadow {
@@ -83,16 +83,16 @@ $lcd-hover: #4D5B4D;
   }
 
   &:hover .lcd-base {
-    fill: $lcd-hover;
+    fill: var(--color-lcd-hover);
   }
 }
 
 @keyframes pressStart {
   0%, 10% {
-    fill: $lcd-hover;
+    fill: var(--color-lcd-hover);
   }
   100% {
-    fill: $lcd-dark;
+    fill: var(--color-lcd-dark);
   }
 }
 
@@ -112,16 +112,16 @@ $lcd-hover: #4D5B4D;
   
   &.white {
     .base {
-      fill: $neutral-0;
+      fill: var(--color-neutral-0);
     }
   }
   
   &.black {
     .base {
-      fill: $neutral-9;
+      fill: var(--color-neutral-9);
     }
     .highlight {
-      fill: rgba(255,255,255,0.2);
+      fill: rgba(white, 0.2);
     }
   }
   
@@ -132,10 +132,10 @@ $lcd-hover: #4D5B4D;
   &.pressed {
     .base {
       transition: none;
-      fill: $color-purple;
+      fill: var(--color-synth-whitekey-pressed);
     }
     &.black .base {
-      fill: desaturate(darken($color-purple, 15), 10);
+      fill: var(--color-synth-blackkey-pressed);
     }
     .pressed-overlay {
       transition: none;
@@ -149,7 +149,7 @@ $lcd-hover: #4D5B4D;
 }
 
 .key-letter {
-  fill: rgba($neutral-10, 0.3);
+  fill: rgba(black, 0.3);
   opacity: 0;
   display: none;
   transform: translateY(4px);
@@ -194,6 +194,6 @@ body.has-touch {
 .instrument-arrow {
   cursor: pointer;
   &:hover .lcd-base {
-    fill: $lcd-hover;
+    fill: var(--color-lcd-hover);
   }
 }
