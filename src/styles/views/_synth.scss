@@ -154,14 +154,14 @@
 .key-letter {
   fill: rgba(black, 0.3);
   opacity: 0;
-  display: none;
   transform: translateY(4px);
   transition: 0.4s ease-out;
+
   &.visible {
     opacity: 1;
-    display: block;
     transform: translateY(0);
   }
+
   &.fadeout {
     opacity: 0;
     transition: opacity 1s ease-in;
