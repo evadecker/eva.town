@@ -276,8 +276,8 @@
     opacity: 0;
   }
   100% {
-    color: var(--color-text-header);
     transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
   }
 }
 
