@@ -11,7 +11,7 @@ function randomIntFromInterval (min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-if (isTouchDevice) {
+if (isTouchDevice()) {
   document.body.classList.add('has-touch')
 }
 
@@ -328,7 +328,7 @@ var synth = (function () {
     synth.dataset.loading = 'true'
 
     const baseSpeed = randomIntFromInterval(30, 50) // Lower is faster
-    const force = randomIntFromInterval(10, 30) // How hard do you 'pull down the wheel'?
+    const force = randomIntFromInterval(5, 30) // How hard do you 'pull down the wheel'?
     const slowestSpeed = 700 // How slow can the roulette go before ending?
     const friction = 1.3 // How quickly to put on the brakes (1 to 1.5)
 
@@ -407,8 +407,7 @@ var synth = (function () {
     }, 5000)
   }
 
-  // duration = fadeout time, in milliseconds
-  function hideNoteheads (shouldFade) {
+  function hideNoteheads () {
     Array.from(noteheads).forEach(notehead => {
       notehead.style.display = 'none'
     })
@@ -417,7 +416,7 @@ var synth = (function () {
   // Keyboard ----------------------------------------------------//
   function revealKeyboardLetters () {
     // Only show keyboard on non-touch devices
-    if (!isTouchDevice) {
+    if (!isTouchDevice()) {
       Array.from(keyLetters).forEach(function (letter, i) {
         setTimeout(function () {
           letter.classList.add('visible')
@@ -499,7 +498,7 @@ var synth = (function () {
     pressKey(this.id)
   }
 
-  var handleMouseOver = function (e) {
+  var handleMouseEnter = function (e) {
     e.preventDefault()
     if (isMouseDown) {
       pressKey(this.id)
@@ -721,7 +720,7 @@ var synth = (function () {
     synth.addEventListener('touchend', handleTouchEnd)
     Array.from(keys).forEach(key => {
       key.addEventListener('mousedown', handleMouseDown)
-      key.addEventListener('mouseover', handleMouseOver)
+      key.addEventListener('mouseenter', handleMouseEnter)
       key.addEventListener('mouseout', handleMouseOut)
       key.addEventListener('touchstart', handleTouchStart)
       key.addEventListener('touchenter', handleTouchEnter)
@@ -739,7 +738,7 @@ var synth = (function () {
     synth.removeEventListener('touchend', handleTouchEnd)
     Array.from(keys).forEach(key => {
       key.removeEventListener('mousedown', handleMouseDown)
-      key.removeEventListener('mouseover', handleMouseOver)
+      key.removeEventListener('mouseenter', handleMouseEnter)
       key.removeEventListener('mouseout', handleMouseOut)
       key.removeEventListener('touchstart', handleTouchStart)
       key.removeEventListener('touchenter', handleTouchEnter)
@@ -751,8 +750,6 @@ var synth = (function () {
   }
 
   function init () {
-    // Init always has to run in order
-    // to cache DOM elements
     _cacheDOM()
   }
 
