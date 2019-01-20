@@ -97,8 +97,11 @@ body {
 
   --color-synth-base: var(--color-neutral-8);
   --color-synth-endcap: var(--color-neutral-9);
-  --color-synth-outline: var(--color-neutral-9);
+  --color-synth-lcd-outline: var(--color-neutral-9);
+  --color-synth-keys-outline: var(--color-neutral-9);
+  --color-synth-whitekey: var(--color-neutral-0);
   --color-synth-whitekey-pressed: var(--color-purple);
+  --color-synth-blackkey: var(--color-neutral-9);
   --color-synth-blackkey-pressed: var(--color-purple-dark);
 
   --focus-ring: 0 0 0 4px rgba(63, 151, 255, 0.5);
@@ -150,16 +153,17 @@ body[data-darkmode='true'] {
   --color-protected-input-bg: var(--color-neutral-1);
   --color-protected-input-text: var(--color-neutral-9);
 
-  --color-synth-base: var(--color-neutral-2);
-  --color-synth-endcap: var(--color-neutral-0);
-  --color-synth-outline: var(--color-neutral-9);
+  --color-synth-base: var(--color-blue);
+  --color-synth-endcap: var(--color-blue-dark);
+  --color-synth-lcd-outline: var(--color-blue-dark);
+  --color-synth-keys-outline: var(--color-blue-dark);
   --color-synth-whitekey-pressed: var(--color-blue);
   --color-synth-blackkey-pressed: var(--color-blue-dark);
 
-  --color-lcd-bg: #dcf3ff;
-  --color-lcd-dark: #3899c0;
-  --color-lcd-light: #ffffff;
-  --color-lcd-hover: #137daa;
+  --color-lcd-bg: var(--color-blue-light);
+  --color-lcd-dark: var(--color-blue);
+  --color-lcd-light: var(--color-neutral-0);
+  --color-lcd-hover: var(--color-blue-dark);
 
   --focus-ring: 0 0 0 4px rgba(63, 151, 255, 0.8);
 }
