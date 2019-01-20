@@ -83,16 +83,16 @@
   }
 
   &:hover .lcd-base {
-    fill: var(--color-lcd-hover);
+    opacity: 1;
   }
 }
 
 @keyframes pressStart {
   0%, 10% {
-    fill: var(--color-lcd-hover);
+    opacity: 0.8;
   }
   100% {
-    fill: var(--color-lcd-dark);
+    opacity: 1;
   }
 }
 
