@@ -52,11 +52,14 @@
   fill: var(--color-synth-endcap);
 }
 
-.lcd-outline,
+.lcd-outline {
+  fill: var(--color-synth-lcd-outline);
+}
+
 .synth-keys-outline,
 .synth-key .pressed-overlay,
 .synth-key .crack {
-  fill: var(--color-synth-outline);
+  fill: var(--color-synth-keys-outline);
 }
 
 .synth-shadow, .synth-keys-shadow {
@@ -112,16 +115,16 @@
   
   &.white {
     .base {
-      fill: var(--color-neutral-0);
+      fill: var(--color-synth-whitekey);
     }
   }
   
   &.black {
     .base {
-      fill: var(--color-neutral-9);
+      fill: var(--color-synth-blackkey);
     }
     .highlight {
-      fill: rgba(white, 0.2);
+      fill: rgba(white, 0.15);
     }
   }
   

@@ -72,7 +72,7 @@
 .home-project {
   background-color: var(--color-bg);
   body[data-darkmode="true"] & {
-    background-color: var(--color-neutral-9);
+    background-color: var(--color-neutral-8);
   }
   color: var(--color-text);
   border-radius: 0.5rem;
@@ -104,8 +104,8 @@
   }
 
   &:hover, &:focus {
-    box-shadow: 0 1.5rem 1.5rem -1rem rgba(black, 0.08);
-    transform: translate3d(0, -0.5rem, 0);
+    box-shadow: 0 1.2rem 1.5rem -1rem rgba(black, 0.08);
+    transform: translate3d(0, -0.2rem, 0);
     .arrow {
       transform: translate3d(0.2rem, 0, 0);
     }
@@ -167,6 +167,9 @@
       width: auto;
       path {
         fill: var(--color-border);
+        body[data-darkmode='true'] & {
+          fill: rgba(255, 255, 255, 0.3);
+        }
       }
     }
   }
