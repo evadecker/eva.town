@@ -95,6 +95,8 @@ var wizard = (function () {
     var styles
     var totalDelay = 0
 
+    console.log('is DevTools open?', e.detail.open)
+
     if (e.detail.open) {
       for (let i = 0; i < dialogue.length; i++) {
         let delay = dialogue[i][1]
