@@ -207,7 +207,11 @@
                 <ul class="emoji-list">
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f3c6.png" alt="Trophy emoji" class="emoji">
-                    <a href="https://www.awwwards.com/sites/kyle-decker">Awwwards</a> (Honorable Mention)
+                    <a href="https://www.awwwards.com/sites/kyle-decker">Awwwards</a> Honorable Mention
+                  </li>
+                  <li>
+                    <img src="<?= $site->url() ?>/assets/emoji/2728.png" alt="Sparkles emoji" class="emoji">
+                    <a href="https://mindsparklemag.com/website/kyle-decker/">Mindsparkle Mag</a> Site of the Day
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f524.png" alt="ABC emoji" class="emoji">
