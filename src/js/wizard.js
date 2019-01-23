@@ -1,5 +1,3 @@
-import 'devtools-detect'
-
 var wizard = (function () {
   var dialogue
 
@@ -91,32 +89,39 @@ var wizard = (function () {
     ]
   }
 
-  var handleDevtoolsOpen = function (e) {
+  function handleDevtoolsOpen () {
     var styles
     var totalDelay = 0
 
-    console.log('is DevTools open?', e.detail.open)
-
-    if (e.detail.open) {
-      for (let i = 0; i < dialogue.length; i++) {
-        let delay = dialogue[i][1]
-        setTimeout(function () {
-          var text = '%c' + dialogue[i][0]
-          if (dialogue[i][2] === 'italic') {
-            styles = 'font-size:14px; font-style:italic;'
-          } else {
-            styles = 'font-size:14px; font-weight:bold;'
-          }
-          console.log(text, styles)
-        }, totalDelay += delay)
-      }
+    for (let i = 0; i < dialogue.length; i++) {
+      let delay = dialogue[i][1]
+      setTimeout(function () {
+        var text = '%c' + dialogue[i][0]
+        if (dialogue[i][2] === 'italic') {
+          styles = 'font-size:14px; font-style:italic;'
+        } else {
+          styles = 'font-size:14px; font-weight:bold;'
+        }
+        console.log(text, styles)
+      }, totalDelay += delay)
     }
   }
 
   function init () {
     setDialogue()
-    // Talk to the man behind the curtain once the console is opened
-    window.addEventListener('devtoolschange', handleDevtoolsOpen)
+
+    // Detect if devtools are open
+    // https://stackoverflow.com/a/30638226
+    var r = /./
+    var isDevtoolsOpen = false
+    r.toString = function () {
+      isDevtoolsOpen = true
+    }
+    console.log('%c', r)
+
+    if (isDevtoolsOpen) {
+      handleDevtoolsOpen()
+    }
   }
 
   return {
