@@ -1,8 +1,9 @@
 import 'devtools-detect'
 
-(function () {
-  // Talk to the man behind the curtain once the console is opened
-  window.addEventListener('devtoolschange', function (e) {
+var wizard = (function () {
+  var dialogue
+
+  function setDialogue () {
     var yearText
     var daysLeft
     var daysLeftText
@@ -27,7 +28,7 @@ import 'devtools-detect'
       daysLeftText = 'Today’s the last day. Hallelujah!'
     }
 
-    var dialogue = [
+    dialogue = [
       ['???: AAAAAHHHHHH!!!', 3000],
       ['Something heavy shatters.', 1500, 'italic'],
       ['You hear a muffled curse and the footsteps of someone approaching.', 2500, 'italic'],
@@ -88,7 +89,9 @@ import 'devtools-detect'
       ['THE WIZARD, UNSEEN: What are you still doing here, kid?!', 30000],
       ['THE WIZARD: Get off the computer! Go live your life!', 2000]
     ]
+  }
 
+  var handleDevtoolsOpen = function (e) {
     var styles
     var totalDelay = 0
 
@@ -106,5 +109,17 @@ import 'devtools-detect'
         }, totalDelay += delay)
       }
     }
-  })
+  }
+
+  function init () {
+    setDialogue()
+    // Talk to the man behind the curtain once the console is opened
+    window.addEventListener('devtoolschange', handleDevtoolsOpen)
+  }
+
+  return {
+    init: init
+  }
 })()
+
+export default wizard
