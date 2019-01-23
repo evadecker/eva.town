@@ -7,8 +7,8 @@ import MicroModal from 'micromodal'
 import Plyr from 'plyr'
 import swapTwo from './swaptwo.js'
 import synth from './synth.js'
+import wizard from './wizard.js'
 import 'lazysizes'
-import './wizard.js'
 
 const WOW = require('wowjs')
 const swup = new Swup({
@@ -64,7 +64,8 @@ document.getElementById('darkmode').addEventListener('click', () => {
 })
 
 document.addEventListener('DOMContentLoaded', function (event) {
-  function init () {
+  // Run scripts on page change
+  function refresh () {
     // Open all external links in new tab
     for (var c = document.getElementsByTagName('a'), a = 0; a < c.length; a++) {
       var b = c[a]
@@ -163,17 +164,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
   }
 
-  // Run on initial load
+  function init () {
+    refresh()
+    MicroModal.init({
+      onShow: function () { document.body.setAttribute('data-noscroll', '') },
+      onClose: function () { document.body.removeAttribute('data-noscroll') },
+      awaitCloseAnimation: true
+    })
+    wizard.init()
+  }
+
   init()
-  MicroModal.init({
-    onShow: function () { document.body.setAttribute('data-noscroll', '') },
-    onClose: function () { document.body.removeAttribute('data-noscroll') },
-    awaitCloseAnimation: true
-  })
 
   // Handle loading and killing scripts on page transitions
   document.addEventListener('swup:contentReplaced', function () {
-    init()
+    refresh()
   })
 })
 
