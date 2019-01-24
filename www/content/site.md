@@ -6,7 +6,7 @@ Author: Kyle Decker
 
 ----
 
-Description: Hello, my name is Kyle. I'm a designer and front-end developer. I like organizing messes of information into something understandable and human.
+Description: Kyle Decker is a designer who codes. He likes making lists and organizing messes.
 
 ----
 
