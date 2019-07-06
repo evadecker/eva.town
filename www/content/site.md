@@ -38,10 +38,6 @@ Goodreads: kybradeck
 
 ----
 
-Twitter: kybradeck
-
-----
-
 LinkedIn: kybradeck
 
 ----

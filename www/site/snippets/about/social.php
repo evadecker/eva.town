@@ -3,7 +3,7 @@
   <button type="submit" class="button-download">Download Resume</button>
   </form>
   <ul class="social-links">
-    <?php if($site->codepen()): ?>
+    <?php if($site->codepen()->exists()): ?>
       <li class="social-link">
         <a href="https://codepen.io/<?= $site->codepen() ?>">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#CodePen"></use></svg>
@@ -12,7 +12,7 @@
       </li>
     <?php endif ?>
 
-    <?php if($site->dribbble()): ?>
+    <?php if($site->dribbble()->exists()): ?>
       <li class="social-link">
         <a href="https://dribbble.com/<?= $site->dribbble() ?>">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#Dribbble"></use></svg>
@@ -21,7 +21,7 @@
       </li>
     <?php endif ?>
     
-    <?php if($site->github()): ?>
+    <?php if($site->github()->exists()): ?>
       <li class="social-link">
         <a href="https://github.com/<?= $site->github() ?>">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#Github"></use></svg>
@@ -30,7 +30,7 @@
       </li>
     <?php endif ?>
 
-    <?php if($site->goodreads()): ?>
+    <?php if($site->goodreads()->exists()): ?>
       <li class="social-link">
         <a href="https://www.goodreads.com/<?= $site->goodreads() ?>">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#Goodreads"></use></svg>
@@ -39,7 +39,7 @@
       </li>
     <?php endif ?>
     
-    <?php if($site->linkedin()): ?>
+    <?php if($site->linkedin()->exists()): ?>
       <li class="social-link">
         <a href="https://www.linkedin.com/in/<?= $site->linkedin() ?>">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#LinkedIn"></use></svg>
@@ -48,7 +48,7 @@
       </li>
     <?php endif ?>
     
-    <?php if($site->twitter()): ?>
+    <?php if($site->twitter()->exists()): ?>
       <li class="social-link">
         <a href="https://www.twitter.com/<?= $site->twitter() ?>">
           <svg class="svg-icon"><use xlink:href="<?= $site->url() ?>/assets/images/social-icons.svg#Twitter"></use></svg>
