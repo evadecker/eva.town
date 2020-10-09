@@ -6,7 +6,7 @@ Author: Kyle Decker
 
 ----
 
-Description: Kyle Decker is a designer who codes. He likes making lists and organizing messes.
+Description: Kyle Decker is a designer who codes. They like making lists and organizing messes.
 
 ----
 
