@@ -11,7 +11,7 @@
       <meta name="description" content="<?= html($site->description()) ?>" />
       <meta property="og:description" content="<?= html($site->description()) ?>" />
     <?php else: ?>
-      <title><?= html($page->title()) ?> ⁃ <?= html($site->title()) ?></title>
+      <title><?= html($page->title()) ?> ・ <?= html($site->title()) ?></title>
       <meta property="og:title" content="<?= html($page->title()) ?> ・ <?= html($site->title()) ?>">
       <meta name="description" content="<?= html($page->text()->excerpt(500)) ?>" />
       <meta property="og:description" content="<?= html($page->text()->excerpt(500)) ?>" />
