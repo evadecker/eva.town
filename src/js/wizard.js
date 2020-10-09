@@ -62,7 +62,7 @@ var wizard = (function () {
       ['THE WIZARD: Those orcs are a real headache, I tell ya.', 3000],
       ['THE WIZARD: If you find anything, would you please let me know?', 2500],
       ['THE WIZARD: My master is rather... particular.', 2400],
-      ['THE WIZARD: He likes to keep things tidy.', 3000],
+      ['THE WIZARD: They likes to keep things tidy.', 3000],
       ['THE WIZARD: I take mail at this address: thewizard@kyledecker.me', 2000],
       ['THE WIZARD: I mean...', 2000],
       ['THE WIZARD: ...you don’t have to only write about business.', 4000],

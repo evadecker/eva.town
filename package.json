@@ -16,7 +16,7 @@
     "kirby:ls": "node scripts/kirby-ls.js",
     "kirby:add": "node scripts/kirby-add.js",
     "kirby:remove": "node scripts/kirby-remove.js",
-    "deploy": "rsync -av -e 'ssh -p 21098' --delete www/ kyle@premium68.web-hosting.com:~/v3.kyledecker.me"
+    "deploy": "npm run build && rsync -av -e 'ssh -p 21098' --delete www/ kyle@premium68.web-hosting.com:~/v3.kyledecker.me"
   },
   "repository": {
     "type": "git",
