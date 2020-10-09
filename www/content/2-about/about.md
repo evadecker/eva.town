@@ -16,9 +16,9 @@ This is a home for things I've made and how I've made them. My goal is for anyon
 
 (snippet: about/dropbox)
 
-I spent the past two years at [Dropbox](/work/dropbox), where I helped develop a better way to coordinate the way we message users, [among](https://dribbble.com/shots/4138623-Fit-Fill-Icon-Design-Process) [some](https://dribbble.com/shots/4309432-Design-Session-Cheat-Sheet) [other](https://dribbble.com/shots/3288748-Dropbox-Design-Book-Club) [things](https://dribbble.com/shots/3689574-Menu-Loader). More recently, I designed and built a mini-site for the poet and drag performer, [Wo Chan](https://wo.bingo/).
+Since February 2019, I've worked at [Cityblock](https://www.cityblock.com/) helping to integrate primary care, behavioral health, and social services to improve health for underserved communities.
 
-I'm currently at [Cityblock](https://www.cityblock.com/), where we are integrating primary care, behavioral health, and social services to build healthier communities, block by block.
+I spent the two years before that at [Dropbox](/work/dropbox), where I helped develop a better way to coordinate the way we message users, [among](https://dribbble.com/shots/4138623-Fit-Fill-Icon-Design-Process) [some](https://dribbble.com/shots/4309432-Design-Session-Cheat-Sheet) [other](https://dribbble.com/shots/3288748-Dropbox-Design-Book-Club) [things](https://dribbble.com/shots/3689574-Menu-Loader).
 
 Message me at <kyle@kyledecker.me>—my inbox is always open. If you're in New York, coffee or drinks are welcome, too. Say hi.
 
