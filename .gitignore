@@ -70,6 +70,4 @@ Temporary Items
 # <KirbyWebpack>
 www/kirby
 www/panel
-www/builds
-www/assets/builds/
 # </KirbyWebpack>
