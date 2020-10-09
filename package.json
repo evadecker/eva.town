@@ -68,7 +68,7 @@
     "flickity": "^2.1.2",
     "howler": "^2.0.15",
     "is-touch-device": "^1.0.1",
-    "lazysizes": "^4.1.4",
+    "lazysizes": "^5.2.1",
     "micromodal": "^0.3.2",
     "plyr": "^3.4.7",
     "swup": "^1.7.17",
