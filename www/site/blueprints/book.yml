@@ -1,0 +1,23 @@
+title: Book
+pages: false
+files: false
+fields:
+  title:
+    label: Title
+    type: text
+  author:
+    label: Author
+    type: text
+  cover:
+    label: Cover
+    type: image
+  quotes:
+    label: Quotes
+    type: structure
+    fields:
+      quote:
+        label: Quote
+        type: textarea
+      page:
+        label: Page
+        type: number

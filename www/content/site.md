@@ -26,7 +26,7 @@ Github: kybradeck
 
 ----
 
-Instagram: kybradeck
+Instagram: kyle.files
 
 ----
 

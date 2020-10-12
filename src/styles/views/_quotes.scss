@@ -1,0 +1,57 @@
+.book {
+  margin-bottom: 2rem;
+  display: flex;
+
+  .book-details {
+    width: 33%;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+  }
+
+  .quotes {
+    columns: 2;
+    column-gap: 5%;
+    margin-top: 1rem;
+  }
+
+  .quote {
+    margin-bottom: 1rem;
+    break-inside: avoid-column;
+    hyphens: auto;
+  }
+
+  .quote-page {
+    font-size: 0.8em;
+    color: var(--color-text-light);
+  }
+
+  .quote p:first-child::before,
+  .quote p:last-child::after {
+    color: var(--color-text-light);
+  }
+
+  .quote p:first-of-type::before {
+    content: "“";
+    position: absolute;
+    transform: translateX(-100%);
+  }
+
+  .quote p:last-of-type::after {
+    content: "”";
+  }
+
+  .book-author {
+    @extend %font-sans-extended;
+    color: var(--color-text-header);
+    font-size: 1em;
+    font-weight: 600;
+    display: block;
+    margin-top: 0.5em;
+  }
+
+  .book-title {
+    font-style: italic;
+  }
+}
