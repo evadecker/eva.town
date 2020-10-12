@@ -8,10 +8,6 @@
       <?= $page->text()->kirbytext() ?>
     </div>
   </article>
-  <?php snippet('about/quotes') ?>
 </main>
 
 <?php snippet('footer') ?>
-
-
-

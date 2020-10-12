@@ -1,14 +1,15 @@
 'use strict'
 
-import Swup from 'swup'
-import swupGaPlugin from 'swup/plugins/swupGaPlugin'
+import 'lazysizes'
+
 import Flickity from 'flickity'
 import MicroModal from 'micromodal'
 import Plyr from 'plyr'
+import Swup from 'swup'
 import swapTwo from './swaptwo.js'
+import swupGaPlugin from 'swup/plugins/swupGaPlugin'
 import synth from './synth.js'
 import wizard from './wizard.js'
-import 'lazysizes'
 
 const WOW = require('wowjs')
 const swup = new Swup({
