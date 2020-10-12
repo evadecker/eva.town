@@ -6,7 +6,7 @@ Author: Robert Bringhurst
 
 ----
 
-Cover: 
+Cover: elements-of-typographic-style.jpg
 
 ----
 

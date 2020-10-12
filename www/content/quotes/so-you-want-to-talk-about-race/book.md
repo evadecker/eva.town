@@ -6,7 +6,7 @@ Author: Ijeoma Oluo
 
 ----
 
-Cover: 
+Cover: so-you-want-to-talk-about-race.jpg
 
 ----
 

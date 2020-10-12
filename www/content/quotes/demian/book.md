@@ -6,7 +6,7 @@ Author: Herman Hesse
 
 ----
 
-Cover: 
+Cover: demian.jpg
 
 ----
 
@@ -19,7 +19,7 @@ Quotes:
   quote: "I live in my dreams — that's what you sense. Other people live in dreams, but not in their own. That's the difference."
   page: ""
 - 
-  quote: "One never reaches home,' she said. 'But where paths that have an affinity for each other intersect, the whole world looks like home, for a time."
+  quote: "'One never reaches home,' she said. 'But where paths that have an affinity for each other intersect, the whole world looks like home, for a time.'"
   page: ""
 - 
   quote: >

@@ -6,7 +6,7 @@ Author: bell hooks
 
 ----
 
-Cover: 
+Cover: all-about-love.jpg
 
 ----
 

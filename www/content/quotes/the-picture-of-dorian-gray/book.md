@@ -6,7 +6,7 @@ Author: Oscar Wilde
 
 ----
 
-Cover: 
+Cover: picture-of-dorian-gray.jpg
 
 ----
 

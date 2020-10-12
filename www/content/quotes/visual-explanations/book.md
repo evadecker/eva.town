@@ -1,4 +1,4 @@
-Title: Visual Explanations
+Title: The Visual Display of Quantitative Information
 
 ----
 
@@ -6,7 +6,7 @@ Author: Edward Tufte
 
 ----
 
-Cover: 
+Cover: the-visual-display-of-quantitative-information.jpg
 
 ----
 

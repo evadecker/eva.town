@@ -6,7 +6,7 @@ Author: Audre Lorde
 
 ----
 
-Cover: 
+Cover: sister-outsider.jpg
 
 ----
 

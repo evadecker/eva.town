@@ -1,6 +1,5 @@
 title: Book
 pages: false
-files: false
 fields:
   title:
     label: Title

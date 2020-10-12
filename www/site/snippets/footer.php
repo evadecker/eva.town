@@ -2,7 +2,7 @@
       <div class="footer-content wrapper">
         <a href="<?= $site->url() ?>" class="logo"><span class="visually-hidden"><?= $site->title() ?></span><?php snippet('logo') ?></a>
         <div class="footer-copyright">
-          &copy;&nbsp;<a href="<?= $site->page('about')->url() ?>">Kyle Decker</a>, <?= date("Y") ?><span class="dot"></span><button data-micromodal-trigger="colophon" class="credits">Credits</button><span class="dot"></span><button id="darkmode" title="Toggle dark mode"><?php snippet('icons/moon') ?><?php snippet('icons/sun') ?></button>
+          &copy;&nbsp;<a href="<?= $site->page('about')->url() ?>">Kyle Decker</a>, <?= date("Y") ?><span class="dot"></span><a href="<?= $site->page('quotes')->url() ?>">Quotes</a><span class="dot"></span><button data-micromodal-trigger="colophon" class="credits">Credits</button><span class="dot"></span><button id="darkmode" title="Toggle dark mode"><?php snippet('icons/moon') ?><?php snippet('icons/sun') ?></button>
         </div>
       </div>
       <div id="colophon" aria-hidden="true">
@@ -80,8 +80,8 @@
                     <a href="https://www.sketchapp.com/"">Sketch</a> for designing and exporting SVGs
                   </li>
                   <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f19a.png" alt="VS emoji" class="emoji">
-                    <a href="https://code.visualstudio.com/">VS Code</a> for&hellip; coding
+                    <img src=" <?= $site->url() ?>/assets/emoji/1f19a.png" alt="VS emoji" class="emoji">
+                      <a href="https://code.visualstudio.com/">VS Code</a> for&hellip; coding
                   </li>
                 </ul>
               </div>
@@ -173,7 +173,7 @@
                   </li>
                   <li>
                     <img src="<?= $site->url() ?>/assets/emoji/1f4be.png" alt="Floppy disk emoji" class="emoji">
-                    <a href="https://www.namecheap.com/">Namecheap</a> for domain registration and hosting 
+                    <a href="https://www.namecheap.com/">Namecheap</a> for domain registration and hosting
                   </li>
                 </ul>
               </div>
@@ -225,9 +225,10 @@
               </div>
               <div class="disclaimer">All other content &copy; Kyle Decker, <?= date("Y") ?>. Stealing is lame.</div>
             </div>
-          </div> 
+          </div>
         </div>
       </div>
     </footer>
-  </body>
-</html>
+    </body>
+
+    </html>

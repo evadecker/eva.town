@@ -6,7 +6,7 @@ Author: Barbara Kingsolver
 
 ----
 
-Cover: 
+Cover: poisonwood-bible.jpg
 
 ----
 
