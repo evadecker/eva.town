@@ -4,7 +4,7 @@ This is the source code that powers [avery.computer](https://avery.computer).
 
 ## Usage
 
-Feel free to use and remix this code as you see fit, but don't steal it as your own, please. Whatever you make, share it with me! 😄 kyle@kyledecker.me
+Feel free to use and remix this code as you see fit, but don't steal it as your own, please. Whatever you make, share it with me! 😄 hello@avery.computer
 
 ## Colophon
 
@@ -53,14 +53,14 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 ### Starting kirby-webpack
 
 ```zsh
-cd kyledecker.me
+cd avery.computer
 npm run start
 ```
 
 ### Deploying
 
 ```zsh
-cd Sites/kyledecker.me
+cd Sites/avery.computer
 git pull
 npm run deploy
 ```
