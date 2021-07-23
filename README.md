@@ -1,6 +1,6 @@
-# Kyle Decker
+# Avery Madison Decker
 
-This is the source code that powers [kyledecker.me](https://kyledecker.me).
+This is the source code that powers [avery.computer](https://avery.computer).
 
 ## Usage
 
