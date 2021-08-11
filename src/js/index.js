@@ -7,7 +7,6 @@ import MicroModal from 'micromodal'
 import Plyr from 'plyr'
 import swapTwo from './swaptwo.js'
 import synth from './synth.js'
-import wizard from './wizard.js'
 import 'lazysizes'
 
 const WOW = require('wowjs')
@@ -171,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
       onClose: function () { document.body.removeAttribute('data-noscroll') },
       awaitCloseAnimation: true
     })
-    wizard.init()
   }
 
   init()
