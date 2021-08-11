@@ -2,7 +2,7 @@
       <div class="footer-content wrapper">
         <a href="<?= $site->url() ?>" class="logo"><span class="visually-hidden"><?= $site->title() ?></span><?php snippet('logo') ?></a>
         <div class="footer-copyright">
-          &copy;&nbsp;<a href="<?= $site->page('about')->url() ?>">Kyle Decker</a>, <?= date("Y") ?><span class="dot"></span><button data-micromodal-trigger="colophon" class="credits">Credits</button><span class="dot"></span><button id="darkmode" title="Toggle dark mode"><?php snippet('icons/moon') ?><?php snippet('icons/sun') ?></button>
+          &copy;&nbsp;<a href="<?= $site->page('about')->url() ?>">Avery Madison Decker</a>, <?= date("Y") ?><span class="dot"></span><button data-micromodal-trigger="colophon" class="credits">Credits</button><span class="dot"></span><button id="darkmode" title="Toggle dark mode"><?php snippet('icons/moon') ?><?php snippet('icons/sun') ?></button>
         </div>
       </div>
       <div id="colophon" aria-hidden="true">
@@ -202,28 +202,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="colophon-block">
-                <h3>Featured In</h3>
-                <ul class="emoji-list">
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f3c6.png" alt="Trophy emoji" class="emoji">
-                    <a href="https://www.awwwards.com/sites/kyle-decker">Awwwards</a> Honorable Mention
-                  </li>
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/2728.png" alt="Sparkles emoji" class="emoji">
-                    <a href="https://mindsparklemag.com/website/kyle-decker/">Mindsparkle Mag</a> Site of the Day
-                  </li>
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f524.png" alt="ABC emoji" class="emoji">
-                    <a href="https://fontsinuse.com/uses/24596/kyle-decker-portfolio">Fonts In Use</a>
-                  </li>
-                  <li>
-                    <img src="<?= $site->url() ?>/assets/emoji/1f604.png" alt="Grinning face with smiling eyes emoji" class="emoji">
-                    <a href="https://www.bestfolios.com/portfolio/kyledecker">Bestfolios</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="disclaimer">All other content &copy; Kyle Decker, <?= date("Y") ?>. Stealing is lame.</div>
+              <div class="disclaimer">All other content &copy; Avery Madison Decker, <?= date("Y") ?>. Please don’t steal.</div>
             </div>
           </div> 
         </div>

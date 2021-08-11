@@ -5,4 +5,4 @@ Disallow: /site/
 Disallow: /panel/
 Disallow: /*.md$
 
-Sitemap: https://kyledecker.me/sitemap.xml
+Sitemap: https://avery.computer/sitemap.xml

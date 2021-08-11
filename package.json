@@ -1,5 +1,5 @@
 {
-  "name": "kyledecker.me",
+  "name": "avery.computer",
   "version": "0.0.1",
   "description": "Personal portfolio.",
   "main": "index.js",
@@ -20,15 +20,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kybradeck/kyledecker.me.git"
+    "url": "git+https://github.com/averymadison/avery.computer.git"
   },
   "keywords": [],
-  "author": "Kyle Decker",
+  "author": "Avery Madison Decker",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kybradeck/kyledecker.me/issues"
+    "url": "https://github.com/averymadison/avery.computer/issues"
   },
-  "homepage": "https://github.com/kybradeck/kyledecker.me#readme",
+  "homepage": "https://github.com/averymadison/avery.computer#readme",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-transform-runtime": "^7.1.0",

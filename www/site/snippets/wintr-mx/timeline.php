@@ -24,7 +24,7 @@
       <ul class="timeline-list">
         <li><time>2012</time></li>
         <li><a href="http://wintr.mx/archive/2012/">Redesigned mini-site</a></li>
-        <li>Moved to subdomain of kyledecker.me</li>
+        <li>Moved to subdomain of my portfolio</li>
         <li>Added download links to past mixes</li>
         <li>Added comments via Disqus</li>
       </ul>

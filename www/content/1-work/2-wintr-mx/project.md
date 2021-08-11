@@ -52,7 +52,7 @@ Bah humbug! It's time to [let it go](https://www.youtube.com/watch?v=moSFlvxnbgk
 
 ## Background
 
-In 2009, I took matters into my own hands. I cobbled together 20 tracks of the freshest, least-beaten-to-death holiday tunes I could find. I burned <span class="uppercase">CD</span>s for family and friends (Sharpie-ing on poorly-drawn snowmen) and designed album art which I printed on computer paper and scotch taped together. I creatively titled it *Kyle's Winter Mix*.
+In 2009, I took matters into my own hands. I cobbled together 20 tracks of the freshest, least-beaten-to-death holiday tunes I could find. I burned <span class="uppercase">CD</span>s for family and friends (Sharpie-ing on poorly-drawn snowmen) and designed album art which I printed on computer paper and scotch taped together.
 
 People seemed to like it, word spread, so I made another one the next year. And the year after that. Until six years had passed and I'd compiled 120 tunes. 
 
