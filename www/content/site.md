@@ -1,12 +1,12 @@
-Title: Kyle Decker
+Title: Avery Madison Decker
 
 ----
 
-Author: Kyle Decker
+Author: Avery Madison Decker
 
 ----
 
-Description: Kyle Decker is a designer who codes. They like making lists and organizing messes.
+Description: Avery is a designer who codes. They like making lists and organizing messes.
 
 ----
 
@@ -14,35 +14,35 @@ Phone: +1 (828) 808-2116
 
 ----
 
-Email: kyle@kyledecker.me
+Email: hello@avery.computer
 
 ----
 
-Dribbble: kybradeck
+Dribbble: averymadison
 
 ----
 
-Github: kybradeck
+Github: averymadison
 
 ----
 
-Instagram: kybradeck
+Instagram: avie.png
 
 ----
 
-CodePen: kybradeck
+CodePen: averymadison
 
 ----
 
-Goodreads: kybradeck
+Goodreads: averymadison
 
 ----
 
-LinkedIn: kybradeck
+LinkedIn: averymadison
 
 ----
 
-Street: 519 Court St Apt #2
+Street: 443 Hancock St #3
 
 ----
 
@@ -54,4 +54,4 @@ State: NY
 
 ----
 
-Zip: 11231
+Zip: 11233
