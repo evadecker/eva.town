@@ -1,31 +1,7 @@
 @charset "utf-8";
 
 @import
-  "globals/variables",
-  "globals/mixins",
-
-  "vendor/normalize",
-  "vendor/flickity",
-  "vendor/plyr/plyr",
-
-  "globals/typography",
-  "globals/animations",
-  "globals/syntax-highlighting",
-
-  "components/base",
-  "components/header",
-  "components/footer",
-  "components/loader",
-  "components/tables",
-  "components/annotations",
-  "components/carousel",
-  
-  "views/home",
-  "views/synth",
-  "views/about",
-  "views/error",
-  "views/project",
-  "views/project_protected",
-  "views/dropbox",
-  "views/swiftype",
-  "views/wintr-mx";
+  "variables",
+  "normalize",
+  "base",
+  "synth";
