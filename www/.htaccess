@@ -46,9 +46,3 @@ RewriteRule ^(.*) index.php [L]
 </IfModule>
 
 AddDefaultCharset UTF-8
-
-# Redirect old pages
-Redirect 301 /quotes /about
-Redirect 301 /work/catnap /work
-Redirect 301 /work/misc /work
-
