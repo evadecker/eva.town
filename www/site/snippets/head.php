@@ -32,8 +32,7 @@
     
     <?php snippet('analytics') ?>
 
-    <link rel="stylesheet" href="https://use.typekit.net/exn3vdd.css">
     <?php echo liveCSS('assets/builds/bundle.css') ?>
     <?php echo js('assets/builds/bundle.js', ['defer' => true]) ?>
   </head>
-  <body class="page-<?= $page->uid() ?>" data-darkmode="false">
+  <body class="page-<?= $page->uid() ?>">

@@ -1,7 +1,7 @@
 {
   "modules": {
-    "core": "https://github.com/getkirby/kirby.git",
-    "panel": "https://github.com/getkirby/panel.git",
+    "core": "https://github.com/getkirby-v2/kirby.git",
+    "panel": "https://github.com/getkirby-v2/panel.git",
     "fields": {},
     "plugins": {},
     "tags": {},
