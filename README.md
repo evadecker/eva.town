@@ -8,23 +8,6 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 
 ## Colophon
 
-**Software**
-
-- [Sketch](https://www.sketchapp.com/) for designing and exporting SVGs
-- [VS Code](https://code.visualstudio.com/) for&hellip; coding
-- [iTerm2](https://www.iterm2.com/) for command lining
-
-**Libraries, Plugins, etc.**
-
-- [Kirby](https://getkirby.com/) and [kirby-webpack](https://github.com/brocessing/kirby-webpack) for easy-as-heck flat-file content management
-- [Howler.js](https://howlerjs.com/) for serving audio
-- [Audiosprite](https://github.com/tonistiigi/audiosprite) for generating audio sprite files
-- [Swup](https://github.com/gmrchk/swup) for CSS-powered page transitions, caching, and pre-rendering
-- [WOW.js](https://github.com/matthieua/WOW) for animations on scroll
-- [Flickity](https://flickity.metafizzy.co/) for touch-responsive carousels
-- [Lazysizes](https://github.com/aFarkas/lazysizes) for progressively loading images
-- [EmojiOne](https://www.emojione.com/) for beautiful, free cross-platform emojis
-
 **Synth Samples**
 
 - Toy Piano by [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71)
@@ -39,14 +22,6 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 **Fonts**
 
 - 04b by [Yuji Oshimoto](http://www.04.jp.org/)
-- [Minion](https://fonts.adobe.com/fonts/minion) by Robert Slimbach of [Adobe](https://fonts.adobe.com/foundries/adobe)
-- [Nimbus Sans](https://fonts.adobe.com/fonts/nimbus-sans) by [URW++](https://www.urwtype.com/en/)
-
-**Hosting**
-
-- [Github](https://github.com/) for version control
-- [Namecheap](https://www.namecheap.com/) for domain registration and hosting
-- [Adobe Fonts](https://fonts.adobe.com/) for serving web fonts
 
 ## Notes to self
 
@@ -59,11 +34,7 @@ npm run start
 
 ### Deploying
 
-```zsh
-cd Sites/avery.computer
-git pull
-npm run deploy
-```
+Code pushed to `master` which builds successfully will automatically be deployed via Netlify.
 
 ### How To Add A New Synth Sound
 
@@ -80,41 +51,3 @@ npm run deploy
    - [You can do this with one command.](https://gist.github.com/kybradeck/7c1782a292c0a215f96f2f9850c0ab71)
 5. **Add the sprite to the website.**
    - TBD.
-
-### How to convert images to svg and webp for lazyloading
-
-JPEG, PNG, and GIF to SVG
-
-```zsh
-# One file
-sqip input.png -o output.svg
-
-# All files in a directory
-for file in *.png; do sqip "$file" -o "${file%.png}".svg; done
-```
-
-JPEG and PNG to WEBP
-
-```zsh
-# One file
-cwebp input.png -o output.webp
-
-# All files in a directory
-for file in *.png; do cwebp "$file" -o "${file%.png}".webp; done
-```
-
-GIF to WEBP
-
-```zsh
-# One file
-gif2webp input.gif -o output.webp
-
-# All files in a directory
-for file in *.gif; do gif2webp "$file" -o "${file%.gif}".webp; done
-```
-
-MP4 to WEBM
-
-```zsh
-ffmpeg -i input.mp4 -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis output.webm
-```
