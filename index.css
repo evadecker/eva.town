@@ -1,45 +1,39 @@
-$content-width: 1100px;
-$text-width: calc(66.6666% - 1rem);
-$aside-width: calc(33.3333% - 1rem);
-
-$column-breakpoint: 960px;
-
 :root {
   --color-red-dark: #5e1313;
   --color-red: #ff3e3e;
   --color-red-medium: #f7d2db;
-  --color-red-light: #FCF3F7;
-  --color-orange: #EB760D;
-  --color-orange-dark: #8F4400;
+  --color-red-light: #fcf3f7;
+  --color-orange: #eb760d;
+  --color-orange-dark: #8f4400;
   --color-yellow-dark: #443818;
-  --color-yellow: #FFD220;
+  --color-yellow: #ffd220;
   --color-yellow-border: #ebddb8;
-  --color-yellow-light: #FFF9E9;
+  --color-yellow-light: #fff9e9;
   --color-blue-dark: #004da5;
-  --color-blue: #3F97FF;
-  --color-blue-light: #EAF3FF;
-  --color-green-dark: #0D6C1E;
-  --color-green: #5CD874;
+  --color-blue: #3f97ff;
+  --color-blue-light: #eaf3ff;
+  --color-green-dark: #0d6c1e;
+  --color-green: #5cd874;
   --color-green-border: #cdebd2;
-  --color-green-light: #E9F4EB;
+  --color-green-light: #e9f4eb;
   --color-purple-dark: #470bd4;
-  --color-purple: #7C60FF;
+  --color-purple: #7c60ff;
 
-  --color-neutral-0: #FFFFFF; // White
-  --color-neutral-1: #F5F5F5; // Light gray
-  --color-neutral-2: #EEEEEE;
-  --color-neutral-3: #DDDDDD;
-  --color-neutral-4: #BBB;
+  --color-neutral-0: #ffffff;
+  --color-neutral-1: #f5f5f5;
+  --color-neutral-2: #eeeeee;
+  --color-neutral-3: #dddddd;
+  --color-neutral-4: #bbb;
   --color-neutral-5: #999;
   --color-neutral-6: #888;
   --color-neutral-7: #666;
   --color-neutral-8: #444;
-  --color-neutral-9: #222; // Dark backgrounds
-  --color-neutral-10: #000; // Black
+  --color-neutral-9: #222;
+  --color-neutral-10: #000;
 
-  --color-lcd-bg: #8DB48E;
+  --color-lcd-bg: #8db48e;
   --color-lcd-dark: #466b46;
-  --color-lcd-light: #A2D4A4;
+  --color-lcd-light: #a2d4a4;
   --color-lcd-hover: #325732;
 
   --shadow-small: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
@@ -106,7 +100,7 @@ body {
   --focus-ring: 0 0 0 4px rgba(63, 151, 255, 0.5);
 }
 
-body[data-darkmode='true'] {
+body[data-darkmode="true"] {
   --color-bg: #191919;
   --color-bg-alt: #111;
 
@@ -165,4 +159,229 @@ body[data-darkmode='true'] {
   --color-lcd-hover: var(--color-blue-dark);
 
   --focus-ring: 0 0 0 4px rgba(63, 151, 255, 0.8);
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--color-bg);
+  max-width: 100vw;
+}
+
+.home {
+  height: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#synth {
+  width: 100%;
+}
+
+#synth[data-loading="true"] {
+  pointer-events: none;
+}
+
+#synth[data-loading="true"] .synth-randomize {
+  display: none;
+}
+
+#synth[data-enabled="true"] #synth-start {
+  display: none;
+}
+
+#synth[data-enabled="false"] .synth-instruments,
+#synth[data-enabled="false"] .synth-staff {
+  display: none;
+}
+
+.lcd-bg {
+  fill: var(--color-lcd-bg);
+}
+
+.lcd-base,
+.notehead {
+  fill: var(--color-lcd-dark);
+}
+
+.lcd-highlight {
+  fill: var(--color-lcd-light);
+}
+
+.synth-base {
+  fill: var(--color-synth-base);
+}
+
+.synth-between-keys {
+  fill: var(--color-neutral-3);
+}
+
+.instrument,
+.notehead {
+  display: none;
+}
+
+.synth-endcap {
+  fill: var(--color-synth-endcap);
+}
+
+.lcd-outline {
+  fill: var(--color-synth-lcd-outline);
+}
+
+.synth-keys-outline,
+.synth-key .pressed-overlay,
+.synth-key .crack {
+  fill: var(--color-synth-keys-outline);
+}
+
+.synth-shadow,
+.synth-keys-shadow {
+  fill: black;
+  opacity: 0.1;
+}
+
+#synth-start {
+  cursor: pointer;
+}
+
+#synth-start:not(:hover) .lcd-base {
+  animation: pressStart 2s infinite;
+}
+
+#synth-start:not(:hover) .lcd-base:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+#synth-start:not(:hover) .lcd-base:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+#synth-start:not(:hover) .lcd-base:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+#synth-start:not(:hover) .lcd-base:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+#synth-start:hover .lcd-base {
+  opacity: 1;
+}
+
+@keyframes pressStart {
+  0%,
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.synth-key {
+  cursor: pointer;
+  transition: fill 0.4s ease-out;
+}
+
+.synth-key .pressed-overlay {
+  transform: translateY(2px);
+  transition: transform 0.1s ease-out;
+}
+
+.synth-key .crack {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+.synth-key.white .base {
+  fill: var(--color-synth-whitekey);
+}
+
+.synth-key.black .base {
+  fill: var(--color-synth-blackkey);
+}
+
+.synth-key.black .highlight {
+  fill: rgba(white, 0.15);
+}
+
+.synth-key .base {
+  transition: fill 0.4s ease-out;
+}
+
+.synth-key.pressed .base {
+  transition: none;
+  fill: var(--color-synth-whitekey-pressed);
+}
+
+.synth-key.pressed.black .base {
+  fill: var(--color-synth-blackkey-pressed);
+}
+
+.synth-key.pressed .pressed-overlay {
+  transition: none;
+  transform: translateY(0);
+}
+
+.synth-key.pressed .crack {
+  transition: none;
+  opacity: 1;
+}
+
+.key-letter {
+  fill: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: 0.4s ease-out;
+}
+
+.key-letter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.key-letter.fadeout {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  transition-delay: 0.2s;
+}
+
+.synth-instrument {
+  cursor: pointer;
+}
+
+.synth-randomize {
+  display: none;
+}
+
+body.has-touch .synth-randomize {
+  display: none;
+}
+
+@media not all and (pointer: coarse) {
+  .synth-instrument:hover .synth-randomize {
+    display: block;
+  }
+  .synth-instrument:hover .instrument {
+    display: none !important;
+  }
+}
+
+.instrument-arrow {
+  cursor: pointer;
+}
+
+.instrument-arrow:hover .lcd-base {
+  fill: var(--color-lcd-hover);
 }

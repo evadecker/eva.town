@@ -1,8 +1,0 @@
-{
-  "name": "xml-sitemap",
-  "author": "Pedro Borges <oi@pedroborg.es>",
-  "version": "1.0.0-beta.1",
-  "description": "Kirby XML Sitemap",
-  "type": "kirby-plugin",
-  "license": "MIT"
-}

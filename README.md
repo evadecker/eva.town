@@ -6,7 +6,7 @@ This is the source code that powers [avery.computer](https://avery.computer).
 
 ## Usage
 
-Feel free to use and remix this code as you see fit, but don't steal it as your own, please. Whatever you make, share it with me! 😄 hello@avery.computer
+Feel free to use and remix this code as you see fit, but don't steal it as your own, please. Whatever you make, share it with me! <hello@avery.computer>
 
 ## Colophon
 
@@ -25,20 +25,7 @@ Feel free to use and remix this code as you see fit, but don't steal it as your 
 
 - 04b by [Yuji Oshimoto](http://www.04.jp.org/)
 
-## Notes to self
-
-### Starting kirby-webpack
-
-```zsh
-cd avery.computer
-npm run start
-```
-
-### Deploying
-
-Code pushed to `master` which builds successfully will automatically be deployed via Netlify.
-
-### How To Add A New Synth Sound
+### Note to Self: How To Add A New Synth Sound
 
 1. **Download your samples.**
    - There should be one file for each note from C3 to E3, 17 in total.

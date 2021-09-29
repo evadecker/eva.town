@@ -1,3 +1,0 @@
-Title: Avery Madison Decker
-
-----
