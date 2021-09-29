@@ -1,5 +1,7 @@
 # Avery Madison Decker
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c441f8-5db7-4113-9c12-5ab385e5f080/deploy-status)](https://app.netlify.com/sites/avery-computer/deploys)
+
 This is the source code that powers [avery.computer](https://avery.computer).
 
 ## Usage
