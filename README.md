@@ -1,12 +1,8 @@
-# Avery Madison Decker
+# Eva Decker
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c441f8-5db7-4113-9c12-5ab385e5f080/deploy-status)](https://app.netlify.com/sites/avery-computer/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c441f8-5db7-4113-9c12-5ab385e5f080/deploy-status)](https://app.netlify.com/sites/evadecker/deploys)
 
-This is the source code that powers [avery.computer](https://avery.computer).
-
-## Usage
-
-Feel free to use and remix this code as you see fit, but don't steal it as your own, please. Whatever you make, share it with me! <hello@avery.computer>
+This is the source code that powers [evadecker.com](https://evadecker.com).
 
 ## Colophon
 
