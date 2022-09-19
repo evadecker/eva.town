@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@types/howler": "^2.2.7",
+    "@types/node": "^18.7.18",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.4"
   }
