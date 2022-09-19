@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "astro": "^1.2.6",
-    "howler": "^2.2.3"
+    "howler": "^2.2.3",
+    "unmute-ios-audio": "^3.3.0"
   },
   "devDependencies": {
     "@types/howler": "^2.2.7",
