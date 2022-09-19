@@ -82,11 +82,13 @@ const { title, description } = Astro.props;
     <style is:global>
       body {
         font-family: nimbus-sans, sans-serif;
+        text-rendering: optimizeLegibility;
       }
 
       h1 {
         font-size: var(--font-size-lg);
         font-family: nimbus-sans-extended, sans-serif;
+        font-weight: 400;
         text-align: center;
       }
     </style>
