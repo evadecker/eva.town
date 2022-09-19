@@ -3,7 +3,7 @@
 
 <script>
   import { Howl, Howler } from "howler";
-  const unmuteAudio = require("unmute-ios-audio");
+  import unmuteAudio from "unmute-ios-audio";
 
   Howler.autoUnlock = false;
 
@@ -751,10 +751,10 @@
 
     function init() {
       _cacheDOM();
-      unmuteAudio();
     }
 
     function start() {
+      unmuteAudio();
       _enableSynth();
       _bindEvents();
     }
