@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Synth from "../components/Synth.astro";
+---
+
+<Layout
+  title="Eva Decker"
+  description="Eva Decker is a Product Designer based in Brooklyn, New York."
+>
+  <main>
+    <h1>Eva Decker is a Product Designer based in Brooklyn, New York.</h1>
+    <Synth />
+    <div>Download Resume Github, LinkedIn, Dribbble</div>
+  </main>
+</Layout>
+
+<style>
+  h1 {
+    margin: 0;
+  }
+
+  main {
+    margin: auto;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+  }
+</style>
