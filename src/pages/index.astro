@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Synth from "../components/Synth.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout
@@ -8,23 +9,37 @@ import Synth from "../components/Synth.astro";
   description="Eva Decker is a Product Designer based in Brooklyn, New York."
 >
   <main>
-    <h1>Eva Decker is a Product Designer based in Brooklyn, New York.</h1>
+    <h1>
+      Eva<span class="annotation">(AY-vuh)</span> Decker is a Product Designer based
+      in Brooklyn, New York.
+    </h1>
     <Synth />
-    <div>Download Resume Github, LinkedIn, Dribbble</div>
+    <!-- <Footer /> -->
   </main>
 </Layout>
 
 <style>
   h1 {
     margin: 0;
+    position: relative;
   }
 
   main {
     margin: auto;
+    padding: 0 2rem;
     max-width: 540px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: 100vh;
+  }
+
+  .annotation {
+    font-family: verveine, sans-serif;
+    position: absolute;
+    top: 0;
+    font-size: 1.2rem;
+    transform: rotate(-10deg) translateY(-100%) translateX(-20%);
+    opacity: 0.4;
   }
 </style>

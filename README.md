@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5c441f8-5db7-4113-9c12-5ab385e5f080/deploy-status)](https://app.netlify.com/sites/evadecker/deploys)
 
-This is the source code that powers [evadecker.com](https://evadecker.com).
+This is the source code that powers [evadecker.com](https://evadecker.com). It's created with [Astro](https://astro.build/) and hosted on [Netlify](https://www.netlify.com/).
 
 ## Colophon
 
@@ -20,19 +20,4 @@ This is the source code that powers [evadecker.com](https://evadecker.com).
 **Fonts**
 
 - 04b by [Yuji Oshimoto](http://www.04.jp.org/)
-
-### Note to Self: How To Add A New Synth Sound
-
-1. **Download your samples.**
-   - There should be one file for each note from C3 to E3, 17 in total.
-   - Make sure they're, like, legal.
-2. **Rename your samples.**
-   - Sounds should take this format: C3.wav, Csharp3.wav, D3.wav, Dsharp3.wav&hellip;
-   - This is case-sensitive. (c3, cSHARP3, D_3, d_sharp_three &rarr; NOPE.)
-   - It doesn't matter what extension they are; everything will get combined into one file.
-3. **Trim silence.** _(Optional)_
-   - If there's silence at the start of the sample, it'll sound laggy. [Trim it with this FFMPEG command.](https://gist.github.com/kybradeck/d49738402295a1a16afcebea1055da05)
-4. **Generate a sprite.**
-   - [You can do this with one command.](https://gist.github.com/kybradeck/7c1782a292c0a215f96f2f9850c0ab71)
-5. **Add the sprite to the website.**
-   - TBD.
+- Nimbus Sans by URW Type Foundary via [Adobe Fonts](https://fonts.adobe.com/fonts/nimbus-sans)
