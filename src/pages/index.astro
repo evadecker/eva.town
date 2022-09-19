@@ -10,11 +10,11 @@ import Footer from "../components/Footer.astro";
 >
   <main>
     <h1>
-      Eva<span class="annotation">(AY-vuh)</span> Decker is a Product Designer based
-      in Brooklyn, New York.
+      Eva<span class="annotation">(AY-vuh)</span> Decker is a Product Designer<br
+      />based in Brooklyn, New York.
     </h1>
     <Synth />
-    <!-- <Footer /> -->
+    <Footer />
   </main>
 </Layout>
 
@@ -26,10 +26,10 @@ import Footer from "../components/Footer.astro";
 
   main {
     margin: auto;
-    padding: 0 2rem;
-    max-width: 540px;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
     height: 100vh;
   }
@@ -38,7 +38,7 @@ import Footer from "../components/Footer.astro";
     font-family: verveine, sans-serif;
     position: absolute;
     top: 0;
-    font-size: 1.2rem;
+    font-size: 0.75em;
     transform: rotate(-10deg) translateY(-100%) translateX(-20%);
     opacity: 0.4;
   }
