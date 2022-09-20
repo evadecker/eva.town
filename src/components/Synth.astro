@@ -1583,6 +1583,23 @@
     --color-synth-blackkey-pressed: var(--color-purple-dark);
   }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-lcd-bg: var(--color-neutral-3);
+      --color-lcd-dark: var(--color-neutral-6);
+      --color-lcd-light: var(--color-neutral-0);
+      --color-lcd-hover: var(--color-neutral-7);
+
+      --color-synth-base: var(--color-red);
+      --color-synth-endcap: var(--color-red-alt);
+      --color-synth-lcd-outline: var(--color-red-dark);
+      --color-synth-keys-outline: var(--color-red-dark);
+
+      --color-synth-whitekey-pressed: var(--color-red);
+      --color-synth-blackkey-pressed: var(--color-red-alt);
+    }
+  }
+
   #synth {
     width: 100%;
     max-width: 540px;
