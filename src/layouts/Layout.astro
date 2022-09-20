@@ -29,22 +29,10 @@ const { title, description } = Astro.props;
         --font-size-base: 18px;
 
         --color-red-dark: #5e1313;
-        --color-red: #ff3e3e;
+        --color-red: #ff2c2c;
+        --color-red-alt: #ac0e0e;
         --color-red-medium: #f7d2db;
-        --color-red-light: #fcf3f7;
-        --color-orange: #eb760d;
-        --color-orange-dark: #8f4400;
-        --color-yellow-dark: #443818;
-        --color-yellow: #ffd220;
-        --color-yellow-border: #ebddb8;
-        --color-yellow-light: #fff9e9;
-        --color-blue-dark: #004da5;
-        --color-blue: #3f97ff;
-        --color-blue-light: #eaf3ff;
-        --color-green-dark: #0d6c1e;
-        --color-green: #5cd874;
-        --color-green-border: #cdebd2;
-        --color-green-light: #e9f4eb;
+
         --color-purple-dark: #470bd4;
         --color-purple: #7c60ff;
 
@@ -63,7 +51,19 @@ const { title, description } = Astro.props;
         --color-text: var(--color-neutral-9);
         --color-text-light: var(--color-neutral-7);
         --color-bg: var(--color-neutral-0);
-        --color-border: var(--color-neutral-3);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-text: var(--color-neutral-0);
+          --color-text-light: var(--color-neutral-5);
+          --color-bg: var(--color-neutral-10);
+        }
+
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
       }
 
       html {
