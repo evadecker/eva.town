@@ -27,7 +27,6 @@ const { title, description } = Astro.props;
     <style>
       :root {
         --font-size-base: 18px;
-        --font-size-lg: 2.4rem;
 
         --color-red-dark: #5e1313;
         --color-red: #ff3e3e;
@@ -86,7 +85,7 @@ const { title, description } = Astro.props;
       }
 
       h1 {
-        font-size: var(--font-size-lg);
+        font-size: clamp(2rem, 2rem + 0.5vw, 2.6rem);
         font-family: nimbus-sans-extended, sans-serif;
         font-weight: 400;
         text-align: center;
