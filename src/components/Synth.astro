@@ -2,6 +2,7 @@
 ---
 
 <script>
+  // @ts-nocheck
   import { Howl, Howler } from "howler";
   import unmuteAudio from "unmute-ios-audio";
 
@@ -36,7 +37,7 @@
 
     function _cacheDOM() {
       synth = document.getElementById("synth");
-      keys = synth?.querySelectorAll(".synth-key");
+      keys = synth.querySelectorAll(".synth-key");
       instrumentIcons = synth?.querySelectorAll(".instrument");
       instrumentIconWrapper = synth?.querySelector(".synth-instrument");
       noteheads = synth?.querySelectorAll(".notehead");
