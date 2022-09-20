@@ -1,0 +1,39 @@
+<h1 class="two-line">
+  Eva<span class="annotation">(AY-vuh)</span> Decker is a Product Designer<br
+  />based in Brooklyn, New York.
+</h1>
+<h1 class="three-line">
+  Eva<span class="annotation">(AY-vuh)</span> Decker is<br />a Product Designer<br
+  />based in Brooklyn.
+</h1>
+
+<style>
+  h1 {
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .annotation {
+    font-family: verveine, sans-serif;
+    font-weight: 400;
+    position: absolute;
+    top: 0;
+    font-size: 0.75em;
+    transform: rotate(-10deg) translateY(-100%) translateX(-20%);
+    color: var(--color-text-light);
+  }
+
+  .three-line {
+    display: none;
+  }
+
+  @media only screen and (max-width: 920px) {
+    .two-line {
+      display: none;
+    }
+
+    .three-line {
+      display: block;
+    }
+  }
+</style>

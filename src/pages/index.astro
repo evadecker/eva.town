@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Synth from "../components/Synth.astro";
 import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 ---
 
 <Layout
@@ -9,25 +10,13 @@ import Footer from "../components/Footer.astro";
   description="Eva Decker is a Product Designer based in Brooklyn, New York."
 >
   <main>
-    <h1 class="two-line">
-      Eva<span class="annotation">(AY-vuh)</span> Decker is a Product Designer<br
-      />based in Brooklyn, New York.
-    </h1>
-    <h1 class="three-line">
-      Eva<span class="annotation">(AY-vuh)</span> Decker is<br />a Product
-      Designer<br />based in Brooklyn.
-    </h1>
+    <Header />
     <Synth />
     <Footer />
   </main>
 </Layout>
 
 <style>
-  h1 {
-    margin: 0;
-    position: relative;
-  }
-
   main {
     margin: auto;
     padding: 0 1rem;
@@ -36,29 +25,5 @@ import Footer from "../components/Footer.astro";
     align-items: center;
     justify-content: space-evenly;
     min-height: 100%;
-  }
-
-  .annotation {
-    font-family: verveine, sans-serif;
-    font-weight: 400;
-    position: absolute;
-    top: 0;
-    font-size: 0.75em;
-    transform: rotate(-10deg) translateY(-100%) translateX(-20%);
-    color: var(--color-text-light);
-  }
-
-  .three-line {
-    display: none;
-  }
-
-  @media only screen and (max-width: 920px) {
-    .two-line {
-      display: none;
-    }
-
-    .three-line {
-      display: block;
-    }
   }
 </style>
