@@ -79,6 +79,11 @@ const { title, description } = Astro.props;
     </style>
 
     <style is:global>
+      html,
+      body {
+        height: 100%;
+      }
+
       body {
         font-family: nimbus-sans, sans-serif;
         text-rendering: optimizeLegibility;
