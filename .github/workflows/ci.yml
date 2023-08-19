@@ -1,0 +1,34 @@
+name: Lighthouse
+on: pull_request
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Install and build
+        run: |
+          npm install
+          npm run build
+      - name: Wait for Netlify Preview
+        uses: JakePartusch/wait-for-netlify-action@v1.4
+        id: netlify
+        with:
+          site_name: 'evadecker'
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            ${{ steps.netlify.outputs.url }}
+          configPath: ./lighthouserc.json
+          budgetPath: ./budget.json
+          temporaryPublicStorage: true
+          runs: 3
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+            
