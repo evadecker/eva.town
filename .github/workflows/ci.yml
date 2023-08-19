@@ -20,6 +20,7 @@ jobs:
         id: netlify
         with:
           site_name: 'evadecker'
+          max_timeout: 600
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v10
         with:
