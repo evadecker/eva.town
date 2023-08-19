@@ -15,6 +15,7 @@
     "unmute-ios-audio": "^3.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.37.1",
     "@types/howler": "^2.2.7",
     "@types/node": "^18.7.18",
     "prettier": "^2.7.1",
