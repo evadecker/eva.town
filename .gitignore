@@ -2,7 +2,7 @@
 node_modules/
 package-lock.json
 
-# Workflow & Editor #
+# Workflow & Editor
 .idea
 .vscode
 .eslintcache
