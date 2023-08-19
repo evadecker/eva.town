@@ -1,7 +1,7 @@
 name: Lighthouse
 on: pull_request
 jobs:
-  lighthouseci:
+  lighthouse:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,12 +20,12 @@ jobs:
         id: netlify
         with:
           site_name: 'evadecker'
-          max_timeout: 600
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v10
         with:
           urls: |
             ${{ steps.netlify.outputs.url }}
+          configPath: ./lighthouserc.json
           budgetPath: ./budget.json
           temporaryPublicStorage: true
         env:
