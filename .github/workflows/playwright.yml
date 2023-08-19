@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright
 on:
   push:
     branches: main
@@ -17,8 +17,15 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: Wait for 200 from the Netlify Preview
+      uses: JakePartusch/wait-for-netlify-action@v1.4
+      id: netlify
+      with:
+        site_name: 'evadecker'
     - name: Run Playwright tests
       run: npx playwright test
+      env: 
+        PLAYWRIGHT_TEST_BASE_URL: ${{ steps.netlify.outputs.url }}
     - uses: actions/upload-artifact@v3
       if: always()
       with:
