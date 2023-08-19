@@ -28,3 +28,8 @@ _site/
 
 # IntelliJ/WebStorm stuff
 .idea
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
