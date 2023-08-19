@@ -18,6 +18,9 @@ dist/
 .vercel
 .netlify
 _site/
+
+# Logs
+.lighthouseci/
 *.log
 
 # Do not commit .env files or any files that end with `.env`
