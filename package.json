@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "playwright test"
   },
   "dependencies": {
     "astro": "^2.10.12",
@@ -15,6 +16,7 @@
     "unmute-ios-audio": "^3.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.37.1",
     "@types/howler": "^2.2.7",
     "@types/node": "^18.7.18",
     "prettier": "^2.7.1",
