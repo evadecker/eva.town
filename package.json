@@ -11,8 +11,13 @@
     "test": "playwright test"
   },
   "dependencies": {
+    "@astrojs/react": "^2.3.2",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
     "astro": "^2.10.12",
     "howler": "^2.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "unmute-ios-audio": "^3.3.0"
   },
   "devDependencies": {
