@@ -13,7 +13,7 @@ const { text, type = "Wave" } = Astro.props;
 ---
 
 <span class={`emphasis ${type}`}>
-  {text.split('').map((letter, index) => <span class="letter" style={animationDelay: columnIndex * staggeredDelay + 'ms',}>{letter}</span>)}
+  {text.split('').map((letter, index) => <span class="letter">{letter}</span>)}
 </span>
 
 <style>
