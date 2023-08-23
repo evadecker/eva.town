@@ -11,4 +11,7 @@ module.exports = {
     parserOptions: {
         project: ["./tsconfig.json"],
     },
+    rules: {
+        "@typescript-eslint/explicit-function-return-type": "off",
+    }
 }
