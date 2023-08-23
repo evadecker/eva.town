@@ -1,0 +1,27 @@
+title: Start
+---
+Eva: do you ever get the feeling that someone is...
+Eva: watching you?
+Sam: *stares vacantly*
+===
+title: QuestionHub
+---
+<<if visited_count("QuestionHub") == 0>>
+    For what knowledge does your human mind thirst?
+<<elseif visited_count("QuestionHub") == 1>>
+    What else can I tell you?
+<<elseif visited_count("Question Hub") == 2>>
+    EVABOT desires to assist more.
+<<else>>
+    Can EVABOT answer another question?
+<<endif>>
+
+-> How did Eva learn to design and code? <<if !visited("DesignStory")>>
+    <<jump DesignStory>>
+-> How do you pronounce Eva? <<if !visited("Pronunciation")>>
+    <<jump Pronunciation>>
+-> How was this site built? <<if !visited("BuildProcess")>>
+    <<jump BuildProcess>>
+-> Wait—a soul?
+    <<jump BotSoul>>
+===
