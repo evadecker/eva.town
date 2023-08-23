@@ -1,0 +1,7 @@
+# Ignore artifacts:
+.lighthouseci
+.vscode
+build
+dist
+node_modules
+playwright-report

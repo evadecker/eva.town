@@ -1,1 +1,1 @@
-import 'astro/client'
+import "astro/client";
