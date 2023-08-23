@@ -19,7 +19,7 @@ jobs:
         uses: JakePartusch/wait-for-netlify-action@v1.4
         id: netlify
         with:
-          site_name: 'evadecker'
+          site_name: "evadecker"
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v10
         with:
@@ -31,4 +31,3 @@ jobs:
           runs: 3
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-            
