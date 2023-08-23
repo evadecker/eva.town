@@ -1,6 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TypeMotion from "../components/TypeMotion";
+import DialogueTree from "../components/DialogueTree";
+
+let dialogue = ''
+
+try {
+  const res = await fetch('http://localhost:3000/dialogue/dialogue.yarn')
+  dialogue = await res.text()
+} catch (err) {
+  console.error(err)
+}
+
 ---
 
 <Layout
@@ -8,14 +18,7 @@ import TypeMotion from "../components/TypeMotion";
   description="Eva Decker is a Product Designer based in Brooklyn, New York."
 >
   <main>
-    <TypeMotion client:load content={[
-      {
-        text: 'Hello there! '
-      },
-      {
-        text: 'Second line of text'
-      }
-    ]}>
+    <DialogueTree client:load dialogue={dialogue} />
   </main>
 </Layout>
 
@@ -29,3 +32,4 @@ import TypeMotion from "../components/TypeMotion";
     font-size: 2em;
   }
 </style>
+../components/DialogueTree
