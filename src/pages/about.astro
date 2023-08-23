@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TextEmphasis from "../components/TextEmphasis.astro";
+import TypeMotion from "../components/TypeMotion";
 ---
 
 <Layout
@@ -8,6 +8,24 @@ import TextEmphasis from "../components/TextEmphasis.astro";
   description="Eva Decker is a Product Designer based in Brooklyn, New York."
 >
   <main>
-    <TextEmphasis text="About Eva" type="wave" />
+    <TypeMotion client:load content={[
+      {
+        text: 'Hello there! '
+      },
+      {
+        text: 'Second line of text'
+      }
+    ]}>
   </main>
 </Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 2em;
+  }
+</style>
