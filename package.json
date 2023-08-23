@@ -10,7 +10,8 @@
     "astro": "astro",
     "lint": "eslint 'src/**/*.{js,astro,ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{js,astro,ts,tsx}' --fix",
-    "test": "playwright test"
+    "test": "playwright test",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "astro": "^2.10.12",
