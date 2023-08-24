@@ -22,25 +22,23 @@ declare module "yarn-bound" {
 
   export class CommandResult extends BaseResult {
     command: string;
-    hashtags: string[];
     metadata: ResultMetaData;
   }
 
   export class TextResult extends BaseResult {
     text: string;
-    hashtags: string[];
     metadata: ResultMetaData;
   }
 
   export class OptionResult extends BaseResult {
     text: string;
     metadata?: ResultMetaData;
-    hashtags: string[];
     isAvailable: boolean;
   }
 
   export class OptionsResult extends BaseResult {
     text?: string;
+    metadata?: ResultMetaData;
     options: OptionResult[];
   }
 

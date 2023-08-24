@@ -2,12 +2,14 @@ import { nanoid } from "nanoid";
 import React from "react";
 import { TypedCharacter } from "./TypedCharacter";
 import { EmphasizedCharacter } from "./EmphasizedCharacter";
+import { motion } from "framer-motion";
+import type { TextResult } from "yarn-bound";
 
 export interface LineFragmentProps {
   /**
    * Text to display
    */
-  text: string;
+  node: TextResult;
 
   /**
    * Animation style of the sentence fragment
@@ -16,7 +18,8 @@ export interface LineFragmentProps {
   style?: "wave" | "shake" | "none";
 }
 
-const LineFragment = ({ text, style }: LineFragmentProps) => {
+const LineFragment = ({ node, style }: LineFragmentProps) => {
+  const { text } = node;
   const words = text.split(" ");
 
   const renderWordsAndChars = () => {
@@ -48,10 +51,10 @@ const LineFragment = ({ text, style }: LineFragmentProps) => {
   return <div>{renderWordsAndChars()}</div>;
 };
 
-export const DialogueLine = ({ text }: { text: string }) => {
-  if (text === undefined || text.length === 0) return null;
+export const DialogueLine = ({ node }: { node: TextResult }) => {
+  if (!node) return null;
 
   // Need to iterate over fragments when can parse markup
   // in order to animate sections distinctly
-  return <LineFragment text={text} />;
+  return <LineFragment node={node} />;
 };
