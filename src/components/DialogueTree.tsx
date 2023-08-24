@@ -15,6 +15,7 @@ const DialogueTree = ({ dialogue }: DialogueTreeProps) => {
   const runnerRef = useRef(
     new YarnBound({
       dialogue,
+      combineTextAndOptionsResults: true,
     })
   );
 

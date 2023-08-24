@@ -1,8 +1,15 @@
 import { AnimatePresence, motion, type Variants } from "framer-motion";
-import { CommandResult, CurrentResult, OptionsResult } from "yarn-bound";
+import {
+  CommandResult,
+  CurrentResult,
+  OptionsResult,
+  TextResult,
+} from "yarn-bound";
 import React from "react";
 import { DialogueLine } from "./DialogueLine";
 import { DialogueOptions } from "./DialogueOptions";
+import { DialogueContinue } from "./DialogueContinue";
+import { DialogueEmote } from "./DialogueEmote";
 
 interface DialogueNodeProps {
   node: CurrentResult;
@@ -12,9 +19,13 @@ interface DialogueNodeProps {
 export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
   if (!node || node instanceof CommandResult) return null;
 
-  const { text } = node;
+  const { text, hashtags } = node;
 
-  if (text === undefined || text.length === 0) return null;
+  const getEmoteFromTag = (tag: string) => {
+    if (!tag) return;
+    const emote = tag.split(":")[1];
+    return emote;
+  };
 
   return (
     <AnimatePresence>
@@ -63,11 +74,18 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
             padding: "20px",
           }}
         >
-          <DialogueLine text={text} />
-          <DialogueOptions
-            options={node instanceof OptionsResult ? node : undefined}
-            advance={advance}
+          {/* {node.markup.find((m) => m.name === "character")?.properties?.name} */}
+          <DialogueEmote
+            emote={getEmoteFromTag(
+              hashtags?.filter((str) => str.startsWith("emote"))[0]
+            )}
           />
+          {node instanceof TextResult && <DialogueLine node={node} />}
+          {node instanceof OptionsResult ? (
+            <DialogueOptions node={node} advance={advance} />
+          ) : (
+            <DialogueContinue advance={advance} />
+          )}
         </motion.div>
       </motion.div>
     </AnimatePresence>
