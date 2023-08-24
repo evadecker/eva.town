@@ -9,7 +9,14 @@ export const DialogueContinue = ({ advance }: DialogueContinueProps) => (
     onClick={() => {
       advance();
     }}
+    aria-label="Continue"
+    style={{
+      background: "none",
+      border: "none",
+      color: "white",
+      fontSize: "1em",
+    }}
   >
-    Continue
+    ↓
   </button>
 );

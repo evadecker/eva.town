@@ -1,6 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import React, { PropsWithChildren } from "react";
-import type { LineFragmentProps } from "./DialogueLine";
+import { AnimationStyle } from "./";
 
 interface EmphasizedCharacterProps extends PropsWithChildren {
   /**
@@ -9,12 +9,12 @@ interface EmphasizedCharacterProps extends PropsWithChildren {
    */
   index: number;
 
-  style?: LineFragmentProps["style"];
+  style?: AnimationStyle;
 }
 
 export const EmphasizedCharacter = ({
   children,
-  style,
+  style = AnimationStyle.None,
   index,
 }: EmphasizedCharacterProps) => {
   const generateRandomValuesArray = (
@@ -84,7 +84,7 @@ export const EmphasizedCharacter = ({
       animate="animate"
       style={{
         display: "inline-block",
-        fontWeight: "bold",
+        fontWeight: style !== "none" ? 700 : 400,
       }}
       custom={index}
     >

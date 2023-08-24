@@ -10,9 +10,13 @@ export const DialogueEmote = ({ emote }: DialogueEmoteProps) => {
   const getEmote = (emote: string) => {
     switch (emote) {
       case "uncertain":
-        return "😕";
+        return "😐";
       case "scared":
-        return "😨";
+        return "😳";
+      case "stareyes":
+        return "🤩";
+      case "determined":
+        return "😤";
     }
   };
 

@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef } from "react";
 import YarnBound, { OptionsResult, TextResult } from "yarn-bound";
-import { DialogueNode } from "./DialogueNode";
+import { DialogueNode } from "./";
 import useForceUpdate from "use-force-update";
 
 interface DialogueTreeProps {
@@ -11,11 +11,10 @@ interface DialogueTreeProps {
   dialogue: string;
 }
 
-const DialogueTree = ({ dialogue }: DialogueTreeProps) => {
+export const DialogueTree = ({ dialogue }: DialogueTreeProps) => {
   const runnerRef = useRef(
     new YarnBound({
       dialogue,
-      combineTextAndOptionsResults: true,
     })
   );
 
@@ -50,5 +49,3 @@ const DialogueTree = ({ dialogue }: DialogueTreeProps) => {
     </div>
   );
 };
-
-export default DialogueTree;
