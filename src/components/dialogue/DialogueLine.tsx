@@ -1,69 +1,24 @@
 import { nanoid } from "nanoid";
 import React from "react";
-import { TypedCharacter, EmphasizedCharacter } from "./";
-import type { Markup, TextResult } from "yarn-bound";
+import type { Markup, OptionsResult, TextResult } from "yarn-bound";
+import {
+  DialogueLineFragment,
+  type DialogueLineFragmentProps,
+  type FragmentAnimationStyle,
+} from "./DialogueLineFragment";
 
-export enum AnimationStyle {
-  Wave = "wave",
-  Shake = "shake",
-  None = "none",
-}
-
-export interface LineFragmentProps {
-  /**
-   * Text to display
-   */
-  text: string;
-
-  /**
-   * Animation style of the sentence fragment
-   * @default "none"
-   */
-  style?: AnimationStyle;
-
-  /**
-   * Starting character index for continuous animation
-   * across line fragments and styles
-   * @default 0
-   */
-  index?: number;
-}
-
-const LineFragment = ({ text, style, index = 0 }: LineFragmentProps) => {
-  const words = text.split(" ");
-
-  const renderWordsAndChars = () => {
-    return words.map((word, wordIndex) => (
-      <span className="word" style={{ display: "inline-block" }} key={nanoid()}>
-        {word.split("").map((char) => {
-          return (
-            <TypedCharacter key={nanoid()} index={index++}>
-              <EmphasizedCharacter style={style} index={index}>
-                {char}
-              </EmphasizedCharacter>
-            </TypedCharacter>
-          );
-        })}
-        {wordIndex < words.length - 1 && (
-          <TypedCharacter key={nanoid()} index={index++}>
-            {" "}
-          </TypedCharacter>
-        )}
-      </span>
-    ));
-  };
-
-  return renderWordsAndChars();
-};
-
-export const DialogueLine = ({ node }: { node: TextResult }) => {
+export const DialogueLine = ({
+  node,
+}: {
+  node: TextResult | OptionsResult;
+}) => {
   if (!node) return null;
 
   function extractFragmentsWithNames(
     markupArray: Markup[],
     inputText: string
-  ): LineFragmentProps[] {
-    const fragments: LineFragmentProps[] = [];
+  ): DialogueLineFragmentProps[] {
+    const fragments: DialogueLineFragmentProps[] = [];
 
     let currentPosition = 0;
 
@@ -81,7 +36,7 @@ export const DialogueLine = ({ node }: { node: TextResult }) => {
         );
         fragments.push({
           text: markupText,
-          style: markup.name as AnimationStyle,
+          style: markup.name as FragmentAnimationStyle,
           index: markup.position,
         });
 
@@ -98,17 +53,18 @@ export const DialogueLine = ({ node }: { node: TextResult }) => {
   }
 
   return (
-    <>
-      {extractFragmentsWithNames(node.markup, node.text).map(
-        ({ text, style, index }) => (
-          <LineFragment
-            key={nanoid()}
-            text={text}
-            style={style}
-            index={index}
-          />
-        )
-      )}
-    </>
+    <div className="line">
+      {node.text &&
+        extractFragmentsWithNames(node.markup, node.text).map(
+          ({ text, style, index }) => (
+            <DialogueLineFragment
+              key={nanoid()}
+              text={text}
+              style={style}
+              index={index}
+            />
+          )
+        )}
+    </div>
   );
 };

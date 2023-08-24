@@ -34,15 +34,11 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
       opacity: 0,
       scale: 0,
       y: 50,
-      width: "auto",
-      height: "auto",
     },
     animate: {
       opacity: 1,
       scale: 1,
       y: 0,
-      width: "auto",
-      height: "auto",
       transition: {
         type: "spring",
         mass: 1,
@@ -58,56 +54,50 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
 
   return (
     <AnimatePresence>
-      <motion.div
-        layout
-        layoutRoot
+      <div
         className="dialogue-container"
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          width: "400px",
         }}
       >
-        {node instanceof TextResult && (
-          <motion.div
-            // layout
-            className="dialogue-bubble"
-            variants={bubbleVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "flex-start",
-              backgroundColor: "white",
-              color: "black",
-              borderRadius: "20px",
-              padding: "24px",
-            }}
-            onClick={() => advance()}
-          >
-            {/* {node.markup.find((m) => m.name === "character")?.properties?.name} */}
-            <DialogueEmote
-              emote={getEmoteFromTag(
-                hashtags?.filter((str) => str.startsWith("emote"))[0]
-              )}
-            />
-            <div>
-              <DialogueLine node={node} />
-            </div>
-          </motion.div>
-        )}
-        <motion.div layout>
-          {node instanceof OptionsResult ? (
-            <DialogueOptions node={node} advance={advance} />
-          ) : (
-            <DialogueContinue advance={advance} />
+        <motion.div
+          className="dialogue-bubble"
+          variants={bubbleVariants}
+          initial="initial"
+          animate="animate"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "flex-start",
+            backgroundColor: "white",
+            color: "black",
+            borderRadius: "20px",
+            fontSize: "26px",
+            lineHeight: "32px",
+            padding: "16px",
+            width: "400px",
+          }}
+          onClick={() => advance()}
+        >
+          {/* {node.markup.find((m) => m.name === "character")?.properties?.name} */}
+          <DialogueEmote
+            emote={getEmoteFromTag(
+              hashtags?.filter((str) => str.startsWith("emote"))[0]
+            )}
+          />
+          {node instanceof (TextResult || OptionsResult) && (
+            <DialogueLine node={node} />
           )}
         </motion.div>
-      </motion.div>
+        {node instanceof OptionsResult ? (
+          <DialogueOptions node={node} advance={advance} />
+        ) : (
+          <DialogueContinue advance={advance} />
+        )}
+      </div>
     </AnimatePresence>
   );
 };

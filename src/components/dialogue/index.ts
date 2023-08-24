@@ -1,6 +1,11 @@
 import { DialogueContinue } from "./DialogueContinue";
 import { DialogueEmote } from "./DialogueEmote";
-import { AnimationStyle, DialogueLine } from "./DialogueLine";
+import { DialogueLine } from "./DialogueLine";
+import {
+  DialogueLineFragment,
+  DialogueLineFragmentProps,
+  FragmentAnimationStyle,
+} from "./DialogueLineFragment";
 import { DialogueNode } from "./DialogueNode";
 import { DialogueOptions } from "./DialogueOptions";
 import { DialogueTree } from "./DialogueTree";
@@ -8,13 +13,16 @@ import { EmphasizedCharacter } from "./EmphasizedCharacter";
 import { TypedCharacter } from "./TypedCharacter";
 
 export {
-  AnimationStyle,
   DialogueContinue,
   DialogueEmote,
   DialogueLine,
+  DialogueLineFragment,
   DialogueNode,
   DialogueOptions,
   DialogueTree,
   EmphasizedCharacter,
+  FragmentAnimationStyle,
   TypedCharacter,
 };
+
+export type { DialogueLineFragmentProps };
