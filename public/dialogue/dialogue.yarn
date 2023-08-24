@@ -3,6 +3,10 @@ title: Start
 Eva: do you ever get the feeling that someone is...
 Eva: watching you?
 Sam: *stares vacantly*
+-> Option 1
+    Eva: You clicked option 1!
+-> Option 2
+    Sam: You clicked option 2!
 ===
 title: QuestionHub
 ---
