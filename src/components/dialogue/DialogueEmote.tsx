@@ -1,13 +1,14 @@
 import React from "react";
 
 interface DialogueEmoteProps {
+  /**
+   * Emote to display.
+   */
   emote?: string;
 }
 
 export const DialogueEmote = ({ emote }: DialogueEmoteProps) => {
-  if (!emote) return null;
-
-  const getEmote = (emote: string) => {
+  const getEmote = (emote?: string) => {
     switch (emote) {
       case "uncertain":
         return "😐";
@@ -17,8 +18,26 @@ export const DialogueEmote = ({ emote }: DialogueEmoteProps) => {
         return "🤩";
       case "determined":
         return "😤";
+      default:
+        return "☺️";
     }
   };
 
-  return <div className="emote">{getEmote(emote)}</div>;
+  return (
+    <div
+      className="emote"
+      style={{
+        background: "black",
+        width: "96px",
+        height: "96px",
+        marginRight: "16px",
+        flexShrink: 0,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {getEmote(emote)}
+    </div>
+  );
 };

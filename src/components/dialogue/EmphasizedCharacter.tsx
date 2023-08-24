@@ -1,6 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import React, { PropsWithChildren } from "react";
-import { AnimationStyle } from "./";
+import { FragmentAnimationStyle } from "./";
 
 interface EmphasizedCharacterProps extends PropsWithChildren {
   /**
@@ -9,12 +9,16 @@ interface EmphasizedCharacterProps extends PropsWithChildren {
    */
   index: number;
 
-  style?: AnimationStyle;
+  /**
+   * Animation style of the character
+   * @default "none"
+   */
+  style?: FragmentAnimationStyle;
 }
 
 export const EmphasizedCharacter = ({
   children,
-  style = AnimationStyle.None,
+  style = FragmentAnimationStyle.None,
   index,
 }: EmphasizedCharacterProps) => {
   const generateRandomValuesArray = (
