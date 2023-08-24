@@ -11,7 +11,7 @@ interface TypedCharacterProps extends PropsWithChildren {
 
 export const TypedCharacter = ({ children, index }: TypedCharacterProps) => {
   const characterVariants: Variants = {
-    initial: { opacity: 0, scale: 0 },
+    initial: { opacity: 0, scale: 0.5 },
     animate: (i) => ({
       opacity: 1,
       scale: 1,

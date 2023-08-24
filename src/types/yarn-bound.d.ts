@@ -12,6 +12,8 @@ declare module "yarn-bound" {
   interface Markup {
     name: string;
     properties: Record<string, string>;
+    position: number;
+    length: number;
   }
 
   class BaseResult {
