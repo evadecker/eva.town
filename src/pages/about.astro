@@ -2,15 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import DialogueTree from "../components/DialogueTree";
 
-let dialogue = ''
+let dialogue = "";
 
 try {
-  const res = await fetch('http://localhost:3000/dialogue/dialogue.yarn')
-  dialogue = await res.text()
+  const res = await fetch("http://localhost:3000/dialogue/dialogue.yarn");
+  dialogue = await res.text();
 } catch (err) {
-  console.error(err)
+  console.error(err);
 }
-
 ---
 
 <Layout
@@ -32,4 +31,3 @@ try {
     font-size: 2em;
   }
 </style>
-../components/DialogueTree
