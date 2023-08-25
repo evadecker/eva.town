@@ -52,6 +52,15 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
     },
   };
 
+  const currentEmote = getEmoteFromTag(
+    hashtags?.filter((str) => str.startsWith("emote"))[0]
+  );
+
+  const showOptions = node instanceof OptionsResult;
+  const showContinue = !(node instanceof OptionsResult);
+
+  const handleClick = showContinue ? () => advance() : undefined;
+
   return (
     <AnimatePresence>
       <div
@@ -59,10 +68,11 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          alignItems: "flex-end",
+          justifyContent: "flex-end",
         }}
       >
+        {showOptions && <DialogueOptions node={node} advance={advance} />}
         <motion.div
           className="dialogue-bubble"
           variants={bubbleVariants}
@@ -71,32 +81,21 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
           style={{
             display: "flex",
             flexDirection: "row",
-            alignItems: "flex-start",
+            alignItems: "center",
             backgroundColor: "white",
             color: "black",
-            borderRadius: "20px",
-            fontSize: "26px",
-            lineHeight: "32px",
-            padding: "16px",
-            width: "400px",
+            fontSize: "18px",
+            lineHeight: "22px",
+            width: "340px",
+            height: "72px",
           }}
-          onClick={() => advance()}
+          onClick={handleClick}
         >
           {/* {node.markup.find((m) => m.name === "character")?.properties?.name} */}
-          <DialogueEmote
-            emote={getEmoteFromTag(
-              hashtags?.filter((str) => str.startsWith("emote"))[0]
-            )}
-          />
-          {node instanceof (TextResult || OptionsResult) && (
-            <DialogueLine node={node} />
-          )}
+          <DialogueEmote emote={currentEmote} />
+          <DialogueLine node={node} />
+          {showContinue && <DialogueContinue advance={advance} />}
         </motion.div>
-        {node instanceof OptionsResult ? (
-          <DialogueOptions node={node} advance={advance} />
-        ) : (
-          <DialogueContinue advance={advance} />
-        )}
       </div>
     </AnimatePresence>
   );
