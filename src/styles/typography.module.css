@@ -1,0 +1,11 @@
+body {
+  font-family: nimbus-sans, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: clamp(1.3rem, 8vw, 2.6rem);
+  font-family: nimbus-sans-extended, sans-serif;
+  font-weight: 400;
+  text-align: center;
+}

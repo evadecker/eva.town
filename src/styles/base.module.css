@@ -1,0 +1,11 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}

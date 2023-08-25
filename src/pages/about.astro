@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { DialogueTree } from "../components/dialogue";
+import "./about.module.css";
 
 let dialogue = "";
 
@@ -20,14 +21,3 @@ try {
     <DialogueTree client:load dialogue={dialogue} />
   </main>
 </Layout>
-
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    height: 100vh;
-    padding: 24px;
-  }
-</style>
