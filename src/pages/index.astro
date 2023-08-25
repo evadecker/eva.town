@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Synth from "../components/Synth.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+
+import "./index.module.css";
 ---
 
 <Layout
@@ -15,15 +17,3 @@ import Header from "../components/Header.astro";
     <Footer />
   </main>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    min-height: 100%;
-  }
-</style>

@@ -1,0 +1,8 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 100vh;
+  padding: 24px;
+}
