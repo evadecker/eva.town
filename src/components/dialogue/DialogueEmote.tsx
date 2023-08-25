@@ -27,10 +27,10 @@ export const DialogueEmote = ({ emote }: DialogueEmoteProps) => {
     <div
       className="emote"
       style={{
-        background: "black",
-        width: "96px",
-        height: "96px",
-        marginRight: "16px",
+        background: "#eee",
+        width: "72px",
+        height: "72px",
+        fontSize: "1em",
         flexShrink: 0,
         display: "flex",
         justifyContent: "center",

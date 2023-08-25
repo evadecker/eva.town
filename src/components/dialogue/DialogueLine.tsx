@@ -5,13 +5,13 @@ import {
   DialogueLineFragment,
   type DialogueLineFragmentProps,
   type FragmentAnimationStyle,
-} from "./DialogueLineFragment";
+} from "./";
 
-export const DialogueLine = ({
-  node,
-}: {
+interface DialogueLineProps {
   node: TextResult | OptionsResult;
-}) => {
+}
+
+export const DialogueLine = ({ node }: DialogueLineProps) => {
   if (!node) return null;
 
   function extractFragmentsWithNames(
@@ -53,7 +53,7 @@ export const DialogueLine = ({
   }
 
   return (
-    <div className="line">
+    <div className="line" style={{ flex: 1, padding: "8px 16px" }}>
       {node.text &&
         extractFragmentsWithNames(node.markup, node.text).map(
           ({ text, style, index }) => (
