@@ -1,6 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import React, { PropsWithChildren } from "react";
 import { FragmentAnimationStyle } from "./";
+import styles from "./dialogue.module.css";
 
 interface EmphasizedCharacterProps extends PropsWithChildren {
   /**
@@ -80,19 +81,16 @@ export const EmphasizedCharacter = ({
   };
 
   return (
-    <motion.span
+    <motion.strong
+      className={styles.emphasizedCharacter}
       variants={
         style === "shake" ? shakeVariants : style === "wave" ? waveVariants : {}
       }
       initial="initial"
       animate="animate"
-      style={{
-        display: "inline-block",
-        fontWeight: style !== "none" ? 700 : 400,
-      }}
       custom={index}
     >
       {children}
-    </motion.span>
+    </motion.strong>
   );
 };

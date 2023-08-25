@@ -1,10 +1,5 @@
 import { AnimatePresence, motion, type Variants } from "framer-motion";
-import {
-  CommandResult,
-  CurrentResult,
-  OptionsResult,
-  TextResult,
-} from "yarn-bound";
+import { CommandResult, CurrentResult, OptionsResult } from "yarn-bound";
 import React from "react";
 import {
   DialogueLine,
@@ -12,6 +7,7 @@ import {
   DialogueContinue,
   DialogueEmote,
 } from "./";
+import styles from "./dialogue.module.css";
 
 interface DialogueNodeProps {
   node: CurrentResult;
@@ -63,15 +59,7 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
 
   return (
     <AnimatePresence>
-      <div
-        className="dialogue-container"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-end",
-          justifyContent: "flex-end",
-        }}
-      >
+      <div className={styles.container}>
         {showOptions && <DialogueOptions node={node} advance={advance} />}
         <motion.div
           className="dialogue-bubble"

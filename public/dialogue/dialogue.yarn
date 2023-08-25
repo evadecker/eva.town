@@ -1,34 +1,13 @@
 title: Start
 ---
 Eva: hey hey hey hey hey hey hey hey hey [wave]heyyyyyyyyyyyyy[/wave] #emote:scared
-Eva: [shake]LOOK AT THIS!!!!![/shake] #emote:stareyes
 -> hey
     Eva: You clicked hey!
 -> hello
     Sam: You clicked hello!
+Eva: [shake]LOOK AT THIS!!!!![/shake] #emote:stareyes
 Eva: I am [wave]sooooo stoked[/wave] about getting all of this [shake]working!!!!![/shake] #emote:determined
 Sam: HOW NEAT
 Eva: [shake]HOW NEAT!!!!![/shake]
 Eva: smiley
-===
-title: QuestionHub
----
-<<if visited_count("QuestionHub") == 0>>
-    For what knowledge does your human mind thirst?
-<<elseif visited_count("QuestionHub") == 1>>
-    What else can I tell you?
-<<elseif visited_count("Question Hub") == 2>>
-    EVABOT desires to assist more.
-<<else>>
-    Can EVABOT answer another question?
-<<endif>>
-
--> How did Eva learn to design and code? <<if !visited("DesignStory")>>
-    <<jump DesignStory>>
--> How do you pronounce Eva? <<if !visited("Pronunciation")>>
-    <<jump Pronunciation>>
--> How was this site built? <<if !visited("BuildProcess")>>
-    <<jump BuildProcess>>
--> Wait—a soul?
-    <<jump BotSoul>>
 ===
