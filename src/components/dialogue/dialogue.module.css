@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.optionsList {
+  margin: 0;
+}
+
+.optionsListItem {
+  list-style: none;
+  margin: 0;
+}
+
+.optionButton {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  font-style: italic;
+}
+
+.bubble {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  line-height: 22px;
+  width: 340px;
+  height: 72px;
+}
+
+.emote {
+  background: #eee;
+  width: 72px;
+  height: 72px;
+  font-size: 1em;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialogueLine {
+  flex: 1;
+  padding: 8px 16px;
+}
+
+.word {
+  display: inline-block;
+}
+
+.emphasizedCharacter {
+  display: inline-block;
+  font-weight: 700;
+}
+
+.continueWrapper {
+  width: 24px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.continueButton {
+  background: none;
+  border: none;
+  font-size: 1em;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./dialogue.module.css";
 
 interface DialogueEmoteProps {
   /**
@@ -23,21 +24,5 @@ export const DialogueEmote = ({ emote }: DialogueEmoteProps) => {
     }
   };
 
-  return (
-    <div
-      className="emote"
-      style={{
-        background: "#eee",
-        width: "72px",
-        height: "72px",
-        fontSize: "1em",
-        flexShrink: 0,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      {getEmote(emote)}
-    </div>
-  );
+  return <div className={styles.emote}>{getEmote(emote)}</div>;
 };

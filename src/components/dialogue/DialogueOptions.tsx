@@ -1,5 +1,6 @@
 import React from "react";
 import type { OptionsResult } from "yarn-bound";
+import styles from "./dialogue.module.css";
 
 interface DialogueOptionsProps {
   node: OptionsResult;
@@ -8,17 +9,11 @@ interface DialogueOptionsProps {
 
 export const DialogueOptions = ({ node, advance }: DialogueOptionsProps) => {
   return (
-    <ol style={{ margin: 0, padding: 0 }}>
+    <ol className={styles.optionsList}>
       {node.options.map((option, index) => (
-        <li style={{ listStyle: "none", margin: 0 }} key={index}>
+        <li className={styles.optionsListItem} key={index}>
           <button
-            style={{
-              fontSize: "24px",
-              background: "none",
-              border: "none",
-              color: "white",
-              fontStyle: "italic",
-            }}
+            className={styles.optionButton}
             key={index}
             onClick={() => {
               advance(index);

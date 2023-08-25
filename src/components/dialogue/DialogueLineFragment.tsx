@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { TypedCharacter } from "./TypedCharacter";
 import { nanoid } from "nanoid";
 import { EmphasizedCharacter } from "./EmphasizedCharacter";
+import styles from "./dialogue.module.css";
 
 export enum FragmentAnimationStyle {
   Wave = "wave",
@@ -38,13 +39,17 @@ export const DialogueLineFragment = ({
 
   const renderWordsAndChars = () => {
     return words.map((word, wordIndex) => (
-      <span className="word" style={{ display: "inline-block" }} key={nanoid()}>
+      <span className={styles.word} key={nanoid()}>
         {word.split("").map((char) => {
           return (
             <TypedCharacter key={nanoid()} index={index++}>
-              <EmphasizedCharacter style={style} index={index}>
-                {char}
-              </EmphasizedCharacter>
+              {style === undefined || style === FragmentAnimationStyle.None ? (
+                <>{char}</>
+              ) : (
+                <EmphasizedCharacter style={style} index={index}>
+                  {char}
+                </EmphasizedCharacter>
+              )}
             </TypedCharacter>
           );
         })}

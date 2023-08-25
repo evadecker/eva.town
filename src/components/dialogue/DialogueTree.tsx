@@ -40,13 +40,11 @@ export const DialogueTree = ({ dialogue }: DialogueTreeProps) => {
       runnerRef?.current?.currentResult instanceof OptionsResult);
 
   return (
-    <div>
-      {displayDialogue && (
-        <DialogueNode
-          node={runnerRef?.current?.currentResult}
-          advance={advance}
-        />
-      )}
-    </div>
+    displayDialogue && (
+      <DialogueNode
+        node={runnerRef?.current?.currentResult}
+        advance={advance}
+      />
+    )
   );
 };
