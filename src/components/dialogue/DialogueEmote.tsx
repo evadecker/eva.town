@@ -13,12 +13,14 @@ export const DialogueEmote = ({ emote }: DialogueEmoteProps) => {
     switch (emote) {
       case "uncertain":
         return "😐";
-      case "scared":
+      case "flushed":
         return "😳";
       case "stareyes":
         return "🤩";
       case "determined":
         return "😤";
+      case "thinking":
+        return "🤔";
       default:
         return "☺️";
     }

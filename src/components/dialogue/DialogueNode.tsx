@@ -55,29 +55,15 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
   const showOptions = node instanceof OptionsResult;
   const showContinue = !(node instanceof OptionsResult);
 
-  const handleClick = showContinue ? () => advance() : undefined;
-
   return (
     <AnimatePresence>
       <div className={styles.container}>
         {showOptions && <DialogueOptions node={node} advance={advance} />}
         <motion.div
-          className="dialogue-bubble"
+          className={styles.bubble}
           variants={bubbleVariants}
           initial="initial"
           animate="animate"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: "white",
-            color: "black",
-            fontSize: "18px",
-            lineHeight: "22px",
-            width: "340px",
-            height: "72px",
-          }}
-          onClick={handleClick}
         >
           {/* {node.markup.find((m) => m.name === "character")?.properties?.name} */}
           <DialogueEmote emote={currentEmote} />

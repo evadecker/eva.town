@@ -6,6 +6,7 @@ import {
   type DialogueLineFragmentProps,
   type FragmentAnimationStyle,
 } from "./";
+import * as styles from "./dialogue.module.css";
 
 interface DialogueLineProps {
   node: TextResult | OptionsResult;
@@ -53,7 +54,7 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
   }
 
   return (
-    <div className="line" style={{ flex: 1, padding: "8px 16px" }}>
+    <div className={styles.line}>
       {node.text &&
         extractFragmentsWithNames(node.markup, node.text).map(
           ({ text, style, index }) => (

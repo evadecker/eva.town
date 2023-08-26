@@ -7,14 +7,12 @@ interface DialogueContinueProps {
 }
 
 export const DialogueContinue = ({ advance }: DialogueContinueProps) => {
-  const wrapperVariants: Variants = {
+  const buttonVariants: Variants = {
     initial: {
       opacity: 0,
-      scale: 0.5,
     },
     animate: {
       opacity: 1,
-      scale: 1,
       transition: {
         delay: 1,
         duration: 0.5,
@@ -22,41 +20,52 @@ export const DialogueContinue = ({ advance }: DialogueContinueProps) => {
     },
   };
 
-  const buttonVariants: Variants = {
+  const arrowVariants: Variants = {
     initial: {
-      y: 0,
+      y: -5,
     },
     animate: {
-      y: -5,
+      y: 0,
       transition: {
-        type: "tween",
+        type: "spring",
         repeat: Infinity,
-        ease: "easeInOut",
         repeatType: "reverse",
-        duration: 0.8,
+        bounce: 0.5,
       },
+    },
+    whileHover: {
+      scale: 1.3,
+    },
+    whileTap: {
+      scale: 0.9,
     },
   };
 
   return (
-    <motion.div
-      className={styles.continueWrapper}
-      variants={wrapperVariants}
+    <motion.button
+      className={styles.continueButton}
+      variants={buttonVariants}
+      onClick={() => advance()}
       initial="initial"
       animate="animate"
+      whileHover="whileHover"
+      whileTap="whileTap"
     >
-      <motion.button
-        className={styles.continueButton}
-        onClick={() => {
-          advance();
-        }}
-        variants={buttonVariants}
-        initial="initial"
-        animate="animate"
+      <motion.svg
+        className={styles.continueArrow}
+        variants={arrowVariants}
         aria-label="Continue"
+        width="10"
+        height="5"
+        viewBox="0 0 10 5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        ↓
-      </motion.button>
-    </motion.div>
+        <path
+          d="M8.79289 0H1.20711C0.761654 0 0.53857 0.53857 0.853553 0.853553L4.64645 4.64645C4.84171 4.84171 5.15829 4.84171 5.35355 4.64645L9.14645 0.853553C9.46143 0.538571 9.23835 0 8.79289 0Z"
+          fill="currentColor"
+        />
+      </motion.svg>
+    </motion.button>
   );
 };
