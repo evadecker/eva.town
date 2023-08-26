@@ -1,5 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import React, { PropsWithChildren } from "react";
+import * as styles from "./dialogue.module.css";
 
 interface TypedCharacterProps extends PropsWithChildren {
   /**
@@ -11,19 +12,16 @@ interface TypedCharacterProps extends PropsWithChildren {
 
 export const TypedCharacter = ({ children, index }: TypedCharacterProps) => {
   const characterVariants: Variants = {
-    initial: { opacity: 0, scale: 0.5 },
+    initial: { opacity: 0 },
     animate: (i) => ({
       opacity: 1,
-      scale: 1,
-      transition: { type: "spring", mass: 0.5, damping: 10, delay: i * 0.03 },
+      transition: { type: "tween", duration: 0, delay: i * 0.04 },
     }),
   };
 
   return (
     <motion.span
-      // Preserve spaces
-      style={{ display: "inline-block", whiteSpace: "pre" }}
-      className="char"
+      className={styles.character}
       variants={characterVariants}
       initial="initial"
       animate="animate"

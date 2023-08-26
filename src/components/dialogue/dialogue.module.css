@@ -23,51 +23,67 @@
 }
 
 .bubble {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   background-color: white;
   color: black;
-  font-size: 18px;
-  line-height: 22px;
-  width: 340px;
-  height: 72px;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  width: 280px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .emote {
-  background: #eee;
-  width: 72px;
-  height: 72px;
-  font-size: 1em;
+  width: 48px;
+  height: 48px;
+  font-size: 2em;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.dialogueLine {
+.line {
   flex: 1;
-  padding: 8px 16px;
+  padding: 8px 0;
 }
 
 .word {
   display: inline-block;
 }
 
-.emphasizedCharacter {
+.character {
   display: inline-block;
-  font-weight: 700;
+  white-space: pre;
 }
 
-.continueWrapper {
-  width: 24px;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
+.emphasizedCharacter {
+  display: inline-block;
+  font-weight: 600;
 }
 
 .continueButton {
+  position: absolute;
+  display: flex;
   background: none;
   border: none;
-  font-size: 1em;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 4px;
+  cursor: pointer;
+}
+
+.continueArrow {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
 }

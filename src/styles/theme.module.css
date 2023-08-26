@@ -27,13 +27,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :global(:root) {
     --color-text: var(--color-neutral-0);
     --color-text-light: var(--color-neutral-5);
-    --color-bg: var(--color-neutral-10);
+    --color-bg: #1d0206;
   }
 
-  body {
+  :global(body) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
