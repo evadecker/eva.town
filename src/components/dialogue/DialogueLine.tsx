@@ -1,12 +1,13 @@
 import { nanoid } from "nanoid";
 import React from "react";
+import classNames from "classnames";
 import type { Markup, OptionsResult, TextResult } from "yarn-bound";
 import {
   DialogueLineFragment,
   type DialogueLineFragmentProps,
   type EmphasisVariant,
 } from "./";
-import * as styles from "./dialogue.module.css";
+import styles from "./dialogue.module.css";
 
 interface DialogueLineProps {
   /**
@@ -63,7 +64,7 @@ export const DialogueLine = ({ node, isBig }: DialogueLineProps) => {
   }
 
   return (
-    <div className={`${styles.line} ${isBig && styles.bigLine}`}>
+    <div className={classNames( styles.line, { [styles.bigLine]: isBig })}>
       {node.text &&
         extractFragmentsWithNames(node.markup, node.text).map(
           ({ text, variant, index }) => (
