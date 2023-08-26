@@ -1,15 +1,20 @@
-import React, { Fragment, PropsWithChildren } from "react";
+import React from "react";
 import { nanoid } from "nanoid";
 import styles from "./dialogue.module.css";
 import { Variants, motion } from "framer-motion";
 
-export enum FragmentAnimationVariant {
+export enum EmphasisVariant {
   Wave = "wave",
   Shake = "shake",
   None = "none",
 }
 
-interface TypedCharacterProps extends PropsWithChildren {
+interface TypedCharacterProps {
+  /**
+   * Character to render
+   */
+  character: string;
+
   /**
    * Index of the character to be rendered
    * to stagger animations
@@ -27,43 +32,23 @@ interface TypedCharacterProps extends PropsWithChildren {
    * @default 0.2
    */
   delay?: number;
-}
-
-const TypedCharacter = ({
-  children,
-  index,
-  speed = 0.04,
-  delay = 0.2,
-}: TypedCharacterProps) => {
-  return (
-    <motion.span
-      className={styles.character}
-      style={{ animationDelay: `${index * speed + delay}s` }}
-    >
-      {children}
-    </motion.span>
-  );
-};
-
-interface EmphasizedCharacterProps extends PropsWithChildren {
-  /**
-   * Index of the character to be rendered
-   * to stagger animations
-   */
-  index: number;
 
   /**
    * Animation style of the character
    * @default "none"
    */
-  variant?: FragmentAnimationVariant;
+  variant?: EmphasisVariant;
 }
 
-const EmphasizedCharacter = ({
-  children,
-  variant = FragmentAnimationVariant.None,
+const TypedCharacter = ({
+  character,
   index,
-}: EmphasizedCharacterProps) => {
+  speed = 0.04,
+  delay = 0.2,
+  variant = EmphasisVariant.None,
+}: TypedCharacterProps) => {
+  const isEmphasized = variant !== EmphasisVariant.None;
+
   const generateRandomValuesArray = (
     num: number,
     min: number,
@@ -122,27 +107,36 @@ const EmphasizedCharacter = ({
     }),
   };
 
-  const getVariantObject = (variant?: FragmentAnimationVariant) => {
+  const getVariantObject = (variant?: EmphasisVariant) => {
     switch (variant) {
-      case FragmentAnimationVariant.Shake:
+      case EmphasisVariant.Shake:
         return shakeVariants;
-      case FragmentAnimationVariant.Wave:
+      case EmphasisVariant.Wave:
         return waveVariants;
       default:
         return undefined;
     }
   };
-
+  
   return (
-    <motion.strong
-      className={styles.emphasizedCharacter}
-      variants={getVariantObject(variant)}
-      initial="initial"
-      animate="animate"
-      custom={index}
+    <motion.span
+      className={styles.character}
+      style={{ animationDelay: `${index * speed + delay}s` }}
     >
-      {children}
-    </motion.strong>
+      {isEmphasized ? (
+        <motion.strong
+          className={styles.emphasizedCharacter}
+          variants={getVariantObject(variant)}
+          initial="initial"
+          animate="animate"
+          custom={index}
+        >
+          {character}
+        </motion.strong>
+      ) : (
+        <>{character}</>
+      )}
+    </motion.span>
   );
 };
 
@@ -156,7 +150,7 @@ export interface DialogueLineFragmentProps {
    * Animation style of the sentence fragment
    * @default "none"
    */
-  variant?: FragmentAnimationVariant;
+  variant?: EmphasisVariant;
 
   /**
    * Starting character index for continuous animation
@@ -180,29 +174,15 @@ export const DialogueLineFragment = ({
 }: DialogueLineFragmentProps) => {
   const words = text.split(" ");
 
-  const isEmphasized = !(
-    variant === undefined || variant === FragmentAnimationVariant.None
-  );
-
   return words.map((word, wordIndex) => (
     <span className={styles.word} key={nanoid()}>
       {word.split("").map((char) => {
         return (
-          <TypedCharacter key={nanoid()} index={index++} speed={speed}>
-            {isEmphasized ? (
-              <EmphasizedCharacter variant={variant} index={index}>
-                {char}
-              </EmphasizedCharacter>
-            ) : (
-              <>{char}</>
-            )}
-          </TypedCharacter>
+          <TypedCharacter key={nanoid()} character={char} variant={variant} index={index++} speed={speed} />
         );
       })}
       {wordIndex < words.length - 1 && (
-        <TypedCharacter key={nanoid()} index={index++}>
-          {" "}
-        </TypedCharacter>
+        <TypedCharacter key={nanoid()} character=" " index={index++}/>
       )}
     </span>
   ));

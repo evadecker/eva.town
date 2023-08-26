@@ -4,7 +4,7 @@ import { DialogueLine } from "./DialogueLine";
 import {
   DialogueLineFragment,
   DialogueLineFragmentProps,
-  FragmentAnimationVariant,
+  EmphasisVariant,
 } from "./DialogueLineFragment";
 import { DialogueNode } from "./DialogueNode";
 import { DialogueOptions } from "./DialogueOptions";
@@ -18,7 +18,7 @@ export {
   DialogueNode,
   DialogueOptions,
   DialogueTree,
-  FragmentAnimationVariant,
+  EmphasisVariant,
 };
 
 export type { DialogueLineFragmentProps };
