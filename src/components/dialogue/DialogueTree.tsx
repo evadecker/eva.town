@@ -3,15 +3,16 @@ import YarnBound, { OptionsResult, TextResult } from "yarn-bound";
 import { DialogueNode } from "./";
 import useForceUpdate from "use-force-update";
 
-interface DialogueTreeProps {
-  /**
-   * String of dialogue following the YarnSpinner 2.0 spec
-   * https://docs.yarnspinner.dev
-   */
-  dialogue: string;
+let dialogue = "";
+
+try {
+  const res = await fetch("http://localhost:3000/dialogue/dialogue.yarn");
+  dialogue = await res.text();
+} catch (err) {
+  console.error(err);
 }
 
-export const DialogueTree = ({ dialogue }: DialogueTreeProps) => {
+export const DialogueTree = () => {
   const runnerRef = useRef(
     new YarnBound({
       dialogue,

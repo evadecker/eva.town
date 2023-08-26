@@ -45,26 +45,6 @@ const TypedCharacter = ({
   );
 };
 
-export interface DialogueLineFragmentProps {
-  /**
-   * Text to display
-   */
-  text: string;
-
-  /**
-   * Animation style of the sentence fragment
-   * @default "none"
-   */
-  variant?: FragmentAnimationVariant;
-
-  /**
-   * Starting character index for continuous animation
-   * across line fragments and styles
-   * @default 0
-   */
-  index?: number;
-}
-
 interface EmphasizedCharacterProps extends PropsWithChildren {
   /**
    * Index of the character to be rendered
@@ -166,10 +146,37 @@ const EmphasizedCharacter = ({
   );
 };
 
+export interface DialogueLineFragmentProps {
+  /**
+   * Text to display
+   */
+  text: string;
+
+  /**
+   * Animation style of the sentence fragment
+   * @default "none"
+   */
+  variant?: FragmentAnimationVariant;
+
+  /**
+   * Starting character index for continuous animation
+   * across line fragments and styles
+   * @default 0
+   */
+  index?: number;
+
+  /**
+   * Speed to display characters
+   * @default 0.04
+   */
+  speed?: number;
+}
+
 export const DialogueLineFragment = ({
   text,
   variant,
   index = 0,
+  speed = 0.04,
 }: DialogueLineFragmentProps) => {
   const words = text.split(" ");
 
@@ -181,7 +188,7 @@ export const DialogueLineFragment = ({
     <span className={styles.word} key={nanoid()}>
       {word.split("").map((char) => {
         return (
-          <TypedCharacter key={nanoid()} index={index++}>
+          <TypedCharacter key={nanoid()} index={index++} speed={speed}>
             {isEmphasized ? (
               <EmphasizedCharacter variant={variant} index={index}>
                 {char}
