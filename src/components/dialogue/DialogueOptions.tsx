@@ -1,6 +1,7 @@
 import React from "react";
 import type { OptionsResult } from "yarn-bound";
 import styles from "./dialogue.module.css";
+import { Variants, motion } from "framer-motion";
 
 interface DialogueOptionsProps {
   node: OptionsResult;
@@ -8,21 +9,51 @@ interface DialogueOptionsProps {
 }
 
 export const DialogueOptions = ({ node, advance }: DialogueOptionsProps) => {
+  const buttonVariants: Variants = {
+    initial: {
+      opacity: 0,
+      scale: 0,
+      y: 50,
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+    },
+  };
+
+  const arrowVariants: Variants = {
+    initial: {
+      opacity: 0,
+      width: 0,
+    },
+    whileHover: {
+      opacity: 1,
+      width: "1em",
+    },
+  };
+
   return (
-    <ol className={styles.optionsList}>
+    <motion.div className={styles.optionsList}>
       {node.options.map((option, index) => (
-        <li className={styles.optionsListItem} key={index}>
-          <button
-            className={styles.optionButton}
-            key={index}
-            onClick={() => {
-              advance(index);
-            }}
-          >
-            → {option.text}
-          </button>
-        </li>
+        <motion.button
+          variants={buttonVariants}
+          initial="initial"
+          animate="animate"
+          whileHover="whileHover"
+          whileTap="whileTap"
+          className={styles.optionButton}
+          key={index}
+          onClick={() => {
+            advance(index);
+          }}
+        >
+          <motion.span variants={arrowVariants} className={styles.optionArrow}>
+            →
+          </motion.span>
+          {option.text}
+        </motion.button>
       ))}
-    </ol>
+    </motion.div>
   );
 };
