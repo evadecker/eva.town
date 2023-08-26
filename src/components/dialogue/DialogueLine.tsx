@@ -4,7 +4,7 @@ import type { Markup, OptionsResult, TextResult } from "yarn-bound";
 import {
   DialogueLineFragment,
   type DialogueLineFragmentProps,
-  type FragmentAnimationVariant,
+  type EmphasisVariant,
 } from "./";
 import * as styles from "./dialogue.module.css";
 
@@ -46,7 +46,7 @@ export const DialogueLine = ({ node, isBig }: DialogueLineProps) => {
         );
         fragments.push({
           text: markupText,
-          variant: markup.name as FragmentAnimationVariant,
+          variant: markup.name as EmphasisVariant,
           index: markup.position,
         });
 
