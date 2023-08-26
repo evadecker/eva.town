@@ -1,14 +1,24 @@
 import React from "react";
 import styles from "./dialogue.module.css";
+import type { OptionsResult, TextResult } from "yarn-bound";
 
 interface DialogueEmoteProps {
-  /**
-   * Emote to display.
-   */
-  emote?: string;
+  node: TextResult | OptionsResult;
 }
 
-export const DialogueEmote = ({ emote }: DialogueEmoteProps) => {
+export const DialogueEmote = ({ node }: DialogueEmoteProps) => {
+  const { hashtags } = node;
+
+  const getEmoteFromTag = (tag: string) => {
+    if (!tag) return;
+    const emote = tag.split(":")[1];
+    return emote;
+  };
+
+  const currentEmote = getEmoteFromTag(
+    hashtags?.filter((str) => str.startsWith("emote"))[0]
+  );
+
   const getEmote = (emote?: string) => {
     switch (emote) {
       case "uncertain":
@@ -28,5 +38,5 @@ export const DialogueEmote = ({ emote }: DialogueEmoteProps) => {
     }
   };
 
-  return <div className={styles.emote}>{getEmote(emote)}</div>;
+  return <div className={styles.emote}>{getEmote(currentEmote)}</div>;
 };
