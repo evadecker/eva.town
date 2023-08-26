@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import type { Markup, OptionsResult, TextResult } from "yarn-bound";
 import {
@@ -14,16 +14,14 @@ interface DialogueLineProps {
    * YarnSpinner node to display.
    */
   node: TextResult | OptionsResult;
-
-  /**
-   * Display large text.
-   * @default false
-   */
-  isBig?: boolean;
 }
 
-export const DialogueLine = ({ node, isBig }: DialogueLineProps) => {
+export const DialogueLine = ({ node }: DialogueLineProps) => {
   if (!node) return null;
+
+  const isBig = node.hashtags.includes("big");
+  const currentSpeaker = node.markup.find((m) => m.name === "character")
+    ?.properties?.name;
 
   function extractFragmentsWithNames(
     markupArray: Markup[],
@@ -64,7 +62,13 @@ export const DialogueLine = ({ node, isBig }: DialogueLineProps) => {
   }
 
   return (
-    <div className={classNames( styles.line, { [styles.bigLine]: isBig })}>
+    <div
+      className={classNames(styles.line, {
+        [styles.bigLine]: isBig,
+        [styles.samText]: currentSpeaker === "Sam",
+        [styles.evaText]: currentSpeaker === "Eva",
+      })}
+    >
       {node.text &&
         extractFragmentsWithNames(node.markup, node.text).map(
           ({ text, variant, index }) => (

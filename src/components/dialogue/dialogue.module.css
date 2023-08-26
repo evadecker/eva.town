@@ -43,11 +43,26 @@
   background-color: white;
   color: black;
   line-height: 18px;
-  letter-spacing: 0.05em;
   width: 280px;
   height: 48px;
   border-radius: 48px;
   overflow: hidden;
+}
+
+.evaText {
+  font-family: "hoss-round-narrow", sans-serif;
+  /* Enable stylistic alternates */
+  /* ss02 (single story a) */
+  /* ss03 (l with tail) */
+  -moz-font-feature-settings: "ss02", "ss03";
+  -webkit-font-feature-settings: "ss02", "ss03";
+  font-feature-settings: "ss02", "ss03";
+  letter-spacing: 0.05em;
+}
+
+.samText {
+  font-family: "ff-providence-sans-web-pro", "Comic Sans", sans-serif;
+  font-weight: 700;
 }
 
 .emote {

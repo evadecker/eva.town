@@ -17,14 +17,6 @@ interface DialogueNodeProps {
 export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
   if (!node || node instanceof CommandResult) return null;
 
-  const { hashtags } = node;
-
-  const getEmoteFromTag = (tag: string) => {
-    if (!tag) return;
-    const emote = tag.split(":")[1];
-    return emote;
-  };
-
   const bubbleVariants: Variants = {
     initial: {
       opacity: 0,
@@ -48,10 +40,6 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
     },
   };
 
-  const currentEmote = getEmoteFromTag(
-    hashtags?.filter((str) => str.startsWith("emote"))[0]
-  );
-
   const showOptions = node instanceof OptionsResult;
   const showContinue = !(node instanceof OptionsResult);
 
@@ -65,9 +53,8 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
           initial="initial"
           animate="animate"
         >
-          {/* {node.markup.find((m) => m.name === "character")?.properties?.name} */}
-          <DialogueEmote emote={currentEmote} />
-          <DialogueLine node={node} isBig={hashtags.includes("big")} />
+          <DialogueEmote node={node} />
+          <DialogueLine node={node} />
           {showContinue && <DialogueContinue advance={advance} />}
         </motion.div>
       </AnimatePresence>
