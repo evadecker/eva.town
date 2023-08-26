@@ -4,6 +4,8 @@ import "../styles/base.module.css";
 import "../styles/typography.module.css";
 import "../styles/theme.module.css";
 
+import { DialogueTree } from "../components/dialogue/DialogueTree";
+
 interface Props {
   title: string;
   description: string;
@@ -29,6 +31,9 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+      <DialogueTree client:load />
+    </main>
   </body>
 </html>
