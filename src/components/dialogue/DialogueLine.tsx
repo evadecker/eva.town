@@ -4,15 +4,24 @@ import type { Markup, OptionsResult, TextResult } from "yarn-bound";
 import {
   DialogueLineFragment,
   type DialogueLineFragmentProps,
-  type FragmentAnimationStyle,
+  type FragmentAnimationVariant,
 } from "./";
 import * as styles from "./dialogue.module.css";
 
 interface DialogueLineProps {
+  /**
+   * YarnSpinner node to display.
+   */
   node: TextResult | OptionsResult;
+
+  /**
+   * Display large text.
+   * @default false
+   */
+  isBig?: boolean;
 }
 
-export const DialogueLine = ({ node }: DialogueLineProps) => {
+export const DialogueLine = ({ node, isBig }: DialogueLineProps) => {
   if (!node) return null;
 
   function extractFragmentsWithNames(
@@ -37,7 +46,7 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
         );
         fragments.push({
           text: markupText,
-          style: markup.name as FragmentAnimationStyle,
+          variant: markup.name as FragmentAnimationVariant,
           index: markup.position,
         });
 
@@ -54,14 +63,14 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
   }
 
   return (
-    <div className={styles.line}>
+    <div className={`${styles.line} ${isBig && styles.bigLine}`}>
       {node.text &&
         extractFragmentsWithNames(node.markup, node.text).map(
-          ({ text, style, index }) => (
+          ({ text, variant, index }) => (
             <DialogueLineFragment
               key={nanoid()}
               text={text}
-              style={style}
+              variant={variant}
               index={index}
             />
           )

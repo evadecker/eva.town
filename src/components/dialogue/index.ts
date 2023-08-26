@@ -4,13 +4,11 @@ import { DialogueLine } from "./DialogueLine";
 import {
   DialogueLineFragment,
   DialogueLineFragmentProps,
-  FragmentAnimationStyle,
+  FragmentAnimationVariant,
 } from "./DialogueLineFragment";
 import { DialogueNode } from "./DialogueNode";
 import { DialogueOptions } from "./DialogueOptions";
 import { DialogueTree } from "./DialogueTree";
-import { EmphasizedCharacter } from "./EmphasizedCharacter";
-import { TypedCharacter } from "./TypedCharacter";
 
 export {
   DialogueContinue,
@@ -20,9 +18,7 @@ export {
   DialogueNode,
   DialogueOptions,
   DialogueTree,
-  EmphasizedCharacter,
-  FragmentAnimationStyle,
-  TypedCharacter,
+  FragmentAnimationVariant,
 };
 
 export type { DialogueLineFragmentProps };

@@ -19,6 +19,8 @@ export const DialogueEmote = ({ emote }: DialogueEmoteProps) => {
         return "🤩";
       case "determined":
         return "😤";
+      case "unamused":
+        return "😒";
       case "thinking":
         return "🤔";
       default:

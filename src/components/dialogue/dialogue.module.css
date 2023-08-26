@@ -6,20 +6,30 @@
 }
 
 .optionsList {
-  margin: 0;
-}
-
-.optionsListItem {
-  list-style: none;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 16px;
+  margin-bottom: 4px;
 }
 
 .optionButton {
-  font-size: 24px;
+  font-size: 15px;
   background: none;
   border: none;
-  color: white;
+  background: white;
+  border-radius: 16px;
+  height: 32px;
+  padding: 4px 12px;
+  margin-bottom: 4px;
   font-style: italic;
+  cursor: pointer;
+}
+
+.optionArrow {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 4px;
 }
 
 .bubble {
@@ -29,12 +39,11 @@
   align-items: center;
   background-color: white;
   color: black;
-  font-size: 15px;
   line-height: 18px;
   letter-spacing: 0.05em;
   width: 280px;
   height: 48px;
-  border-radius: 8px;
+  border-radius: 48px;
   overflow: hidden;
 }
 
@@ -49,17 +58,32 @@
 }
 
 .line {
+  font-size: 15px;
   flex: 1;
-  padding: 8px 0;
+  padding: 8px 16px 8px 0;
+}
+
+.bigLine {
+  font-size: 24px;
 }
 
 .word {
   display: inline-block;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .character {
   display: inline-block;
   white-space: pre;
+  animation: appear 0.1s steps(1, end) backwards;
 }
 
 .emphasizedCharacter {
@@ -70,6 +94,8 @@
 .continueButton {
   position: absolute;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
   background: none;
   border: none;
   width: 100%;
@@ -78,12 +104,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding-bottom: 4px;
   cursor: pointer;
 }
 
 .continueArrow {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
+  margin-right: 4px;
 }

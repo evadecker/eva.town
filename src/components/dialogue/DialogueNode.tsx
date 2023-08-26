@@ -56,9 +56,9 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
   const showContinue = !(node instanceof OptionsResult);
 
   return (
-    <AnimatePresence>
-      <div className={styles.container}>
-        {showOptions && <DialogueOptions node={node} advance={advance} />}
+    <div className={styles.container}>
+      {showOptions && <DialogueOptions node={node} advance={advance} />}
+      <AnimatePresence>
         <motion.div
           className={styles.bubble}
           variants={bubbleVariants}
@@ -67,10 +67,10 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
         >
           {/* {node.markup.find((m) => m.name === "character")?.properties?.name} */}
           <DialogueEmote emote={currentEmote} />
-          <DialogueLine node={node} />
+          <DialogueLine node={node} isBig={hashtags.includes("big")} />
           {showContinue && <DialogueContinue advance={advance} />}
         </motion.div>
-      </div>
-    </AnimatePresence>
+      </AnimatePresence>
+    </div>
   );
 };

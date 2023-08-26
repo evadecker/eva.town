@@ -22,22 +22,16 @@ export const DialogueContinue = ({ advance }: DialogueContinueProps) => {
 
   const arrowVariants: Variants = {
     initial: {
-      y: -5,
+      y: -2,
     },
     animate: {
-      y: 0,
+      y: 3,
       transition: {
         type: "spring",
         repeat: Infinity,
         repeatType: "reverse",
         bounce: 0.5,
       },
-    },
-    whileHover: {
-      scale: 1.3,
-    },
-    whileTap: {
-      scale: 0.9,
     },
   };
 
@@ -48,8 +42,6 @@ export const DialogueContinue = ({ advance }: DialogueContinueProps) => {
       onClick={() => advance()}
       initial="initial"
       animate="animate"
-      whileHover="whileHover"
-      whileTap="whileTap"
     >
       <motion.svg
         className={styles.continueArrow}
