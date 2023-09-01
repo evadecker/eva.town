@@ -22,5 +22,5 @@ This is the source code that powers [evadecker.com](https://evadecker.com). It's
 - Nimbus Sans by URW Type Foundary via [Adobe Fonts](https://fonts.adobe.com/fonts/nimbus-sans)
 - Minion 3 by Robert Slimbach via [Adobe Fonts](https://fonts.adobe.com/fonts/minion-3)
 - Hoss Round by Mark Caneso via [Adobe Fonts](https://fonts.adobe.com/fonts/hoss-round)
-- FF Providence Sans by Guy Jeffrey Nelson via [FontFont](https://www.fontfont.com/fonts/ff-providence-sans)
+- FF Providence Sans by Guy Jeffrey Nelson via [Adobe Fonts](https://fonts.adobe.com/fonts/ff-providence-sans)
 - 04b by [Yuji Oshimoto](http://www.04.jp.org/)
