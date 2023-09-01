@@ -1568,41 +1568,42 @@
 
 <style>
   :root {
-    --color-lcd-bg: #8db48e;
-    --color-lcd-dark: #466b46;
-    --color-lcd-light: #a2d4a4;
-    --color-lcd-hover: #375537;
+    --lcd-bg: #8db48e;
+    --lcd-dark: #466b46;
+    --lcd-light: #a2d4a4;
+    --lcd-hover: #375537;
 
-    --color-synth-base: var(--color-neutral-8);
-    --color-synth-endcap: var(--color-neutral-9);
-    --color-synth-lcd-outline: var(--color-neutral-9);
-    --color-synth-keys-outline: var(--color-neutral-9);
-    --color-synth-whitekey: var(--color-neutral-0);
-    --color-synth-whitekey-pressed: var(--color-purple);
-    --color-synth-blackkey: var(--color-neutral-9);
-    --color-synth-blackkey-pressed: var(--color-purple-dark);
+    --synth-base: var(--neutral-8);
+    --synth-endcap: var(--neutral-9);
+    --synth-lcd-outline: var(--neutral-9);
+    --synth-keys-outline: var(--neutral-9);
+    --synth-whitekey: var(--neutral-0);
+    --synth-whitekey-pressed: var(--purple);
+    --synth-blackkey: var(--neutral-9);
+    --synth-blackkey-pressed: var(--purple-dark);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --color-lcd-bg: var(--color-neutral-3);
-      --color-lcd-dark: var(--color-neutral-6);
-      --color-lcd-light: var(--color-neutral-0);
-      --color-lcd-hover: var(--color-neutral-7);
+      --lcd-bg: var(--neutral-3);
+      --lcd-dark: var(--neutral-6);
+      --lcd-light: var(--neutral-0);
+      --lcd-hover: var(--neutral-7);
 
-      --color-synth-base: var(--color-red);
-      --color-synth-endcap: var(--color-red-alt);
-      --color-synth-lcd-outline: var(--color-red-dark);
-      --color-synth-keys-outline: var(--color-red-dark);
+      --synth-base: var(--red);
+      --synth-endcap: var(--red-alt);
+      --synth-lcd-outline: var(--red-dark);
+      --synth-keys-outline: var(--red-dark);
 
-      --color-synth-whitekey-pressed: var(--color-red);
-      --color-synth-blackkey-pressed: var(--color-red-alt);
+      --synth-whitekey-pressed: var(--red);
+      --synth-blackkey-pressed: var(--red-alt);
     }
   }
 
   #synth {
     width: 100%;
     max-width: 540px;
+    margin-top: 2rem;
   }
 
   #synth[data-loading="true"] {
@@ -1623,24 +1624,24 @@
   }
 
   .lcd-bg {
-    fill: var(--color-lcd-bg);
+    fill: var(--lcd-bg);
   }
 
   .lcd-base,
   .notehead {
-    fill: var(--color-lcd-dark);
+    fill: var(--lcd-dark);
   }
 
   .lcd-highlight {
-    fill: var(--color-lcd-light);
+    fill: var(--lcd-light);
   }
 
   .synth-base {
-    fill: var(--color-synth-base);
+    fill: var(--synth-base);
   }
 
   .synth-between-keys {
-    fill: var(--color-neutral-3);
+    fill: var(--neutral-3);
   }
 
   .instrument,
@@ -1649,17 +1650,17 @@
   }
 
   .synth-endcap {
-    fill: var(--color-synth-endcap);
+    fill: var(--synth-endcap);
   }
 
   .lcd-outline {
-    fill: var(--color-synth-lcd-outline);
+    fill: var(--synth-lcd-outline);
   }
 
   .synth-keys-outline,
   .synth-key .pressed-overlay,
   .synth-key .crack {
-    fill: var(--color-synth-keys-outline);
+    fill: var(--synth-keys-outline);
   }
 
   .synth-keys-shadow {
@@ -1693,7 +1694,7 @@
 
   #synth-start:hover .lcd-base {
     opacity: 1;
-    fill: var(--color-lcd-hover);
+    fill: var(--lcd-hover);
   }
 
   @keyframes pressStart {
@@ -1722,11 +1723,11 @@
   }
 
   .synth-key.white .base {
-    fill: var(--color-synth-whitekey);
+    fill: var(--synth-whitekey);
   }
 
   .synth-key.black .base {
-    fill: var(--color-synth-blackkey);
+    fill: var(--synth-blackkey);
   }
 
   .synth-key.black .highlight {
@@ -1739,11 +1740,11 @@
 
   .synth-key.pressed .base {
     transition: none;
-    fill: var(--color-synth-whitekey-pressed);
+    fill: var(--synth-whitekey-pressed);
   }
 
   .synth-key.pressed.black .base {
-    fill: var(--color-synth-blackkey-pressed);
+    fill: var(--synth-blackkey-pressed);
   }
 
   .synth-key.pressed .pressed-overlay {
@@ -1800,6 +1801,6 @@
   }
 
   .instrument-arrow:hover .lcd-base {
-    fill: var(--color-lcd-hover);
+    fill: var(--lcd-hover);
   }
 </style>

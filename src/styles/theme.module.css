@@ -1,0 +1,40 @@
+:global(:root) {
+  --font-size-base: 18px;
+
+  --red-dark: #5e1313;
+  --red: #ff2c2c;
+  --red-alt: #ac0e0e;
+  --red-medium: #f7d2db;
+
+  --purple-dark: #470bd4;
+  --purple: #7c60ff;
+
+  --neutral-0: #ffffff;
+  --neutral-1: #f5f5f5;
+  --neutral-2: #eeeeee;
+  --neutral-3: #dddddd;
+  --neutral-4: #bbb;
+  --neutral-5: #999;
+  --neutral-6: #888;
+  --neutral-7: #666;
+  --neutral-8: #444;
+  --neutral-9: #222;
+  --neutral-10: #000;
+
+  --text: rgba(1, 0, 50, 0.9);
+  --text-light: var(--neutral-7);
+  --bg: #ffdcdc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(:root) {
+    --text: #ffdcdc;
+    --text-light: var(--neutral-5);
+    --bg: #1d0206;
+  }
+
+  :global(body) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
