@@ -9,3 +9,15 @@ html {
   color: var(--text);
   background-color: var(--bg);
 }
+
+main {
+  margin: auto;
+  padding: 0.8rem;
+  min-height: 100%;
+}
+
+@media screen and (min-width: 620px) {
+  main {
+    padding: 1rem;
+  }
+}
