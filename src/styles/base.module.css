@@ -6,6 +6,6 @@ body {
 html {
   font-family: system-ui, sans-serif;
   font-size: var(--font-size-base);
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  color: var(--text);
+  background-color: var(--bg);
 }

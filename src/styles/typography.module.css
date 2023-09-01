@@ -1,11 +1,12 @@
 body {
-  font-family: "hoss-round-narrow", sans-serif;
+  font-family: "minion-3", serif;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
+  font-size: 21px;
 }
 
 h1 {
   font-size: clamp(1.3rem, 8vw, 2.6rem);
-  font-family: "hoss-round-narrow", sans-serif;
-  font-weight: 400;
-  text-align: center;
+  font-family: "nimbus-sans-extended", sans-serif;
+  font-weight: 700;
 }
