@@ -1,4 +1,9 @@
 ---
+import "../styles/reset.module.css";
+import "../styles/base.module.css";
+import "../styles/typography.module.css";
+import "../styles/theme.module.css";
+
 interface Props {
   title: string;
   description: string;
@@ -20,125 +25,12 @@ const { title, description } = Astro.props;
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
     <link rel="preconnect" href="https://use.typekit.net" crossorigin />
-    <link rel="stylesheet" href="https://use.typekit.net/exn3vdd.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/qbm1slx.css" />
     <title>{title}</title>
   </head>
   <body>
-    <slot />
-    <style>
-      :root {
-        --font-size-base: 18px;
-
-        --color-red-dark: #5e1313;
-        --color-red: #ff2c2c;
-        --color-red-alt: #ac0e0e;
-        --color-red-medium: #f7d2db;
-
-        --color-purple-dark: #470bd4;
-        --color-purple: #7c60ff;
-
-        --color-neutral-0: #ffffff;
-        --color-neutral-1: #f5f5f5;
-        --color-neutral-2: #eeeeee;
-        --color-neutral-3: #dddddd;
-        --color-neutral-4: #bbb;
-        --color-neutral-5: #999;
-        --color-neutral-6: #888;
-        --color-neutral-7: #666;
-        --color-neutral-8: #444;
-        --color-neutral-9: #222;
-        --color-neutral-10: #000;
-
-        --color-text: var(--color-neutral-9);
-        --color-text-light: var(--color-neutral-7);
-        --color-bg: var(--color-neutral-0);
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --color-text: var(--color-neutral-0);
-          --color-text-light: var(--color-neutral-5);
-          --color-bg: var(--color-neutral-10);
-        }
-
-        body {
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
-      }
-
-      html {
-        font-family: system-ui, sans-serif;
-        font-size: var(--font-size-base);
-        color: var(--color-text);
-        background-color: var(--color-bg);
-      }
-
-      body {
-        margin: 0;
-      }
-    </style>
-
-    <style is:global>
-      /* Resets modified from https://www.joshwcomeau.com/css/custom-css-reset/ */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-
-      * {
-        margin: 0;
-      }
-
-      body {
-        -webkit-font-smoothing: antialiased;
-      }
-
-      img,
-      picture,
-      video,
-      canvas,
-      svg {
-        display: block;
-        max-width: 100%;
-      }
-
-      input,
-      button,
-      textarea,
-      select {
-        font: inherit;
-      }
-
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        overflow-wrap: break-word;
-      }
-
-      /* Sizing */
-      html,
-      body {
-        height: 100%;
-      }
-
-      /* Typography */
-      body {
-        font-family: nimbus-sans, sans-serif;
-        text-rendering: optimizeLegibility;
-      }
-
-      h1 {
-        font-size: clamp(1.3rem, 8vw, 2.6rem);
-        font-family: nimbus-sans-extended, sans-serif;
-        font-weight: 400;
-        text-align: center;
-      }
-    </style>
+    <main>
+      <slot />
+    </main>
   </body>
 </html>

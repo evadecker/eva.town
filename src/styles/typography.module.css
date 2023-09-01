@@ -1,0 +1,28 @@
+html,
+body {
+  font-size: 20px;
+  line-height: 1.4;
+  font-family: "minion-3", serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+@media screen and (min-width: 620px) {
+  html,
+  body {
+    font-size: 21px;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  html,
+  body {
+    font-size: 22px;
+  }
+}
+
+h1 {
+  font-size: clamp(1.3rem, 8vw, 2.6rem);
+  font-family: "nimbus-sans-extended", sans-serif;
+  font-weight: 700;
+}
