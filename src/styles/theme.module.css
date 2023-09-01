@@ -1,36 +1,36 @@
 :global(:root) {
   --font-size-base: 18px;
 
-  --color-red-dark: #5e1313;
-  --color-red: #ff2c2c;
-  --color-red-alt: #ac0e0e;
-  --color-red-medium: #f7d2db;
+  --red-dark: #5e1313;
+  --red: #ff2c2c;
+  --red-alt: #ac0e0e;
+  --red-medium: #f7d2db;
 
-  --color-purple-dark: #470bd4;
-  --color-purple: #7c60ff;
+  --purple-dark: #470bd4;
+  --purple: #7c60ff;
 
-  --color-neutral-0: #ffffff;
-  --color-neutral-1: #f5f5f5;
-  --color-neutral-2: #eeeeee;
-  --color-neutral-3: #dddddd;
-  --color-neutral-4: #bbb;
-  --color-neutral-5: #999;
-  --color-neutral-6: #888;
-  --color-neutral-7: #666;
-  --color-neutral-8: #444;
-  --color-neutral-9: #222;
-  --color-neutral-10: #000;
+  --neutral-0: #ffffff;
+  --neutral-1: #f5f5f5;
+  --neutral-2: #eeeeee;
+  --neutral-3: #dddddd;
+  --neutral-4: #bbb;
+  --neutral-5: #999;
+  --neutral-6: #888;
+  --neutral-7: #666;
+  --neutral-8: #444;
+  --neutral-9: #222;
+  --neutral-10: #000;
 
-  --color-text: var(--color-neutral-9);
-  --color-text-light: var(--color-neutral-7);
-  --color-bg: var(--color-neutral-0);
+  --text: rgba(1, 0, 50, 0.9);
+  --text-light: var(--neutral-7);
+  --bg: #ffdcdc;
 }
 
 @media (prefers-color-scheme: dark) {
   :global(:root) {
-    --color-text: var(--color-neutral-0);
-    --color-text-light: var(--color-neutral-5);
-    --color-bg: #1d0206;
+    --text: #ffdcdc;
+    --text-light: var(--neutral-5);
+    --bg: #1d0206;
   }
 
   :global(body) {
