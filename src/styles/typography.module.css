@@ -1,8 +1,24 @@
+html,
 body {
+  font-size: 20px;
+  line-height: 1.4;
   font-family: "minion-3", serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-  font-size: 21px;
+}
+
+@media screen and (min-width: 620px) {
+  html,
+  body {
+    font-size: 21px;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  html,
+  body {
+    font-size: 22px;
+  }
 }
 
 h1 {
