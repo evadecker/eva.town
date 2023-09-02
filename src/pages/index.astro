@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Synth from "../components/synth/Synth.astro";
-import Footer from "../components/footer/Footer.astro";
-import Header from "../components/header/Header.astro";
-import { Samwise } from "../components/header/Samwise";
+import Synth from "../components/Synth.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Samwise from "../components/Samwise";
 ---
 
 <Layout
@@ -12,6 +12,5 @@ import { Samwise } from "../components/header/Samwise";
 >
   <Header />
   <Synth />
-  <!-- <Samwise client:load /> -->
   <Footer />
 </Layout>
