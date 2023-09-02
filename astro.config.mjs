@@ -6,6 +6,6 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [react(), mdx()],
   redirects: {
-    "/work": "/work/cityblock",
+    // "/work": "/work/cityblock",
   },
 });
