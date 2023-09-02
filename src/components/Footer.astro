@@ -1,9 +1,8 @@
 ---
 // import { DialogueTree } from "../dialogue/DialogueTree";
-import styles from "./footer.module.css";
 ---
 
-<footer class={styles.footer}>
+<footer>
   <a
     href="https://github.com/evadecker"
     target="_blank"
@@ -19,3 +18,19 @@ import styles from "./footer.module.css";
     LinkedIn
   </a>
 </footer>
+
+<style>
+  footer {
+    margin-top: 2rem;
+  }
+
+  footer a {
+    font-family: "nimbus-sans", sans-serif;
+    display: inline-block;
+    color: var(--text);
+  }
+
+  footer a + a {
+    margin-left: 1rem;
+  }
+</style>

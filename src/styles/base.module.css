@@ -10,14 +10,24 @@ html {
   background-color: var(--bg);
 }
 
+a {
+  color: unset;
+}
+
 main {
   margin: auto;
   padding: 0.8rem;
   min-height: 100%;
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 480px) {
   main {
     padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  main {
+    padding: 1.5rem;
   }
 }
