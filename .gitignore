@@ -33,3 +33,6 @@ _site/
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# Astro
+.astro
