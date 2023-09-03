@@ -15,6 +15,7 @@ a {
 }
 
 main {
+  position: relative;
   margin: auto;
   padding: 0.8rem;
   min-height: 100%;

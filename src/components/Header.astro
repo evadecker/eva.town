@@ -1,3 +1,8 @@
+---
+import SamStickers from "./samwise/SamStickers";
+import SamButton from "./samwise/SamButton";
+---
+
 <header class="header">
   <h1 class="title">
     My name’s Eva Decker. I&nbsp;design and code things for the web.
@@ -7,10 +12,11 @@
     systems for companies like Cityblock, Dropbox, and Swiftype.
   </p>
   <p>
-    I live in Brooklyn, NY, with my tabby, Samwise. In my free time I play
-    piano.
+    I live in Brooklyn, NY, with my tabby, <SamButton client:load />. In my free
+    time I play piano.
   </p>
 </header>
+<SamStickers client:load />
 
 <style>
   .header {
