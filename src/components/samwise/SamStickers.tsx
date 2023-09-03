@@ -9,6 +9,7 @@ import {
   incrementTopZIndex,
   clearSams,
 } from "../../stores/sam";
+import { getRandomValueBetween } from "../../helpers";
 
 type SamStickerProps = {
   id: string;
@@ -28,18 +29,25 @@ const SamSticker = ({ src, alt, x, y, rotate }: SamStickerProps) => {
     setZIndex($topZIndex);
   };
 
+  const initialRotation = rotate + getRandomValueBetween(-20, 20);
+
   return (
     <motion.img
       className={styles.samSticker}
       src={src}
       alt={alt}
-      initial={{ opacity: 0, x: x, y: y, scale: 2, rotate: rotate }}
-      animate={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, x, y, scale: 2, rotate: initialRotation }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+        rotate,
+        transition: { type: "spring", damping: 8, mass: 0.2, stiffness: 80 },
+      }}
       // Todo: get direction to flyout on exit
       exit={{ x: 4000, y: 4000 }}
       drag
       dragMomentum={false}
-      whileDrag={{ scale: 1.2 }}
+      whileDrag={{ scale: 1.3 }}
       onDragStart={handleDragStart}
       style={{ zIndex: zIndex }}
     />
@@ -58,10 +66,6 @@ const SamStickers = () => {
   const $numSams = useStore(numSams);
 
   const showNewSticker = () => {
-    const getRandomValueBetween = (min: number, max: number) => {
-      return Math.random() * (max - min) + min;
-    };
-
     const createNewSamSticker = (): SamStickerProps => {
       const x = getRandomValueBetween(0, document.body.clientWidth - BUFFER);
       const y = getRandomValueBetween(0, document.body.clientHeight - BUFFER);
