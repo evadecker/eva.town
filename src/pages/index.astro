@@ -1,21 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Synth from "../components/synth/Synth.astro";
-import Footer from "../components/footer/Footer.astro";
-import Header from "../components/header/Header.astro";
-
-import "../styles/index.module.css";
-import { Samwise } from "../components/header/Samwise";
+import Synth from "../components/Synth.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Samwise from "../components/Samwise";
 ---
 
 <Layout
   title="Eva Decker"
   description="Eva Decker is a designer and software engineer based in Brooklyn, New York."
 >
-  <main>
-    <Header />
-    <Synth />
-    <!-- <Samwise client:load /> -->
-    <Footer />
-  </main>
+  <Header />
+  <Synth />
+  <Footer />
 </Layout>
