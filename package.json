@@ -16,6 +16,7 @@
   "dependencies": {
     "@astrojs/mdx": "^1.0.0",
     "@astrojs/react": "^3.0.0",
+    "@nanostores/react": "^0.7.1",
     "@react-spring/web": "^9.7.3",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
@@ -24,6 +25,7 @@
     "framer-motion": "^10.16.1",
     "howler": "^2.2.3",
     "nanoid": "^4.0.2",
+    "nanostores": "^0.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "unmute-ios-audio": "^3.3.0",

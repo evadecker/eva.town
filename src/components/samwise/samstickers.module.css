@@ -1,0 +1,38 @@
+.samStickers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.samSticker {
+  position: absolute;
+  pointer-events: auto;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.shooButton {
+  all: unset;
+  background: var(--text);
+  color: var(--bg);
+  padding: 4px 8px;
+  border-radius: 8px;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 500;
+}
+
+.samButton {
+  all: unset;
+  text-decoration: underline;
+  cursor: pointer;
+}
