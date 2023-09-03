@@ -28,6 +28,7 @@
   font-weight: 700;
   cursor: pointer;
   pointer-events: auto;
+  z-index: 500;
 }
 
 .samButton {

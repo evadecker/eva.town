@@ -142,7 +142,7 @@ const SamStickers = () => {
         {sams.map((props) => (
           <SamSticker key={props.id} {...props} />
         ))}
-        {sams.length >= SAM_IMAGE_TOTAL && (
+        {sams.length >= 7 && (
           <motion.button
             className={styles.shooButton}
             onClick={handleClear}
