@@ -1,0 +1,32 @@
+.samStickers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.samSticker {
+  position: absolute;
+  pointer-events: auto;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.shooButton {
+  all: unset;
+  background: var(--text);
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.samButton {
+  all: unset;
+  text-decoration: underline;
+  cursor: pointer;
+}
