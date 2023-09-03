@@ -15,8 +15,10 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      # If you're NOT going to use `--project="Google Chrome"` when running
+      # the Playwright tests, uncomment these lines. They're very slow
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install --with-deps
       - name: Wait for 200 from the Netlify Preview
         # Only wait for Netlify Preview if not deploying to production
         if: github.ref != 'refs/heads/main'
@@ -25,7 +27,7 @@ jobs:
         with:
           site_name: "evadecker"
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --project="Google Chrome"
         env:
           PLAYWRIGHT_TEST_BASE_URL: ${{ steps.netlify.outputs.url || 'https://evadecker.com' }}
       - uses: actions/upload-artifact@v3
