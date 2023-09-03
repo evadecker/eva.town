@@ -18,11 +18,16 @@
 .shooButton {
   all: unset;
   background: var(--text);
-  border-radius: 50%;
+  color: var(--bg);
+  padding: 4px 8px;
+  border-radius: 8px;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 24px;
+  bottom: 24px;
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .samButton {
