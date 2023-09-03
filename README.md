@@ -1,6 +1,6 @@
 # Eva Decker
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c441f8-5db7-4113-9c12-5ab385e5f080/deploy-status)](https://app.netlify.com/sites/evadecker/deploys)
+![Netlify](https://img.shields.io/netlify/b5c441f8-5db7-4113-9c12-5ab385e5f080) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/evadecker/evadecker.com/playwright.yml?label=playwright) ![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fevadecker.com) ![GitHub](https://img.shields.io/github/license/evadecker/evadecker.com)
 
 This is the source code that powers [evadecker.com](https://evadecker.com). It's created with [Astro](https://astro.build/) and hosted on [Netlify](https://www.netlify.com/).
 
@@ -22,5 +22,5 @@ This is the source code that powers [evadecker.com](https://evadecker.com). It's
 - Nimbus Sans by URW Type Foundary via [Adobe Fonts](https://fonts.adobe.com/fonts/nimbus-sans)
 - Minion 3 by Robert Slimbach via [Adobe Fonts](https://fonts.adobe.com/fonts/minion-3)
 - Hoss Round by Mark Caneso via [Adobe Fonts](https://fonts.adobe.com/fonts/hoss-round)
-- FF Providence Sans by Guy Jeffrey Nelson via [FontFont](https://www.fontfont.com/fonts/ff-providence-sans)
+- FF Providence Sans by Guy Jeffrey Nelson via [Adobe Fonts](https://fonts.adobe.com/fonts/ff-providence-sans)
 - 04b by [Yuji Oshimoto](http://www.04.jp.org/)

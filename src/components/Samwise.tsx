@@ -12,7 +12,7 @@ interface SamSticker {
   y: number;
 }
 
-export const Samwise = () => {
+const Samwise = () => {
   const [sams, setSams] = useState<SamSticker[]>([]);
 
   const handleClick = () => {
@@ -52,3 +52,5 @@ export const Samwise = () => {
     </>
   );
 };
+
+export default Samwise;

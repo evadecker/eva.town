@@ -6,7 +6,7 @@ import useForceUpdate from "use-force-update";
 let dialogue = "";
 
 try {
-  const res = await fetch("http://localhost:3000/dialogue/dialogue.yarn");
+  const res = await fetch("http://localhost:4321/dialogue/dialogue.yarn");
   dialogue = await res.text();
 } catch (err) {
   console.error(err);
