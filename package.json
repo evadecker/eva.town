@@ -11,7 +11,8 @@
     "lint": "eslint 'src/**/*.{js,astro,ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{js,astro,ts,tsx}' --fix",
     "test": "playwright test",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "html-validate": "npm run build && npm exec html-validate dist/*.html"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.0.0",
@@ -46,6 +47,7 @@
     "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
+    "html-validate": "^8.3.0",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.4",
     "typescript": "^5.1.6"
