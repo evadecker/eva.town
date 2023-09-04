@@ -51,7 +51,7 @@
 
 .evaText,
 .samText {
-  font-family: "nimbus-sans", sans-serif;
+  font-family: var(--font-sans);
 }
 
 .emote {
