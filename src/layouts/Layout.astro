@@ -40,7 +40,8 @@ const { title, description } = Astro.props;
     />
     <script>
       // Asynchronously load Adobe Fonts
-      // Technique via https://www.filamentgroup.com/lab/load-css-simpler/
+      // https://www.jayfreestone.com/writing/avoiding-repeat-async-fout/
+
       const fontKey = "fontLoaded";
       const stylesheet = "https://use.typekit.net/qbm1slx.css";
       // Once the font has loaded:
