@@ -33,33 +33,13 @@ const { title, description } = Astro.props;
     <link rel="icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
     <link
-      rel="preconnect"
+      rel="stylesheet"
       href="https://use.typekit.net/qbm1slx.css"
-      crossorigin
+      media="print"
+      onload="this.media='all'"
     />
-    <script>
-      // Asynchronously load Adobe Fonts
-      // https://www.jayfreestone.com/writing/avoiding-repeat-async-fout/
-
-      const fontKey = "fontLoaded";
-      const stylesheet = "https://use.typekit.net/qbm1slx.css";
-      // Once the font has loaded:
-      // - Set the media type, thereby applying the CSS.
-      // - Store a boolean indicating we've already loaded the font.
-      function onFontLoad(script) {
-        script.media = "all";
-        sessionStorage.setItem(fontKey, "true");
-      }
-
-      // If we've loaded it once before, load the CSS in a blocking way.
-      // Otherwise, we load it asynchronously.
-      const styleTag = sessionStorage.getItem(fontKey)
-        ? `<link rel="stylesheet" href="${stylesheet}">`
-        : `<link rel="stylesheet" href="${stylesheet}" media="print" onload="onFontLoad(this)">`;
-
-      document.write(styleTag);
-    </script>
     <title>{title}</title>
   </head>
   <body>
