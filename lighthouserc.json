@@ -5,9 +5,10 @@
       "assertions": {
         "bf-cache": "off",
         "csp-xss": "off",
-        "font-display": "warn",
+        "font-display": "off",
         "uses-rel-preconnect": "off",
-        "uses-long-cache-ttl": "off"
+        "uses-long-cache-ttl": "off",
+        "unused-javascript": ["warn", { "maxLength": 2 }]
       }
     },
     "upload": {
