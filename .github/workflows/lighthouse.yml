@@ -10,23 +10,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install and build
-        run: |
-          npm install
-          npm run build
-      - name: Wait for 200 from the Netlify Preview
-        uses: JakePartusch/wait-for-netlify-action@v1.4
-        id: netlify
-        with:
-          site_name: "evadecker"
+      - name: Install dependencies
+        run: npm install
       - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v10
-        with:
-          urls: |
-            ${{ steps.netlify.outputs.url }}
-          configPath: ./lighthouserc.json
-          budgetPath: ./budget.json
-          temporaryPublicStorage: true
-          runs: 3
+        run: npm run lighthouse
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.event.pull_request.head.sha || github.sha }}
