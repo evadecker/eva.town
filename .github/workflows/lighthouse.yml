@@ -25,7 +25,6 @@ jobs:
           urls: |
             ${{ steps.netlify.outputs.url }}
           configPath: ./lighthouserc.json
-          budgetPath: ./budget.json
           temporaryPublicStorage: true
           runs: 3
         env:
