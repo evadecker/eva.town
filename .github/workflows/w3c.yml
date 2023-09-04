@@ -10,9 +10,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install and build
-        run: |
-          npm install
-          npm run build
-      - name: Validate HTML5
+      - name: Install packages
+        run: npm install
+      - name: Build and validate HTML5
         run: npm run html-validate
