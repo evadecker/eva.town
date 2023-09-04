@@ -6,7 +6,8 @@
         "bf-cache": "off",
         "csp-xss": "off",
         "font-display": "warn",
-        "uses-rel-preconnect": "off"
+        "uses-rel-preconnect": "off",
+        "uses-long-cache-ttl": "off"
       }
     },
     "upload": {
