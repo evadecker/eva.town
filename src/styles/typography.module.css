@@ -1,8 +1,14 @@
+:global(:root) {
+  --font-sans: nimbus-sans, sans-serif;
+  --font-serif: minion-3, serif;
+  --font-display: nimbus-sans-extended, sans-serif;
+}
+
 html,
 body {
   font-size: 20px;
   line-height: 1.4;
-  font-family: "minion-3", serif;
+  font-family: var(--font-serif);
   font-weight: 400;
   text-rendering: optimizeLegibility;
 }
@@ -23,6 +29,6 @@ body {
 
 h1 {
   font-size: clamp(1.3rem, 8vw, 2.6rem);
-  font-family: "nimbus-sans-extended", sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
 }
