@@ -1,0 +1,18 @@
+name: HTML5 Validation
+on: pull_request
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install and build
+        run: |
+          npm install
+          npm run build
+      - name: Validate HTML5
+        run: npm html-validate

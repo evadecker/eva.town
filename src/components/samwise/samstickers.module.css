@@ -30,9 +30,3 @@
   pointer-events: auto;
   z-index: 500;
 }
-
-.samButton {
-  all: unset;
-  text-decoration: underline;
-  cursor: pointer;
-}
