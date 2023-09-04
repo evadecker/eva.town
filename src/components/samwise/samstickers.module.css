@@ -24,7 +24,7 @@
   position: fixed;
   right: 24px;
   bottom: 24px;
-  font-family: "nimbus-sans", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 700;
   cursor: pointer;
   pointer-events: auto;
