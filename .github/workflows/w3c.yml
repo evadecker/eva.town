@@ -15,4 +15,4 @@ jobs:
           npm install
           npm run build
       - name: Validate HTML5
-        run: npm html-validate
+        run: npm run html-validate
