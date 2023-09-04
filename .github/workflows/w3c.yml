@@ -1,5 +1,9 @@
 name: HTML5 Validation
-on: pull_request
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
 jobs:
   html-validate:
     runs-on: ubuntu-latest

@@ -1,5 +1,9 @@
 name: Lighthouse
-on: pull_request
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
