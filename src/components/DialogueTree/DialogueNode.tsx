@@ -6,7 +6,7 @@ import {
   DialogueOptions,
   DialogueContinue,
   DialogueEmote,
-} from "./";
+} from ".";
 import styles from "./dialogue.module.css";
 
 interface DialogueNodeProps {
