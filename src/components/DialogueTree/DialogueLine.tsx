@@ -6,7 +6,7 @@ import {
   DialogueLineFragment,
   type DialogueLineFragmentProps,
   type EmphasisVariant,
-} from "./";
+} from ".";
 import styles from "./dialogue.module.css";
 
 interface DialogueLineProps {

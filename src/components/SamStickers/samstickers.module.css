@@ -1,0 +1,61 @@
+.samStickers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  user-select: none;
+}
+
+.samSticker {
+  position: absolute;
+  width: 200px;
+  pointer-events: none;
+}
+
+.samSticker svg {
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.2));
+}
+
+.samSticker path {
+  /* Reinitialize click and drag events when hovered over a path */
+  pointer-events: auto;
+  cursor: grab;
+}
+
+.samSticker path:hover,
+.samSticker path:active {
+  stroke: var(--purple);
+  stroke-width: 6px;
+}
+
+.samSticker path:active {
+  cursor: grabbing !important;
+}
+
+.samSticker svg,
+.samSticker img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  user-select: none;
+}
+
+.shooButton {
+  all: unset;
+  background: var(--text);
+  color: var(--bg);
+  padding: 4px 8px;
+  border-radius: 8px;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 500;
+}
