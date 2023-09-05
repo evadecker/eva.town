@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from "react";
 import YarnBound, { OptionsResult, TextResult } from "yarn-bound";
-import { DialogueNode } from "./";
+import { DialogueNode } from ".";
 import useForceUpdate from "use-force-update";
 
 let dialogue = "";
