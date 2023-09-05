@@ -239,6 +239,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       style={{ zIndex: zIndex }}
+      data-testid="samSticker"
     >
       <svg
         width="400"

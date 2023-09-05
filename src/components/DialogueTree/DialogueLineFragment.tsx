@@ -1,7 +1,7 @@
 import React from "react";
 import { nanoid } from "nanoid";
 import styles from "./dialogue.module.css";
-import { Variants, motion } from "framer-motion";
+import { type Variants, motion } from "framer-motion";
 
 export enum EmphasisVariant {
   Wave = "wave",
@@ -117,7 +117,7 @@ const TypedCharacter = ({
         return undefined;
     }
   };
-  
+
   return (
     <motion.span
       className={styles.character}
@@ -178,11 +178,17 @@ export const DialogueLineFragment = ({
     <span className={styles.word} key={nanoid()}>
       {word.split("").map((char) => {
         return (
-          <TypedCharacter key={nanoid()} character={char} variant={variant} index={index++} speed={speed} />
+          <TypedCharacter
+            key={nanoid()}
+            character={char}
+            variant={variant}
+            index={index++}
+            speed={speed}
+          />
         );
       })}
       {wordIndex < words.length - 1 && (
-        <TypedCharacter key={nanoid()} character=" " index={index++}/>
+        <TypedCharacter key={nanoid()} character=" " index={index++} />
       )}
     </span>
   ));
