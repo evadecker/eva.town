@@ -15,21 +15,14 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-      # If you're NOT going to use `--project="Google Chrome"` when running
-      # the Playwright tests, uncomment these lines. They're very slow
-      # - name: Install Playwright Browsers
-      #   run: npx playwright install --with-deps
-      - name: Wait for 200 from the Netlify Preview
-        # Only wait for Netlify Preview if not deploying to production
-        if: github.ref != 'refs/heads/main'
-        uses: JakePartusch/wait-for-netlify-action@v1.4
-        id: netlify
+      - name: Vercel Preview URL
+        uses: zentered/vercel-preview-url@v1.1.9
         with:
-          site_name: "evadecker"
+          vercel_project_id: "prj_pMk8EbUuHxsj51ERiVXZyANy9ZPC"
       - name: Run Playwright tests
         run: npx playwright test --project="Google Chrome"
         env:
-          PLAYWRIGHT_TEST_BASE_URL: ${{ steps.netlify.outputs.url || 'https://evadecker.com' }}
+          PLAYWRIGHT_TEST_BASE_URL: ${{ steps.deployment.target_url || 'https://evadecker.com' }}
       - uses: actions/upload-artifact@v3
         if: always()
         with:
