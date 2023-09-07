@@ -1,4 +1,4 @@
-.samStickers {
+.stickers {
   position: absolute;
   top: 0;
   left: 0;
@@ -9,34 +9,33 @@
   user-select: none;
 }
 
-.samSticker {
+.sticker {
   position: absolute;
   width: 200px;
-  pointer-events: none;
 }
 
-.samSticker svg {
+.stickerSvg {
   filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.2));
 }
 
-.samSticker path {
+.stickerPath {
   /* Reinitialize click and drag events when hovered over a path */
   pointer-events: auto;
   cursor: grab;
 }
 
-.samSticker path:hover,
-.samSticker path:active {
+.stickerPath:hover,
+.stickerPath:active {
   stroke: var(--purple);
   stroke-width: 6px;
 }
 
-.samSticker path:active {
+.stickerPath:active {
   cursor: grabbing !important;
 }
 
-.samSticker svg,
-.samSticker img {
+.stickerSvg,
+.stickerImg {
   position: absolute;
   top: 0;
   left: 0;

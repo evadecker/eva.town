@@ -32,7 +32,7 @@ const SamStickers = () => {
   };
 
   return (
-    <div className={styles.samStickers}>
+    <div className={styles.stickers}>
       <AnimatePresence>
         {samArray.map(({ id, variant }) => (
           <SamSticker key={id} id={id} variant={variant} />
