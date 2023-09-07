@@ -1,4 +1,4 @@
-import { useState, type ReactNode, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./samstickers.module.css";
 import { useStore } from "@nanostores/react";
 import { getRandomValueBetween } from "../../helpers";
