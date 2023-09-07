@@ -195,7 +195,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
       }}
       drag
       dragMomentum={false}
-      whileDrag={{ scale: 1.3, pointerEvents: "auto", cursor: "grabbing" }}
+      whileDrag={{ scale: 1.3, cursor: "grabbing" }}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       style={{ zIndex: zIndex }}
