@@ -3,6 +3,7 @@ import "../styles/reset.module.css";
 import "../styles/base.module.css";
 import "../styles/typography.module.css";
 import "../styles/theme.module.css";
+import { Analytics } from "@vercel/analytics/react";
 
 interface Props {
   title: string;
@@ -46,5 +47,6 @@ const { title, description } = Astro.props;
     <main>
       <slot />
     </main>
+    <Analytics client:only />
   </body>
 </html>
