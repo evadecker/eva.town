@@ -1,6 +1,6 @@
 # Eva Decker
 
-![Netlify](https://img.shields.io/netlify/b5c441f8-5db7-4113-9c12-5ab385e5f080) [![Playwright](https://github.com/evadecker/evadecker.com/actions/workflows/playwright.yml/badge.svg)](https://github.com/evadecker/evadecker.com/actions/workflows/playwright.yml) [![Lighthouse](https://github.com/evadecker/evadecker.com/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/evadecker/evadecker.com/actions/workflows/lighthouse.yml) [![HTML5 Validation](https://github.com/evadecker/evadecker.com/actions/workflows/w3c.yml/badge.svg)](https://github.com/evadecker/evadecker.com/actions/workflows/w3c.yml) ![GitHub](https://img.shields.io/github/license/evadecker/evadecker.com)
+![Vercel](https://vercelbadge.vercel.app/api/evadecker/evadecker.com) [![Playwright](https://github.com/evadecker/evadecker.com/actions/workflows/playwright.yml/badge.svg)](https://github.com/evadecker/evadecker.com/actions/workflows/playwright.yml) [![Lighthouse](https://github.com/evadecker/evadecker.com/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/evadecker/evadecker.com/actions/workflows/lighthouse.yml) [![HTML5 Validation](https://github.com/evadecker/evadecker.com/actions/workflows/w3c.yml/badge.svg)](https://github.com/evadecker/evadecker.com/actions/workflows/w3c.yml) ![GitHub](https://img.shields.io/github/license/evadecker/evadecker.com)
 
 This is the source code that powers [evadecker.com](https://evadecker.com). It's created with [Astro](https://astro.build/) and hosted on [Netlify](https://www.netlify.com/).
 
