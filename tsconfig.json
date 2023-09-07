@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "typeRoots": ["src/types", "node_modules/@types"]
   },
   "extends": "astro/tsconfigs/strict",
