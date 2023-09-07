@@ -8,4 +8,7 @@ export default defineConfig({
   redirects: {
     // "/work": "/work/cityblock",
   },
+  vite: {
+    optimizeDeps: { exclude: ["fsevents"] },
+  },
 });
