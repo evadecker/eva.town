@@ -4,7 +4,6 @@ import { useStore } from "@nanostores/react";
 import { getRandomValueBetween } from "../../helpers";
 import { motion, type DragHandlers } from "framer-motion";
 import { incrementTopZIndex, topZIndex } from "../../stores/sam";
-import classNames from "classnames";
 
 type VariantData = {
   path: string;
@@ -108,8 +107,6 @@ export type SamStickerProps = {
 };
 
 export const SamSticker = ({ variant }: SamStickerProps) => {
-  const [isGrabbing, setIsGrabbing] = useState(false);
-
   // Pixel buffer to prevent stickers from going off the canvas when placed randomly
   const BUFFER = 200;
 
@@ -136,13 +133,13 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
   const initialRotation = rotate + getRandomValueBetween(-20, 20);
 
   const handleDragStart: DragHandlers["onDragStart"] = () => {
-    setIsGrabbing(true);
+    // setIsGrabbing(true);
     incrementTopZIndex();
     setZIndex($topZIndex);
   };
 
   const handleDragEnd: DragHandlers["onDragEnd"] = (_, info) => {
-    setIsGrabbing(false);
+    // setIsGrabbing(false);
     const { x, y } = info.point;
     setX(x);
     setY(y);
@@ -177,7 +174,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
 
   return (
     <motion.div
-      className={classNames(styles.sticker, { [styles.grabbing]: isGrabbing })}
+      className={styles.sticker}
       initial={{ opacity: 0, x, y, scale: 2, rotate: initialRotation }}
       animate={{
         opacity: 1,

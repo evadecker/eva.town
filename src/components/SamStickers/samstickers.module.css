@@ -15,7 +15,6 @@
   pointer-events: none;
 }
 
-.sticker.grabbing,
 .sticker:active {
   cursor: grabbing;
   pointer-events: auto;
@@ -33,7 +32,6 @@
 }
 
 .stickerPath:hover,
-.sticker.grabbing .stickerPath,
 .sticker:active .stickerPath {
   stroke: var(--purple);
   stroke-width: 6px;
