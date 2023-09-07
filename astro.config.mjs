@@ -10,15 +10,13 @@ export default defineConfig({
     // "/work": "/work/cityblock",
   },
   output: "static",
-  adapter: vercel({
-    analytics: true,
-  }),
+  adapter: vercel({ analytics: true }),
   vite: {
-    define: {
-      "import.meta.env.PUBLIC_VERCEL_ANALYTICS_ID": JSON.stringify(
-        process.env.VERCEL_ANALYTICS_ID
-      ),
-    },
+    // define: {
+    //   "import.meta.env.PUBLIC_VERCEL_ANALYTICS_ID": JSON.stringify(
+    //     process.env.VERCEL_ANALYTICS_ID
+    //   ),
+    // },
     optimizeDeps: {
       exclude: ["fsevents"],
     },
