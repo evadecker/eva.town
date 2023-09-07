@@ -23,6 +23,7 @@
 
 .stickerSvg {
   filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.2));
+  pointer-events: fill;
 }
 
 .stickerPath {
@@ -31,7 +32,7 @@
   cursor: grab;
 }
 
-.sticker:hover .stickerPath,
+.stickerPath:hover,
 .sticker.grabbing .stickerPath,
 .sticker:active .stickerPath {
   stroke: var(--purple);
