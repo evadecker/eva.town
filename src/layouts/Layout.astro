@@ -3,7 +3,6 @@ import "../styles/reset.module.css";
 import "../styles/base.module.css";
 import "../styles/typography.module.css";
 import "../styles/theme.module.css";
-import { Analytics } from "@vercel/analytics/react";
 
 interface Props {
   title: string;
@@ -42,6 +41,14 @@ const { title, description } = Astro.props;
       onload="this.media='all'"
     />
     <title>{title}</title>
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
     <main>
