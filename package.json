@@ -12,7 +12,7 @@
     "lint:fix": "eslint 'src/**/*.{js,astro,ts,tsx}' --fix",
     "test": "playwright test",
     "prettier": "prettier --write .",
-    "html-validate": "npm run build && npm exec html-validate dist/*.html",
+    "html-validate": "npm run build && npm exec html-validate .vercel/output/static/*.html",
     "lighthouse": "npm run build && lhci autorun"
   },
   "dependencies": {

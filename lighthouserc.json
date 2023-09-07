@@ -11,6 +11,9 @@
         "unused-javascript": ["warn", { "maxLength": 2 }]
       }
     },
+    "collect": {
+      "staticDistDir": ".vercel/output/static/"
+    },
     "upload": {
       "target": "temporary-public-storage"
     }
