@@ -12,6 +12,13 @@
 .sticker {
   position: absolute;
   width: 200px;
+  pointer-events: none;
+}
+
+.sticker.grabbing,
+.sticker:active {
+  cursor: grabbing;
+  pointer-events: auto;
 }
 
 .stickerSvg {
@@ -24,14 +31,11 @@
   cursor: grab;
 }
 
-.stickerPath:hover,
-.stickerPath:active {
+.sticker:hover .stickerPath,
+.sticker.grabbing .stickerPath,
+.sticker:active .stickerPath {
   stroke: var(--purple);
   stroke-width: 6px;
-}
-
-.stickerPath:active {
-  cursor: grabbing !important;
 }
 
 .stickerSvg,
