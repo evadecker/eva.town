@@ -1,4 +1,4 @@
-import { useState, type ReactNode, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./samstickers.module.css";
 import { useStore } from "@nanostores/react";
 import { getRandomValueBetween } from "../../helpers";
@@ -133,11 +133,13 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
   const initialRotation = rotate + getRandomValueBetween(-20, 20);
 
   const handleDragStart: DragHandlers["onDragStart"] = () => {
+    // setIsGrabbing(true);
     incrementTopZIndex();
     setZIndex($topZIndex);
   };
 
   const handleDragEnd: DragHandlers["onDragEnd"] = (_, info) => {
+    // setIsGrabbing(false);
     const { x, y } = info.point;
     setX(x);
     setY(y);
@@ -172,7 +174,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
 
   return (
     <motion.div
-      className={styles.samSticker}
+      className={styles.sticker}
       initial={{ opacity: 0, x, y, scale: 2, rotate: initialRotation }}
       animate={{
         opacity: 1,
@@ -195,21 +197,26 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
       }}
       drag
       dragMomentum={false}
-      whileDrag={{ scale: 1.3, pointerEvents: "auto", cursor: "grabbing" }}
+      whileDrag={{ scale: 1.3, cursor: "grabbing" }}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       style={{ zIndex: zIndex }}
       data-testid="samSticker"
     >
       <svg
+        className={styles.stickerSvg}
         width="400"
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d={variantsData[currentVariant].path} fill="white" />
+        <path
+          className={styles.stickerPath}
+          d={variantsData[currentVariant].path}
+          fill="white"
+        />
       </svg>
-      <picture>
+      <picture className={styles.stickerImg}>
         <source
           srcSet={variantsData[currentVariant].srcSet}
           type="image/webp"
