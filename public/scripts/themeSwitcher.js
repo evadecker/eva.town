@@ -64,8 +64,6 @@ function endAnimation() {
   toggleButton.removeAttribute("disabled");
 }
 
-function enableButton() {}
-
 function toggleTheme() {
   const currentTheme = document.body.dataset.theme;
 
