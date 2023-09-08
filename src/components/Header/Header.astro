@@ -55,7 +55,9 @@
           clip-rule="evenodd"></path>
       </svg>
     </button>
-    <div class="animated-circle"></div>
+    <div class="animation-container">
+      <div class="animated-circle"></div>
+    </div>
   </div>
 </header>
 
@@ -134,17 +136,26 @@
     position: relative;
   }
 
+  .animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+  }
+
   .animated-circle {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    left: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
     background: var(--bg);
     border-radius: 100%;
     transform-origin: 50% 50%;
-    z-index: -1;
-    pointer-events: none;
   }
 
   body[data-animating] .animated-circle {
@@ -153,10 +164,10 @@
 
   @keyframes expandOut {
     0% {
-      transform: scale(100%);
+      transform: scale(1);
     }
     100% {
-      transform: scale(10000%);
+      transform: scale(100);
     }
   }
 </style>

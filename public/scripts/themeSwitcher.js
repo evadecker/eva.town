@@ -1,4 +1,5 @@
 let toggleButton;
+let animatedCircle;
 
 function getInitialTheme() {
   // Check local storage for user preference
@@ -42,12 +43,34 @@ function setInitialTheme() {
   }
 }
 
+function setAnimatedCircleCoords() {
+  animatedCircle.style.top = toggleButton.getBoundingClientRect().top + "px";
+  animatedCircle.style.left = toggleButton.getBoundingClientRect().left + "px";
+}
+
+function startAnimation() {
+  // Apply data attribute to body
+  document.body.dataset.animating = "";
+  // Set coordinates for animated background circle
+  setAnimatedCircleCoords();
+  // Disable button
+  toggleButton.setAttribute("disabled", "");
+}
+
+function endAnimation() {
+  // Remove data attribute from body
+  document.body.removeAttribute("data-animating");
+  // Enable button
+  toggleButton.removeAttribute("disabled");
+}
+
+function enableButton() {}
+
 function toggleTheme() {
   const currentTheme = document.body.dataset.theme;
 
   // Add data attribute to toggle transition animation
-  document.body.dataset.animating = "";
-  toggleButton.setAttribute("disabled", "");
+  startAnimation();
 
   if (currentTheme == "dark") {
     enableLightMode();
@@ -56,17 +79,20 @@ function toggleTheme() {
   }
 
   // Remove data attribute to toggle transition animation
-  setTimeout(() => {
-    document.body.removeAttribute("data-animating");
-    toggleButton.removeAttribute("disabled");
-  }, 1000);
+  setTimeout(() => endAnimation(), 1000);
 }
 
 function setThemeButton() {
-  toggleButton = document.querySelector('[data-theme-toggle]');
+  toggleButton = document.querySelector("[data-theme-toggle]");
   toggleButton.addEventListener("click", toggleTheme);
-};
+  animatedCircle = document.querySelector(".animated-circle");
+}
 
-setInitialTheme();
+function init() {
+  setInitialTheme();
 
-document.addEventListener("DOMContentLoaded", setThemeButton);
+  document.addEventListener("DOMContentLoaded", setThemeButton);
+  document.addEventListener("DOMContentLoaded", setAnimatedCircleCoords);
+}
+
+init();
