@@ -1,10 +1,9 @@
 ---
-import { toggleTheme } from "themeSwitcher";
 ---
 
 <header>
   <div class="wordmark">Eva Decker</div>
-  <button type="button" data-theme-toggle aria-label="Toggle theme">
+  <button type="button" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()">
     <svg
       class="sun"
       xmlns="http://www.w3.org/2000/svg"
@@ -56,11 +55,6 @@ import { toggleTheme } from "themeSwitcher";
     </svg>
   </button>
 </header>
-
-<script>
-  const themeToggleButton = document.querySelector("[data-theme-toggle]");
-  if (themeToggleButton) themeToggleButton.addEventListener("click", () => toggleTheme());
-</script>
 
 <style>
   header {
