@@ -29,7 +29,7 @@ function enableLightMode() {
   document.body.dataset.theme = "light";
   document
     .querySelector('meta[name="theme-color"]')
-    .setAttribute("content", "  #ffdcdc");
+    .setAttribute("content", "#ffdcdc");
   localStorage.setItem("theme", "light");
 }
 
