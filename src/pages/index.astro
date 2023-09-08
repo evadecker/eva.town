@@ -1,15 +1,59 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Synth from "../components/Synth.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import SamStickers from "../components/SamStickers/SamStickers";
 ---
 
 <Layout
   title="Eva Decker"
   description="Eva Decker is a designer and software engineer based in Brooklyn, New York."
 >
-  <Header />
+  <header>
+    <h1 class="title">Eva designs and codes things for&nbsp;the&nbsp;web.</h1>
+    <p>
+      I have experience creating usable, accessible, developer-friendly design
+      systems for companies like Cityblock, Dropbox, and Swiftype.
+    </p>
+    <p>
+      I live in Brooklyn, NY, with my tabby, <button
+        data-sam-button
+        type="button">Samwise</button
+      >. In my free time I play piano.
+    </p>
+  </header>
+  <SamStickers client:visible />
   <Synth />
-  <Footer />
 </Layout>
+
+<script>
+  import { addSam } from "../stores/sam";
+  const samButton = document.querySelector("[data-sam-button]");
+  samButton?.addEventListener("click", () => addSam());
+</script>
+
+<style>
+  header {
+    max-width: 480px;
+    text-align: left;
+  }
+
+  header p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-top: 1em;
+  }
+
+  .title {
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    text-align: left;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  [data-sam-button] {
+    all: unset;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>

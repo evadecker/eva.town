@@ -21,20 +21,52 @@
   --neutral-9: #222;
   --neutral-10: #000;
 
-  --text: rgba(1, 0, 50, 0.9);
-  --text-light: var(--neutral-7);
-  --bg: #ffdcdc;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :global(:root) {
-    --text: #ffdcdc;
-    --text-light: var(--neutral-5);
-    --bg: #1d0206;
-  }
+body {
+  --text: rgba(1, 0, 50, 0.9);
+  --text-light: var(--neutral-7);
 
-  :global(body) {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  --bg: #ffdcdc;
+  --bg-hover: #f1caca;
+
+  --lcd-bg: #8db48e;
+  --lcd-dark: #466b46;
+  --lcd-light: #a2d4a4;
+  --lcd-hover: #375537;
+
+  --synth-base: var(--neutral-8);
+  --synth-endcap: var(--neutral-9);
+  --synth-lcd-outline: var(--neutral-9);
+  --synth-keys-outline: var(--neutral-9);
+  --synth-whitekey: var(--neutral-0);
+  --synth-whitekey-pressed: var(--purple);
+  --synth-blackkey: var(--neutral-9);
+  --synth-blackkey-pressed: var(--purple-dark);
+}
+
+body[data-theme="dark"] {
+  --text: #ffdcdc;
+  --text-light: var(--neutral-5);
+
+  --bg: #1d0206;
+  --bg-hover: #2b060b;
+
+  --lcd-bg: var(--neutral-3);
+  --lcd-dark: var(--neutral-6);
+  --lcd-light: var(--neutral-0);
+  --lcd-hover: var(--neutral-7);
+
+  --synth-base: var(--red);
+  --synth-endcap: var(--red-alt);
+  --synth-lcd-outline: var(--red-dark);
+  --synth-keys-outline: var(--red-dark);
+
+  --synth-whitekey-pressed: var(--red);
+  --synth-blackkey-pressed: var(--red-alt);
 }

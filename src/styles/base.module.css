@@ -6,29 +6,29 @@ body {
 html {
   font-family: system-ui, sans-serif;
   font-size: var(--font-size-base);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   color: var(--text);
   background-color: var(--bg);
+  transition: 0.3s ease-in-out;
+  transition-property: background-color, color;
+}
+
+body[data-theme="dark"] {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  flex: 1;
+  padding: var(--spacing-lg);
+  padding-top: 0;
 }
 
 a {
   color: unset;
-}
-
-main {
-  position: relative;
-  margin: auto;
-  padding: 0.8rem;
-  min-height: 100%;
-}
-
-@media screen and (min-width: 480px) {
-  main {
-    padding: 1rem;
-  }
-}
-
-@media screen and (min-width: 620px) {
-  main {
-    padding: 1.5rem;
-  }
 }
