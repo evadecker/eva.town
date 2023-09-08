@@ -48,7 +48,7 @@ function setAnimatedCircleCoords() {
   animatedCircle.style.left = toggleButton.getBoundingClientRect().left + "px";
 }
 
-function startAnimation() {
+function handleAnimationStart() {
   // Apply data attribute to body
   document.body.dataset.animating = "";
   // Set coordinates for animated background circle
@@ -57,7 +57,7 @@ function startAnimation() {
   toggleButton.setAttribute("disabled", "");
 }
 
-function endAnimation() {
+function handleAnimationEnd() {
   // Remove data attribute from body
   document.body.removeAttribute("data-animating");
   // Enable button
@@ -66,18 +66,9 @@ function endAnimation() {
 
 function toggleTheme() {
   const currentTheme = document.body.dataset.theme;
-
-  // Add data attribute to toggle transition animation
-  startAnimation();
-
-  if (currentTheme == "dark") {
-    enableLightMode();
-  } else if (currentTheme == "light") {
-    enableDarkMode();
-  }
-
-  // Remove data attribute to toggle transition animation
-  setTimeout(() => endAnimation(), 1000);
+  handleAnimationStart();
+  currentTheme == "dark" ? enableLightMode() : enableDarkMode();
+  setTimeout(() => handleAnimationEnd(), 1000);
 }
 
 function setThemeButton() {
