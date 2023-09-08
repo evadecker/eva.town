@@ -1,3 +1,5 @@
+let toggleButton;
+
 function getInitialTheme() {
   // Check local storage for user preference
   const preferredTheme = localStorage.getItem("theme");
@@ -42,11 +44,29 @@ function setInitialTheme() {
 
 function toggleTheme() {
   const currentTheme = document.body.dataset.theme;
+
+  // Add data attribute to toggle transition animation
+  document.body.dataset.animating = "";
+  toggleButton.setAttribute("disabled", "");
+
   if (currentTheme == "dark") {
     enableLightMode();
   } else if (currentTheme == "light") {
     enableDarkMode();
   }
+
+  // Remove data attribute to toggle transition animation
+  setTimeout(() => {
+    document.body.removeAttribute("data-animating");
+    toggleButton.removeAttribute("disabled");
+  }, 1000);
 }
 
+function setThemeButton() {
+  toggleButton = document.querySelector('[data-theme-toggle]');
+  toggleButton.addEventListener("click", toggleTheme);
+};
+
 setInitialTheme();
+
+document.addEventListener("DOMContentLoaded", setThemeButton);

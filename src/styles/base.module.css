@@ -30,3 +30,7 @@ main {
 a {
   color: unset;
 }
+
+body[data-animating] {
+  transition: color 1s ease-in-out, background-color 1s ease-in-out !important;
+}
