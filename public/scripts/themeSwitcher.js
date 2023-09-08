@@ -1,4 +1,5 @@
 let toggleButton;
+let animatedCircle;
 
 function getInitialTheme() {
   // Check local storage for user preference
@@ -42,31 +43,44 @@ function setInitialTheme() {
   }
 }
 
+function setAnimatedCircleCoords() {
+  animatedCircle.style.top = toggleButton.getBoundingClientRect().top + "px";
+  animatedCircle.style.left = toggleButton.getBoundingClientRect().left + "px";
+}
+
+function handleAnimationStart() {
+  // Apply data attribute to body
+  document.body.dataset.animating = "";
+  // Set coordinates for animated background circle
+  setAnimatedCircleCoords();
+  // Disable button
+  toggleButton.setAttribute("disabled", "");
+}
+
+function handleAnimationEnd() {
+  // Remove data attribute from body
+  document.body.removeAttribute("data-animating");
+  // Enable button
+  toggleButton.removeAttribute("disabled");
+}
+
 function toggleTheme() {
   const currentTheme = document.body.dataset.theme;
-
-  // Add data attribute to toggle transition animation
-  document.body.dataset.animating = "";
-  toggleButton.setAttribute("disabled", "");
-
-  if (currentTheme == "dark") {
-    enableLightMode();
-  } else if (currentTheme == "light") {
-    enableDarkMode();
-  }
-
-  // Remove data attribute to toggle transition animation
-  setTimeout(() => {
-    document.body.removeAttribute("data-animating");
-    toggleButton.removeAttribute("disabled");
-  }, 1000);
+  handleAnimationStart();
+  currentTheme == "dark" ? enableLightMode() : enableDarkMode();
+  setTimeout(() => handleAnimationEnd(), 1000);
 }
 
 function setThemeButton() {
-  toggleButton = document.querySelector('[data-theme-toggle]');
+  toggleButton = document.querySelector("[data-theme-toggle]");
   toggleButton.addEventListener("click", toggleTheme);
-};
+  animatedCircle = document.querySelector(".animated-circle");
+}
 
-setInitialTheme();
+function init() {
+  setInitialTheme();
+  document.addEventListener("DOMContentLoaded", setThemeButton);
+  document.addEventListener("DOMContentLoaded", setAnimatedCircleCoords);
+}
 
-document.addEventListener("DOMContentLoaded", setThemeButton);
+init();
