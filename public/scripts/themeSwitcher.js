@@ -79,7 +79,6 @@ function setThemeButton() {
 
 function init() {
   setInitialTheme();
-
   document.addEventListener("DOMContentLoaded", setThemeButton);
   document.addEventListener("DOMContentLoaded", setAnimatedCircleCoords);
 }
