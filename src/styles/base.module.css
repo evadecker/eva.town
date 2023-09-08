@@ -14,8 +14,6 @@ body {
   align-items: flex-start;
   color: var(--text);
   background-color: var(--bg);
-  transition: 0.3s ease-in-out;
-  transition-property: background-color, color;
 }
 
 body[data-theme="dark"] {
