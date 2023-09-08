@@ -1,10 +1,9 @@
 ---
-import { toggleTheme } from "scripts/theme.js";
 ---
 
 <header>
   <div class="wordmark">Eva Decker</div>
-  <button type="button" data-theme-toggle aria-label="Toggle theme">
+  <button type="button" data-theme-toggle aria-label="Toggle theme" onclick="toggleTheme()">
     <svg
       class="sun"
       xmlns="http://www.w3.org/2000/svg"
@@ -57,11 +56,6 @@ import { toggleTheme } from "scripts/theme.js";
   </button>
 </header>
 
-<script>
-  const themeToggle = document.querySelector("[data-theme-toggle]");
-  themeToggle.addEventListener("click", () => toggleTheme());
-</script>
-
 <style>
   header {
     width: 100%;
@@ -89,7 +83,6 @@ import { toggleTheme } from "scripts/theme.js";
     position: relative;
     overflow: hidden;
     color: var(--text);
-    transition: all 0.2s ease-in-out;
   }
 
   button[data-theme-toggle]:hover {
@@ -100,7 +93,14 @@ import { toggleTheme } from "scripts/theme.js";
     position: absolute;
     width: 24px;
     height: 24px;
-    transition: all 0.2s ease-in-out;
+  }
+
+  .moon,
+  .moon-hover,
+  .sun,
+  .sun-hover {
+    transform-origin: 50% 200%;
+    transition: transform 0.4s ease-out, opacity 0.2s ease-in-out;
   }
 
   .moon-hover,
@@ -115,11 +115,11 @@ import { toggleTheme } from "scripts/theme.js";
 
   body[data-theme="dark"] button[data-theme-toggle] .moon,
   body[data-theme="dark"] button[data-theme-toggle] .moon-hover {
-    transform: translateY(-150%);
+    transform: rotate(60deg);
   }
 
   body[data-theme="light"] button[data-theme-toggle] .sun,
   body[data-theme="light"] button[data-theme-toggle] .sun-hover {
-    transform: translateY(150%);
+    transform: rotate(-60deg);
   }
 </style>

@@ -9,7 +9,7 @@ test("has title", async ({ page }) => {
 });
 
 test("changes theme", async ({ page }) => {
-  const themeToggle = await page.locator("[data-theme-toggle]");
+  const themeToggle = page.locator("[data-theme-toggle]");
   await themeToggle.click();
   await expect(page.locator("body")).toHaveAttribute("data-theme", "dark");
   await themeToggle.click();

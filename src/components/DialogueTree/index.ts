@@ -3,7 +3,7 @@ import { DialogueEmote } from "./DialogueEmote";
 import { DialogueLine } from "./DialogueLine";
 import {
   DialogueLineFragment,
-  DialogueLineFragmentProps,
+  type DialogueLineFragmentProps,
   EmphasisVariant,
 } from "./DialogueLineFragment";
 import { DialogueNode } from "./DialogueNode";

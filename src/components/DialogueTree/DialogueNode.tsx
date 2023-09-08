@@ -1,6 +1,5 @@
 import { AnimatePresence, motion, type Variants } from "framer-motion";
-import { CommandResult, CurrentResult, OptionsResult } from "yarn-bound";
-import React from "react";
+import { CommandResult, type CurrentResult, OptionsResult } from "yarn-bound";
 import {
   DialogueLine,
   DialogueOptions,

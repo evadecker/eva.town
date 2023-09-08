@@ -1,4 +1,3 @@
-import React from "react";
 import { nanoid } from "nanoid";
 import styles from "./dialogue.module.css";
 import { type Variants, motion } from "framer-motion";

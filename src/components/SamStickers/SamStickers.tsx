@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, type DragHandlers } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useStore } from "@nanostores/react";
 import styles from "./samstickers.module.css";
