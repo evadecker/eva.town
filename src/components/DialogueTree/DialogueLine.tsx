@@ -1,5 +1,4 @@
 import { nanoid } from "nanoid";
-import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import type { Markup, OptionsResult, TextResult } from "yarn-bound";
 import {

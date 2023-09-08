@@ -19,17 +19,15 @@ function getInitialTheme() {
 
 function enableDarkMode() {
   document.body.dataset.theme = "dark";
-  document
-    .querySelector('meta[name="theme-color"]')
-    .setAttribute("content", "#1d0206");
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  if (metaTheme !== null) metaTheme.setAttribute("content", "#1d0206");
   localStorage.setItem("theme", "dark");
 }
 
 function enableLightMode() {
   document.body.dataset.theme = "light";
-  document
-    .querySelector('meta[name="theme-color"]')
-    .setAttribute("content", "#ffdcdc");
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  if (metaTheme !== null) metaTheme.setAttribute("content", "#ffdcdc");
   localStorage.setItem("theme", "light");
 }
 

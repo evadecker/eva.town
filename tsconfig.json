@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "typeRoots": ["src/types", "node_modules/@types"]
+    "typeRoots": ["src/types", "node_modules/@types", "public/scripts"]
   },
   "extends": "astro/tsconfigs/strict",
   "include": ["**/*.ts", "**/*.tsx", "**/*.astro", ".eslintrc.js"]

@@ -28,12 +28,7 @@ const { title, description } = Astro.props;
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
     <link rel="preconnect" href="https://use.typekit.net" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://use.typekit.net/qbm1slx.css"
-      media="print"
-      onload="this.media='all'"
-    />
+    <link rel="stylesheet" href="https://use.typekit.net/qbm1slx.css" />
     <title>{title}</title>
     <script>
       window.va =
@@ -45,7 +40,7 @@ const { title, description } = Astro.props;
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
-    <script is:inline src="/scripts/theme.js"></script>
+    <script is:inline src="scripts/themeSwitcher.ts"></script>
     <Header />
     <main>
       <slot />

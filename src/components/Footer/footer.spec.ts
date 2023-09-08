@@ -5,8 +5,8 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("includes correct social links", async ({ page }) => {
-  const githubLink = await page.getByRole("link", { name: "Github" });
-  const linkedInLink = await page.getByRole("link", { name: "LinkedIn" });
+  const githubLink = page.getByRole("link", { name: "Github" });
+  const linkedInLink = page.getByRole("link", { name: "LinkedIn" });
 
   await expect(githubLink).toHaveAttribute(
     "href",
@@ -19,8 +19,8 @@ test("includes correct social links", async ({ page }) => {
 });
 
 test("opens social links in new tab", async ({ page }) => {
-  const githubLink = await page.getByRole("link", { name: "Github" });
-  const linkedInLink = await page.getByRole("link", { name: "LinkedIn" });
+  const githubLink = page.getByRole("link", { name: "Github" });
+  const linkedInLink = page.getByRole("link", { name: "LinkedIn" });
 
   await expect(githubLink).toHaveAttribute("target", "_blank");
   await expect(linkedInLink).toHaveAttribute("target", "_blank");
@@ -30,5 +30,5 @@ test("downloads resume", async ({ page }) => {
   const downloadPromise = page.waitForEvent("download");
   await page.getByRole("link", { name: "Resume" }).click();
   const download = await downloadPromise;
-  await expect(download.suggestedFilename()).toBe("eva-decker-resume.pdf");
+ expect(download.suggestedFilename()).toBe("eva-decker-resume.pdf");
 });

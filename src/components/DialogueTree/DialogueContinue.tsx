@@ -1,5 +1,4 @@
-import { Variants, motion } from "framer-motion";
-import React from "react";
+import { type Variants, motion } from "framer-motion";
 import styles from "./dialogue.module.css";
 
 interface DialogueContinueProps {

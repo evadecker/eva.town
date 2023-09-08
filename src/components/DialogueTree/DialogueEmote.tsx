@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./dialogue.module.css";
 import type { OptionsResult, TextResult } from "yarn-bound";
 
