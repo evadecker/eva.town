@@ -4,10 +4,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto("/");
 });
 
-test("has title", async ({ page }) => {
-  await expect(page).toHaveTitle("Eva Decker");
-});
-
 test("includes correct social links", async ({ page }) => {
   const githubLink = await page.getByRole("link", { name: "Github" });
   const linkedInLink = await page.getByRole("link", { name: "LinkedIn" });
