@@ -32,6 +32,6 @@ body[data-animating] {
   transition: color 1s ease-in-out, background-color 1s ease-in-out;
 }
 
-body[data-animating] * {
+body[data-animating] svg * {
   transition: fill 1s ease-in-out !important;
 }
