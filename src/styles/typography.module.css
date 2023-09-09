@@ -4,6 +4,12 @@
   --font-display: nimbus-sans-extended, sans-serif;
 }
 
+h1 {
+  font-size: clamp(1.1rem, 4vw, 2.6rem);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
 html,
 body {
   font-size: 20px;
@@ -25,10 +31,4 @@ body {
   body {
     font-size: 22px;
   }
-}
-
-h1 {
-  font-size: clamp(1.1rem, 4vw, 2.6rem);
-  font-family: var(--font-display);
-  font-weight: 700;
 }

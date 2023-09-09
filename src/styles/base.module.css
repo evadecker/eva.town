@@ -1,10 +1,7 @@
 html,
 body {
   height: 100%;
-}
-
-html {
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: var(--font-size-base);
 }
 
@@ -32,5 +29,9 @@ a {
 }
 
 body[data-animating] {
-  transition: color 1s ease-in-out, background-color 1s ease-in-out !important;
+  transition: color 1s ease-in-out, background-color 1s ease-in-out;
+}
+
+body[data-animating] * {
+  transition: fill 1s ease-in-out !important;
 }
