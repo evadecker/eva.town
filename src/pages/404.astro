@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404: Not Found" description="This page could not be found.">
+  <div class="glitch-container">
+    <h1 class="glitch" data-text="404">404</h1>
+  </div>
+</Layout>
+
+<style lang="scss">
+  .glitch-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .glitch {
+    color: var(--text);
+    position: relative;
+    margin: 0 auto;
+    font-size: clamp(100px, 35vw, 460px);
+    line-height: 1;
+
+    &::before,
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      color: var(--text);
+      background: var(--bg);
+      overflow: hidden;
+      text-align: center;
+      z-index: -1;
+    }
+
+    &::after {
+      left: 1vw;
+      text-shadow: -1px 0 red;
+      animation: noise-anim 2s infinite linear alternate-reverse;
+    }
+
+    &::before {
+      left: -1vw;
+      text-shadow: 1px 0 blue;
+      animation: noise-anim-2 3s infinite linear alternate-reverse;
+    }
+  }
+
+  @keyframes noise-anim {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip-path: inset(random(100) + px, 0, random(100) + px, 0);
+      }
+    }
+  }
+
+  @keyframes noise-anim-2 {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip-path: inset(random(100) + "%", 0, random(100) + "%", 0);
+      }
+    }
+  }
+</style>
