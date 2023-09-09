@@ -33,7 +33,7 @@ body {
   --text-light: var(--neutral-7);
 
   --bg: #ffdcdc;
-  --bg-hover: #f1caca;
+  --bg-hover: rgba(229, 176, 176, 0.5);
 
   --lcd-bg: #8db48e;
   --lcd-dark: #466b46;
@@ -55,7 +55,7 @@ body[data-theme="dark"] {
   --text-light: var(--neutral-5);
 
   --bg: #1d0206;
-  --bg-hover: #2b060b;
+  --bg-hover: rgba(59, 10, 16, 0.7);
 
   --lcd-bg: var(--neutral-3);
   --lcd-dark: var(--neutral-6);
