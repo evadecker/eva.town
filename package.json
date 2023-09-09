@@ -22,10 +22,8 @@
     "@astrojs/vercel": "^4.0.4",
     "@nanostores/react": "^0.7.1",
     "@react-spring/web": "^9.7.3",
-    "@react-three/fiber": "^8.14.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "@types/three": "^0.156.0",
     "@vercel/analytics": "^1.0.2",
     "astro": "^3.0.6",
     "classnames": "^2.3.2",
@@ -35,7 +33,6 @@
     "nanostores": "^0.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.156.1",
     "unmute-ios-audio": "^3.3.0",
     "use-force-update": "^1.0.11",
     "yarn-bound": "^0.5.4"
