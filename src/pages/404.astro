@@ -11,6 +11,7 @@ import { Layout } from "@layouts";
 
 <style lang="scss">
   .glitch-container {
+    background-color: var(--bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,10 +20,7 @@ import { Layout } from "@layouts";
     position: fixed;
     inset: 0;
     z-index: -1;
-
-    --rgb-line-height: 1px;
-    --rgb-area-height: 6px;
-    --scanline-opacity: 0.1;
+    animation: flicker 10ms infinite;
   }
 
   .scanlines {
@@ -30,37 +28,23 @@ import { Layout } from "@layouts";
     inset: 0;
     overflow: hidden;
     pointer-events: none;
-    z-index: 2;
-    animation: pulse 1s linear infinite alternate;
 
-    &::before,
+    // Courtesy https://codepen.io/zerospree/pen/mdevOB
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAALElEQVQYV2NkYGD4/x9IMAIxAxoDmzhIHfU0gCxFB9S1AacfsFmNJQzAoQIAH84j/OCkeYUAAAAASUVORK5CYII=");
+    mix-blend-mode: color-dodge;
+
     &::after {
       content: "";
       position: absolute;
       width: 100%;
-    }
-
-    &::before {
-      inset: 0;
-      mix-blend-mode: difference;
-      background: linear-gradient(
-        to bottom,
-        rgb(255 255 255 / 10%) 50%,
-        rgb(0 0 0 / var(--scanline-opacity)) 51%
-      );
-      background-size: 100% 4px;
-      animation: scanlines 1s steps(60) infinite;
-    }
-
-    &::after {
-      background: rgb(255 255 255 / 8%);
-      height: 2px;
+      background: rgb(255 255 255 / 5%);
+      height: 6px;
       animation: scanline 5s linear infinite;
-      mix-blend-mode: difference;
     }
   }
 
   .text {
+    color: var(--text);
     position: relative;
     font-size: clamp(100px, 45vw, 600px);
     z-index: -1;
@@ -78,22 +62,22 @@ import { Layout } from "@layouts";
       content: attr(data-text);
       position: absolute;
       top: 0;
-      left: -0.005em;
+      left: -0.01em;
       text-shadow:
         -1px -1px 3px rgb(0 0 255 / 90%),
         1px 1px 3px rgb(255 0 0 / 90%),
         6px 0 2px var(--bg);
-      animation: text-offset 5s linear infinite;
+      animation: text-offset 8s linear infinite;
     }
   }
 
   @keyframes text-offset {
     0% {
-      clip-path: polygon(0 110%, 100% 110%, 100% 120%, 0 120%);
+      clip-path: polygon(0 110%, 100% 110%, 100% 160%, 0 160%);
     }
 
     100% {
-      clip-path: polygon(0 -20%, 100% -20%, 100% -10%, 0 -10%);
+      clip-path: polygon(0 -90%, 100% -90%, 100% -10%, 0 -10%);
     }
   }
 
@@ -103,16 +87,16 @@ import { Layout } from "@layouts";
     }
 
     50% {
-      transform: translate3d(0, calc(var(--rgb-area-height) * -1), 0);
+      transform: translate3d(0, -6px, 0);
     }
   }
 
-  @keyframes pulse {
+  @keyframes flicker {
     0% {
-      opacity: 0.5;
+      opacity: 0.94;
     }
 
-    50% {
+    100% {
       opacity: 1;
     }
   }
