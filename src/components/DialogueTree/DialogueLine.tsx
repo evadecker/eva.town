@@ -1,12 +1,13 @@
-import { nanoid } from "nanoid";
 import classNames from "classnames";
+import { nanoid } from "nanoid";
 import type { Markup, OptionsResult, TextResult } from "yarn-bound";
+
+import styles from "./dialogue.module.css";
 import {
   DialogueLineFragment,
   type DialogueLineFragmentProps,
-  type EmphasisVariant,
-} from ".";
-import styles from "./dialogue.module.css";
+  type FragmentVariant,
+} from "./DialogueLineFragment";
 
 interface DialogueLineProps {
   /**
@@ -16,15 +17,14 @@ interface DialogueLineProps {
 }
 
 export const DialogueLine = ({ node }: DialogueLineProps) => {
-  if (!node) return null;
-
   const isBig = node.hashtags.includes("big");
-  const currentSpeaker = node.markup.find((m) => m.name === "character")
-    ?.properties?.name;
+
+  // const currentSpeaker = node.markup.find((m) => m.name === "character")
+  //   ?.properties?.name;
 
   function extractFragmentsWithNames(
     markupArray: Markup[],
-    inputText: string
+    inputText: string,
   ): DialogueLineFragmentProps[] {
     const fragments: DialogueLineFragmentProps[] = [];
 
@@ -40,11 +40,11 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
 
         const markupText = inputText.slice(
           markup.position,
-          markup.position + markup.length
+          markup.position + markup.length,
         );
         fragments.push({
           text: markupText,
-          variant: markup.name as EmphasisVariant,
+          variant: markup.name as FragmentVariant,
           index: markup.position,
         });
 
@@ -63,12 +63,10 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
   return (
     <div
       className={classNames(styles.line, {
-        [styles.bigLine]: isBig,
-        [styles.samText]: currentSpeaker === "Sam",
-        [styles.evaText]: currentSpeaker === "Eva",
+        [styles.big]: isBig,
       })}
     >
-      {node.text &&
+      {node.text != null &&
         extractFragmentsWithNames(node.markup, node.text).map(
           ({ text, variant, index }) => (
             <DialogueLineFragment
@@ -77,7 +75,7 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
               variant={variant}
               index={index}
             />
-          )
+          ),
         )}
     </div>
   );

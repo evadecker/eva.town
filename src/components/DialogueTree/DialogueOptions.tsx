@@ -1,6 +1,7 @@
+import { motion, type Variants } from "framer-motion";
 import type { OptionsResult } from "yarn-bound";
+
 import styles from "./dialogue.module.css";
-import { type Variants, motion } from "framer-motion";
 
 interface DialogueOptionsProps {
   node: OptionsResult;
@@ -33,7 +34,7 @@ export const DialogueOptions = ({ node, advance }: DialogueOptionsProps) => {
   };
 
   return (
-    <motion.div className={styles.optionsList}>
+    <motion.div className={styles.options}>
       {node.options.map((option, index) => (
         <motion.button
           variants={buttonVariants}
@@ -41,13 +42,13 @@ export const DialogueOptions = ({ node, advance }: DialogueOptionsProps) => {
           animate="animate"
           whileHover="whileHover"
           whileTap="whileTap"
-          className={styles.optionButton}
+          className={styles.option}
           key={index}
           onClick={() => {
             advance(index);
           }}
         >
-          <motion.span variants={arrowVariants} className={styles.optionArrow}>
+          <motion.span variants={arrowVariants} className={styles.arrow}>
             →
           </motion.span>
           {option.text}

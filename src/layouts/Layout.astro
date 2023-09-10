@@ -1,10 +1,10 @@
 ---
-import Header from "../components/Header/Header.astro";
-import Footer from "../components/Footer/Footer.astro";
 import "../styles/reset.module.css";
 import "../styles/theme.module.css";
 import "../styles/base.module.css";
 import "../styles/typography.module.css";
+
+import { Footer, Header } from "@components";
 
 interface Props {
   title: string;
@@ -14,7 +14,7 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />

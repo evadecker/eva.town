@@ -1,4 +1,5 @@
-import { type Variants, motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+
 import styles from "./dialogue.module.css";
 
 interface DialogueContinueProps {
@@ -36,14 +37,15 @@ export const DialogueContinue = ({ advance }: DialogueContinueProps) => {
 
   return (
     <motion.button
-      className={styles.continueButton}
+      className={styles.continue}
       variants={buttonVariants}
-      onClick={() => advance()}
+      onClick={() => {
+        advance();
+      }}
       initial="initial"
       animate="animate"
     >
       <motion.svg
-        className={styles.continueArrow}
         variants={arrowVariants}
         aria-label="Continue"
         width="10"

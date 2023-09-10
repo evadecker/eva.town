@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
-import styles from "./samstickers.module.css";
+import { getRandomValueBetween } from "@helpers";
 import { useStore } from "@nanostores/react";
-import { getRandomValueBetween } from "../../helpers";
-import { motion, type DragHandlers } from "framer-motion";
-import { incrementTopZIndex, topZIndex } from "../../stores/sam";
+import { incrementTopZIndex, topZIndex } from "@stores/sam";
+import { type DragHandlers, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-type VariantData = {
+import styles from "./samstickers.module.css";
+
+interface VariantData {
   path: string;
   srcSet: string;
   src: string;
   alt: string;
-};
+}
 
 const variantsData: VariantData[] = [
   {
@@ -93,7 +94,7 @@ const variantsData: VariantData[] = [
   },
 ];
 
-export type SamStickerProps = {
+export interface SamStickerProps {
   /**
    * The unique identifier for the sticker.
    */
@@ -104,7 +105,7 @@ export type SamStickerProps = {
    * There are 13 variants total.
    */
   variant: number;
-};
+}
 
 export const SamSticker = ({ variant }: SamStickerProps) => {
   // Pixel buffer to prevent stickers from going off the canvas when placed randomly
@@ -122,12 +123,12 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
   const $topZIndex = useStore(topZIndex);
   const [zIndex, setZIndex] = useState($topZIndex);
   const [x, setX] = useState(
-    getRandomValueBetween(0, document.body.clientWidth - BUFFER)
+    getRandomValueBetween(0, document.body.clientWidth - BUFFER),
   );
   const [y, setY] = useState(
-    getRandomValueBetween(0, document.body.clientHeight - BUFFER)
+    getRandomValueBetween(0, document.body.clientHeight - BUFFER),
   );
-  const [rotate, _setRotate] = useState(getRandomValueBetween(-10, 10));
+  const [rotate] = useState(getRandomValueBetween(-10, 10));
 
   // Twist in animation
   const initialRotation = rotate + getRandomValueBetween(-20, 20);
@@ -148,7 +149,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
   const getNearestOffCanvasCoordinates = (
     x: number,
     y: number,
-    offset: number
+    offset: number,
   ): { x: number; y: number } => {
     const canvasWidth = document.body.clientWidth;
     const canvasHeight = document.body.clientHeight;
@@ -200,23 +201,18 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
       whileDrag={{ scale: 1.3, cursor: "grabbing" }}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
-      style={{ zIndex: zIndex }}
+      style={{ zIndex }}
       data-testid="samSticker"
     >
       <svg
-        className={styles.stickerSvg}
         width="400"
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          className={styles.stickerPath}
-          d={variantsData[currentVariant].path}
-          fill="white"
-        />
+        <path d={variantsData[currentVariant].path} fill="white" />
       </svg>
-      <picture className={styles.stickerImg}>
+      <picture>
         <source
           srcSet={variantsData[currentVariant].srcSet}
           type="image/webp"

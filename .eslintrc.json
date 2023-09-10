@@ -4,8 +4,32 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["standard-with-typescript", "plugin:astro/recommended", "prettier"],
+  "extends": [
+    "standard-with-typescript",
+    "prettier",
+    "plugin:astro/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "simple-import-sort", "prettier"],
   "rules": {
-    "@typescript-eslint/explicit-function-return-type": "off"
-  }
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/triple-slash-reference": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"]
+      }
+    }
+  ]
 }

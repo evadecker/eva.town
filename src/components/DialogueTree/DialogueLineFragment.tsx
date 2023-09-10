@@ -1,8 +1,9 @@
+import { motion, type Variants } from "framer-motion";
 import { nanoid } from "nanoid";
-import styles from "./dialogue.module.css";
-import { type Variants, motion } from "framer-motion";
 
-export enum EmphasisVariant {
+import styles from "./dialogue.module.css";
+
+export enum FragmentVariant {
   Wave = "wave",
   Shake = "shake",
   None = "none",
@@ -36,7 +37,7 @@ interface TypedCharacterProps {
    * Animation style of the character
    * @default "none"
    */
-  variant?: EmphasisVariant;
+  variant?: FragmentVariant;
 }
 
 const TypedCharacter = ({
@@ -44,9 +45,9 @@ const TypedCharacter = ({
   index,
   speed = 0.04,
   delay = 0.2,
-  variant = EmphasisVariant.None,
+  variant = FragmentVariant.None,
 }: TypedCharacterProps) => {
-  const isEmphasized = variant !== EmphasisVariant.None;
+  const isEmphasized = variant !== FragmentVariant.None;
 
   const generateRandomValuesArray = (
     num: number,
@@ -106,11 +107,11 @@ const TypedCharacter = ({
     }),
   };
 
-  const getVariantObject = (variant?: EmphasisVariant) => {
+  const getVariantObject = (variant?: FragmentVariant) => {
     switch (variant) {
-      case EmphasisVariant.Shake:
+      case FragmentVariant.Shake:
         return shakeVariants;
-      case EmphasisVariant.Wave:
+      case FragmentVariant.Wave:
         return waveVariants;
       default:
         return undefined;
@@ -124,7 +125,7 @@ const TypedCharacter = ({
     >
       {isEmphasized ? (
         <motion.strong
-          className={styles.emphasizedCharacter}
+          className={styles.emphasized}
           variants={getVariantObject(variant)}
           initial="initial"
           animate="animate"
@@ -149,7 +150,7 @@ export interface DialogueLineFragmentProps {
    * Animation style of the sentence fragment
    * @default "none"
    */
-  variant?: EmphasisVariant;
+  variant?: FragmentVariant;
 
   /**
    * Starting character index for continuous animation
