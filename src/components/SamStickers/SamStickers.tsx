@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 
 import { SamSticker, type SamStickerProps } from "./SamSticker";
-import styles from "./samstickers.module.css";
+import styles from "./samstickers.module.scss";
 
 export const SamStickers = () => {
   const [samArray, setSamArray] = useState<SamStickerProps[]>([]);

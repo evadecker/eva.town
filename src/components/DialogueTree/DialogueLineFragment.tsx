@@ -1,7 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import { nanoid } from "nanoid";
 
-import styles from "./dialogue.module.css";
+import styles from "./dialogue.module.scss";
 
 export enum FragmentVariant {
   Wave = "wave",
@@ -52,7 +52,7 @@ const TypedCharacter = ({
   const generateRandomValuesArray = (
     num: number,
     min: number,
-    max: number
+    max: number,
   ): number[] => {
     const randomNumberBetweenValues = (): number => {
       return Math.random() * (max - min) + min;
@@ -64,7 +64,7 @@ const TypedCharacter = ({
   const generateRandomEmsArray = (
     num: number,
     min: number,
-    max: number
+    max: number,
   ): string[] => {
     return generateRandomValuesArray(num, min, max).map((i) => i + "em");
   };

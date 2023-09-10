@@ -4,7 +4,7 @@ import { incrementTopZIndex, topZIndex } from "@stores/sam";
 import { type DragHandlers, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-import styles from "./samstickers.module.css";
+import styles from "./samstickers.module.scss";
 
 interface VariantData {
   path: string;

@@ -1,6 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 
-import styles from "./dialogue.module.css";
+import styles from "./dialogue.module.scss";
 
 interface DialogueContinueProps {
   advance: () => void;
