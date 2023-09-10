@@ -18,7 +18,7 @@ export const DialogueTree = () => {
     new YarnBound({
       dialogue,
       combineTextAndOptionsResults: true,
-    })
+    }),
   );
 
   const forceUpdate = useForceUpdate();
@@ -33,7 +33,7 @@ export const DialogueTree = () => {
       runnerRef.current.advance(optionIndex);
       forceUpdate();
     },
-    [runnerRef.current]
+    [runnerRef.current],
   );
 
   const displayDialogue =

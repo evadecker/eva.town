@@ -1,6 +1,6 @@
 import type { OptionsResult, TextResult } from "yarn-bound";
 
-import styles from "./dialogue.module.css";
+import styles from "./dialogue.module.scss";
 
 interface DialogueEmoteProps {
   node: TextResult | OptionsResult;
@@ -16,7 +16,7 @@ export const DialogueEmote = ({ node }: DialogueEmoteProps) => {
   };
 
   const currentEmote = getEmoteFromTag(
-    hashtags?.filter((str) => str.startsWith("emote"))[0]
+    hashtags?.filter((str) => str.startsWith("emote"))[0],
   );
 
   const getEmote = (emote?: string) => {

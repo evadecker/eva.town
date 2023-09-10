@@ -1,7 +1,7 @@
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { CommandResult, type CurrentResult, OptionsResult } from "yarn-bound";
 
-import styles from "./dialogue.module.css";
+import styles from "./dialogue.module.scss";
 import { DialogueContinue } from "./DialogueContinue";
 import { DialogueEmote } from "./DialogueEmote";
 import { DialogueLine } from "./DialogueLine";

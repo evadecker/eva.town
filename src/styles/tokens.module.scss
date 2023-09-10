@@ -22,6 +22,9 @@
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
+  --font-sans: nimbus-sans, sans-serif;
+  --font-serif: minion-3, serif;
+  --font-display: nimbus-sans-extended, sans-serif;
 }
 
 body {
@@ -41,21 +44,21 @@ body {
   --synth-whitekey-pressed: var(--purple);
   --synth-blackkey: var(--neutral-9);
   --synth-blackkey-pressed: var(--purple-dark);
-}
 
-body[data-theme="dark"] {
-  --text: #ffdcdc;
-  --text-light: var(--neutral-5);
-  --bg: #1d0206;
-  --bg-hover: rgb(59 10 16 / 70%);
-  --lcd-bg: var(--neutral-3);
-  --lcd-dark: var(--neutral-6);
-  --lcd-light: var(--neutral-0);
-  --lcd-hover: var(--neutral-7);
-  --synth-base: var(--red);
-  --synth-endcap: var(--red-alt);
-  --synth-lcd-outline: var(--red-dark);
-  --synth-keys-outline: var(--red-dark);
-  --synth-whitekey-pressed: var(--red);
-  --synth-blackkey-pressed: var(--red-alt);
+  &[data-theme="dark"] {
+    --text: #ffdcdc;
+    --text-light: var(--neutral-5);
+    --bg: #1d0206;
+    --bg-hover: rgb(59 10 16 / 70%);
+    --lcd-bg: var(--neutral-3);
+    --lcd-dark: var(--neutral-6);
+    --lcd-light: var(--neutral-0);
+    --lcd-hover: var(--neutral-7);
+    --synth-base: var(--red);
+    --synth-endcap: var(--red-alt);
+    --synth-lcd-outline: var(--red-dark);
+    --synth-keys-outline: var(--red-dark);
+    --synth-whitekey-pressed: var(--red);
+    --synth-blackkey-pressed: var(--red-alt);
+  }
 }
