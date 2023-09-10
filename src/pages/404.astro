@@ -33,7 +33,7 @@ import { Layout } from "@layouts";
 
   .glitch-container {
     display: flex;
-    position: relative;
+    position: absolute;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -48,7 +48,7 @@ import { Layout } from "@layouts";
 
   .text {
     position: relative;
-    font-size: clamp(100px, 45vw, 600px);
+    font-size: clamp(360px, 45vw, 600px);
     z-index: -1;
     line-height: 1;
     letter-spacing: 0.02em;
@@ -59,6 +59,12 @@ import { Layout } from "@layouts";
       -1px -1px 1px rgb(0 0 255),
       1px 1px 1px rgb(255 0 0);
     filter: blur(1px);
+
+    @media screen and (width <= 600px) {
+      writing-mode: vertical-rl;
+      margin-top: 0;
+      margin-right: -0.1em;
+    }
 
     &::after {
       content: attr(data-text);
