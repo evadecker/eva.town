@@ -17,25 +17,25 @@
   pointer-events: auto;
 }
 
-.sticker-svg {
+.sticker svg {
   filter: drop-shadow(0 1px 1px rgb(0 0 0 / 20%));
   pointer-events: fill;
 }
 
-.sticker-path {
+.sticker path {
   /* Reinitialize click and drag events when hovered over a path */
   pointer-events: auto;
   cursor: grab;
 }
 
-.sticker-path:hover,
-.sticker:active .sticker-path {
+.sticker path:hover,
+.sticker:active .sticker path {
   stroke: var(--purple);
   stroke-width: 6px;
 }
 
-.sticker-svg,
-.sticker-img {
+.sticker svg,
+.sticker picture {
   position: absolute;
   top: 0;
   left: 0;

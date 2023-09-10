@@ -123,10 +123,10 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
   const $topZIndex = useStore(topZIndex);
   const [zIndex, setZIndex] = useState($topZIndex);
   const [x, setX] = useState(
-    getRandomValueBetween(0, document.body.clientWidth - BUFFER)
+    getRandomValueBetween(0, document.body.clientWidth - BUFFER),
   );
   const [y, setY] = useState(
-    getRandomValueBetween(0, document.body.clientHeight - BUFFER)
+    getRandomValueBetween(0, document.body.clientHeight - BUFFER),
   );
   const [rotate] = useState(getRandomValueBetween(-10, 10));
 
@@ -149,7 +149,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
   const getNearestOffCanvasCoordinates = (
     x: number,
     y: number,
-    offset: number
+    offset: number,
   ): { x: number; y: number } => {
     const canvasWidth = document.body.clientWidth;
     const canvasHeight = document.body.clientHeight;
@@ -205,19 +205,14 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
       data-testid="samSticker"
     >
       <svg
-        className={styles.sticker - svg}
         width="400"
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          className={styles.sticker - path}
-          d={variantsData[currentVariant].path}
-          fill="white"
-        />
+        <path d={variantsData[currentVariant].path} fill="white" />
       </svg>
-      <picture className={styles.sticker - img}>
+      <picture>
         <source
           srcSet={variantsData[currentVariant].srcSet}
           type="image/webp"

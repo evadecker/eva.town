@@ -8,7 +8,7 @@
   right: 24px;
 }
 
-.options-list {
+.options {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -16,7 +16,7 @@
   margin-bottom: 4px;
 }
 
-.option-button {
+.option {
   font-size: 15px;
   border: none;
   background: white;
@@ -28,7 +28,7 @@
   cursor: pointer;
 }
 
-.option-arrow {
+.arrow {
   display: inline-block;
   overflow: hidden;
   margin-right: 4px;
@@ -48,11 +48,6 @@
   overflow: hidden;
 }
 
-.eva-text,
-.sam-text {
-  font-family: var(--font-sans);
-}
-
 .emote {
   width: 48px;
   height: 48px;
@@ -64,6 +59,7 @@
 }
 
 .line {
+  font-family: var(--font-sans);
   font-size: 15px;
   flex: 1;
   padding: 8px 16px 8px 0;
@@ -98,7 +94,7 @@
   font-weight: 600;
 }
 
-.continue-button {
+.continue {
   position: absolute;
   display: flex;
   justify-content: flex-end;
@@ -111,6 +107,6 @@
   cursor: pointer;
 }
 
-.continue-arrow {
+.continue svg {
   margin-right: 4px;
 }
