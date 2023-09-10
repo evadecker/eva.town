@@ -1,4 +1,5 @@
-import { type Variants, motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+
 import styles from "./dialogue.module.css";
 
 interface DialogueContinueProps {
@@ -38,7 +39,9 @@ export const DialogueContinue = ({ advance }: DialogueContinueProps) => {
     <motion.button
       className={styles.continueButton}
       variants={buttonVariants}
-      onClick={() => advance()}
+      onClick={() => {
+        advance();
+      }}
       initial="initial"
       animate="animate"
     >

@@ -1,12 +1,13 @@
-import { nanoid } from "nanoid";
 import classNames from "classnames";
+import { nanoid } from "nanoid";
 import type { Markup, OptionsResult, TextResult } from "yarn-bound";
+
+import styles from "./dialogue.module.css";
 import {
   DialogueLineFragment,
   type DialogueLineFragmentProps,
-  type EmphasisVariant,
-} from ".";
-import styles from "./dialogue.module.css";
+  type FragmentVariant,
+} from "./DialogueLineFragment";
 
 interface DialogueLineProps {
   /**
@@ -16,8 +17,6 @@ interface DialogueLineProps {
 }
 
 export const DialogueLine = ({ node }: DialogueLineProps) => {
-  if (!node) return null;
-
   const isBig = node.hashtags.includes("big");
   const currentSpeaker = node.markup.find((m) => m.name === "character")
     ?.properties?.name;
@@ -44,7 +43,7 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
         );
         fragments.push({
           text: markupText,
-          variant: markup.name as EmphasisVariant,
+          variant: markup.name as FragmentVariant,
           index: markup.position,
         });
 
@@ -68,7 +67,7 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
         [styles.evaText]: currentSpeaker === "Eva",
       })}
     >
-      {node.text &&
+      {node.text != null &&
         extractFragmentsWithNames(node.markup, node.text).map(
           ({ text, variant, index }) => (
             <DialogueLineFragment

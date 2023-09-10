@@ -1,12 +1,13 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { useStore } from "@nanostores/react";
-import styles from "./samstickers.module.css";
+import { clearSams, numSams } from "@stores/sam";
+import { AnimatePresence, motion } from "framer-motion";
 import { nanoid } from "nanoid";
-import { numSams, clearSams } from "../../stores/sam";
-import { SamSticker, type SamStickerProps } from "./SamSticker";
+import { useEffect, useState } from "react";
 
-const SamStickers = () => {
+import { SamSticker, type SamStickerProps } from "./SamSticker";
+import styles from "./samstickers.module.css";
+
+export const SamStickers = () => {
   const [samArray, setSamArray] = useState<SamStickerProps[]>([]);
   const $numSams = useStore(numSams);
 
@@ -58,5 +59,3 @@ const SamStickers = () => {
     </div>
   );
 };
-
-export default SamStickers;

@@ -1,6 +1,7 @@
+import { motion, type Variants } from "framer-motion";
 import type { OptionsResult } from "yarn-bound";
+
 import styles from "./dialogue.module.css";
-import { type Variants, motion } from "framer-motion";
 
 interface DialogueOptionsProps {
   node: OptionsResult;

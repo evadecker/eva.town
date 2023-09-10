@@ -1,12 +1,11 @@
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { CommandResult, type CurrentResult, OptionsResult } from "yarn-bound";
-import {
-  DialogueLine,
-  DialogueOptions,
-  DialogueContinue,
-  DialogueEmote,
-} from ".";
+
 import styles from "./dialogue.module.css";
+import { DialogueContinue } from "./DialogueContinue";
+import { DialogueEmote } from "./DialogueEmote";
+import { DialogueLine } from "./DialogueLine";
+import { DialogueOptions } from "./DialogueOptions";
 
 interface DialogueNodeProps {
   node: CurrentResult;
@@ -14,7 +13,7 @@ interface DialogueNodeProps {
 }
 
 export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
-  if (!node || node instanceof CommandResult) return null;
+  if (node == null || node instanceof CommandResult) return null;
 
   const bubbleVariants: Variants = {
     initial: {

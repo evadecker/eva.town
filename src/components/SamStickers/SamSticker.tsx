@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
-import styles from "./samstickers.module.css";
+import { getRandomValueBetween } from "@helpers";
 import { useStore } from "@nanostores/react";
-import { getRandomValueBetween } from "../../helpers";
-import { motion, type DragHandlers } from "framer-motion";
-import { incrementTopZIndex, topZIndex } from "../../stores/sam";
+import { incrementTopZIndex, topZIndex } from "@stores/sam";
+import { type DragHandlers, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-type VariantData = {
+import styles from "./samstickers.module.css";
+
+interface VariantData {
   path: string;
   srcSet: string;
   src: string;
   alt: string;
-};
+}
 
 const variantsData: VariantData[] = [
   {
@@ -93,7 +94,7 @@ const variantsData: VariantData[] = [
   },
 ];
 
-export type SamStickerProps = {
+export interface SamStickerProps {
   /**
    * The unique identifier for the sticker.
    */
@@ -104,7 +105,7 @@ export type SamStickerProps = {
    * There are 13 variants total.
    */
   variant: number;
-};
+}
 
 export const SamSticker = ({ variant }: SamStickerProps) => {
   // Pixel buffer to prevent stickers from going off the canvas when placed randomly
@@ -127,7 +128,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
   const [y, setY] = useState(
     getRandomValueBetween(0, document.body.clientHeight - BUFFER)
   );
-  const [rotate, _setRotate] = useState(getRandomValueBetween(-10, 10));
+  const [rotate] = useState(getRandomValueBetween(-10, 10));
 
   // Twist in animation
   const initialRotation = rotate + getRandomValueBetween(-20, 20);
@@ -200,7 +201,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
       whileDrag={{ scale: 1.3, cursor: "grabbing" }}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
-      style={{ zIndex: zIndex }}
+      style={{ zIndex }}
       data-testid="samSticker"
     >
       <svg

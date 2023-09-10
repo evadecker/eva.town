@@ -1,7 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "jsx": "react-jsx",
-    "typeRoots": ["src/types", "node_modules/@types", "public/scripts"]
+    "typeRoots": ["src/types", "node_modules/@types", "public/scripts"],
+    "paths": {
+      "@components": ["src/components"],
+      "@helpers": ["src/helpers"],
+      "@layouts": ["src/layouts"],
+      "@stores/*": ["src/stores/*"]
+    }
   },
   "extends": "astro/tsconfigs/strict",
   "include": ["**/*.ts", "**/*.tsx", "**/*.astro", ".eslintrc.js"]

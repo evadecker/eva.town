@@ -1,5 +1,6 @@
-import styles from "./dialogue.module.css";
 import type { OptionsResult, TextResult } from "yarn-bound";
+
+import styles from "./dialogue.module.css";
 
 interface DialogueEmoteProps {
   node: TextResult | OptionsResult;
@@ -9,7 +10,7 @@ export const DialogueEmote = ({ node }: DialogueEmoteProps) => {
   const { hashtags } = node;
 
   const getEmoteFromTag = (tag: string) => {
-    if (!tag) return;
+    if (tag === "") return;
     const emote = tag.split(":")[1];
     return emote;
   };
