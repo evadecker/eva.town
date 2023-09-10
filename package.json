@@ -10,6 +10,7 @@
     "astro": "astro",
     "lint": "eslint 'src/**/*.{js,astro,ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{js,astro,ts,tsx}' --fix",
+    "stylelint": "npx stylelint '**/*.{css,scss,astro}'",
     "test": "playwright test",
     "prettier": "prettier --write .",
     "html-validate": "npm run build && npm exec html-validate .vercel/output/static/*.html",
@@ -54,9 +55,14 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "html-validate": "^8.3.0",
+    "postcss-html": "^1.5.0",
     "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.5.4",
+    "prettier-plugin-astro": "^0.12.0",
     "sass": "^1.66.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^11.0.0",
     "typescript": "^5.2.2"
   }
 }

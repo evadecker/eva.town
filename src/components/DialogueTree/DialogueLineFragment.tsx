@@ -125,7 +125,7 @@ const TypedCharacter = ({
     >
       {isEmphasized ? (
         <motion.strong
-          className={styles.emphasizedCharacter}
+          className={styles.emphasized}
           variants={getVariantObject(variant)}
           initial="initial"
           animate="animate"

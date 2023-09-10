@@ -37,7 +37,7 @@ export const DialogueContinue = ({ advance }: DialogueContinueProps) => {
 
   return (
     <motion.button
-      className={styles.continueButton}
+      className={styles.continue - button}
       variants={buttonVariants}
       onClick={() => {
         advance();
@@ -46,7 +46,7 @@ export const DialogueContinue = ({ advance }: DialogueContinueProps) => {
       animate="animate"
     >
       <motion.svg
-        className={styles.continueArrow}
+        className={styles.continue - arrow}
         variants={arrowVariants}
         aria-label="Continue"
         width="10"

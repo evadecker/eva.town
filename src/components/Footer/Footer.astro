@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <footer>
@@ -25,17 +26,17 @@
   </a>
 </footer>
 
-<style>
+<style lang="scss">
   footer {
     padding: var(--spacing-lg);
-  }
 
-  footer a {
-    font-family: var(--font-sans);
-    display: inline-block;
-  }
+    a {
+      font-family: var(--font-sans);
+      display: inline-block;
 
-  footer a + a {
-    margin-left: 1rem;
+      & + a {
+        margin-left: 1rem;
+      }
+    }
   }
 </style>

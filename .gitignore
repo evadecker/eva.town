@@ -4,7 +4,6 @@ package-lock.json
 
 # Workflow & Editor
 .idea
-.vscode
 .eslintcache
 .stylelintcache
 stats.json

@@ -40,7 +40,7 @@ export const SamStickers = () => {
         ))}
         {$numSams >= 3 && (
           <motion.button
-            className={styles.shooButton}
+            className={styles.shoo}
             onClick={handleClear}
             initial={{ opacity: 0, y: 100 }}
             animate={{

@@ -62,9 +62,9 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
   return (
     <div
       className={classNames(styles.line, {
-        [styles.bigLine]: isBig,
-        [styles.samText]: currentSpeaker === "Sam",
-        [styles.evaText]: currentSpeaker === "Eva",
+        [styles.big]: isBig,
+        [styles.sam - text]: currentSpeaker === "Sam",
+        [styles.eva - text]: currentSpeaker === "Eva",
       })}
     >
       {node.text != null &&

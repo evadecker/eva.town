@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <header>
@@ -48,7 +49,7 @@
   </div>
 </header>
 
-<style>
+<style lang="scss">
   header {
     width: 100%;
     display: flex;
@@ -61,6 +62,21 @@
     font-family: var(--font-display);
     font-weight: 600;
     text-decoration: none;
+  }
+
+  .moon,
+  .moon-hover,
+  .sun,
+  .sun-hover {
+    transform-origin: 50% 200%;
+    transition:
+      transform 0.4s ease-out,
+      opacity 0.2s ease-in-out;
+  }
+
+  .moon-hover,
+  .sun-hover {
+    opacity: 0;
   }
 
   button[data-theme-toggle] {
@@ -77,53 +93,44 @@
     overflow: hidden;
     color: var(--text);
     transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      background: var(--bg-hover);
+      transform: scale(1.2);
+
+      .moon-hover,
+      .sun-hover {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+
+    &:disabled {
+      cursor: default;
+    }
+
+    svg {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+    }
   }
 
-  button[data-theme-toggle]:hover {
-    background: var(--bg-hover);
-    transform: scale(1.2);
+  body[data-theme="dark"] button[data-theme-toggle] {
+    .sun,
+    .sun-hover {
+      transform: rotate(-60deg);
+    }
   }
 
-  button[data-theme-toggle]:active {
-    transform: scale(1.1);
-  }
-
-  button[data-theme-toggle]:disabled {
-    cursor: default;
-  }
-
-  button[data-theme-toggle] svg {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-  }
-
-  .moon,
-  .moon-hover,
-  .sun,
-  .sun-hover {
-    transform-origin: 50% 200%;
-    transition: transform 0.4s ease-out, opacity 0.2s ease-in-out;
-  }
-
-  .moon-hover,
-  .sun-hover {
-    opacity: 0;
-  }
-
-  button[data-theme-toggle]:hover .moon-hover,
-  button[data-theme-toggle]:hover .sun-hover {
-    opacity: 1;
-  }
-
-  body[data-theme="dark"] button[data-theme-toggle] .sun,
-  body[data-theme="dark"] button[data-theme-toggle] .sun-hover {
-    transform: rotate(-60deg);
-  }
-
-  body[data-theme="light"] button[data-theme-toggle] .moon,
-  body[data-theme="light"] button[data-theme-toggle] .moon-hover {
-    transform: rotate(60deg);
+  body[data-theme="light"] button[data-theme-toggle] {
+    .moon,
+    .moon-hover {
+      transform: rotate(60deg);
+    }
   }
 
   .button-container {
@@ -132,10 +139,7 @@
 
   .animation-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     overflow: hidden;
     z-index: -1;
     pointer-events: none;
@@ -143,8 +147,8 @@
 
   .animated-circle {
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 40px;
     height: 40px;
     background: var(--bg);
@@ -153,13 +157,14 @@
   }
 
   body[data-animating] .animated-circle {
-    animation: expandOut 1s ease-in;
+    animation: grow 1s ease-in;
   }
 
-  @keyframes expandOut {
+  @keyframes grow {
     0% {
       transform: scale(1);
     }
+
     100% {
       transform: scale(100);
     }

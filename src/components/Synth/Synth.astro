@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <script>
@@ -277,7 +278,7 @@
             },
           ],
         },
-        sounds
+        sounds,
       );
 
       for (var i = 0; i < sounds.ui.length; i++) {
@@ -1573,6 +1574,18 @@
     margin-top: 2rem;
   }
 
+  #synth-start {
+    cursor: pointer;
+  }
+
+  .synth-randomize {
+    display: none;
+  }
+
+  body.has-touch .synth-randomize {
+    display: none;
+  }
+
   #synth[data-loading="true"] {
     pointer-events: none;
   }
@@ -1635,12 +1648,17 @@
     opacity: 0.1;
   }
 
-  #synth-start {
-    cursor: pointer;
+  .instrument-arrow:hover .lcd-base {
+    fill: var(--lcd-hover);
+  }
+
+  #synth-start:hover .lcd-base {
+    opacity: 1;
+    fill: var(--lcd-hover);
   }
 
   #synth-start:not(:hover) .lcd-base {
-    animation: pressStart 2s infinite;
+    animation: press-start 2s infinite;
   }
 
   #synth-start:not(:hover) .lcd-base:nth-child(2) {
@@ -1659,16 +1677,12 @@
     animation-delay: 0.8s;
   }
 
-  #synth-start:hover .lcd-base {
-    opacity: 1;
-    fill: var(--lcd-hover);
-  }
-
-  @keyframes pressStart {
+  @keyframes press-start {
     0%,
     10% {
       opacity: 0.8;
     }
+
     100% {
       opacity: 1;
     }
@@ -1689,6 +1703,10 @@
     transition: opacity 0.4s ease-out;
   }
 
+  .synth-key .base {
+    transition: fill 0.4s ease-out;
+  }
+
   .synth-key.white .base {
     fill: var(--synth-whitekey);
   }
@@ -1698,11 +1716,7 @@
   }
 
   .synth-key.black .highlight {
-    fill: rgba(255, 255, 255, 0.15);
-  }
-
-  .synth-key .base {
-    transition: fill 0.4s ease-out;
+    fill: rgb(255 255 255 / 15%);
   }
 
   .synth-key.pressed .base {
@@ -1725,7 +1739,7 @@
   }
 
   .key-letter {
-    fill: rgba(0, 0, 0, 0.3);
+    fill: rgb(0 0 0 / 30%);
     opacity: 0;
     transform: translateY(4px);
     transition: 0.4s ease-out;
@@ -1746,18 +1760,11 @@
     cursor: pointer;
   }
 
-  .synth-randomize {
-    display: none;
-  }
-
-  body.has-touch .synth-randomize {
-    display: none;
-  }
-
   @media not all and (pointer: coarse) {
     .synth-instrument:hover .synth-randomize {
       display: block;
     }
+
     .synth-instrument:hover .instrument {
       display: none !important;
     }
@@ -1765,9 +1772,5 @@
 
   .instrument-arrow {
     cursor: pointer;
-  }
-
-  .instrument-arrow:hover .lcd-base {
-    fill: var(--lcd-hover);
   }
 </style>

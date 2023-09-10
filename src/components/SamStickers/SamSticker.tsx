@@ -205,19 +205,19 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
       data-testid="samSticker"
     >
       <svg
-        className={styles.stickerSvg}
+        className={styles.sticker - svg}
         width="400"
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          className={styles.stickerPath}
+          className={styles.sticker - path}
           d={variantsData[currentVariant].path}
           fill="white"
         />
       </svg>
-      <picture className={styles.stickerImg}>
+      <picture className={styles.sticker - img}>
         <source
           srcSet={variantsData[currentVariant].srcSet}
           type="image/webp"

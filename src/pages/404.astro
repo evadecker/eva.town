@@ -17,10 +17,7 @@ import { Layout } from "@layouts";
     flex-direction: column;
     overflow: hidden;
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     z-index: -1;
 
     --rgb-line-height: 1px;
@@ -30,10 +27,7 @@ import { Layout } from "@layouts";
 
   .scanlines {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     overflow: hidden;
     pointer-events: none;
     z-index: 2;
@@ -47,22 +41,19 @@ import { Layout } from "@layouts";
     }
 
     &::before {
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset: 0;
       mix-blend-mode: difference;
       background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0.1) 50%,
-        rgba(0, 0, 0, var(--scanline-opacity)) 51%
+        rgb(255 255 255 / 10%) 50%,
+        rgb(0 0 0 / var(--scanline-opacity)) 51%
       );
       background-size: 100% 4px;
       animation: scanlines 1s steps(60) infinite;
     }
 
     &::after {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgb(255 255 255 / 8%);
       height: 2px;
       animation: scanline 5s linear infinite;
       mix-blend-mode: difference;
@@ -77,10 +68,10 @@ import { Layout } from "@layouts";
     letter-spacing: 0.02em;
     margin-top: -0.1em;
     pointer-events: none;
-    -webkit-user-select: none;
     user-select: none;
-    text-shadow: -1px -1px 1px rgba(0, 0, 255, 0.8),
-      1px 1px 1px rgba(255, 0, 0, 0.8);
+    text-shadow:
+      -1px -1px 1px rgb(0 0 255 / 80%),
+      1px 1px 1px rgb(255 0 0 / 80%);
     filter: blur(1px);
 
     &::after {
@@ -88,16 +79,19 @@ import { Layout } from "@layouts";
       position: absolute;
       top: 0;
       left: -0.005em;
-      text-shadow: -1px -1px 3px rgba(0, 0, 255, 0.9),
-        1px 1px 3px rgba(255, 0, 0, 0.9), 6px 0 2px var(--bg);
-      animation: textOffset 5s linear infinite;
+      text-shadow:
+        -1px -1px 3px rgb(0 0 255 / 90%),
+        1px 1px 3px rgb(255 0 0 / 90%),
+        6px 0 2px var(--bg);
+      animation: text-offset 5s linear infinite;
     }
   }
 
-  @keyframes textOffset {
+  @keyframes text-offset {
     0% {
       clip-path: polygon(0 110%, 100% 110%, 100% 120%, 0 120%);
     }
+
     100% {
       clip-path: polygon(0 -20%, 100% -20%, 100% -10%, 0 -10%);
     }
@@ -107,6 +101,7 @@ import { Layout } from "@layouts";
     0% {
       transform: translate3d(0, 100vh, 0);
     }
+
     50% {
       transform: translate3d(0, calc(var(--rgb-area-height) * -1), 0);
     }

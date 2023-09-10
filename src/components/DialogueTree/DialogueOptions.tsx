@@ -34,7 +34,7 @@ export const DialogueOptions = ({ node, advance }: DialogueOptionsProps) => {
   };
 
   return (
-    <motion.div className={styles.optionsList}>
+    <motion.div className={styles.options - list}>
       {node.options.map((option, index) => (
         <motion.button
           variants={buttonVariants}
@@ -42,13 +42,16 @@ export const DialogueOptions = ({ node, advance }: DialogueOptionsProps) => {
           animate="animate"
           whileHover="whileHover"
           whileTap="whileTap"
-          className={styles.optionButton}
+          className={styles.option - button}
           key={index}
           onClick={() => {
             advance(index);
           }}
         >
-          <motion.span variants={arrowVariants} className={styles.optionArrow}>
+          <motion.span
+            variants={arrowVariants}
+            className={styles.option - arrow}
+          >
             →
           </motion.span>
           {option.text}

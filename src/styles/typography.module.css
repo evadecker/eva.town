@@ -1,4 +1,4 @@
-:global(:root) {
+:root {
   --font-sans: nimbus-sans, sans-serif;
   --font-serif: minion-3, serif;
   --font-display: nimbus-sans-extended, sans-serif;
@@ -16,17 +16,17 @@ body {
   line-height: 1.4;
   font-family: var(--font-serif);
   font-weight: 400;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (width >= 620px) {
   html,
   body {
     font-size: 21px;
   }
 }
 
-@media screen and (min-width: 820px) {
+@media screen and (width >= 820px) {
   html,
   body {
     font-size: 22px;
