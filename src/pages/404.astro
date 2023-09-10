@@ -3,34 +3,22 @@ import { Layout } from "@layouts";
 ---
 
 <Layout title="404: Not Found" description="This page could not be found.">
+  <div class="scanlines"></div>
   <div class="glitch-container">
     <h1 class="text" data-text="404">404</h1>
-    <div class="scanlines"></div>
   </div>
 </Layout>
 
 <style lang="scss">
-  .glitch-container {
-    background-color: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    animation: flicker 10ms infinite;
-  }
-
   .scanlines {
-    position: absolute;
+    position: fixed;
     inset: 0;
     overflow: hidden;
     pointer-events: none;
 
     // Courtesy https://codepen.io/zerospree/pen/mdevOB
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAALElEQVQYV2NkYGD4/x9IMAIxAxoDmzhIHfU0gCxFB9S1AacfsFmNJQzAoQIAH84j/OCkeYUAAAAASUVORK5CYII=");
+    background-size: 12px 6px;
     mix-blend-mode: color-dodge;
 
     &::after {
@@ -43,10 +31,24 @@ import { Layout } from "@layouts";
     }
   }
 
+  .glitch-container {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    inset: 0;
+    z-index: -1;
+    animation: flicker 20ms infinite;
+  }
+
   .text {
-    color: var(--text);
     position: relative;
-    font-size: clamp(100px, 45vw, 600px);
+    font-size: clamp(360px, 45vw, 600px);
     z-index: -1;
     line-height: 1;
     letter-spacing: 0.02em;
@@ -54,9 +56,15 @@ import { Layout } from "@layouts";
     pointer-events: none;
     user-select: none;
     text-shadow:
-      -1px -1px 1px rgb(0 0 255 / 80%),
-      1px 1px 1px rgb(255 0 0 / 80%);
+      -1px -1px 1px rgb(0 0 255),
+      1px 1px 1px rgb(255 0 0);
     filter: blur(1px);
+
+    @media screen and (width <= 600px) {
+      writing-mode: vertical-rl;
+      margin-top: 0;
+      margin-right: -0.1em;
+    }
 
     &::after {
       content: attr(data-text);
@@ -64,8 +72,8 @@ import { Layout } from "@layouts";
       top: 0;
       left: -0.01em;
       text-shadow:
-        -1px -1px 3px rgb(0 0 255 / 90%),
-        1px 1px 3px rgb(255 0 0 / 90%),
+        -1px -1px 3px rgb(0 0 255),
+        1px 1px 3px rgb(255 0 0),
         6px 0 2px var(--bg);
       animation: text-offset 8s linear infinite;
     }
@@ -93,7 +101,7 @@ import { Layout } from "@layouts";
 
   @keyframes flicker {
     0% {
-      opacity: 0.94;
+      opacity: 0.9;
     }
 
     100% {
