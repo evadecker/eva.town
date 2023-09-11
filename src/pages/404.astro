@@ -5,7 +5,14 @@ import { Layout } from "@layouts";
 <Layout title="404: Not Found" description="This page could not be found.">
   <div class="scanlines"></div>
   <div class="glitch-container">
-    <h1 class="text" data-text="404">404</h1>
+    <div class="text">
+      <h1>404</h1>
+      <div>Not Found</div>
+      <div class="text-clip">
+        <h1>404</h1>
+        <div>Not Found</div>
+      </div>
+    </div>
   </div>
 </Layout>
 
@@ -45,36 +52,41 @@ import { Layout } from "@layouts";
   }
 
   .text {
+    font-family: var(--font-display);
     position: relative;
-    font-size: clamp(360px, 45vw, 600px);
     z-index: -1;
     line-height: 1;
     letter-spacing: 0.02em;
-    margin-top: -0.1em;
+    top: -1.5rem;
     pointer-events: none;
     user-select: none;
+    text-align: center;
     text-shadow:
       -1.5px 0 0 rgb(0 0 255),
       1.5px 0 0 rgb(255 0 0),
       0 1.5px 0 rgb(0 255 0);
     filter: blur(1.5px);
 
-    @media screen and (width <= 600px) {
-      writing-mode: vertical-rl;
-      margin-top: 0;
-      margin-right: -0.1em;
+    h1 {
+      font-size: clamp(180px, 30vw, 400px);
     }
 
-    &::after {
-      content: attr(data-text);
+    div {
+      font-size: clamp(60px, 10vw, 180px);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .text-clip {
       position: absolute;
       top: 0;
-      left: -0.01em;
+      left: -0.2rem;
       text-shadow:
         -1.5px 0 0 rgb(0 0 255),
         1.5px 0 0 rgb(255 0 0),
         0 1.5px 0 rgb(0 255 0),
-        10px 0 2px var(--bg);
+        0.25rem 0 0 var(--bg),
+        4px 4px 0 var(--bg);
       animation: text-offset 8s linear infinite;
 
       // Dark mode transition
