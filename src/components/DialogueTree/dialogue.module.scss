@@ -59,7 +59,7 @@
 }
 
 .line {
-  font-family: var(--font-sans);
+  font-family: var(--family-sans);
   font-size: 15px;
   flex: 1;
   padding: 8px 16px 8px 0;
@@ -91,7 +91,7 @@
 
 .emphasized {
   display: inline-block;
-  font-weight: 600;
+  font-variation-settings: "wght" 600;
 }
 
 .continue {
