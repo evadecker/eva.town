@@ -27,6 +27,7 @@
     "@types/react-dom": "^18.2.7",
     "@vercel/analytics": "^1.0.2",
     "astro": "^3.0.6",
+    "autoprefixer": "^10.4.15",
     "classnames": "^2.3.2",
     "framer-motion": "^10.16.1",
     "howler": "^2.2.3",
