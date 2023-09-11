@@ -19,6 +19,6 @@ This is the source code that powers [evadecker.com](https://evadecker.com). It's
 
 **Fonts**
 
-- Nimbus Sans and Nimbus Sans Extended by URW Type Foundary via [Adobe Fonts](https://fonts.adobe.com/fonts/nimbus-sans)
-- Minion 3 by Robert Slimbach via [Adobe Fonts](https://fonts.adobe.com/fonts/minion-3)
+- Roc Grotesk Variable by Nikola Kostić via [Adobe Fonts](https://fonts.adobe.com/fonts/roc-grotesk-variable)
+- Loretta Variable by Abel Martins and Joana Correia via [Adobe Fonts](https://fonts.adobe.com/fonts/loretta-variable)
 - 04b by [Yuji Oshimoto](http://www.04.jp.org/)

@@ -52,8 +52,7 @@
   position: fixed;
   right: 24px;
   bottom: 24px;
-  font-family: var(--font-sans);
-  font-weight: 700;
+  font-variation-settings: "wght" 600;
   cursor: pointer;
   pointer-events: auto;
   z-index: 500;

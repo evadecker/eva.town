@@ -7,10 +7,10 @@ import { Layout } from "@layouts";
   <div class="glitch-container">
     <div class="text">
       <h1>404</h1>
-      <div>Not Found</div>
+      <div class="subtitle">Not Found</div>
       <div class="text-clip">
         <h1>404</h1>
-        <div>Not Found</div>
+        <div class="subtitle">Not Found</div>
       </div>
     </div>
   </div>
@@ -55,9 +55,8 @@ import { Layout } from "@layouts";
     font-family: var(--font-display);
     position: relative;
     z-index: -1;
-    line-height: 1;
+    line-height: 0.8;
     letter-spacing: 0.02em;
-    top: -1.5rem;
     pointer-events: none;
     user-select: none;
     text-align: center;
@@ -69,23 +68,48 @@ import { Layout } from "@layouts";
 
     h1 {
       font-size: clamp(180px, 30vw, 400px);
+      font-variation-settings:
+        "wdth" 150,
+        "wght" 700;
     }
 
-    div {
+    .subtitle {
       font-size: clamp(60px, 10vw, 180px);
-      font-weight: 600;
+      font-variation-settings:
+        "wdth" 140,
+        "wght" 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       white-space: nowrap;
+    }
+
+    @media screen and (width <= 600px) {
+      line-height: 0.7;
+
+      h1 {
+        font-size: 90vw;
+        font-variation-settings:
+          "wdth" 50,
+          "wght" 300;
+      }
+
+      .subtitle {
+        font-size: 20vw;
+        font-variation-settings:
+          "wdth" 60,
+          "wght" 500;
+      }
     }
 
     .text-clip {
       position: absolute;
       top: 0;
-      left: -0.2rem;
+      left: -0.3rem;
       text-shadow:
         -1.5px 0 0 rgb(0 0 255),
         1.5px 0 0 rgb(255 0 0),
         0 1.5px 0 rgb(0 255 0),
-        0.25rem 0 0 var(--bg),
+        0.35rem 0 0 var(--bg),
         4px 4px 0 var(--bg);
       animation: text-offset 8s linear infinite;
 
