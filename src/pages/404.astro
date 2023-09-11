@@ -11,7 +11,7 @@ import { Layout } from "@layouts";
 
 <style lang="scss">
   .scanlines {
-    position: fixed;
+    position: absolute;
     inset: 0;
     overflow: hidden;
     pointer-events: none;
@@ -20,6 +20,7 @@ import { Layout } from "@layouts";
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAALElEQVQYV2NkYGD4/x9IMAIxAxoDmzhIHfU0gCxFB9S1AacfsFmNJQzAoQIAH84j/OCkeYUAAAAASUVORK5CYII=");
     background-size: 12px 6px;
     mix-blend-mode: color-dodge;
+    opacity: 0.5;
 
     &::after {
       content: "";
@@ -32,16 +33,13 @@ import { Layout } from "@layouts";
   }
 
   .glitch-container {
-    display: flex;
     position: absolute;
+    inset: 0;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    flex: 1;
-    height: 100%;
-    width: 100%;
     overflow: hidden;
-    inset: 0;
     z-index: -1;
     animation: flicker 20ms infinite;
   }
@@ -56,9 +54,10 @@ import { Layout } from "@layouts";
     pointer-events: none;
     user-select: none;
     text-shadow:
-      -1px -1px 1px rgb(0 0 255),
-      1px 1px 1px rgb(255 0 0);
-    filter: blur(1px);
+      -1.5px 0 0 rgb(0 0 255),
+      1.5px 0 0 rgb(255 0 0),
+      0 1.5px 0 rgb(0 255 0);
+    filter: blur(1.5px);
 
     @media screen and (width <= 600px) {
       writing-mode: vertical-rl;
@@ -72,10 +71,14 @@ import { Layout } from "@layouts";
       top: 0;
       left: -0.01em;
       text-shadow:
-        -1px -1px 3px rgb(0 0 255),
-        1px 1px 3px rgb(255 0 0),
-        6px 0 2px var(--bg);
+        -1.5px 0 0 rgb(0 0 255),
+        1.5px 0 0 rgb(255 0 0),
+        0 1.5px 0 rgb(0 255 0),
+        10px 0 2px var(--bg);
       animation: text-offset 8s linear infinite;
+
+      // Dark mode transition
+      transition: text-shadow 1s ease-in-out;
     }
   }
 
