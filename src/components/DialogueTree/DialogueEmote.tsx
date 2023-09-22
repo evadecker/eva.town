@@ -10,33 +10,19 @@ export const DialogueEmote = ({ node }: DialogueEmoteProps) => {
   const { hashtags } = node;
 
   const getEmoteFromTag = (tag: string) => {
-    if (tag === "") return;
     const emote = tag.split(":")[1];
     return emote;
   };
 
-  const currentEmote = getEmoteFromTag(
-    hashtags?.filter((str) => str.startsWith("emote"))[0],
+  const currentEmote =
+    hashtags.length > 0
+      ? getEmoteFromTag(hashtags.filter((str) => str.startsWith("emote"))[0])
+      : "neutral";
+
+  return (
+    <img
+      className={styles.emote}
+      src={`/images/dialogue/eva-${currentEmote}.svg`}
+    />
   );
-
-  const getEmote = (emote?: string) => {
-    switch (emote) {
-      case "uncertain":
-        return "😐";
-      case "flushed":
-        return "😳";
-      case "stareyes":
-        return "🤩";
-      case "determined":
-        return "😤";
-      case "unamused":
-        return "😒";
-      case "thinking":
-        return "🤔";
-      default:
-        return "☺️";
-    }
-  };
-
-  return <div className={styles.emote}>{getEmote(currentEmote)}</div>;
 };

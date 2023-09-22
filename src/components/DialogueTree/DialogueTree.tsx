@@ -4,16 +4,13 @@ import YarnBound, { OptionsResult, TextResult } from "yarn-bound";
 
 import { DialogueNode } from "./DialogueNode";
 
-let dialogue = "";
-
-try {
-  const res = await fetch("http://localhost:4321/dialogue/dialogue.yarn");
-  dialogue = await res.text();
-} catch (err) {
-  console.error(err);
+interface DialogueTreeProps {
+  dialogue: string;
 }
 
-export const DialogueTree = () => {
+export const DialogueTree = ({ dialogue }: DialogueTreeProps) => {
+  if (dialogue === "") return null;
+
   const runnerRef = useRef(
     new YarnBound({
       dialogue,

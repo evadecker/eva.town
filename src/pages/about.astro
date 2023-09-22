@@ -1,0 +1,20 @@
+---
+import { DialogueTree } from "@components";
+import { Layout } from "@layouts";
+
+let dialogue = "";
+
+try {
+  const res = await fetch("http://localhost:4321/dialogue/dialogue.yarn");
+  dialogue = await res.text();
+} catch (err) {
+  console.error(err);
+}
+---
+
+<Layout
+  title="Eva Decker"
+  description="Eva Decker is a designer and software engineer based in Brooklyn, New York."
+>
+  <DialogueTree dialogue={dialogue} client:load />
+</Layout>

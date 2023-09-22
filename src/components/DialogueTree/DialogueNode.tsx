@@ -22,6 +22,8 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
       y: 50,
     },
     animate: {
+      width: "auto",
+      height: "auto",
       opacity: 1,
       scale: 1,
       y: 0,
@@ -43,18 +45,20 @@ export const DialogueNode = ({ node, advance }: DialogueNodeProps) => {
 
   return (
     <div className={styles.container}>
-      {showOptions && <DialogueOptions node={node} advance={advance} />}
       <AnimatePresence>
+        {showOptions && <DialogueOptions node={node} advance={advance} />}
         <motion.div
-          className={styles.bubble}
+          className={styles.bubblewrap}
           variants={bubbleVariants}
           initial="initial"
           animate="animate"
         >
-          <DialogueEmote node={node} />
-          <DialogueLine node={node} />
-          {showContinue && <DialogueContinue advance={advance} />}
+          <div className={styles.bubble}>
+            <DialogueLine node={node} />
+            {showContinue && <DialogueContinue advance={advance} />}
+          </div>
         </motion.div>
+        <DialogueEmote node={node} />
       </AnimatePresence>
     </div>
   );
