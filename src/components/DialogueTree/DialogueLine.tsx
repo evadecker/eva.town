@@ -17,31 +17,38 @@ interface DialogueLineProps {
 }
 
 export const DialogueLine = ({ node }: DialogueLineProps) => {
-  const isBig = node.hashtags.includes("big");
+  if (node === undefined || node === null) return null;
 
-  // const currentSpeaker = node.markup.find((m) => m.name === "character")
-  //   ?.properties?.name;
+  const isBig = node?.hashtags?.includes("big");
 
   function extractFragmentsWithNames(
     markupArray: Markup[],
-    inputText: string,
+    text: string
   ): DialogueLineFragmentProps[] {
+    const trimmedText = text.trim();
     const fragments: DialogueLineFragmentProps[] = [];
 
     let currentPosition = 0;
 
     for (const markup of markupArray) {
       if (markup.position !== undefined && markup.length !== undefined) {
-        const preMarkupText = inputText.slice(currentPosition, markup.position);
-        fragments.push({
-          text: preMarkupText,
-          index: currentPosition,
-        });
-
-        const markupText = inputText.slice(
-          markup.position,
-          markup.position + markup.length,
+        const preMarkupText = trimmedText.slice(
+          currentPosition,
+          markup.position
         );
+
+        if (preMarkupText !== "") {
+          fragments.push({
+            text: preMarkupText,
+            index: currentPosition,
+          });
+        }
+
+        const markupText = trimmedText.slice(
+          markup.position,
+          markup.position + markup.length
+        );
+
         fragments.push({
           text: markupText,
           variant: markup.name as FragmentVariant,
@@ -52,8 +59,8 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
       }
     }
 
-    if (currentPosition < inputText.length) {
-      const remainingText = inputText.slice(currentPosition);
+    if (currentPosition < trimmedText.length) {
+      const remainingText = trimmedText.slice(currentPosition);
       fragments.push({ text: remainingText, index: currentPosition });
     }
 
@@ -75,7 +82,7 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
               variant={variant}
               index={index}
             />
-          ),
+          )
         )}
     </div>
   );

@@ -33,6 +33,7 @@ body {
   --text-light: var(--neutral-7);
   --bg: #ffdcdc;
   --bg-hover: rgb(229 176 176 / 50%);
+  --border: rgb(229 176 176 / 50%);
   --lcd-bg: #8db48e;
   --lcd-dark: #466b46;
   --lcd-light: #a2d4a4;
@@ -51,6 +52,7 @@ body {
     --text-light: var(--neutral-5);
     --bg: #1d0206;
     --bg-hover: rgb(59 10 16 / 70%);
+    --border: rgb(59 10 16 / 70%);
     --lcd-bg: var(--neutral-3);
     --lcd-dark: var(--neutral-6);
     --lcd-light: var(--neutral-0);

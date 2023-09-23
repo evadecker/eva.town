@@ -1,11 +1,14 @@
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 224px;
+}
+
+.speaker {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .options {
@@ -28,70 +31,61 @@
   cursor: pointer;
 }
 
-.arrow {
-  display: inline-block;
-  overflow: hidden;
-  margin-right: 4px;
+.bubblewrap {
+  position: absolute;
+  bottom: 100%;
+  width: 12rem;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .bubble {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: white;
-  color: black;
-  line-height: 18px;
-  width: 280px;
-  height: 48px;
-  border-radius: 48px;
-  overflow: hidden;
+  background-color: var(--text);
+  font-variation-settings:
+    "wdth" 90,
+    "wght" 450;
+  color: var(--bg);
+  padding: 8px 12px;
 }
 
 .emote {
-  width: 48px;
-  height: 48px;
-  font-size: 2em;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: transparent;
+  padding: 0;
+  border: none;
+  display: block;
+
+  img {
+    height: 96px;
+  }
 }
 
 .line {
   font-family: var(--family-sans);
-  font-size: 15px;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
   flex: 1;
-  padding: 8px 16px 8px 0;
 }
 
 .big {
-  font-size: 24px;
+  font-size: 1.2rem;
 }
 
 .word {
   display: inline-block;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .character {
   display: inline-block;
   white-space: pre;
-  animation: appear 0.1s steps(1, end) backwards;
 }
 
 .emphasized {
   display: inline-block;
-  font-variation-settings: "wght" 600;
+  font-variation-settings:
+    "wdth" 90,
+    "wght" 600;
 }
 
 .continue {
@@ -104,9 +98,6 @@
   width: 100%;
   height: 100%;
   inset: 0;
+  color: var(--bg);
   cursor: pointer;
-
-  svg {
-    margin-right: 4px;
-  }
 }
