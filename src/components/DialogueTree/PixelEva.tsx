@@ -25,9 +25,10 @@ export const PixelEva = ({ emote, advance }: PixelEvaProps) => {
       onClick={() => {
         advance(undefined);
       }}
+      type="button"
       aria-label="Continue"
     >
-      <img src={`/images/dialogue/eva-${emote}.svg`} />
+      <img src={`/images/dialogue/eva-${emote}.svg`} alt={`Eva is ${emote}`} />
     </button>
   );
 };

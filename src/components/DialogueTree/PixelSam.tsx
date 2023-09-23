@@ -14,9 +14,10 @@ export const PixelSam = ({ emote, advance }: PixelSamProps) => {
       onClick={() => {
         advance(undefined);
       }}
+      type="button"
       aria-label="Continue"
     >
-      <img src={`/images/dialogue/sam-${emote}.svg`} />
+      <img src={`/images/dialogue/sam-${emote}.svg`} alt={`Sam is ${emote}`} />
     </button>
   );
 };
