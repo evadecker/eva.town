@@ -22,3 +22,7 @@ This is the source code that powers [evadecker.com](https://evadecker.com). It's
 - Roc Grotesk Variable by Nikola Kostić via [Adobe Fonts](https://fonts.adobe.com/fonts/roc-grotesk-variable)
 - Loretta Variable by Abel Martins and Joana Correia via [Adobe Fonts](https://fonts.adobe.com/fonts/loretta-variable)
 - 04b by [Yuji Oshimoto](http://www.04.jp.org/)
+
+**Pixel Art**
+
+- Pixel art portraits by [NullTheFool](https://mastodon.gamedev.place/@NullTheFool)

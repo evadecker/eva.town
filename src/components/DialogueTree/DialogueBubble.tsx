@@ -1,6 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import type { TextResult } from "yarn-bound";
-import { OptionsResult } from "yarn-bound";
+import { OptionsResult, type TextResult } from "yarn-bound";
 
 import styles from "./dialogue.module.scss";
 import { DialogueContinue } from "./DialogueContinue";
@@ -55,7 +54,7 @@ export const DialogueBubble = ({ node, advance }: DialogueBubbleProps) => {
         className={styles.bubble}
       >
         <DialogueLine node={node} />
-        {showContinue && <DialogueContinue advance={advance as any} />}
+        {showContinue && <DialogueContinue advance={advance} />}
       </motion.div>
     </motion.div>
   );
