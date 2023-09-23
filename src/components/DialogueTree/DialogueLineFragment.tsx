@@ -23,7 +23,7 @@ interface TypedCharacterProps {
 
   /**
    * Speed to display characters
-   * @default 0.04
+   * @default 0.03
    */
   speed?: number;
 
@@ -43,7 +43,7 @@ interface TypedCharacterProps {
 const TypedCharacter = ({
   character,
   index,
-  speed = 0.04,
+  speed = 0.03,
   delay = 0.2,
   variant = FragmentVariant.None,
 }: TypedCharacterProps) => {
@@ -52,7 +52,7 @@ const TypedCharacter = ({
   const generateRandomValuesArray = (
     num: number,
     min: number,
-    max: number,
+    max: number
   ): number[] => {
     const randomNumberBetweenValues = (): number => {
       return Math.random() * (max - min) + min;
@@ -64,9 +64,23 @@ const TypedCharacter = ({
   const generateRandomEmsArray = (
     num: number,
     min: number,
-    max: number,
+    max: number
   ): string[] => {
     return generateRandomValuesArray(num, min, max).map((i) => i + "em");
+  };
+
+  const characterVariants: Variants = {
+    initial: {
+      opacity: 0,
+      scale: 0,
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: index * speed + delay,
+      },
+    },
   };
 
   const shakeVariants: Variants = {
@@ -121,7 +135,8 @@ const TypedCharacter = ({
   return (
     <motion.span
       className={styles.character}
-      style={{ animationDelay: `${index * speed + delay}s` }}
+      variants={characterVariants}
+      // style={{ animationDelay: `${index * speed + delay}s` }}
     >
       {isEmphasized ? (
         <motion.strong
@@ -161,7 +176,7 @@ export interface DialogueLineFragmentProps {
 
   /**
    * Speed to display characters
-   * @default 0.04
+   * @default 0.03
    */
   speed?: number;
 }
@@ -170,7 +185,7 @@ export const DialogueLineFragment = ({
   text,
   variant,
   index = 0,
-  speed = 0.04,
+  speed = 0.03,
 }: DialogueLineFragmentProps) => {
   const words = text.split(" ");
 

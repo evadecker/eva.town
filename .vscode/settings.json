@@ -2,19 +2,20 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "eslint.validate": [
+    "astro",
     "javascript",
     "javascriptreact",
-    "astro",
+    "json",
     "typescript",
-    "typescriptreact",
-    "json"
+    "typescriptreact"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "prettier.documentSelectors": ["**/*.astro"],
-  "[astro]": {
+  "stylelint.validate": ["astro", "css", "scss"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "stylelint.validate": ["astro", "css", "scss"]
+  "eslint.enable": true
 }

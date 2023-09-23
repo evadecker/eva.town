@@ -1,11 +1,14 @@
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  position: absolute;
-  bottom: 0;
-  right: 24px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 224px;
+}
+
+.speaker {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .options {
@@ -28,64 +31,61 @@
   cursor: pointer;
 }
 
-.arrow {
-  display: inline-block;
-  overflow: hidden;
-  margin-right: 4px;
-}
-
 .bubblewrap {
-  position: relative;
-  max-width: 280px;
+  position: absolute;
+  bottom: 100%;
+  width: 12rem;
   margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .bubble {
   background-color: var(--text);
+  font-variation-settings:
+    "wdth" 90,
+    "wght" 450;
   color: var(--bg);
-  border-radius: 16px;
-  padding: 8px 24px 8px 12px;
+  padding: 8px 12px;
 }
 
 .emote {
-  width: 72px;
-  height: 72px;
+  background: transparent;
+  padding: 0;
+  border: none;
+  display: block;
+
+  img {
+    height: 96px;
+  }
 }
 
 .line {
   font-family: var(--family-sans);
-  font-size: 16px;
+  font-size: 0.8rem;
   line-height: 1.2;
+  letter-spacing: 0.04em;
   flex: 1;
 }
 
 .big {
-  font-size: 24px;
+  font-size: 1.2rem;
 }
 
 .word {
   display: inline-block;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .character {
   display: inline-block;
   white-space: pre;
-  animation: appear 0.1s steps(1, end) backwards;
 }
 
 .emphasized {
   display: inline-block;
-  font-variation-settings: "wght" 600;
+  font-variation-settings:
+    "wdth" 90,
+    "wght" 600;
 }
 
 .continue {
