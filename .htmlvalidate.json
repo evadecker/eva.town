@@ -1,6 +1,7 @@
 {
   "extends": ["html-validate:recommended"],
   "rules": {
-    "void-style": "off"
+    "void-style": "off",
+    "element-permitted-content": "off"
   }
 }
