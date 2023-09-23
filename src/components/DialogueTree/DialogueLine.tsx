@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { nanoid } from "nanoid";
-import type { Markup, OptionsResult, TextResult } from "yarn-bound";
+import type * as YarnBound from "yarn-bound";
 
 import styles from "./dialogue.module.scss";
 import {
@@ -13,7 +13,7 @@ interface DialogueLineProps {
   /**
    * YarnSpinner node to display.
    */
-  node: TextResult | OptionsResult;
+  node: YarnBound.TextResult | YarnBound.OptionsResult;
 }
 
 export const DialogueLine = ({ node }: DialogueLineProps) => {
@@ -22,7 +22,7 @@ export const DialogueLine = ({ node }: DialogueLineProps) => {
   const isBig = node?.hashtags?.includes("big");
 
   function extractFragmentsWithNames(
-    markupArray: Markup[],
+    markupArray: YarnBound.Markup[],
     text: string
   ): DialogueLineFragmentProps[] {
     const trimmedText = text.trim();

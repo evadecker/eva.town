@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { OptionsResult, type TextResult } from "yarn-bound";
+import * as YarnBound from "yarn-bound";
 
 import styles from "./dialogue.module.scss";
 import { DialogueContinue } from "./DialogueContinue";
@@ -10,7 +10,7 @@ interface DialogueBubbleProps {
   /**
    * YarnSpinner node to display.
    */
-  node: TextResult | OptionsResult;
+  node: YarnBound.TextResult | YarnBound.OptionsResult;
 
   advance: (optionIndex: number | undefined) => void;
 }
@@ -40,8 +40,8 @@ export const DialogueBubble = ({ node, advance }: DialogueBubbleProps) => {
     },
   };
 
-  const showOptions = node instanceof OptionsResult;
-  const showContinue = !(node instanceof OptionsResult);
+  const showOptions = node instanceof YarnBound.OptionsResult;
+  const showContinue = !(node instanceof YarnBound.OptionsResult);
 
   return (
     <motion.div className={styles.bubblewrap}>
