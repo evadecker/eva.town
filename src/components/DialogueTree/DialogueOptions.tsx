@@ -1,10 +1,10 @@
 import { motion, type Variants } from "framer-motion";
-import { type OptionsResult } from "yarn-bound";
+import type * as YarnBound from "yarn-bound";
 
 import styles from "./dialogue.module.scss";
 
 interface DialogueOptionsProps {
-  node: OptionsResult;
+  node: YarnBound.OptionsResult;
   advance: (step?: number) => void;
 }
 

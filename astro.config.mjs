@@ -10,7 +10,14 @@ export default defineConfig({
     // "/work": "/work/cityblock",
   },
   output: "static",
-  adapter: vercel({ analytics: true }),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+    speedInsights: {
+      enabled: true,
+    },
+  }),
   vite: {
     // define: {
     //   "import.meta.env.PUBLIC_VERCEL_ANALYTICS_ID": JSON.stringify(
@@ -19,11 +26,6 @@ export default defineConfig({
     // },
     optimizeDeps: {
       exclude: ["fsevents"],
-    },
-    // Fix a build error
-    // See https://github.com/withastro/astro/issues/3174
-    ssr: {
-      noExternal: ["yarn-bound"],
     },
   },
 });

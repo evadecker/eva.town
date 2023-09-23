@@ -2,7 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import { getValueFromTag } from "src/helpers/helpers";
 import useForceUpdate from "use-force-update";
-import YarnBound, { CommandResult } from "yarn-bound";
+import YarnBound, * as YarnBoundTypes from "yarn-bound";
 
 import styles from "./dialogue.module.scss";
 import { DialogueBubble } from "./DialogueBubble";
@@ -55,7 +55,7 @@ export const DialogueTree = ({ dialogue }: DialogueTreeProps) => {
   const displayDialogue =
     node !== undefined &&
     node !== null &&
-    !(node instanceof CommandResult) &&
+    !(node instanceof YarnBoundTypes.CommandResult) &&
     !hasDialogueEnded;
 
   useEffect(() => {
