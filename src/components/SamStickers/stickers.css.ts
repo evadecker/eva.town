@@ -1,4 +1,4 @@
-import { theme } from "@styles/theme.css";
+import { fontFamily, radius, space, theme } from "@styles/theme.css";
 import { style } from "@vanilla-extract/css";
 
 export const shoo = style({
@@ -6,11 +6,11 @@ export const shoo = style({
   position: "fixed",
   background: theme.text.default,
   color: theme.background.default,
-  fontFamily: theme.fontFamily.sans,
-  padding: `${theme.space.sm} ${theme.space.md}`,
-  borderRadius: theme.radius.md,
-  right: theme.space.lg,
-  bottom: theme.space.lg,
+  fontFamily: fontFamily.sans,
+  padding: `${space.sm} ${space.md}`,
+  borderRadius: radius.md,
+  right: space.lg,
+  bottom: space.lg,
   fontVariationSettings: "wght 600",
   cursor: "pointer",
   pointerEvents: "auto",

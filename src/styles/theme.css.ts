@@ -1,5 +1,6 @@
 import { blackA, mauveDark, plum, plumDark, whiteA } from "@radix-ui/colors";
 import {
+  createGlobalTheme,
   createTheme,
   createThemeContract,
   globalFontFace,
@@ -12,53 +13,52 @@ globalFontFace(firaCode, {
   fontStyle: "normal",
 });
 
-const commonVars = {
-  fontFamily: {
-    sans: 'roc-grotesk-variable, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    serif:
-      'loretta-variable, Georgia, Cambria, "Times New Roman", Times, serif',
-    mono: `${firaCode}, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
-  },
+export const fontFamily = createGlobalTheme(":root", {
+  sans: 'roc-grotesk-variable, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+  serif: 'loretta-variable, Georgia, Cambria, "Times New Roman", Times, serif',
+  mono: `${firaCode}, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
+});
 
-  // Perfect Fourth Scale
-  // https://typescale.com
-  fontSize: {
-    h1: "4.209rem",
-    h2: "3.157rem",
-    h3: "2.369rem",
-    h4: "1.777rem",
-    h5: "1.333rem",
-    body: {
-      mobile: "16px",
-      tablet: "17px",
-      desktop: "18px",
-    },
-    small: "0.75rem",
+// Major Third Scale
+// https://typescale.com
+export const fontSize = createGlobalTheme(":root", {
+  h1: "3.052rem",
+  h2: "2.441rem",
+  h3: "1.953rem",
+  h4: "1.563rem",
+  h5: "1.25rem",
+  h6: "1rem",
+  body: "1rem",
+  base: {
+    mobile: "112.5%", // 18px
+    tablet: "118.8%", // 19px
+    desktop: "125%", // 20px
   },
+  small: "0.8rem",
+});
 
-  fontWeight: {
-    normal: "400",
-    medium: "500",
-    semibold: "600",
-    bold: "700",
-  },
+export const fontWeight = createGlobalTheme(":root", {
+  normal: "400",
+  medium: "500",
+  semibold: "600",
+  bold: "700",
+});
 
-  space: {
-    xxs: "4px",
-    sm: "8px",
-    md: "16px",
-    lg: "24px",
-    xl: "32px",
-    xxl: "40px",
-  },
+export const space = createGlobalTheme(":root", {
+  xxs: "4px",
+  sm: "8px",
+  md: "16px",
+  lg: "24px",
+  xl: "32px",
+  xxl: "40px",
+});
 
-  radius: {
-    sm: "8px",
-    md: "16px",
-    lg: "24px",
-    full: "9999px",
-  },
-};
+export const radius = createGlobalTheme(":root", {
+  sm: "8px",
+  md: "16px",
+  lg: "24px",
+  full: "9999px",
+});
 
 export const theme = createThemeContract({
   background: {
@@ -78,7 +78,6 @@ export const theme = createThemeContract({
     ...blackA,
     ...whiteA,
   },
-  ...commonVars,
 });
 
 export const lightThemeClass = createTheme(theme, {
@@ -99,7 +98,6 @@ export const lightThemeClass = createTheme(theme, {
     ...blackA,
     ...whiteA,
   },
-  ...commonVars,
 });
 
 export const darkThemeClass = createTheme(theme, {
@@ -120,5 +118,4 @@ export const darkThemeClass = createTheme(theme, {
     ...blackA,
     ...whiteA,
   },
-  ...commonVars,
 });

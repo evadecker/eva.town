@@ -1,10 +1,10 @@
-import { theme } from "@styles/theme.css";
+import { fontFamily, space, theme } from "@styles/theme.css";
 import { style } from "@vanilla-extract/css";
 
 export const footer = style({
   borderTop: "1px solid",
   borderColor: theme.border.default,
-  fontFamily: theme.fontFamily.sans,
+  fontFamily: fontFamily.sans,
   display: "flex",
   width: "100%",
   selectors: {
@@ -21,7 +21,7 @@ export const linkCol = style({
 });
 
 export const links = style({
-  padding: theme.space.lg,
+  padding: space.lg,
   marginRight: "auto",
 });
 

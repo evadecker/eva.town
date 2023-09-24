@@ -1,4 +1,4 @@
-import { theme } from "@styles/theme.css";
+import { fontFamily, space } from "@styles/theme.css";
 import { style } from "@vanilla-extract/css";
 
 export const header = style({
@@ -6,11 +6,11 @@ export const header = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  padding: `${theme.space.md} ${theme.space.lg}`,
+  padding: `${space.md} ${space.lg}`,
 });
 
 export const wordmark = style({
-  fontFamily: theme.fontFamily.sans,
+  fontFamily: fontFamily.sans,
   fontVariationSettings: '"wdth" 125, "wght" 600',
   textDecoration: "none",
 });

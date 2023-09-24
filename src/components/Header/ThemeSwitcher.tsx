@@ -1,17 +1,19 @@
 import { useStore } from "@nanostores/react";
 import { $preferredTheme, setPreferredTheme, type Theme } from "@stores/theme";
 import { darkThemeClass, lightThemeClass, theme } from "@styles/theme.css";
-import { useEffect, useState } from "react";
-import { useRect } from "src/helpers/useRect";
+import { useEffect, useRef, useState } from "react";
 
 import * as styles from "./theme-switcher.css";
 
 export const ThemeSwitcher = () => {
   const [isAnimating, setIsAnimating] = useState(false);
-  const [buttonRect, buttonRef] = useRect<HTMLButtonElement>();
-  const [animationCoords, setAnimationCoords] = useState({
-    x: buttonRect?.left ?? 0,
-    y: buttonRect?.top ?? 0,
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const [animationCoords, setAnimationCoords] = useState<{
+    x?: number;
+    y?: number;
+  }>({
+    x: buttonRef.current?.getBoundingClientRect().left,
+    y: buttonRef.current?.getBoundingClientRect().top,
   });
 
   const preferredTheme = useStore($preferredTheme);
@@ -72,7 +74,10 @@ export const ThemeSwitcher = () => {
 
   const handleAnimationStart = () => {
     document.body.dataset.animating = "";
-    buttonRect && setAnimationCoords({ x: buttonRect.left, y: buttonRect.top });
+    setAnimationCoords({
+      x: buttonRef.current?.getBoundingClientRect().left,
+      y: buttonRef.current?.getBoundingClientRect().top,
+    });
     setIsAnimating(true);
     setTimeout(() => {
       handleAnimationEnd();
