@@ -1,4 +1,11 @@
-import { blackA, lime, mauveDark, plum, whiteA } from "@radix-ui/colors";
+import {
+  blackA,
+  mauve,
+  mauveDark,
+  plum,
+  plumDark,
+  whiteA,
+} from "@radix-ui/colors";
 import {
   createTheme,
   createThemeContract,
@@ -28,21 +35,42 @@ const theme = createThemeContract({
 
 export const lightSynthClass = createTheme(theme, {
   lcd: {
-    bg: lime.lime5,
-    dark: lime.lime11,
-    light: lime.lime3,
-    hover: lime.lime12,
+    bg: plum.plum4,
+    dark: plum.plum8,
+    light: plum.plum2,
+    hover: plum.plum9,
   },
   synth: {
-    base: mauveDark.mauve3,
-    endcap: mauveDark.mauve1,
-    lcdOutline: mauveDark.mauve1,
-    keysOutline: mauveDark.mauve1,
+    base: plumDark.plum4,
+    endcap: plumDark.plum2,
+    lcdOutline: plumDark.plum2,
+    keysOutline: plumDark.plum2,
     whitekey: whiteA.whiteA12,
-    whitekeyPressed: plum.plum9,
-    blackkey: mauveDark.mauve1,
-    blackkeyPressed: plum.plum10,
+    whitekeyPressed: plum.plum11,
+    blackkey: mauveDark.mauve5,
+    blackkeyPressed: plumDark.plum7,
     betweenKeys: mauveDark.mauve11,
+  },
+});
+
+// TODO: Finish actually implementing this
+export const darkSynthClass = createTheme(theme, {
+  lcd: {
+    bg: plum.plum4,
+    dark: plum.plum8,
+    light: plum.plum2,
+    hover: plum.plum9,
+  },
+  synth: {
+    base: mauve.mauve6,
+    endcap: mauve.mauve8,
+    lcdOutline: mauve.mauve8,
+    keysOutline: mauve.mauve8,
+    whitekey: whiteA.whiteA12,
+    whitekeyPressed: plum.plum11,
+    blackkey: mauve.mauve12,
+    blackkeyPressed: plum.plum7,
+    betweenKeys: mauve.mauve8,
   },
 });
 
@@ -53,6 +81,10 @@ globalKeyframes("press-start", {
   "100%": {
     opacity: "1",
   },
+});
+
+export const loading = style({
+  pointerEvents: "none",
 });
 
 export const instrumentArrow = style({
@@ -83,6 +115,10 @@ export const fadeout = style({});
 
 export const hasTouch = style({});
 
+export const pressed = style({});
+
+export const synthInstrument = style({});
+
 export const lcdBg = style({
   fill: theme.lcd.bg,
 });
@@ -98,8 +134,6 @@ export const lcdOutline = style({
 export const notehead = style({
   fill: theme.lcd.dark,
 });
-
-export const pressed = style({});
 
 export const synthBase = style({
   fill: theme.synth.base,
@@ -163,10 +197,6 @@ export const synthStart = style({
   },
 });
 
-export const synthInstrument = style({
-  cursor: "pointer",
-});
-
 export const base = style({
   selectors: {
     [`${synthKey} &`]: {
@@ -175,11 +205,12 @@ export const base = style({
     [`${synthKey}${black} &`]: {
       fill: theme.synth.blackkey,
     },
-    [`${synthKey}${pressed} &`]: {
+    [`${synthKey}${pressed}${white} &`]: {
       transition: "none",
       fill: theme.synth.whitekeyPressed,
     },
     [`${synthKey}${pressed}${black} &`]: {
+      transition: "none",
       fill: theme.synth.blackkeyPressed,
     },
     [`${synthKey}${white} &`]: {
@@ -213,10 +244,15 @@ export const highlight = style({
 
 export const instrument = style({
   display: "none",
+  selectors: {
+    [`&${visible}`]: {
+      display: "block",
+    },
+  },
   "@media": {
     "not all and (pointer: coarse)": {
       selectors: {
-        [`${synthInstrument}:hover &`]: {
+        [`:not(${loading}) ${synthInstrument}:hover &`]: {
           display: "none",
         },
       },
@@ -257,14 +293,6 @@ export const pressedOverlay = style({
   },
 });
 
-export const synthInstruments = style({
-  selectors: {
-    [`${synth}[data-enabled='false'] &`]: {
-      display: "none",
-    },
-  },
-});
-
 export const synthRandomize = style({
   display: "none",
   "@media": {
@@ -275,12 +303,7 @@ export const synthRandomize = style({
         },
       },
     },
-  },
-  selectors: {
-    [`${synth}[data-loading='true'] &`]: {
-      display: "none",
-    },
-    [`body${hasTouch} &`]: {
+    "all and (pointer: coarse)": {
       display: "none",
     },
   },

@@ -1,4 +1,4 @@
-import { blackA, plum, plumDark, whiteA } from "@radix-ui/colors";
+import { blackA, mauveDark, plum, plumDark, whiteA } from "@radix-ui/colors";
 import {
   createTheme,
   createThemeContract,
@@ -108,8 +108,8 @@ export const darkThemeClass = createTheme(theme, {
     alt: plumDark.plum2,
   },
   text: {
-    default: plumDark.plum12,
-    subtle: plumDark.plum11,
+    default: mauveDark.mauve12,
+    subtle: mauveDark.mauve11,
   },
   border: {
     default: plumDark.plum3,

@@ -1,3 +1,4 @@
+import { pressKey, releaseKey } from "@stores/synth";
 import classNames from "classnames";
 
 import * as styles from "./synth.css";
@@ -28,11 +29,6 @@ export type NoteName = WhiteKey | BlackKey;
 interface SynthKeyProps {
   note: NoteName;
   isPressed: boolean;
-  onMouseDown: React.MouseEventHandler<SVGGElement>;
-  onMouseEnter: React.MouseEventHandler<SVGGElement>;
-  onMouseOut: React.MouseEventHandler<SVGGElement>;
-  onTouchStart: React.TouchEventHandler<SVGGElement>;
-  onTouchEnter: React.TouchEventHandler<SVGGElement>;
 }
 
 const Crack = () => {
@@ -50,10 +46,34 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     [styles.pressed]: isPressed,
   });
 
+  const getInteractionHandlers = (note: NoteName) => {
+    return {
+      onMouseDown: () => {
+        pressKey(note);
+      },
+      onMouseEnter: () => {
+        // if (mousedown) pressKey("C3");
+      },
+      onMouseUp: () => {
+        releaseKey(note);
+      },
+      onMouseOut: () => {
+        releaseKey(note);
+      },
+      onTouchStart: () => {
+        pressKey(note);
+      },
+      onTouchEnd: () => {
+        releaseKey(note);
+      },
+    };
+  };
+
   switch (note) {
     case "C3":
       return (
         <g
+          {...getInteractionHandlers("C3")}
           className={whiteKeyClassNames}
           transform="translate(2.000000, 2.000000)"
         >
@@ -76,6 +96,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "D3":
       return (
         <g
+          {...getInteractionHandlers("D3")}
           className={whiteKeyClassNames}
           transform="translate(22.000000, 2.000000)"
         >
@@ -98,6 +119,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "E3":
       return (
         <g
+          {...getInteractionHandlers("E3")}
           className={whiteKeyClassNames}
           transform="translate(44.000000, 2.000000)"
         >
@@ -120,6 +142,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "F3":
       return (
         <g
+          {...getInteractionHandlers("F3")}
           className={whiteKeyClassNames}
           transform="translate(66.000000, 2.000000)"
         >
@@ -142,6 +165,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "G3":
       return (
         <g
+          {...getInteractionHandlers("G3")}
           className={whiteKeyClassNames}
           transform="translate(88.000000, 2.000000)"
         >
@@ -164,6 +188,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "A3":
       return (
         <g
+          {...getInteractionHandlers("A3")}
           className={whiteKeyClassNames}
           transform="translate(110.000000, 2.000000)"
         >
@@ -186,6 +211,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "B3":
       return (
         <g
+          {...getInteractionHandlers("B3")}
           className={whiteKeyClassNames}
           transform="translate(132.000000, 2.000000)"
         >
@@ -208,6 +234,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "C4":
       return (
         <g
+          {...getInteractionHandlers("C4")}
           className={whiteKeyClassNames}
           transform="translate(154.000000, 2.000000)"
         >
@@ -230,6 +257,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "D4":
       return (
         <g
+          {...getInteractionHandlers("D4")}
           className={whiteKeyClassNames}
           transform="translate(176.000000, 2.000000)"
         >
@@ -252,6 +280,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "E4":
       return (
         <g
+          {...getInteractionHandlers("E4")}
           className={whiteKeyClassNames}
           transform="translate(198.000000, 2.000000)"
         >
@@ -274,7 +303,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "Csharp3":
       return (
         <g
-          id="Csharp3"
+          {...getInteractionHandlers("Csharp3")}
           className={blackKeyClassNames}
           transform="translate(17.000000, 2.000000)"
         >
@@ -292,7 +321,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "Dsharp3":
       return (
         <g
-          id="Dsharp3"
+          {...getInteractionHandlers("Dsharp3")}
           className={blackKeyClassNames}
           transform="translate(39.000000, 2.000000)"
         >
@@ -310,7 +339,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "Fsharp3":
       return (
         <g
-          id="Fsharp3"
+          {...getInteractionHandlers("Fsharp3")}
           className={blackKeyClassNames}
           transform="translate(83.000000, 2.000000)"
         >
@@ -328,7 +357,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "Gsharp3":
       return (
         <g
-          id="Gsharp3"
+          {...getInteractionHandlers("Gsharp3")}
           className={blackKeyClassNames}
           transform="translate(105.000000, 2.000000)"
         >
@@ -346,7 +375,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "Asharp3":
       return (
         <g
-          id="Asharp3"
+          {...getInteractionHandlers("Asharp3")}
           className={blackKeyClassNames}
           transform="translate(127.000000, 2.000000)"
         >
@@ -364,7 +393,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "Csharp4":
       return (
         <g
-          id="Csharp4"
+          {...getInteractionHandlers("Csharp4")}
           className={blackKeyClassNames}
           transform="translate(171.000000, 2.000000)"
         >
@@ -382,7 +411,7 @@ export const SynthKey = ({ note, isPressed }: SynthKeyProps) => {
     case "Dsharp4":
       return (
         <g
-          id="Dsharp4"
+          {...getInteractionHandlers("Dsharp4")}
           className={blackKeyClassNames}
           transform="translate(193.000000, 2.000000)"
         >

@@ -3,11 +3,6 @@ import { type NoteName, SynthKey } from "./SynthKey";
 
 interface SynthKeysProps {
   pressedKeys?: NoteName[];
-  onMouseDown: React.MouseEventHandler<SVGGElement>;
-  onMouseEnter: React.MouseEventHandler<SVGGElement>;
-  onMouseOut: React.MouseEventHandler<SVGGElement>;
-  onTouchStart: React.TouchEventHandler<SVGGElement>;
-  onTouchEnter: React.TouchEventHandler<SVGGElement>;
 }
 
 const notes: NoteName[] = [
@@ -30,7 +25,7 @@ const notes: NoteName[] = [
   "Dsharp4",
 ];
 
-export const SynthKeys = ({ pressedKeys, ...props }: SynthKeysProps) => {
+export const SynthKeys = ({ pressedKeys }: SynthKeysProps) => {
   return (
     <g id="synth-keys" transform="translate(24.000000, 60.000000)">
       <path
@@ -46,7 +41,6 @@ export const SynthKeys = ({ pressedKeys, ...props }: SynthKeysProps) => {
           key={note}
           note={note}
           isPressed={pressedKeys ? pressedKeys.includes(note) : false}
-          {...props}
         />
       ))}
       <path

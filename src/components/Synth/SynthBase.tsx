@@ -1,25 +1,24 @@
 import classNames from "classnames";
 import type { PropsWithChildren } from "react";
 
-import { lightSynthClass } from "./synth.css";
+import { darkSynthClass } from "./synth.css";
 import * as styles from "./synth.css";
 
 interface SynthBaseProps extends PropsWithChildren {
-  onMouseUp: React.MouseEventHandler<HTMLDivElement>;
-  onTouchEnd: React.TouchEventHandler<HTMLDivElement>;
+  // onMouseUp: React.MouseEventHandler<HTMLDivElement>;
+  // onTouchEnd: React.TouchEventHandler<HTMLDivElement>;
 }
 
 export const SynthBase = ({
-  children,
-  onMouseUp,
-  onTouchEnd,
-}: SynthBaseProps) => {
+  children, // onMouseUp,
+} // onTouchEnd,
+: SynthBaseProps) => {
   return (
     <div
       id="synth"
-      className={classNames(styles.synth, lightSynthClass)}
-      onMouseUp={onMouseUp}
-      onTouchEnd={onTouchEnd}
+      className={classNames(styles.synth, darkSynthClass)}
+      // onMouseUp={onMouseUp}
+      // onTouchEnd={onTouchEnd}
     >
       <svg
         width="100%"
