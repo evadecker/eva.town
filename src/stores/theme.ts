@@ -1,13 +1,9 @@
 import { action, atom } from "nanostores";
 
-export type Theme = "light" | "dark" | "default";
+export type Theme = "dark" | "light";
 
-export const $preferredTheme = atom<Theme>("default");
+export const $theme = atom<Theme>("light");
 
-export const setPreferredTheme = action(
-  $preferredTheme,
-  "setPreferredTheme",
-  (store, theme: Theme) => {
-    store.set(theme);
-  }
-);
+export const setTheme = action($theme, "toggleTheme", (store, theme: Theme) => {
+  store.set(theme);
+});

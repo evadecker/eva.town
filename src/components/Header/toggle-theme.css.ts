@@ -36,15 +36,11 @@ export const button = style({
   overflow: "hidden",
   color: theme.text.default,
   transition: "transform 0.2s ease-in-out",
-  ":active": {
-    transform: "scale(1.1)",
-  },
   ":disabled": {
     cursor: "default",
   },
   ":hover": {
     background: theme.background.alt,
-    transform: "scale(1.2)",
   },
 });
 

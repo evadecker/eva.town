@@ -1,9 +1,9 @@
 ---
 import * as styles from "./header.css";
-import { ThemeSwitcher } from "./ThemeSwitcher.tsx";
+import { ToggleTheme } from "./ToggleTheme.tsx";
 ---
 
 <header class={styles.header}>
   <a class={styles.wordmark} href="/">Eva Decker</a>
-  <ThemeSwitcher client:only />
+  <ToggleTheme client:only />
 </header>

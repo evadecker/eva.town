@@ -1,10 +1,11 @@
-import { fontFamily, space, theme } from "@styles/theme.css";
+import { theme } from "@styles/theme.css";
+import { tokens } from "@styles/tokens.css";
 import { style } from "@vanilla-extract/css";
 
 export const footer = style({
   borderTop: "1px solid",
   borderColor: theme.border.default,
-  fontFamily: fontFamily.sans,
+  fontFamily: tokens.fontFamily.sans,
   display: "flex",
   width: "100%",
   selectors: {
@@ -21,7 +22,7 @@ export const linkCol = style({
 });
 
 export const links = style({
-  padding: space.lg,
+  padding: tokens.space.lg,
   marginRight: "auto",
 });
 

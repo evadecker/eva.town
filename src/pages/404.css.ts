@@ -1,4 +1,5 @@
-import { fontFamily, theme } from "@styles/theme.css";
+import { theme } from "@styles/theme.css";
+import { tokens } from "@styles/tokens.css";
 import { globalKeyframes, style } from "@vanilla-extract/css";
 
 globalKeyframes("text-offset", {
@@ -85,7 +86,7 @@ export const subtitle = style({
 });
 
 export const text = style({
-  fontFamily: fontFamily.sans,
+  fontFamily: tokens.fontFamily.sans,
   position: "relative",
   zIndex: "-1",
   lineHeight: "0.8",

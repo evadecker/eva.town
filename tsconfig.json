@@ -21,6 +21,7 @@
     "**/*.tsx",
     "**/*.astro",
     ".eslintrc.js",
-    "./src/types/*.d.ts"
+    "./src/types/*.d.ts",
+    "./public/scripts/*.js"
   ]
 }

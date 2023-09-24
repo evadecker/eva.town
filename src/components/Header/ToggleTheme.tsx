@@ -1,12 +1,23 @@
 import { useStore } from "@nanostores/react";
-import { $preferredTheme, setPreferredTheme, type Theme } from "@stores/theme";
+import type { Theme } from "@stores/theme";
+import { $theme, setTheme } from "@stores/theme";
 import { darkThemeClass, lightThemeClass, theme } from "@styles/theme.css";
 import { useEffect, useRef, useState } from "react";
 
-import * as styles from "./theme-switcher.css";
+import * as styles from "./toggle-theme.css";
 
-export const ThemeSwitcher = () => {
+export const ToggleTheme = () => {
+  // Fetch the global theme store
+  const activeTheme = useStore($theme);
+
+  // Set the theme store to match data-theme, which is preset before render
+  // via preloadTheme.js
+  setTheme((document.body.dataset.theme as Theme) ?? "light");
+
   const [isAnimating, setIsAnimating] = useState(false);
+
+  const inactiveTheme = activeTheme === "light" ? "dark" : "light";
+
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const [animationCoords, setAnimationCoords] = useState<{
     x?: number;
@@ -16,89 +27,53 @@ export const ThemeSwitcher = () => {
     y: buttonRef.current?.getBoundingClientRect().top,
   });
 
-  const preferredTheme = useStore($preferredTheme);
+  useEffect(() => {
+    // Update data attribute on body
+    document.body.dataset.theme = activeTheme;
 
-  const getInitialTheme = () => {
-    // First check saved preferences
-    if (preferredTheme === "dark") {
-      return "dark";
-    } else if (preferredTheme === "light") {
-      return "light";
+    if (activeTheme === "light") {
+      // Update the store
+      setTheme("light");
+      // Update generated classes
+      document.body.classList.add(lightThemeClass);
+      document.body.classList.remove(darkThemeClass);
+    } else {
+      setTheme("dark");
+      document.body.classList.add(darkThemeClass);
+      document.body.classList.remove(lightThemeClass);
     }
 
-    // Check media query for OS-level preference
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-    if (prefersDarkScheme.matches) {
-      return "dark";
-    }
-
-    // Else default to light
-    return "light";
-  };
-
-  const updateMetaTheme = () => {
+    // Update meta theme
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme !== null)
       metaTheme.setAttribute("content", theme.background.default);
-  };
 
-  const updateClassAndDataAttr = (theme: Theme) => {
-    document.body.dataset.theme = theme;
-    if (theme === "light") {
-      document.body.classList.replace(darkThemeClass, lightThemeClass);
-    } else {
-      document.body.classList.replace(lightThemeClass, darkThemeClass);
-    }
-  };
-
-  const enableLightMode = () => {
-    setPreferredTheme("light");
-    updateClassAndDataAttr("light");
-    updateMetaTheme();
-  };
-
-  const enableDarkMode = () => {
-    setPreferredTheme("dark");
-    updateClassAndDataAttr("dark");
-    updateMetaTheme();
-  };
-
-  const setInitialTheme = () => {
-    const initialTheme = getInitialTheme();
-    initialTheme === "dark" ? enableDarkMode() : enableLightMode();
-  };
-
-  useEffect(() => {
-    setInitialTheme();
-  });
-
-  const handleAnimationStart = () => {
+    // Toggle animation
     document.body.dataset.animating = "";
+    setIsAnimating(true);
+
+    // Position background animation center
     setAnimationCoords({
       x: buttonRef.current?.getBoundingClientRect().left,
       y: buttonRef.current?.getBoundingClientRect().top,
     });
-    setIsAnimating(true);
-    setTimeout(() => {
-      handleAnimationEnd();
-    }, 1000);
-  };
 
-  const handleAnimationEnd = () => {
-    document.body.removeAttribute("data-animating");
-    setIsAnimating(false);
-  };
+    // End animation
+    setTimeout(() => {
+      document.body.removeAttribute("data-animating");
+      setIsAnimating(false);
+    }, 1000);
+  }, [activeTheme]);
 
   const handleClick = () => {
-    handleAnimationStart();
-    const currentTheme = document.body.dataset.theme;
-    currentTheme === "light" ? enableDarkMode() : enableLightMode();
+    setTheme(inactiveTheme);
   };
 
   const sharedSvgProps = {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 24 24",
     fill: "currentColor",
+    ariaHidden: "true",
   };
 
   return (

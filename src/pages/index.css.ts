@@ -1,4 +1,5 @@
-import { fontFamily, fontSize } from "@styles/theme.css";
+import { theme } from "@styles/theme.css";
+import { tokens } from "@styles/tokens.css";
 import { style } from "@vanilla-extract/css";
 
 export const header = style({
@@ -7,8 +8,9 @@ export const header = style({
 });
 
 export const subtitle = style({
-  fontSize: fontSize.h5,
-  fontFamily: fontFamily.sans,
+  fontSize: tokens.fontSize.h5,
+  fontFamily: tokens.fontFamily.sans,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.normal}`,
   marginTop: "1em",
 });
 

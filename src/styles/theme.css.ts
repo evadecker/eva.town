@@ -1,64 +1,5 @@
-import { blackA, mauveDark, plum, plumDark, whiteA } from "@radix-ui/colors";
-import {
-  createGlobalTheme,
-  createTheme,
-  createThemeContract,
-  globalFontFace,
-} from "@vanilla-extract/css";
-
-const firaCode = "fira-code";
-
-globalFontFace(firaCode, {
-  src: 'url("/fonts/FiraCode-VF.woff2") format("woff2")',
-  fontStyle: "normal",
-});
-
-export const fontFamily = createGlobalTheme(":root", {
-  sans: 'roc-grotesk-variable, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-  serif: 'loretta-variable, Georgia, Cambria, "Times New Roman", Times, serif',
-  mono: `${firaCode}, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
-});
-
-// Major Third Scale
-// https://typescale.com
-export const fontSize = createGlobalTheme(":root", {
-  h1: "3.052rem",
-  h2: "2.441rem",
-  h3: "1.953rem",
-  h4: "1.563rem",
-  h5: "1.25rem",
-  h6: "1rem",
-  body: "1rem",
-  base: {
-    mobile: "112.5%", // 18px
-    tablet: "118.8%", // 19px
-    desktop: "125%", // 20px
-  },
-  small: "0.8rem",
-});
-
-export const fontWeight = createGlobalTheme(":root", {
-  normal: "400",
-  medium: "500",
-  semibold: "600",
-  bold: "700",
-});
-
-export const space = createGlobalTheme(":root", {
-  xxs: "4px",
-  sm: "8px",
-  md: "16px",
-  lg: "24px",
-  xl: "32px",
-  xxl: "40px",
-});
-
-export const radius = createGlobalTheme(":root", {
-  sm: "8px",
-  md: "16px",
-  lg: "24px",
-  full: "9999px",
-});
+import { blackA, plum, plumDark, whiteA } from "@radix-ui/colors";
+import { createTheme, createThemeContract } from "@vanilla-extract/css";
 
 export const theme = createThemeContract({
   background: {
@@ -68,10 +9,16 @@ export const theme = createThemeContract({
   text: {
     default: "",
     subtle: "",
+    selection: "",
   },
   border: {
     default: "",
     subtle: "",
+  },
+  fontWeight: {
+    normal: "",
+    medium: "",
+    bold: "",
   },
   color: {
     ...plum,
@@ -88,10 +35,16 @@ export const lightThemeClass = createTheme(theme, {
   text: {
     default: plum.plum12,
     subtle: plum.plum11,
+    selection: plum.plum8,
   },
   border: {
-    default: plum.plum3,
-    subtle: plum.plum4,
+    default: plum.plum4,
+    subtle: plum.plum3,
+  },
+  fontWeight: {
+    normal: "440",
+    medium: "500",
+    bold: "700",
   },
   color: {
     ...plum,
@@ -106,12 +59,19 @@ export const darkThemeClass = createTheme(theme, {
     alt: plumDark.plum2,
   },
   text: {
-    default: mauveDark.mauve12,
-    subtle: mauveDark.mauve11,
+    default: plumDark.plum12,
+    subtle: plumDark.plum11,
+    selection: plumDark.plum8,
   },
   border: {
-    default: plumDark.plum3,
-    subtle: plumDark.plum4,
+    default: plumDark.plum4,
+    subtle: plumDark.plum3,
+  },
+  // Weights on dark background slightly reduced to reduce bleed
+  fontWeight: {
+    normal: "380",
+    medium: "420",
+    bold: "620",
   },
   color: {
     ...plumDark,

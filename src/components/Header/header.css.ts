@@ -1,4 +1,5 @@
-import { fontFamily, space } from "@styles/theme.css";
+import { theme } from "@styles/theme.css";
+import { tokens } from "@styles/tokens.css";
 import { style } from "@vanilla-extract/css";
 
 export const header = style({
@@ -6,11 +7,11 @@ export const header = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  padding: `${space.md} ${space.lg}`,
+  padding: `${tokens.space.md} ${tokens.space.lg}`,
 });
 
 export const wordmark = style({
-  fontFamily: fontFamily.sans,
-  fontVariationSettings: '"wdth" 125, "wght" 600',
+  fontFamily: tokens.fontFamily.sans,
+  fontVariationSettings: `"wdth" ${tokens.fontWidth.wide}, "wght" ${theme.fontWeight.bold}`,
   textDecoration: "none",
 });

@@ -1,24 +1,22 @@
+import { useStore } from "@nanostores/react";
+import { $theme } from "@stores/theme";
 import classNames from "classnames";
-import type { PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 
-import { darkSynthClass } from "./synth.css";
 import * as styles from "./synth.css";
 
-interface SynthBaseProps extends PropsWithChildren {
-  // onMouseUp: React.MouseEventHandler<HTMLDivElement>;
-  // onTouchEnd: React.TouchEventHandler<HTMLDivElement>;
-}
+interface SynthBaseProps extends PropsWithChildren {}
 
-export const SynthBase = ({
-  children, // onMouseUp,
-} // onTouchEnd,
-: SynthBaseProps) => {
+export const SynthBase = ({ children }: SynthBaseProps) => {
+  const activeTheme = useStore($theme);
+
   return (
     <div
       id="synth"
-      className={classNames(styles.synth, darkSynthClass)}
-      // onMouseUp={onMouseUp}
-      // onTouchEnd={onTouchEnd}
+      className={classNames(styles.synth, {
+        [styles.darkSynthClass]: activeTheme === "dark",
+        [styles.lightSynthClass]: activeTheme === "light",
+      })}
     >
       <svg
         width="100%"
