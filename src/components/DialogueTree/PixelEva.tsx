@@ -1,4 +1,4 @@
-import styles from "./dialogue.module.scss";
+import * as styles from "./dialogue.css";
 
 export type PixelEvaEmote =
   | "drooling"
@@ -28,7 +28,11 @@ export const PixelEva = ({ emote, advance }: PixelEvaProps) => {
       type="button"
       aria-label="Continue"
     >
-      <img src={`/images/dialogue/eva-${emote}.svg`} alt={`Eva is ${emote}`} />
+      <img
+        className={styles.emoteImg}
+        src={`/images/dialogue/eva-${emote}.svg`}
+        alt={`Eva is ${emote}`}
+      />
     </button>
   );
 };

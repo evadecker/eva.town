@@ -1,9 +1,10 @@
 ---
-import "../styles/reset.module.scss";
-import "../styles/tokens.module.scss";
-import "../styles/base.module.scss";
+import "@styles/reset.css";
+import "@styles/global.css";
 
+// import "../styles/tokens.module.scss";
 import { Footer, Header } from "@components";
+import { lightThemeClass } from "@styles/theme.css";
 
 interface Props {
   title: string;
@@ -38,8 +39,7 @@ const { title, description } = Astro.props;
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
-  <body>
-    <script is:inline src="scripts/themeSwitcher.js"></script>
+  <body class:list={[lightThemeClass]}>
     <Header />
     <main>
       <slot />

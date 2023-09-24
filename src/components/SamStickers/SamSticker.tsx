@@ -1,10 +1,11 @@
 import { getRandomValueBetween } from "@helpers";
 import { useStore } from "@nanostores/react";
 import { incrementTopZIndex, topZIndex } from "@stores/sam";
+import { theme } from "@styles/theme.css";
 import { type DragHandlers, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-import styles from "./samstickers.module.scss";
+import * as styles from "./stickers.css";
 
 interface VariantData {
   path: string;
@@ -123,10 +124,10 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
   const $topZIndex = useStore(topZIndex);
   const [zIndex, setZIndex] = useState($topZIndex);
   const [x, setX] = useState(
-    getRandomValueBetween(0, document.body.clientWidth - BUFFER),
+    getRandomValueBetween(0, document.body.clientWidth - BUFFER)
   );
   const [y, setY] = useState(
-    getRandomValueBetween(0, document.body.clientHeight - BUFFER),
+    getRandomValueBetween(0, document.body.clientHeight - BUFFER)
   );
   const [rotate] = useState(getRandomValueBetween(-10, 10));
 
@@ -149,7 +150,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
   const getNearestOffCanvasCoordinates = (
     x: number,
     y: number,
-    offset: number,
+    offset: number
   ): { x: number; y: number } => {
     const canvasWidth = document.body.clientWidth;
     const canvasHeight = document.body.clientHeight;
@@ -205,14 +206,19 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
       data-testid="samSticker"
     >
       <svg
+        className={styles.stickerSvg}
         width="400"
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d={variantsData[currentVariant].path} fill="white" />
+        <path
+          className={styles.stickerPath}
+          d={variantsData[currentVariant].path}
+          fill={theme.color.whiteA12}
+        />
       </svg>
-      <picture>
+      <picture className={styles.stickerPicture}>
         <source
           srcSet={variantsData[currentVariant].srcSet}
           type="image/webp"
