@@ -20,7 +20,7 @@ globalStyle("html", {
   },
 });
 
-globalStyle("body[data-global.'dark']", {
+globalStyle("[data-theme='dark']", {
   WebkitFontSmoothing: "antialiased",
   MozOsxFontSmoothing: "grayscale",
 });
