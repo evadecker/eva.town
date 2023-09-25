@@ -23,10 +23,12 @@ This is the source code that powers [evadecker.com](https://evadecker.com). It's
 
 **Typography**
 
+- [Roc Grotesk Variable](https://fonts.adobe.com/fonts/roc-grotesk-variable) by Nikola Kostić
+- [Loretta Variable](https://fonts.adobe.com/fonts/loretta-variable) by Abel Martins and Joana Correia
+- [Fira Code](https://github.com/tonsky/FiraCode) by Nikita Prokopov
+- [04b](http://www.04.jp.org/) by Yuji Oshimoto
+
 - Type scale via [typescale.com](https://typescale.com/?size=16&scale=1.250&text=A%20Visual%20Type%20Scale&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false)
-- Roc Grotesk Variable by Nikola Kostić via [Adobe Fonts](https://fonts.adobe.com/fonts/roc-grotesk-variable)
-- Loretta Variable by Abel Martins and Joana Correia via [Adobe Fonts](https://fonts.adobe.com/fonts/loretta-variable)
-- 04b by [Yuji Oshimoto](http://www.04.jp.org/)
 
 **Pixel Art**
 
