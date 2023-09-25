@@ -37,7 +37,6 @@
     "nanostores": "^0.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "unmute-ios-audio": "^3.3.0",
     "use-force-update": "^1.0.11",
     "yarn-bound": "^0.5.4"
   },

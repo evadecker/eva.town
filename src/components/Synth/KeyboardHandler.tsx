@@ -8,7 +8,13 @@ import {
 } from "@stores/synth";
 import { useEffect } from "react";
 
-export const KeyboardHandler = () => {
+interface KeyboardHandlerProps {
+  onInstrumentChange: () => void;
+}
+
+export const KeyboardHandler = ({
+  onInstrumentChange,
+}: KeyboardHandlerProps) => {
   const isLoading = useStore($isLoading);
 
   const handleKeyDown = (e: KeyboardEvent) => {
@@ -17,10 +23,12 @@ export const KeyboardHandler = () => {
         case "ArrowLeft":
           e.preventDefault();
           prevInstrument();
+          onInstrumentChange();
           break;
         case "ArrowRight":
           e.preventDefault();
           nextInstrument();
+          onInstrumentChange();
           break;
         case "a":
         case "A":

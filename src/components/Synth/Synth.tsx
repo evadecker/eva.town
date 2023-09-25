@@ -14,7 +14,6 @@ import {
 } from "@stores/synth";
 import { Howl, Howler } from "howler";
 import { useEffect } from "react";
-import unmuteAudio from "unmute-ios-audio";
 
 import { KeyboardHandler } from "./KeyboardHandler";
 import { SynthBase } from "./SynthBase";
@@ -31,8 +30,6 @@ export const Synth = () => {
   const pressedKeys = useStore($pressedKeys);
   const latestKey = useStore($latestKey);
   const isShowingKeyboardLetters = useStore($isShowingKeyboardLetters);
-
-  Howler.autoUnlock = false;
 
   const randomIntFromInterval = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -268,12 +265,13 @@ export const Synth = () => {
 
   useEffect(() => {
     if (isActive) {
-      unmuteAudio();
+      Howler.autoUnlock = true;
       setRandomInstrument();
     }
   }, [isActive]);
 
   const setRandomInstrument = () => {
+    $isLoading.set(true);
     const baseSpeed = randomIntFromInterval(30, 50); // Lower is faster
     const force = randomIntFromInterval(5, 30); // How hard do you 'pull down the wheel'?
     const slowestSpeed = 700; // How slow can the roulette go before ending?
@@ -352,7 +350,7 @@ export const Synth = () => {
 
   return (
     <SynthBase>
-      <KeyboardHandler />
+      <KeyboardHandler onInstrumentChange={() => sounds.ui.click.howl.play()} />
       <SynthKeys pressedKeys={pressedKeys} />
       <SynthScreen
         isSynthActive={isActive}

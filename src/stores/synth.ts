@@ -18,7 +18,6 @@ export const $latestKey = atom<KeyPressEvent | null>(null);
 
 export const activateSynth = action($isActive, "activateSynth", (store) => {
   store.set(true);
-  $isLoading.set(true);
 });
 
 export const deactivateSynth = action($isActive, "deactivateSynth", (store) => {
