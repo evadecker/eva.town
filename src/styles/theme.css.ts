@@ -21,6 +21,7 @@ export const theme = createGlobalThemeContract(
       default: "",
       subtle: "",
       selection: "",
+      inlineIcon: "",
     },
     border: {
       default: "",
@@ -73,6 +74,7 @@ createGlobalTheme('[data-theme="light"]', theme, {
     default: mauve.mauve12,
     subtle: mauve.mauve11,
     selection: plum.plum8,
+    inlineIcon: plum.plum12,
   },
   border: {
     default: plum.plum4,
@@ -117,6 +119,7 @@ createGlobalTheme('[data-theme="dark"]', theme, {
     default: mauveDark.mauve12,
     subtle: mauveDark.mauve11,
     selection: plumDark.plum8,
+    inlineIcon: plumDark.plum12,
   },
   border: {
     default: plumDark.plum4,
@@ -124,9 +127,9 @@ createGlobalTheme('[data-theme="dark"]', theme, {
   },
   // Weights on dark background slightly lower to reduce bleed
   fontWeight: {
-    normal: "380",
-    medium: "420",
-    bold: "620",
+    normal: "420",
+    medium: "480",
+    bold: "680",
   },
   color: {
     ...plumDark,

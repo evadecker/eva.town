@@ -1,5 +1,5 @@
 ---
-import { DialogueTree } from "@components";
+import { DialogueTree, Icon } from "@components";
 
 // import { getEntry } from "astro:content";
 import * as styles from "./footer.css";
@@ -19,7 +19,8 @@ import LastTended from "./LastTended.astro";
           target="_blank"
           aria-label="Visit Eva's GitHub"
         >
-          Github
+          <Icon icon="github" variant="filled" className={styles.linkIcon} />
+          <span class={styles.linkText}>Github</span>
         </a>
         <a
           class={styles.link}
@@ -27,7 +28,12 @@ import LastTended from "./LastTended.astro";
           target="_blank"
           aria-label="Visit Eva's LinkedIn"
         >
-          LinkedIn
+          <Icon
+            icon="linkedInBox"
+            variant="filled"
+            className={styles.linkIcon}
+          />
+          <span class={styles.linkText}>LinkedIn</span>
         </a>
         <a
           class={styles.link}
@@ -35,7 +41,8 @@ import LastTended from "./LastTended.astro";
           target="_blank"
           aria-label="View Eva's Resume"
         >
-          Resume
+          <Icon icon="download" className={styles.linkIcon} />
+          <span class={styles.linkText}>Resume</span>
         </a>
       </div>
     </div>

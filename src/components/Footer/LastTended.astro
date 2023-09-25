@@ -1,5 +1,6 @@
 ---
-import { formatDistanceToNow } from "date-fns";
+import { Icon } from "@components";
+import { format, formatDistanceToNow } from "date-fns";
 import * as styles from "./footer.css";
 
 // Vercel Access Token
@@ -13,7 +14,8 @@ const state = "READY";
 // Fetch only production deploys
 const target = "production";
 
-let lastDeployedTime: string;
+let timestamp: string;
+let relativeTimeInWords: string;
 try {
   // https://vercel.com/docs/rest-api/endpoints#list-deployments
   const response = await fetch(
@@ -30,12 +32,17 @@ try {
 
   const { ready } = data.deployments[0];
 
-  lastDeployedTime = formatDistanceToNow(ready, { addSuffix: true });
+  timestamp = format(ready, "yyyy-MM-dd HH:mm");
+  relativeTimeInWords = formatDistanceToNow(ready, { addSuffix: true });
 } catch (error) {
-  lastDeployedTime = "at some point in time";
+  timestamp = "";
+  relativeTimeInWords = "at some point in time";
 }
 ---
 
-<small class={styles.lastTended}>
-  Last tended <strong>{lastDeployedTime}</strong>
-</small>
+<div class={styles.lastTended}>
+  <Icon icon="seedling" size="small" className={styles.lastTendedIcon} />
+  <small
+    >Last tended <time datetime={timestamp}>{relativeTimeInWords}</time></small
+  >
+</div>
