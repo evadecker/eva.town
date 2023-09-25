@@ -46,6 +46,8 @@ const Crack = () => {
 };
 
 export const SynthKey = ({ note, isPressed, isMouseDown }: SynthKeyProps) => {
+  const isTouchDevice = window.matchMedia("(pointer:coarse)").matches;
+
   const isSynthLoading = useStore($isLoading);
   const isShowingKeyboardLetters = useStore($isShowingKeyboardLetters);
 
@@ -58,32 +60,37 @@ export const SynthKey = ({ note, isPressed, isMouseDown }: SynthKeyProps) => {
   });
 
   const keyLetterClasses = classNames(styles.keyLetter, {
-    [styles.visible]: isShowingKeyboardLetters,
+    [styles.visible]: isShowingKeyboardLetters && !isTouchDevice,
   });
 
   const getInteractionHandlers = (note: NoteName, isMouseDown: boolean) => {
-    return !isSynthLoading
-      ? {
-          onMouseDown: () => {
-            pressKey(note);
-          },
-          onMouseEnter: () => {
-            if (isMouseDown) pressKey(note);
-          },
-          onMouseUp: () => {
-            releaseKey(note);
-          },
-          onMouseOut: () => {
-            releaseKey(note);
-          },
-          onTouchStart: () => {
-            pressKey(note);
-          },
-          onTouchEnd: () => {
-            releaseAllKeys();
-          },
-        }
-      : null;
+    const mouseHandlers = {
+      onMouseDown: () => {
+        pressKey(note);
+      },
+      onMouseEnter: () => {
+        if (isMouseDown) pressKey(note);
+      },
+      onMouseUp: () => {
+        releaseKey(note);
+      },
+      onMouseOut: () => {
+        releaseKey(note);
+      },
+    };
+
+    const touchHandlers = {
+      onTouchStart: () => {
+        pressKey(note);
+      },
+      onTouchEnd: () => {
+        releaseAllKeys();
+      },
+    };
+
+    const handlers = isTouchDevice ? touchHandlers : mouseHandlers;
+
+    return !isSynthLoading ? { ...handlers } : null;
   };
 
   switch (note) {

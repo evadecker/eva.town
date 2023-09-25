@@ -1,5 +1,4 @@
 import { useStore } from "@nanostores/react";
-import { unmute } from "@scripts/unmute";
 import {
   $activeInstrument,
   $activeNotehead,
@@ -13,7 +12,7 @@ import {
   prevInstrument,
   setActiveNotehead,
 } from "@stores/synth";
-import { Howl, Howler } from "howler";
+import { Howl } from "howler";
 import { useEffect } from "react";
 
 import { KeyboardHandler } from "./KeyboardHandler";
@@ -22,6 +21,7 @@ import { type NoteName } from "./SynthKey";
 import { SynthKeys } from "./SynthKeys";
 import { SynthScreen } from "./SynthScreen";
 import { SynthStart } from "./SynthStart";
+import { unmute } from "./unmute";
 
 export const Synth = () => {
   const isActive = useStore($isActive);
@@ -39,6 +39,10 @@ export const Synth = () => {
   const SOUNDS_DIRECTORY = "sounds/";
 
   const audioContext = window.AudioContext ? new window.AudioContext() : null;
+
+  useEffect(() => {
+    unmute(audioContext, false, false);
+  }, []);
 
   const sounds = {
     ui: {
@@ -268,8 +272,6 @@ export const Synth = () => {
 
   useEffect(() => {
     if (isActive) {
-      Howler.autoUnlock = true;
-      unmute(audioContext, false, false);
       setRandomInstrument();
     }
   }, [isActive]);
@@ -292,8 +294,7 @@ export const Synth = () => {
       if (speed >= slowestSpeed) {
         sounds.ui.ding.howl.play();
         $isLoading.set(false);
-        // TODO: Fix this
-        // if (!isTouchDevice) $isShowingKeyboardLetters.set(true);
+        $isShowingKeyboardLetters.set(true);
         clearTimeout(timeout);
       } else {
         speed *= friction;
