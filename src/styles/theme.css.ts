@@ -70,8 +70,8 @@ createGlobalTheme('[data-theme="light"]', theme, {
     alt: plum.plum2,
   },
   text: {
-    default: plum.plum12,
-    subtle: plum.plum11,
+    default: mauve.mauve12,
+    subtle: mauve.mauve11,
     selection: plum.plum8,
   },
   border: {
@@ -114,8 +114,8 @@ createGlobalTheme('[data-theme="dark"]', theme, {
     alt: plumDark.plum2,
   },
   text: {
-    default: plumDark.plum12,
-    subtle: plumDark.plum11,
+    default: mauveDark.mauve12,
+    subtle: mauveDark.mauve11,
     selection: plumDark.plum8,
   },
   border: {
