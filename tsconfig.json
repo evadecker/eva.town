@@ -10,7 +10,8 @@
       "@components": ["src/components"],
       "@helpers": ["src/helpers"],
       "@layouts": ["src/layouts"],
-      "@stores/*": ["src/stores/*"]
+      "@stores/*": ["src/stores/*"],
+      "@styles/*": ["src/styles/*"]
     }
   },
   "extends": "astro/tsconfigs/strict",
@@ -19,7 +20,9 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.astro",
+    "**/*.js",
     ".eslintrc.js",
-    "./src/types/*.d.ts"
+    "./src/types/*.d.ts",
+    "./public/scripts/*.js"
   ]
 }

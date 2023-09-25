@@ -17,11 +17,18 @@ This is the source code that powers [evadecker.com](https://evadecker.com). It's
 - Murloc © Blizzard, sourced from [HearthSounds](https://maxtimkovich.com/hearthsounds?q=murloc)
 - Super Mario World © Koji Kondo & Nintendo, sourced from [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav)
 
-**Fonts**
+**Colors**
 
-- Roc Grotesk Variable by Nikola Kostić via [Adobe Fonts](https://fonts.adobe.com/fonts/roc-grotesk-variable)
-- Loretta Variable by Abel Martins and Joana Correia via [Adobe Fonts](https://fonts.adobe.com/fonts/loretta-variable)
-- 04b by [Yuji Oshimoto](http://www.04.jp.org/)
+- Accessible color palette via [Radix](https://www.radix-ui.com/colors)
+
+**Typography**
+
+- [Roc Grotesk Variable](https://fonts.adobe.com/fonts/roc-grotesk-variable) by Nikola Kostić
+- [Loretta Variable](https://fonts.adobe.com/fonts/loretta-variable) by Abel Martins and Joana Correia
+- [Fira Code](https://github.com/tonsky/FiraCode) by Nikita Prokopov
+- [04b](http://www.04.jp.org/) by Yuji Oshimoto
+
+- Type scale via [typescale.com](https://typescale.com/)
 
 **Pixel Art**
 

@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { nanoid } from "nanoid";
 import type * as YarnBound from "yarn-bound";
 
-import styles from "./dialogue.module.scss";
+import * as styles from "./dialogue.css";
 import {
   DialogueLineFragment,
   type DialogueLineFragmentProps,

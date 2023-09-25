@@ -1,150 +1,19 @@
 ---
 import { Layout } from "@layouts";
+
+import * as styles from "./404.css";
 ---
 
 <Layout title="404: Not Found" description="This page could not be found.">
-  <div class="scanlines"></div>
-  <div class="glitch-container">
-    <div class="text">
-      <h1>404</h1>
-      <div class="subtitle">Not Found</div>
-      <div class="text-clip">
-        <h1>404</h1>
-        <div class="subtitle">Not Found</div>
+  <div class={styles.scanlines}></div>
+  <div class={styles.glitchContainer}>
+    <div class={styles.text}>
+      <h1 class={styles.title}>404</h1>
+      <div class={styles.subtitle}>Not Found</div>
+      <div class={styles.textClip}>
+        <h1 class={styles.title}>404</h1>
+        <div class={styles.subtitle}>Not Found</div>
       </div>
     </div>
   </div>
 </Layout>
-
-<style lang="scss">
-  .scanlines {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-
-    // Courtesy https://codepen.io/zerospree/pen/mdevOB
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAALElEQVQYV2NkYGD4/x9IMAIxAxoDmzhIHfU0gCxFB9S1AacfsFmNJQzAoQIAH84j/OCkeYUAAAAASUVORK5CYII=");
-    background-size: 12px 6px;
-    mix-blend-mode: color-dodge;
-    opacity: 0.5;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      background: rgb(255 255 255 / 5%);
-      height: 6px;
-      animation: scanline 5s linear infinite;
-    }
-  }
-
-  .glitch-container {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: -1;
-    animation: flicker 20ms infinite;
-  }
-
-  .text {
-    font-family: var(--font-display);
-    position: relative;
-    z-index: -1;
-    line-height: 0.8;
-    letter-spacing: 0.02em;
-    pointer-events: none;
-    user-select: none;
-    text-align: center;
-    text-shadow:
-      -1.5px 0 0 rgb(0 0 255),
-      1.5px 0 0 rgb(255 0 0),
-      0 1.5px 0 rgb(0 255 0);
-    filter: blur(1.5px);
-
-    h1 {
-      font-size: clamp(180px, 30vw, 400px);
-      font-variation-settings:
-        "wdth" 150,
-        "wght" 700;
-    }
-
-    .subtitle {
-      font-size: clamp(60px, 10vw, 180px);
-      font-variation-settings:
-        "wdth" 140,
-        "wght" 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-    }
-
-    @media screen and (width <= 600px) {
-      line-height: 0.7;
-
-      h1 {
-        font-size: 90vw;
-        font-variation-settings:
-          "wdth" 50,
-          "wght" 300;
-      }
-
-      .subtitle {
-        font-size: 20vw;
-        font-variation-settings:
-          "wdth" 60,
-          "wght" 500;
-      }
-    }
-
-    .text-clip {
-      position: absolute;
-      top: 0;
-      left: -0.3rem;
-      text-shadow:
-        -1.5px 0 0 rgb(0 0 255),
-        1.5px 0 0 rgb(255 0 0),
-        0 1.5px 0 rgb(0 255 0),
-        0.35rem 0 0 var(--bg),
-        4px 4px 0 var(--bg);
-      animation: text-offset 8s linear infinite;
-
-      // Dark mode transition
-      transition: text-shadow 1s ease-in-out;
-    }
-  }
-
-  @keyframes text-offset {
-    0% {
-      clip-path: polygon(0 110%, 100% 110%, 100% 160%, 0 160%);
-    }
-
-    100% {
-      clip-path: polygon(0 -90%, 100% -90%, 100% -10%, 0 -10%);
-    }
-  }
-
-  @keyframes scanline {
-    0% {
-      transform: translate3d(0, 100vh, 0);
-    }
-
-    50% {
-      transform: translate3d(0, -6px, 0);
-    }
-  }
-
-  @keyframes flicker {
-    0% {
-      opacity: 0.9;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-</style>

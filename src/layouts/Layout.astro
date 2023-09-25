@@ -1,7 +1,6 @@
 ---
-import "../styles/reset.module.scss";
-import "../styles/tokens.module.scss";
-import "../styles/base.module.scss";
+import "@styles/reset.css";
+import "@styles/base.css";
 
 import { Footer, Header } from "@components";
 
@@ -39,7 +38,7 @@ const { title, description } = Astro.props;
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
-    <script is:inline src="scripts/themeSwitcher.js"></script>
+    <script is:inline src="/scripts/preloadTheme.js"></script>
     <Header />
     <main>
       <slot />

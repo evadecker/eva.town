@@ -1,1 +1,1 @@
-export { default as Synth } from "./Synth.astro";
+export { Synth } from "./Synth";

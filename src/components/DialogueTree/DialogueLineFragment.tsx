@@ -1,7 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import { nanoid } from "nanoid";
 
-import styles from "./dialogue.module.scss";
+import * as styles from "./dialogue.css";
 
 export enum FragmentVariant {
   Wave = "wave",

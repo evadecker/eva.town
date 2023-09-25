@@ -1,4 +1,4 @@
-import styles from "./dialogue.module.scss";
+import * as styles from "./dialogue.css";
 
 interface DialogueContinueProps {
   advance: (optionIndex: number | undefined) => void;
@@ -7,7 +7,7 @@ interface DialogueContinueProps {
 export const DialogueContinue = ({ advance }: DialogueContinueProps) => {
   return (
     <button
-      className={styles.continue}
+      className={styles.continueButton}
       aria-label="Continue"
       onClick={() => {
         advance(undefined);

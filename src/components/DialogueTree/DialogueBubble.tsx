@@ -1,7 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import * as YarnBound from "yarn-bound";
 
-import styles from "./dialogue.module.scss";
+import * as styles from "./dialogue.css";
 import { DialogueContinue } from "./DialogueContinue";
 import { DialogueLine } from "./DialogueLine";
 import { DialogueOptions } from "./DialogueOptions";

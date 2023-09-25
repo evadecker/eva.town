@@ -1,7 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import type * as YarnBound from "yarn-bound";
 
-import styles from "./dialogue.module.scss";
+import * as styles from "./dialogue.css";
 
 interface DialogueOptionsProps {
   node: YarnBound.OptionsResult;
@@ -22,17 +22,6 @@ export const DialogueOptions = ({ node, advance }: DialogueOptionsProps) => {
     },
   };
 
-  const arrowVariants: Variants = {
-    initial: {
-      opacity: 0,
-      width: 0,
-    },
-    whileHover: {
-      opacity: 1,
-      width: "1em",
-    },
-  };
-
   return (
     <motion.div className={styles.options}>
       {node.options.map((option, index) => (
@@ -48,9 +37,6 @@ export const DialogueOptions = ({ node, advance }: DialogueOptionsProps) => {
             advance(index);
           }}
         >
-          <motion.span variants={arrowVariants} className={styles.arrow}>
-            →
-          </motion.span>
           {option.text}
         </motion.button>
       ))}

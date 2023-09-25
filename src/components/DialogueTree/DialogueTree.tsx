@@ -4,7 +4,7 @@ import { getValueFromTag } from "src/helpers/helpers";
 import useForceUpdate from "use-force-update";
 import YarnBound, * as YarnBoundTypes from "yarn-bound";
 
-import styles from "./dialogue.module.scss";
+import * as styles from "./dialogue.css";
 import { DialogueBubble } from "./DialogueBubble";
 import { PixelEva, type PixelEvaEmote } from "./PixelEva";
 import { PixelSam, type PixelSamEmote } from "./PixelSam";

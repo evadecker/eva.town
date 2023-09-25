@@ -1,4 +1,4 @@
-import styles from "./dialogue.module.scss";
+import * as styles from "./dialogue.css";
 
 export type PixelSamEmote = "grooming" | "neutral" | "sleeping";
 
@@ -17,7 +17,11 @@ export const PixelSam = ({ emote, advance }: PixelSamProps) => {
       type="button"
       aria-label="Continue"
     >
-      <img src={`/images/dialogue/sam-${emote}.svg`} alt={`Sam is ${emote}`} />
+      <img
+        className={styles.emoteImg}
+        src={`/images/dialogue/sam-${emote}.svg`}
+        alt={`Sam is ${emote}`}
+      />
     </button>
   );
 };
