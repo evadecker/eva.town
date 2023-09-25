@@ -38,6 +38,8 @@ export const Synth = () => {
 
   const SOUNDS_DIRECTORY = "sounds/";
 
+  const audioContext = window.AudioContext ? new window.AudioContext() : null;
+
   const sounds = {
     ui: {
       click: {
@@ -267,7 +269,7 @@ export const Synth = () => {
   useEffect(() => {
     if (isActive) {
       Howler.autoUnlock = true;
-      if (Howler.ctx) unmute(Howler.ctx, false, false);
+      unmute(audioContext, false, false);
       setRandomInstrument();
     }
   }, [isActive]);
