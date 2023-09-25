@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import * as styles from "./synth.css";
 import { type NoteName, SynthKey } from "./SynthKey";
 
@@ -26,6 +28,17 @@ const notes: NoteName[] = [
 ];
 
 export const SynthKeys = ({ pressedKeys }: SynthKeysProps) => {
+  const [isMouseDown, setIsMouseDown] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", () => {
+      setIsMouseDown(true);
+    });
+    document.addEventListener("mouseup", () => {
+      setIsMouseDown(false);
+    });
+  }, []);
+
   return (
     <g id="synth-keys" transform="translate(24.000000, 60.000000)">
       <path
@@ -41,6 +54,7 @@ export const SynthKeys = ({ pressedKeys }: SynthKeysProps) => {
           key={note}
           note={note}
           isPressed={pressedKeys ? pressedKeys.includes(note) : false}
+          isMouseDown={isMouseDown}
         />
       ))}
       <path

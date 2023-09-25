@@ -15,3 +15,9 @@ export const wordmark = style({
   fontVariationSettings: `"wdth" ${tokens.fontWidth.wide}, "wght" ${theme.fontWeight.bold}`,
   textDecoration: "none",
 });
+
+export const toggleTheme = style({
+  position: "relative",
+  width: "40px",
+  height: "40px",
+});

@@ -1,6 +1,3 @@
-import { useStore } from "@nanostores/react";
-import { $theme } from "@stores/theme";
-import classNames from "classnames";
 import { type PropsWithChildren } from "react";
 
 import * as styles from "./synth.css";
@@ -8,16 +5,8 @@ import * as styles from "./synth.css";
 interface SynthBaseProps extends PropsWithChildren {}
 
 export const SynthBase = ({ children }: SynthBaseProps) => {
-  const activeTheme = useStore($theme);
-
   return (
-    <div
-      id="synth"
-      className={classNames(styles.synth, {
-        [styles.darkSynthClass]: activeTheme === "dark",
-        [styles.lightSynthClass]: activeTheme === "light",
-      })}
-    >
+    <div id="synth" className={styles.synth}>
       <svg
         width="100%"
         viewBox="0 0 270 152"

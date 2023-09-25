@@ -5,5 +5,7 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
 
 <header class={styles.header}>
   <a class={styles.wordmark} href="/">Eva Decker</a>
-  <ToggleTheme client:only />
+  <div class={styles.toggleTheme}>
+    <ToggleTheme client:only />
+  </div>
 </header>

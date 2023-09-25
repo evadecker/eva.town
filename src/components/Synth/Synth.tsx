@@ -7,6 +7,7 @@ import {
   $isShowingKeyboardLetters,
   $latestKey,
   $pressedKeys,
+  activateSynth,
   nextInstrument,
   prevInstrument,
   setActiveNotehead,
@@ -33,15 +34,12 @@ export const Synth = () => {
 
   Howler.autoUnlock = false;
 
-  const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-
   const randomIntFromInterval = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
   const SOUNDS_DIRECTORY = "sounds/";
 
-  // Load essential UI sounds to be ready for initial click
   const sounds = {
     ui: {
       click: {
@@ -268,17 +266,14 @@ export const Synth = () => {
     ],
   };
 
-  const handleStart = () => {
-    if (!isActive) {
-      $isActive.set(true);
+  useEffect(() => {
+    if (isActive) {
       unmuteAudio();
       setRandomInstrument();
     }
-  };
+  }, [isActive]);
 
   const setRandomInstrument = () => {
-    $isLoading.set(true);
-
     const baseSpeed = randomIntFromInterval(30, 50); // Lower is faster
     const force = randomIntFromInterval(5, 30); // How hard do you 'pull down the wheel'?
     const slowestSpeed = 700; // How slow can the roulette go before ending?
@@ -289,13 +284,14 @@ export const Synth = () => {
     let timeout: NodeJS.Timeout;
 
     const roulette = () => {
-      nextInstrument();
+      handleNext();
       i++;
 
       if (speed >= slowestSpeed) {
         sounds.ui.ding.howl.play();
         $isLoading.set(false);
-        if (!isTouchDevice) $isShowingKeyboardLetters.set(true);
+        // TODO: Fix this
+        // if (!isTouchDevice) $isShowingKeyboardLetters.set(true);
         clearTimeout(timeout);
       } else {
         speed *= friction;
@@ -308,10 +304,6 @@ export const Synth = () => {
 
     setTimeout(roulette, speed);
   };
-
-  useEffect(() => {
-    sounds.ui.click.howl.play();
-  }, [activeInstrument]);
 
   // When active notehead changes, start a countdown to hide the displayed notehead
   let noteheadTimerId: string | number | NodeJS.Timeout | undefined;
@@ -332,22 +324,6 @@ export const Synth = () => {
     return stopNoteheadTimer;
   }, [activeNotehead]);
 
-  // const pressKeyMatchingCoords = (x, y) => {
-  //   Array.from(keys).forEach((key) => {
-  //     const posXStart = key.offset().left;
-  //     const posYStart = key.offset().top - window.scrollTop();
-  //     const posXEnd = key.offset().left + key[0].getBoundingClientRect().width;
-  //     const posYEnd = key.offset().top + key[0].getBoundingClientRect().height;
-
-  //     if (x >= posXStart && x <= posXEnd && y >= posYStart && y <= posYEnd) {
-  //       releaseAllKeys();
-  //       const noteName = key[0].id;
-  //       playNote(noteName);
-  //       key.classList.add("pressed");
-  //     }
-  //   });
-  // };
-
   const playNote = (note: NoteName) => {
     sounds.instruments[activeInstrument].howl.play(note);
     if (isShowingKeyboardLetters) $isShowingKeyboardLetters.set(false);
@@ -355,46 +331,24 @@ export const Synth = () => {
 
   useEffect(() => {
     if (latestKey) {
-      playNote(latestKey);
-      setActiveNotehead(latestKey);
+      playNote(latestKey.note);
+      setActiveNotehead(latestKey.note);
     }
   }, [latestKey]);
 
-  const handleClickNext = () => {
+  const handleNext = () => {
     nextInstrument();
+    sounds.ui.click.howl.play();
   };
 
-  const handleClickPrev = () => {
+  const handlePrev = () => {
     prevInstrument();
+    sounds.ui.click.howl.play();
   };
 
   const handleClickInstrument = () => {
     setRandomInstrument();
   };
-
-  // const handleTouchStart = (e) => {
-  //   e.preventDefault();
-  //   hideKeyboardLetters();
-  //   setIsTouching(true);
-  //   pressKey(this.id);
-  // };
-
-  // const handleTouchEnter = (e) => {
-  //   e.preventDefault();
-  //   if (isTouching) {
-  //     pressKey(this.id);
-  //   }
-  // };
-
-  // const handleTouchMove = (e) => {
-  //   const touch = e.originalEvent.touches[0];
-  //   pressKeyMatchingCoords(touch.clientX, touch.clientY);
-  // };
-
-  // const handleTouchEnd = () => {
-  //   setIsTouching(false);
-  //   releaseAllKeys();
-  // };
 
   return (
     <SynthBase>
@@ -405,11 +359,11 @@ export const Synth = () => {
         isSynthLoading={isLoading}
         activeInstrument={activeInstrument}
         activeNotehead={activeNotehead}
-        onClickPrev={handleClickPrev}
-        onClickNext={handleClickNext}
+        onClickPrev={handlePrev}
+        onClickNext={handleNext}
         onClickInstrument={handleClickInstrument}
       />
-      <SynthStart isSynthActive={isActive} onClick={handleStart} />
+      <SynthStart isSynthActive={isActive} onClick={activateSynth} />
     </SynthBase>
   );
 };

@@ -1,4 +1,5 @@
 import { theme } from "@styles/theme.css";
+import { tokens } from "@styles/tokens.css";
 import { globalKeyframes, style } from "@vanilla-extract/css";
 
 globalKeyframes("grow", {
@@ -18,17 +19,13 @@ export const animationContainer = style({
   pointerEvents: "none",
 });
 
-export const buttonContainer = style({
-  position: "relative",
-});
-
 export const button = style({
   background: "transparent",
   cursor: "pointer",
   border: "none",
-  width: "40px",
-  height: "40px",
-  borderRadius: "100%",
+  width: "100%",
+  height: "100%",
+  borderRadius: tokens.radius.full,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -72,7 +69,7 @@ export const moon = style([
   icon,
   {
     selectors: {
-      "body[data-theme='light'] &": {
+      "[data-theme='light'] &": {
         transform: "rotate(60deg)",
       },
     },
@@ -84,7 +81,7 @@ export const moonHover = style([
   {
     opacity: "0",
     selectors: {
-      "body[data-theme='light'] &": {
+      "[data-theme='light'] &": {
         transform: "rotate(60deg)",
       },
       "button[data-theme-toggle]:hover &": {
@@ -98,7 +95,7 @@ export const sun = style([
   icon,
   {
     selectors: {
-      "body[data-theme='dark'] &": {
+      "[data-theme='dark'] &": {
         transform: "rotate(-60deg)",
       },
     },
@@ -110,7 +107,7 @@ export const sunHover = style([
   {
     opacity: "0",
     selectors: {
-      "body[data-theme='dark'] &": {
+      "[data-theme='dark'] &": {
         transform: "rotate(-60deg)",
       },
       "button[data-theme-toggle]:hover &": {

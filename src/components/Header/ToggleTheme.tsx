@@ -1,21 +1,15 @@
-import { useStore } from "@nanostores/react";
-import type { Theme } from "@stores/theme";
-import { $theme, setTheme } from "@stores/theme";
-import { darkThemeClass, lightThemeClass, theme } from "@styles/theme.css";
+import { theme } from "@styles/theme.css";
 import { useEffect, useRef, useState } from "react";
 
 import * as styles from "./toggle-theme.css";
 
+type Theme = "light" | "dark";
+
 export const ToggleTheme = () => {
-  // Fetch the global theme store
-  const activeTheme = useStore($theme);
-
-  // Set the theme store to match data-theme, which is preset before render
-  // via preloadTheme.js
-  setTheme((document.body.dataset.theme as Theme) ?? "light");
-
   const [isAnimating, setIsAnimating] = useState(false);
-
+  const [activeTheme, setActiveTheme] = useState<Theme>(
+    document.body.dataset.theme as Theme
+  );
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -27,30 +21,10 @@ export const ToggleTheme = () => {
     y: buttonRef.current?.getBoundingClientRect().top,
   });
 
-  useEffect(() => {
-    // Update data attribute on body
-    document.body.dataset.theme = activeTheme;
-
-    if (activeTheme === "light") {
-      // Update the store
-      setTheme("light");
-      // Update generated classes
-      document.body.classList.add(lightThemeClass);
-      document.body.classList.remove(darkThemeClass);
-    } else {
-      setTheme("dark");
-      document.body.classList.add(darkThemeClass);
-      document.body.classList.remove(lightThemeClass);
-    }
-
-    // Update meta theme
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    if (metaTheme !== null)
-      metaTheme.setAttribute("content", theme.background.default);
-
+  const handleAnimation = () => {
     // Toggle animation
-    document.body.dataset.animating = "";
     setIsAnimating(true);
+    document.body.dataset.animating = "";
 
     // Position background animation center
     setAnimationCoords({
@@ -63,26 +37,40 @@ export const ToggleTheme = () => {
       document.body.removeAttribute("data-animating");
       setIsAnimating(false);
     }, 1000);
-  }, [activeTheme]);
-
-  const handleClick = () => {
-    setTheme(inactiveTheme);
   };
+
+  useEffect(() => {
+    if (!activeTheme) return;
+
+    // Update data attribute on body
+    document.body.dataset.theme = activeTheme;
+
+    // Update localStorage
+    localStorage.setItem("theme", activeTheme);
+
+    // Update meta theme
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme !== null)
+      metaTheme.setAttribute("content", theme.background.default);
+
+    handleAnimation();
+  }, [activeTheme]);
 
   const sharedSvgProps = {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 24 24",
     fill: "currentColor",
-    ariaHidden: "true",
   };
 
   return (
-    <div className={styles.buttonContainer}>
+    <>
       <button
         type="button"
         data-theme-toggle
         aria-label="Toggle theme"
-        onClick={handleClick}
+        onClick={() => {
+          setActiveTheme(inactiveTheme);
+        }}
         disabled={isAnimating}
         ref={buttonRef}
         className={styles.button}
@@ -106,6 +94,6 @@ export const ToggleTheme = () => {
           style={{ left: animationCoords.x, top: animationCoords.y }}
         ></div>
       </div>
-    </div>
+    </>
   );
 };
