@@ -108,7 +108,7 @@ globalStyle("body", {
 
 globalStyle("main", {
   flex: 1,
-  padding: tokens.space.lg,
+  padding: tokens.space[5],
   paddingTop: 0,
   width: "100%",
 });

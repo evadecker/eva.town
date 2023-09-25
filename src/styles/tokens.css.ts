@@ -58,18 +58,22 @@ export const tokens = createGlobalTheme(":root", {
   },
 
   space: {
-    xxs: "4px",
-    sm: "8px",
-    md: "16px",
-    lg: "24px",
-    xl: "32px",
-    xxl: "40px",
+    1: "4px",
+    2: "8px",
+    3: "12px",
+    4: "16px",
+    5: "24px",
+    6: "32px",
+    7: "40px",
+    8: "48px",
+    9: "64px",
   },
 
   radius: {
-    sm: "8px",
-    md: "16px",
-    lg: "24px",
-    full: "9999px",
+    1: "4px",
+    2: "8px",
+    3: "16px",
+    4: "24px",
+    100: "9999px",
   },
 });

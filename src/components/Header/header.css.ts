@@ -7,7 +7,7 @@ export const header = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  padding: `${tokens.space.md} ${tokens.space.lg}`,
+  padding: `${tokens.space[4]} ${tokens.space[5]}`,
 });
 
 export const wordmark = style({

@@ -17,12 +17,12 @@ export const footer = style({
 
 export const footerContent = style({
   marginRight: "auto",
-  padding: tokens.space.lg,
-  paddingBottom: tokens.space.md,
+  padding: tokens.space[5],
+  paddingBottom: tokens.space[4],
 });
 
 export const links = style({
-  paddingBottom: tokens.space.md,
+  paddingBottom: tokens.space[4],
 });
 
 export const linkCol = style({
@@ -32,10 +32,22 @@ export const linkCol = style({
 });
 
 export const link = style({
-  display: "inline",
-  ":hover": {
-    textDecoration: "underline",
+  padding: `${tokens.space[1]} 0`,
+  display: "inline-flex",
+  alignItems: "center",
+});
+
+export const linkText = style({
+  selectors: {
+    [`${link}:hover &`]: {
+      textDecoration: "underline",
+    },
   },
+});
+
+export const linkIcon = style({
+  color: theme.text.inlineIcon,
+  marginRight: tokens.space[2],
 });
 
 export const dialogue = style({
@@ -49,6 +61,7 @@ export const lastTended = style({
   color: theme.text.subtle,
 });
 
-export const lastTendedText = style({
-  marginLeft: tokens.space.sm,
+export const lastTendedIcon = style({
+  color: theme.text.inlineIcon,
+  margin: `0 ${tokens.space[3]} 0 ${tokens.space[1]}`,
 });

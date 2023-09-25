@@ -25,7 +25,7 @@ export const button = style({
   border: "none",
   width: "100%",
   height: "100%",
-  borderRadius: tokens.radius.full,
+  borderRadius: tokens.radius[100],
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -63,6 +63,7 @@ const icon = style({
   position: "absolute",
   width: "24px",
   height: "24px",
+  color: theme.text.inlineIcon,
 });
 
 export const moon = style([
