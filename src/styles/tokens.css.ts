@@ -26,8 +26,8 @@ export const tokens = createGlobalTheme(":root", {
     h6: "1rem",
     body: "1rem",
     base: {
-      mobile: "112.5%", // 18px
-      tablet: "118.8%", // 19px
+      mobile: "100%", // 16px
+      tablet: "112.5%%", // 18px
       desktop: "125%", // 20px
     },
     small: "0.8rem",
