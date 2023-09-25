@@ -15,14 +15,14 @@ export const tokens = createGlobalTheme(":root", {
     mono: `${firaCode}, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
   },
 
-  // Major Third Scale
+  // Minor Third Scale
   // https://typescale.com
   fontSize: {
-    h1: "3.052rem",
-    h2: "2.441rem",
-    h3: "1.953rem",
-    h4: "1.563rem",
-    h5: "1.25rem",
+    h1: "2.488rem",
+    h2: "2.074rem",
+    h3: "1.728rem",
+    h4: "1.44rem",
+    h5: "1.2rem",
     h6: "1rem",
     body: "1rem",
     base: {
@@ -30,7 +30,7 @@ export const tokens = createGlobalTheme(":root", {
       tablet: "112.5%%", // 18px
       desktop: "125%", // 20px
     },
-    small: "0.8rem",
+    small: "0.833rem",
   },
 
   fontWidth: {
