@@ -30,7 +30,7 @@ export const tokens = createGlobalTheme(":root", {
       tablet: "112.5%%", // 18px
       desktop: "125%", // 20px
     },
-    small: "0.833rem",
+    small: "0.8rem",
   },
 
   fontWidth: {

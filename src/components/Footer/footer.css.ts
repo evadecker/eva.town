@@ -15,25 +15,33 @@ export const footer = style({
   },
 });
 
+export const footerContent = style({
+  marginRight: "auto",
+  padding: tokens.space.lg,
+  paddingBottom: tokens.space.md,
+});
+
+export const links = style({
+  paddingBottom: tokens.space.md,
+});
+
 export const linkCol = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
 });
 
-export const links = style({
-  padding: tokens.space.lg,
-  marginRight: "auto",
-});
-
 export const link = style({
   display: "inline",
-  opacity: "0.7",
   ":hover": {
-    opacity: "1",
+    textDecoration: "underline",
   },
 });
 
 export const dialogue = style({
   alignSelf: "flex-end",
+});
+
+export const lastTended = style({
+  color: theme.text.subtle,
 });

@@ -3,39 +3,43 @@ import { DialogueTree } from "@components";
 
 // import { getEntry } from "astro:content";
 import * as styles from "./footer.css";
+import LastTended from "./LastTended.astro";
 
 // Enable when dialogue is ready to go
 // const dialogue = await getEntry("dialogue", "dialogue");
 ---
 
 <footer class={styles.footer}>
-  <div class={styles.links}>
-    <div class={styles.linkCol}>
-      <a
-        class={styles.link}
-        href="https://github.com/evadecker"
-        target="_blank"
-        aria-label="Visit Eva's GitHub"
-      >
-        Github
-      </a>
-      <a
-        class={styles.link}
-        href="https://linkedin.com/in/evadecker"
-        target="_blank"
-        aria-label="Visit Eva's LinkedIn"
-      >
-        LinkedIn
-      </a>
-      <a
-        class={styles.link}
-        href="/eva-decker-resume.pdf"
-        target="_blank"
-        aria-label="View Eva's Resume"
-      >
-        Resume
-      </a>
+  <div class={styles.footerContent}>
+    <div class={styles.links}>
+      <div class={styles.linkCol}>
+        <a
+          class={styles.link}
+          href="https://github.com/evadecker"
+          target="_blank"
+          aria-label="Visit Eva's GitHub"
+        >
+          Github
+        </a>
+        <a
+          class={styles.link}
+          href="https://linkedin.com/in/evadecker"
+          target="_blank"
+          aria-label="Visit Eva's LinkedIn"
+        >
+          LinkedIn
+        </a>
+        <a
+          class={styles.link}
+          href="/eva-decker-resume.pdf"
+          target="_blank"
+          aria-label="View Eva's Resume"
+        >
+          Resume
+        </a>
+      </div>
     </div>
+    <LastTended />
   </div>
   <div class={styles.dialogue}>
     <DialogueTree dialogue="" client:visible />
