@@ -36,7 +36,7 @@ export const Synth = () => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
-  const SOUNDS_DIRECTORY = "sounds/";
+  const SOUNDS_DIRECTORY = "/sounds/";
 
   const audioContext = window.AudioContext ? new window.AudioContext() : null;
 
