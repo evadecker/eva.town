@@ -10,6 +10,7 @@
       "@components": ["src/components"],
       "@helpers": ["src/helpers"],
       "@layouts": ["src/layouts"],
+      "@scripts/*": ["public/scripts/*"],
       "@stores/*": ["src/stores/*"],
       "@styles/*": ["src/styles/*"]
     }

@@ -1,4 +1,5 @@
 import { useStore } from "@nanostores/react";
+import { unmute } from "@scripts/unmute";
 import {
   $activeInstrument,
   $activeNotehead,
@@ -266,6 +267,7 @@ export const Synth = () => {
   useEffect(() => {
     if (isActive) {
       Howler.autoUnlock = true;
+      if (Howler.ctx) unmute(Howler.ctx, false, false);
       setRandomInstrument();
     }
   }, [isActive]);
