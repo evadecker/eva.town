@@ -17,6 +17,10 @@ This is the source code that powers [evadecker.com](https://evadecker.com). It's
 - Murloc © Blizzard, sourced from [HearthSounds](https://maxtimkovich.com/hearthsounds?q=murloc)
 - Super Mario World © Koji Kondo & Nintendo, sourced from [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav)
 
+**Colors**
+
+- Accessible color palette via [Radix](https://www.radix-ui.com/colors)
+
 **Typography**
 
 - Type scale via [typescale.com](https://typescale.com/?size=16&scale=1.250&text=A%20Visual%20Type%20Scale&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false)
