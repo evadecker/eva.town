@@ -43,5 +43,12 @@ export const dialogue = style({
 });
 
 export const lastTended = style({
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
   color: theme.text.subtle,
+});
+
+export const lastTendedText = style({
+  marginLeft: tokens.space.sm,
 });

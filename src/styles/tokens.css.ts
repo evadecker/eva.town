@@ -34,7 +34,7 @@ export const tokens = createGlobalTheme(":root", {
   },
 
   fontWidth: {
-    normal: "100",
+    normal: "95",
     wide: "115",
     extraWide: "125",
     superWide: "150",

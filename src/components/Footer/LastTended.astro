@@ -1,4 +1,5 @@
 ---
+import { Icon } from "@components";
 import { formatDistanceToNow } from "date-fns";
 import * as styles from "./footer.css";
 
@@ -36,6 +37,7 @@ try {
 }
 ---
 
-<small class={styles.lastTended}>
-  Last tended <strong>{lastDeployedTime}</strong>
-</small>
+<div class={styles.lastTended}>
+  <Icon icon="seedling" size="small" />
+  <small class={styles.lastTendedText}>Last tended {lastDeployedTime}</small>
+</div>
