@@ -33,7 +33,7 @@ export const subtitle = style({
   color: theme.text.subtle,
 });
 
-globalStyle(`${article} a`, {
+globalStyle(`${article} p a`, {
   boxShadow: `inset 0 -2px ${theme.text.linkUnderline}`,
 });
 
@@ -43,6 +43,24 @@ globalStyle(`${article} a:hover`, {
   boxShadow: `0 0 0 3px ${theme.text.linkBg}`,
   color: theme.text.link,
 });
+
+globalStyle(
+  `${article} h1, ${article} h2, ${article} h3, ${article} h4, ${article} h5, ${article} h6`,
+  {
+    scrollMarginTop: tokens.space[6],
+  }
+);
+
+globalStyle(
+  `${article} h1 a, ${article} h2 a, ${article} h3 a, ${article} h4 a, ${article} h5 a, ${article} h6 a`,
+  {
+    color: theme.text.subtle,
+    display: "inline-flex",
+    alignItems: "center",
+    marginLeft: "0.2em",
+    padding: "0.05em",
+  }
+);
 
 globalStyle(`${article} h1`, {
   marginBottom: tokens.space[4],
