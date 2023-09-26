@@ -1,1 +1,0 @@
-export { Synth } from "./Synth";

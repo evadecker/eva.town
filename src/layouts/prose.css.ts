@@ -61,5 +61,22 @@ globalStyle(`${article} * + p`, {
 });
 
 globalStyle(`${article} code`, {
-  fontSize: "0.9em",
+  fontSize: "0.85em",
+});
+
+globalStyle(`${article} abbr`, {
+  borderBottom: `none`,
+  textDecoration: "none",
+  position: "relative",
+  cursor: "help",
+});
+
+globalStyle(`${article} abbr::after`, {
+  content: "",
+  height: "2px",
+  borderBottom: `2px dotted ${theme.text.linkUnderline}`,
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  right: 0,
 });

@@ -1,26 +1,28 @@
 ---
 layout: ../layouts/Prose.astro
 title: Colophon
-description: Colophon is a designer-y word for “credits”. This site is possible thanks to the following people and tools.
+description: Colophon is a designer-y word for “how this was made”—here’s what powers evadecker.com.
 ---
 
-I designed and built this site myself. All the code is open source and available on [Github](https://github.com/evadecker/evadecker.com).
+## About this site
 
-## Technology and Tooling
+I designed and built this site myself. It's a home to share things I'm exploring and things I've built. It's a place for me to learn in public.
+
+All code is open source and available on [Github](https://github.com/evadecker/evadecker.com). The first commit was December 5, 2018, but the earliest version of this site dates back to 2015, an era where I eschewed versioning and uploaded files manually via <abbr title="File Transfer Protocol">FTP</abbr>. 😱 I've grown a lot since then—the technology around me has grown, too.
+
+## Technology
 
 This site is built using [Astro](https://astro.build). Astro handles the content-heavy views (written in [MDX](https://mdxjs.com)), but for more interactive components I use [React](https://react.dev) and [TypeScript](https://www.typescriptlang.org).
 
 Code is edited using [VS Code](https://code.visualstudio.com) on a [MacBook Pro](https://www.apple.com/macbook-pro/). My terminal of choice is [Warp](https://www.warp.dev). My go-to coding font is [MonoLisa](https://www.monolisa.dev).
 
-End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview the site in multiple viewports, test accessibility, and toggle user preferences like `(prefers-color-scheme)` and `(prefers-reduced-motion)`.
+End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview devices, test accessibility, and toggle user preferences like `(prefers-color-scheme)`.
 
 Hosting and automatic deployment is handled with [Vercel](https://vercel.com/).
 
 ## Typography
 
-The sans-serif font used for headings and UI is [Roc Grotesk Variable](https://fonts.adobe.com/fonts/roc-grotesk-variable), designed by Nikola Kostić. The serif font used for body text is [Loretta Variable](https://fonts.adobe.com/fonts/loretta-variable), by Abel Martins and Joana Correia. Both fonts are served via [Adobe Fonts](https://fonts.adobe.com).
-
-The monospace font used for code blocks is [Fira Code](https://github.com/tonsky/FiraCode), by Nikita Prokopov. The pixel font used for the "START" text on the synth is [04b](http://www.04.jp.org/), by Yuji Oshimoto.
+Headings and components are set in [Roc Grotesk Variable](https://fonts.adobe.com/fonts/roc-grotesk-variable). As the name suggests, it's a variable font, meaning I can stretch the font width and fine-tune weights for different uses. Body text is set in [Loretta Variable](https://fonts.adobe.com/fonts/loretta-variable). Both typefaces are served via [Adobe Fonts](https://fonts.adobe.com). Monospaced text is set in [Fira Code](https://github.com/tonsky/FiraCode), hosted locally.
 
 Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
 

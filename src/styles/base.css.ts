@@ -40,7 +40,7 @@ globalStyle("h1", {
 globalStyle("h2", {
   fontSize: tokens.fontSize.h2,
   fontFamily: tokens.fontFamily.sans,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.normal}`,
   lineHeight: tokens.lineHeight.h2,
   letterSpacing: tokens.letterSpacing.condensed,
 });

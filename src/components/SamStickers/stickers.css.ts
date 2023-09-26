@@ -9,7 +9,7 @@ export const shoo = style({
   color: theme.background.default,
   fontFamily: tokens.fontFamily.sans,
   padding: `${tokens.space[2]} ${tokens.space[3]}`,
-  borderRadius: tokens.radius.md,
+  borderRadius: tokens.radius[2],
   right: tokens.space[5],
   bottom: tokens.space[5],
   fontVariationSettings: "wght 600",
