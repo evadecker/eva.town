@@ -6,9 +6,9 @@ description: Colophon is a designer-y word for “how this was made”—here’
 
 ## About this site
 
-I designed and built this site myself. It's a home for me to share things I'm exploring and things I've built. It's a place for me to learn in public.
+I designed and built this site myself. It's a home to share things I'm exploring and things I've built. It's a place for me to learn in public.
 
-All the code is open source and available on [Github](https://github.com/evadecker/evadecker.com). The first commit was December 5, 2018, but the earliest version of this site dates back to 2015, an era where nothing was versioned and files were uploaded manually via <abbr title="File Transfer Protocol">FTP</abbr>. 😱 I've grown a lot since then—and the technology around me has grown!
+All code is open source and available on [Github](https://github.com/evadecker/evadecker.com). The first commit was December 5, 2018, but the earliest version of this site dates back to 2015, an era where I eschewed versioning and uploaded files manually via <abbr title="File Transfer Protocol">FTP</abbr>. 😱 I've grown a lot since then—the technology around me has grown, too.
 
 ## Technology
 
