@@ -47,7 +47,7 @@ globalStyle(`${article} a:hover`, {
 globalStyle(
   `${article} h1, ${article} h2, ${article} h3, ${article} h4, ${article} h5, ${article} h6`,
   {
-    scrollMarginTop: tokens.space[6],
+    scrollMarginTop: tokens.space[5],
   }
 );
 
@@ -57,8 +57,16 @@ globalStyle(
     color: theme.text.subtle,
     display: "inline-flex",
     alignItems: "center",
-    marginLeft: "0.2em",
+    marginLeft: "0.3em",
     padding: "0.05em",
+  }
+);
+
+globalStyle(
+  `${article} h1 a svg, ${article} h2 a svg, ${article} h3 a svg, ${article} h4 a svg, ${article} h5 a svg, ${article} h6 a svg`,
+  {
+    width: tokens.fontSize.body,
+    height: tokens.fontSize.body,
   }
 );
 
