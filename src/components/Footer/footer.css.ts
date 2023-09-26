@@ -31,7 +31,7 @@ export const linkCol = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
-  width: "9em",
+  paddingRight: tokens.space[8],
 });
 
 export const link = style({

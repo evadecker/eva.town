@@ -6,10 +6,8 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://evadecker.com",
   integrations: [react(), mdx()],
-  redirects: {
-    // "/work": "/work/cityblock",
-  },
   output: "static",
   adapter: vercel({
     webAnalytics: {
