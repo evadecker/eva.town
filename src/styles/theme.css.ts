@@ -22,12 +22,16 @@ export const theme = createGlobalThemeContract(
       subtle: "",
       selection: "",
       inlineIcon: "",
+      link: "",
+      linkBg: "",
+      linkUnderline: "",
     },
     border: {
       default: "",
       subtle: "",
     },
     fontWeight: {
+      light: "",
       normal: "",
       medium: "",
       bold: "",
@@ -75,14 +79,18 @@ createGlobalTheme('[data-theme="light"]', theme, {
     subtle: mauve.mauve11,
     selection: plum.plum8,
     inlineIcon: plum.plum12,
+    link: plum.plum11,
+    linkBg: plum.plum3,
+    linkUnderline: mauve.mauve7,
   },
   border: {
     default: plum.plum4,
     subtle: plum.plum3,
   },
   fontWeight: {
+    light: "300",
     normal: "440",
-    medium: "500",
+    medium: "480",
     bold: "700",
   },
   color: {
@@ -120,15 +128,19 @@ createGlobalTheme('[data-theme="dark"]', theme, {
     subtle: mauveDark.mauve11,
     selection: plumDark.plum8,
     inlineIcon: plumDark.plum12,
+    link: plumDark.plum11,
+    linkBg: plumDark.plum3,
+    linkUnderline: mauveDark.mauve7,
   },
   border: {
-    default: plumDark.plum4,
-    subtle: plumDark.plum3,
+    default: mauveDark.mauve7,
+    subtle: mauveDark.mauve6,
   },
   // Weights on dark background slightly lower to reduce bleed
   fontWeight: {
+    light: "280",
     normal: "420",
-    medium: "480",
+    medium: "460",
     bold: "680",
   },
   color: {

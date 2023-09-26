@@ -23,12 +23,15 @@ export const footerContent = style({
 
 export const links = style({
   paddingBottom: tokens.space[4],
+  display: "flex",
+  flexDirection: "row",
 });
 
 export const linkCol = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
+  width: "9em",
 });
 
 export const link = style({

@@ -23,6 +23,7 @@
     "**/*.js",
     ".eslintrc.js",
     "./src/types/*.d.ts",
-    "./public/scripts/*.js"
+    "./public/scripts/*.js",
+    "**/*.cjs"
   ]
 }
