@@ -3,6 +3,10 @@ import react from "@astrojs/react";
 import vercel from "@astrojs/vercel/static";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 import { defineConfig } from "astro/config";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
+
+import { autolinkConfig } from "./plugins/rehype-autolink-config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +21,9 @@ export default defineConfig({
       enabled: true,
     },
   }),
+  markdown: {
+    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
+  },
   vite: {
     plugins: [vanillaExtractPlugin()],
     optimizeDeps: {
