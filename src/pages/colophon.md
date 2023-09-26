@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Prose.astro
 title: Colophon
-description: Colophon is a designer-y word for “how this was made”—here’s what powers evadecker.com.
+description: Colophon is a designer-y word for “how it’s made”—here’s what powers evadecker.com.
 ---
 
 ## About this site

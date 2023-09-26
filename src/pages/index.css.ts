@@ -11,6 +11,7 @@ export const subtitle = style({
   fontSize: tokens.fontSize.h5,
   fontFamily: tokens.fontFamily.sans,
   fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.normal}`,
+  lineHeight: tokens.lineHeight.h5,
   marginTop: "1em",
 });
 
