@@ -89,7 +89,7 @@ createGlobalTheme('[data-theme="light"]', theme, {
   },
   fontWeight: {
     light: "300",
-    normal: "440",
+    normal: "420",
     medium: "480",
     bold: "700",
   },
@@ -139,7 +139,7 @@ createGlobalTheme('[data-theme="dark"]', theme, {
   // Weights on dark background slightly lower to reduce bleed
   fontWeight: {
     light: "280",
-    normal: "420",
+    normal: "400",
     medium: "460",
     bold: "680",
   },
