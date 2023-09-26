@@ -6,13 +6,15 @@ description: Colophon is a designer-y word for “credits”. This site is possi
 
 I designed and built this site myself. All the code is open source and available on [Github](https://github.com/evadecker/evadecker.com).
 
-## Technology
+## Technology and Tooling
 
-This site is built using [Astro](https://astro.build), a incredibly robust little web framework which takes anything you throw at it—React, Next.JS, vanilla JavaScript—and produces a performant website with as little JavaScript on the final page as possible. Astro handles the simpler, static views, but for more interactive components I use [React](https://react.dev) and [TypeScript](https://www.typescriptlang.org). End-to-end tests are written using [Playwright](https://playwright.dev).
+This site is built using [Astro](https://astro.build). Astro handles the content-heavy views (written in [MDX](https://mdxjs.com)), but for more interactive components I use [React](https://react.dev) and [TypeScript](https://www.typescriptlang.org).
 
 Code is edited using [VS Code](https://code.visualstudio.com) on a [MacBook Pro](https://www.apple.com/macbook-pro/). My terminal of choice is [Warp](https://www.warp.dev). My go-to coding font is [MonoLisa](https://www.monolisa.dev).
 
-The site is deployed and hosted with [Vercel](https://vercel.com/).
+End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview the site in multiple viewports, test accessibility, and toggle user preferences like `(prefers-color-scheme)` and `(prefers-reduced-motion)`.
+
+Hosting and automatic deployment is handled with [Vercel](https://vercel.com/).
 
 ## Typography
 
