@@ -1,3 +1,7 @@
+import classNames from "classnames";
+
+import * as styles from "./icon.css";
+
 // Icons sourced from https://remixicon.com
 type IconType =
   | "download"
@@ -101,7 +105,7 @@ export const Icon = ({ icon, variant, size, className }: IconProps) => {
       fill="currentColor"
       width={pxSize}
       height={pxSize}
-      className={className}
+      className={classNames(styles.icon, className)}
     >
       {pathData}
     </svg>
