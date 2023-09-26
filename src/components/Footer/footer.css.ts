@@ -5,7 +5,6 @@ import { style } from "@vanilla-extract/css";
 export const footer = style({
   borderTop: "1px solid",
   borderColor: theme.border.default,
-  fontFamily: tokens.fontFamily.sans,
   display: "flex",
   width: "100%",
   selectors: {

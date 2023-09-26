@@ -22,7 +22,7 @@ export const articleBody = style({
 });
 
 export const header = style({
-  padding: `3em 0`,
+  padding: `2em 0 6em`,
 });
 
 export const subtitle = style({
@@ -31,6 +31,7 @@ export const subtitle = style({
   fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.normal}`,
   lineHeight: tokens.lineHeight.h4,
   color: theme.text.subtle,
+  marginTop: "0.3em",
 });
 
 globalStyle(`${article} p a`, {
@@ -70,10 +71,6 @@ globalStyle(
   }
 );
 
-globalStyle(`${article} h1`, {
-  marginBottom: tokens.space[4],
-});
-
 globalStyle(`${article} h2`, {
   marginTop: "2em",
 });
@@ -82,7 +79,7 @@ globalStyle(`${article} h2:first-child`, {
   marginTop: 0,
 });
 
-globalStyle(`${article} * + p`, {
+globalStyle(`${articleBody} * + p`, {
   marginTop: "1em",
 });
 
