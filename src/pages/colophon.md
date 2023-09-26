@@ -16,7 +16,7 @@ This site is built using [Astro](https://astro.build). Astro handles the content
 
 Code is edited using [VS Code](https://code.visualstudio.com) on a [MacBook Pro](https://www.apple.com/macbook-pro/). My terminal of choice is [Warp](https://www.warp.dev). My go-to coding font is [MonoLisa](https://www.monolisa.dev).
 
-End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview the site in multiple viewports, test accessibility, and toggle user preferences like `(prefers-color-scheme)` and `(prefers-reduced-motion)`.
+End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview devices, test accessibility, and toggle user preferences like `(prefers-color-scheme)`.
 
 Hosting and automatic deployment is handled with [Vercel](https://vercel.com/).
 

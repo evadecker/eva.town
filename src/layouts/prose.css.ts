@@ -61,7 +61,7 @@ globalStyle(`${article} * + p`, {
 });
 
 globalStyle(`${article} code`, {
-  fontSize: "0.9em",
+  fontSize: "0.85em",
 });
 
 globalStyle(`${article} abbr`, {
