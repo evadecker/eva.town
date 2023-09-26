@@ -15,22 +15,16 @@ export const tokens = createGlobalTheme(":root", {
     mono: `${firaCode}, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
   },
 
-  // Minor Third Scale
-  // https://typescale.com
+  // https://utopia.fyi/type/calculator?c=320,16,1.125,800,22,1.2,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
   fontSize: {
-    h1: "2.488rem",
-    h2: "2.074rem",
-    h3: "1.728rem",
-    h4: "1.44rem",
-    h5: "1.2rem",
-    h6: "1rem",
-    body: "1rem",
-    base: {
-      mobile: "100%", // 16px
-      tablet: "112.5%%", // 18px
-      desktop: "125%", // 20px
-    },
-    small: "0.8rem",
+    h1: "clamp(2.03rem, 0.64rem + 6.93vw, 4.11rem)",
+    // Skip one step in the scale clamp(1.80rem, 0.72rem + 5.40vw, 3.42rem)
+    h2: "clamp(1.60rem, 0.77rem + 4.16vw, 2.85rem)",
+    h3: "clamp(1.42rem, 0.79rem + 3.18vw, 2.38rem)",
+    h4: "clamp(1.27rem, 0.79rem + 2.38vw, 1.98rem)",
+    h5: "clamp(1.13rem, 0.78rem + 1.75vw, 1.65rem)",
+    body: "clamp(1.00rem, 0.75rem + 1.25vw, 1.38rem)",
+    small: "clamp(0.89rem, 0.72rem + 0.86vw, 1.15rem)",
   },
 
   fontWidth: {
@@ -47,7 +41,7 @@ export const tokens = createGlobalTheme(":root", {
     h4: "1.3",
     h5: "1.4",
     h6: "1.4",
-    body: "1.4",
+    body: "1.6",
     small: "1.5",
   },
 
@@ -75,5 +69,13 @@ export const tokens = createGlobalTheme(":root", {
     3: "16px",
     4: "24px",
     100: "9999px",
+  },
+
+  breakpoint: {
+    xs: "520px",
+    sm: "768px",
+    md: "1024px",
+    lg: "1280px",
+    xl: "1640px",
   },
 });

@@ -1,0 +1,19 @@
+---
+import { Layout } from "@layouts";
+
+import * as styles from "./prose.css";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <article class={styles.article}>
+    <header class={styles.header}>
+      <h1>{frontmatter.title}</h1>
+      <p class={styles.subtitle}>{frontmatter.description}</p>
+    </header>
+    <div class={styles.articleBody}>
+      <slot />
+    </div>
+  </article>
+</Layout>

@@ -8,16 +8,7 @@ import { tokens } from "./tokens.css";
 // ======================
 
 globalStyle("html", {
-  fontSize: tokens.fontSize.base.mobile,
-
-  "@media": {
-    "screen and (min-width: 620px)": {
-      fontSize: tokens.fontSize.base.tablet,
-    },
-    "screen and (min-width: 820px)": {
-      fontSize: tokens.fontSize.base.desktop,
-    },
-  },
+  fontSize: "100%",
 });
 
 globalStyle("[data-theme='dark']", {
@@ -26,10 +17,11 @@ globalStyle("[data-theme='dark']", {
 });
 
 globalStyle("body", {
+  fontSize: tokens.fontSize.body,
   fontFamily: tokens.fontFamily.serif,
   // These variations only apply to the sans serif
   fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.normal}`,
-  lineHeight: 1.4,
+  lineHeight: tokens.lineHeight.body,
   textRendering: "optimizeLegibility",
 });
 
@@ -48,35 +40,36 @@ globalStyle("h1", {
 globalStyle("h2", {
   fontSize: tokens.fontSize.h2,
   fontFamily: tokens.fontFamily.sans,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.wide}, 'wght' ${theme.fontWeight.medium}`,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h2,
+  letterSpacing: tokens.letterSpacing.condensed,
 });
 
 globalStyle("h3", {
   fontSize: tokens.fontSize.h3,
   fontFamily: tokens.fontFamily.sans,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.wide}, 'wght' ${theme.fontWeight.medium}`,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h3,
 });
 
 globalStyle("h4", {
   fontSize: tokens.fontSize.h4,
   fontFamily: tokens.fontFamily.sans,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.wide}, 'wght' ${theme.fontWeight.bold}`,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h4,
 });
 
 globalStyle("h5", {
   fontSize: tokens.fontSize.h5,
   fontFamily: tokens.fontFamily.sans,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.wide}, 'wght' ${theme.fontWeight.bold}`,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h5,
 });
 
 globalStyle("h6", {
-  fontSize: tokens.fontSize.h6,
+  fontSize: tokens.fontSize.body,
   fontFamily: tokens.fontFamily.sans,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.wide}, 'wght' ${theme.fontWeight.bold}`,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h6,
 });
 
