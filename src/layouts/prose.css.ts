@@ -59,3 +59,7 @@ globalStyle(`${article} h2:first-child`, {
 globalStyle(`${article} * + p`, {
   marginTop: "1em",
 });
+
+globalStyle(`${article} code`, {
+  fontSize: "0.9em",
+});

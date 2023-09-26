@@ -1,5 +1,5 @@
 import { Icon } from "@components";
-import { theme } from "@styles/theme.css";
+import { plum, plumDark } from "@radix-ui/colors";
 import { useEffect, useRef, useState } from "react";
 
 import * as styles from "./toggle-theme.css";
@@ -52,7 +52,10 @@ export const ToggleTheme = () => {
     // Update meta theme
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme !== null)
-      metaTheme.setAttribute("content", theme.background.default);
+      metaTheme.setAttribute(
+        "content",
+        activeTheme === "dark" ? plumDark.plum1 : plum.plum1
+      );
 
     handleAnimation();
   }, [activeTheme]);
