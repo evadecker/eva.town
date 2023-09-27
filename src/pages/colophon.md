@@ -35,7 +35,7 @@ Type inspiration can be found anywhere, from comic art and video games to bodega
 
 ## Styling
 
-I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consistently, ensure accessibility, and seamlessly switch between light and dark mode. Icons are from [Remix Icon](https://remixicon.com). Styles are written using [vanilla-extract](https://vanilla-extract.style)—a fantastic little library which adds TypeScript's type safety to your theming and variables and then compiles down to static CSS. I don’t use a grid; [here’s why.](https://gridless.design)
+I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consistently, ensure accessibility, and seamlessly switch between light and dark mode. Icons are from [Remix Icon](https://remixicon.com). Styles are written using [vanilla-extract](https://vanilla-extract.style)—a fantastic little library which adds TypeScript's type safety to your theming and variables and then compiles down to static CSS. I [don’t use a grid](https://gridless.design).
 
 ## Sounds
 
