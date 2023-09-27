@@ -16,6 +16,8 @@ dayjs.extend(relativeTime);
 dayjs.tz.setDefault("America/New_York");
 
 const { frontmatter } = Astro.props;
+
+console.log(frontmatter.modifiedTime);
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>

@@ -24,7 +24,7 @@ export default defineConfig({
   }),
   markdown: {
     rehypePlugins: [rehypeHeadingIds, [rehypeAutolinkHeadings, autolinkConfig]],
-    remarkPlugins: remarkModifiedTime,
+    remarkPlugins: [remarkModifiedTime],
   },
   vite: {
     plugins: [vanillaExtractPlugin()],
