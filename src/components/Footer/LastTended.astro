@@ -15,6 +15,8 @@ dayjs.extend(localizedFormat); // Support 'LLLL' to display full date
 dayjs.extend(advancedFormat); // Support 'z' to display timezone
 dayjs.extend(relativeTime); // Support .fromNow()
 
+dayjs.tz.setDefault("America/New_York");
+
 let formattedTimestamp: string;
 let relativeTimeInWords: string;
 
