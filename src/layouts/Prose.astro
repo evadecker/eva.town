@@ -1,6 +1,7 @@
 ---
 import { Layout } from "@layouts";
 import dayjs from "dayjs";
+import advancedFormat from "dayjs/plugin/advancedFormat";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
@@ -12,12 +13,11 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(localizedFormat);
 dayjs.extend(relativeTime);
+dayjs.extend(advancedFormat);
 
 dayjs.tz.setDefault("America/New_York");
 
 const { frontmatter } = Astro.props;
-
-console.log(frontmatter.modifiedTime);
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
@@ -36,7 +36,7 @@ console.log(frontmatter.modifiedTime);
               Published
               <time
                 datetime={frontmatter.datePublished}
-                title={dayjs(frontmatter.datePublished).format("LL")}
+                title={dayjs(frontmatter.datePublished).format("LLLL z")}
                 itemprop="datePublished"
               >
                 {dayjs(frontmatter.datePublished).fromNow()}
@@ -47,7 +47,7 @@ console.log(frontmatter.modifiedTime);
                 Last tended
                 <time
                   datetime={frontmatter.dateModified}
-                  title={dayjs(frontmatter.dateModified).format("LLLL")}
+                  title={dayjs(frontmatter.dateModified).format("LLLL z")}
                   itemprop="dateModified"
                 >
                   {dayjs(frontmatter.dateModified).fromNow()}
