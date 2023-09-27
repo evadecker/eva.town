@@ -28,7 +28,7 @@ Typography is scaled using a lot of math and a [fluid type scale](https://utopia
 
 Type inspiration lives everywhere—comic art, video games, bodegas—but I often return to a handful of resources:
 
-- *The Elements of Typographic Style* by Robert Bringhurst
+- [*The Elements of Typographic Style*](https://bookshop.org/a/97627/9780881792126) by Robert Bringhurst
 - [Butterick’s Practical Typography](https://practicaltypography.com)
 - Bethany Heck’s [Font Review Journal](https://fontreviewjournal.com)
 - [Fonts In Use](https://fontsinuse.com)
