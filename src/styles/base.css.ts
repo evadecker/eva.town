@@ -20,7 +20,6 @@ globalStyle("body", {
   fontSize: tokens.fontSize.body,
   fontFamily: tokens.fontFamily.sans,
   fontFeatureSettings: '"ss02" 1', // Use opentail g
-  fontVariantNumeric: "lining-nums", // Do not use oldstyle nums
   fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.normal}`,
   lineHeight: tokens.lineHeight.body,
   textRendering: "optimizeLegibility",

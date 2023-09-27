@@ -34,6 +34,7 @@ export const theme = createGlobalThemeContract(
     fontWeight: {
       light: "",
       prose: "",
+      code: "",
       normal: "",
       medium: "",
       bold: "",
@@ -73,8 +74,8 @@ export const theme = createGlobalThemeContract(
 
 createGlobalTheme('[data-theme="light"]', theme, {
   background: {
-    default: plum.plum1,
-    alt: plum.plum2,
+    default: mauve.mauve1,
+    alt: mauve.mauve2,
   },
   text: {
     default: mauve.mauve12,
@@ -93,6 +94,7 @@ createGlobalTheme('[data-theme="light"]', theme, {
   fontWeight: {
     light: "300",
     prose: "360",
+    code: "420",
     normal: "420",
     medium: "480",
     bold: "700",
@@ -124,8 +126,8 @@ createGlobalTheme('[data-theme="light"]', theme, {
 
 createGlobalTheme('[data-theme="dark"]', theme, {
   background: {
-    default: plumDark.plum1,
-    alt: plumDark.plum2,
+    default: mauveDark.mauve1,
+    alt: mauveDark.mauve2,
   },
   text: {
     default: mauveDark.mauve12,
@@ -145,6 +147,7 @@ createGlobalTheme('[data-theme="dark"]', theme, {
   fontWeight: {
     light: "280",
     prose: "340",
+    code: "400",
     normal: "400",
     medium: "460",
     bold: "680",
