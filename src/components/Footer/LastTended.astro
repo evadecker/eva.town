@@ -4,20 +4,14 @@ import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import relativeTime from "dayjs/plugin/relativeTime";
-import timezone from "dayjs/plugin/timezone";
-import utc from "dayjs/plugin/utc";
 
 import * as styles from "./footer.css";
 
 const { timestamp } = Astro.props;
 
-dayjs.extend(utc);
-dayjs.extend(timezone);
-dayjs.extend(localizedFormat);
-dayjs.extend(relativeTime);
-dayjs.extend(advancedFormat);
-
-dayjs.tz.setDefault("America/New_York");
+dayjs.extend(localizedFormat); // Support 'LLLL' to display full date
+dayjs.extend(advancedFormat); // Support 'z' to display timezone
+dayjs.extend(relativeTime); // Support .fromNow()
 
 let formattedTimestamp: string;
 let relativeTimeInWords: string;
@@ -35,7 +29,7 @@ if (timestamp !== null) {
   <Icon icon="seedling" size="small" className={styles.lastTendedIcon} />
   <small>
     Last tended{" "}
-    <time datetime={timestamp} title={formattedTimestamp}
+    <time datetime={dayjs(timestamp).format()} title={formattedTimestamp}
       >{relativeTimeInWords}</time
     >
   </small>
