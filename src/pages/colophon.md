@@ -26,7 +26,7 @@ Headings and components are set in [Roc Grotesk Variable](https://fonts.adobe.co
 
 Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
 
-Type inspiration lives everywhere—comic art, video games, bodegas—but I often return to a handful of resources:
+Type inspiration can be found anywhere, from comic art and video games to bodega window displays, but I often return to a handful of resources:
 
 - [*The Elements of Typographic Style*](https://bookshop.org/a/97627/9780881792126) by Robert Bringhurst
 - [Butterick’s Practical Typography](https://practicaltypography.com)
