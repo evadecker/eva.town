@@ -16,25 +16,28 @@ export const articleBody = style({
       paddingTop: tokens.space[9],
       paddingBottom: tokens.space[9],
       fontSize: tokens.fontSize.h3,
-      color: theme.text.inlineIcon,
     },
   },
 });
 
 export const header = style({
-  padding: `2em 0 6em`,
+  padding: `4rem 0`,
 });
 
 export const subtitle = style({
   fontSize: tokens.fontSize.h4,
   fontFamily: tokens.fontFamily.sans,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.normal}`,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h4,
-  color: theme.text.subtle,
-  marginTop: "0.3em",
+  marginTop: "1rem",
 });
 
-globalStyle(`${article} p a`, {
+globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {
+  fontFamily: tokens.fontFamily.serif,
+  fontVariationSettings: `'wght' ${theme.fontWeight.prose}`,
+});
+
+globalStyle(`${articleBody} :not(h1, h2, h3, h4, h5, h6) a`, {
   boxShadow: `inset 0 -2px ${theme.text.linkUnderline}`,
 });
 
@@ -46,9 +49,10 @@ globalStyle(`${article} a:hover`, {
 });
 
 globalStyle(
-  `${article} h1, ${article} h2, ${article} h3, ${article} h4, ${article} h5, ${article} h6`,
+  `${article} h2, ${article} h3, ${article} h4, ${article} h5, ${article} h6`,
   {
     scrollMarginTop: tokens.space[5],
+    marginBottom: "1rem",
   }
 );
 
@@ -72,19 +76,59 @@ globalStyle(
 );
 
 globalStyle(`${article} h2`, {
-  marginTop: "2em",
+  marginTop: "4rem",
 });
 
 globalStyle(`${article} h2:first-child`, {
   marginTop: 0,
 });
 
-globalStyle(`${articleBody} * + p`, {
+globalStyle(`${article} p + p`, {
+  textIndent: "2rem",
+});
+
+globalStyle(`${articleBody} * + ul, ${articleBody} * + ol`, {
   marginTop: "1em",
 });
 
+globalStyle(`${articleBody} ul ul, ${articleBody} ol ol`, {
+  marginTop: "0",
+});
+
+globalStyle(`${articleBody} ul, ${articleBody} ol`, {
+  listStyleType: "none",
+  paddingLeft: "2.5rem",
+});
+
+globalStyle(`${articleBody} li`, {
+  position: "relative",
+});
+
+globalStyle(`${articleBody} li::before`, {
+  position: "absolute",
+  width: "2.5rem",
+  left: "-2.5rem",
+  color: theme.text.subtle,
+});
+
+globalStyle(`${articleBody} ul li::before`, {
+  content: "→",
+  fontSize: "1.3em",
+  lineHeight: "1.3",
+});
+
+globalStyle(`${articleBody} ol li::before`, {
+  fontFamily: tokens.fontFamily.sans,
+  content: "counter(list-item, decimal-leading-zero)",
+  fontVariantNumeric: "tabular-nums",
+});
+
 globalStyle(`${article} code`, {
-  fontSize: "0.85em",
+  backgroundColor: theme.text.codeBg,
+  borderRadius: tokens.radius[1],
+  fontVariationSettings: `'wght' ${theme.fontWeight.code}`,
+  padding: "0.1rem 0.2rem",
+  fontSize: "0.8em",
 });
 
 globalStyle(`${article} abbr`, {

@@ -8,7 +8,7 @@ description: Colophon is a designer-y word for “how it’s made”—here’s 
 
 I designed and built this site myself. It's a home to share things I'm exploring and things I've built. It's a place for me to learn in public.
 
-All code is open source and available on [Github](https://github.com/evadecker/evadecker.com). The first commit was December 5, 2018, but the earliest version of this site dates back to 2015, an era where I eschewed versioning and uploaded files manually via <abbr title="File Transfer Protocol">FTP</abbr>. 😱 I've grown a lot since then—the technology around me has grown, too.
+All code is open source and available on [Github](https://github.com/evadecker/evadecker.com). The first commit was December 5, 2018, but the earliest version of this site dates back to 2015, an era where I eschewed versioning and uploaded files manually via <abbr title="File Transfer Protocol">FTP</abbr>. I've grown a lot since then—and the technology around me has grown, too.
 
 ## Technology
 
@@ -26,9 +26,16 @@ Headings and components are set in [Roc Grotesk Variable](https://fonts.adobe.co
 
 Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
 
+Type inspiration can be found anywhere, from comic art and video games to bodega window displays, but I often return to a handful of resources:
+
+- [*The Elements of Typographic Style*](https://bookshop.org/a/97627/9780881792126) by Robert Bringhurst
+- [Butterick’s Practical Typography](https://practicaltypography.com)
+- Bethany Heck’s [Font Review Journal](https://fontreviewjournal.com)
+- [Fonts In Use](https://fontsinuse.com)
+
 ## Styling
 
-I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consistently, ensure accessibility, and seamlessly switch between light and dark mode. Icons are from [Remix Icon](https://remixicon.com). Styles are written using [vanilla-extract](https://vanilla-extract.style)—a fantastic little library which adds TypeScript's type safety to your theming and variables and then compiles down to static CSS.
+I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consistently, ensure accessibility, and seamlessly switch between light and dark mode. Icons are from [Remix Icon](https://remixicon.com). Styles are written using [vanilla-extract](https://vanilla-extract.style)—a fantastic little library which adds TypeScript's type safety to your theming and variables and then compiles down to static CSS. I [don’t use a grid](https://gridless.design).
 
 ## Sounds
 

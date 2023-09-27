@@ -67,11 +67,6 @@ globalStyle("h6", {
   lineHeight: tokens.lineHeight.h6,
 });
 
-globalStyle("p", {
-  fontSize: tokens.fontSize.body,
-  fontFamily: tokens.fontFamily.serif,
-});
-
 globalStyle("small", {
   fontSize: tokens.fontSize.small,
   lineHeight: tokens.lineHeight.small,
