@@ -4,11 +4,13 @@ import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import relativeTime from "dayjs/plugin/relativeTime";
+import timezone from "dayjs/plugin/timezone";
 
 import * as styles from "./footer.css";
 
 const { timestamp } = Astro.props;
 
+dayjs.extend(timezone); // Support 'z' to display timezone
 dayjs.extend(localizedFormat); // Support 'LLLL' to display full date
 dayjs.extend(advancedFormat); // Support 'z' to display timezone
 dayjs.extend(relativeTime); // Support .fromNow()
