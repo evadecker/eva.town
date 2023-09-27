@@ -16,13 +16,12 @@ export const articleBody = style({
       paddingTop: tokens.space[9],
       paddingBottom: tokens.space[9],
       fontSize: tokens.fontSize.h3,
-      color: theme.text.inlineIcon,
     },
   },
 });
 
 export const header = style({
-  padding: `2em 0 6em`,
+  padding: `4rem 0`,
 });
 
 export const subtitle = style({
@@ -30,7 +29,7 @@ export const subtitle = style({
   fontFamily: tokens.fontFamily.sans,
   fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h4,
-  marginTop: "0.3em",
+  marginTop: "1rem",
 });
 
 globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {
@@ -50,7 +49,7 @@ globalStyle(`${article} a:hover`, {
 });
 
 globalStyle(
-  `${article} h1, ${article} h2, ${article} h3, ${article} h4, ${article} h5, ${article} h6`,
+  `${article} h2, ${article} h3, ${article} h4, ${article} h5, ${article} h6`,
   {
     scrollMarginTop: tokens.space[5],
     marginBottom: "1rem",
@@ -77,7 +76,7 @@ globalStyle(
 );
 
 globalStyle(`${article} h2`, {
-  marginTop: "2em",
+  marginTop: "4rem",
 });
 
 globalStyle(`${article} h2:first-child`, {
