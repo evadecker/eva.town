@@ -1,17 +1,28 @@
 ---
 import { Icon } from "@components";
-import { format, formatDistanceToNow } from "date-fns";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import relativeTime from "dayjs/plugin/relativeTime";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 
 import * as styles from "./footer.css";
 
 const { timestamp } = Astro.props;
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.extend(localizedFormat);
+dayjs.extend(relativeTime);
+
+dayjs.tz.setDefault("America/New_York");
+
 let formattedTimestamp: string;
 let relativeTimeInWords: string;
 
 if (timestamp !== null) {
-  formattedTimestamp = format(timestamp, "yyyy-MM-dd HH:mm");
-  relativeTimeInWords = formatDistanceToNow(timestamp, { addSuffix: true });
+  formattedTimestamp = dayjs(timestamp).format("LLLL");
+  relativeTimeInWords = dayjs(timestamp).fromNow();
 } else {
   formattedTimestamp = "";
   relativeTimeInWords = "at some point in time";
@@ -22,6 +33,8 @@ if (timestamp !== null) {
   <Icon icon="seedling" size="small" className={styles.lastTendedIcon} />
   <small>
     Last tended{" "}
-    <time datetime={formattedTimestamp}>{relativeTimeInWords}</time>
+    <time datetime={timestamp} title={formattedTimestamp}
+      >{relativeTimeInWords}</time
+    >
   </small>
 </div>
