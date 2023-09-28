@@ -1,12 +1,13 @@
+import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import vercel from "@astrojs/vercel/static";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeSlug from "rehype-slug";
 
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
+import { remarkModifiedTime } from "./plugins/remark-modified-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,7 +23,8 @@ export default defineConfig({
     },
   }),
   markdown: {
-    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
+    rehypePlugins: [rehypeHeadingIds, [rehypeAutolinkHeadings, autolinkConfig]],
+    remarkPlugins: [remarkModifiedTime],
   },
   vite: {
     plugins: [vanillaExtractPlugin()],

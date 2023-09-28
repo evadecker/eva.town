@@ -21,7 +21,7 @@ export const articleBody = style({
 });
 
 export const header = style({
-  padding: `4rem 0`,
+  padding: `5rem 0`,
 });
 
 export const subtitle = style({
@@ -30,6 +30,14 @@ export const subtitle = style({
   fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h4,
   marginTop: "1rem",
+});
+
+export const datePublished = style({
+  fontSize: tokens.fontSize.small,
+  letterSpacing: tokens.letterSpacing.loose,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.normal}`,
+  marginTop: "1rem",
+  color: theme.text.subtle,
 });
 
 globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {

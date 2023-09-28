@@ -1,19 +1,67 @@
 ---
 import { Layout } from "@layouts";
+import dayjs from "dayjs";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import relativeTime from "dayjs/plugin/relativeTime";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 
 import * as styles from "./prose.css";
+
+dayjs.extend(utc);
+dayjs.extend(timezone); // Support 'z' to display time zone
+dayjs.extend(localizedFormat); // Support 'LLLL' to display full date
+dayjs.extend(advancedFormat); // Support 'z' to display time zone
+dayjs.extend(relativeTime); // Support .fromNow()
 
 const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
-  <article class={styles.article}>
+  <article
+    itemscope
+    itemtype="https://schema.org/BlogPosting"
+    class={styles.article}
+  >
     <header class={styles.header}>
-      <h1>{frontmatter.title}</h1>
+      <h1 itemprop="name">{frontmatter.title}</h1>
       <p class={styles.subtitle}>{frontmatter.description}</p>
+      {
+        frontmatter.datePublished && (
+          <div class={styles.datePublished}>
+            <div>
+              Published
+              <time
+                datetime={frontmatter.datePublished}
+                title={dayjs(frontmatter.datePublished)
+                  .tz("America/New_York")
+                  .format("LLLL z")}
+                itemprop="datePublished"
+              >
+                {dayjs(frontmatter.datePublished).fromNow()}
+              </time>
+            </div>
+            {frontmatter.dateModified && (
+              <div>
+                Last tended
+                <time
+                  datetime={frontmatter.dateModified}
+                  title={dayjs(frontmatter.dateModified)
+                    .tz("America/New_York")
+                    .format("LLLL z")}
+                  itemprop="dateModified"
+                >
+                  {dayjs(frontmatter.dateModified).fromNow()}
+                </time>
+              </div>
+            )}
+          </div>
+        )
+      }
     </header>
-    <div class={styles.articleBody}>
+    <section itemprop="articleBody" class={styles.articleBody}>
       <slot />
-    </div>
+    </section>
   </article>
 </Layout>
