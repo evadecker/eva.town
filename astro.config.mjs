@@ -7,10 +7,6 @@ import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
-import {
-  remarkDateModified,
-  remarkDatePublished,
-} from "./plugins/remark-publish-times.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,7 +23,6 @@ export default defineConfig({
   }),
   markdown: {
     rehypePlugins: [rehypeHeadingIds, [rehypeAutolinkHeadings, autolinkConfig]],
-    remarkPlugins: [remarkDateModified, remarkDatePublished],
   },
   vite: {
     plugins: [vanillaExtractPlugin()],
