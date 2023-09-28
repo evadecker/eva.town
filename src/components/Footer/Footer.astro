@@ -1,12 +1,12 @@
 ---
-import { execSync } from "node:child_process";
+import child_process from "node:child_process";
 
 import { Icon } from "@components";
 
 import * as styles from "./footer.css";
 import LastTended from "./LastTended.astro";
 
-const result = execSync(`git log -1 --pretty="format:%cI"`);
+const result = child_process.execSync(`git log -1 --pretty="format:%cI"`);
 const timestamp = result.toString();
 ---
 
