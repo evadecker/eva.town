@@ -41,7 +41,7 @@ export const tokens = createGlobalTheme(":root", {
     h4: "1.3",
     h5: "1.4",
     h6: "1.4",
-    body: "1.45",
+    body: "1.55",
     small: "1.5",
   },
 
