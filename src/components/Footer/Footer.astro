@@ -2,7 +2,7 @@
 import { Icon } from "@components";
 
 import * as styles from "./footer.css";
-import { LastTended } from "./LastTended.tsx";
+import LastTended from "./LastTended.astro";
 
 // Vercel Access Token
 const accessToken = import.meta.env.VERCEL_ACCESS_TOKEN;
@@ -78,6 +78,6 @@ try {
         </a>
       </div>
     </div>
-    <LastTended dateModified={dateModified} client:load />
+    <LastTended dateModified={dateModified} />
   </div>
 </footer>
