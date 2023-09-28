@@ -34,7 +34,9 @@ const { frontmatter } = Astro.props;
               Published
               <time
                 datetime={frontmatter.datePublished}
-                title={dayjs(frontmatter.datePublished).format("LLLL z")}
+                title={dayjs(frontmatter.datePublished)
+                  .tz("America/New_York", true)
+                  .format("LLLL z")}
                 itemprop="datePublished"
               >
                 {dayjs(frontmatter.datePublished).fromNow()}
@@ -45,7 +47,9 @@ const { frontmatter } = Astro.props;
                 Last tended
                 <time
                   datetime={frontmatter.dateModified}
-                  title={dayjs(frontmatter.dateModified).format("LLLL z")}
+                  title={dayjs(frontmatter.dateModified)
+                    .tz("America/New_York", true)
+                    .format("LLLL z")}
                   itemprop="dateModified"
                 >
                   {dayjs(frontmatter.dateModified).fromNow()}

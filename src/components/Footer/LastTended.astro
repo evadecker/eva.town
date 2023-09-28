@@ -15,13 +15,13 @@ dayjs.extend(localizedFormat); // Support 'LLLL' to display full date
 dayjs.extend(advancedFormat); // Support 'z' to display timezone
 dayjs.extend(relativeTime); // Support .fromNow()
 
-dayjs.tz.setDefault("America/New_York");
-
 let formattedTimestamp: string;
 let relativeTimeInWords: string;
 
 if (timestamp !== null) {
-  formattedTimestamp = dayjs(timestamp).format("LLLL z");
+  formattedTimestamp = dayjs(timestamp)
+    .tz("America/New_York", true)
+    .format("LLLL z");
   relativeTimeInWords = dayjs(timestamp).fromNow();
 } else {
   formattedTimestamp = "";
