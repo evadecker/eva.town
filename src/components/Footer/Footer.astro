@@ -6,7 +6,6 @@ import LastTended from "./LastTended.astro";
 
 // Vercel Access Token
 const accessToken = import.meta.env.VERCEL_ACCESS_TOKEN;
-
 // Fetch evadecker.com Vercel project
 const projectId = "prj_pMk8EbUuHxsj51ERiVXZyANy9ZPC";
 // Fetch only READY deploys
@@ -16,7 +15,7 @@ const target = "production";
 // Fetch only latest
 const limit = 1;
 
-let timestamp: number | null = null;
+let dateModified: Date | null = null;
 
 try {
   // https://vercel.com/docs/rest-api/endpoints#list-deployments
@@ -29,14 +28,11 @@ try {
       },
     }
   );
-
   const data = await response.json();
-
   const { ready } = data.deployments[0];
-
-  timestamp = ready;
+  dateModified = new Date(ready);
 } catch (error) {
-  timestamp = null;
+  dateModified = null;
 }
 ---
 
@@ -82,6 +78,6 @@ try {
         </a>
       </div>
     </div>
-    <LastTended timestamp={timestamp} />
+    <LastTended dateModified={dateModified} />
   </div>
 </footer>

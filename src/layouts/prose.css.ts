@@ -32,14 +32,6 @@ export const subtitle = style({
   marginTop: "1rem",
 });
 
-export const datePublished = style({
-  fontSize: tokens.fontSize.small,
-  letterSpacing: tokens.letterSpacing.loose,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.normal}`,
-  marginTop: "1rem",
-  color: theme.text.subtle,
-});
-
 globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {
   fontFamily: tokens.fontFamily.serif,
   fontVariationSettings: `'wght' ${theme.fontWeight.prose}`,
