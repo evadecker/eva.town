@@ -8,7 +8,7 @@ export const shoo = style({
   position: "fixed",
   background: theme.text.default,
   color: theme.appBg.default,
-  padding: "1rem 2rem",
+  padding: "0.5rem 1rem",
   borderRadius: tokens.radius[2],
   right: "2rem",
   bottom: "2rem",

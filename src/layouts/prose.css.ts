@@ -25,7 +25,7 @@ export const articleBody = style({
 });
 
 export const header = style({
-  padding: `5rem 0`,
+  padding: `2rem 0 5rem`,
 });
 
 export const subtitle = style({

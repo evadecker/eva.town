@@ -3,12 +3,6 @@ import { globalStyle, style } from "@vanilla-extract/css";
 import { theme } from "../../styles/theme.css";
 import { tokens } from "../../styles/tokens.css";
 
-export const subscribe = style({
-  border: `1px solid ${theme.border.subtle}`,
-  padding: "2rem",
-  borderRadius: tokens.radius[2],
-});
-
 export const form = style({
   marginTop: "-0.6rem",
 });

@@ -1,0 +1,24 @@
+---
+import Box from "src/components/Box/Box.astro";
+import Stack from "src/components/Stack/Stack.astro";
+import CenteredLayout from "src/layouts/CenteredLayout.astro";
+
+import SubscribeForm from "../../components/Subscribe/SubscribeForm.astro";
+---
+
+<CenteredLayout
+  title="Subscribe"
+  description="Occasional notes on design, text, and things outside a screen."
+>
+  <Box>
+    <Stack>
+      <h2>Notes From Eva</h2>
+      <p>
+        Occasionally, I write and share some thoughts about design, development,
+        and things outside the screen.
+      </p>
+      <SubscribeForm />
+      <small>Zero tracking. I don’t want your data.</small>
+    </Stack>
+  </Box>
+</CenteredLayout>

@@ -1,10 +1,11 @@
 ---
+import Box from "../Box/Box.astro";
 import Grid from "../Grid/Grid.astro";
 import Stack from "../Stack/Stack.astro";
-import * as styles from "./subscribe.css";
+import SubscribeForm from "./SubscribeForm.astro";
 ---
 
-<div class={styles.subscribe}>
+<Box>
   <Grid>
     <Stack spacing="none">
       <strong>Notes From Eva</strong>
@@ -13,26 +14,6 @@ import * as styles from "./subscribe.css";
         things that live outside a screen.
       </small>
     </Stack>
-    <form
-      action="https://buttondown.email/api/emails/embed-subscribe/notesfromeva"
-      method="post"
-      class={styles.form}
-    >
-      <img
-        class={styles.pixelArt}
-        src="/images/dialogue/eva-neutral.svg"
-        alt="Eva is feeling fine."
-      />
-      <div class={styles.inputWrapper}>
-        <input
-          class={styles.input}
-          type="email"
-          name="email"
-          id="bd-email"
-          placeholder="Email"
-        />
-        <button type="submit" class={styles.button}>Subscribe</button>
-      </div>
-    </form>
+    <SubscribeForm />
   </Grid>
-</div>
+</Box>
