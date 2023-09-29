@@ -7,21 +7,10 @@ export const article = style({
   margin: "0 auto",
 });
 
-export const articleBody = style({
-  selectors: {
-    "&::after": {
-      content: "⁂",
-      display: "block",
-      textAlign: "center",
-      paddingTop: tokens.space[9],
-      paddingBottom: tokens.space[9],
-      fontSize: tokens.fontSize.h3,
-    },
-  },
-});
+export const articleBody = style({});
 
 export const header = style({
-  padding: `5rem 0`,
+  padding: `3rem 0 5rem`,
 });
 
 export const subtitle = style({
@@ -29,7 +18,20 @@ export const subtitle = style({
   fontFamily: tokens.fontFamily.sans,
   fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h4,
-  marginTop: "1rem",
+  marginTop: "0.5rem",
+});
+
+globalStyle(`${articleBody} hr`, {
+  border: "none",
+});
+
+globalStyle(`${articleBody}::after, ${articleBody} hr::after`, {
+  content: "⁂",
+  display: "block",
+  textAlign: "center",
+  paddingTop: tokens.space[9],
+  paddingBottom: tokens.space[9],
+  fontSize: tokens.fontSize.h3,
 });
 
 globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {
@@ -89,10 +91,12 @@ globalStyle(`${article} p + p`, {
 
 globalStyle(`${articleBody} * + ul, ${articleBody} * + ol`, {
   marginTop: "1em",
+  marginBottom: "1em",
 });
 
 globalStyle(`${articleBody} ul ul, ${articleBody} ol ol`, {
   marginTop: "0",
+  marginBottom: "0",
 });
 
 globalStyle(`${articleBody} ul, ${articleBody} ol`, {
