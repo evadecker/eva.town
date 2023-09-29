@@ -1,5 +1,6 @@
-import { theme } from "@styles/theme.css";
 import { globalKeyframes, style } from "@vanilla-extract/css";
+
+import { theme } from "../../styles/theme.css";
 
 globalKeyframes("press-start", {
   "0%, 10%": {

@@ -2,6 +2,21 @@ import { style } from "@vanilla-extract/css";
 
 import { theme } from "../../styles/theme.css";
 import { tokens } from "../../styles/tokens.css";
+<<<<<<< HEAD
+=======
+
+export const footer = style({
+  borderTop: "1px solid",
+  borderColor: theme.border.default,
+  display: "flex",
+  width: "100%",
+  selectors: {
+    "body[data-animating] &": {
+      transition: "border-color 1s ease-in-out",
+    },
+  },
+});
+>>>>>>> 65aa62e2534c21d3a7ffcef53356869ad74ddfd4
 
 export const footer = style({
   background: theme.appBg.subtle,
