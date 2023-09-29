@@ -1,10 +1,10 @@
-import { getRandomValueBetween } from "@helpers";
 import { useStore } from "@nanostores/react";
-import { incrementTopZIndex, topZIndex } from "@stores/sam";
-import { theme } from "@styles/theme.css";
 import { type DragHandlers, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+import { getRandomValueBetween } from "../../helpers";
+import { incrementTopZIndex, topZIndex } from "../../stores/sam";
+import { theme } from "../../styles/theme.css";
 import * as styles from "./stickers.css";
 
 interface VariantData {

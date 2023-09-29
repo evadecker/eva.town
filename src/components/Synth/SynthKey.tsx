@@ -1,13 +1,13 @@
 import { useStore } from "@nanostores/react";
+import classNames from "classnames";
+
 import {
   $isLoading,
   $isShowingKeyboardLetters,
   pressKey,
   releaseAllKeys,
   releaseKey,
-} from "@stores/synth";
-import classNames from "classnames";
-
+} from "../../stores/synth";
 import * as styles from "./synth.css";
 
 type WhiteKey =

@@ -1,5 +1,5 @@
-import { theme } from "@styles/theme.css";
-import { tokens } from "@styles/tokens.css";
+import { theme } from "../styles/theme.css";
+import { tokens } from "../styles/tokens.css";
 import { globalStyle, style } from "@vanilla-extract/css";
 
 export const article = style({

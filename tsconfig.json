@@ -6,13 +6,6 @@
     "module": "ES6",
     "target": "ES6",
     "typeRoots": ["./src/types", "./node_modules/@types", "./public/scripts"],
-    "paths": {
-      "@components": ["src/components"],
-      "@helpers": ["src/helpers"],
-      "@layouts": ["src/layouts"],
-      "@stores/*": ["src/stores/*"],
-      "@styles/*": ["src/styles/*"]
-    },
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"

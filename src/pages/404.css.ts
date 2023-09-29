@@ -1,5 +1,5 @@
-import { theme } from "@styles/theme.css";
-import { tokens } from "@styles/tokens.css";
+import { theme } from "../styles/theme.css";
+import { tokens } from "../styles/tokens.css";
 import { globalKeyframes, style } from "@vanilla-extract/css";
 
 globalKeyframes("text-offset", {

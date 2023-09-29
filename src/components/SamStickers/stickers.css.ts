@@ -1,6 +1,7 @@
-import { theme } from "@styles/theme.css";
-import { tokens } from "@styles/tokens.css";
 import { style } from "@vanilla-extract/css";
+
+import { theme } from "../../styles/theme.css";
+import { tokens } from "../../styles/tokens.css";
 
 export const shoo = style({
   all: "unset",
