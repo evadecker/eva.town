@@ -3,6 +3,10 @@ import { style } from "@vanilla-extract/css";
 import { theme } from "../styles/theme.css";
 import { tokens } from "../styles/tokens.css";
 
+export const main = style({
+  paddingBottom: "4rem",
+});
+
 export const subtitle = style({
   fontSize: tokens.fontSize.h5,
   fontFamily: tokens.fontFamily.sans,

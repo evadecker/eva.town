@@ -1,0 +1,39 @@
+---
+import Grid from "../Grid/Grid.astro";
+import Stack from "../Stack/Stack.astro";
+import * as styles from "./subscribe.css";
+---
+
+<div class={styles.subscribe}>
+  <form
+    action="https://buttondown.email/api/emails/embed-subscribe/notesfromeva"
+    method="post"
+  >
+    <Grid>
+      <Stack spacing="tight">
+        <strong>Notes From Eva</strong>
+        <small>
+          Occasionally I share thoughts and observations about tech, design, and
+          things that live outside a screen.
+        </small>
+      </Stack>
+      <div>
+        <img
+          class={styles.pixelArt}
+          src="/images/dialogue/eva-neutral.svg"
+          alt="Eva is feeling fine."
+        />
+        <div class={styles.inputWrapper}>
+          <input
+            class={styles.input}
+            type="email"
+            name="email"
+            id="bd-email"
+            placeholder="Email"
+          />
+          <input type="submit" value="Subscribe" class={styles.button} />
+        </div>
+      </div>
+    </Grid>
+  </form>
+</div>

@@ -2,6 +2,8 @@
 import Center from "../components/Center/Center.astro";
 import Footer from "../components/Footer/Footer.astro";
 import { SamStickers } from "../components/SamStickers/SamStickers";
+import Stack from "../components/Stack/Stack.astro";
+import Subscribe from "../components/Subscribe/Subscribe.astro";
 import { Synth } from "../components/Synth/Synth";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import * as styles from "./index.css";
@@ -11,9 +13,9 @@ import * as styles from "./index.css";
   title="Eva Decker"
   description="Eva Decker is a designer and software engineer based in Brooklyn, New York."
 >
-  <main>
+  <main class={styles.main}>
     <Center>
-      <header>
+      <Stack>
         <h1>Eva designs and builds things for the&nbsp;web.</h1>
         <p class={styles.subtitle}>
           I have experience creating usable, accessible, developer-friendly
@@ -26,11 +28,12 @@ import * as styles from "./index.css";
             >.</span
           > In my free time I play piano.
         </p>
-        <SamStickers client:visible />
         <Synth client:only />
-      </header>
+        <Subscribe />
+      </Stack>
     </Center>
   </main>
+  <SamStickers client:visible />
   <Footer />
 
   <script>

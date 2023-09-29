@@ -5,7 +5,6 @@ import { Icon } from "../Icon/Icon";
 import Stack from "../Stack/Stack.astro";
 import * as styles from "./footer.css";
 import { LastTended } from "./LastTended";
-import Subscribe from "./Subscribe.astro";
 
 // Vercel Access Token
 const accessToken = import.meta.env.VERCEL_ACCESS_TOKEN;
@@ -41,53 +40,46 @@ try {
 
 <footer class={styles.footer}>
   <Center>
-    <Grid>
-      <Subscribe />
-      <Stack>
-        <Grid>
-          <Stack spacing="tight">
-            <a
-              class={styles.link}
-              href="https://github.com/evadecker"
-              target="_blank"
-              aria-label="Visit Eva's GitHub"
-            >
-              <Icon
-                icon="github"
-                variant="filled"
-                className={styles.linkIcon}
-              />
-               Github
-            </a>
-            <a
-              class={styles.link}
-              href="https://linkedin.com/in/evadecker"
-              target="_blank"
-              aria-label="Visit Eva's LinkedIn"
-            >
-              <Icon
-                icon="linkedInBox"
-                variant="filled"
-                className={styles.linkIcon}
-              />
-               LinkedIn
-            </a>
-            <a
-              class={styles.link}
-              href="/eva-decker-resume.pdf"
-              target="_blank"
-              aria-label="View Eva's Resume"
-            >
-              <Icon icon="download" className={styles.linkIcon} />
-               Resume
-            </a>
-          </Stack>
-          <Stack>
-            <a class={styles.link} href="/colophon">Colophon</a>
-          </Stack>
-        </Grid>
-        <LastTended dateModified={dateModified} />
-      </Stack>
-    </Grid>
+    <Stack>
+      <Grid>
+        <Stack spacing="tight">
+          <a
+            class={styles.link}
+            href="https://github.com/evadecker"
+            target="_blank"
+            aria-label="Visit Eva's GitHub"
+          >
+            <Icon icon="github" variant="filled" className={styles.linkIcon} />
+             Github
+          </a>
+          <a
+            class={styles.link}
+            href="https://linkedin.com/in/evadecker"
+            target="_blank"
+            aria-label="Visit Eva's LinkedIn"
+          >
+            <Icon
+              icon="linkedInBox"
+              variant="filled"
+              className={styles.linkIcon}
+            />
+             LinkedIn
+          </a>
+          <a
+            class={styles.link}
+            href="/eva-decker-resume.pdf"
+            target="_blank"
+            aria-label="View Eva's Resume"
+          >
+            <Icon icon="download" className={styles.linkIcon} />
+             Resume
+          </a>
+        </Stack>
+        <Stack>
+          <a class={styles.link} href="/colophon">Colophon</a>
+        </Stack>
+      </Grid>
+      <LastTended dateModified={dateModified} />
+    </Stack>
   </Center>
 </footer>

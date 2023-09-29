@@ -1,8 +1,8 @@
 ---
-import Center from "src/components/Center/Center.astro";
-
+import Center from "../components/Center/Center.astro";
 import Footer from "../components/Footer/Footer.astro";
 import { PublishDates } from "../components/PublishDates/PublishDates";
+import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import * as styles from "./prose.css";
 
@@ -10,7 +10,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
-  <main>
+  <main class={styles.main}>
     <Center>
       <article
         itemscope
@@ -30,6 +30,7 @@ const { frontmatter } = Astro.props;
           <slot />
         </section>
       </article>
+      <Subscribe />
     </Center>
   </main>
   <Footer />

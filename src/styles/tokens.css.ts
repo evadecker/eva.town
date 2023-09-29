@@ -48,7 +48,7 @@ export const tokens = createGlobalTheme(":root", {
   letterSpacing: {
     condensed: "-0.01em",
     normal: "0",
-    loose: "0.03em",
+    loose: "0.01em",
   },
 
   radius: {
