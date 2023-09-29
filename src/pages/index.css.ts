@@ -7,6 +7,10 @@ export const main = style({
   paddingBottom: "4rem",
 });
 
+export const header = style({
+  paddingBottom: "2rem",
+});
+
 export const subtitle = style({
   fontSize: tokens.fontSize.h5,
   fontFamily: tokens.fontFamily.sans,

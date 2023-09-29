@@ -9,12 +9,15 @@ export const footer = style({
   padding: "2rem 0",
   selectors: {
     "body[data-animating] &": {
-      transition: "background 1s ease-in-out",
+      transitionProperty: "background, border",
+      transitionDuration: "1s",
+      transitionTimingFunction: "ease-in-out",
     },
   },
 });
 
 export const link = style({
+  justifySelf: "flex-start",
   display: "inline-flex",
   alignItems: "center",
   ":hover": {
@@ -25,10 +28,6 @@ export const link = style({
 export const linkIcon = style({
   color: theme.text.inlineIcon,
   marginRight: "0.5rem",
-});
-
-export const dialogue = style({
-  alignSelf: "flex-end",
 });
 
 export const lastTended = style({

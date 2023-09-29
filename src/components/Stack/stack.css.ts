@@ -7,6 +7,7 @@ export const stack = style({
 });
 
 export const tight = style({});
+export const none = style({});
 
 globalStyle(`${stack} > *`, {
   marginBlock: "0",
@@ -18,4 +19,8 @@ globalStyle(`${stack} > * + *`, {
 
 globalStyle(`${stack}${tight} > * + *`, {
   marginBlockStart: "0.5rem",
+});
+
+globalStyle(`${stack}${none} > * + *`, {
+  marginBlockStart: "0",
 });

@@ -8,7 +8,7 @@ interface Props {
    * Distance between items
    * @default "normal"
    */
-  spacing?: "normal" | "tight";
+  spacing?: "normal" | "tight" | "none";
 }
 
 const { spacing } = Astro.props;
@@ -17,6 +17,7 @@ const { spacing } = Astro.props;
 <div
   class={classNames(styles.stack, {
     [styles.tight]: spacing === "tight",
+    [styles.none]: spacing === "none",
   })}
 >
   <slot />

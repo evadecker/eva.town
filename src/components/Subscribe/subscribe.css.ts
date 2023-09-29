@@ -9,9 +9,14 @@ export const subscribe = style({
   borderRadius: tokens.radius[2],
 });
 
+export const form = style({
+  marginTop: "-0.6rem",
+});
+
 export const pixelArt = style({
   width: "72px",
   height: "72px",
+  marginInlineStart: "0.5rem",
 });
 
 export const inputWrapper = style({
