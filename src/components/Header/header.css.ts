@@ -5,7 +5,7 @@ import { tokens } from "../../styles/tokens.css";
 
 export const header = style({
   width: "100%",
-  padding: `${tokens.space[4]} ${tokens.space[5]}`,
+  padding: "2rem 0",
 });
 
 export const headerContents = style({

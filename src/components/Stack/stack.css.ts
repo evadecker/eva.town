@@ -6,19 +6,16 @@ export const stack = style({
   justifyContent: "flex-start",
 });
 
-export const horizontal = style({
-  flexDirection: "row",
-});
+export const tight = style({});
 
 globalStyle(`${stack} > *`, {
   marginBlock: "0",
 });
 
-globalStyle(`${stack}:not(${horizontal}) > * + *`, {
+globalStyle(`${stack} > * + *`, {
   marginBlockStart: "1rem",
 });
 
-globalStyle(`${stack}${horizontal} > * + *`, {
-  marginBlockStart: "0",
-  marginInlineStart: "1rem",
+globalStyle(`${stack}${tight} > * + *`, {
+  marginBlockStart: "0.5rem",
 });

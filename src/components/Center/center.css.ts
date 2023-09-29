@@ -3,7 +3,7 @@ import { style } from "@vanilla-extract/css";
 export const center = style({
   boxSizing: "content-box",
   marginInline: "auto",
-  maxInlineSize: "60ch",
-  paddingInlineStart: "4rem",
-  paddingInlineEnd: "4rem",
+  maxInlineSize: "70ch",
+  paddingInlineStart: "1.5rem",
+  paddingInlineEnd: "1.5rem",
 });

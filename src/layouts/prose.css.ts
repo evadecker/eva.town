@@ -1,9 +1,9 @@
-import { theme } from "../styles/theme.css";
-import { tokens } from "../styles/tokens.css";
 import { globalStyle, style } from "@vanilla-extract/css";
 
+import { theme } from "../styles/theme.css";
+import { tokens } from "../styles/tokens.css";
+
 export const article = style({
-  maxWidth: tokens.breakpoint.sm,
   margin: "0 auto",
 });
 
@@ -13,8 +13,8 @@ export const articleBody = style({
       content: "⁂",
       display: "block",
       textAlign: "center",
-      paddingTop: tokens.space[9],
-      paddingBottom: tokens.space[9],
+      paddingTop: "3rem",
+      paddingBottom: "3rem",
       fontSize: tokens.fontSize.h3,
     },
   },
@@ -51,7 +51,7 @@ globalStyle(`${article} a:hover`, {
 globalStyle(
   `${article} h2, ${article} h3, ${article} h4, ${article} h5, ${article} h6`,
   {
-    scrollMarginTop: tokens.space[5],
+    scrollMarginTop: "3rem",
     marginBottom: "1rem",
   }
 );

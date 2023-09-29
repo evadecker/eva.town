@@ -2,43 +2,14 @@ import { style } from "@vanilla-extract/css";
 
 import { theme } from "../../styles/theme.css";
 import { tokens } from "../../styles/tokens.css";
-<<<<<<< HEAD
-=======
-
-export const footer = style({
-  borderTop: "1px solid",
-  borderColor: theme.border.default,
-  display: "flex",
-  width: "100%",
-  selectors: {
-    "body[data-animating] &": {
-      transition: "border-color 1s ease-in-out",
-    },
-  },
-});
->>>>>>> 65aa62e2534c21d3a7ffcef53356869ad74ddfd4
 
 export const footer = style({
   background: theme.appBg.subtle,
   width: "100%",
-  padding: `${tokens.space[6]} 0`,
-});
-
-export const links = style({
-  paddingBottom: tokens.space[4],
-  display: "flex",
-  flexDirection: "row",
-});
-
-export const linkCol = style({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-start",
-  paddingRight: tokens.space[8],
+  padding: "2rem 0",
 });
 
 export const link = style({
-  padding: `${tokens.space[1]} 0`,
   display: "inline-flex",
   alignItems: "center",
   ":hover": {
@@ -48,7 +19,7 @@ export const link = style({
 
 export const linkIcon = style({
   color: theme.text.inlineIcon,
-  marginRight: tokens.space[2],
+  marginRight: "0.5rem",
 });
 
 export const dialogue = style({
@@ -62,7 +33,7 @@ export const inputWrapper = style({
 
 export const input = style({
   width: "100%",
-  padding: `${tokens.space[2]} ${tokens.space[4]}`,
+  padding: "0.5rem 1rem",
   border: "none",
   borderRadius: tokens.radius[2],
   color: theme.text.default,
@@ -76,7 +47,7 @@ export const input = style({
 });
 
 export const button = style({
-  padding: `${tokens.space[2]} ${tokens.space[4]}`,
+  padding: "0.5rem 1rem",
   border: "none",
   background: theme.solidBg.default,
   borderRadius: tokens.radius[2],
@@ -95,5 +66,5 @@ export const lastTended = style({
 
 export const lastTendedIcon = style({
   color: theme.text.inlineIcon,
-  margin: `0 ${tokens.space[3]} 0 ${tokens.space[1]}`,
+  marginRight: "0.75rem",
 });

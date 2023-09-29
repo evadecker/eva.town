@@ -1,19 +1,23 @@
 ---
 import classNames from "classnames";
 
-import * as styles from "./styles.css";
+import * as styles from "./stack.css";
 
 interface Props {
   /**
-   * Stack items horizontally?
-   * @default false
+   * Distance between items
+   * @default "normal"
    */
-  horizontal?: boolean;
+  spacing?: "normal" | "tight";
 }
 
-const { horizontal } = Astro.props;
+const { spacing } = Astro.props;
 ---
 
-<div class={classNames(styles.stack, { [styles.horizontal]: horizontal })}>
+<div
+  class={classNames(styles.stack, {
+    [styles.tight]: spacing === "tight",
+  })}
+>
   <slot />
 </div>

@@ -1,5 +1,5 @@
 ---
-import { Stack } from "../";
+import Stack from "../Stack/Stack.astro";
 import * as styles from "./footer.css";
 ---
 
@@ -8,12 +8,17 @@ import * as styles from "./footer.css";
   method="post"
 >
   <Stack>
-    <h4>Notes From Eva</h4>
-    <p>
-      Occasionally (a few times a year) I share thoughts and observations about
-      tech, design, and things that don't live inside a computer.
-    </p>
-    <Stack horizontal>
+    <Stack spacing="tight">
+      <header>
+        <strong>Notes From Eva</strong>
+      </header>
+      <small>
+        Occasionally (a few times a year) I share thoughts and observations
+        about tech, design, and things that don't live inside a computer. Zero
+        tracking, unsubscribe any time.
+      </small>
+    </Stack>
+    <Stack spacing="tight">
       <input
         class={styles.input}
         type="email"
@@ -23,6 +28,5 @@ import * as styles from "./footer.css";
       />
       <input type="submit" value="Subscribe" class={styles.button} />
     </Stack>
-    <small>Zero tracking, unsubscribe any time.</small>
   </Stack>
 </form>
