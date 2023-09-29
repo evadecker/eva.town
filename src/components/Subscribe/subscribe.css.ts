@@ -30,6 +30,9 @@ globalStyle(`${inputWrapper} > :last-child`, {
 
 export const input = style({
   width: "100%",
+  padding: "0.5rem 1rem 0.5rem 0",
+  textIndent: "1rem",
+  border: "none",
   color: theme.text.default,
   background: theme.elementBg.default,
   ":hover": {
@@ -42,13 +45,10 @@ export const input = style({
 
 export const button = style({
   background: theme.solidBg.default,
+  padding: "0.5rem 1rem",
+  border: "none",
   cursor: "pointer",
   ":hover": {
     background: theme.solidBg.hover,
   },
-});
-
-globalStyle(`${input}, ${button}`, {
-  padding: "0.5rem 1rem",
-  border: "none",
 });
