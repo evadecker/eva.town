@@ -2,8 +2,9 @@
 import "@styles/reset.css";
 import "@styles/base.css";
 
-import { Footer, Header } from "@components";
 import { plum } from "@radix-ui/colors";
+
+import { Header } from "../components/";
 
 interface Props {
   title: string;
@@ -43,9 +44,6 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
   <body>
     <script is:inline src="/scripts/preloadTheme.js"></script>
     <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <slot />
   </body>
 </html>

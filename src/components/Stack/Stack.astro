@@ -1,0 +1,19 @@
+---
+import classNames from "classnames";
+
+import * as styles from "./styles.css";
+
+interface Props {
+  /**
+   * Stack items horizontally?
+   * @default false
+   */
+  horizontal?: boolean;
+}
+
+const { horizontal } = Astro.props;
+---
+
+<div class={classNames(styles.stack, { [styles.horizontal]: horizontal })}>
+  <slot />
+</div>

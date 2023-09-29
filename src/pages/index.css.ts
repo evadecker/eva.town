@@ -1,11 +1,7 @@
-import { theme } from "@styles/theme.css";
-import { tokens } from "@styles/tokens.css";
 import { style } from "@vanilla-extract/css";
 
-export const header = style({
-  maxWidth: "540px",
-  textAlign: "left",
-});
+import { theme } from "../styles/theme.css";
+import { tokens } from "../styles/tokens.css";
 
 export const subtitle = style({
   fontSize: tokens.fontSize.h5,

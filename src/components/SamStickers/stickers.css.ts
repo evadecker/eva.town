@@ -6,7 +6,7 @@ export const shoo = style({
   all: "unset",
   position: "fixed",
   background: theme.text.default,
-  color: theme.background.default,
+  color: theme.appBg.default,
   padding: `${tokens.space[2]} ${tokens.space[3]}`,
   borderRadius: tokens.radius[2],
   right: tokens.space[5],

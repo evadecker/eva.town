@@ -87,7 +87,7 @@ globalStyle("html, body", {
 
 globalStyle("body", {
   color: theme.text.default,
-  backgroundColor: theme.background.default,
+  backgroundColor: theme.appBg.default,
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",

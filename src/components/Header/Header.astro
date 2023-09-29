@@ -1,11 +1,16 @@
 ---
+import { Center } from "../";
 import * as styles from "./header.css";
 import { ToggleTheme } from "./ToggleTheme.tsx";
 ---
 
 <header class={styles.header}>
-  <a class={styles.wordmark} href="/">Eva Decker</a>
-  <div class={styles.toggleTheme}>
-    <ToggleTheme client:only="react" />
-  </div>
+  <Center>
+    <div class={styles.headerContents}>
+      <a class={styles.wordmark} href="/">Eva Decker</a>
+      <div class={styles.toggleTheme}>
+        <ToggleTheme client:only="react" />
+      </div>
+    </div>
+  </Center>
 </header>

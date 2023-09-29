@@ -37,7 +37,7 @@ export const button = style({
     cursor: "default",
   },
   ":hover": {
-    background: theme.background.alt,
+    background: theme.elementBg.hover,
   },
 });
 
@@ -47,7 +47,7 @@ export const animatedCircle = style({
   top: "0",
   width: "40px",
   height: "40px",
-  background: theme.background.default,
+  background: theme.appBg.default,
   borderRadius: "100%",
   transformOrigin: "50% 50%",
   selectors: {

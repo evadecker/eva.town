@@ -1,23 +1,12 @@
-import { theme } from "@styles/theme.css";
-import { tokens } from "@styles/tokens.css";
 import { style } from "@vanilla-extract/css";
 
-export const footer = style({
-  borderTop: "1px solid",
-  borderColor: theme.border.default,
-  display: "flex",
-  width: "100%",
-  selectors: {
-    "body[data-animating] &": {
-      transition: "border-color 1s ease-in-out",
-    },
-  },
-});
+import { theme } from "../../styles/theme.css";
+import { tokens } from "../../styles/tokens.css";
 
-export const footerContent = style({
-  marginRight: "auto",
-  padding: tokens.space[5],
-  paddingBottom: tokens.space[4],
+export const footer = style({
+  background: theme.appBg.subtle,
+  width: "100%",
+  padding: `${tokens.space[6]} 0`,
 });
 
 export const links = style({
@@ -37,13 +26,8 @@ export const link = style({
   padding: `${tokens.space[1]} 0`,
   display: "inline-flex",
   alignItems: "center",
-});
-
-export const linkText = style({
-  selectors: {
-    [`${link}:hover &`]: {
-      textDecoration: "underline",
-    },
+  ":hover": {
+    textDecoration: "underline",
   },
 });
 
@@ -54,6 +38,37 @@ export const linkIcon = style({
 
 export const dialogue = style({
   alignSelf: "flex-end",
+});
+
+export const inputWrapper = style({
+  display: "flex",
+  flexDirection: "row",
+});
+
+export const input = style({
+  width: "100%",
+  padding: `${tokens.space[2]} ${tokens.space[4]}`,
+  border: "none",
+  borderRadius: tokens.radius[2],
+  color: theme.text.default,
+  background: theme.elementBg.default,
+  ":hover": {
+    background: theme.elementBg.hover,
+  },
+  ":focus": {
+    outline: `2px solid ${theme.color.plum9}`,
+  },
+});
+
+export const button = style({
+  padding: `${tokens.space[2]} ${tokens.space[4]}`,
+  border: "none",
+  background: theme.solidBg.default,
+  borderRadius: tokens.radius[2],
+  cursor: "pointer",
+  ":hover": {
+    background: theme.solidBg.hover,
+  },
 });
 
 export const lastTended = style({

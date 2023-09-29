@@ -1,0 +1,28 @@
+---
+import { Stack } from "../";
+import * as styles from "./footer.css";
+---
+
+<form
+  action="https://buttondown.email/api/emails/embed-subscribe/notesfromeva"
+  method="post"
+>
+  <Stack>
+    <h4>Notes From Eva</h4>
+    <p>
+      Occasionally (a few times a year) I share thoughts and observations about
+      tech, design, and things that don't live inside a computer.
+    </p>
+    <Stack horizontal>
+      <input
+        class={styles.input}
+        type="email"
+        name="email"
+        id="bd-email"
+        placeholder="Your email address"
+      />
+      <input type="submit" value="Subscribe" class={styles.button} />
+    </Stack>
+    <small>Zero tracking, unsubscribe any time.</small>
+  </Stack>
+</form>
