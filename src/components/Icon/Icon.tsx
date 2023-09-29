@@ -3,17 +3,18 @@ import classNames from "classnames";
 import * as styles from "./icon.css";
 
 // Icons sourced from https://remixicon.com
-type IconType =
+export type IconType =
   | "download"
   | "externalLink"
   | "github"
   | "linkedInBox"
   | "moon"
+  | "plant"
   | "penNib"
   | "seedling"
   | "sun";
 
-interface IconProps {
+export interface IconProps {
   /**
    * The icon to display
    */
@@ -24,12 +25,6 @@ interface IconProps {
    * @default "line"
    */
   variant?: "line" | "filled";
-
-  /**
-   * Size of the icon
-   * @default "regular"
-   */
-  size?: "regular" | "small";
 
   /**
    * Additional class names to apply to the icon
@@ -84,6 +79,14 @@ const iconData: Record<IconType, { line: JSX.Element; filled: JSX.Element }> = {
       <path d="M4.92898 21.4821L10.775 15.636C11.4423 15.8142 12.1837 15.6416 12.7071 15.1181C13.4882 14.3371 13.4882 13.0707 12.7071 12.2897C11.9261 11.5086 10.6598 11.5086 9.87872 12.2897C9.35526 12.8132 9.18263 13.5546 9.36081 14.2218L3.51476 20.0679L2.4541 19.0072C5.28253 15.7074 6.34319 12.054 7.7574 5.92573L14.1214 5.21863L19.7783 10.8755L19.0711 17.2394C12.9429 18.6537 9.28947 19.7143 5.98964 22.5427L4.92898 21.4821ZM16.5962 2.03665L22.9428 8.38325C23.1381 8.57852 23.1381 8.8951 22.9428 9.09036C22.8679 9.16526 22.7712 9.21444 22.6665 9.23081L21.1924 9.46127L15.5356 3.80441L15.7477 2.31949C15.7868 2.04612 16.04 1.85617 16.3134 1.89523C16.4205 1.91053 16.5197 1.96015 16.5962 2.03665Z"></path>
     ),
   },
+  plant: {
+    line: (
+      <path d="M5.99805 2C8.68733 2 11.0224 3.51653 12.1947 5.74104C13.372 4.08252 15.3086 3 17.498 3H20.998V5.5C20.998 9.08985 18.0879 12 14.498 12H12.998V13H17.998V20C17.998 21.1046 17.1026 22 15.998 22H7.99805C6.89348 22 5.99805 21.1046 5.99805 20V13H10.998V11H8.99805C5.13205 11 1.99805 7.86599 1.99805 4V2H5.99805ZM15.998 15H7.99805V20H15.998V15ZM18.998 5H17.498C15.0128 5 12.998 7.01472 12.998 9.5V10H14.498C16.9833 10 18.998 7.98528 18.998 5.5V5ZM5.99805 4H3.99805C3.99805 6.76142 6.23662 9 8.99805 9H10.998C10.998 6.23858 8.75947 4 5.99805 4Z"></path>
+    ),
+    filled: (
+      <path d="M20.998 3V5C20.998 8.86599 17.864 12 13.998 12H12.998V13H17.998V20C17.998 21.1046 17.1026 22 15.998 22H7.99805C6.89348 22 5.99805 21.1046 5.99805 20V13H10.998V10C10.998 6.13401 14.1321 3 17.998 3H20.998ZM5.49805 2C8.02667 2 10.263 3.25136 11.6216 5.1686C10.6026 6.51084 9.99805 8.18482 9.99805 10V11H9.49805C5.35591 11 1.99805 7.64214 1.99805 3.5V2H5.49805Z"></path>
+    ),
+  },
   seedling: {
     line: (
       <path d="M5.99805 3C9.48787 3 12.3812 5.55379 12.9112 8.8945C14.0863 7.72389 15.7076 7 17.498 7H21.998V9.5C21.998 13.0899 19.0879 16 15.498 16H12.998V21H10.998V13H8.99805C5.13205 13 1.99805 9.86599 1.99805 6V3H5.99805ZM19.998 9H17.498C15.0128 9 12.998 11.0147 12.998 13.5V14H15.498C17.9833 14 19.998 11.9853 19.998 9.5V9ZM5.99805 5H3.99805V6C3.99805 8.76142 6.23662 11 8.99805 11H10.998V10C10.998 7.23858 8.75947 5 5.99805 5Z"></path>
@@ -102,8 +105,7 @@ const iconData: Record<IconType, { line: JSX.Element; filled: JSX.Element }> = {
   },
 };
 
-export const Icon = ({ icon, variant, size, className }: IconProps) => {
-  const pxSize = size === "small" ? "16px" : "24px";
+export const Icon = ({ icon, variant, className }: IconProps) => {
   const pathData =
     variant === "filled" ? iconData[icon].filled : iconData[icon].line;
 
@@ -112,8 +114,8 @@ export const Icon = ({ icon, variant, size, className }: IconProps) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      width={pxSize}
-      height={pxSize}
+      width="1em"
+      height="1em"
       className={classNames(styles.icon, className)}
     >
       {pathData}

@@ -29,15 +29,3 @@ export const linkIcon = style({
   color: theme.text.inlineIcon,
   marginRight: "0.5rem",
 });
-
-export const lastTended = style({
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  color: theme.text.subtle,
-});
-
-export const lastTendedIcon = style({
-  color: theme.text.inlineIcon,
-  marginRight: "0.75rem",
-});

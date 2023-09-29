@@ -1,7 +1,9 @@
 ---
+import Stack from "src/components/Stack/Stack.astro";
+
 import Center from "../components/Center/Center.astro";
 import Footer from "../components/Footer/Footer.astro";
-import { PublishDates } from "../components/PublishDates/PublishDates";
+import { RelativeDate } from "../components/RelativeDate/RelativeDate";
 import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "./BaseLayout.astro";
 import * as styles from "./prose.css";
@@ -18,13 +20,24 @@ const { frontmatter } = Astro.props;
         class={styles.article}
       >
         <header class={styles.header}>
-          <h1 itemprop="name">{frontmatter.title}</h1>
-          <p class={styles.subtitle}>{frontmatter.description}</p>
-          <PublishDates
-            datePublished={frontmatter.datePublished}
-            dateModified={frontmatter.dateModified}
-            client:load
-          />
+          <Stack>
+            <h1 itemprop="name">{frontmatter.title}</h1>
+            <p class={styles.subtitle}>{frontmatter.description}</p>
+            <Stack spacing="tight">
+              <RelativeDate
+                date={frontmatter.datePublished}
+                prefix="Published"
+                icon="seedling"
+                client:load
+              />
+              <RelativeDate
+                date={frontmatter.dateModified}
+                prefix="Last tended"
+                icon="plant"
+                client:load
+              />
+            </Stack>
+          </Stack>
         </header>
         <section itemprop="articleBody" class={styles.articleBody}>
           <slot />

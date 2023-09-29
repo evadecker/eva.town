@@ -33,7 +33,6 @@ export const subtitle = style({
   fontFamily: tokens.fontFamily.sans,
   fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h4,
-  marginTop: "1rem",
 });
 
 globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {

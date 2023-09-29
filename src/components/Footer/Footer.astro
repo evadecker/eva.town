@@ -2,9 +2,9 @@
 import Center from "../Center/Center.astro";
 import Grid from "../Grid/Grid.astro";
 import { Icon } from "../Icon/Icon";
+import { RelativeDate } from "../RelativeDate/RelativeDate";
 import Stack from "../Stack/Stack.astro";
 import * as styles from "./footer.css";
-import { LastTended } from "./LastTended";
 
 // Vercel Access Token
 const accessToken = import.meta.env.VERCEL_ACCESS_TOKEN;
@@ -79,7 +79,7 @@ try {
           <a class={styles.link} href="/colophon">Colophon</a>
         </Stack>
       </Grid>
-      <LastTended dateModified={dateModified} />
+      <RelativeDate date={dateModified} prefix="Last tended" icon="seedling" />
     </Stack>
   </Center>
 </footer>
