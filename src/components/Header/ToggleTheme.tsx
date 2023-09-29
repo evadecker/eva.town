@@ -1,7 +1,7 @@
 import { plum, plumDark } from "@radix-ui/colors";
 import { useEffect, useRef, useState } from "react";
 
-import { Icon } from "..";
+import { Icon } from "../Icon/Icon";
 import * as styles from "./toggle-theme.css";
 
 type Theme = "light" | "dark";

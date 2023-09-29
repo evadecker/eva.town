@@ -5,10 +5,13 @@ import { tokens } from "../../styles/tokens.css";
 
 export const header = style({
   width: "100%",
+  padding: "2rem 0",
+});
+
+export const headerContents = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  padding: `${tokens.space[4]} ${tokens.space[5]}`,
 });
 
 export const wordmark = style({

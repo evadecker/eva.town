@@ -1,33 +1,44 @@
 ---
-import { SamStickers, Synth } from "../components";
-import { Layout } from "../layouts";
+import Center from "../components/Center/Center.astro";
+import Footer from "../components/Footer/Footer.astro";
+import { SamStickers } from "../components/SamStickers/SamStickers";
+import Stack from "../components/Stack/Stack.astro";
+import Subscribe from "../components/Subscribe/Subscribe.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import * as styles from "./index.css";
 ---
 
-<Layout
+<BaseLayout
   title="Eva Decker"
   description="Eva Decker is a designer and software engineer based in Brooklyn, New York."
 >
-  <header class={styles.header}>
-    <h1>Eva designs and builds things for the&nbsp;web.</h1>
-    <p class={styles.subtitle}>
-      I have experience creating usable, accessible, developer-friendly design
-      systems for companies like Cityblock, Dropbox, and Swiftype.
-    </p>
-    <p class={styles.subtitle}>
-      I live in Brooklyn, NY, with my tabby, <span class={styles.noBreak}
-        ><button class={styles.samButton} data-sam-button type="button"
-          >Samwise</button
-        >.</span
-      > In my free time I play piano.
-    </p>
-    <SamStickers client:visible />
-    <Synth client:only />
-  </header>
-</Layout>
+  <main class={styles.main}>
+    <Center>
+      <Stack>
+        <header class={styles.header}>
+          <h1>Eva designs and builds things for the&nbsp;web.</h1>
+          <p class={styles.subtitle}>
+            I have experience creating usable, accessible, developer-friendly
+            design systems for companies like Cityblock, Dropbox, and Swiftype.
+          </p>
+          <p class={styles.subtitle}>
+            I live in Brooklyn, NY, with my tabby, <span class={styles.noBreak}
+              ><button class={styles.samButton} data-sam-button type="button"
+                >Samwise</button
+              >.</span
+            > In my free time I play piano.
+          </p>
+        </header>
+        <Subscribe />
+      </Stack>
+    </Center>
+  </main>
+  <SamStickers client:visible />
+  <Footer />
 
-<script>
-  import { addSam } from "../stores/sam";
-  const samButton = document.querySelector("[data-sam-button]");
-  samButton?.addEventListener("click", () => addSam());
-</script>
+  <script>
+    import { addSam } from "../stores/sam";
+    const samButton = document.querySelector("[data-sam-button]");
+    samButton?.addEventListener("click", () => addSam());
+  </script>
+</BaseLayout>

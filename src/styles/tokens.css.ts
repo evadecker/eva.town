@@ -28,7 +28,7 @@ export const tokens = createGlobalTheme(":root", {
   },
 
   fontWidth: {
-    normal: "95",
+    normal: "93",
     wide: "115",
     extraWide: "125",
     superWide: "150",
@@ -42,32 +42,20 @@ export const tokens = createGlobalTheme(":root", {
     h5: "1.4",
     h6: "1.4",
     body: "1.55",
-    small: "1.5",
+    small: "1.4",
   },
 
   letterSpacing: {
     condensed: "-0.01em",
     normal: "0",
-    loose: "0.03em",
-  },
-
-  space: {
-    1: "4px",
-    2: "8px",
-    3: "12px",
-    4: "16px",
-    5: "24px",
-    6: "32px",
-    7: "40px",
-    8: "48px",
-    9: "64px",
+    loose: "0.01em",
   },
 
   radius: {
-    1: "4px",
-    2: "8px",
-    3: "16px",
-    4: "24px",
+    1: "0.25rem",
+    2: "0.5rem",
+    3: "1rem",
+    4: "1.5rem",
     100: "9999px",
   },
 

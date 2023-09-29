@@ -1,9 +1,13 @@
-import { theme } from "../styles/theme.css";
-import { tokens } from "../styles/tokens.css";
 import { globalStyle, style } from "@vanilla-extract/css";
 
+import { theme } from "../styles/theme.css";
+import { tokens } from "../styles/tokens.css";
+
+export const main = style({
+  paddingBottom: "4rem",
+});
+
 export const article = style({
-  maxWidth: tokens.breakpoint.sm,
   margin: "0 auto",
 });
 
@@ -13,15 +17,15 @@ export const articleBody = style({
       content: "⁂",
       display: "block",
       textAlign: "center",
-      paddingTop: tokens.space[9],
-      paddingBottom: tokens.space[9],
+      paddingTop: "3rem",
+      paddingBottom: "3rem",
       fontSize: tokens.fontSize.h3,
     },
   },
 });
 
 export const header = style({
-  padding: `5rem 0`,
+  padding: `2rem 0 5rem`,
 });
 
 export const subtitle = style({
@@ -29,7 +33,6 @@ export const subtitle = style({
   fontFamily: tokens.fontFamily.sans,
   fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h4,
-  marginTop: "1rem",
 });
 
 globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {
@@ -51,7 +54,7 @@ globalStyle(`${article} a:hover`, {
 globalStyle(
   `${article} h2, ${article} h3, ${article} h4, ${article} h5, ${article} h6`,
   {
-    scrollMarginTop: tokens.space[5],
+    scrollMarginTop: "3rem",
     marginBottom: "1rem",
   }
 );

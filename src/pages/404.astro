@@ -1,18 +1,20 @@
 ---
-import { Layout } from "../layouts";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import * as styles from "./404.css";
 ---
 
-<Layout title="404: Not Found" description="This page could not be found.">
-  <div class={styles.scanlines}></div>
-  <div class={styles.glitchContainer}>
-    <div class={styles.text}>
-      <h1 class={styles.title}>404</h1>
-      <div class={styles.subtitle}>Not Found</div>
-      <div class={styles.textClip}>
+<BaseLayout title="404: Not Found" description="This page could not be found.">
+  <main>
+    <div class={styles.scanlines}></div>
+    <div class={styles.glitchContainer}>
+      <div class={styles.text}>
         <h1 class={styles.title}>404</h1>
         <div class={styles.subtitle}>Not Found</div>
+        <div class={styles.textClip}>
+          <h1 class={styles.title}>404</h1>
+          <div class={styles.subtitle}>Not Found</div>
+        </div>
       </div>
     </div>
-  </div>
-</Layout>
+  </main>
+</BaseLayout>

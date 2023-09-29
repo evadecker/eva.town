@@ -5,14 +5,19 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 
-import { Icon } from "..";
-import * as styles from "./footer.css";
+import { Icon, type IconType } from "../Icon/Icon";
+import * as styles from "./relativeDate.css";
 
-interface LastTendedProps {
-  dateModified: Date | null;
+interface RelativeDateProps {
+  /**
+   * Language to put before the date, e.g. "Published", "Last tended"
+   */
+  prefix: string;
+  date: Date | null;
+  icon?: IconType;
 }
 
-export const LastTended = ({ dateModified }: LastTendedProps) => {
+export const RelativeDate = ({ prefix, date, icon }: RelativeDateProps) => {
   dayjs.extend(utc);
   dayjs.extend(timezone); // Support 'z' to display timezone
   dayjs.extend(localizedFormat); // Support 'LLLL' to display full date
@@ -22,28 +27,25 @@ export const LastTended = ({ dateModified }: LastTendedProps) => {
   let formattedTimestamp: string;
   let relativeTimeInWords: string;
 
-  if (dateModified === null) {
+  if (date === null) {
     formattedTimestamp = "";
     relativeTimeInWords = "at some point in time";
   } else {
-    formattedTimestamp = dayjs(dateModified)
+    formattedTimestamp = dayjs(date)
       .tz("America/New_York", true)
       .format("LLLL z");
-    relativeTimeInWords = dayjs(dateModified).fromNow();
+    relativeTimeInWords = dayjs(date).fromNow();
   }
 
   return (
-    <div className={styles.lastTended}>
-      <Icon icon="seedling" size="small" className={styles.lastTendedIcon} />
-      <small>
-        Last tended{" "}
-        <time
-          dateTime={dayjs(dateModified).format()}
-          title={formattedTimestamp}
-        >
+    <small className={styles.date}>
+      {icon && <Icon icon={icon} className={styles.icon} />}
+      <span>
+        {prefix}{" "}
+        <time dateTime={dayjs(date).format()} title={formattedTimestamp}>
           {relativeTimeInWords}
         </time>
-      </small>
-    </div>
+      </span>
+    </small>
   );
 };
