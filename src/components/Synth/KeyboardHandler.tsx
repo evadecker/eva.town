@@ -1,12 +1,13 @@
 import { useStore } from "@nanostores/react";
+import { useEffect } from "react";
+
 import {
   $isLoading,
   nextInstrument,
   pressKey,
   prevInstrument,
   releaseKey,
-} from "@stores/synth";
-import { useEffect } from "react";
+} from "../../stores/synth";
 
 interface KeyboardHandlerProps {
   onInstrumentChange: () => void;

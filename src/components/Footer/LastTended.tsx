@@ -1,4 +1,3 @@
-import { Icon } from "@components";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -6,6 +5,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 
+import { Icon } from "..";
 import * as styles from "./footer.css";
 
 interface LastTendedProps {
