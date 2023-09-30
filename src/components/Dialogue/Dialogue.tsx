@@ -1,7 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// import { getValueFromTag } from "src/helpers/helpers";
 import * as styles from "./dialogue.css";
 import { DialogueBubble } from "./DialogueBubble";
 import { Emote, type EmoteType } from "./Emote";
