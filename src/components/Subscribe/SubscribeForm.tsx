@@ -289,6 +289,7 @@ export const SubscribeForm = () => {
               type="submit"
               className={styles.iconButton}
               disabled={isSubmitting || hasSubmitted}
+              aria-label="Subscribe"
             >
               <Icon
                 icon={isSubmitting ? "loader" : "arrowRight"}
