@@ -42,20 +42,43 @@ const remarks: Record<RemarkType, Remark> = {
       "hey bestie",
       "what’s up :)",
       "EVA HERE",
+      "hey you",
       "hey nerd",
       "you found me!",
-      "welcome 2 my garden",
+      "welcome 2 my garden ✿",
+      "salutations",
+      "hi~ (❛‿❛✿̶̥̥)",
+      "oh hey",
+      "hiiieee",
+      "hello hello",
+      "hey girlie",
+      "hey dork",
+      "oh. hi",
+      "oh! you’re here",
+      "hello love ♥",
+      "bonjour",
+      "good morning(??)",
+      "hello stranger",
+      "oh? is it you?",
+      "well hello!",
+      "oi!",
+      "well, look who it is",
+      "wassup",
     ],
     emote: "neutral",
   },
   firstCharacter: {
     text: [
-      "typing! love that for you",
+      "typing! incredible",
       "we love to type",
       "tap tap tap",
       "typing is fun",
-      "typing is sexy",
       "you type so good",
+      "clicky clack",
+      "type type type",
+      "click clack",
+      "tap tap",
+      "type type",
     ],
     emote: "happy",
   },
@@ -66,9 +89,12 @@ const remarks: Record<RemarkType, Remark> = {
       "clear that box",
       "sometimes people make mistakes",
       "it’s ok to go back",
-      "i love to delete",
-      "the feminnine urge to destroy",
+      "DELETE",
+      "D E S T R O Y",
+      "the feminine urge to destroy",
       "ᕙ(`▿´)ᕗ",
+      "lol bye",
+      "yes. that can go",
     ],
     emote: "flushed",
   },
@@ -77,21 +103,25 @@ const remarks: Record<RemarkType, Remark> = {
       "nice email",
       "that’s a good email",
       "yup. that’s an email",
-      "get @ me, babyy",
-      "i love emails",
+      "what a good email",
       "mmm… electronic mail",
+      "nice address you have there",
+      "congrats! it’s an email",
+      "looks like an email",
+      "i can’t believe it’s email",
+      "email! email! email!",
     ],
     emote: "playful",
   },
   submitting: {
     text: [
-      "…",
       "taking off…",
       "subscribing…",
       "connecting wires…",
       "reticulating splines…",
       "plugging in…",
       "counting down…",
+      "dialing up…",
     ],
     emote: "thinking",
   },
@@ -99,7 +129,10 @@ const remarks: Record<RemarkType, Remark> = {
     text: [
       "yay! almost there",
       "nice! one more step",
-      "it worked! check ur inbox",
+      "almost there!",
+      "you did it! almost",
+      "get ready for e-mail (eva-mail)",
+      "good job! almost done",
     ],
     emote: "starstruck",
   },
@@ -107,10 +140,13 @@ const remarks: Record<RemarkType, Remark> = {
     text: [
       "computer says no",
       "that didn’t work",
-      "it broke, idk",
+      "it broke. idk",
       "everything fell apart",
       "try again?",
-      "ugh. computers",
+      "oh no. computers",
+      "hm.. it broke. dang",
+      "that didn’t work. hm",
+      "something went wrong",
     ],
     emote: "sob",
   },
@@ -232,23 +268,16 @@ export const SubscribeForm = () => {
     <div className={styles.form}>
       <Dialogue text={currentText} emote={currentEmote} />
       <form onSubmit={handleSubmit}>
-        {!hasSubmitted && (
+        {!hasSubmitted ? (
           <div
             className={styles.inputWrapper}
             aria-disabled={isSubmitting || hasSubmitted}
           >
-            <Icon
-              icon={isSubmitting ? "loader" : "mail"}
-              className={classNames(styles.inputIcon, {
-                [styles.loading]: isSubmitting,
-              })}
-              variant="filled"
-            />
             <input
               className={styles.input}
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Your email"
               onFocus={handleFocus}
               onBlur={handleBlur}
               onKeyDown={handleKeyDown}
@@ -256,26 +285,34 @@ export const SubscribeForm = () => {
               value={recipientEmail}
               disabled={isSubmitting || hasSubmitted}
             />
+            <button
+              type="submit"
+              className={styles.iconButton}
+              disabled={isSubmitting || hasSubmitted}
+              aria-label="Subscribe"
+            >
+              <Icon
+                icon={isSubmitting ? "loader" : "arrowRight"}
+                className={classNames({
+                  [styles.loading]: isSubmitting,
+                })}
+              />
+            </button>
           </div>
-        )}
-        {hasSubmitted && sniperData ? (
-          <a href={sniperData.url} className={styles.button} target="_blank">
-            Confirm email in {sniperData.provider_pretty}
-            <Icon icon="arrowRight" className={styles.buttonIcon} />
+        ) : sniperData ? (
+          <a
+            href={sniperData.url}
+            className={styles.sniperLink}
+            target="_blank"
+          >
+            <div className={styles.sniperLogo}>
+              <img src={sniperData.image} />
+            </div>
+            Open {sniperData.provider_pretty}
+            <Icon icon="arrowRight" className={styles.arrow} />
           </a>
         ) : (
-          <button
-            type="submit"
-            className={styles.button}
-            disabled={isSubmitting || hasSubmitted}
-            key="subscribeButton"
-          >
-            {isSubmitting
-              ? "Subscribing…"
-              : hasSubmitted
-              ? "Confirm in email app"
-              : "Subscribe"}
-          </button>
+          <div className={styles.checkInbox}>Check your inbox</div>
         )}
       </form>
     </div>
