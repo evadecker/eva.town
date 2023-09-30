@@ -54,15 +54,10 @@ export const theme = createGlobalThemeContract(
       bold: "",
     },
     color: {
-      ...Object.fromEntries(
-        Object.entries(plum).map(([key, _value]) => [key, ""])
-      ),
-      ...Object.fromEntries(
-        Object.entries(blackA).map(([key, _value]) => [key, ""])
-      ),
-      ...Object.fromEntries(
-        Object.entries(whiteA).map(([key, _value]) => [key, ""])
-      ),
+      ...mauve,
+      ...plum,
+      ...blackA,
+      ...whiteA,
     },
     synth: {
       base: "",
@@ -126,6 +121,7 @@ createGlobalTheme('[data-theme="light"]', theme, {
   },
   color: {
     ...plum,
+    ...mauve,
     ...blackA,
     ...whiteA,
   },
@@ -190,6 +186,7 @@ createGlobalTheme('[data-theme="dark"]', theme, {
   },
   color: {
     ...plumDark,
+    ...mauveDark,
     ...blackA,
     ...whiteA,
   },

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { type KeyboardEvent, useEffect, useState } from "react";
 
 import { Dialogue } from "../Dialogue/Dialogue";
 import type { EmoteType } from "../Dialogue/Emote";
@@ -9,13 +9,25 @@ export const SubscribeForm = () => {
   const [currentText, setCurrentText] = useState<string>("hey bestie");
   const [currentEmote, setCurrentEmote] = useState<EmoteType>("neutral");
 
-  const handleInputFocus = () => {
+  const handleFocus = () => {
     setHasFocusedInput(true);
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "@") {
+      setCurrentText("nice email");
+      setCurrentEmote("playful");
+    }
+
+    if (event.key === "Backspace") {
+      setCurrentText("uh oh");
+      setCurrentEmote("flushed");
+    }
   };
 
   useEffect(() => {
     if (hasFocusedInput) {
-      setCurrentText("omg!");
+      setCurrentText("omg hey for real");
       setCurrentEmote("starstruck");
     }
   }, [hasFocusedInput]);
@@ -34,7 +46,8 @@ export const SubscribeForm = () => {
           name="email"
           id="bd-email"
           placeholder="Email"
-          onFocus={handleInputFocus}
+          onFocus={handleFocus}
+          onKeyDown={handleKeyDown}
         />
         <button type="submit" className={styles.button}>
           Subscribe
