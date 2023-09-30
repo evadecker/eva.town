@@ -1,7 +1,16 @@
-import { globalKeyframes, style } from "@vanilla-extract/css";
+import { globalKeyframes, globalStyle, style } from "@vanilla-extract/css";
 
 import { theme } from "../../styles/theme.css";
 import { tokens } from "../../styles/tokens.css";
+
+globalKeyframes("spin", {
+  "0%": {
+    transform: "rotate(0deg)",
+  },
+  "100%": {
+    transform: "rotate(360deg)",
+  },
+});
 
 export const form = style({
   height: "100%",
@@ -13,29 +22,10 @@ export const form = style({
 export const inputWrapper = style({
   position: "relative",
   width: "100%",
-  marginBlockEnd: "0.5rem",
-
   selectors: {
     "&[aria-disabled=true]": {
       pointerEvents: "none",
     },
-  },
-});
-
-export const inputIcon = style({
-  color: theme.text.iconA,
-  position: "absolute",
-  marginTop: "-0.1rem",
-  top: "calc(50% - 11px)",
-  left: "0.5rem",
-});
-
-globalKeyframes("spin", {
-  "0%": {
-    transform: "rotate(0deg)",
-  },
-  "100%": {
-    transform: "rotate(360deg)",
   },
 });
 
@@ -46,11 +36,8 @@ export const loading = style({
 export const input = style({
   color: theme.text.default,
   background: theme.elementBg.default,
-  lineHeight: "1",
-  borderRadius: tokens.radius[2],
-  padding: "0.75rem 0.75rem 0.75rem 2.5rem",
-  width: "100%",
-  border: "none",
+  padding: "0 1rem",
+  paddingInlineEnd: "3rem",
   ":hover": {
     background: theme.elementBg.hover,
   },
@@ -62,19 +49,21 @@ export const input = style({
   },
 });
 
-export const button = style({
+export const iconButton = style({
   background: theme.solidBg.default,
   color: theme.color.whiteA12,
-  padding: "0.75rem",
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  right: "0.5rem",
+  width: "32px",
+  height: "32px",
   borderRadius: tokens.radius[2],
-  lineHeight: "1",
-  width: "100%",
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "center",
   border: "none",
   cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
   ":hover": {
     background: theme.solidBg.hover,
   },
@@ -85,9 +74,52 @@ export const button = style({
   },
 });
 
-export const buttonIcon = style({
+export const sniperLink = style({
+  background: theme.solidBg.default,
+  color: theme.color.whiteA12,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  flexDirection: "row",
+  borderRadius: tokens.radius[3],
+  padding: "0 0.5rem",
+  ":hover": {
+    background: theme.solidBg.hover,
+  },
+});
+
+export const checkInbox = style({
+  background: theme.elementBg.default,
+  color: theme.text.default,
+  textAlign: "center",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+globalStyle(`${input}, ${sniperLink}, ${checkInbox}`, {
+  height: "3rem",
+  width: "100%",
+  border: "none",
+  borderRadius: tokens.radius[3],
+  lineHeight: "1",
+});
+
+export const arrow = style({
   flexShrink: "0",
   position: "relative",
-  marginBlock: "-0.5rem",
-  marginInlineStart: "0.5rem",
+  marginInlineStart: "auto",
+  marginInlineEnd: "0.25rem",
+});
+
+export const sniperLogo = style({
+  backgroundColor: theme.color.whiteA12,
+  width: "32px",
+  height: "32px",
+  padding: "0.25rem",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  marginInlineEnd: "0.75rem",
+  borderRadius: tokens.radius[2],
 });
