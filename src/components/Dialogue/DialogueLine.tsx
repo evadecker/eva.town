@@ -1,13 +1,10 @@
 import { motion, type Variants } from "framer-motion";
 import { nanoid } from "nanoid";
 
+import { type Variant } from "./Dialogue";
 import * as styles from "./dialogue.css";
 
-export enum FragmentVariant {
-  Wave = "wave",
-  Shake = "shake",
-  None = "none",
-}
+const SPEED = 0.04;
 
 interface TypedCharacterProps {
   /**
@@ -23,7 +20,7 @@ interface TypedCharacterProps {
 
   /**
    * Speed to display characters
-   * @default 0.03
+   * Lower is faster
    */
   speed?: number;
 
@@ -37,17 +34,17 @@ interface TypedCharacterProps {
    * Animation style of the character
    * @default "none"
    */
-  variant?: FragmentVariant;
+  variant?: Variant;
 }
 
 const TypedCharacter = ({
   character,
   index,
-  speed = 0.03,
+  speed = SPEED,
   delay = 0.2,
-  variant = FragmentVariant.None,
+  variant = "none",
 }: TypedCharacterProps) => {
-  const isEmphasized = variant !== FragmentVariant.None;
+  const isEmphasized = variant !== "none";
 
   const generateRandomValuesArray = (
     num: number,
@@ -121,11 +118,11 @@ const TypedCharacter = ({
     }),
   };
 
-  const getVariantObject = (variant?: FragmentVariant) => {
+  const getVariantObject = (variant?: Variant) => {
     switch (variant) {
-      case FragmentVariant.Shake:
+      case "shake":
         return shakeVariants;
-      case FragmentVariant.Wave:
+      case "wave":
         return waveVariants;
       default:
         return undefined;
@@ -136,7 +133,7 @@ const TypedCharacter = ({
     <motion.span
       className={styles.character}
       variants={characterVariants}
-      // style={{ animationDelay: `${index * speed + delay}s` }}
+      style={{ animationDelay: `${index * speed + delay}s` }}
     >
       {isEmphasized ? (
         <motion.strong
@@ -155,7 +152,7 @@ const TypedCharacter = ({
   );
 };
 
-export interface DialogueLineFragmentProps {
+export interface DialogueLineProps {
   /**
    * Text to display
    */
@@ -165,7 +162,7 @@ export interface DialogueLineFragmentProps {
    * Animation style of the sentence fragment
    * @default "none"
    */
-  variant?: FragmentVariant;
+  variant?: Variant;
 
   /**
    * Starting character index for continuous animation
@@ -176,17 +173,16 @@ export interface DialogueLineFragmentProps {
 
   /**
    * Speed to display characters
-   * @default 0.03
    */
   speed?: number;
 }
 
-export const DialogueLineFragment = ({
+export const DialogueLine = ({
   text,
   variant,
   index = 0,
-  speed = 0.03,
-}: DialogueLineFragmentProps) => {
+  speed = SPEED,
+}: DialogueLineProps) => {
   const words = text.split(" ");
 
   return words.map((word, wordIndex) => (

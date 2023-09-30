@@ -39,7 +39,7 @@ export const RelativeDate = ({ prefix, date, icon }: RelativeDateProps) => {
 
   return (
     <small className={styles.date}>
-      {icon && <Icon icon={icon} className={styles.icon} />}
+      {icon && <Icon icon={icon} size="small" className={styles.icon} />}
       <span>
         {prefix}{" "}
         <time dateTime={dayjs(date).format()} title={formattedTimestamp}>

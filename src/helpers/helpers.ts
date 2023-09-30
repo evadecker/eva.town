@@ -2,13 +2,15 @@ export const getRandomValueBetween = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
 };
 
-// Given a tag from YarnSpinner in the form "label:value",
-// return the value.
-export const getValueFromTag = (hashtags?: string[], tag?: string) => {
-  if (!hashtags || !tag) return null;
+export const isValidEmail = (email: string) => {
+  // Extremely basic; only for common emails
+  // Should not be used to prevent users from submitting an email
+  // Only the server can truly validate an email
 
-  const labelWithValue = hashtags?.filter((str) => str.startsWith(tag))[0];
-  const value = labelWithValue?.split(":")[1];
-
-  return value;
+  // Email must include an @ symbol
+  // Domain name must include at least one dot
+  // TLD must only consist of letters
+  // TLD must be between 2 and 8 characters
+  const emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,8}/;
+  return email.match(emailRegex);
 };

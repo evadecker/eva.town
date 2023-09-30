@@ -1,19 +1,23 @@
 ---
 import Box from "../Box/Box.astro";
+import Cover from "../Cover/Cover.astro";
 import Grid from "../Grid/Grid.astro";
 import Stack from "../Stack/Stack.astro";
-import SubscribeForm from "./SubscribeForm.astro";
+import { SubscribeForm } from "./SubscribeForm";
 ---
 
 <Box>
   <Grid>
-    <Stack spacing="none">
-      <strong>Notes From Eva</strong>
-      <small>
-        Occasionally I share thoughts and observations about tech, design, and
-        things that live outside a screen.
-      </small>
-    </Stack>
-    <SubscribeForm />
+    <Cover>
+      <Stack spacing="tight">
+        <h4>Notes From Eva</h4>
+        <small>
+          A few times a year, I share thoughts and observations about design,
+          development, and life that lives outside a screen. Subscribe to follow
+          along. No ads or tracking. Just me and you.
+        </small>
+      </Stack>
+    </Cover>
+    <SubscribeForm client:visible />
   </Grid>
 </Box>
