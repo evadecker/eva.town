@@ -1,9 +1,0 @@
-dialogue:
-  - text: hey bestie
-    duration: 500
-    big: false
-    variant: none
-  - text: you found me
-    duration: 500
-    big: true
-    variant: shake
