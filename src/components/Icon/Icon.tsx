@@ -170,6 +170,7 @@ export const Icon = ({ icon, variant, size, className }: IconProps) => {
         { [styles.small]: size === "small" },
         className
       )}
+      aria-hidden="true"
     >
       {pathData}
     </svg>
