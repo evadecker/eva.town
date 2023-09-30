@@ -3,6 +3,7 @@
   "rules": {
     "attr-case": "off",
     "void-style": "off",
-    "element-permitted-content": "off"
+    "element-permitted-content": "off",
+    "no-inline-style": "off"
   }
 }
