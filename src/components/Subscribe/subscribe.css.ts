@@ -58,6 +58,7 @@ export const iconButton = style({
   right: "0.5rem",
   width: "32px",
   height: "32px",
+  padding: "0",
   borderRadius: tokens.radius[2],
   border: "none",
   cursor: "pointer",
