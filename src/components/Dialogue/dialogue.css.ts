@@ -6,19 +6,20 @@ export const container = style({
   display: "flex",
   flexDirection: "row",
   justifyContent: "flex-start",
-  alignItems: "flex-start",
-  height: "72px",
+  alignItems: "flex-end",
+  height: "96px",
+  padding: "0 0.5rem",
+  marginTop: "-8px",
 });
 
 export const bubble = style({
   backgroundColor: theme.elementBg.default,
-  borderRadius: "1rem",
   padding: "0.5rem 1rem",
-  marginTop: "0.5rem",
   fontFamily: tokens.fontFamily.sans,
   fontSize: tokens.fontSize.small,
   lineHeight: tokens.lineHeight.small,
   letterSpacing: tokens.letterSpacing.loose,
+  alignSelf: "center",
 });
 
 export const big = style({
@@ -33,8 +34,9 @@ export const character = style({
 export const emote = style({
   width: "auto",
   height: "100%",
-  marginInline: "1rem",
+  marginInlineEnd: "1rem",
   userSelect: "none",
+  flexShrink: "0",
 });
 
 export const emphasized = style({

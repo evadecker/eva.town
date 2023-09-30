@@ -5,7 +5,7 @@ import { tokens } from "../../styles/tokens.css";
 
 export const box = style({
   border: `1px solid ${theme.border.subtle}`,
-  padding: "2rem",
+  padding: "1.5rem",
   borderRadius: tokens.radius[3],
 });
 

@@ -133,7 +133,7 @@ const TypedCharacter = ({
     <motion.span
       className={styles.character}
       variants={characterVariants}
-      // style={{ animationDelay: `${index * speed + delay}s` }}
+      style={{ animationDelay: `${index * speed + delay}s` }}
     >
       {isEmphasized ? (
         <motion.strong

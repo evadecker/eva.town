@@ -209,8 +209,8 @@ export const Emote = ({ emote }: EmoteProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 48 48"
-      shape-rendering="crispEdges"
+      viewBox="0 -0.5 48 48"
+      shapeRendering="crispEdges"
       className={styles.emote}
       width="48"
       height="48"

@@ -1,58 +1,283 @@
-import { type KeyboardEvent, useEffect, useState } from "react";
+import classNames from "classnames";
+import {
+  type ChangeEvent,
+  type FormEvent,
+  type FormEventHandler,
+  type KeyboardEvent,
+  useEffect,
+  useState,
+} from "react";
 
 import { Dialogue } from "../Dialogue/Dialogue";
 import type { EmoteType } from "../Dialogue/Emote";
+import { Icon } from "../Icon/Icon";
 import * as styles from "./subscribe.css";
 
+interface SniperResponse {
+  url: string;
+  image: string;
+  provider_pretty: string;
+}
+
+type RemarkType =
+  | "intro"
+  | "firstCharacter"
+  | "email"
+  | "deleting"
+  | "submitting"
+  | "success"
+  | "error"
+  | "idle";
+
+interface Remark {
+  text: string[];
+  emote: EmoteType;
+}
+
+const REMARK_TIMEOUT = 1500;
+
+const remarks: Record<RemarkType, Remark> = {
+  intro: {
+    text: [
+      "hey bestie",
+      "what’s up :)",
+      "*billy mays voice* EVA HERE",
+      "hey nerd",
+      "you found me!",
+      "welcome 2 my web garden (✿◠‿◠)",
+    ],
+    emote: "neutral",
+  },
+  firstCharacter: {
+    text: [
+      "typing! i love that for you",
+      "filling up the box",
+      "we love to type",
+      "tap tap tap",
+      "typing is fun",
+      "you're a regular Mavis Beacon",
+    ],
+    emote: "happy",
+  },
+  email: {
+    text: [
+      "nice email",
+      "that’s a good one",
+      "yup. that’s an email",
+      "get @ me, babyy",
+      "i love emails",
+      "mmm… electronic mail",
+    ],
+    emote: "playful",
+  },
+  deleting: {
+    text: [
+      "deletinggggg",
+      "goodbye",
+      "clear that box",
+      "sometimes people make mistakes",
+      "it’s ok to go back",
+      "i love to delete",
+      "the feminnine urge to destroy",
+      "ᕙ(`▿´)ᕗ",
+    ],
+    emote: "flushed",
+  },
+  submitting: {
+    text: [
+      "…",
+      "taking off…",
+      "subscribing…",
+      "connecting wires…",
+      "reticulating splines…",
+    ],
+    emote: "thinking",
+  },
+  success: {
+    text: ["you’re in! good job!", "you’re subscribed!", "you did it!"],
+    emote: "starstruck",
+  },
+  error: {
+    text: [
+      "computer says no",
+      "that didn’t work",
+      "it broke, idk",
+      "everything fell apart",
+      "try again?",
+      "ugh. computers",
+    ],
+    emote: "sob",
+  },
+  idle: {
+    text: ["what are you waiting for", "you know you can go now"],
+    emote: "tired",
+  },
+};
+
+const getRandomRemark = (remarks: string[]): string => {
+  return remarks[Math.floor(Math.random() * remarks.length)];
+};
+
 export const SubscribeForm = () => {
-  const [hasFocusedInput, setHasFocusedInput] = useState(false);
-  const [currentText, setCurrentText] = useState<string>("hey bestie");
+  const [currentRemarkType, setCurrentRemarkType] =
+    useState<RemarkType>("intro");
+  const [justDisplayedRemarks, setJustDisplayedRemarks] = useState(false);
+  const [recipientEmail, setRecipientEmail] = useState<string>("");
+
+  const [currentText, setCurrentText] = useState<string>(
+    getRandomRemark(remarks.intro.text)
+  );
   const [currentEmote, setCurrentEmote] = useState<EmoteType>("neutral");
 
-  const handleFocus = () => {
-    setHasFocusedInput(true);
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [sniperData, setSniperData] = useState<SniperResponse | null>(null);
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "@") {
-      setCurrentText("nice email");
-      setCurrentEmote("playful");
-    }
+  const displayNewRemark = (remarkType: RemarkType) => {
+    // If a remark just appeared, don't display a new one
+    if (justDisplayedRemarks) return;
 
-    if (event.key === "Backspace") {
-      setCurrentText("uh oh");
-      setCurrentEmote("flushed");
-    }
+    setCurrentRemarkType(remarkType);
+    setCurrentText(getRandomRemark(remarks[remarkType].text));
+    setCurrentEmote(remarks[remarkType].emote);
   };
 
   useEffect(() => {
-    if (hasFocusedInput) {
-      setCurrentText("omg hey for real");
-      setCurrentEmote("starstruck");
+    setJustDisplayedRemarks(true);
+    setTimeout(() => {
+      setJustDisplayedRemarks(false);
+    }, REMARK_TIMEOUT);
+  }, [currentRemarkType]);
+
+  useEffect(() => {
+    if (!hasSubmitted) return;
+
+    setTimeout(() => {
+      setCurrentEmote("neutral");
+      setCurrentText("…");
+    }, 7000);
+
+    setTimeout(() => {
+      displayNewRemark("idle");
+    }, 9000);
+  }, [hasSubmitted]);
+
+  const handleFocus = () => {
+    setCurrentEmote("happy");
+  };
+
+  const handleBlur = () => {
+    setCurrentEmote("neutral");
+  };
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (/^[a-z0-9]$/i.test(e.key) && currentRemarkType !== "firstCharacter") {
+      displayNewRemark("firstCharacter");
     }
-  }, [hasFocusedInput]);
+
+    if (e.key === "@" && currentRemarkType !== "email") {
+      displayNewRemark("email");
+    }
+
+    if (e.key === "Backspace" && currentRemarkType !== "deleting") {
+      displayNewRemark("deleting");
+    }
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setRecipientEmail(e.target.value);
+  };
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e: FormEvent) => {
+    e.preventDefault();
+
+    setIsSubmitting(true);
+    displayNewRemark("submitting");
+
+    const url = `https://buttondown.email/api/emails/embed-subscribe/notesfromeva`;
+    const data = new FormData(e.target as HTMLFormElement);
+
+    fetch(url, { method: "POST", body: data })
+      .then((response) => {
+        if (response.ok) {
+          displayNewRemark("success");
+          setHasSubmitted(true);
+        } else {
+          console.error(response);
+          displayNewRemark("error");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+
+    const sender = "hey@evadecker.com";
+    const sniperUrl = `https://sniperl.ink/v1/render?recipient=${recipientEmail}&sender=${sender}`;
+
+    fetch(sniperUrl)
+      .then(async (response) => {
+        if (response.ok) {
+          await response.json().then((data) => {
+            setSniperData(data);
+          });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const button = hasSubmitted ? (
+    <a
+      href={sniperData ? sniperData.url : "mailto:mailto:%20"}
+      className={styles.button}
+      target="_blank"
+    >
+      {sniperData
+        ? `Confirm email in ${sniperData.provider_pretty}`
+        : `Open default mail app`}
+      <Icon icon="externalLink" />
+    </a>
+  ) : (
+    <button type="submit" className={styles.button} disabled={isSubmitting}>
+      {isSubmitting ? "Subscribing…" : "Subscribe"}
+    </button>
+  );
 
   return (
-    <form
-      action="https://buttondown.email/api/emails/embed-subscribe/notesfromeva"
-      method="post"
-      className={styles.form}
-    >
+    <div className={styles.form}>
       <Dialogue text={currentText} emote={currentEmote} />
-      <div className={styles.inputWrapper}>
-        <input
-          className={styles.input}
-          type="email"
-          name="email"
-          id="bd-email"
-          placeholder="Email"
-          onFocus={handleFocus}
-          onKeyDown={handleKeyDown}
-        />
-        <button type="submit" className={styles.button}>
-          Subscribe
-        </button>
-      </div>
-    </form>
+      <form onSubmit={handleSubmit}>
+        {!hasSubmitted && (
+          <div
+            className={styles.inputWrapper}
+            aria-disabled={isSubmitting || hasSubmitted}
+          >
+            <Icon
+              icon={isSubmitting ? "loader" : "mail"}
+              className={classNames(styles.inputIcon, {
+                [styles.loading]: isSubmitting,
+              })}
+            />
+            <input
+              className={styles.input}
+              type="email"
+              name="email"
+              placeholder="Email"
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onKeyDown={handleKeyDown}
+              onChange={handleChange}
+              value={recipientEmail}
+              disabled={isSubmitting || hasSubmitted}
+            />
+          </div>
+        )}
+        {button}
+      </form>
+    </div>
   );
 };

@@ -1,54 +1,92 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { globalKeyframes, style } from "@vanilla-extract/css";
 
 import { theme } from "../../styles/theme.css";
 import { tokens } from "../../styles/tokens.css";
 
 export const form = style({
-  marginTop: "-0.6rem",
-});
-
-export const pixelArt = style({
-  width: "72px",
-  height: "72px",
-  marginInlineStart: "0.5rem",
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
 });
 
 export const inputWrapper = style({
+  position: "relative",
   display: "flex",
   flexDirection: "row",
-});
-
-globalStyle(`${inputWrapper} > :first-child`, {
-  borderTopLeftRadius: tokens.radius[2],
-  borderBottomLeftRadius: tokens.radius[2],
-});
-
-globalStyle(`${inputWrapper} > :last-child`, {
-  borderTopRightRadius: tokens.radius[2],
-  borderBottomRightRadius: tokens.radius[2],
-});
-
-export const input = style({
-  width: "100%",
-  padding: "0.5rem 1rem 0.5rem 0",
-  textIndent: "1rem",
-  border: "none",
+  alignItems: "center",
+  marginBlockEnd: "0.5rem",
   color: theme.text.default,
   background: theme.elementBg.default,
+  borderRadius: tokens.radius[2],
+  paddingLeft: "1rem",
   ":hover": {
     background: theme.elementBg.hover,
   },
-  ":focus": {
+  ":focus-within": {
     outline: `2px solid ${theme.border.outline}`,
+  },
+  selectors: {
+    "&[aria-disabled=true]": {
+      pointerEvents: "none",
+    },
+  },
+});
+
+export const inputIcon = style({
+  color: theme.text.subtle,
+});
+
+globalKeyframes("spin", {
+  "0%": {
+    transform: "rotate(0deg)",
+  },
+  "100%": {
+    transform: "rotate(360deg)",
+  },
+});
+
+export const loading = style({
+  animation: "spin 1s linear infinite",
+});
+
+export const input = style({
+  background: "transparent",
+  padding: "0.3rem 1rem",
+  color: theme.text.default,
+  flex: "1",
+  outline: "none",
+  border: "none",
+  ":disabled": {
+    pointerEvents: "none",
   },
 });
 
 export const button = style({
   background: theme.solidBg.default,
-  padding: "0.5rem 1rem",
+  color: theme.color.whiteA12,
+  padding: "0.3rem 1rem",
+  borderRadius: tokens.radius[2],
+  width: "100%",
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center",
   border: "none",
   cursor: "pointer",
   ":hover": {
     background: theme.solidBg.hover,
   },
+  ":disabled": {
+    background: theme.solidBg.default,
+    opacity: 0.8,
+    pointerEvents: "none",
+  },
+});
+
+export const buttonIcon = style({
+  flexShrink: "0",
+  width: "24px",
+  height: "auto",
+  marginInlineEnd: "1rem",
 });

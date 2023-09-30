@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import React from "react";
 
 import * as styles from "./dialogue.css";
 import { DialogueBubble } from "./DialogueBubble";
@@ -14,19 +14,13 @@ interface DialogueProps {
   variant?: Variant;
 }
 
-export const Dialogue = ({ text, emote, big }: DialogueProps) => {
-  const [currentEmote, setCurrentEmote] = useState<EmoteType>(emote);
-
-  useEffect(() => {
-    setCurrentEmote(emote);
-  }, [emote]);
-
+export const Dialogue = React.memo(({ text, emote, big }: DialogueProps) => {
   return (
     <div className={styles.container}>
       <AnimatePresence>
-        <Emote emote={currentEmote} />
-        <DialogueBubble text={text} big={big} />
+        <Emote emote={emote} key="emote" />
+        <DialogueBubble text={text} big={big} key="bubble" />
       </AnimatePresence>
     </div>
   );
-};
+});
