@@ -3,7 +3,7 @@ import Box from "src/components/Box/Box.astro";
 import Stack from "src/components/Stack/Stack.astro";
 import CenteredLayout from "src/layouts/CenteredLayout.astro";
 
-import SubscribeForm from "../../components/Subscribe/SubscribeForm.astro";
+import { SubscribeForm } from "../../components/Subscribe/SubscribeForm";
 ---
 
 <CenteredLayout
@@ -17,7 +17,7 @@ import SubscribeForm from "../../components/Subscribe/SubscribeForm.astro";
         Occasionally, I write and share some thoughts about design, development,
         and things outside the screen.
       </p>
-      <SubscribeForm />
+      <SubscribeForm client:load />
       <small>Zero tracking. I don’t want your data.</small>
     </Stack>
   </Box>

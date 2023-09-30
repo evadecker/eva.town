@@ -2,7 +2,7 @@
 import Box from "../Box/Box.astro";
 import Grid from "../Grid/Grid.astro";
 import Stack from "../Stack/Stack.astro";
-import SubscribeForm from "./SubscribeForm.astro";
+import { SubscribeForm } from "./SubscribeForm";
 ---
 
 <Box>
@@ -14,6 +14,6 @@ import SubscribeForm from "./SubscribeForm.astro";
         things that live outside a screen.
       </small>
     </Stack>
-    <SubscribeForm />
+    <SubscribeForm client:visible />
   </Grid>
 </Box>

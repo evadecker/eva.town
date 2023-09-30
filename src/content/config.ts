@@ -1,5 +1,12 @@
 import { defineCollection, z } from "astro:content";
 
+const dialogueCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    dialogue: z.array(z.string()),
+  }),
+});
+
 const notesCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -24,6 +31,7 @@ const workCollection = defineCollection({
 });
 
 export const collections = {
+  dialogue: dialogueCollection,
   notes: notesCollection,
   work: workCollection,
 };
