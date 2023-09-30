@@ -1,7 +1,9 @@
 import {
   blackA,
   mauve,
+  mauveA,
   mauveDark,
+  mauveDarkA,
   plum,
   plumA,
   plumDark,
@@ -39,6 +41,7 @@ export const theme = createGlobalThemeContract(
       subtle: "", // Step 11
       default: "", // Step 12
       selection: "",
+      iconA: "",
       inlineIcon: "",
       link: "",
       linkBg: "",
@@ -105,6 +108,7 @@ createGlobalTheme('[data-theme="light"]', theme, {
     subtle: mauve.mauve11,
     default: mauve.mauve12,
     selection: plum.plum8,
+    iconA: mauveA.mauveA9,
     inlineIcon: plum.plum12,
     link: plum.plum11,
     linkBg: plum.plum3,
@@ -169,6 +173,7 @@ createGlobalTheme('[data-theme="dark"]', theme, {
     subtle: mauveDark.mauve11,
     default: mauveDark.mauve12,
     selection: plumDark.plum8,
+    iconA: mauveDarkA.mauveA9,
     inlineIcon: plumDark.plum12,
     link: plumDark.plum11,
     linkBg: plumDark.plum3,

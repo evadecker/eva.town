@@ -23,7 +23,7 @@ export const inputWrapper = style({
 });
 
 export const inputIcon = style({
-  color: theme.text.subtle,
+  color: theme.text.iconA,
   position: "absolute",
   marginTop: "-0.1rem",
   top: "calc(50% - 11px)",
