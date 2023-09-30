@@ -7,6 +7,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { isValidEmail } from "src/helpers/helpers";
 
 import { Dialogue } from "../Dialogue/Dialogue";
 import type { EmoteType } from "../Dialogue/Emote";
@@ -22,8 +23,8 @@ interface SniperResponse {
 type RemarkType =
   | "intro"
   | "firstCharacter"
-  | "email"
   | "deleting"
+  | "validEmail"
   | "submitting"
   | "success"
   | "error";
@@ -40,38 +41,27 @@ const remarks: Record<RemarkType, Remark> = {
     text: [
       "hey bestie",
       "what’s up :)",
-      "*billy mays voice* EVA HERE",
+      "EVA HERE",
       "hey nerd",
       "you found me!",
-      "welcome 2 my web garden (✿◠‿◠)",
+      "welcome 2 my garden",
     ],
     emote: "neutral",
   },
   firstCharacter: {
     text: [
-      "typing! i love that for you",
-      "filling up the box",
+      "typing! love that for you",
       "we love to type",
       "tap tap tap",
       "typing is fun",
-      "you're a regular Mavis Beacon",
+      "typing is sexy",
+      "you type so good",
     ],
     emote: "happy",
   },
-  email: {
-    text: [
-      "nice email",
-      "that’s a good one",
-      "yup. that’s an email",
-      "get @ me, babyy",
-      "i love emails",
-      "mmm… electronic mail",
-    ],
-    emote: "playful",
-  },
   deleting: {
     text: [
-      "deletinggggg",
+      "deletinggg",
       "goodbye",
       "clear that box",
       "sometimes people make mistakes",
@@ -82,6 +72,17 @@ const remarks: Record<RemarkType, Remark> = {
     ],
     emote: "flushed",
   },
+  validEmail: {
+    text: [
+      "nice email",
+      "that’s a good email",
+      "yup. that’s an email",
+      "get @ me, babyy",
+      "i love emails",
+      "mmm… electronic mail",
+    ],
+    emote: "playful",
+  },
   submitting: {
     text: [
       "…",
@@ -89,6 +90,8 @@ const remarks: Record<RemarkType, Remark> = {
       "subscribing…",
       "connecting wires…",
       "reticulating splines…",
+      "plugging in…",
+      "counting down…",
     ],
     emote: "thinking",
   },
@@ -123,9 +126,7 @@ export const SubscribeForm = () => {
   const [justDisplayedRemarks, setJustDisplayedRemarks] = useState(false);
   const [recipientEmail, setRecipientEmail] = useState<string>("");
 
-  const [currentText, setCurrentText] = useState<string | null>(
-    getRandomRemark(remarks.intro.text)
-  );
+  const [currentText, setCurrentText] = useState<string | null>("");
   const [currentEmote, setCurrentEmote] = useState<EmoteType>("neutral");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -144,21 +145,19 @@ export const SubscribeForm = () => {
     }
   };
 
+  // Set a random intro remark on first render
+  // We can't set this directly in useState initialization because
+  // the server and the client won't match and React gets mad
+  useEffect(() => {
+    displayNewRemark("intro");
+  }, []);
+
   useEffect(() => {
     setJustDisplayedRemarks(true);
     setTimeout(() => {
       setJustDisplayedRemarks(false);
     }, REMARK_TIMEOUT);
   }, [currentRemarkType]);
-
-  useEffect(() => {
-    if (!hasSubmitted) return;
-
-    setTimeout(() => {
-      setCurrentEmote("neutral");
-      setCurrentText(null);
-    }, 7000);
-  }, [hasSubmitted]);
 
   const handleFocus = () => {
     setCurrentEmote("happy");
@@ -173,10 +172,6 @@ export const SubscribeForm = () => {
       displayNewRemark("firstCharacter");
     }
 
-    if (e.key === "@" && currentRemarkType !== "email") {
-      displayNewRemark("email");
-    }
-
     if (e.key === "Backspace" && currentRemarkType !== "deleting") {
       displayNewRemark("deleting");
     }
@@ -184,6 +179,10 @@ export const SubscribeForm = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setRecipientEmail(e.target.value);
+
+    if (isValidEmail(e.target.value)) {
+      displayNewRemark("validEmail", { force: true });
+    }
   };
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e: FormEvent) => {
@@ -206,6 +205,7 @@ export const SubscribeForm = () => {
         } else {
           console.error(response);
           displayNewRemark("error", { force: true });
+          setIsSubmitting(false);
         }
       })
       .catch((error) => {
@@ -227,23 +227,6 @@ export const SubscribeForm = () => {
         console.error(error);
       });
   };
-
-  const button = hasSubmitted ? (
-    <a
-      href={sniperData ? sniperData.url : "mailto:mailto:%20"}
-      className={styles.button}
-      target="_blank"
-    >
-      {sniperData
-        ? `Confirm email in ${sniperData.provider_pretty}`
-        : `Open default mail app`}
-      <Icon icon="externalLink" />
-    </a>
-  ) : (
-    <button type="submit" className={styles.button} disabled={isSubmitting}>
-      {isSubmitting ? "Subscribing…" : "Subscribe"}
-    </button>
-  );
 
   return (
     <div className={styles.form}>
@@ -275,7 +258,25 @@ export const SubscribeForm = () => {
             />
           </div>
         )}
-        {button}
+        {hasSubmitted && sniperData ? (
+          <a href={sniperData.url} className={styles.button} target="_blank">
+            Confirm email in {sniperData.provider_pretty}
+            <Icon icon="arrowRight" className={styles.buttonIcon} />
+          </a>
+        ) : (
+          <button
+            type="submit"
+            className={styles.button}
+            disabled={isSubmitting || hasSubmitted}
+            key="subscribeButton"
+          >
+            {isSubmitting
+              ? "Subscribing…"
+              : hasSubmitted
+              ? "Confirm in email app"
+              : "Subscribe"}
+          </button>
+        )}
       </form>
     </div>
   );

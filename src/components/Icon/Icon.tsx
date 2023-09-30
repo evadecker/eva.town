@@ -4,6 +4,7 @@ import * as styles from "./icon.css";
 
 // Icons sourced from https://remixicon.com
 export type IconType =
+  | "arrowRight"
   | "download"
   | "externalLink"
   | "github"
@@ -43,6 +44,12 @@ export interface IconProps {
 }
 
 const iconData: Record<IconType, { line: JSX.Element; filled: JSX.Element }> = {
+  arrowRight: {
+    line: (
+      <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+    ),
+    filled: <path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path>,
+  },
   download: {
     line: (
       <path d="M3 19H21V21H3V19ZM13 13.1716L19.0711 7.1005L20.4853 8.51472L12 17L3.51472 8.51472L4.92893 7.1005L11 13.1716V2H13V13.1716Z"></path>

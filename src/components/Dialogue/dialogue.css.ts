@@ -17,7 +17,7 @@ export const bubble = style({
   padding: "0.5rem 1rem",
   fontFamily: tokens.fontFamily.sans,
   fontSize: tokens.fontSize.small,
-  lineHeight: tokens.lineHeight.small,
+  lineHeight: "1.1",
   letterSpacing: tokens.letterSpacing.loose,
   alignSelf: "center",
 });
