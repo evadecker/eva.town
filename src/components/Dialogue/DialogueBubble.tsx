@@ -7,7 +7,7 @@ import * as styles from "./dialogue.css";
 import { DialogueLine } from "./DialogueLine";
 
 interface DialogueBubbleProps {
-  text: string;
+  text: string | null;
   big?: boolean;
   variant?: Variant;
 }
@@ -41,17 +41,19 @@ export const DialogueBubble = React.memo(
     };
 
     return (
-      <motion.div
-        layout
-        variants={bubbleVariants}
-        initial="initial"
-        animate="animate"
-        className={classNames(styles.bubble, {
-          [styles.big]: big === true,
-        })}
-      >
-        <DialogueLine text={text} variant={variant} />
-      </motion.div>
+      text && (
+        <motion.div
+          layout
+          variants={bubbleVariants}
+          initial="initial"
+          animate="animate"
+          className={classNames(styles.bubble, {
+            [styles.big]: big === true,
+          })}
+        >
+          <DialogueLine text={text} variant={variant} />
+        </motion.div>
+      )
     );
   }
 );

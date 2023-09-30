@@ -19,7 +19,7 @@ export const inputWrapper = style({
   color: theme.text.default,
   background: theme.elementBg.default,
   borderRadius: tokens.radius[2],
-  paddingLeft: "1rem",
+  paddingLeft: "0.75rem",
   ":hover": {
     background: theme.elementBg.hover,
   },
@@ -52,7 +52,7 @@ export const loading = style({
 
 export const input = style({
   background: "transparent",
-  padding: "0.3rem 1rem",
+  padding: "0.3rem 0.75rem",
   color: theme.text.default,
   flex: "1",
   outline: "none",

@@ -26,8 +26,7 @@ type RemarkType =
   | "deleting"
   | "submitting"
   | "success"
-  | "error"
-  | "idle";
+  | "error";
 
 interface Remark {
   text: string[];
@@ -94,7 +93,11 @@ const remarks: Record<RemarkType, Remark> = {
     emote: "thinking",
   },
   success: {
-    text: ["you’re in! good job!", "you’re subscribed!", "you did it!"],
+    text: [
+      "yay! almost there",
+      "nice! one more step",
+      "it worked! check ur inbox",
+    ],
     emote: "starstruck",
   },
   error: {
@@ -108,10 +111,6 @@ const remarks: Record<RemarkType, Remark> = {
     ],
     emote: "sob",
   },
-  idle: {
-    text: ["what are you waiting for", "you know you can go now"],
-    emote: "tired",
-  },
 };
 
 const getRandomRemark = (remarks: string[]): string => {
@@ -124,7 +123,7 @@ export const SubscribeForm = () => {
   const [justDisplayedRemarks, setJustDisplayedRemarks] = useState(false);
   const [recipientEmail, setRecipientEmail] = useState<string>("");
 
-  const [currentText, setCurrentText] = useState<string>(
+  const [currentText, setCurrentText] = useState<string | null>(
     getRandomRemark(remarks.intro.text)
   );
   const [currentEmote, setCurrentEmote] = useState<EmoteType>("neutral");
@@ -133,13 +132,16 @@ export const SubscribeForm = () => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [sniperData, setSniperData] = useState<SniperResponse | null>(null);
 
-  const displayNewRemark = (remarkType: RemarkType) => {
-    // If a remark just appeared, don't display a new one
-    if (justDisplayedRemarks) return;
-
-    setCurrentRemarkType(remarkType);
-    setCurrentText(getRandomRemark(remarks[remarkType].text));
-    setCurrentEmote(remarks[remarkType].emote);
+  const displayNewRemark = (
+    remarkType: RemarkType,
+    options?: { force?: boolean }
+  ) => {
+    // If a remark just appeared, don't display a new one, UNLESS force is set to true
+    if (options?.force === true || !justDisplayedRemarks) {
+      setCurrentRemarkType(remarkType);
+      setCurrentText(getRandomRemark(remarks[remarkType].text));
+      setCurrentEmote(remarks[remarkType].emote);
+    }
   };
 
   useEffect(() => {
@@ -154,12 +156,8 @@ export const SubscribeForm = () => {
 
     setTimeout(() => {
       setCurrentEmote("neutral");
-      setCurrentText("…");
+      setCurrentText(null);
     }, 7000);
-
-    setTimeout(() => {
-      displayNewRemark("idle");
-    }, 9000);
   }, [hasSubmitted]);
 
   const handleFocus = () => {
@@ -192,7 +190,7 @@ export const SubscribeForm = () => {
     e.preventDefault();
 
     setIsSubmitting(true);
-    displayNewRemark("submitting");
+    displayNewRemark("submitting", { force: true });
 
     const url = `https://buttondown.email/api/emails/embed-subscribe/notesfromeva`;
     const data = new FormData(e.target as HTMLFormElement);
@@ -200,18 +198,18 @@ export const SubscribeForm = () => {
     fetch(url, { method: "POST", body: data })
       .then((response) => {
         if (response.ok) {
-          displayNewRemark("success");
-          setHasSubmitted(true);
+          setTimeout(() => {
+            displayNewRemark("success", { force: true });
+            setHasSubmitted(true);
+            setIsSubmitting(false);
+          }, 1500);
         } else {
           console.error(response);
-          displayNewRemark("error");
+          displayNewRemark("error", { force: true });
         }
       })
       .catch((error) => {
         console.error(error);
-      })
-      .finally(() => {
-        setIsSubmitting(false);
       });
 
     const sender = "hey@evadecker.com";
@@ -261,6 +259,7 @@ export const SubscribeForm = () => {
               className={classNames(styles.inputIcon, {
                 [styles.loading]: isSubmitting,
               })}
+              variant="filled"
             />
             <input
               className={styles.input}

@@ -8,7 +8,7 @@ import { Emote, type EmoteType } from "./Emote";
 export type Variant = "wave" | "shake" | "none";
 
 interface DialogueProps {
-  text: string;
+  text: string | null;
   emote: EmoteType;
   big?: boolean;
   variant?: Variant;
