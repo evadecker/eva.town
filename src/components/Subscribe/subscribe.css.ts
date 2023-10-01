@@ -42,7 +42,7 @@ export const loading = style({
 export const input = style({
   color: theme.text.default,
   background: theme.elementBg.default,
-  padding: "0 1rem",
+  padding: "0 1em",
   paddingInlineEnd: "3rem",
   ":hover": {
     background: theme.elementBg.hover,
@@ -62,10 +62,10 @@ export const iconButton = style({
   top: "50%",
   transform: "translateY(-50%)",
   right: "0.5rem",
-  width: "32px",
+  width: "48px",
   height: "32px",
   padding: "0",
-  borderRadius: tokens.radius[2],
+  borderRadius: tokens.radius[100],
   border: "none",
   cursor: "pointer",
   display: "flex",
@@ -84,6 +84,7 @@ export const iconButton = style({
 export const sniperLink = style({
   background: theme.solidBg.default,
   color: theme.color.whiteA12,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-start",
@@ -108,7 +109,7 @@ globalStyle(`${input}, ${sniperLink}, ${checkInbox}`, {
   height: "3rem",
   width: "100%",
   border: "none",
-  borderRadius: tokens.radius[3],
+  borderRadius: tokens.radius[100],
   lineHeight: "1",
 });
 
@@ -121,12 +122,16 @@ export const arrow = style({
 
 export const sniperLogo = style({
   backgroundColor: theme.color.whiteA12,
-  width: "32px",
+  width: "48px",
   height: "32px",
   padding: "0.25rem",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
   marginInlineEnd: "0.75rem",
-  borderRadius: tokens.radius[2],
+  borderRadius: tokens.radius[100],
+});
+
+globalStyle(`${sniperLogo} img`, {
+  width: "24px",
 });

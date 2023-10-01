@@ -41,7 +41,7 @@ export const emote = style({
 
 export const emphasized = style({
   display: "inline-block",
-  fontVariationSettings: "wdth 90 , wght 600",
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
 });
 
 export const word = style({
