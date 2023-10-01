@@ -12,6 +12,12 @@ globalKeyframes("spin", {
   },
 });
 
+export const header = style({
+  fontSize: tokens.fontSize.h5,
+  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
+  lineHeight: tokens.lineHeight.h5,
+});
+
 export const form = style({
   height: "100%",
   display: "flex",

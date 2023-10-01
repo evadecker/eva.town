@@ -274,8 +274,10 @@ export const SubscribeForm = () => {
             aria-disabled={isSubmitting || hasSubmitted}
           >
             <input
+              aria-label="Your email"
               className={styles.input}
               type="email"
+              id="email"
               name="email"
               placeholder="Your email"
               onFocus={handleFocus}

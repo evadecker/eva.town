@@ -20,6 +20,7 @@ export const link = style({
   justifySelf: "flex-start",
   display: "inline-flex",
   alignItems: "center",
+  padding: "0.25rem 0",
   ":hover": {
     textDecoration: "underline",
   },
