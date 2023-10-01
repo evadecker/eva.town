@@ -11,7 +11,7 @@ import { isValidEmail } from "src/helpers/helpers";
 
 import { Dialogue } from "../Dialogue/Dialogue";
 import type { EmoteType } from "../Dialogue/Emote";
-import { Icon } from "../Icon/Icon";
+import { Icon, type IconType } from "../Icon/Icon";
 import * as styles from "./subscribe.css";
 
 interface SniperResponse {
@@ -165,6 +165,7 @@ export const SubscribeForm = () => {
   const [currentText, setCurrentText] = useState<string | null>("");
   const [currentEmote, setCurrentEmote] = useState<EmoteType>("neutral");
 
+  const [isHoveringSubscribe, setIsHoveringSubscribe] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [sniperData, setSniperData] = useState<SniperResponse | null>(null);
@@ -292,9 +293,16 @@ export const SubscribeForm = () => {
               className={styles.iconButton}
               disabled={isSubmitting || hasSubmitted}
               aria-label="Subscribe"
+              onMouseOver={() => {
+                setIsHoveringSubscribe(true);
+              }}
+              onMouseLeave={() => {
+                setIsHoveringSubscribe(false);
+              }}
             >
               <Icon
-                icon={isSubmitting ? "loader" : "arrowRight"}
+                icon={isSubmitting ? "loader" : "mailAdd"}
+                variant={isHoveringSubscribe ? "filled" : "line"}
                 className={classNames({
                   [styles.loading]: isSubmitting,
                 })}
