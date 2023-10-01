@@ -87,7 +87,7 @@ globalStyle(`${article} h2:first-child`, {
 });
 
 globalStyle(`${article} p + p`, {
-  textIndent: "2rem",
+  textIndent: "1.5rem",
 });
 
 globalStyle(`${articleBody} * + ul, ${articleBody} * + ol`, {
@@ -100,7 +100,7 @@ globalStyle(`${articleBody} ul ul, ${articleBody} ol ol`, {
 
 globalStyle(`${articleBody} ul, ${articleBody} ol`, {
   listStyleType: "none",
-  paddingLeft: "2.5rem",
+  paddingLeft: "1.5rem",
 });
 
 globalStyle(`${articleBody} li`, {
@@ -109,8 +109,8 @@ globalStyle(`${articleBody} li`, {
 
 globalStyle(`${articleBody} li::before`, {
   position: "absolute",
-  width: "2.5rem",
-  left: "-2.5rem",
+  width: "1.5rem",
+  left: "-1.5rem",
   color: theme.text.subtle,
 });
 

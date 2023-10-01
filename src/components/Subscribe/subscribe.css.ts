@@ -12,6 +12,11 @@ globalKeyframes("spin", {
   },
 });
 
+export const header = style({
+  fontSize: tokens.fontSize.h5,
+  lineHeight: tokens.lineHeight.h5,
+});
+
 export const form = style({
   height: "100%",
   display: "flex",

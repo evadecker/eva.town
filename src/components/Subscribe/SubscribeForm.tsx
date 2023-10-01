@@ -267,15 +267,17 @@ export const SubscribeForm = () => {
   return (
     <div className={styles.form}>
       <Dialogue text={currentText} emote={currentEmote} />
-      <form onSubmit={handleSubmit}>
+      <form action="" onSubmit={handleSubmit}>
         {!hasSubmitted ? (
           <div
             className={styles.inputWrapper}
             aria-disabled={isSubmitting || hasSubmitted}
           >
             <input
+              aria-label="Your email"
               className={styles.input}
               type="email"
+              id="email"
               name="email"
               placeholder="Your email"
               onFocus={handleFocus}

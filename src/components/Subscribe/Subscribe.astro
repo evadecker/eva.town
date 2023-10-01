@@ -3,6 +3,7 @@ import Box from "../Box/Box.astro";
 import Cover from "../Cover/Cover.astro";
 import Grid from "../Grid/Grid.astro";
 import Stack from "../Stack/Stack.astro";
+import * as styles from "./subscribe.css";
 import { SubscribeForm } from "./SubscribeForm";
 ---
 
@@ -10,7 +11,7 @@ import { SubscribeForm } from "./SubscribeForm";
   <Grid>
     <Cover>
       <Stack spacing="tight">
-        <h4>Notes From Eva</h4>
+        <header class={styles.header}>Notes From Eva</header>
         <small>
           A few times a year, I share thoughts and observations about design,
           development, and life that lives outside a screen. Subscribe to follow
