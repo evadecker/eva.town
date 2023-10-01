@@ -13,7 +13,7 @@ I still think coding is cool.
 
 Most of my job titles have included the word "designer", but code is my medium and the browser is my favorite design tool. I fully believe that designing for the web means working *in the medium* of the web—namely, HTML and CSS. Interactive mediums deserve interactive iteration.
 
-I love the web, but when I need to think about gnarly problems, I take my sketchbook and my pen, I find a quiet place, and I write. There's no better tool.
+I love the web, but when I need to think about gnarly problems, I take my sketchbook and my pen, I find a quiet place, and I write.
 
 For the past three years, I've worked as a freelance designer and developer, embedding on teams to strengthen design systems. I try to help designers learn more about code, and I try to convince engineers they have better design instincts than they think. Sometimes I succeed.
 
