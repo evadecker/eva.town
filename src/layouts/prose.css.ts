@@ -42,6 +42,9 @@ globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {
 
 globalStyle(`${articleBody} :not(h1, h2, h3, h4, h5, h6) a`, {
   boxShadow: `inset 0 -2px ${theme.text.linkUnderline}`,
+  // Visual alignment and increasing tap target
+  paddingBlock: "0.3rem 0.1rem",
+  marginBlock: "-0.3rem -0.1rem",
 });
 
 globalStyle(`${article} a:hover`, {
@@ -87,7 +90,7 @@ globalStyle(`${article} h2:first-child`, {
 });
 
 globalStyle(`${article} p + p`, {
-  textIndent: "1.5rem",
+  textIndent: "2rem",
 });
 
 globalStyle(`${articleBody} * + ul, ${articleBody} * + ol`, {
@@ -100,7 +103,7 @@ globalStyle(`${articleBody} ul ul, ${articleBody} ol ol`, {
 
 globalStyle(`${articleBody} ul, ${articleBody} ol`, {
   listStyleType: "none",
-  paddingLeft: "1.5rem",
+  paddingLeft: "2rem",
 });
 
 globalStyle(`${articleBody} li`, {
@@ -109,8 +112,8 @@ globalStyle(`${articleBody} li`, {
 
 globalStyle(`${articleBody} li::before`, {
   position: "absolute",
-  width: "1.5rem",
-  left: "-1.5rem",
+  width: "2rem",
+  left: "-2rem",
   color: theme.text.subtle,
 });
 
