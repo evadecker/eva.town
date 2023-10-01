@@ -132,7 +132,7 @@ globalStyle(`${articleBody} ol li::before`, {
 });
 
 globalStyle(`${article} code`, {
-  backgroundColor: theme.text.codeBg,
+  backgroundColor: theme.elementBg.default,
   borderRadius: tokens.radius[1],
   fontVariationSettings: `'wght' ${theme.fontWeight.code}`,
   padding: "0.1rem 0.2rem",

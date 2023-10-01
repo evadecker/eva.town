@@ -46,7 +46,6 @@ export const theme = createGlobalThemeContract(
       link: "",
       linkBg: "",
       linkUnderline: "",
-      codeBg: "",
     },
     fontWeight: {
       light: "",
@@ -113,7 +112,6 @@ createGlobalTheme('[data-theme="light"]', theme, {
     link: plum.plum11,
     linkBg: plum.plum3,
     linkUnderline: mauve.mauve7,
-    codeBg: mauve.mauve3,
   },
   fontWeight: {
     light: "300",
@@ -178,7 +176,6 @@ createGlobalTheme('[data-theme="dark"]', theme, {
     link: plumDark.plum11,
     linkBg: plumDark.plum3,
     linkUnderline: mauveDark.mauve7,
-    codeBg: mauveDark.mauve3,
   },
   // Weights on dark background slightly lower to reduce bleed
   fontWeight: {
