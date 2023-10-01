@@ -267,7 +267,7 @@ export const SubscribeForm = () => {
   return (
     <div className={styles.form}>
       <Dialogue text={currentText} emote={currentEmote} />
-      <form action="" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         {!hasSubmitted ? (
           <div
             className={styles.inputWrapper}
