@@ -1,5 +1,5 @@
-import { theme } from "@styles/theme.css";
-import { tokens } from "@styles/tokens.css";
+import { theme } from "../styles/theme.css";
+import { tokens } from "../styles/tokens.css";
 import { globalKeyframes, style } from "@vanilla-extract/css";
 
 globalKeyframes("text-offset", {
@@ -66,7 +66,7 @@ export const textClip = style({
   position: "absolute",
   top: "0",
   left: "-0.3rem",
-  textShadow: `-1.5px 0 0 blue , 1.5px 0 0 red , 0 1.5px 0 lime , 0.35rem 0 0 ${theme.background.default} , 4px 4px 0 ${theme.background.default}`,
+  textShadow: `-1.5px 0 0 blue , 1.5px 0 0 red , 0 1.5px 0 lime , 0.35rem 0 0 ${theme.appBg.default} , 4px 4px 0 ${theme.appBg.default}`,
   animation: "text-offset 8s linear infinite",
   transition: "text-shadow 1s ease-in-out",
 });

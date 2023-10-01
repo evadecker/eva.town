@@ -1,16 +1,31 @@
-import { theme } from "@styles/theme.css";
-import { tokens } from "@styles/tokens.css";
 import { globalStyle, style } from "@vanilla-extract/css";
 
+import { theme } from "../styles/theme.css";
+import { tokens } from "../styles/tokens.css";
+
+export const main = style({
+  paddingBottom: "4rem",
+});
+
 export const article = style({
-  maxWidth: tokens.breakpoint.sm,
   margin: "0 auto",
 });
 
-export const articleBody = style({});
+export const articleBody = style({
+  selectors: {
+    "&::after": {
+      content: "⁂",
+      display: "block",
+      textAlign: "center",
+      paddingTop: "3rem",
+      paddingBottom: "3rem",
+      fontSize: tokens.fontSize.h3,
+    },
+  },
+});
 
 export const header = style({
-  padding: `3rem 0 5rem`,
+  padding: `2rem 0 5rem`,
 });
 
 export const subtitle = style({
@@ -18,20 +33,6 @@ export const subtitle = style({
   fontFamily: tokens.fontFamily.sans,
   fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
   lineHeight: tokens.lineHeight.h4,
-  marginTop: "0.5rem",
-});
-
-globalStyle(`${articleBody} hr`, {
-  border: "none",
-});
-
-globalStyle(`${articleBody}::after, ${articleBody} hr::after`, {
-  content: "⁂",
-  display: "block",
-  textAlign: "center",
-  paddingTop: tokens.space[9],
-  paddingBottom: tokens.space[9],
-  fontSize: tokens.fontSize.h3,
 });
 
 globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {
@@ -41,6 +42,9 @@ globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {
 
 globalStyle(`${articleBody} :not(h1, h2, h3, h4, h5, h6) a`, {
   boxShadow: `inset 0 -2px ${theme.text.linkUnderline}`,
+  // Visual alignment and increasing tap target
+  paddingBlock: "0.3rem 0.1rem",
+  marginBlock: "-0.3rem -0.1rem",
 });
 
 globalStyle(`${article} a:hover`, {
@@ -53,7 +57,7 @@ globalStyle(`${article} a:hover`, {
 globalStyle(
   `${article} h2, ${article} h3, ${article} h4, ${article} h5, ${article} h6`,
   {
-    scrollMarginTop: tokens.space[5],
+    scrollMarginTop: "3rem",
     marginBottom: "1rem",
   }
 );
@@ -101,7 +105,7 @@ globalStyle(`${articleBody} ul ul, ${articleBody} ol ol`, {
 
 globalStyle(`${articleBody} ul, ${articleBody} ol`, {
   listStyleType: "none",
-  paddingLeft: "2.5rem",
+  paddingLeft: "2rem",
 });
 
 globalStyle(`${articleBody} li`, {
@@ -110,8 +114,8 @@ globalStyle(`${articleBody} li`, {
 
 globalStyle(`${articleBody} li::before`, {
   position: "absolute",
-  width: "2.5rem",
-  left: "-2.5rem",
+  width: "2rem",
+  left: "-2rem",
   color: theme.text.subtle,
 });
 

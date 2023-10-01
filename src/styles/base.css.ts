@@ -87,7 +87,7 @@ globalStyle("html, body", {
 
 globalStyle("body", {
   color: theme.text.default,
-  backgroundColor: theme.background.default,
+  backgroundColor: theme.appBg.default,
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
@@ -95,8 +95,6 @@ globalStyle("body", {
 
 globalStyle("main", {
   flex: 1,
-  padding: tokens.space[5],
-  paddingTop: 0,
   width: "100%",
 });
 

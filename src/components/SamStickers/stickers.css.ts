@@ -1,16 +1,17 @@
-import { theme } from "@styles/theme.css";
-import { tokens } from "@styles/tokens.css";
 import { style } from "@vanilla-extract/css";
+
+import { theme } from "../../styles/theme.css";
+import { tokens } from "../../styles/tokens.css";
 
 export const shoo = style({
   all: "unset",
   position: "fixed",
   background: theme.text.default,
-  color: theme.background.default,
-  padding: `${tokens.space[2]} ${tokens.space[3]}`,
+  color: theme.appBg.default,
+  padding: "0.5rem 1rem",
   borderRadius: tokens.radius[2],
-  right: tokens.space[5],
-  bottom: tokens.space[5],
+  right: "2rem",
+  bottom: "2rem",
   fontVariationSettings: "wght 600",
   cursor: "pointer",
   pointerEvents: "auto",

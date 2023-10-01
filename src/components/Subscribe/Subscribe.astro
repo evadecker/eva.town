@@ -1,0 +1,24 @@
+---
+import Box from "../Box/Box.astro";
+import Cover from "../Cover/Cover.astro";
+import Grid from "../Grid/Grid.astro";
+import Stack from "../Stack/Stack.astro";
+import * as styles from "./subscribe.css";
+import { SubscribeForm } from "./SubscribeForm";
+---
+
+<Box>
+  <Grid>
+    <Cover>
+      <Stack spacing="tight">
+        <header class={styles.header}>Notes From Eva</header>
+        <small>
+          A few times a year, I share thoughts and observations about design,
+          development, and life that lives outside a screen. Subscribe to follow
+          along. No ads or tracking. Just me and you.
+        </small>
+      </Stack>
+    </Cover>
+    <SubscribeForm client:visible />
+  </Grid>
+</Box>

@@ -1,4 +1,7 @@
 import { useStore } from "@nanostores/react";
+import { Howl } from "howler";
+import { useEffect } from "react";
+
 import {
   $activeInstrument,
   $activeNotehead,
@@ -11,10 +14,7 @@ import {
   nextInstrument,
   prevInstrument,
   setActiveNotehead,
-} from "@stores/synth";
-import { Howl } from "howler";
-import { useEffect } from "react";
-
+} from "../../stores/synth";
 import { KeyboardHandler } from "./KeyboardHandler";
 import { SynthBase } from "./SynthBase";
 import { type NoteName } from "./SynthKey";

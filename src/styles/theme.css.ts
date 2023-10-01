@@ -1,9 +1,13 @@
 import {
   blackA,
   mauve,
+  mauveA,
   mauveDark,
+  mauveDarkA,
   plum,
+  plumA,
   plumDark,
+  plumDarkA,
   whiteA,
 } from "@radix-ui/colors";
 import {
@@ -13,23 +17,36 @@ import {
 
 export const theme = createGlobalThemeContract(
   {
-    background: {
-      default: "",
-      alt: "",
+    // https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale
+    appBg: {
+      default: "", // Step 1 in Radix-UI
+      subtle: "", // Step 2
+    },
+    elementBg: {
+      default: "", // Step 3
+      hover: "", // Step 4
+      active: "", // Step 5
+    },
+    border: {
+      subtle: "", // Step 6
+      default: "", // Step 7
+      hover: "", // Step 8
+      outline: "",
+    },
+    solidBg: {
+      default: "", // Step 9
+      hover: "", // Step 10
     },
     text: {
-      default: "",
-      subtle: "",
+      subtle: "", // Step 11
+      default: "", // Step 12
       selection: "",
+      iconA: "",
       inlineIcon: "",
       link: "",
       linkBg: "",
       linkUnderline: "",
       codeBg: "",
-    },
-    border: {
-      default: "",
-      subtle: "",
     },
     fontWeight: {
       light: "",
@@ -40,15 +57,10 @@ export const theme = createGlobalThemeContract(
       bold: "",
     },
     color: {
-      ...Object.fromEntries(
-        Object.entries(plum).map(([key, _value]) => [key, ""])
-      ),
-      ...Object.fromEntries(
-        Object.entries(blackA).map(([key, _value]) => [key, ""])
-      ),
-      ...Object.fromEntries(
-        Object.entries(whiteA).map(([key, _value]) => [key, ""])
-      ),
+      ...mauve,
+      ...plum,
+      ...blackA,
+      ...whiteA,
     },
     synth: {
       base: "",
@@ -73,23 +85,35 @@ export const theme = createGlobalThemeContract(
 );
 
 createGlobalTheme('[data-theme="light"]', theme, {
-  background: {
+  appBg: {
     default: mauve.mauve1,
-    alt: mauve.mauve2,
+    subtle: mauve.mauve2,
+  },
+  elementBg: {
+    default: mauve.mauve3,
+    hover: mauve.mauve4,
+    active: mauve.mauve5,
+  },
+  border: {
+    subtle: mauve.mauve6,
+    default: mauve.mauve7,
+    hover: mauve.mauve8,
+    outline: plumA.plumA9,
+  },
+  solidBg: {
+    default: plum.plum9,
+    hover: plum.plum10,
   },
   text: {
-    default: mauve.mauve12,
     subtle: mauve.mauve11,
+    default: mauve.mauve12,
     selection: plum.plum8,
+    iconA: mauveA.mauveA9,
     inlineIcon: plum.plum12,
     link: plum.plum11,
     linkBg: plum.plum3,
     linkUnderline: mauve.mauve7,
     codeBg: mauve.mauve3,
-  },
-  border: {
-    default: mauve.mauve7,
-    subtle: mauve.mauve6,
   },
   fontWeight: {
     light: "300",
@@ -101,6 +125,7 @@ createGlobalTheme('[data-theme="light"]', theme, {
   },
   color: {
     ...plum,
+    ...mauve,
     ...blackA,
     ...whiteA,
   },
@@ -125,23 +150,35 @@ createGlobalTheme('[data-theme="light"]', theme, {
 });
 
 createGlobalTheme('[data-theme="dark"]', theme, {
-  background: {
+  appBg: {
     default: mauveDark.mauve1,
-    alt: mauveDark.mauve2,
+    subtle: mauveDark.mauve2,
+  },
+  elementBg: {
+    default: mauveDark.mauve3,
+    hover: mauveDark.mauve4,
+    active: mauveDark.mauve5,
+  },
+  border: {
+    subtle: mauveDark.mauve6,
+    default: mauveDark.mauve7,
+    hover: mauveDark.mauve8,
+    outline: plumDarkA.plumA9,
+  },
+  solidBg: {
+    default: plumDark.plum9,
+    hover: plumDark.plum10,
   },
   text: {
-    default: mauveDark.mauve12,
     subtle: mauveDark.mauve11,
+    default: mauveDark.mauve12,
     selection: plumDark.plum8,
+    iconA: mauveDarkA.mauveA9,
     inlineIcon: plumDark.plum12,
     link: plumDark.plum11,
     linkBg: plumDark.plum3,
     linkUnderline: mauveDark.mauve7,
     codeBg: mauveDark.mauve3,
-  },
-  border: {
-    default: mauveDark.mauve7,
-    subtle: mauveDark.mauve6,
   },
   // Weights on dark background slightly lower to reduce bleed
   fontWeight: {
@@ -154,6 +191,7 @@ createGlobalTheme('[data-theme="dark"]', theme, {
   },
   color: {
     ...plumDark,
+    ...mauveDark,
     ...blackA,
     ...whiteA,
   },

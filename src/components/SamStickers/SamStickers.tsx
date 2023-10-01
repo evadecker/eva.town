@@ -1,9 +1,9 @@
 import { useStore } from "@nanostores/react";
-import { clearSams, numSams } from "@stores/sam";
 import { AnimatePresence, motion } from "framer-motion";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 
+import { clearSams, numSams } from "../../stores/sam";
 import { SamSticker, type SamStickerProps } from "./SamSticker";
 import * as styles from "./stickers.css";
 

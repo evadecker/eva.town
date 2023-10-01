@@ -1,69 +1,32 @@
-import { theme } from "@styles/theme.css";
-import { tokens } from "@styles/tokens.css";
 import { style } from "@vanilla-extract/css";
 
+import { theme } from "../../styles/theme.css";
+
 export const footer = style({
-  borderTop: "1px solid",
-  borderColor: theme.border.default,
-  display: "flex",
+  background: theme.appBg.subtle,
+  borderTop: `1px solid ${theme.border.subtle}`,
   width: "100%",
+  padding: "2rem 0",
   selectors: {
     "body[data-animating] &": {
-      transition: "border-color 1s ease-in-out",
+      transitionProperty: "background, border",
+      transitionDuration: "1s",
+      transitionTimingFunction: "ease-in-out",
     },
   },
 });
 
-export const footerContent = style({
-  marginRight: "auto",
-  padding: tokens.space[5],
-  paddingBottom: tokens.space[4],
-});
-
-export const links = style({
-  paddingBottom: tokens.space[4],
-  display: "flex",
-  flexDirection: "row",
-});
-
-export const linkCol = style({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-start",
-  paddingRight: tokens.space[8],
-});
-
 export const link = style({
-  padding: `${tokens.space[1]} 0`,
+  justifySelf: "flex-start",
   display: "inline-flex",
   alignItems: "center",
-});
-
-export const linkText = style({
-  selectors: {
-    [`${link}:hover &`]: {
-      textDecoration: "underline",
-    },
+  padding: "0.25rem 0",
+  ":hover": {
+    textDecoration: "underline",
   },
 });
 
 export const linkIcon = style({
   color: theme.text.inlineIcon,
-  marginRight: tokens.space[2],
-});
-
-export const dialogue = style({
-  alignSelf: "flex-end",
-});
-
-export const lastTended = style({
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  color: theme.text.subtle,
-});
-
-export const lastTendedIcon = style({
-  color: theme.text.inlineIcon,
-  margin: `0 ${tokens.space[3]} 0 ${tokens.space[1]}`,
+  marginRight: "0.5rem",
 });

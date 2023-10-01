@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Prose.astro
+layout: ../layouts/ProseLayout.astro
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers evadecker.com.
 datePublished: 2023-09-26 03:47:00-04:00
@@ -20,7 +20,7 @@ Code is edited using [VS Code](https://code.visualstudio.com) on a [MacBook Pro]
 
 End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview devices, test accessibility, and toggle user preferences like `(prefers-color-scheme)`.
 
-Hosting and automatic deployment is handled with [Vercel](https://vercel.com/).
+Domain registration, hosting, and deployment are via [Vercel](https://vercel.com/). Email forwarding is through [ImprovMX](https://improvmx.com). I send occasional [newsletters](https://buttondown.email/notesfromeva) using [Buttondown](https://buttondown.email).
 
 ## Typography
 

@@ -1,0 +1,20 @@
+---
+import Center from "../components/Center/Center.astro";
+import Cover from "../components/Cover/Cover.astro";
+import Footer from "../components/Footer/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import * as styles from "./prose.css";
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <main class={styles.main}>
+    <Cover>
+      <Center>
+        <slot />
+      </Center>
+    </Cover>
+  </main>
+  <Footer />
+</BaseLayout>
