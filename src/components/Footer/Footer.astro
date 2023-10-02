@@ -79,7 +79,12 @@ try {
           <a class={styles.link} href="/colophon">Colophon</a>
         </Stack>
       </Grid>
-      <RelativeDate date={dateModified} prefix="Last tended" icon="sparkling" />
+      <RelativeDate
+        date={dateModified}
+        prefix="Last tended"
+        icon="sparkling"
+        client:idle
+      />
     </Stack>
   </Center>
 </footer>
