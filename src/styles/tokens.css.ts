@@ -1,18 +1,12 @@
-import { createGlobalTheme, globalFontFace } from "@vanilla-extract/css";
-
-const firaCode = "fira-code";
-
-globalFontFace(firaCode, {
-  src: 'url("/fonts/FiraCode-VF.woff2") format("woff2")',
-  fontStyle: "normal",
-});
+import { createGlobalTheme } from "@vanilla-extract/css";
 
 export const tokens = createGlobalTheme(":root", {
   fontFamily: {
     sans: 'roc-grotesk-variable, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     serif:
       'loretta-variable, Georgia, Cambria, "Times New Roman", Times, serif',
-    mono: `${firaCode}, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
+    // System monospace font: https://qwtel.com/posts/software/the-monospaced-system-ui-css-font-stack/
+    mono: 'ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro","Fira Mono", "Droid Sans Mono", "Courier New", monospace',
   },
 
   // https://utopia.fyi/type/calculator?c=320,16,1.125,800,22,1.2,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
