@@ -23,19 +23,23 @@ const { frontmatter } = Astro.props;
           <Stack>
             <h1 itemprop="name">{frontmatter.title}</h1>
             <p class={styles.subtitle}>{frontmatter.description}</p>
-            <Stack spacing="tight">
+            <Stack>
               <RelativeDate
                 date={frontmatter.datePublished}
                 prefix="Published"
                 icon="seedling"
                 client:load
               />
-              <RelativeDate
-                date={frontmatter.dateModified}
-                prefix="Last tended"
-                icon="sparkling"
-                client:load
-              />
+              {
+                frontmatter.dateModified && (
+                  <RelativeDate
+                    date={frontmatter.dateModified}
+                    prefix="Last tended"
+                    icon="sparkling"
+                    client:load
+                  />
+                )
+              }
             </Stack>
           </Stack>
         </header>

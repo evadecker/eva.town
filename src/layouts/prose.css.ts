@@ -95,10 +95,12 @@ globalStyle(`${article} p + p`, {
 
 globalStyle(`${articleBody} * + ul, ${articleBody} * + ol`, {
   marginTop: "1em",
+  marginBottom: "1em",
 });
 
 globalStyle(`${articleBody} ul ul, ${articleBody} ol ol`, {
   marginTop: "0",
+  marginBottom: "0",
 });
 
 globalStyle(`${articleBody} ul, ${articleBody} ol`, {
@@ -130,7 +132,7 @@ globalStyle(`${articleBody} ol li::before`, {
 });
 
 globalStyle(`${article} code`, {
-  backgroundColor: theme.text.codeBg,
+  backgroundColor: theme.elementBg.default,
   borderRadius: tokens.radius[1],
   padding: "0.1rem 0.2rem",
   fontSize: "0.8em",
