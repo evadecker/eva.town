@@ -20,7 +20,11 @@ globalKeyframes("grow", {
 
 globalKeyframes("stroke", {
   "0%": {
+    stroke: "transparent",
     strokeDashoffset: "1",
+  },
+  "0.0001%": {
+    stroke: "currentColor",
   },
   "100%": {
     strokeDashoffset: "0",
