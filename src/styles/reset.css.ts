@@ -18,6 +18,10 @@ globalStyle("img, picture, video, canvas, svg", {
   maxWidth: "100%",
 });
 
+globalStyle("svg *", {
+  transformBox: "fill-box",
+});
+
 globalStyle("input, button, textarea, select", {
   font: "inherit",
 });
