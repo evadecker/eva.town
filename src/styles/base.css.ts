@@ -1,4 +1,4 @@
-import { globalStyle } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 import { theme } from "./theme.css";
 import { tokens } from "./tokens.css";
@@ -110,4 +110,18 @@ globalStyle("body[data-animating]", {
 
 globalStyle("body[data-animating] svg *", {
   transition: "fill 1s ease-in-out",
+});
+
+// ======================
+// Helpers
+// ======================
+
+export const visuallyHidden = style({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: "1px",
+  overflow: "hidden",
+  position: "absolute",
+  whiteSpace: "nowrap",
+  width: "1px",
 });

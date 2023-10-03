@@ -11,6 +11,37 @@ export const header = style({
   paddingBottom: "2rem",
 });
 
+export const designs = style({
+  "::before": {
+    content: "✦",
+    color: theme.text.subtle,
+  },
+  "::after": {
+    content: "✦",
+    color: theme.text.subtle,
+  },
+});
+
+export const builds = style({
+  "::before": {
+    content: "✸",
+    color: theme.text.subtle,
+  },
+  "::after": {
+    content: "✸",
+    color: theme.text.subtle,
+  },
+});
+
+export const web = style({
+  "::after": {
+    content: "☺︎",
+    width: "3em",
+    display: "inline-block",
+    textAlign: "right",
+  },
+});
+
 export const subtitle = style({
   fontSize: tokens.fontSize.h5,
   fontFamily: tokens.fontFamily.sans,

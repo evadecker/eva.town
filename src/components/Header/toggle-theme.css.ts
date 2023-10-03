@@ -1,16 +1,7 @@
-import { globalKeyframes, style } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
 import { theme } from "../../styles/theme.css";
 import { tokens } from "../../styles/tokens.css";
-
-globalKeyframes("grow", {
-  "0%": {
-    transform: "scale(1)",
-  },
-  "100%": {
-    transform: "scale(100)",
-  },
-});
 
 export const animationContainer = style({
   position: "fixed",
@@ -64,7 +55,7 @@ const icon = style({
   position: "absolute",
   width: "24px",
   height: "24px",
-  color: theme.text.inlineIcon,
+  color: theme.text.subtle,
 });
 
 export const moon = style([
