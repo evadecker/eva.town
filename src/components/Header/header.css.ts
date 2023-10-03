@@ -5,7 +5,7 @@ import { tokens } from "../../styles/tokens.css";
 
 export const header = style({
   width: "100%",
-  padding: "2rem 0",
+  padding: "1.5em 0",
 });
 
 export const headerContents = style({
@@ -15,6 +15,7 @@ export const headerContents = style({
 });
 
 export const wordmark = style({
+  fontSize: tokens.fontSize.h5,
   fontFamily: tokens.fontFamily.sans,
   fontVariationSettings: `"wdth" ${tokens.fontWidth.wide}, "wght" ${theme.fontWeight.bold}`,
   textDecoration: "none",
