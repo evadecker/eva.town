@@ -2,12 +2,12 @@
 layout: ../../layouts/ProseLayout.astro
 title: About Eva
 description: It’s pronounced AY-vuh.
-datePublished: 2023-10-01 19:34:31-04:00
+datePublished: 2023-10-03 01:03:55-04:00
 ---
 
 I began coding in the late 2000s, typing into a textarea of vBulletin for a Nintendo fan forum. Without syntax highlighting, `border-radius`, or `flexbox`, I'd spend hours exporting assets from Photoshop and laying out content in CSS.
 
-Type a few characters, and suddenly every `button` would change colors on hover. (From blue to... a slightly different blue!) I thought this was the coolest thing in the world.
+Type a few characters, and suddenly every `button` changes colors on hover. (From blue to... a slightly different blue!) I thought this was the coolest thing in the world.
 
 I still think coding is cool.
 
