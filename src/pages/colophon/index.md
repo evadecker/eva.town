@@ -24,7 +24,7 @@ Domain registration, hosting, and deployment are via [Vercel](https://vercel.com
 
 ## Typography
 
-Headings and components are set in [Roc Grotesk Variable](https://fonts.adobe.com/fonts/roc-grotesk-variable). As the name suggests, it's a variable font, meaning I can stretch character widths and fine-tune weights for different uses. Body text is set in [Loretta Variable](https://fonts.adobe.com/fonts/loretta-variable). Both typefaces are served via [Adobe Fonts](https://fonts.adobe.com). Monospaced text is set in [Fira Code](https://github.com/tonsky/FiraCode), hosted locally.
+Headings and components are set in [Roc Grotesk Variable](https://fonts.adobe.com/fonts/roc-grotesk-variable). As the name suggests, it's a variable font, meaning I can stretch character widths and fine-tune weights for different uses. Body text is set in [Loretta Variable](https://fonts.adobe.com/fonts/loretta-variable). Both typefaces are served via [Adobe Fonts](https://fonts.adobe.com). Additional typefaces used in the heading on the homepage include [Orpheus Pro](https://fonts.adobe.com/fonts/orpheus) and [PF Pixelscript](https://fonts.adobe.com/fonts/pf-pixelscript).
 
 Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
 

@@ -1,16 +1,7 @@
-import { globalKeyframes, globalStyle, style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 import { theme } from "../../styles/theme.css";
 import { tokens } from "../../styles/tokens.css";
-
-globalKeyframes("spin", {
-  "0%": {
-    transform: "rotate(0deg)",
-  },
-  "100%": {
-    transform: "rotate(360deg)",
-  },
-});
 
 export const header = style({
   fontSize: tokens.fontSize.h5,
