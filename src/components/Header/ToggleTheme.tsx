@@ -1,4 +1,4 @@
-import { plum, plumDark } from "@radix-ui/colors";
+import { mauve, mauveDark, plum, plumDark } from "@radix-ui/colors";
 import { useEffect, useRef, useState } from "react";
 
 import { Icon } from "../Icon/Icon";
@@ -54,7 +54,7 @@ export const ToggleTheme = () => {
     if (metaTheme !== null)
       metaTheme.setAttribute(
         "content",
-        activeTheme === "dark" ? plumDark.plum1 : plum.plum1
+        activeTheme === "dark" ? mauveDark.mauve1 : mauve.mauve1
       );
 
     handleAnimation();
