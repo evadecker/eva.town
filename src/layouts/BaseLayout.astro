@@ -21,20 +21,48 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- High priority global metadata -->
     <meta charset="UTF-8" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content={mauveDark.mauve1} />
+
+    <!-- Font preloads -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Page metadata -->
     <link rel="canonical" href={canonicalURL} />
+    <meta name="description" content={description} />
+
+    <!-- Open graph data -->
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Eva Decker" />
+    <meta property="og:image" content="/og/default.png" />
+    <meta
+      property="og:image:alt"
+      content="Eva designs and builds things for the web."
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Low priority metadata -->
+    <link rel="manifest" href="/manifest.json" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+
+    <!-- External stylesheets -->
     <link rel="stylesheet" href="https://use.typekit.net/qbm1slx.css" />
+
     <title>{pageTitle}</title>
     <script>
       window.va =
