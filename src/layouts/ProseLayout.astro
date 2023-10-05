@@ -8,10 +8,17 @@ import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "./BaseLayout.astro";
 import * as styles from "./prose.css";
 
-const { frontmatter } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  datePublished: Date;
+  dateModified?: Date;
+}
+
+const { title, description, datePublished, dateModified } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={title} description={description}>
   <main class={styles.main}>
     <Center>
       <article
@@ -21,19 +28,19 @@ const { frontmatter } = Astro.props;
       >
         <header class={styles.header}>
           <Stack>
-            <h1 itemprop="name">{frontmatter.title}</h1>
-            <p class={styles.subtitle}>{frontmatter.description}</p>
+            <h1 itemprop="name">{title}</h1>
+            <p class={styles.subtitle}>{description}</p>
             <Stack>
               <RelativeDate
-                date={frontmatter.datePublished}
+                date={datePublished}
                 prefix="Published"
                 icon="seedling"
                 client:load
               />
               {
-                frontmatter.dateModified && (
+                dateModified && (
                   <RelativeDate
-                    date={frontmatter.dateModified}
+                    date={dateModified}
                     prefix="Last tended"
                     icon="sparkling"
                     client:load
