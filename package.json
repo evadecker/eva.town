@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -13,8 +12,7 @@
     "stylelint": "npx stylelint '**/*.{css,scss,astro}'",
     "test": "playwright test",
     "prettier": "prettier --write .",
-    "html-validate": "npm run build && npm exec html-validate .vercel/output/static/*.html",
-    "lighthouse": "npm run build && lhci autorun"
+    "html-validate": "npm run build && npm exec html-validate .vercel/output/static/*.html"
   },
   "dependencies": {
     "@astrojs/check": "^0.2.0",
