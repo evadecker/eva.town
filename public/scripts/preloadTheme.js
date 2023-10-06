@@ -12,5 +12,17 @@ const setTheme = () => {
   window.localStorage.setItem("theme", userPreference());
 };
 
-document.addEventListener("astro:page-load", setTheme, { once: true });
+let hasSetTheme = false;
+
+const handleFirstLoad = () => {
+  if (!hasSetTheme) {
+    setTheme();
+    hasSetTheme = true;
+  }
+};
+
+// Run on the very first page load
+window.addEventListener("load", handleFirstLoad);
+
+// Re-apply data attribute after View Transition to presere state
 document.addEventListener("astro:after-swap", setTheme);
