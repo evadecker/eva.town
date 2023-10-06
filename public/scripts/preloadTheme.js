@@ -7,6 +7,10 @@ function userPreference() {
     : "light";
 }
 
-document.body.dataset.theme = userPreference();
+const setTheme = () => {
+  document.body.dataset.theme = userPreference();
+  window.localStorage.setItem("theme", userPreference());
+};
 
-window.localStorage.setItem("theme", userPreference());
+document.addEventListener("astro:page-load", setTheme, { once: true });
+document.addEventListener("astro:after-swap", setTheme);

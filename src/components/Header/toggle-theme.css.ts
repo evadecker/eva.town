@@ -69,42 +69,12 @@ export const moon = style([
   },
 ]);
 
-export const moonHover = style([
-  icon,
-  {
-    opacity: "0",
-    selectors: {
-      "[data-theme='light'] &": {
-        transform: "rotate(60deg)",
-      },
-      "button[data-theme-toggle]:hover &": {
-        opacity: "1",
-      },
-    },
-  },
-]);
-
 export const sun = style([
   icon,
   {
     selectors: {
       "[data-theme='dark'] &": {
         transform: "rotate(-60deg)",
-      },
-    },
-  },
-]);
-
-export const sunHover = style([
-  icon,
-  {
-    opacity: "0",
-    selectors: {
-      "[data-theme='dark'] &": {
-        transform: "rotate(-60deg)",
-      },
-      "button[data-theme-toggle]:hover &": {
-        opacity: "1",
       },
     },
   },

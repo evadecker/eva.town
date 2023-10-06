@@ -96,6 +96,7 @@ globalStyle("body", {
 globalStyle("main", {
   flex: 1,
   width: "100%",
+  paddingBottom: "4rem",
 });
 
 // ======================

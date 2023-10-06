@@ -3,10 +3,6 @@ import { style } from "@vanilla-extract/css";
 import { theme } from "../styles/theme.css";
 import { tokens } from "../styles/tokens.css";
 
-export const main = style({
-  paddingBottom: "4rem",
-});
-
 export const header = style({
   paddingBottom: "2rem",
 });

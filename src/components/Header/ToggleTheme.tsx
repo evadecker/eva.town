@@ -7,6 +7,7 @@ import * as styles from "./toggle-theme.css";
 type Theme = "light" | "dark";
 
 export const ToggleTheme = () => {
+  const [isHovering, setIsHovering] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [activeTheme, setActiveTheme] = useState<Theme>(
     document.body.dataset.theme as Theme
@@ -73,10 +74,16 @@ export const ToggleTheme = () => {
         ref={buttonRef}
         className={styles.button}
       >
-        <Icon icon="sun" className={styles.sun} />
-        <Icon icon="sun" variant="filled" className={styles.sunHover} />
-        <Icon icon="moon" className={styles.moon} />
-        <Icon icon="moon" variant="filled" className={styles.moonHover} />
+        <Icon
+          icon="sun"
+          variant={isHovering ? "filled" : "line"}
+          className={styles.sun}
+        />
+        <Icon
+          icon="moon"
+          variant={isHovering ? "filled" : "line"}
+          className={styles.moon}
+        />
       </button>
       <div className={styles.animationContainer}>
         <div
