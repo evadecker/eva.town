@@ -10,7 +10,17 @@ You're welcome to fork this site, use it as inspiration, and modify things for y
 
 For information about the technology and tools behind this site, visit [https://evadecker.com/colophon](https://evadecker.com/colophon).
 
-## Notes to Self
+## Getting Started
+
+This site uses the [pnpm](https://pnpm.io) package manager because it's faster than npm and produces more readable, diff-able lock files. If you've used `npm` the `pnpm` command is the same as `npm run`. So to get started, clone the repo and run:
+
+```bash
+pnpm dev
+```
+
+Other scripts in [package.json](/package.json) can also be run with `pnpm`.
+
+## Notes To Self
 
 Some shortcuts and workflows to remember.
 
