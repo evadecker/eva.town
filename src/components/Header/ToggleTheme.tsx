@@ -1,4 +1,4 @@
-import { mauve, mauveDark, plum, plumDark } from "@radix-ui/colors";
+import { mauve, mauveDark } from "@radix-ui/colors";
 import { useEffect, useRef, useState } from "react";
 
 import { Icon } from "../Icon/Icon";

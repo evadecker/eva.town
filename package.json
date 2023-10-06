@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
@@ -12,10 +13,11 @@
     "stylelint": "npx stylelint '**/*.{css,scss,astro}'",
     "test": "playwright test",
     "prettier": "prettier --write .",
-    "html-validate": "npm run build && npm exec html-validate .vercel/output/static/*.html"
+    "html-validate": "pnpm build && pnpm exec html-validate .vercel/output/static/*.html"
   },
   "dependencies": {
     "@astrojs/check": "^0.2.0",
+    "@astrojs/markdown-remark": "^3.2.1",
     "@astrojs/mdx": "^1.1.1",
     "@astrojs/react": "^3.0.3",
     "@astrojs/sitemap": "^3.0.1",
@@ -57,6 +59,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "hastscript": "^8.0.0",
     "html-validate": "^8.3.0",
     "postcss-html": "^1.5.0",
     "prettier": "^3.0.3",
