@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import Center from "src/components/Center/Center.astro";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
@@ -10,9 +11,11 @@ const allNotesEntries = await getCollection("notes");
 ---
 
 <BaseLayout title="Notes" description="Writing from Eva">
-  {
-    allNotesEntries.map((entry) => (
-      <a href={`/notes/${entry.slug}`}>{entry.data.title}</a>
-    ))
-  }
+  <Center>
+    {
+      allNotesEntries.map((entry) => (
+        <a href={`/notes/${entry.slug}`}>{entry.data.title}</a>
+      ))
+    }
+  </Center>
 </BaseLayout>
