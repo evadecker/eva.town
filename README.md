@@ -1,6 +1,10 @@
 ![Eva designs and builds things for the web.](/public/og/default.png)
 
+<div align="center">
+
 ![Vercel](https://vercelbadge.vercel.app/api/evadecker/evadecker.com) [![Playwright](https://github.com/evadecker/evadecker.com/actions/workflows/playwright.yml/badge.svg)](https://github.com/evadecker/evadecker.com/actions/workflows/playwright.yml) [![HTML5 Validation](https://github.com/evadecker/evadecker.com/actions/workflows/w3c.yml/badge.svg)](https://github.com/evadecker/evadecker.com/actions/workflows/w3c.yml) ![GitHub](https://img.shields.io/github/license/evadecker/evadecker.com)
+
+</div>
 
 # Eva Decker
 
