@@ -23,6 +23,3 @@ const handleFirstLoad = () => {
 
 // Run on the very first page load
 window.addEventListener("load", handleFirstLoad);
-
-// Re-apply data attribute after View Transition to presere state
-document.addEventListener("astro:after-swap", setTheme);

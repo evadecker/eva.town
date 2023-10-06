@@ -4,7 +4,7 @@ import { theme } from "../styles/theme.css";
 import { tokens } from "../styles/tokens.css";
 
 export const header = style({
-  paddingBottom: "2rem",
+  padding: "3rem 0",
 });
 
 export const designs = style({

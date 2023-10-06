@@ -100,20 +100,6 @@ globalStyle("main", {
 });
 
 // ======================
-// Animation
-// ======================
-
-globalStyle("body[data-animating]", {
-  transitionProperty: "color, background-color, fontVariationSettings",
-  transitionDuration: "1s",
-  transitionTimingFunction: "ease-in-out",
-});
-
-globalStyle("body[data-animating] svg *", {
-  transition: "fill 1s ease-in-out",
-});
-
-// ======================
 // Helpers
 // ======================
 

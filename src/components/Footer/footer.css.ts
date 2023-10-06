@@ -7,13 +7,6 @@ export const footer = style({
   borderTop: `1px solid ${theme.border.subtle}`,
   width: "100%",
   padding: "2rem 0",
-  selectors: {
-    "body[data-animating] &": {
-      transitionProperty: "background, border",
-      transitionDuration: "1s",
-      transitionTimingFunction: "ease-in-out",
-    },
-  },
 });
 
 export const link = style({

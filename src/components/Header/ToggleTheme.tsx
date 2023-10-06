@@ -8,38 +8,12 @@ type Theme = "light" | "dark";
 
 export const ToggleTheme = () => {
   const [isHovering, setIsHovering] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [activeTheme, setActiveTheme] = useState<Theme>(
     document.body.dataset.theme as Theme
   );
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
-  const [animationCoords, setAnimationCoords] = useState<{
-    x?: number;
-    y?: number;
-  }>({
-    x: buttonRef.current?.getBoundingClientRect().left,
-    y: buttonRef.current?.getBoundingClientRect().top,
-  });
-
-  const handleAnimation = () => {
-    // Toggle animation
-    setIsAnimating(true);
-    document.body.dataset.animating = "";
-
-    // Position background animation center
-    setAnimationCoords({
-      x: buttonRef.current?.getBoundingClientRect().left,
-      y: buttonRef.current?.getBoundingClientRect().top,
-    });
-
-    // End animation
-    setTimeout(() => {
-      document.body.removeAttribute("data-animating");
-      setIsAnimating(false);
-    }, 1000);
-  };
 
   useEffect(() => {
     if (!activeTheme) return;
@@ -57,8 +31,6 @@ export const ToggleTheme = () => {
         "content",
         activeTheme === "dark" ? mauveDark.mauve1 : mauve.mauve1
       );
-
-    handleAnimation();
   }, [activeTheme]);
 
   return (
@@ -70,7 +42,12 @@ export const ToggleTheme = () => {
         onClick={() => {
           setActiveTheme(inactiveTheme);
         }}
-        disabled={isAnimating}
+        onMouseOver={() => {
+          setIsHovering(true);
+        }}
+        onMouseOut={() => {
+          setIsHovering(false);
+        }}
         ref={buttonRef}
         className={styles.button}
       >
@@ -85,12 +62,6 @@ export const ToggleTheme = () => {
           className={styles.moon}
         />
       </button>
-      <div className={styles.animationContainer}>
-        <div
-          className={styles.animatedCircle}
-          style={{ left: animationCoords.x, top: animationCoords.y }}
-        ></div>
-      </div>
     </>
   );
 };

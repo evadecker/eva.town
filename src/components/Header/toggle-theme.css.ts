@@ -3,14 +3,6 @@ import { style } from "@vanilla-extract/css";
 import { theme } from "../../styles/theme.css";
 import { tokens } from "../../styles/tokens.css";
 
-export const animationContainer = style({
-  position: "fixed",
-  inset: "0",
-  overflow: "hidden",
-  zIndex: "-1",
-  pointerEvents: "none",
-});
-
 export const button = style({
   background: "transparent",
   cursor: "pointer",
@@ -30,22 +22,6 @@ export const button = style({
   },
   ":hover": {
     background: theme.elementBg.hover,
-  },
-});
-
-export const animatedCircle = style({
-  position: "absolute",
-  left: "0",
-  top: "0",
-  width: "40px",
-  height: "40px",
-  background: theme.appBg.default,
-  borderRadius: "100%",
-  transformOrigin: "50% 50%",
-  selectors: {
-    "body[data-animating] &": {
-      animation: "grow 1s ease-in",
-    },
   },
 });
 
