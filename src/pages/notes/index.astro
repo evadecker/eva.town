@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import Center from "../../components/Center/Center.astro";
 
+import Center from "../../components/Center/Center.astro";
+import NoteLink from "../../components/NoteLink/NoteLink.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { RelativeDate } from "../../components/RelativeDate/RelativeDate";
 
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
@@ -15,8 +15,11 @@ const allNotesEntries = await getCollection("notes");
   <Center>
     {
       allNotesEntries.map((entry) => (
-        <a href={`/notes/${entry.slug}`}>{entry.data.title}</a>
-        <RelativeDate date={entry.data.datePublished} prefix="" />
+        <NoteLink
+          slug={entry.slug}
+          title={entry.data.title}
+          date={entry.data.datePublished}
+        />
       ))
     }
   </Center>
