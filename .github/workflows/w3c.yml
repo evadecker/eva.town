@@ -15,6 +15,6 @@ jobs:
         with:
           node-version: 18
       - name: Install packages
-        run: npm install
+        run: pnpm i
       - name: Build and validate HTML5
-        run: npm run html-validate
+        run: pnpm html-validate
