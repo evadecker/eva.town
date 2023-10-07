@@ -6,6 +6,7 @@
   ],
   "ignoreFiles": ["dist/**/*"],
   "rules": {
-    "custom-property-pattern": null
+    "custom-property-pattern": null,
+    "selector-class-pattern": null
   }
 }

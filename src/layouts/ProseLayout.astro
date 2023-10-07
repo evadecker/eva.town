@@ -1,10 +1,11 @@
 ---
+import "../styles/prose.css";
+
 import Center from "../components/Center.astro";
 import { RelativeDate } from "../components/RelativeDate/RelativeDate";
 import Stack from "../components/Stack/Stack.astro";
 import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "./BaseLayout.astro";
-import * as styles from "./prose.css";
 
 const { frontmatter } = Astro.props;
 ---
@@ -15,15 +16,11 @@ const { frontmatter } = Astro.props;
   includeFooter
 >
   <Center>
-    <article
-      itemscope
-      itemtype="https://schema.org/BlogPosting"
-      class={styles.article}
-    >
-      <header class={styles.header}>
+    <article itemscope itemtype="https://schema.org/BlogPosting">
+      <header class="article-header">
         <Stack>
           <h1 itemprop="name">{frontmatter.title}</h1>
-          <p class={styles.subtitle}>{frontmatter.description}</p>
+          <p class="subtitle">{frontmatter.description}</p>
           <Stack>
             <RelativeDate
               date={frontmatter.datePublished}
@@ -44,7 +41,7 @@ const { frontmatter } = Astro.props;
           </Stack>
         </Stack>
       </header>
-      <section itemprop="articleBody" class={styles.articleBody}>
+      <section itemprop="articleBody" class="prose">
         <slot />
       </section>
     </article>
