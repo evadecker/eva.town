@@ -64,7 +64,7 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
   <body transition:animate="none" transition:persist>
     <script is:inline src="/scripts/preloadTheme.js"></script>
     <Header />
-    <main transition:animate="slide">
+    <main transition:animate="fade">
       <slot />
     </main>
     {includeFooter && <Footer />}

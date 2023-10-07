@@ -1,10 +1,11 @@
+import "./stickers.css";
+
 import { useStore } from "@nanostores/react";
 import { type DragHandlers, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import { getRandomValueBetween } from "../../helpers";
 import { incrementTopZIndex, topZIndex } from "../../stores/sam";
-import * as styles from "./stickers.css";
 
 interface VariantData {
   path: string;
@@ -175,7 +176,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
 
   return (
     <motion.div
-      className={styles.sticker}
+      className="sticker"
       initial={{ opacity: 0, x, y, scale: 2, rotate: initialRotation }}
       animate={{
         opacity: 1,
@@ -205,19 +206,19 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
       data-testid="samSticker"
     >
       <svg
-        className={styles.stickerSvg}
+        className="stickerSvg"
         width="400"
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          className={styles.stickerPath}
+          className="stickerPath"
           d={variantsData[currentVariant].path}
           fill="white"
         />
       </svg>
-      <picture className={styles.stickerPicture}>
+      <picture className="stickerPicture">
         <source
           srcSet={variantsData[currentVariant].srcSet}
           type="image/webp"

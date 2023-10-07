@@ -1,8 +1,6 @@
 import { mauve } from "@radix-ui/colors";
 import type { ReactNode } from "react";
 
-import * as styles from "./dialogue.css";
-
 export type EmoteType =
   | "drooling"
   | "flushed"
@@ -211,7 +209,7 @@ export const Emote = ({ emote }: EmoteProps) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -0.5 48 48"
       shapeRendering="crispEdges"
-      className={styles.emote}
+      className="emote"
       width="48"
       height="48"
     >

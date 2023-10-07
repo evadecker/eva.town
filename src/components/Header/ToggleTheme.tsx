@@ -1,15 +1,17 @@
+import "./toggle-theme.css";
+
 import { mauve, mauveDark } from "@radix-ui/colors";
+import classNames from "classnames";
 import { useEffect, useState } from "react";
 
 import { Icon } from "../Icon/Icon";
-import * as styles from "./toggle-theme.css";
 
 type Theme = "light" | "dark";
 
 export const ToggleTheme = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [activeTheme, setActiveTheme] = useState<Theme>(
-    document.body.dataset.theme as Theme
+    document.body.classList.contains("dark") ? "dark" : "light"
   );
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
@@ -48,17 +50,21 @@ export const ToggleTheme = () => {
         onMouseOut={() => {
           setIsHovering(false);
         }}
-        className={styles.button}
+        className="toggleButton"
       >
         <Icon
           icon="sun"
           variant={isHovering ? "filled" : "line"}
-          className={styles.sun}
+          className={classNames("sun", {
+            active: activeTheme === "light",
+          })}
         />
         <Icon
           icon="moon"
           variant={isHovering ? "filled" : "line"}
-          className={styles.moon}
+          className={classNames("moon", {
+            active: activeTheme === "dark",
+          })}
         />
       </button>
     </>

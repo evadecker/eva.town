@@ -266,17 +266,17 @@ export const SubscribeForm = () => {
   };
 
   return (
-    <div className={styles.form}>
+    <div className="form">
       <Dialogue text={currentText} emote={currentEmote} />
       <form onSubmit={handleSubmit}>
         {!hasSubmitted ? (
           <div
-            className={styles.inputWrapper}
+            className="inputWrapper"
             aria-disabled={isSubmitting || hasSubmitted}
           >
             <input
               aria-label="Your email"
-              className={styles.input}
+              className="input"
               type="email"
               id="email"
               name="email"
@@ -290,7 +290,9 @@ export const SubscribeForm = () => {
             />
             <button
               type="submit"
-              className={styles.iconButton}
+              className={classNames("iconButton", {
+                loading: isSubmitting,
+              })}
               disabled={isSubmitting || hasSubmitted}
               aria-label="Subscribe"
               onMouseOver={() => {
@@ -303,26 +305,19 @@ export const SubscribeForm = () => {
               <Icon
                 icon={isSubmitting ? "loader" : "mailAdd"}
                 variant={isHoveringSubscribe ? "filled" : "line"}
-                className={classNames({
-                  [styles.loading]: isSubmitting,
-                })}
               />
             </button>
           </div>
         ) : sniperData ? (
-          <a
-            href={sniperData.url}
-            className={styles.sniperLink}
-            target="_blank"
-          >
-            <div className={styles.sniperLogo}>
+          <a href={sniperData.url} className="sniperLink" target="_blank">
+            <div className="sniperLogo">
               <img src={sniperData.image} />
             </div>
             Open {sniperData.provider_pretty}
-            <Icon icon="arrowRight" className={styles.arrow} />
+            <Icon icon="arrowRight" />
           </a>
         ) : (
-          <div className={styles.checkInbox}>Check your inbox</div>
+          <div className="checkInbox">Check your inbox</div>
         )}
       </form>
     </div>

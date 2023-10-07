@@ -1,9 +1,10 @@
 ---
+import "./subscribe.css";
+
 import Box from "../Box.astro";
 import Cover from "../Cover.astro";
 import Grid from "../Grid.astro";
-import Stack from "../Stack/Stack.astro";
-import * as styles from "./subscribe.css";
+import Stack from "../Stack.astro";
 import { SubscribeForm } from "./SubscribeForm";
 ---
 
@@ -11,7 +12,7 @@ import { SubscribeForm } from "./SubscribeForm";
   <Grid>
     <Cover>
       <Stack spacing="tight">
-        <header class={styles.header}>Notes From Eva</header>
+        <header class="header">Notes From Eva</header>
         <small>
           A few times a year, I share thoughts and observations about design,
           development, and life that lives outside a screen. Subscribe to follow
@@ -22,3 +23,13 @@ import { SubscribeForm } from "./SubscribeForm";
     <SubscribeForm client:visible />
   </Grid>
 </Box>
+
+<style>
+  .header {
+    font-size: var(--text-h5);
+    font-variation-settings:
+      "wdth" var(--font-width-normal),
+      "wght" var(--font-weight-medium);
+    line-height: var(--line-height-h5);
+  }
+</style>

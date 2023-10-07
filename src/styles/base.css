@@ -90,11 +90,6 @@ pre {
   font-family: var(--font-mono);
 }
 
-html,
-body {
-  height: 100%;
-}
-
 main {
   flex: 1;
   width: 100%;

@@ -3,7 +3,6 @@ import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel/static";
-import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
@@ -22,11 +21,5 @@ export default defineConfig({
   }),
   markdown: {
     rehypePlugins: [rehypeHeadingIds, [rehypeAutolinkHeadings, autolinkConfig]],
-  },
-  vite: {
-    plugins: [vanillaExtractPlugin()],
-    optimizeDeps: {
-      exclude: ["fsevents"],
-    },
   },
 });

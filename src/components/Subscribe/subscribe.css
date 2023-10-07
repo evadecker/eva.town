@@ -1,0 +1,126 @@
+.form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.inputWrapper[aria-disabled="true"] {
+  pointer-events: none;
+}
+
+.loading svg {
+  animation: spin 1s linear infinite;
+}
+
+.input {
+  color: var(--mauve-12);
+  background: var(--mauve-3);
+  padding: 0 1em;
+  padding-inline-end: 3rem;
+}
+
+.iconButton {
+  background: var(--plum-9);
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0.5rem;
+  width: 48px;
+  height: 32px;
+  padding: 0;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconButton:hover {
+  background: var(--plum-10);
+}
+
+.iconButton:disabled {
+  background: var(--plum-9);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.sniperLink {
+  background: var(--plum-9);
+  color: white;
+  font-variation-settings:
+    "wdth" var(--font-width-normal),
+    "wght" var(--font-weight-medium);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  border-radius: var(--radius-md);
+  padding: 0 0.5rem;
+}
+
+.input,
+.sniperLink,
+.checkInbox {
+  height: 3rem;
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-full);
+  line-height: 1;
+}
+
+.input:hover {
+  background: var(--mauve-4);
+}
+
+.input:focus {
+  outline: 2px solid var(--plumA-9);
+}
+
+.input:disabled {
+  pointer-events: none;
+}
+
+.sniperLink:hover {
+  background: var(--plum-10);
+}
+
+.checkInbox {
+  background: var(--mauve-3);
+  color: var(--mauve-12);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sniperLink svg {
+  flex-shrink: 0;
+  position: relative;
+  margin-inline-start: auto;
+  margin-inline-end: 0.25rem;
+}
+
+.sniperLogo {
+  background-color: white;
+  width: 48px;
+  height: 32px;
+  padding: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-end: 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.sniperLogo img {
+  width: 24px;
+}

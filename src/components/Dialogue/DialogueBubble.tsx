@@ -1,9 +1,10 @@
+import "./dialogue.css";
+
 import classNames from "classnames";
 import { motion, type Variants } from "framer-motion";
 import React from "react";
 
 import type { Variant } from "./Dialogue";
-import * as styles from "./dialogue.css";
 import { DialogueLine } from "./DialogueLine";
 
 interface DialogueBubbleProps {
@@ -47,8 +48,8 @@ export const DialogueBubble = React.memo(
           variants={bubbleVariants}
           initial="initial"
           animate="animate"
-          className={classNames(styles.bubble, {
-            [styles.big]: big === true,
+          className={classNames("bubble", {
+            big: big === true,
           })}
         >
           <DialogueLine text={text} variant={variant} />
