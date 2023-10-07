@@ -19,33 +19,17 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     width: 100%;
     position: sticky;
     top: 0;
-    z-index: 100;
-    background-color: var(--mauve-1);
-  }
-
-  header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 200%;
-    width: 100%;
-    clip-path: inset(0 0 50% 0);
-    backdrop-filter: blur(40px) saturate(120%);
-    z-index: -1;
+    z-index: 10;
   }
 
   header::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 200%;
+    inset: 0;
     z-index: -1;
-    clip-path: inset(calc(50% - 1px) 0 50% 0);
-    backdrop-filter: blur(120px) saturate(300%);
+    background: var(--mauve-1);
+    opacity: 0.96;
+    border-bottom: 1px solid var(--mauve-a6);
   }
 
   nav {

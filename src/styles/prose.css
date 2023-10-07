@@ -114,7 +114,7 @@
 }
 
 .prose ul li::before {
-  content: →;
+  content: "→";
   font-size: 1.3em;
   line-height: 1.3;
 }
