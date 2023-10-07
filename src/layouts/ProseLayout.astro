@@ -1,12 +1,11 @@
 ---
-import Stack from "src/components/Stack/Stack.astro";
+import "../styles/prose.css";
 
-import Center from "../components/Center/Center.astro";
-import Footer from "../components/Footer/Footer.astro";
+import Center from "../components/Center.astro";
 import { RelativeDate } from "../components/RelativeDate/RelativeDate";
+import Stack from "../components/Stack.astro";
 import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "./BaseLayout.astro";
-import * as styles from "./prose.css";
 
 interface Props {
   title: string;
@@ -18,44 +17,37 @@ interface Props {
 const { title, description, datePublished, dateModified } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
-  <main class={styles.main}>
-    <Center>
-      <article
-        itemscope
-        itemtype="https://schema.org/BlogPosting"
-        class={styles.article}
-      >
-        <header class={styles.header}>
+<BaseLayout title={title} description={description} includeFooter padBottom>
+  <Center>
+    <article itemscope itemtype="https://schema.org/BlogPosting">
+      <header class="article-header">
+        <Stack>
+          <h1 itemprop="name">{title}</h1>
+          <p class="subtitle">{description}</p>
           <Stack>
-            <h1 itemprop="name">{title}</h1>
-            <p class={styles.subtitle}>{description}</p>
-            <Stack>
-              <RelativeDate
-                date={datePublished}
-                prefix="Published"
-                icon="seedling"
-                client:load
-              />
-              {
-                dateModified && (
-                  <RelativeDate
-                    date={dateModified}
-                    prefix="Last tended"
-                    icon="sparkling"
-                    client:load
-                  />
-                )
-              }
-            </Stack>
+            <RelativeDate
+              date={datePublished}
+              prefix="Published"
+              icon="seedling"
+              client:load
+            />
+            {
+              dateModified && (
+                <RelativeDate
+                  date={dateModified}
+                  prefix="Last tended"
+                  icon="sparkling"
+                  client:load
+                />
+              )
+            }
           </Stack>
-        </header>
-        <section itemprop="articleBody" class={styles.articleBody}>
-          <slot />
-        </section>
-      </article>
-      <Subscribe />
-    </Center>
-  </main>
-  <Footer />
+        </Stack>
+      </header>
+      <section itemprop="articleBody" class="prose">
+        <slot />
+      </section>
+    </article>
+    <Subscribe />
+  </Center>
 </BaseLayout>

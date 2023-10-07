@@ -1,7 +1,8 @@
+import "./dialogue.css";
+
 import { AnimatePresence } from "framer-motion";
 import React from "react";
 
-import * as styles from "./dialogue.css";
 import { DialogueBubble } from "./DialogueBubble";
 import { Emote, type EmoteType } from "./Emote";
 
@@ -16,7 +17,7 @@ interface DialogueProps {
 
 export const Dialogue = React.memo(({ text, emote, big }: DialogueProps) => {
   return (
-    <div className={styles.container}>
+    <div className="dialogueContainer">
       <AnimatePresence>
         <Emote emote={emote} key="emote" />
         <DialogueBubble text={text} big={big} key="bubble" />
