@@ -1,0 +1,72 @@
+---
+import Cover from "./Cover.astro";
+import Grid from "./Grid.astro";
+import { RelativeDate } from "./RelativeDate/RelativeDate";
+import Stack from "./Stack.astro";
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  date: Date;
+  img: string;
+  imgAlt: string;
+}
+
+const { slug, title, description, date, img, imgAlt } = Astro.props;
+---
+
+<a class="card" href={`/notes/${slug}`} aria-label={title}>
+  <Grid>
+    <img
+      src={img}
+      alt={imgAlt}
+      class="image"
+      transition:name={`${slug} page-image`}
+    />
+    <Cover>
+      <div class="contents">
+        <h2 class="title">{title}</h2>
+        <small class="subtitle">{description}</small>
+        <RelativeDate date={date} prefix="" />
+      </div>
+    </Cover>
+  </Grid>
+</a>
+
+<style>
+  .card {
+    display: block;
+    border-radius: var(--radius-md);
+  }
+
+  .image {
+    border-radius: var(--radius-md);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .card:hover .image {
+    transform: scale(1.03);
+  }
+
+  .contents {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+  }
+
+  .title {
+    font-size: var(--text-h5);
+    line-height: var(--line-height-h5);
+    font-variation-settings: "wght" var(--font-weight-medium);
+  }
+
+  .card:hover .title {
+    color: var(--plum-9);
+  }
+
+  .subtitle {
+    color: var(--mauve-11);
+    line-height: var(--line-height-small);
+  }
+</style>

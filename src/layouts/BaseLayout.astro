@@ -44,7 +44,7 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Eva Decker" />
-    <meta property="og:image" content="/og/default.png" />
+    <meta property="og:image" content={`${Astro.url.origin}/og/default.png`} />
     <meta
       property="og:image:alt"
       content="Eva designs and builds things for the web."

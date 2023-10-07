@@ -1,0 +1,82 @@
+---
+import Center from "./Center.astro";
+import { RelativeDate } from "./RelativeDate/RelativeDate";
+import Stack from "./Stack.astro";
+
+type Props = {
+  slug: string;
+  title: string;
+  description?: string;
+  img?: string;
+  imgAlt?: string;
+  datePublished?: Date;
+  dateModified?: Date;
+};
+
+const { title, description, img, imgAlt, slug, datePublished, dateModified } =
+  Astro.props;
+---
+
+<header class="page-header">
+  <Center>
+    {
+      img && (
+        <img
+          src={img}
+          alt={imgAlt}
+          class="page-image"
+          transition:name={`${slug} page-image`}
+        />
+      )
+    }
+    <Stack>
+      <Stack spacing="tight">
+        <h1 itemprop="name" class="page-title">
+          {title}
+        </h1>
+        {description && <p class="page-subtitle">{description}</p>}
+      </Stack>
+      {
+        datePublished && (
+          <Stack>
+            <RelativeDate
+              date={datePublished}
+              prefix="Published"
+              icon="seedling"
+              client:load
+            />
+            {dateModified && (
+              <RelativeDate
+                date={dateModified}
+                prefix="Last tended"
+                icon="sparkling"
+                client:load
+              />
+            )}
+          </Stack>
+        )
+      }
+    </Stack>
+  </Center>
+</header>
+
+<style>
+  .page-header {
+    padding: 2em 0;
+  }
+
+  .page-image {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    margin-block-end: 2em;
+  }
+
+  .page-subtitle {
+    font-size: var(--text-h4);
+    font-family: var(--font-sans);
+    font-variation-settings:
+      "wdth" var(--font-width-normal),
+      "wght" var(--font-weight-medium);
+    line-height: var(--line-height-h4);
+  }
+</style>

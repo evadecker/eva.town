@@ -1,11 +1,11 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 import ProseLayout from "../../layouts/ProseLayout.astro";
 
-export type Props = {
+export interface Props {
   note: CollectionEntry<"notes">;
-};
+}
 
 export async function getStaticPaths() {
   const notes = await getCollection("notes");
@@ -26,6 +26,9 @@ const { Content } = await render();
   description={data.description}
   datePublished={data.datePublished}
   dateModified={data.dateModified}
+  img={data.img}
+  imgAlt={data.imgAlt}
+  slug={note.slug}
 >
   <Content />
 </ProseLayout>

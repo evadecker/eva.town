@@ -11,6 +11,7 @@ body.dark {
 body {
   color: var(--mauve-12);
   background-color: var(--mauve-1);
+  min-height: 100%;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -29,6 +30,15 @@ body {
 
 ::selection {
   background: var(--plum-8);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: unset;
 }
 
 h1 {
@@ -85,6 +95,9 @@ small {
   font-size: var(--text-small);
   line-height: var(--line-height-small);
   letter-spacing: var(--letter-spacing-loose);
+  font-variation-settings:
+    "wdth" var(--font-width-normal),
+    "wght" var(--font-weight-normal);
 }
 
 code,

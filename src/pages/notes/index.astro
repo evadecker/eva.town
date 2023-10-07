@@ -1,26 +1,43 @@
 ---
 import { getCollection } from "astro:content";
+import PageHeader from "src/components/PageHeader.astro";
+import Subscribe from "src/components/Subscribe/Subscribe.astro";
 
-import Center from "../../components/Center/Center.astro";
-import NoteLink from "../../components/NoteLink/NoteLink.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import Center from "../../components/Center.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-// Get all entries from a collection.
-// Requires the name of the collection as an argument.
-// Example: retrieve `src/content/blog/**`
 const allNotesEntries = await getCollection("notes");
 ---
 
-<BaseLayout title="Notes" description="Writing from Eva">
+<BaseLayout
+  title="Notes"
+  description="Writing from Eva"
+  includeFooter
+  padBottom
+>
+  <PageHeader title="Notes" slug="notes" />
   <Center>
-    {
-      allNotesEntries.map((entry) => (
-        <NoteLink
-          slug={entry.slug}
-          title={entry.data.title}
-          date={entry.data.datePublished}
-        />
-      ))
-    }
+    <section class="notes">
+      {
+        allNotesEntries.map((entry) => (
+          <ArticleCard
+            slug={entry.slug}
+            title={entry.data.title}
+            description={entry.data.description}
+            date={entry.data.datePublished}
+            img={entry.data.img}
+            imgAlt={entry.data.imgAlt}
+          />
+        ))
+      }
+    </section>
+    <Subscribe />
   </Center>
 </BaseLayout>
+
+<style>
+  .notes {
+    padding-block-end: 4em;
+  }
+</style>

@@ -2,8 +2,7 @@
 import "../styles/prose.css";
 
 import Center from "../components/Center.astro";
-import { RelativeDate } from "../components/RelativeDate/RelativeDate";
-import Stack from "../components/Stack.astro";
+import PageHeader from "../components/PageHeader.astro";
 import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "./BaseLayout.astro";
 
@@ -12,42 +11,33 @@ interface Props {
   description: string;
   datePublished: Date;
   dateModified?: Date;
+  img?: string;
+  imgAlt?: string;
+  slug: string;
 }
 
-const { title, description, datePublished, dateModified } = Astro.props;
+const { title, description, datePublished, dateModified, img, imgAlt, slug } =
+  Astro.props;
 ---
 
 <BaseLayout title={title} description={description} includeFooter padBottom>
-  <Center>
-    <article itemscope itemtype="https://schema.org/BlogPosting">
-      <header class="article-header">
-        <Stack>
-          <h1 itemprop="name">{title}</h1>
-          <p class="subtitle">{description}</p>
-          <Stack>
-            <RelativeDate
-              date={datePublished}
-              prefix="Published"
-              icon="seedling"
-              client:load
-            />
-            {
-              dateModified && (
-                <RelativeDate
-                  date={dateModified}
-                  prefix="Last tended"
-                  icon="sparkling"
-                  client:load
-                />
-              )
-            }
-          </Stack>
-        </Stack>
-      </header>
-      <section itemprop="articleBody" class="prose">
+  <article itemscope itemtype="https://schema.org/BlogPosting">
+    <PageHeader
+      title={title}
+      description={description}
+      datePublished={datePublished}
+      dateModified={dateModified}
+      img={img}
+      imgAlt={imgAlt}
+      slug={slug}
+    />
+    <section itemprop="articleBody" class="prose">
+      <Center>
         <slot />
-      </section>
-    </article>
+      </Center>
+    </section>
+  </article>
+  <Center>
     <Subscribe />
   </Center>
 </BaseLayout>
