@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 import { getRandomValueBetween } from "../../helpers";
 import { incrementTopZIndex, topZIndex } from "../../stores/sam";
-import { theme } from "../../styles/theme.css";
 import * as styles from "./stickers.css";
 
 interface VariantData {
@@ -215,7 +214,7 @@ export const SamSticker = ({ variant }: SamStickerProps) => {
         <path
           className={styles.stickerPath}
           d={variantsData[currentVariant].path}
-          fill={theme.color.whiteA12}
+          fill="white"
         />
       </svg>
       <picture className={styles.stickerPicture}>

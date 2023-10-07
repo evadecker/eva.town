@@ -1,8 +1,5 @@
 import { globalKeyframes, style } from "@vanilla-extract/css";
 
-import { theme } from "../styles/theme.css";
-import { tokens } from "../styles/tokens.css";
-
 globalKeyframes("text-offset", {
   "0%": {
     clipPath: "polygon(0 110%, 100% 110%, 100% 160%, 0 160%)",
@@ -67,7 +64,7 @@ export const textClip = style({
   position: "absolute",
   top: "0",
   left: "-0.3rem",
-  textShadow: `-1.5px 0 0 blue , 1.5px 0 0 red , 0 1.5px 0 lime , 0.35rem 0 0 ${theme.appBg.default} , 4px 4px 0 ${theme.appBg.default}`,
+  textShadow: `-1.5px 0 0 blue , 1.5px 0 0 red , 0 1.5px 0 lime , 0.35rem 0 0 var(--mauve-1) , 4px 4px 0 var(--mauve-1)`,
   animation: "text-offset 8s linear infinite",
   transition: "text-shadow 1s ease-in-out",
 });
@@ -87,7 +84,7 @@ export const subtitle = style({
 });
 
 export const text = style({
-  fontFamily: tokens.fontFamily.sans,
+  fontFamily: "var(--font-sans)",
   position: "relative",
   zIndex: "-1",
   lineHeight: "0.8",

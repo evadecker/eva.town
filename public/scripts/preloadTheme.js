@@ -8,7 +8,7 @@ function userPreference() {
 }
 
 const setTheme = () => {
-  document.body.dataset.theme = userPreference();
+  document.body.classList.add(userPreference());
   window.localStorage.setItem("theme", userPreference());
 };
 

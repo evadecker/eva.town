@@ -1,15 +1,13 @@
+import { plum } from "@radix-ui/colors";
 import { style } from "@vanilla-extract/css";
-
-import { theme } from "../../styles/theme.css";
-import { tokens } from "../../styles/tokens.css";
 
 export const shoo = style({
   all: "unset",
   position: "fixed",
-  background: theme.text.default,
-  color: theme.appBg.default,
+  background: "var(--mauve-12)",
+  color: "var(--mauve-1)",
   padding: "0.5rem 1rem",
-  borderRadius: tokens.radius[2],
+  borderRadius: "var(--radius-sm)",
   right: "2rem",
   bottom: "2rem",
   fontVariationSettings: "wght 600",
@@ -32,12 +30,12 @@ export const stickerPath = style({
   pointerEvents: "auto",
   cursor: "grab",
   ":hover": {
-    stroke: theme.color.plum9,
+    stroke: plum.plum9,
     strokeWidth: "6px",
   },
   selectors: {
     [`${sticker}:active &`]: {
-      stroke: theme.color.plum9,
+      stroke: plum.plum9,
       strokeWidth: "6px",
     },
   },

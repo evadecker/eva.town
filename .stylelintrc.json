@@ -4,5 +4,8 @@
     "stylelint-config-standard-scss",
     "stylelint-config-html/astro"
   ],
-  "ignoreFiles": ["dist/**/*"]
+  "ignoreFiles": ["dist/**/*"],
+  "rules": {
+    "custom-property-pattern": null
+  }
 }

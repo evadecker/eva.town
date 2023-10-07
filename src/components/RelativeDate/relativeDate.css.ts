@@ -1,15 +1,13 @@
 import { style } from "@vanilla-extract/css";
 
-import { theme } from "../../styles/theme.css";
-
 export const date = style({
   display: "inline-flex",
   alignItems: "baseline",
-  color: theme.text.subtle,
+  color: "var(--mauve-11)",
 });
 
 export const icon = style({
-  color: theme.text.inlineIcon,
+  color: "var(--plum-12)",
   position: "relative",
   top: "0.15rem",
   marginRight: "0.5rem",

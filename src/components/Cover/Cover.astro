@@ -1,7 +1,17 @@
 ---
-import * as styles from "./cover.css";
+
 ---
 
-<div class={styles.cover}>
+<div class="cover">
   <slot />
 </div>
+
+<style>
+  .cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-block-size: 100%;
+  }
+</style>

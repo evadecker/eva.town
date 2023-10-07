@@ -1,8 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 
-import { theme } from "../styles/theme.css";
-import { tokens } from "../styles/tokens.css";
-
 export const article = style({
   margin: "0 auto",
 });
@@ -15,7 +12,7 @@ export const articleBody = style({
       textAlign: "center",
       paddingTop: "3rem",
       paddingBottom: "3rem",
-      fontSize: tokens.fontSize.h3,
+      fontSize: "var(--text-h3)",
     },
   },
 });
@@ -25,29 +22,29 @@ export const header = style({
 });
 
 export const subtitle = style({
-  fontSize: tokens.fontSize.h4,
-  fontFamily: tokens.fontFamily.sans,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
-  lineHeight: tokens.lineHeight.h4,
+  fontSize: "var(--text-h4)",
+  fontFamily: "var(--font-sans)",
+  fontVariationSettings: `'wdth' var(--font-width-normal), 'wght' var(--font-weight-medium)`,
+  lineHeight: "var(--line-height-h4)",
 });
 
 globalStyle(`${articleBody} p, ${articleBody} ol, ${articleBody} ul`, {
-  fontFamily: tokens.fontFamily.serif,
-  fontVariationSettings: `'wght' ${theme.fontWeight.prose}`,
+  fontFamily: "var(--font-serif)",
+  fontVariationSettings: `'wght' var(--font-weight-prose)`,
 });
 
 globalStyle(`${articleBody} :not(h1, h2, h3, h4, h5, h6) a`, {
-  boxShadow: `inset 0 -2px ${theme.text.linkUnderline}`,
+  boxShadow: "inset 0 -2px var(--mauve-7)",
   // Visual alignment and increasing tap target
   paddingBlock: "0.3rem 0.1rem",
   marginBlock: "-0.3rem -0.1rem",
 });
 
 globalStyle(`${article} a:hover`, {
-  borderRadius: tokens.radius[1],
-  backgroundColor: theme.text.linkBg,
-  boxShadow: `0 0 0 3px ${theme.text.linkBg}`,
-  color: theme.text.link,
+  borderRadius: "var(--radius-sm)",
+  backgroundColor: "var(--plum-3)",
+  boxShadow: "0 0 0 3px var(--plum-3)",
+  color: "var(--plum-11)",
 });
 
 globalStyle(
@@ -61,7 +58,7 @@ globalStyle(
 globalStyle(
   `${article} h1 a, ${article} h2 a, ${article} h3 a, ${article} h4 a, ${article} h5 a, ${article} h6 a`,
   {
-    color: theme.text.subtle,
+    color: "var(--mauve-11)",
     display: "inline-flex",
     alignItems: "center",
     marginLeft: "0.3em",
@@ -72,8 +69,8 @@ globalStyle(
 globalStyle(
   `${article} h1 a svg, ${article} h2 a svg, ${article} h3 a svg, ${article} h4 a svg, ${article} h5 a svg, ${article} h6 a svg`,
   {
-    width: tokens.fontSize.body,
-    height: tokens.fontSize.body,
+    width: "var(--text-body)",
+    height: "var(--text-body)",
   }
 );
 
@@ -112,7 +109,7 @@ globalStyle(`${articleBody} li::before`, {
   position: "absolute",
   width: "2rem",
   left: "-2rem",
-  color: theme.text.subtle,
+  color: "var(--mauve-11)",
 });
 
 globalStyle(`${articleBody} ul li::before`, {
@@ -122,14 +119,14 @@ globalStyle(`${articleBody} ul li::before`, {
 });
 
 globalStyle(`${articleBody} ol li::before`, {
-  fontFamily: tokens.fontFamily.sans,
+  fontFamily: "var(--font-sans)",
   content: "counter(list-item, decimal-leading-zero)",
   fontVariantNumeric: "tabular-nums",
 });
 
 globalStyle(`${article} code`, {
-  backgroundColor: theme.elementBg.default,
-  borderRadius: tokens.radius[1],
+  backgroundColor: "var(--mauve-3)",
+  borderRadius: "var(--radius-xs)",
   padding: "0.1rem 0.2rem",
   fontSize: "0.8em",
 });
@@ -144,7 +141,7 @@ globalStyle(`${article} abbr`, {
 globalStyle(`${article} abbr::after`, {
   content: "",
   height: "2px",
-  borderBottom: `2px dotted ${theme.text.linkUnderline}`,
+  borderBottom: `2px dotted var(--mauve-7)`,
   position: "absolute",
   bottom: 0,
   left: 0,

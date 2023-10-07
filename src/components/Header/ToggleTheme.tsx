@@ -1,5 +1,5 @@
 import { mauve, mauveDark } from "@radix-ui/colors";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Icon } from "../Icon/Icon";
 import * as styles from "./toggle-theme.css";
@@ -13,13 +13,13 @@ export const ToggleTheme = () => {
   );
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
-
   useEffect(() => {
     if (!activeTheme) return;
 
-    // Update data attribute on body
-    document.body.dataset.theme = activeTheme;
+    // Update class on body
+    const inactiveTheme = activeTheme === "light" ? "dark" : "light";
+    document.body.classList.remove(inactiveTheme);
+    document.body.classList.add(activeTheme);
 
     // Update localStorage
     localStorage.setItem("theme", activeTheme);
@@ -48,7 +48,6 @@ export const ToggleTheme = () => {
         onMouseOut={() => {
           setIsHovering(false);
         }}
-        ref={buttonRef}
         className={styles.button}
       >
         <Icon

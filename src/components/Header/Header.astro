@@ -1,16 +1,50 @@
 ---
-import Center from "../Center/Center.astro";
-import * as styles from "./header.css";
+import Center from "../Center.astro";
 import { ToggleTheme } from "./ToggleTheme.tsx";
 ---
 
-<header class={styles.header} transition:persist>
+<header transition:persist>
   <Center>
-    <div class={styles.headerContents}>
-      <a class={styles.wordmark} href="/">Eva Decker</a>
-      <div class={styles.toggleTheme}>
+    <nav>
+      <a class="wordmark" href="/">Eva Decker</a>
+      <div class="toggle">
         <ToggleTheme client:only="react" />
       </div>
-    </div>
+    </nav>
   </Center>
 </header>
+
+<style>
+  header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--bg-subtle);
+    border-bottom: var(--mauve-6);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+
+  .wordmark {
+    font-size: var(--text-body);
+    font-family: var(--font-sans);
+    font-variation-settings:
+      "wdth" var(--font-width-wide),
+      "wght" var(--font-weight-bold);
+    text-decoration: "none";
+    position: "relative";
+    bottom: "-0.08em";
+  }
+
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+</style>

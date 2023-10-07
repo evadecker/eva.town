@@ -7,8 +7,8 @@ import {
   useEffect,
   useState,
 } from "react";
-import { isValidEmail } from "src/helpers/helpers";
 
+import { isValidEmail } from "../../helpers/helpers";
 import { Dialogue } from "../Dialogue/Dialogue";
 import type { EmoteType } from "../Dialogue/Emote";
 import { Icon } from "../Icon/Icon";

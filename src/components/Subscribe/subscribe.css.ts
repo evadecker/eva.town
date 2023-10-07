@@ -1,12 +1,10 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 
-import { theme } from "../../styles/theme.css";
-import { tokens } from "../../styles/tokens.css";
-
 export const header = style({
-  fontSize: tokens.fontSize.h5,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
-  lineHeight: tokens.lineHeight.h5,
+  fontSize: "var(--text-h5)",
+  fontVariationSettings:
+    "'wdth' var(--font-width-normal), 'wght' var(--font-weight-medium)",
+  lineHeight: "var(--line-height-h5)",
 });
 
 export const form = style({
@@ -31,15 +29,15 @@ export const loading = style({
 });
 
 export const input = style({
-  color: theme.text.default,
-  background: theme.elementBg.default,
+  color: "var(--mauve-12)",
+  background: "var(--mauve-3)",
   padding: "0 1em",
   paddingInlineEnd: "3rem",
   ":hover": {
-    background: theme.elementBg.hover,
+    background: "var(--mauve-4)",
   },
   ":focus": {
-    outline: `2px solid ${theme.border.outline}`,
+    outline: "2px solid var(--plumA-9)",
   },
   ":disabled": {
     pointerEvents: "none",
@@ -47,8 +45,8 @@ export const input = style({
 });
 
 export const iconButton = style({
-  background: theme.solidBg.default,
-  color: theme.color.whiteA12,
+  background: "var(--plum-9)",
+  color: "white",
   position: "absolute",
   top: "50%",
   transform: "translateY(-50%)",
@@ -56,40 +54,41 @@ export const iconButton = style({
   width: "48px",
   height: "32px",
   padding: "0",
-  borderRadius: tokens.radius[100],
+  borderRadius: "var(--radius-full)",
   border: "none",
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   ":hover": {
-    background: theme.solidBg.hover,
+    background: "var(--plum-10)",
   },
   ":disabled": {
-    background: theme.solidBg.default,
+    background: "var(--plum-9)",
     opacity: 0.8,
     pointerEvents: "none",
   },
 });
 
 export const sniperLink = style({
-  background: theme.solidBg.default,
-  color: theme.color.whiteA12,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
+  background: "var(--plum-9)",
+  color: "white",
+  fontVariationSettings:
+    "'wdth' var(--font-width-normal), 'wght' var(--font-weight-medium)",
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-start",
   flexDirection: "row",
-  borderRadius: tokens.radius[3],
+  borderRadius: "var(--radius-md)",
   padding: "0 0.5rem",
   ":hover": {
-    background: theme.solidBg.hover,
+    background: "var(--plum-10)",
   },
 });
 
 export const checkInbox = style({
-  background: theme.elementBg.default,
-  color: theme.text.default,
+  background: "var(--mauve-3)",
+  color: "var(--mauve-12)",
   textAlign: "center",
   display: "flex",
   alignItems: "center",
@@ -100,7 +99,7 @@ globalStyle(`${input}, ${sniperLink}, ${checkInbox}`, {
   height: "3rem",
   width: "100%",
   border: "none",
-  borderRadius: tokens.radius[100],
+  borderRadius: "var(--radius-full)",
   lineHeight: "1",
 });
 
@@ -112,7 +111,7 @@ export const arrow = style({
 });
 
 export const sniperLogo = style({
-  backgroundColor: theme.color.whiteA12,
+  backgroundColor: "white",
   width: "48px",
   height: "32px",
   padding: "0.25rem",
@@ -120,7 +119,7 @@ export const sniperLogo = style({
   alignItems: "center",
   justifyContent: "center",
   marginInlineEnd: "0.75rem",
-  borderRadius: tokens.radius[100],
+  borderRadius: "var(--radius-full)",
 });
 
 globalStyle(`${sniperLogo} img`, {

@@ -1,7 +1,5 @@
 import { globalKeyframes, style } from "@vanilla-extract/css";
 
-import { theme } from "../../styles/theme.css";
-
 globalKeyframes("press-start", {
   "0%, 10%": {
     opacity: "0.8",

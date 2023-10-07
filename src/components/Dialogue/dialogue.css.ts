@@ -1,6 +1,4 @@
 import { style } from "@vanilla-extract/css";
-import { theme } from "src/styles/theme.css";
-import { tokens } from "src/styles/tokens.css";
 
 export const container = style({
   display: "flex",
@@ -13,17 +11,17 @@ export const container = style({
 });
 
 export const bubble = style({
-  backgroundColor: theme.elementBg.default,
+  backgroundColor: "var(--mauve-3)",
   padding: "0.5rem 1rem",
-  fontFamily: tokens.fontFamily.sans,
-  fontSize: tokens.fontSize.small,
+  fontFamily: "var(--font-family-sans)",
+  fontSize: "var(--text-small)",
   lineHeight: "1.1",
-  letterSpacing: tokens.letterSpacing.loose,
+  letterSpacing: "var(--letter-spacing-loose)",
   alignSelf: "center",
 });
 
 export const big = style({
-  fontSize: tokens.fontSize.h5,
+  fontSize: "var(--text-h5)",
 });
 
 export const character = style({
@@ -41,7 +39,7 @@ export const emote = style({
 
 export const emphasized = style({
   display: "inline-block",
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.medium}`,
+  fontVariationSettings: `'wdth' var(--font-width-normal), 'wght' var(--font-weight-medium)`,
 });
 
 export const word = style({

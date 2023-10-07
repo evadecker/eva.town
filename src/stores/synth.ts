@@ -1,5 +1,6 @@
 import { action, atom } from "nanostores";
-import type { NoteName } from "src/components/Synth/SynthKey";
+
+import type { NoteName } from "../components/Synth/SynthKey";
 
 const NUM_INSTRUMENTS = 8;
 

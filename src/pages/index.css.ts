@@ -1,8 +1,5 @@
 import { style } from "@vanilla-extract/css";
 
-import { theme } from "../styles/theme.css";
-import { tokens } from "../styles/tokens.css";
-
 export const header = style({
   padding: "3rem 0",
 });
@@ -10,22 +7,22 @@ export const header = style({
 export const designs = style({
   "::before": {
     content: "✦",
-    color: theme.text.subtle,
+    color: "var(--mauve-11)",
   },
   "::after": {
     content: "✦",
-    color: theme.text.subtle,
+    color: "var(--mauve-11)",
   },
 });
 
 export const builds = style({
   "::before": {
     content: "✸",
-    color: theme.text.subtle,
+    color: "var(--mauve-11)",
   },
   "::after": {
     content: "✸",
-    color: theme.text.subtle,
+    color: "var(--mauve-11)",
   },
 });
 
@@ -39,10 +36,10 @@ export const web = style({
 });
 
 export const subtitle = style({
-  fontSize: tokens.fontSize.h5,
-  fontFamily: tokens.fontFamily.sans,
-  fontVariationSettings: `'wdth' ${tokens.fontWidth.normal}, 'wght' ${theme.fontWeight.normal}`,
-  lineHeight: tokens.lineHeight.h5,
+  fontSize: "var(--text-h5)",
+  fontFamily: "var(--font-sans)",
+  fontVariationSettings: `'wdth' var(--font-width-normal), 'wght' var(--font-weight-normal)`,
+  lineHeight: "var(--line-height-h5)",
   marginTop: "1em",
 });
 
