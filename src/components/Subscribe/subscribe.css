@@ -82,7 +82,7 @@
 }
 
 .input:focus {
-  outline: 2px solid var(--plumA-9);
+  outline: 3px solid var(--plum-a6);
 }
 
 .input:disabled {

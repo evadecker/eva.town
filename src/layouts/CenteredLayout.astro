@@ -6,7 +6,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const { title, description } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} includeFooter>
+<BaseLayout
+  title={title}
+  description={description}
+  includeFooter
+  padTop
+  padBottom
+>
   <Cover>
     <Center>
       <slot />
