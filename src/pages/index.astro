@@ -30,7 +30,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <Subscribe />
     </Stack>
   </Center>
-  <SamStickers client:visible />
+  <SamStickers client:visible slot="after-footer" />
 
   <script>
     import { addSam } from "../stores/sam";

@@ -89,5 +89,6 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
         padding-block-end: 4rem;
       }
     </style>
+    <slot name="after-footer" />
   </body>
 </html>

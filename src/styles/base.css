@@ -12,6 +12,7 @@ body {
   color: var(--mauve-12);
   background-color: var(--mauve-1);
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: flex-start;
   font-size: var(--text-body);

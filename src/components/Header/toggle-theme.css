@@ -19,7 +19,7 @@
 }
 
 .toggleButton:hover {
-  background: var(--mauve-4);
+  background: var(--mauve-a3);
 }
 
 .toggleButton svg {

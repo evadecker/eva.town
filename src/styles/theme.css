@@ -6,6 +6,8 @@
 @import "@radix-ui/colors/plum-alpha.css";
 @import "@radix-ui/colors/plum-dark.css";
 @import "@radix-ui/colors/plum-dark-alpha.css";
+@import "@radix-ui/colors/white-alpha.css";
+@import "@radix-ui/colors/black-alpha.css";
 
 :root {
   /* Font families */
