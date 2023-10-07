@@ -1,18 +1,24 @@
 ---
 import "../styles/reset.css";
+import "../styles/theme.css";
 import "../styles/base.css";
 import "../styles/animation.css";
 
 import { mauveDark } from "@radix-ui/colors";
+import { ViewTransitions } from "astro:transitions";
 
+import Footer from "../components/Footer/Footer.astro";
 import Header from "../components/Header/Header.astro";
 
 interface Props {
   title: string;
   description: string;
+  includeFooter?: boolean;
+  padTop?: boolean;
+  padBottom?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, includeFooter, padTop, padBottom } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
@@ -21,26 +27,17 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- High priority global metadata -->
     <meta charset="UTF-8" />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content={mauveDark.mauve1} />
-
-    <!-- Font preloads -->
     <link rel="preconnect" href="https://use.typekit.net" crossorigin />
-
-    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-    <!-- Page metadata -->
     <link rel="canonical" href={canonicalURL} />
     <meta name="description" content={description} />
-
-    <!-- Open graph data -->
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
@@ -52,17 +49,10 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
       property="og:image:alt"
       content="Eva designs and builds things for the web."
     />
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- Low priority metadata -->
     <link rel="manifest" href="/manifest.json" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-
-    <!-- External stylesheets -->
     <link rel="stylesheet" href="https://use.typekit.net/qbm1slx.css" />
-
     <title>{pageTitle}</title>
     <script>
       window.va =
@@ -71,10 +61,34 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
           (window.vaq = window.vaq || []).push(arguments);
         };
     </script>
+    <ViewTransitions />
   </head>
-  <body>
+  <body transition:animate="none" transition:persist>
     <script is:inline src="/scripts/preloadTheme.js"></script>
     <Header />
-    <slot />
+    <main
+      class:list={["main", { padTop }, { padBottom }]}
+      transition:animate="fade"
+    >
+      <slot />
+    </main>
+    {includeFooter && <Footer />}
+    <style>
+      .main {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main.padTop {
+        padding-block-start: 4rem;
+      }
+
+      .main.padBottom {
+        padding-block-end: 4rem;
+      }
+    </style>
+    <slot name="after-footer" />
   </body>
 </html>

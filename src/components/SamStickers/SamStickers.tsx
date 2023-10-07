@@ -33,14 +33,14 @@ export const SamStickers = () => {
   };
 
   return (
-    <div className={styles.stickers}>
+    <div className="stickers">
       <AnimatePresence>
         {samArray.map(({ id, variant }) => (
           <SamSticker key={id} id={id} variant={variant} />
         ))}
         {$numSams >= 3 && (
           <motion.button
-            className={styles.shoo}
+            className="shoo"
             onClick={handleClear}
             initial={{ opacity: 0, y: 100 }}
             animate={{

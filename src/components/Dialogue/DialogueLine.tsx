@@ -2,7 +2,6 @@ import { motion, type Variants } from "framer-motion";
 import { nanoid } from "nanoid";
 
 import { type Variant } from "./Dialogue";
-import * as styles from "./dialogue.css";
 
 const SPEED = 0.04;
 
@@ -131,13 +130,13 @@ const TypedCharacter = ({
 
   return (
     <motion.span
-      className={styles.character}
+      className="character"
       variants={characterVariants}
       style={{ animationDelay: `${index * speed + delay}s` }}
     >
       {isEmphasized ? (
         <motion.strong
-          className={styles.emphasized}
+          className="emphasized"
           variants={getVariantObject(variant)}
           initial="initial"
           animate="animate"
@@ -186,7 +185,7 @@ export const DialogueLine = ({
   const words = text.split(" ");
 
   return words.map((word, wordIndex) => (
-    <span className={styles.word} key={nanoid()}>
+    <span className="word" key={nanoid()}>
       {word.split("").map((char) => {
         return (
           <TypedCharacter

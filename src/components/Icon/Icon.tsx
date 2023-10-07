@@ -1,6 +1,6 @@
-import classNames from "classnames";
+import "./icon.css";
 
-import * as styles from "./icon.css";
+import classNames from "classnames";
 
 // Icons sourced from https://remixicon.com
 export type IconType =
@@ -38,9 +38,6 @@ export interface IconProps {
    */
   size?: "small" | "default";
 
-  /**
-   * Additional class names to apply to the icon
-   */
   className?: string;
 }
 
@@ -174,11 +171,7 @@ export const Icon = ({ icon, variant, size, className }: IconProps) => {
       fill="currentColor"
       width="1em"
       height="1em"
-      className={classNames(
-        styles.icon,
-        { [styles.small]: size === "small" },
-        className
-      )}
+      className={classNames("icon", { small: size === "small" }, className)}
       aria-hidden="true"
     >
       {pathData}

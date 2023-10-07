@@ -1,10 +1,9 @@
 ---
-import Center from "../Center/Center.astro";
-import Grid from "../Grid/Grid.astro";
+import Center from "../Center.astro";
+import Grid from "../Grid.astro";
 import { Icon } from "../Icon/Icon";
 import { RelativeDate } from "../RelativeDate/RelativeDate";
-import Stack from "../Stack/Stack.astro";
-import * as styles from "./footer.css";
+import Stack from "../Stack.astro";
 
 // Vercel Access Token
 const accessToken = import.meta.env.VERCEL_ACCESS_TOKEN;
@@ -38,49 +37,70 @@ try {
 }
 ---
 
-<footer class={styles.footer}>
+<footer transition:animate="fade">
   <Center>
     <Stack>
       <Grid width="narrow">
         <Stack spacing="none">
           <a
-            class={styles.link}
+            class="link"
             href="https://github.com/evadecker"
             target="_blank"
             aria-label="Visit Eva's GitHub"
           >
-            <Icon icon="github" variant="filled" className={styles.linkIcon} />
+            <Icon icon="github" variant="filled" />
              Github
           </a>
           <a
-            class={styles.link}
+            class="link"
             href="https://linkedin.com/in/evadecker"
             target="_blank"
             aria-label="Visit Eva's LinkedIn"
           >
-            <Icon
-              icon="linkedInBox"
-              variant="filled"
-              className={styles.linkIcon}
-            />
+            <Icon icon="linkedInBox" variant="filled" />
              LinkedIn
           </a>
           <a
-            class={styles.link}
+            class="link"
             href="/downloads/eva-decker-resume.pdf"
             target="_blank"
             aria-label="View Eva's Resume"
           >
-            <Icon icon="download" className={styles.linkIcon} />
+            <Icon icon="download" />
              Resume
           </a>
         </Stack>
         <Stack spacing="none">
-          <a class={styles.link} href="/about">About</a>
-          <a class={styles.link} href="/colophon">Colophon</a>
+          <a class="link" href="/about">About</a>
+          <a class="link" href="/colophon">Colophon</a>
         </Stack>
       </Grid>
       <RelativeDate date={dateModified} prefix="Last tended" icon="sparkling" />
     </Stack>
   </Center>
 </footer>
+
+<style>
+  footer {
+    background: var(--mauve-2);
+    border-top: 1px solid var(--mauve-6);
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  .link {
+    justify-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+  }
+
+  .link :global(svg) {
+    color: var(--plum-12);
+    margin-right: 0.5rem;
+  }
+</style>

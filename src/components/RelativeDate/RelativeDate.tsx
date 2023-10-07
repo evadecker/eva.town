@@ -1,3 +1,5 @@
+import "./relativeDate.css";
+
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -6,7 +8,6 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 
 import { Icon, type IconType } from "../Icon/Icon";
-import * as styles from "./relativeDate.css";
 
 interface RelativeDateProps {
   /**
@@ -38,8 +39,8 @@ export const RelativeDate = ({ prefix, date, icon }: RelativeDateProps) => {
   }
 
   return (
-    <small className={styles.date}>
-      {icon && <Icon icon={icon} size="small" className={styles.icon} />}
+    <small className="date">
+      {icon && <Icon icon={icon} size="small" />}
       <span>
         {prefix}{" "}
         <time dateTime={dayjs(date).format()} title={formattedTimestamp}>

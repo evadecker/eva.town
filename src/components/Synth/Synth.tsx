@@ -1,3 +1,5 @@
+import "./synth.css";
+
 import { useStore } from "@nanostores/react";
 import { Howl } from "howler";
 import { useEffect } from "react";
