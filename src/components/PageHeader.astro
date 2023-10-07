@@ -1,5 +1,6 @@
 ---
 import Center from "./Center.astro";
+import OGFrame from "./OGFrame.astro";
 import { RelativeDate } from "./RelativeDate/RelativeDate";
 import Stack from "./Stack.astro";
 
@@ -20,13 +21,10 @@ const { title, description, img, imgAlt, slug, datePublished, dateModified } =
 <header class="page-header">
   <Center>
     {
-      img && (
-        <img
-          src={img}
-          alt={imgAlt}
-          class="page-image"
-          transition:name={`${slug} page-image`}
-        />
+      img && imgAlt && (
+        <div class="page-image">
+          <OGFrame img={img} imgAlt={imgAlt} slug={slug} />
+        </div>
       )
     }
     <Stack>
@@ -66,9 +64,11 @@ const { title, description, img, imgAlt, slug, datePublished, dateModified } =
   }
 
   .page-image {
-    width: 100%;
-    border-radius: var(--radius-lg);
     margin-block-end: 2em;
+  }
+
+  .page-title {
+    text-wrap: balance;
   }
 
   .page-subtitle {
@@ -78,5 +78,6 @@ const { title, description, img, imgAlt, slug, datePublished, dateModified } =
       "wdth" var(--font-width-normal),
       "wght" var(--font-weight-medium);
     line-height: var(--line-height-h4);
+    text-wrap: balance;
   }
 </style>
