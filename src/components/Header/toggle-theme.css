@@ -33,10 +33,10 @@
   color: var(--plum-12);
 }
 
-.moon.active {
+.moon:not(.active) {
   transform: rotate(60deg);
 }
 
-.sun.active {
+.sun:not(.active) {
   transform: rotate(-60deg);
 }

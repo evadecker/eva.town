@@ -1,0 +1,203 @@
+@keyframes press-start {
+  0%,
+  10% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading {
+  pointer-events: none;
+}
+
+.instrumentArrow {
+  cursor: pointer;
+}
+
+.lcdBase {
+  fill: var(--synth-lcd-medium);
+}
+
+.synthInstrument .lcdBase,
+.synthStart:hover .lcdBase,
+.instrumentArrow:hover .lcdBase,
+.synthInstrument:hover .lcdBase {
+  fill: var(--synth-lcd-dark);
+}
+
+.synthStart:hover .lcdBase {
+  opacity: 1;
+}
+
+.synthStart:not(:hover) .lcdBase {
+  animation: press-start 2s infinite;
+}
+
+.lcdBg {
+  fill: var(--synth-lcd-bg);
+}
+
+.lcdHighlight {
+  fill: var(--synth-lcd-light);
+}
+
+.lcdOutline {
+  fill: var(--synth-lcdOutline);
+}
+
+.notehead {
+  fill: var(--synth-lcd-dark);
+}
+
+.synthBase {
+  fill: var(--synth-base);
+}
+
+.synthBetweenKeys {
+  fill: var(--synth-betweenKeys);
+}
+
+.synthEndcap {
+  fill: var(--synth-endcap);
+}
+
+.synthKey {
+  cursor: pointer;
+  transition: fill 0.4s ease-out;
+}
+
+.synthKeysOutline {
+  fill: var(--synth-keysOutline);
+}
+
+.synthKeysShadow {
+  fill: black;
+  opacity: 0.1;
+}
+
+.synth {
+  width: 100%;
+  max-width: 540px;
+  margin-top: 2rem;
+}
+
+.synth[data-loading="true"] {
+  pointer-events: none;
+}
+
+.synthStart {
+  cursor: pointer;
+}
+
+.synth[data-enabled="true"] .synthStart {
+  display: none;
+}
+
+.synthStart:not(:hover) &:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.synthStart:not(:hover) &:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.synthStart:not(:hover) &:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.synthStart:not(:hover) &:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.synthKey .base {
+  transition: fill 0.4s ease-out;
+}
+
+.synthKey.white .base {
+  fill: var(--synth-whitekey);
+}
+
+.synthKey.black .base {
+  fill: var(--synth-blackkey);
+}
+
+.synthKey.pressed.white .base {
+  fill: var(--synth-whitekeyPressed);
+}
+
+.synthKey.pressed.black .base {
+  fill: var(--synth-blackkeyPressed);
+}
+
+.synthKey .crack {
+  fill: var(--synth-keysOutline);
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+.synthKey.pressed .crack {
+  transition: none;
+  opacity: 1;
+}
+
+.synthKey.black .highlight {
+  fill: "white";
+  fill-opacity: 0.15;
+}
+
+.instrument {
+  display: none;
+}
+
+.instrument.visible {
+  display: block;
+}
+
+@media not all and (pointer: coarse) {
+  .synth:not(.loading) .synthInstrument:hover {
+    display: none;
+  }
+}
+
+.keyLetter {
+  fill: var(--synth-keyLetter);
+  fill-opacity: 0.3;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: 0.4s ease-out;
+}
+
+.keyLetter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.synthKey .pressedOverlay {
+  fill: var(--synth-keysOutline);
+  transform: translateY(2px);
+  transition: transform 0.1s ease-out;
+}
+
+.synthKey.pressed .pressedOverlay {
+  transition: none;
+  transform: translateY(0);
+}
+
+.synthRandomize {
+  display: none;
+}
+
+@media not all and (pointer: coarse) {
+  .synthInstrument:hover .synthRandomize {
+    display: block;
+  }
+}
+
+@media all and (pointer: coarse) {
+  .synthRandomize {
+    display: none;
+  }
+}
