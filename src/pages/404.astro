@@ -1,20 +1,150 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import * as styles from "./404.css";
 ---
 
 <BaseLayout title="404: Not Found" description="This page could not be found.">
-  <main>
-    <div class={styles.scanlines}></div>
-    <div class={styles.glitchContainer}>
-      <div class={styles.text}>
-        <h1 class={styles.title}>404</h1>
-        <div class={styles.subtitle}>Not Found</div>
-        <div class={styles.textClip}>
-          <h1 class={styles.title}>404</h1>
-          <div class={styles.subtitle}>Not Found</div>
-        </div>
+  <div class="scanlines"></div>
+  <div class="glitchContainer">
+    <div class="text">
+      <h1 class="title">404</h1>
+      <div class="subtitle">Not Found</div>
+      <div class="textClip">
+        <h1 class="title">404</h1>
+        <div class="subtitle">Not Found</div>
       </div>
     </div>
-  </main>
+  </div>
 </BaseLayout>
+
+<style>
+  @keyframes text-offset {
+    0%: {
+      clip-path: polygon(0 110%, 100% 110%, 100% 160%, 0 160%);
+    }
+    100%: {
+      clip-path: polygon(0 -90%, 100% -90%, 100% -10%, 0 -10%);
+    }
+  }
+
+  @keyframes scanline {
+    0%: {
+      transform: translate3d(0, 100vh, 0);
+    }
+    50%: {
+      transform: translate3d(0, -6px, 0);
+    }
+  }
+
+  @keyframes flicker {
+    0%: {
+      opacity: 0.9;
+    }
+    100%: {
+      opacity: 1;
+    }
+  }
+
+  .glitchContainer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: -1;
+    animation: flicker 20ms infinite;
+  }
+
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAALElEQVQYV2NkYGD4/x9IMAIxAxoDmzhIHfU0gCxFB9S1AacfsFmNJQzAoQIAH84j/OCkeYUAAAAASUVORK5CYII=");
+    background-size: 12px 6px;
+    mix-blend-mode: color-dodge;
+    opacity: 0.5;
+  }
+
+  .scanlines::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background: white;
+    opacity: 0.05;
+    height: 6px;
+    animation: scanline 5s linear infinite;
+  }
+
+  .textClip {
+    position: absolute;
+    top: 0;
+    left: -0.3rem;
+    text-shadow:
+      `-1.5px 0 0 blue,
+      1.5px 0 0 red,
+      0 1.5px 0 lime,
+      0.35rem 0 0 var(--mauve-1),
+      4px 4px 0 var(--mauve-1) `;
+    animation: text-offset 8s linear infinite;
+    transition: text-shadow 1s ease-in-out;
+  }
+
+  .subtitle {
+    font-size: clamp(60px, 10vw, 180px);
+    font-variation-settings:
+      "wdth" 140,
+      "wght" 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  @media screen and (width <= 600px) {
+    .subtitle {
+      font-size: 20vw;
+      font-variation-settings:
+        "wdth" 60,
+        "wght" 500;
+    }
+  }
+
+  .text {
+    font-family: var(--font-sans);
+    position: relative;
+    z-index: -1;
+    line-height: 0.8;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+    user-select: none;
+    text-align: center;
+    text-shadow:
+      -1.5px 0 0 blue,
+      1.5px 0 0 red,
+      0 1.5px 0 green;
+    filter: blur(1.5px);
+  }
+
+  @media screen and (width <= 600px) {
+    .text {
+      line-height: 0.7;
+    }
+  }
+
+  .title {
+    font-size: clamp(180px, 30vw, 400px);
+    font-variation-settings:
+      "wdth" 150,
+      "wght" 700;
+  }
+
+  @media screen and (width <= 600px) {
+    .title {
+      font-size: 90vw;
+      font-variation-settings:
+        "wdth" 50,
+        "wght" 300;
+    }
+  }
+</style>

@@ -22,4 +22,9 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [rehypeHeadingIds, [rehypeAutolinkHeadings, autolinkConfig]],
   },
+  vite: {
+    optimizeDeps: {
+      exclude: ["fsevents"],
+    },
+  },
 });

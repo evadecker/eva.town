@@ -2,10 +2,9 @@
 import Center from "../components/Center.astro";
 import Hero from "../components/Hero.astro";
 import { SamStickers } from "../components/SamStickers/SamStickers";
-import Stack from "../components/Stack/Stack.astro";
+import Stack from "../components/Stack.astro";
 import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import * as styles from "./index.css";
 ---
 
 <BaseLayout
@@ -15,15 +14,15 @@ import * as styles from "./index.css";
 >
   <Center>
     <Stack>
-      <header class={styles.header}>
+      <header class="header">
         <Hero />
-        <p class={styles.subtitle}>
+        <p class="subtitle">
           I have experience creating usable, accessible, developer-friendly
           design systems for companies like Cityblock, Dropbox, and Swiftype.
         </p>
-        <p class={styles.subtitle}>
-          I live in Brooklyn, NY, with my tabby, <span class={styles.noBreak}
-            ><button class={styles.samButton} data-sam-button type="button"
+        <p class="subtitle">
+          I live in Brooklyn, NY, with my tabby, <span class="noBreak"
+            ><button class="samButton" data-sam-button type="button"
               >Samwise</button
             >.</span
           > In my free time I play piano.
@@ -40,3 +39,29 @@ import * as styles from "./index.css";
     samButton?.addEventListener("click", () => addSam());
   </script>
 </BaseLayout>
+
+<style>
+  .header {
+    padding: 3rem 0;
+  }
+
+  .subtitle {
+    font-size: var(--text-h5);
+    font-family: var(--font-sans);
+    font-variation-settings:
+      "wdth" var(--font-width-normal),
+      "wght" var(--font-weight-normal);
+    line-height: var(--line-height-h5);
+    margin-top: 1em;
+  }
+
+  .noBreak {
+    white-space: nowrap;
+  }
+
+  .samButton {
+    all: unset;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>
