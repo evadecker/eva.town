@@ -37,6 +37,8 @@ export interface IconProps {
    * @default "default"
    */
   size?: "small" | "default";
+
+  className?: string;
 }
 
 const iconData: Record<IconType, { line: JSX.Element; filled: JSX.Element }> = {
@@ -158,7 +160,7 @@ const iconData: Record<IconType, { line: JSX.Element; filled: JSX.Element }> = {
   },
 };
 
-export const Icon = ({ icon, variant, size }: IconProps) => {
+export const Icon = ({ icon, variant, size, className }: IconProps) => {
   const pathData =
     variant === "filled" ? iconData[icon].filled : iconData[icon].line;
 
@@ -169,7 +171,7 @@ export const Icon = ({ icon, variant, size }: IconProps) => {
       fill="currentColor"
       width="1em"
       height="1em"
-      className={classNames("icon", { small: size === "small" })}
+      className={classNames("icon", { small: size === "small" }, className)}
       aria-hidden="true"
     >
       {pathData}

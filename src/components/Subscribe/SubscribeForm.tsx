@@ -12,7 +12,6 @@ import { isValidEmail } from "../../helpers/helpers";
 import { Dialogue } from "../Dialogue/Dialogue";
 import type { EmoteType } from "../Dialogue/Emote";
 import { Icon } from "../Icon/Icon";
-import * as styles from "./subscribe.css";
 
 interface SniperResponse {
   url: string;

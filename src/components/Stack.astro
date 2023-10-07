@@ -13,10 +13,8 @@ const { spacing } = Astro.props;
 <div
   class:list={[
     "stack",
-    {
-      tight: spacing === "tight",
-      none: spacing === "none",
-    },
+    { tight: spacing === "tight" },
+    { none: spacing === "none" },
   ]}
 >
   <slot />
@@ -29,19 +27,19 @@ const { spacing } = Astro.props;
     justify-content: flex-start;
   }
 
-  .stack > * {
+  .stack :global(> *) {
     margin-block: 0;
   }
 
-  .stack > * + * {
+  .stack :global(> * + *) {
     margin-block-start: 1rem;
   }
 
-  .stack.tight > * + * {
+  .stack.tight :global(> * + *) {
     margin-block-start: 0.5rem;
   }
 
-  .stack.none > * + * {
+  .stack.none :global(> * + *) {
     margin-block-start: 0;
   }
 </style>
