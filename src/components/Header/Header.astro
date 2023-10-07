@@ -20,8 +20,34 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--mauve-2);
-    border-bottom: 1px solid var(--mauve-6);
+    background-color: var(--mauve-1);
+  }
+
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200%;
+    width: 100%;
+    clip-path: inset(0 0 50% 0);
+    backdrop-filter: blur(40px) saturate(80%);
+    z-index: -1;
+  }
+
+  header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200%;
+    z-index: -1;
+    clip-path: inset(calc(50% - 1px) 0 50% 0);
+
+    /* background-color: var(--mauve-a6); */
+    backdrop-filter: blur(120px) saturate(300%);
   }
 
   nav {
@@ -36,7 +62,7 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     font-family: var(--font-sans);
     font-variation-settings:
       "wdth" var(--font-width-wide),
-      "wght" var(--font-weight-bold);
+      "wght" 580;
     text-decoration: "none";
     position: "relative";
     bottom: "-0.08em";

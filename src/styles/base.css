@@ -3,10 +3,6 @@ html {
   height: 100%;
 }
 
-body {
-  min-height: 100%;
-}
-
 body.dark {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
