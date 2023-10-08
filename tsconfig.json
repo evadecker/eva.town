@@ -21,7 +21,6 @@
     "**/*.js",
     ".eslintrc.js",
     "./src/types/*.d.ts",
-    "./public/scripts/*.js",
     "**/*.cjs"
   ],
   "exclude": ["node_modules", "dist"]

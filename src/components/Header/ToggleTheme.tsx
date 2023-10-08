@@ -1,5 +1,6 @@
 import "./toggle-theme.css";
 
+import { mauve, mauveDark } from "@radix-ui/colors";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 
@@ -22,6 +23,14 @@ export const ToggleTheme = () => {
 
     // Update localStorage
     window.localStorage.setItem("theme", activeTheme);
+
+    // Update meta theme
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme !== null)
+      metaTheme.setAttribute(
+        "content",
+        activeTheme === "dark" ? mauveDark.mauve1 : mauve.mauve1
+      );
   }, [activeTheme]);
 
   return (
