@@ -13,18 +13,16 @@ export const ToggleTheme = () => {
   const [activeTheme, setActiveTheme] = useState<Theme>(
     document.body.classList.contains("dark") ? "dark" : "light"
   );
-  const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
   useEffect(() => {
     if (!activeTheme) return;
 
     // Update class on body
-    const inactiveTheme = activeTheme === "light" ? "dark" : "light";
-    document.body.classList.remove(inactiveTheme);
+    document.body.classList.remove("light", "dark");
     document.body.classList.add(activeTheme);
 
     // Update localStorage
-    localStorage.setItem("theme", activeTheme);
+    window.localStorage.setItem("theme", activeTheme);
 
     // Update meta theme
     const metaTheme = document.querySelector('meta[name="theme-color"]');
@@ -42,7 +40,7 @@ export const ToggleTheme = () => {
         data-theme-toggle
         aria-label="Toggle theme"
         onClick={() => {
-          setActiveTheme(inactiveTheme);
+          setActiveTheme(activeTheme === "light" ? "dark" : "light");
         }}
         onMouseOver={() => {
           setIsHovering(true);
