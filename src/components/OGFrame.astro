@@ -1,0 +1,33 @@
+---
+type Props = {
+  img: string;
+  imgAlt: string;
+  slug: string;
+};
+
+const { img, imgAlt, slug } = Astro.props;
+---
+
+<div class="image" transition:name={`${slug} page-image`}>
+  <img src={img} alt={imgAlt} />
+</div>
+
+<style>
+  .image {
+    background-color: var(--mauve-3);
+    border-radius: var(--radius-md);
+
+    /* 1,200 x 630 */
+    aspect-ratio: 1.91 / 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image > img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+</style>

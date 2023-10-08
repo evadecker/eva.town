@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProseLayout.astro
 title: About Eva
 description: It’s pronounced AY-vuh.
 datePublished: 2023-10-03 01:03:55-04:00

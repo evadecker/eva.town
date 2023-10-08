@@ -2,50 +2,42 @@
 import "../styles/prose.css";
 
 import Center from "../components/Center.astro";
-import { RelativeDate } from "../components/RelativeDate/RelativeDate";
-import Stack from "../components/Stack.astro";
+import PageHeader from "../components/PageHeader.astro";
 import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "./BaseLayout.astro";
 
-const { frontmatter } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  datePublished: Date;
+  dateModified?: Date;
+  img?: string;
+  imgAlt?: string;
+  slug: string;
+}
+
+const { title, description, datePublished, dateModified, img, imgAlt, slug } =
+  Astro.props;
 ---
 
-<BaseLayout
-  title={frontmatter.title}
-  description={frontmatter.description}
-  includeFooter
-  padBottom
->
-  <Center>
-    <article itemscope itemtype="https://schema.org/BlogPosting">
-      <header class="article-header">
-        <Stack>
-          <h1 itemprop="name">{frontmatter.title}</h1>
-          <p class="subtitle">{frontmatter.description}</p>
-          <Stack>
-            <RelativeDate
-              date={frontmatter.datePublished}
-              prefix="Published"
-              icon="seedling"
-              client:load
-            />
-            {
-              frontmatter.dateModified && (
-                <RelativeDate
-                  date={frontmatter.dateModified}
-                  prefix="Last tended"
-                  icon="sparkling"
-                  client:load
-                />
-              )
-            }
-          </Stack>
-        </Stack>
-      </header>
-      <section itemprop="articleBody" class="prose">
+<BaseLayout title={title} description={description} includeFooter padBottom>
+  <article itemscope itemtype="https://schema.org/BlogPosting">
+    <PageHeader
+      title={title}
+      description={description}
+      datePublished={datePublished}
+      dateModified={dateModified}
+      img={img}
+      imgAlt={imgAlt}
+      slug={slug}
+    />
+    <section itemprop="articleBody" class="prose">
+      <Center>
         <slot />
-      </section>
-    </article>
+      </Center>
+    </section>
+  </article>
+  <Center>
     <Subscribe />
   </Center>
 </BaseLayout>

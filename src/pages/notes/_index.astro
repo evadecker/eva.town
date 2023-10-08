@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import PageHeader from "src/components/PageHeader.astro";
+import Subscribe from "src/components/Subscribe/Subscribe.astro";
+
+import ArticleCard from "../../components/ArticleCard.astro";
+import Center from "../../components/Center.astro";
+import Grid from "../../components/Grid.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allNotesEntries = await getCollection("notes");
+const hasEntries = !!allNotesEntries;
+---
+
+<BaseLayout
+  title="Notes"
+  description="Writing from Eva"
+  includeFooter
+  padBottom
+>
+  <PageHeader title="Notes" slug="notes" />
+  <Center>
+    <section class="notes">
+      <Grid>
+        {
+          hasEntries ? (
+            allNotesEntries.map((entry) => (
+              <ArticleCard
+                slug={entry.slug}
+                title={entry.data.title}
+                description={entry.data.description}
+                date={entry.data.datePublished}
+                img={entry.data.img}
+                imgAlt={entry.data.imgAlt}
+              />
+            ))
+          ) : (
+            <p>No notes yet. Check back soon.</p>
+          )
+        }
+      </Grid>
+    </section>
+    <Subscribe />
+  </Center>
+</BaseLayout>
+
+<style>
+  .notes {
+    padding-block-end: 4em;
+  }
+</style>

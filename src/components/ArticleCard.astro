@@ -1,0 +1,66 @@
+---
+import OGFrame from "./OGFrame.astro";
+import { RelativeDate } from "./RelativeDate/RelativeDate";
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  date: Date;
+  img: string;
+  imgAlt: string;
+}
+
+const { slug, title, description, date, img, imgAlt } = Astro.props;
+---
+
+<a class="card" href={`/notes/${slug}`} aria-label={title}>
+  <OGFrame img={img} imgAlt={imgAlt} slug={slug} />
+  <div class="contents">
+    <h2 class="title">{title}</h2>
+    <small class="subtitle">{description}</small>
+    <RelativeDate date={date} prefix="" />
+  </div>
+</a>
+
+<style>
+  .card {
+    display: block;
+    border-radius: var(--radius-lg);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card:hover .image {
+    transform: scale(1.03);
+  }
+
+  .card:active .image {
+    transform: scale(0.98);
+  }
+
+  .contents {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 1em;
+    padding-inline-start: 0;
+  }
+
+  .title {
+    font-size: var(--text-h4);
+    line-height: var(--line-height-h4);
+    font-variation-settings: "wght" var(--font-weight-medium);
+    transition: all 0.2s ease-in-out;
+    text-wrap: balance;
+  }
+
+  .card:hover .title {
+    color: var(--plum-9);
+  }
+
+  .subtitle {
+    color: var(--mauve-11);
+    line-height: var(--line-height-small);
+    text-wrap: balance;
+  }
+</style>

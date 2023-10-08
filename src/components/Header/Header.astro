@@ -7,6 +7,9 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
   <Center>
     <nav>
       <a class="wordmark" href="/">Eva Decker</a>
+      <div class="links">
+        <a href="/about">About</a>
+      </div>
       <div class="toggle">
         <ToggleTheme client:only="react" />
       </div>
@@ -47,12 +50,35 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
       "wght" 580;
     text-decoration: "none";
     position: "relative";
-    bottom: "-0.08em";
+    bottom: "-0.1em";
+  }
+
+  .links {
+    display: flex;
+    gap: 0.25em;
+    margin-inline-start: auto;
+    font-size: var(--text-small);
+  }
+
+  .links a {
+    padding: 0.14em 0.4em 0.08em;
+    border-radius: var(--radius-sm);
+  }
+
+  .links a:hover {
+    background: var(--plum-a3);
+    color: var(--plum-12);
+  }
+
+  .links a:active {
+    background: var(--plum-a4);
+    color: var(--plum-12);
   }
 
   .toggle {
     position: relative;
     width: 40px;
     height: 40px;
+    margin-inline-start: 0.5em;
   }
 </style>

@@ -10,7 +10,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  color: var(--mauve-12);
+  color: var(--mauve-11);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -19,7 +19,8 @@
 }
 
 .toggleButton:hover {
-  background: var(--mauve-a3);
+  background: var(--plum-a3);
+  color: var(--plum-12);
 }
 
 .toggleButton svg {
@@ -30,7 +31,6 @@
   position: absolute;
   width: 24px;
   height: 24px;
-  color: var(--plum-12);
 }
 
 .moon:not(.active) {
