@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 import { clearSams, numSams } from "../../stores/sam";
 import { SamSticker, type SamStickerProps } from "./SamSticker";
-import * as styles from "./stickers.css";
 
 export const SamStickers = () => {
   const [samArray, setSamArray] = useState<SamStickerProps[]>([]);

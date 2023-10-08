@@ -2,6 +2,8 @@
 title: About Eva
 description: It’s pronounced AY-vuh.
 datePublished: 2023-10-03 01:03:55-04:00
+img: "./portrait.png"
+imgAlt: A screenshot a Mac desktop with applications open including Figma and Chrome. At the front is Photo Booth, displaying a photo of Eva.
 ---
 
 I began coding in the late 2000s, typing into a textarea of vBulletin for a Nintendo fan forum. Without syntax highlighting, `border-radius`, or `flexbox`, I'd spend hours exporting assets from Photoshop and laying out content in CSS.

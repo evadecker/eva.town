@@ -4,15 +4,15 @@ import OGFrame from "./OGFrame.astro";
 import { RelativeDate } from "./RelativeDate/RelativeDate";
 import Stack from "./Stack.astro";
 
-type Props = {
+interface Props {
   slug: string;
   title: string;
   description?: string;
-  img?: string;
+  img?: ImageMetadata;
   imgAlt?: string;
   datePublished?: Date;
   dateModified?: Date;
-};
+}
 
 const { title, description, img, imgAlt, slug, datePublished, dateModified } =
   Astro.props;

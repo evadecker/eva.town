@@ -7,15 +7,15 @@ interface Props {
   title: string;
   description: string;
   date: Date;
-  img: string;
-  imgAlt: string;
+  img?: ImageMetadata;
+  imgAlt?: string;
 }
 
 const { slug, title, description, date, img, imgAlt } = Astro.props;
 ---
 
 <a class="card" href={`/notes/${slug}`} aria-label={title}>
-  <OGFrame img={img} imgAlt={imgAlt} slug={slug} />
+  {img && imgAlt && <OGFrame img={img} imgAlt={imgAlt} slug={slug} />}
   <div class="contents">
     <h2 class="title">{title}</h2>
     <small class="subtitle">{description}</small>
