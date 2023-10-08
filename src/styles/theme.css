@@ -2,10 +2,10 @@
 @import "@radix-ui/colors/mauve-alpha.css";
 @import "@radix-ui/colors/mauve-dark.css";
 @import "@radix-ui/colors/mauve-dark-alpha.css";
-@import "@radix-ui/colors/plum.css";
-@import "@radix-ui/colors/plum-alpha.css";
-@import "@radix-ui/colors/plum-dark.css";
-@import "@radix-ui/colors/plum-dark-alpha.css";
+@import "@radix-ui/colors/pink.css";
+@import "@radix-ui/colors/pink-alpha.css";
+@import "@radix-ui/colors/pink-dark.css";
+@import "@radix-ui/colors/pink-dark-alpha.css";
 @import "@radix-ui/colors/white-alpha.css";
 @import "@radix-ui/colors/black-alpha.css";
 
@@ -67,18 +67,18 @@
   --font-weight-bold: 700;
 
   /* Synth */
-  --synth-base: var(--plum-4);
-  --synth-endcap: var(--plum-2);
-  --synth-lcdoutline: var(--plum-2);
-  --synth-keysoutline: var(--plum-2);
+  --synth-base: var(--pink-4);
+  --synth-endcap: var(--pink-2);
+  --synth-lcdoutline: var(--pink-2);
+  --synth-keysoutline: var(--pink-2);
   --synth-whitekey: var(--whiteA-12);
-  --synth-whitekey-pressed: var(--plum-11);
+  --synth-whitekey-pressed: var(--pink-11);
   --synth-blackkey: var(--mauve-5);
-  --synth-blackkey-pressed: var(--plum-5);
+  --synth-blackkey-pressed: var(--pink-5);
   --synth-betweenkeys: var(--mauve-11);
   --synth-keyletter: var(--blackA-12);
-  --synth-lcd-bg: var(--plum-4);
-  --synth-lcd-light: var(--plum-1);
-  --synth-lcd-medium: var(--plum-8);
-  --synth-lcd-dark: var(--plum-9);
+  --synth-lcd-bg: var(--pink-4);
+  --synth-lcd-light: var(--pink-1);
+  --synth-lcd-medium: var(--pink-8);
+  --synth-lcd-dark: var(--pink-9);
 }

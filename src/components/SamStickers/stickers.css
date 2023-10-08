@@ -31,7 +31,7 @@
 
 .stickerPath:hover,
 .sticker:active .stickerPath {
-  stroke: var(--plum-9);
+  stroke: var(--pink-9);
   stroke-width: 6px;
 }
 

@@ -29,7 +29,7 @@ body {
 }
 
 ::selection {
-  background: var(--plum-4);
+  background: var(--pink-4);
 }
 
 h1,
