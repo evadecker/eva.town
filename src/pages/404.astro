@@ -18,28 +18,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <style>
   @keyframes text-offset {
-    0%: {
+    0% {
       clip-path: polygon(0 110%, 100% 110%, 100% 160%, 0 160%);
     }
-    100%: {
+
+    100% {
       clip-path: polygon(0 -90%, 100% -90%, 100% -10%, 0 -10%);
     }
   }
 
   @keyframes scanline {
-    0%: {
+    0% {
       transform: translate3d(0, 100vh, 0);
     }
-    50%: {
+
+    50% {
       transform: translate3d(0, -6px, 0);
     }
   }
 
   @keyframes flicker {
-    0%: {
-      opacity: 0.9;
+    0% {
+      opacity: 0.95;
     }
-    100%: {
+
+    100% {
       opacity: 1;
     }
   }
@@ -54,6 +57,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     overflow: hidden;
     z-index: -1;
     animation: flicker 20ms infinite;
+    transform: skewX(10deg);
   }
 
   .scanlines {
@@ -64,15 +68,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAALElEQVQYV2NkYGD4/x9IMAIxAxoDmzhIHfU0gCxFB9S1AacfsFmNJQzAoQIAH84j/OCkeYUAAAAASUVORK5CYII=");
     background-size: 12px 6px;
     mix-blend-mode: color-dodge;
-    opacity: 0.5;
+    opacity: 0.05;
   }
 
   .scanlines::after {
     content: "";
     position: absolute;
     width: 100%;
-    background: white;
-    opacity: 0.05;
+    background: var(--white-a12);
+    opacity: 1;
     height: 6px;
     animation: scanline 5s linear infinite;
   }
@@ -80,19 +84,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .textClip {
     position: absolute;
     top: 0;
-    left: -0.3rem;
+    left: -0.3em;
     text-shadow:
-      `-1.5px 0 0 blue,
+      -1.5px 0 0 blue,
       1.5px 0 0 red,
       0 1.5px 0 lime,
-      0.35rem 0 0 var(--mauve-1),
-      4px 4px 0 var(--mauve-1) `;
+      0.4em 0 0 var(--mauve-1),
+      4px 4px 0 var(--mauve-1);
     animation: text-offset 8s linear infinite;
-    transition: text-shadow 1s ease-in-out;
   }
 
   .subtitle {
-    font-size: clamp(60px, 10vw, 180px);
+    font-size: clamp(60px, 10vw, 96px);
     font-variation-settings:
       "wdth" 140,
       "wght" 700;
@@ -114,7 +117,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     font-family: var(--font-sans);
     position: relative;
     z-index: -1;
-    line-height: 0.8;
+    line-height: 0.7;
     letter-spacing: 0.02em;
     pointer-events: none;
     user-select: none;
@@ -128,12 +131,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   @media screen and (width <= 600px) {
     .text {
-      line-height: 0.7;
+      line-height: 0.5;
     }
   }
 
   .title {
-    font-size: clamp(180px, 30vw, 400px);
+    font-size: clamp(180px, 30vw, 280px);
     font-variation-settings:
       "wdth" 150,
       "wght" 700;
@@ -145,6 +148,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       font-variation-settings:
         "wdth" 50,
         "wght" 300;
+      letter-spacing: 0.02em;
     }
   }
 </style>
