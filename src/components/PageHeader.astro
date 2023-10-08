@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import Center from "./Center.astro";
 import OGFrame from "./OGFrame.astro";
 import { RelativeDate } from "./RelativeDate/RelativeDate";
@@ -19,14 +21,14 @@ const { title, description, img, imgAlt, slug, datePublished, dateModified } =
 ---
 
 <header class="page-header">
+  {
+    img && imgAlt && (
+      <div class="page-image">
+        <Image src={img} alt={imgAlt} transition:name={`${slug} page-image`} />
+      </div>
+    )
+  }
   <Center>
-    {
-      img && imgAlt && (
-        <div class="page-image">
-          <OGFrame img={img} imgAlt={imgAlt} slug={slug} />
-        </div>
-      )
-    }
     <Stack>
       <Stack spacing="tight">
         <h1 itemprop="name" class="page-title">
@@ -60,14 +62,24 @@ const { title, description, img, imgAlt, slug, datePublished, dateModified } =
 
 <style>
   .page-header {
-    padding: 2em 0;
+    padding-block-end: 2em;
   }
 
   .page-image {
-    margin-block-end: 2em;
+    background-color: var(--pink-3);
+  }
+
+  .page-image img {
+    width: 100%;
+    mix-blend-mode: multiply;
+  }
+
+  :global(.dark) .page-image img {
+    mix-blend-mode: screen;
   }
 
   .page-title {
+    margin-block-start: 1em;
     text-wrap: balance;
   }
 
