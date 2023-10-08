@@ -11,7 +11,6 @@ body.dark {
 body {
   color: var(--mauve-12);
   background-color: var(--mauve-1);
-  min-height: 100%;
   display: flex;
   min-height: 100%;
   position: relative;
@@ -30,7 +29,7 @@ body {
 }
 
 ::selection {
-  background: var(--plum-8);
+  background: var(--plum-4);
 }
 
 h1,
