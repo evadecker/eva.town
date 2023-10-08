@@ -10,9 +10,16 @@ function getUserPreference() {
 
 const setTheme = () => {
   const userPreference = getUserPreference();
-  console.log("setting theme", userPreference);
   document.body.classList.remove("light", "dark");
   document.body.classList.add(userPreference);
+
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  if (metaTheme !== null)
+    metaTheme.setAttribute(
+      "content",
+      userPreference === "dark" ? "#121113" : "#FDFCFD"
+    );
+
   window.localStorage.setItem("theme", userPreference);
 };
 

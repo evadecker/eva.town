@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "module": "ES6",
     "target": "ES6",
-    "typeRoots": ["./src/types", "./node_modules/@types", "./public/scripts"],
+    "typeRoots": ["./src/types", "./node_modules/@types", "public/scripts"],
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
@@ -21,7 +21,6 @@
     "**/*.js",
     ".eslintrc.js",
     "./src/types/*.d.ts",
-    "./public/scripts/*.js",
     "**/*.cjs"
   ],
   "exclude": ["node_modules", "dist"]
