@@ -12,6 +12,7 @@ body {
   color: var(--mauve-12);
   background-color: var(--mauve-1);
   display: flex;
+  min-height: 100%;
   position: relative;
   flex-direction: column;
   align-items: flex-start;
