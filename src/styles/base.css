@@ -13,6 +13,7 @@ body {
   background-color: var(--mauve-1);
   min-height: 100%;
   display: flex;
+  min-height: 100%;
   position: relative;
   flex-direction: column;
   align-items: flex-start;
