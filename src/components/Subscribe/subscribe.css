@@ -22,11 +22,11 @@
   color: var(--mauve-12);
   background: var(--mauve-3);
   padding: 0 1em;
-  padding-inline-end: 3rem;
+  padding-inline-end: 4rem;
 }
 
 .iconButton {
-  background: var(--plum-9);
+  background: var(--pink-9);
   color: white;
   position: absolute;
   top: 50%;
@@ -44,17 +44,17 @@
 }
 
 .iconButton:hover {
-  background: var(--plum-10);
+  background: var(--pink-10);
 }
 
 .iconButton:disabled {
-  background: var(--plum-9);
+  background: var(--pink-9);
   opacity: 0.8;
   pointer-events: none;
 }
 
 .sniperLink {
-  background: var(--plum-9);
+  background: var(--pink-9);
   color: white;
   font-variation-settings:
     "wdth" var(--font-width-normal),
@@ -82,7 +82,8 @@
 }
 
 .input:focus {
-  outline: 3px solid var(--plum-a6);
+  background-color: var(--mauve-2);
+  outline: 3px solid var(--pink-a9);
 }
 
 .input:disabled {
@@ -90,7 +91,7 @@
 }
 
 .sniperLink:hover {
-  background: var(--plum-10);
+  background: var(--pink-10);
 }
 
 .checkInbox {

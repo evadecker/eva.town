@@ -19,8 +19,8 @@
 }
 
 .toggleButton:hover {
-  background: var(--plum-a3);
-  color: var(--plum-12);
+  background: var(--pink-a3);
+  color: var(--pink-12);
 }
 
 .toggleButton svg {

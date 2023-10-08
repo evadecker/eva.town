@@ -53,7 +53,7 @@
 
 .prose a:hover,
 .prose a:focus {
-  color: var(--plum-11);
+  color: var(--pink-11);
 }
 
 .prose h1 a:hover,
@@ -62,7 +62,7 @@
 .prose h4 a:hover,
 .prose h5 a:hover,
 .prose h6 a:hover {
-  background-color: var(--plum-3);
+  background-color: var(--pink-3);
 }
 
 .prose h1 a svg,
@@ -92,14 +92,14 @@
 .prose p a:focus,
 .prose li a:hover,
 .prose li a:focus {
-  text-shadow: 0 0 2em var(--plum-12);
+  text-shadow: 0 0 2em var(--pink-12);
 }
 
 .prose p a:hover::after,
 .prose p a:focus::after,
 .prose li a:hover::after,
 .prose li a:focus::after {
-  background-color: var(--plum-7);
+  background-color: var(--pink-7);
   bottom: 0.2em;
 }
 
