@@ -1,0 +1,45 @@
+---
+interface Props {
+  img: ImageMetadata[];
+  imgAlt: string;
+}
+
+const { img, imgAlt } = Astro.props;
+---
+
+<picture>
+  {
+    img.map((i, idx) =>
+      idx < img.length - 1 ? (
+        <source
+          media={`(max-width: ${img[idx + 1].width - 1}px)`}
+          srcset={i.src}
+        />
+      ) : (
+        <source media={`(min-width: ${i.width}px)`} srcset={i.src} />
+      )
+    )
+  }
+  <img src={img[0].src} alt={imgAlt} />
+</picture>
+
+<style>
+  picture {
+    image-rendering: pixelated;
+
+    /* 1,200 x 630 */
+    aspect-ratio: 1.91 / 1;
+    width: 100%;
+    max-width: 1280px;
+    mix-blend-mode: multiply;
+    display: block;
+  }
+
+  picture img {
+    width: 100%;
+  }
+
+  :global(.dark) picture {
+    mix-blend-mode: screen;
+  }
+</style>

@@ -1,5 +1,5 @@
 ---
-import OGFrame from "./OGFrame.astro";
+import Picture from "./Picture.astro";
 import { RelativeDate } from "./RelativeDate/RelativeDate";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
   title: string;
   description: string;
   date: Date;
-  img?: ImageMetadata;
+  img?: ImageMetadata[];
   imgAlt?: string;
 }
 
@@ -15,7 +15,7 @@ const { slug, title, description, date, img, imgAlt } = Astro.props;
 ---
 
 <a class="card" href={`/notes/${slug}`} aria-label={title}>
-  {img && imgAlt && <OGFrame img={img} imgAlt={imgAlt} slug={slug} />}
+  {img && imgAlt && <Picture img={img} imgAlt={imgAlt} />}
   <div class="contents">
     <h2 class="title">{title}</h2>
     <small class="subtitle">{description}</small>
