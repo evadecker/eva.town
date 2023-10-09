@@ -21,7 +21,7 @@ const notesCollection = defineCollection({
       description: z.string(),
       datePublished: z.date(),
       dateModified: z.date().optional(),
-      img: image().optional(),
+      img: image().array().optional(),
       imgAlt: z.string().optional(),
     }),
 });
