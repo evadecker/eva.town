@@ -1,8 +1,6 @@
 ---
-import { Image } from "astro:assets";
-
 import Center from "./Center.astro";
-import OGFrame from "./OGFrame.astro";
+import Picture from "./Picture.astro";
 import { RelativeDate } from "./RelativeDate/RelativeDate";
 import Stack from "./Stack.astro";
 
@@ -10,13 +8,13 @@ interface Props {
   slug: string;
   title: string;
   description?: string;
-  img?: ImageMetadata;
+  img?: ImageMetadata[];
   imgAlt?: string;
   datePublished?: Date;
   dateModified?: Date;
 }
 
-const { title, description, img, imgAlt, slug, datePublished, dateModified } =
+const { title, description, img, imgAlt, datePublished, dateModified } =
   Astro.props;
 ---
 
@@ -24,7 +22,7 @@ const { title, description, img, imgAlt, slug, datePublished, dateModified } =
   {
     img && imgAlt && (
       <div class="page-image">
-        <Image src={img} alt={imgAlt} transition:name={`${slug} page-image`} />
+        <Picture img={img} imgAlt={imgAlt} />
       </div>
     )
   }
@@ -66,16 +64,10 @@ const { title, description, img, imgAlt, slug, datePublished, dateModified } =
   }
 
   .page-image {
-    background-color: var(--pink-3);
-  }
-
-  .page-image img {
-    width: 100%;
-    mix-blend-mode: multiply;
-  }
-
-  :global(.dark) .page-image img {
-    mix-blend-mode: screen;
+    background: var(--pink-3);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .page-title {
