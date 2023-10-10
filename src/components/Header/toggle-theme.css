@@ -23,6 +23,10 @@
   color: var(--pink-12);
 }
 
+.toggleButton:active {
+  background: var(--pink-a4);
+}
+
 .toggleButton svg {
   transform-origin: 50% 200%;
   transition:
