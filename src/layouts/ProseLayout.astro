@@ -14,13 +14,31 @@ interface Props {
   img?: ImageMetadata[];
   imgAlt?: string;
   slug: string;
+  ogImage?: string;
+  ogAlt?: string;
 }
 
-const { title, description, datePublished, dateModified, img, imgAlt, slug } =
-  Astro.props;
+const {
+  title,
+  description,
+  datePublished,
+  dateModified,
+  img,
+  imgAlt,
+  slug,
+  ogImage,
+  ogAlt,
+} = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} includeFooter padBottom>
+<BaseLayout
+  title={title}
+  description={description}
+  includeFooter
+  padBottom
+  ogImage={ogImage}
+  ogAlt={ogAlt}
+>
   <article itemscope itemtype="https://schema.org/BlogPosting">
     <PageHeader
       title={title}

@@ -10,6 +10,7 @@ const pagesCollection = defineCollection({
       dateModified: z.date().optional(),
       img: image().array().optional(),
       imgAlt: z.string().optional(),
+      ogImage: image().optional(),
     }),
 });
 
@@ -23,6 +24,7 @@ const notesCollection = defineCollection({
       dateModified: z.date().optional(),
       img: image().array().optional(),
       imgAlt: z.string().optional(),
+      ogImage: image().optional(),
     }),
 });
 
