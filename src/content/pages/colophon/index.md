@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers evadecker.com.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2023-10-09 17:11:22-04:00
+dateModified: 2023-10-09 21:17:09-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -39,7 +39,7 @@ Type inspiration can be found anywhere, from comic art and video games to bodega
 
 ## Styling
 
-I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consistently, ensure accessibility, and seamlessly switch between light and dark mode. Icons are from [Remix Icon](https://remixicon.com). Styles are written using plain 'ol CSS. I [don’t use a grid](https://gridless.design).
+I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consistently, ensure accessibility, and seamlessly switch between light and dark mode. Icons are from [Remix Icon](https://remixicon.com). Styles are written using plain 'ol CSS. I [don’t use a grid](https://gridless.design). Pixel portraits of me were created by [@NullTheFool](https://mastodon.gamedev.place/@NullTheFool) on the [Pixel Art Discord](https://discord.com/invite/pixelart). Pixelated header images are created using the Atkinson dithering algorithm via [Dithermark](https://app.dithermark.com).
 
 ## Sounds
 
