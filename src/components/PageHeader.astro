@@ -80,9 +80,14 @@ const { title, description, img, imgAlt, datePublished, dateModified } =
     flex-direction: row;
     justify-content: center;
     overflow: hidden;
-    animation: fadeOut linear both;
-    animation-timeline: view();
-    animation-range: exit 0% exit calc(100% - 80px);
+  }
+
+  @supports (animation-timeline: view()) {
+    .page-image {
+      animation: fadeOut linear forwards;
+      animation-timeline: view();
+      animation-range: exit 0% exit calc(100% - 80px);
+    }
   }
 
   .page-title {
