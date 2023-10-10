@@ -59,6 +59,17 @@ const { title, description, img, imgAlt, datePublished, dateModified } =
 </header>
 
 <style>
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
   .page-header {
     padding-block-end: 2em;
   }
@@ -69,6 +80,9 @@ const { title, description, img, imgAlt, datePublished, dateModified } =
     flex-direction: row;
     justify-content: center;
     overflow: hidden;
+    animation: fadeOut linear both;
+    animation-timeline: view();
+    animation-range: exit 0% exit 90%;
   }
 
   .page-title {
