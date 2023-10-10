@@ -38,9 +38,9 @@ try {
 ---
 
 <footer transition:animate="fade">
-  <Center>
-    <Stack>
-      <Grid width="narrow">
+  <Stack>
+    <div class="links">
+      <div class="linkCol">
         <Stack spacing="none">
           <a
             class="link"
@@ -70,14 +70,16 @@ try {
              Resume
           </a>
         </Stack>
+      </div>
+      <div class="linkCol">
         <Stack spacing="none">
           <a class="link" href="/about">About</a>
           <a class="link" href="/colophon">Colophon</a>
         </Stack>
-      </Grid>
-      <RelativeDate date={dateModified} prefix="Last tended" icon="sparkling" />
-    </Stack>
-  </Center>
+      </div>
+    </div>
+    <RelativeDate date={dateModified} prefix="Last tended" icon="sparkling" />
+  </Stack>
 </footer>
 
 <style>
@@ -85,7 +87,19 @@ try {
     background: var(--mauve-2);
     border-top: 1px solid var(--mauve-6);
     width: 100%;
-    padding: 2rem 0;
+    padding-block: 2rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .linkCol {
+    width: 12ch;
   }
 
   .link {
