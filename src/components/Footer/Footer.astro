@@ -90,16 +90,23 @@ try {
     align-items: center;
   }
 
-  @media (width <= 600px) {
-    .links {
+  @media (width <= 580px) {
+    footer {
+      padding-block-start: 1rem;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: flex-start;
+    }
+
+    .links {
+      margin-inline-start: -0.5rem;
     }
   }
 
   .links a {
-    padding: 0.5rem;
-    display: inline-block;
+    height: 2.5rem;
+    padding-inline: 0.5rem;
+    display: flex;
+    align-items: center;
   }
 
   .links a:hover {
