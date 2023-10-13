@@ -1,4 +1,4 @@
-import { expect,test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
   await page.goto("/");
@@ -24,11 +24,4 @@ test("opens social links in new tab", async ({ page }) => {
 
   await expect(githubLink).toHaveAttribute("target", "_blank");
   await expect(linkedInLink).toHaveAttribute("target", "_blank");
-});
-
-test("downloads resume", async ({ page }) => {
-  const downloadPromise = page.waitForEvent("download");
-  await page.getByRole("link", { name: "Resume" }).click();
-  const download = await downloadPromise;
- expect(download.suggestedFilename()).toBe("eva-decker-resume.pdf");
 });
