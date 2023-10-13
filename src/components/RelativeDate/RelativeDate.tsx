@@ -30,7 +30,7 @@ export const RelativeDate = ({ prefix, date, icon }: RelativeDateProps) => {
 
   if (date === null) {
     formattedTimestamp = "";
-    relativeTimeInWords = "at some point in time";
+    relativeTimeInWords = "at some point";
   } else {
     formattedTimestamp = dayjs(date)
       .tz("America/New_York", true)

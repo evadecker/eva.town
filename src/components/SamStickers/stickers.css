@@ -7,7 +7,7 @@
   border-radius: var(--radius-sm);
   right: 2rem;
   bottom: 2rem;
-  font-variation-settings: wght 600;
+  font-weight: var(--font-weight-bold);
   cursor: pointer;
   pointer-events: auto;
   z-index: 500;
