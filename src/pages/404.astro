@@ -57,7 +57,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     overflow: hidden;
     z-index: -1;
     animation: flicker 20ms infinite;
-    transform: skewX(10deg);
   }
 
   .scanlines {
@@ -67,7 +66,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     pointer-events: none;
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAALElEQVQYV2NkYGD4/x9IMAIxAxoDmzhIHfU0gCxFB9S1AacfsFmNJQzAoQIAH84j/OCkeYUAAAAASUVORK5CYII=");
     background-size: 12px 6px;
-    mix-blend-mode: color-dodge;
     opacity: 0.05;
   }
 
@@ -96,21 +94,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .subtitle {
     font-size: clamp(60px, 10vw, 96px);
-    font-variation-settings:
-      "wdth" 140,
-      "wght" 700;
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     white-space: nowrap;
-  }
-
-  @media screen and (width <= 600px) {
-    .subtitle {
-      font-size: 20vw;
-      font-variation-settings:
-        "wdth" 60,
-        "wght" 500;
-    }
   }
 
   .text {
@@ -129,26 +116,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     filter: blur(1.5px);
   }
 
-  @media screen and (width <= 600px) {
-    .text {
-      line-height: 0.5;
-    }
-  }
-
   .title {
+    font-family: var(--font-sans);
     font-size: clamp(180px, 30vw, 280px);
-    font-variation-settings:
-      "wdth" 150,
-      "wght" 700;
-  }
-
-  @media screen and (width <= 600px) {
-    .title {
-      font-size: 90vw;
-      font-variation-settings:
-        "wdth" 50,
-        "wght" 300;
-      letter-spacing: 0.02em;
-    }
+    font-weight: var(--font-weight-bold);
   }
 </style>

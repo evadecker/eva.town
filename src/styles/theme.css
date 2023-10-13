@@ -11,10 +11,9 @@
 
 :root {
   /* Font families */
-  --font-sans: roc-grotesk-variable, system-ui, -apple-system, "Segoe UI",
-    roboto, "Helvetica Neue", sans-serif, serif;
-  --font-serif: loretta-variable, georgia, cambria, "Times New Roman", times,
-    serif;
+  --font-serif: minion-3, georgia, cambria, "Times New Roman", times, serif;
+  --font-sans: franklin-gothic-urw, system-ui, -apple-system, "Segoe UI", roboto,
+    "Helvetica Neue", sans-serif, serif;
   --font-mono: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
@@ -43,7 +42,7 @@
   --line-height-h4: 1.2;
   --line-height-h5: 1.4;
   --line-height-h6: 1.4;
-  --line-height-body: 1.55;
+  --line-height-body: 1.5;
   --line-height-small: 1.4;
 
   /* Letter spacing */
@@ -59,11 +58,7 @@
   --radius-full: 9999px;
 
   /* Font weights */
-  --font-weight-light: 300;
-  --font-weight-prose: 360;
-  --font-weight-code: 420;
-  --font-weight-normal: 420;
-  --font-weight-medium: 480;
+  --font-weight-normal: 400;
   --font-weight-bold: 700;
 
   /* Synth */

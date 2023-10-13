@@ -55,10 +55,8 @@
 
 .sniperLink {
   background: var(--pink-9);
-  color: white;
-  font-variation-settings:
-    "wdth" var(--font-width-normal),
-    "wght" var(--font-weight-medium);
+  color: var(--white-a12);
+  font-weight: var(--font-weight-bold);
   display: flex;
   align-items: center;
   justify-content: flex-start;

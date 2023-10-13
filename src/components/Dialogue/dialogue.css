@@ -37,9 +37,7 @@
 
 .emphasized {
   display: inline-block;
-  font-variation-settings:
-    "wdth" var(--font-width-normal),
-    "wght" var(--font-weight-medium);
+  font-weight: var(--font-weight-bold);
 }
 
 .word {

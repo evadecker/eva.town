@@ -38,83 +38,71 @@ try {
 ---
 
 <footer transition:animate="fade">
-  <Stack>
-    <div class="links">
-      <div class="linkCol">
-        <Stack spacing="none">
-          <a
-            class="link"
-            href="https://github.com/evadecker"
-            target="_blank"
-            aria-label="Visit Eva's GitHub"
-          >
-            <Icon icon="github" variant="filled" />
-             Github
-          </a>
-          <a
-            class="link"
-            href="https://linkedin.com/in/evadecker"
-            target="_blank"
-            aria-label="Visit Eva's LinkedIn"
-          >
-            <Icon icon="linkedInBox" variant="filled" />
-             LinkedIn
-          </a>
-          <a
-            class="link"
-            href="/downloads/eva-decker-resume.pdf"
-            target="_blank"
-            aria-label="View Eva's Resume"
-          >
-            <Icon icon="download" />
-             Resume
-          </a>
-        </Stack>
-      </div>
-      <div class="linkCol">
-        <Stack spacing="none">
-          <a class="link" href="/about">About</a>
-          <a class="link" href="/colophon">Colophon</a>
-        </Stack>
-      </div>
+  <RelativeDate date={dateModified} prefix="Last tended" icon="sparkling" />
+
+  <div class="links">
+    <div class="pages">
+      <a href="/about">About</a>
+      <a href="/colophon">Colophon</a>
     </div>
-    <RelativeDate date={dateModified} prefix="Last tended" icon="sparkling" />
-  </Stack>
+    <div class="social">
+      <a
+        href="https://github.com/evadecker"
+        target="_blank"
+        aria-label="Visit Eva's GitHub"
+      >
+        <Icon icon="github" variant="filled" />
+      </a>
+      <a
+        href="https://linkedin.com/in/evadecker"
+        target="_blank"
+        aria-label="Visit Eva's LinkedIn"
+      >
+        <Icon icon="linkedInBox" variant="filled" />
+      </a>
+    </div>
+  </div>
 </footer>
 
 <style>
   footer {
     background: var(--mauve-2);
     border-top: 1px solid var(--mauve-6);
+    font-size: var(--text-small);
     width: 100%;
-    padding-block: 2rem;
+    padding-block: 0.5rem;
     padding-inline-start: 1.5rem;
     padding-inline-end: 1.5rem;
+    display: flex;
+    align-items: center;
   }
 
   .links {
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
-  }
-
-  .linkCol {
-    width: 12ch;
-  }
-
-  .link {
-    justify-self: flex-start;
-    display: inline-flex;
     align-items: center;
-    padding: 0.25rem 0;
+    line-height: 1;
+    margin-inline-start: auto;
   }
 
-  .link:hover {
-    text-decoration: underline;
+  .pages,
+  .social {
+    display: flex;
+    align-items: center;
   }
 
-  .link :global(svg) {
-    color: var(--pink-12);
-    margin-right: 0.5rem;
+  @media (width <= 600px) {
+    .links {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  .links a {
+    padding: 0.5rem;
+    display: inline-block;
+  }
+
+  .links a:hover {
+    color: var(--pink-9);
   }
 </style>
