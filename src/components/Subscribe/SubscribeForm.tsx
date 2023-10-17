@@ -188,20 +188,21 @@ export const SubscribeForm = () => {
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setRecipientEmail(e.target.value);
+    const { value } = e.target;
+    setRecipientEmail(value);
 
-    if (isValidEmail(e.target.value)) {
+    if (isValidEmail(value)) {
       displayNewRemark("validEmail", { force: true });
     }
 
     if (
-      e.target.value.length === TRIGGER_SOME_CHARACTERS_DIALOGUE_AT_LENGTH &&
-      e.target.value.length > recipientEmail.length
+      value.length === TRIGGER_SOME_CHARACTERS_DIALOGUE_AT_LENGTH &&
+      value.length > recipientEmail.length
     ) {
       displayNewRemark("someCharacters");
     }
 
-    if (e.target.value.length < recipientEmail.length) {
+    if (value.length < recipientEmail.length) {
       displayNewRemark("deleting");
     }
   };
