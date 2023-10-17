@@ -162,9 +162,6 @@ export const SubscribeForm = () => {
     const shouldDisplayNewRemark =
       options?.force === true || !justDisplayedRemarks;
 
-    console.log("remarkType", remarkType);
-    console.log("currentRemarkType", currentRemarkType);
-
     if (shouldDisplayNewRemark && remarkType !== currentRemarkType) {
       setCurrentRemarkType(remarkType);
       setCurrentText(getRandomRemark(remarks[remarkType].text));
