@@ -32,9 +32,7 @@ export const RelativeDate = ({ prefix, date, icon }: RelativeDateProps) => {
     formattedTimestamp = "";
     relativeTimeInWords = "at some point";
   } else {
-    formattedTimestamp = dayjs(date)
-      .tz("America/New_York", true)
-      .format("LLLL z");
+    formattedTimestamp = dayjs(date).format("LLLL z");
     relativeTimeInWords = dayjs(date).fromNow();
   }
 
