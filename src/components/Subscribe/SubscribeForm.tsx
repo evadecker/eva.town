@@ -3,7 +3,6 @@ import {
   type ChangeEvent,
   type FormEvent,
   type FormEventHandler,
-  type KeyboardEvent,
   useEffect,
   useState,
 } from "react";
@@ -21,7 +20,7 @@ interface SniperResponse {
 
 type RemarkType =
   | "intro"
-  | "firstCharacter"
+  | "someCharacters"
   | "deleting"
   | "validEmail"
   | "submitting"
@@ -39,8 +38,7 @@ const remarks: Record<RemarkType, Remark> = {
   intro: {
     text: [
       "hey bestie",
-      "what’s up :)",
-      "EVA HERE",
+      "what’s up",
       "hey you",
       "hey nerd",
       "you found me!",
@@ -50,23 +48,17 @@ const remarks: Record<RemarkType, Remark> = {
       "oh hey",
       "hiiieee",
       "hello hello",
-      "hey girlie",
       "hey dork",
       "oh. hi",
-      "oh! you’re here",
-      "hello love ♥",
       "bonjour",
       "good morning(??)",
       "hello stranger",
-      "oh? is it you?",
       "well hello!",
-      "oi!",
-      "well, look who it is",
       "wassup",
     ],
-    emote: "neutral",
+    emote: "happy",
   },
-  firstCharacter: {
+  someCharacters: {
     text: [
       "typing! incredible",
       "we love to type",
@@ -125,14 +117,7 @@ const remarks: Record<RemarkType, Remark> = {
     emote: "thinking",
   },
   success: {
-    text: [
-      "yay! almost there",
-      "nice! one more step",
-      "almost there!",
-      "you did it! almost",
-      "get ready for e-mail (eva-mail)",
-      "good job! almost done",
-    ],
+    text: ["yeah! get ready for e-mail (eva-mail)"],
     emote: "starstruck",
   },
   error: {
@@ -156,8 +141,9 @@ const getRandomRemark = (remarks: string[]): string => {
 };
 
 export const SubscribeForm = () => {
-  const [currentRemarkType, setCurrentRemarkType] =
-    useState<RemarkType>("intro");
+  const [currentRemarkType, setCurrentRemarkType] = useState<RemarkType | null>(
+    null
+  );
   const [justDisplayedRemarks, setJustDisplayedRemarks] = useState(false);
   const [recipientEmail, setRecipientEmail] = useState<string>("");
 
@@ -173,20 +159,18 @@ export const SubscribeForm = () => {
     remarkType: RemarkType,
     options?: { force?: boolean }
   ) => {
-    // If a remark just appeared, don't display a new one, UNLESS force is set to true
-    if (options?.force === true || !justDisplayedRemarks) {
+    const shouldDisplayNewRemark =
+      options?.force === true || !justDisplayedRemarks;
+
+    console.log("remarkType", remarkType);
+    console.log("currentRemarkType", currentRemarkType);
+
+    if (shouldDisplayNewRemark && remarkType !== currentRemarkType) {
       setCurrentRemarkType(remarkType);
       setCurrentText(getRandomRemark(remarks[remarkType].text));
       setCurrentEmote(remarks[remarkType].emote);
     }
   };
-
-  // Set a random intro remark on first render
-  // We can't set this directly in useState initialization because
-  // the server and the client won't match and React gets mad
-  useEffect(() => {
-    displayNewRemark("intro");
-  }, []);
 
   useEffect(() => {
     setJustDisplayedRemarks(true);
@@ -196,21 +180,13 @@ export const SubscribeForm = () => {
   }, [currentRemarkType]);
 
   const handleFocus = () => {
-    setCurrentEmote("happy");
+    if (currentRemarkType === null) {
+      displayNewRemark("intro");
+    }
   };
 
   const handleBlur = () => {
     setCurrentEmote("neutral");
-  };
-
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (/^[a-z0-9]$/i.test(e.key) && currentRemarkType !== "firstCharacter") {
-      displayNewRemark("firstCharacter");
-    }
-
-    if (e.key === "Backspace" && currentRemarkType !== "deleting") {
-      displayNewRemark("deleting");
-    }
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -218,6 +194,17 @@ export const SubscribeForm = () => {
 
     if (isValidEmail(e.target.value)) {
       displayNewRemark("validEmail", { force: true });
+    }
+
+    if (
+      e.target.value.length === 4 &&
+      e.target.value.length > recipientEmail.length
+    ) {
+      displayNewRemark("someCharacters");
+    }
+
+    if (e.target.value.length < recipientEmail.length) {
+      displayNewRemark("deleting");
     }
   };
 
@@ -282,7 +269,6 @@ export const SubscribeForm = () => {
               placeholder="Your email"
               onFocus={handleFocus}
               onBlur={handleBlur}
-              onKeyDown={handleKeyDown}
               onChange={handleChange}
               value={recipientEmail}
               disabled={isSubmitting || hasSubmitted}
