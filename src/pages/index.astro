@@ -1,8 +1,6 @@
 ---
-import Center from "../components/Center.astro";
 import Hero from "../components/Hero.astro";
 import { SamStickers } from "../components/SamStickers/SamStickers";
-import Stack from "../components/Stack.astro";
 import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -11,24 +9,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title="Eva Decker"
   description="Eva is a designer and web developer based in Brooklyn, NY."
   includeFooter
-  padBottom
 >
-  <Center>
-    <Stack>
-      <header class="header">
-        <Hero />
-        <p class="subtitle">
-          I’m a designer and developer. Currently freelancing from Brooklyn, NY,
-          with my tabby, <span class="noBreak"
-            ><button class="samButton" data-sam-button type="button"
-              >Samwise</button
-            >.</span
-          > Sometimes I play piano.
-        </p>
-      </header>
+  <div class="bento">
+    <div class="bento-card hero">
+      <Hero />
+    </div>
+    <div class="bento-card subtitle">
+      I’m a designer and developer. Currently freelancing from Brooklyn, NY,
+      with my tabby, <span class="noBreak"
+        ><button class="samButton" data-sam-button type="button">Samwise</button
+        >.</span
+      > Sometimes I play piano.
+    </div>
+    <div class="bento-card notes">Placeholder</div>
+    <div class="bento-card subscribe">
       <Subscribe />
-    </Stack>
-  </Center>
+    </div>
+  </div>
   <SamStickers client:visible slot="after-footer" />
 
   <script>
@@ -39,8 +36,29 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
-  .header {
-    padding: 3em 0;
+  .bento {
+    display: grid;
+    flex: 1;
+    padding: 2rem;
+    gap: 2rem;
+    grid-template:
+      "hero hero about"
+      "notes subscribe subscribe";
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .bento-card {
+    background: var(--mauve-2);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero {
+    grid-area: hero;
   }
 
   .subtitle {
@@ -48,7 +66,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     font-family: var(--font-sans);
     letter-spacing: var(--letter-spacing-condensed);
     line-height: var(--line-height-h5);
-    margin-top: 2em;
+    grid-area: about;
+  }
+
+  .notes {
+    grid-area: notes;
+  }
+
+  .subscribe {
+    grid-area: subscribe;
   }
 
   .noBreak {
