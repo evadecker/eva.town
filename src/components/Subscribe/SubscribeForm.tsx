@@ -32,6 +32,7 @@ interface Remark {
   emote: EmoteType;
 }
 
+const TRIGGER_SOME_CHARACTERS_DIALOGUE_AT_LENGTH = 4;
 const REMARK_TIMEOUT = 1500;
 
 const remarks: Record<RemarkType, Remark> = {
@@ -194,7 +195,7 @@ export const SubscribeForm = () => {
     }
 
     if (
-      e.target.value.length === 4 &&
+      e.target.value.length === TRIGGER_SOME_CHARACTERS_DIALOGUE_AT_LENGTH &&
       e.target.value.length > recipientEmail.length
     ) {
       displayNewRemark("someCharacters");
