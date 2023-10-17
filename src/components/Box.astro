@@ -1,15 +1,23 @@
 ---
+interface Props {
+  fullHeight?: boolean;
+}
 
+const { fullHeight } = Astro.props;
 ---
 
-<div class="box">
+<div class:list={["box", { fullHeight }]}>
   <slot />
 </div>
 
 <style>
   .box {
-    border: 1px solid var(--mauve-6);
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
+    background-color: var(--mauve-3);
+    padding: 1.5em;
+    border-radius: var(--radius-lg);
+  }
+
+  .fullHeight {
+    height: 100%;
   }
 </style>

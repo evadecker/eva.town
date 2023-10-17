@@ -9,7 +9,7 @@
 }
 
 .bubble {
-  background-color: var(--mauve-3);
+  background-color: var(--mauve-1);
   padding: 0.5rem 1rem;
   font-family: var(--font-family-sans);
   font-size: var(--text-small);

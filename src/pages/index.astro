@@ -1,8 +1,10 @@
 ---
-import Hero from "../components/Hero.astro";
 import { SamStickers } from "../components/SamStickers/SamStickers";
-import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutCard from "./index/AboutCard.astro";
+import HeroCard from "./index/HeroCard.astro";
+import NotesCard from "./index/NotesCard.astro";
+import SubscribeCard from "./index/SubscribeCard.astro";
 ---
 
 <BaseLayout
@@ -10,20 +12,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   description="Eva is a designer and web developer based in Brooklyn, NY."
   includeFooter
 >
-  <div class="bento">
-    <div class="bento-card hero">
-      <Hero />
-    </div>
-    <div class="bento-card subtitle">
-      I’m a designer and developer. Currently freelancing from Brooklyn, NY,
-      with my tabby, <span class="noBreak"
-        ><button class="samButton" data-sam-button type="button">Samwise</button
-        >.</span
-      > Sometimes I play piano.
-    </div>
-    <div class="bento-card notes">Placeholder</div>
-    <div class="bento-card subscribe">
-      <Subscribe />
+  <div class="bento-wrapper">
+    <div class="bento">
+      <div class="hero">
+        <HeroCard />
+      </div>
+      <div class="about">
+        <AboutCard />
+      </div>
+      <div class="notes">
+        <NotesCard />
+      </div>
+      <div class="subscribe">
+        <SubscribeCard />
+      </div>
     </div>
   </div>
   <SamStickers client:visible slot="after-footer" />
@@ -36,36 +38,52 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
-  .bento {
-    display: grid;
+  .bento-wrapper {
+    display: flex;
     flex: 1;
-    padding: 2rem;
-    gap: 2rem;
-    grid-template:
-      "hero hero about"
-      "notes subscribe subscribe";
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .bento-card {
-    background: var(--mauve-2);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .bento {
+    display: grid;
+    padding: 1em;
+    gap: 1em;
+    grid-template:
+      "hero hero about"
+      "subscribe notes notes";
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+  @media (width < 1080px) {
+    .bento {
+      grid-template:
+        "hero hero"
+        "about subscribe"
+        "notes notes";
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (width < 560px) {
+    .bento {
+      grid-template:
+        "hero"
+        "about"
+        "notes"
+        "subscribe";
+      grid-template-columns: 1fr;
+    }
   }
 
   .hero {
     grid-area: hero;
   }
 
-  .subtitle {
-    font-size: var(--text-h5);
-    font-family: var(--font-sans);
-    letter-spacing: var(--letter-spacing-condensed);
-    line-height: var(--line-height-h5);
+  .about {
     grid-area: about;
   }
 
@@ -75,15 +93,5 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .subscribe {
     grid-area: subscribe;
-  }
-
-  .noBreak {
-    white-space: nowrap;
-  }
-
-  .samButton {
-    all: unset;
-    text-decoration: underline;
-    cursor: pointer;
   }
 </style>

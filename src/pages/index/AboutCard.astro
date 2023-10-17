@@ -1,0 +1,115 @@
+---
+import Box from "../../components/Box.astro";
+import { Icon } from "../../components/Icon/Icon";
+---
+
+<Box fullHeight>
+  <div class="about">
+    <p>
+      I’m a designer and developer currently freelancing from Brooklyn, New
+      York, with my tabby, <span class="noWrap"
+        ><button class="samButton" data-sam-button type="button">Samwise</button
+        >.</span
+      > In my free time I play piano.
+    </p>
+    <a href="/about" class="button">
+      About Eva
+      <span class="icon-clip">
+        <span class="icon">
+          <Icon icon="arrowRight" />
+        </span>
+      </span>
+    </a>
+  </div>
+</Box>
+
+<style>
+  @keyframes arrowClip {
+    0% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(100%);
+    }
+
+    50.000001% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .about {
+    font-size: var(--text-h5);
+    font-family: var(--font-sans);
+    letter-spacing: var(--letter-spacing-condensed);
+    line-height: var(--line-height-h5);
+    grid-area: about;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    height: 100%;
+  }
+
+  p {
+    text-wrap: balance;
+  }
+
+  .button {
+    padding-inline: 1.5rem 1rem;
+    height: 3rem;
+    width: 100%;
+    align-self: flex-end;
+    border: 1px solid var(--mauve-8);
+    border-radius: var(--radius-full);
+    transition: 0.2s ease;
+    transition-property: background-color, color, border-color;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .button:hover {
+    background: var(--mauve-12);
+    color: var(--mauve-1);
+    border-color: var(--mauve-12);
+  }
+
+  .button .icon-clip {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-inline-start: 1rem;
+  }
+
+  .button:hover .icon {
+    animation: arrowClip 0.3s both;
+  }
+
+  .noWrap {
+    white-space: nowrap;
+  }
+
+  .samButton {
+    all: unset;
+    cursor: pointer;
+    display: inline-block;
+    background: var(--mauve-5);
+    padding-inline: 0.2em;
+    border-radius: var(--radius-sm);
+  }
+
+  .samButton:hover {
+    background: var(--mauve-6);
+  }
+
+  .samButton:active {
+    background: var(--mauve-7);
+  }
+</style>
