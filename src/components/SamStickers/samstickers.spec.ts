@@ -18,7 +18,7 @@ test("displays Shoo button after 3 Sams have appeared", async ({ page }) => {
     await page.getByRole("button", { name: "Samwise" }).dispatchEvent("click");
     await expect(samStickers).toHaveCount(i + 1);
   }
-  await expect(page.getByRole("button", { name: "shoo!" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Shoo" })).toBeVisible();
 });
 
 test("shoos the Sams", async ({ page }) => {
@@ -29,7 +29,7 @@ test("shoos the Sams", async ({ page }) => {
     await expect(samStickers).toHaveCount(i + 1);
   }
 
-  await page.getByRole("button", { name: "shoo!" }).click();
+  await page.getByRole("button", { name: "Shoo" }).click();
 
   const samStickersCount = await samStickers.count();
 
