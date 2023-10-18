@@ -1,34 +1,33 @@
 ---
-import Center from "../components/Center.astro";
-import Hero from "../components/Hero.astro";
 import { SamStickers } from "../components/SamStickers/SamStickers";
-import Stack from "../components/Stack.astro";
-import Subscribe from "../components/Subscribe/Subscribe.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutCard from "./index/AboutCard.astro";
+import HeroCard from "./index/HeroCard.astro";
+import NotesCard from "./index/NotesCard.astro";
+import SubscribeCard from "./index/SubscribeCard.astro";
 ---
 
 <BaseLayout
   title="Eva Decker"
   description="Eva is a designer and web developer based in Brooklyn, NY."
   includeFooter
-  padBottom
 >
-  <Center>
-    <Stack>
-      <header class="header">
-        <Hero />
-        <p class="subtitle">
-          I’m a designer and developer. Currently freelancing from Brooklyn, NY,
-          with my tabby, <span class="noBreak"
-            ><button class="samButton" data-sam-button type="button"
-              >Samwise</button
-            >.</span
-          > Sometimes I play piano.
-        </p>
-      </header>
-      <Subscribe />
-    </Stack>
-  </Center>
+  <div class="bento-wrapper">
+    <div class="bento">
+      <div class="hero">
+        <HeroCard />
+      </div>
+      <div class="about">
+        <AboutCard />
+      </div>
+      <div class="notes">
+        <NotesCard />
+      </div>
+      <div class="subscribe">
+        <SubscribeCard />
+      </div>
+    </div>
+  </div>
   <SamStickers client:visible slot="after-footer" />
 
   <script>
@@ -39,25 +38,60 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
-  .header {
-    padding: 3em 0;
+  .bento-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .subtitle {
-    font-size: var(--text-h5);
-    font-family: var(--font-sans);
-    letter-spacing: var(--letter-spacing-condensed);
-    line-height: var(--line-height-h5);
-    margin-top: 2em;
+  .bento {
+    display: grid;
+    padding: 1em;
+    gap: 1em;
+    grid-template:
+      "hero hero about"
+      "subscribe notes notes";
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    max-width: 1440px;
+    margin-inline: auto;
   }
 
-  .noBreak {
-    white-space: nowrap;
+  @media (width < 1080px) {
+    .bento {
+      grid-template:
+        "hero hero"
+        "about subscribe"
+        "notes notes";
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
-  .samButton {
-    all: unset;
-    text-decoration: underline;
-    cursor: pointer;
+  @media (width < 560px) {
+    .bento {
+      grid-template:
+        "hero"
+        "about"
+        "notes"
+        "subscribe";
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .hero {
+    grid-area: hero;
+  }
+
+  .about {
+    grid-area: about;
+  }
+
+  .notes {
+    grid-area: notes;
+  }
+
+  .subscribe {
+    grid-area: subscribe;
   }
 </style>

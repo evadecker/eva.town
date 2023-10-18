@@ -1,3 +1,5 @@
+import "./subscribe.css";
+
 import classNames from "classnames";
 import {
   type ChangeEvent,
@@ -33,7 +35,7 @@ interface Remark {
 }
 
 const TRIGGER_SOME_CHARACTERS_DIALOGUE_AT_LENGTH = 4;
-const REMARK_TIMEOUT = 1500;
+const REMARK_TIMEOUT = 1000;
 
 const remarks: Record<RemarkType, Remark> = {
   intro: {
@@ -251,7 +253,7 @@ export const SubscribeForm = () => {
   };
 
   return (
-    <div className="form">
+    <div>
       <Dialogue text={currentText} emote={currentEmote} />
       <form onSubmit={handleSubmit}>
         {!hasSubmitted ? (

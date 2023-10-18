@@ -1,0 +1,38 @@
+---
+import Box from "../../components/Box.astro";
+import { SubscribeForm } from "../../components/Subscribe/SubscribeForm";
+---
+
+<Box fullHeight>
+  <div class="subscribe">
+    <div>
+      <header class="header">Subscribe</header>
+      <p>
+        Thoughts on design, code, and other things, sent a few times a year.
+      </p>
+    </div>
+    <SubscribeForm client:visible />
+  </div>
+</Box>
+
+<style>
+  .subscribe {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+  }
+
+  .header {
+    font-size: var(--text-h5);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-h5);
+  }
+
+  p {
+    margin-block-start: 0.25em;
+    line-height: var(--line-height-h6);
+    text-wrap: balance;
+  }
+</style>
