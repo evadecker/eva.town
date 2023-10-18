@@ -93,7 +93,8 @@
 }
 
 .prose * + ul,
-.prose * + ol {
+.prose * + ol,
+.prose * + blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -148,4 +149,22 @@
   text-underline-offset: 0.1em;
   position: relative;
   cursor: help;
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--mauve-7);
+  padding-left: 1.3em;
+  font-style: italic;
+  hanging-punctuation: first;
+}
+
+.prose blockquote cite {
+  display: block;
+  font-style: normal;
+}
+
+.prose blockquote cite::before {
+  content: "—";
+  color: var(--mauve-11);
+  margin-inline-end: 0.3em;
 }

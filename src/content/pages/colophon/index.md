@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers evadecker.com.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2023-10-12 20:55:06-04:00
+dateModified: 2023-10-18 14:53:13-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -30,7 +30,7 @@ Body text is set in [Minion](https://fonts.adobe.com/fonts/minion-3), while head
 
 Type inspiration can be found anywhere, from comic art and video games to bodega window displays, but I often return to a handful of resources:
 
-- [*The Elements of Typographic Style*](https://bookshop.org/a/97627/9780881792126) by Robert Bringhurst
+- [_The Elements of Typographic Style_](https://bookshop.org/a/97627/9780881792126) by Robert Bringhurst
 - [Butterick’s Practical Typography](https://practicaltypography.com)
 - Bethany Heck’s [Font Review Journal](https://fontreviewjournal.com)
 - [Fonts In Use](https://fontsinuse.com)
@@ -42,6 +42,15 @@ I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consiste
 ## Sounds
 
 The interactive synth uses a variety of samples from [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/Samulis/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples/banjo), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://maxtimkovich.com/hearthsounds?q=murloc), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
+
+## Energy
+
+I work to optimize the amount of data that gets sent over the internet and run in the browser in order to reduce energy usage for this site. This involves not shipping unnecessary scripts (like trackers and analytics or  resource-intensive animations) and minimizing images and video.
+
+> The internet consumes a lot of electricity. 416.2TWh per year to be precise. To give you some perspective, that's more than the entire United Kingdom.
+> <cite>[Website Carbon Calculator](https://www.websitecarbon.com)</cite>
+
+As of October 18, 2023, [carbon results for evadecker.com](https://www.websitecarbon.com/website/evadecker-com/) indicate that the home page is **cleaner than 95% of web pages tested**, producing **0.05g of CO<sub>2</sub> per page view**. The site runs on [Vercel's serverless architecture](https://vercel.com/guides/what-is-vercel-green-energy-policy#), which further reduces energy usage.
 
 ## Notice an issue?
 
