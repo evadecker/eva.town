@@ -60,20 +60,4 @@
   /* Font weights */
   --font-weight-normal: 400;
   --font-weight-bold: 700;
-
-  /* Synth */
-  --synth-base: var(--pink-4);
-  --synth-endcap: var(--pink-2);
-  --synth-lcdoutline: var(--pink-2);
-  --synth-keysoutline: var(--pink-2);
-  --synth-whitekey: var(--whiteA-12);
-  --synth-whitekey-pressed: var(--pink-11);
-  --synth-blackkey: var(--mauve-5);
-  --synth-blackkey-pressed: var(--pink-5);
-  --synth-betweenkeys: var(--mauve-11);
-  --synth-keyletter: var(--blackA-12);
-  --synth-lcd-bg: var(--pink-4);
-  --synth-lcd-light: var(--pink-1);
-  --synth-lcd-medium: var(--pink-8);
-  --synth-lcd-dark: var(--pink-9);
 }

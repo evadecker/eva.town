@@ -4,8 +4,8 @@ import { useStore } from "@nanostores/react";
 import { type DragHandlers, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-import { getRandomValueBetween } from "../../helpers";
-import { incrementTopZIndex, topZIndex } from "../../stores/sam";
+import { getRandomValueBetween } from "../../../helpers";
+import { incrementTopZIndex, topZIndex } from "../../../stores/sam";
 
 interface VariantData {
   path: string;
@@ -95,7 +95,7 @@ const variantsData: VariantData[] = [
   },
 ];
 
-export interface SamStickerProps {
+export interface StickerProps {
   /**
    * The unique identifier for the sticker.
    */
@@ -108,11 +108,11 @@ export interface SamStickerProps {
   variant: number;
 }
 
-export const SamSticker = ({ variant }: SamStickerProps) => {
+export const Sticker = ({ variant }: StickerProps) => {
   // Pixel buffer to prevent stickers from going off the canvas when placed randomly
   const BUFFER = 200;
 
-  const totalVariants = 13;
+  const totalVariants = variantsData.length;
   const currentVariant = variant % totalVariants;
   const nextVariant = (variant + 1) % totalVariants;
 

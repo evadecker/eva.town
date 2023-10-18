@@ -1,0 +1,18 @@
+---
+import { Synth } from "../../components/Toys/Synth/Synth";
+import Box from "../../components/Box.astro";
+---
+
+<Box fullHeight>
+  <div class="synthWrapper">
+    <Synth client:only="react" />
+  </div>
+</Box>
+
+<style>
+  .synthWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

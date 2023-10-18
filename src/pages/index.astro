@@ -2,8 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AboutCard from "./index/AboutCard.astro";
 import HeroCard from "./index/HeroCard.astro";
-import NotesCard from "./index/NotesCard.astro";
 import SubscribeCard from "./index/SubscribeCard.astro";
+import SynthCard from "./index/SynthCard.astro";
 ---
 
 <BaseLayout
@@ -19,8 +19,8 @@ import SubscribeCard from "./index/SubscribeCard.astro";
       <div class="about">
         <AboutCard />
       </div>
-      <div class="notes">
-        <NotesCard />
+      <div class="synth">
+        <SynthCard />
       </div>
       <div class="subscribe">
         <SubscribeCard />
@@ -43,7 +43,7 @@ import SubscribeCard from "./index/SubscribeCard.astro";
     gap: 1em;
     grid-template:
       "hero hero about"
-      "subscribe notes notes";
+      "subscribe synth synth";
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, 1fr));
     max-width: 1440px;
@@ -55,7 +55,7 @@ import SubscribeCard from "./index/SubscribeCard.astro";
       grid-template:
         "hero hero"
         "about subscribe"
-        "notes notes";
+        "synth synth";
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
@@ -65,7 +65,7 @@ import SubscribeCard from "./index/SubscribeCard.astro";
       grid-template:
         "hero"
         "about"
-        "notes"
+        "synth"
         "subscribe";
       grid-template-columns: 1fr;
     }
@@ -79,8 +79,8 @@ import SubscribeCard from "./index/SubscribeCard.astro";
     grid-area: about;
   }
 
-  .notes {
-    grid-area: notes;
+  .synth {
+    grid-area: synth;
   }
 
   .subscribe {
