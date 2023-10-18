@@ -1,9 +1,9 @@
 import { useStore } from "@nanostores/react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 
-import { clearSams, numSams } from "../../stores/sam";
+import { numSams } from "../../stores/sam";
 import { SamSticker, type SamStickerProps } from "./SamSticker";
 
 export const SamStickers = () => {
@@ -24,12 +24,11 @@ export const SamStickers = () => {
     if ($numSams > samArray.length) {
       addSticker();
     }
-  }, [$numSams]);
 
-  const handleClear = () => {
-    setSamArray([]);
-    clearSams();
-  };
+    if ($numSams === 0) {
+      setSamArray([]);
+    }
+  }, [$numSams]);
 
   return (
     <div className="stickers">
@@ -37,23 +36,6 @@ export const SamStickers = () => {
         {samArray.map(({ id, variant }) => (
           <SamSticker key={id} id={id} variant={variant} />
         ))}
-        {$numSams >= 3 && (
-          <motion.button
-            className="shoo"
-            onClick={handleClear}
-            initial={{ opacity: 0, y: 100 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              transition: { type: "spring", bounce: 0.5 },
-            }}
-            exit={{ opacity: 0, y: 100 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            shoo!
-          </motion.button>
-        )}
       </AnimatePresence>
     </div>
   );
