@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers evadecker.com.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2023-10-12 20:55:06-04:00
+dateModified: 2023-10-18 14:53:13-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -50,7 +50,7 @@ I work to optimize the amount of data that gets sent over the internet and run i
 > The internet consumes a lot of electricity. 416.2TWh per year to be precise. To give you some perspective, that's more than the entire United Kingdom.
 > <cite>[Website Carbon Calculator](https://www.websitecarbon.com)</cite>
 
-As of October 18, 2023, [carbon results for evadecker.com](https://www.websitecarbon.com/website/evadecker-com/) indicate that the home page is **cleaner than 95% of web pages tested**, producing **0.05g of CO<sub>2</sub> per page view**.
+As of October 18, 2023, [carbon results for evadecker.com](https://www.websitecarbon.com/website/evadecker-com/) indicate that the home page is **cleaner than 95% of web pages tested**, producing **0.05g of CO<sub>2</sub> per page view**. The site runs on [Vercel's serverless architecture](https://vercel.com/guides/what-is-vercel-green-energy-policy#), which further reduces energy usage.
 
 ## Notice an issue?
 
