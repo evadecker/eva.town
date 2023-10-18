@@ -9,6 +9,46 @@
   }
 }
 
+.synth {
+  --synth-base: var(--mauve-11);
+  --synth-endcap: var(--mauve-12);
+  --synth-lcdoutline: var(--mauve-12);
+  --synth-keysoutline: var(--mauve-12);
+  --synth-keyshadow: var(--black-a9);
+  --synth-whitekey: var(--white-a12);
+  --synth-whitekey-pressed: var(--pink-11);
+  --synth-blackkey: var(--mauve-12);
+  --synth-blackkey-pressed: var(--pink-5);
+  --synth-betweenkeys: var(--mauve-5);
+  --synth-keyletter: var(--black-a12);
+  --synth-lcd-bg: var(--pink-4);
+  --synth-lcd-light: var(--pink-1);
+  --synth-lcd-medium: var(--pink-8);
+  --synth-lcd-dark: var(--pink-9);
+
+  pointer-events: auto;
+  width: 100%;
+  max-width: 540px;
+}
+
+:global(.dark) .synth {
+  --synth-base: var(--pink-7);
+  --synth-endcap: var(--pink-6);
+  --synth-lcdoutline: var(--pink-4);
+  --synth-keysoutline: var(--pink-4);
+  --synth-keyshadow: var(--black-a9);
+  --synth-whitekey: var(--white-a12);
+  --synth-whitekey-pressed: var(--pink-9);
+  --synth-blackkey: var(--mauve-1);
+  --synth-blackkey-pressed: var(--pink-8);
+  --synth-betweenkeys: var(--white-a10);
+  --synth-keyletter: var(--black-a12);
+  --synth-lcd-bg: var(--pink-12);
+  --synth-lcd-light: var(--white-a11);
+  --synth-lcd-medium: var(--pink-10);
+  --synth-lcd-dark: var(--pink-9);
+}
+
 .loading {
   pointer-events: none;
 }
@@ -45,7 +85,7 @@
 }
 
 .lcdOutline {
-  fill: var(--synth-lcdOutline);
+  fill: var(--synth-lcdoutline);
 }
 
 .notehead {
@@ -57,11 +97,12 @@
 }
 
 .synthBetweenKeys {
-  fill: var(--synth-betweenKeys);
+  fill: var(--synth-betweenkeys);
 }
 
 .synthEndcap {
   fill: var(--synth-endcap);
+  cursor: grab;
 }
 
 .synthKey {
@@ -70,18 +111,12 @@
 }
 
 .synthKeysOutline {
-  fill: var(--synth-keysOutline);
+  fill: var(--synth-keysoutline);
 }
 
 .synthKeysShadow {
-  fill: black;
+  fill: var(--synth-keyshadow);
   opacity: 0.1;
-}
-
-.synth {
-  width: 100%;
-  max-width: 540px;
-  margin-top: 2rem;
 }
 
 .synth[data-loading="true"] {
@@ -125,15 +160,15 @@
 }
 
 .synthKey.pressed.white .base {
-  fill: var(--synth-whitekeyPressed);
+  fill: var(--synth-whitekey-pressed);
 }
 
 .synthKey.pressed.black .base {
-  fill: var(--synth-blackkeyPressed);
+  fill: var(--synth-blackkey-pressed);
 }
 
 .synthKey .crack {
-  fill: var(--synth-keysOutline);
+  fill: var(--synth-keysoutline);
   opacity: 0;
   transition: opacity 0.4s ease-out;
 }
@@ -144,7 +179,7 @@
 }
 
 .synthKey.black .highlight {
-  fill: "white";
+  fill: white;
   fill-opacity: 0.15;
 }
 
@@ -163,7 +198,7 @@
 }
 
 .keyLetter {
-  fill: var(--synth-keyLetter);
+  fill: var(--synth-keyletter);
   fill-opacity: 0.3;
   opacity: 0;
   transform: translateY(4px);
@@ -176,7 +211,7 @@
 }
 
 .synthKey .pressedOverlay {
-  fill: var(--synth-keysOutline);
+  fill: var(--synth-keysoutline);
   transform: translateY(2px);
   transition: transform 0.1s ease-out;
 }

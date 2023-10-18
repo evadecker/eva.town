@@ -1,0 +1,27 @@
+---
+import { Synth } from "../../components/Toys/Synth/Synth";
+---
+
+<div class="synthWrapper">
+  <Synth client:only="react" />
+</div>
+
+<style>
+  .synthWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: var(--mauve-3);
+    padding: 1.5em;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  @media (width < 540px) {
+    .synthWrapper {
+      background: transparent;
+      padding: 0;
+    }
+  }
+</style>

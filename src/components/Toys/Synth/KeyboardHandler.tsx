@@ -8,7 +8,7 @@ import {
   pressKey,
   prevInstrument,
   releaseKey,
-} from "../../stores/synth";
+} from "../../../stores/synth";
 
 interface KeyboardHandlerProps {
   onInstrumentChange: () => void;

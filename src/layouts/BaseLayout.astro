@@ -8,7 +8,7 @@ import { ViewTransitions } from "astro:transitions";
 
 import Footer from "../components/Footer/Footer.astro";
 import Header from "../components/Header/Header.astro";
-import { SamStickers } from "../components/SamStickers/SamStickers";
+import Toys from "../components/Toys/Toys.astro";
 
 interface Props {
   title: string;
@@ -78,6 +78,8 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
       <slot />
     </main>
     {includeFooter && <Footer />}
+    <Toys />
+    <slot name="after-footer" />
     <style>
       .main {
         flex: 1;
@@ -94,7 +96,5 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
         padding-block-end: 4rem;
       }
     </style>
-    <SamStickers client:idle transition:persist />
-    <slot name="after-footer" />
   </body>
 </html>

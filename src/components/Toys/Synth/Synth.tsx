@@ -1,5 +1,3 @@
-import "./synth.css";
-
 import { useStore } from "@nanostores/react";
 import { Howl } from "howler";
 import { useEffect } from "react";
@@ -16,13 +14,12 @@ import {
   nextInstrument,
   prevInstrument,
   setActiveNotehead,
-} from "../../stores/synth";
+} from "../../../stores/synth";
 import { KeyboardHandler } from "./KeyboardHandler";
 import { SynthBase } from "./SynthBase";
 import { type NoteName } from "./SynthKey";
 import { SynthKeys } from "./SynthKeys";
 import { SynthScreen } from "./SynthScreen";
-import { SynthStart } from "./SynthStart";
 import { unmute } from "./unmute";
 
 export const Synth = () => {
@@ -364,11 +361,11 @@ export const Synth = () => {
         isSynthLoading={isLoading}
         activeInstrument={activeInstrument}
         activeNotehead={activeNotehead}
+        onFirstClick={activateSynth}
         onClickPrev={handlePrev}
         onClickNext={handleNext}
         onClickInstrument={handleClickInstrument}
       />
-      <SynthStart isSynthActive={isActive} onClick={activateSynth} />
     </SynthBase>
   );
 };
