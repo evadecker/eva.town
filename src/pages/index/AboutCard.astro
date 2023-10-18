@@ -23,6 +23,14 @@ import { Icon } from "../../components/Icon/Icon";
   </div>
 </Box>
 
+<script>
+  import { addSam } from "../../stores/sam";
+  document.addEventListener("astro:page-load", () => {
+    const samButton = document.querySelector("[data-sam-button]");
+    samButton?.addEventListener("click", () => addSam());
+  });
+</script>
+
 <style>
   @keyframes arrowClip {
     0% {

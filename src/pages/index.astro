@@ -1,5 +1,4 @@
 ---
-import { SamStickers } from "../components/SamStickers/SamStickers";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AboutCard from "./index/AboutCard.astro";
 import HeroCard from "./index/HeroCard.astro";
@@ -28,13 +27,6 @@ import SubscribeCard from "./index/SubscribeCard.astro";
       </div>
     </div>
   </div>
-  <SamStickers client:visible slot="after-footer" />
-
-  <script>
-    import { addSam } from "../stores/sam";
-    const samButton = document.querySelector("[data-sam-button]");
-    samButton?.addEventListener("click", () => addSam());
-  </script>
 </BaseLayout>
 
 <style>

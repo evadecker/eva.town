@@ -1,18 +1,3 @@
-.shoo {
-  all: unset;
-  position: fixed;
-  background: var(--mauve-12);
-  color: var(--mauve-1);
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-sm);
-  right: 2rem;
-  bottom: 2rem;
-  font-weight: var(--font-weight-bold);
-  cursor: pointer;
-  pointer-events: auto;
-  z-index: 500;
-}
-
 .sticker {
   position: absolute;
   width: 200px;
@@ -54,7 +39,7 @@
 }
 
 .stickers {
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
   overflow: hidden;

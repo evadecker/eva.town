@@ -2,10 +2,29 @@
 import { ToggleTheme } from "./ToggleTheme.tsx";
 ---
 
+<script>
+  import { numSams, clearSams } from "../../stores/sam";
+
+  const shooButton = document.querySelector("button.shoo");
+
+  if (shooButton) {
+    shooButton.addEventListener("click", () => {
+      clearSams();
+    });
+
+    numSams.subscribe((num) => {
+      num === 0
+        ? shooButton.classList.add("hidden")
+        : shooButton.classList.remove("hidden");
+    });
+  }
+</script>
+
 <header transition:persist>
   <nav>
     <a class="wordmark" href="/">Eva Decker</a>
     <div class="links">
+      <button class="shoo">Shoo</button>
       <a href="/about">About</a>
     </div>
     <div class="toggle">
@@ -56,17 +75,23 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     margin-inline-start: auto;
   }
 
-  .links a {
+  .links a,
+  .links button {
+    background: transparent;
     padding: 0.08em 0.4em 0.03em;
+    border: none;
     border-radius: var(--radius-sm);
+    cursor: pointer;
   }
 
-  .links a:hover {
+  .links a:hover,
+  .links button:hover {
     background: var(--pink-a3);
     color: var(--pink-12);
   }
 
-  .links a:active {
+  .links a:active,
+  .links button:active {
     background: var(--pink-a4);
     color: var(--pink-12);
   }
@@ -76,5 +101,23 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     width: 40px;
     height: 40px;
     margin-inline-start: 0.5em;
+  }
+
+  .links .shoo {
+    background: var(--pink-9);
+    color: var(--white-a12);
+  }
+
+  .links .shoo:hover {
+    background: var(--pink-10);
+    color: var(--white-a12);
+  }
+
+  .links .shoo:active {
+    background: var(--pink-9);
+  }
+
+  .shoo.hidden {
+    display: none;
   }
 </style>
