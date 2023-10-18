@@ -30,7 +30,7 @@ Body text is set in [Minion](https://fonts.adobe.com/fonts/minion-3), while head
 
 Type inspiration can be found anywhere, from comic art and video games to bodega window displays, but I often return to a handful of resources:
 
-- [*The Elements of Typographic Style*](https://bookshop.org/a/97627/9780881792126) by Robert Bringhurst
+- [_The Elements of Typographic Style_](https://bookshop.org/a/97627/9780881792126) by Robert Bringhurst
 - [Butterick’s Practical Typography](https://practicaltypography.com)
 - Bethany Heck’s [Font Review Journal](https://fontreviewjournal.com)
 - [Fonts In Use](https://fontsinuse.com)
@@ -42,6 +42,15 @@ I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consiste
 ## Sounds
 
 The interactive synth uses a variety of samples from [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/Samulis/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples/banjo), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://maxtimkovich.com/hearthsounds?q=murloc), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
+
+## Energy
+
+I work to optimize the amount of data that gets sent over the internet and run in the browser in order to reduce energy usage for this site. This involves not shipping unnecessary scripts (like trackers and analytics or  resource-intensive animations) and minimizing images and video.
+
+> The internet consumes a lot of electricity. 416.2TWh per year to be precise. To give you some perspective, that's more than the entire United Kingdom.
+> <cite>[Website Carbon Calculator](https://www.websitecarbon.com)</cite>
+
+As of October 18, 2023, [carbon results for evadecker.com](https://www.websitecarbon.com/website/evadecker-com/) indicate that the home page is **cleaner than 95% of web pages tested**, producing **0.05g of CO<sub>2</sub> per page view**.
 
 ## Notice an issue?
 
