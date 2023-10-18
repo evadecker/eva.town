@@ -5,6 +5,7 @@
     "node": true
   },
   "extends": [
+    "eslint:recommended",
     "standard-with-typescript",
     "prettier",
     "plugin:astro/recommended"
