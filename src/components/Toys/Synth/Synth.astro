@@ -324,6 +324,8 @@
     // Instrument Chooser -----------------------------------------//
     function setRandomInstrument(callback?: () => void) {
       if (synth) {
+        synth.dataset.loading = "true";
+
         const baseSpeed = randomIntFromInterval(30, 50); // Lower is faster
         const force = randomIntFromInterval(5, 30); // How hard do you 'pull down the wheel'?
         const slowestSpeed = 700; // How slow can the roulette go before ending?
@@ -782,11 +784,9 @@
     // Run scripts on page change
     function refresh() {
       if (document.querySelector("#synth") !== null) {
-        document
-          .querySelector("#synth-start")
-          ?.addEventListener("click", () => {
-            synth.start();
-          });
+        document.querySelector(".start")?.addEventListener("click", () => {
+          synth.start();
+        });
       }
     }
 
@@ -1535,7 +1535,7 @@
       </g>
     </g>
 
-    <g id="synth-start">
+    <g class="start">
       <rect
         id="hitarea"
         fill-opacity="0"
@@ -1570,7 +1570,22 @@
 </div>
 
 <style lang="scss">
+  @keyframes press-start {
+    0%,
+    10% {
+      opacity: 0.8;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  // Theme
   .synth {
+    width: 100%;
+    max-width: 540px;
+
     --synth-base: var(--mauve-11);
     --synth-endcap: var(--mauve-12);
     --synth-lcd-outline: var(--mauve-12);
@@ -1587,68 +1602,57 @@
     --synth-lcd-medium: var(--pink-8);
     --synth-lcd-dark: var(--pink-9);
 
-    width: 100%;
-    max-width: 540px;
+    :global(.dark) & {
+      --synth-base: var(--pink-7);
+      --synth-endcap: var(--pink-6);
+      --synth-lcd-outline: var(--pink-4);
+      --synth-keys-outline: var(--pink-4);
+      --synth-key-shadow: var(--black-a3);
+      --synth-whitekey: var(--white-a12);
+      --synth-whitekey-pressed: var(--pink-9);
+      --synth-blackkey: var(--mauve-1);
+      --synth-blackkey-pressed: var(--pink-9);
+      --synth-betweenkeys: var(--white-a10);
+      --synth-keyletter: var(--black-a12);
+      --synth-lcd-bg: var(--pink-12);
+      --synth-lcd-light: var(--white-a11);
+      --synth-lcd-medium: var(--pink-10);
+      --synth-lcd-dark: var(--pink-9);
+    }
+
+    &[data-loading="true"] {
+      pointer-events: none;
+    }
+
+    &[data-enabled="false"] {
+      .synth-instruments,
+      .synth-staff {
+        display: none;
+      }
+    }
   }
 
-  :global(.dark) .synth {
-    --synth-base: var(--pink-7);
-    --synth-endcap: var(--pink-6);
-    --synth-lcd-outline: var(--pink-4);
-    --synth-keys-outline: var(--pink-4);
-    --synth-key-shadow: var(--black-a3);
-    --synth-whitekey: var(--white-a12);
-    --synth-whitekey-pressed: var(--pink-9);
-    --synth-blackkey: var(--mauve-1);
-    --synth-blackkey-pressed: var(--pink-8);
-    --synth-betweenkeys: var(--white-a10);
-    --synth-keyletter: var(--black-a12);
-    --synth-lcd-bg: var(--pink-12);
-    --synth-lcd-light: var(--white-a11);
-    --synth-lcd-medium: var(--pink-10);
-    --synth-lcd-dark: var(--pink-9);
-  }
-
-  #synth-start {
-    cursor: pointer;
-  }
-
-  .synth-randomize {
-    display: none;
-  }
-
-  body.has-touch .synth-randomize {
-    display: none;
-  }
-
-  .synth[data-loading="true"] {
-    pointer-events: none;
-  }
-
-  .synth[data-loading="true"] .synth-randomize {
-    display: none;
-  }
-
-  .synth[data-enabled="true"] #synth-start {
-    display: none;
-  }
-
-  .synth[data-enabled="false"] .synth-instruments,
-  .synth[data-enabled="false"] .synth-staff {
-    display: none;
-  }
-
+  // Basic Styles
   .lcd-bg {
     fill: var(--synth-lcd-bg);
   }
 
-  .lcd-base,
-  .notehead {
+  .lcd-highlight {
+    fill: var(--synth-lcd-light);
+  }
+
+  .lcd-base {
+    fill: var(--synth-lcd-medium);
+  }
+
+  .notehead,
+  .synth-instrument .lcd-base,
+  .instrument-arrow:hover .lcd-base {
     fill: var(--synth-lcd-dark);
   }
 
-  .lcd-highlight {
-    fill: var(--synth-lcd-light);
+  .lcd-outline {
+    fill: var(--synth-lcd-outline);
   }
 
   .synth-base {
@@ -1656,20 +1660,78 @@
   }
 
   .synth-between-keys {
-    fill: var(--neutral-3);
-  }
-
-  .instrument,
-  .notehead {
-    display: none;
+    fill: var(--synth-betweenkeys);
   }
 
   .synth-endcap {
     fill: var(--synth-endcap);
   }
 
-  .lcd-outline {
-    fill: var(--synth-lcd-outline);
+  .synth-keys-shadow {
+    fill: var(--synth-key-shadow);
+  }
+
+  // Start button
+  .start {
+    cursor: pointer;
+
+    [data-enabled="true"] & {
+      display: none;
+    }
+
+    &:hover .lcd-base {
+      opacity: 1;
+      fill: var(--synth-lcd-dark);
+    }
+
+    &:not(:hover) .lcd-base {
+      animation: press-start 2s infinite;
+    }
+
+    &:not(:hover) .lcd-base:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    &:not(:hover) .lcd-base:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    &:not(:hover) .lcd-base:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    &:not(:hover) .lcd-base:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+  }
+
+  .synth-randomize {
+    display: none;
+
+    .synth[data-loading="true"] & {
+      display: none !important;
+    }
+
+    @media not all and (pointer: coarse) {
+      .synth-instrument:hover & {
+        display: block;
+      }
+    }
+
+    @media all and (pointer: coarse) {
+      display: none;
+    }
+  }
+
+  @media not all and (pointer: coarse) {
+    .synth-instrument:hover .instrument {
+      display: none !important;
+    }
+  }
+
+  .instrument,
+  .notehead {
+    display: none;
   }
 
   .synth-keys-outline,
@@ -1678,132 +1740,77 @@
     fill: var(--synth-keys-outline);
   }
 
-  .synth-keys-shadow {
-    fill: var(--synth-key-shadow);
-  }
-
-  .instrument-arrow:hover .lcd-base {
-    fill: var(--synth-lcd-dark);
-  }
-
-  #synth-start:hover .lcd-base {
-    opacity: 1;
-    fill: var(--synth-lcd-dark);
-  }
-
-  #synth-start:not(:hover) .lcd-base {
-    animation: press-start 2s infinite;
-  }
-
-  #synth-start:not(:hover) .lcd-base:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  #synth-start:not(:hover) .lcd-base:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-
-  #synth-start:not(:hover) .lcd-base:nth-child(4) {
-    animation-delay: 0.6s;
-  }
-
-  #synth-start:not(:hover) .lcd-base:nth-child(5) {
-    animation-delay: 0.8s;
-  }
-
-  @keyframes press-start {
-    0%,
-    10% {
-      opacity: 0.8;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
   .synth-key {
     cursor: pointer;
     transition: fill 0.4s ease-out;
-  }
 
-  .synth-key .pressed-overlay {
-    transform: translateY(2px);
-    transition: transform 0.1s ease-out;
-  }
+    .pressed-overlay {
+      transform: translateY(2px);
+      transition: transform 0.1s ease-out;
+    }
 
-  .synth-key .crack {
-    opacity: 0;
-    transition: opacity 0.4s ease-out;
-  }
+    .crack {
+      opacity: 0;
+      transition: opacity 0.4s ease-out;
+    }
 
-  .synth-key .base {
-    transition: fill 0.4s ease-out;
-  }
+    .base {
+      transition: fill 0.4s ease-out;
+    }
 
-  .synth-key.white .base {
-    fill: var(--synth-whitekey);
-  }
+    &.white .base {
+      fill: var(--synth-whitekey);
+    }
 
-  .synth-key.black .base {
-    fill: var(--synth-blackkey);
-  }
+    &.black .base {
+      fill: var(--synth-blackkey);
+    }
 
-  .synth-key.black .highlight {
-    fill: rgb(255 255 255 / 15%);
-  }
+    &.black .highlight {
+      fill: var(--white-a4);
+    }
 
-  .synth-key.pressed .base {
-    transition: none;
-    fill: var(--synth-whitekey-pressed);
-  }
+    &.pressed {
+      .base {
+        transition: none;
+        fill: var(--synth-whitekey-pressed);
+      }
 
-  .synth-key.pressed.black .base {
-    fill: var(--synth-blackkey-pressed);
-  }
+      &.black .base {
+        fill: var(--synth-blackkey-pressed);
+      }
 
-  .synth-key.pressed .pressed-overlay {
-    transition: none;
-    transform: translateY(0);
-  }
+      .pressed-overlay {
+        transition: none;
+        transform: translateY(0);
+      }
 
-  .synth-key.pressed .crack {
-    transition: none;
-    opacity: 1;
+      .crack {
+        transition: none;
+        opacity: 1;
+      }
+    }
   }
 
   .key-letter {
-    fill: rgb(0 0 0 / 30%);
+    fill: var(--black-a8);
     opacity: 0;
     transform: translateY(4px);
     transition: 0.4s ease-out;
-  }
 
-  .key-letter.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .key-letter.fadeout {
-    opacity: 0;
-    transition: opacity 1s ease-in;
-    transition-delay: 0.2s;
-  }
-
-  .synth-instrument {
-    cursor: pointer;
-  }
-
-  @media not all and (pointer: coarse) {
-    .synth-instrument:hover .synth-randomize {
-      display: block;
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .synth-instrument:hover .instrument {
-      display: none !important;
+    &.fadeout {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+      transition-delay: 0.2s;
     }
   }
 
+  .synth-instrument,
   .instrument-arrow {
     cursor: pointer;
   }
