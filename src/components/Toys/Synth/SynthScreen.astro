@@ -567,13 +567,7 @@
     display: none;
 
     :global([data-loading="true"]) & {
-      display: none !important;
-    }
-
-    @media not all and (pointer: coarse) {
-      .synth-instrument:hover & {
-        display: block;
-      }
+      display: none;
     }
 
     @media all and (pointer: coarse) {
@@ -583,7 +577,11 @@
 
   @media not all and (pointer: coarse) {
     .synth-instrument:hover .instrument {
-      display: none !important;
+      display: none;
+    }
+
+    .synth-randomize .synth-instrument:hover {
+      display: block;
     }
   }
 
