@@ -10,6 +10,7 @@ import SynthScreen from "./SynthScreen.astro";
   import { unmute } from "./unmute";
 
   Howler.autoUnlock = false;
+  Howler.volume(0.5);
 
   const STAFF_TYPE_PREFIX = "staff-";
   const NOTEHEAD_PREFIX = "note-";

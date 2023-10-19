@@ -12,7 +12,7 @@ export const sounds = {
 
     ding: {
       howl: new Howl({
-        src: [`${SOUNDS_DIRECTORY}achievement-bell.wav`],
+        src: [`${SOUNDS_DIRECTORY}bell.wav`],
       }),
     },
   },
