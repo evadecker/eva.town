@@ -524,11 +524,6 @@ import SynthScreen from "./SynthScreen.astro";
     };
 
     function startSynth() {
-      const audioContext = window.AudioContext
-        ? new window.AudioContext()
-        : null;
-
-      unmute(audioContext, false, false);
       enableSynth();
       bindEvents();
     }
@@ -536,6 +531,9 @@ import SynthScreen from "./SynthScreen.astro";
     start?.addEventListener("click", () => {
       startSynth();
     });
+
+    const audioContext = window.AudioContext ? new window.AudioContext() : null;
+    unmute(audioContext, false, false);
 
     preloadUISounds();
   });
