@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers evadecker.com.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2023-10-18 14:53:13-04:00
+dateModified: 2023-10-18 20:45:32-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -26,7 +26,7 @@ Domain registration, hosting, and deployment are via [Vercel](https://vercel.com
 
 ## Typography
 
-Body text is set in [Minion](https://fonts.adobe.com/fonts/minion-3), while headings and UI are set in [Franklin Gothic URW](https://fonts.adobe.com/fonts/franklin-gothic-urw), both served via [Adobe Fonts](https://fonts.adobe.com). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
+Body text is set in [Minion](https://fonts.adobe.com/fonts/minion-3), while headings and UI are set in [Franklin Gothic URW](https://fonts.adobe.com/fonts/franklin-gothic-urw). Both typefaces are served via [Adobe Fonts](https://fonts.adobe.com). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
 
 Type inspiration can be found anywhere, from comic art and video games to bodega window displays, but I often return to a handful of resources:
 
@@ -45,12 +45,12 @@ The interactive synth uses a variety of samples from [Bolder Sounds](https://www
 
 ## Energy
 
-I work to optimize the amount of data that gets sent over the internet and run in the browser in order to reduce energy usage for this site. This involves not shipping unnecessary scripts (like trackers and analytics or  resource-intensive animations) and minimizing images and video.
+I minimize energy usage on this site by avoiding unnecessary scripts (such as trackers, analytics, or resource-intensive animations) and compressing images and video.
 
 > The internet consumes a lot of electricity. 416.2TWh per year to be precise. To give you some perspective, that's more than the entire United Kingdom.
 > <cite>[Website Carbon Calculator](https://www.websitecarbon.com)</cite>
 
-As of October 18, 2023, [carbon results for evadecker.com](https://www.websitecarbon.com/website/evadecker-com/) indicate that the home page is **cleaner than 95% of web pages tested**, producing **0.05g of CO<sub>2</sub> per page view**. The site runs on [Vercel's serverless architecture](https://vercel.com/guides/what-is-vercel-green-energy-policy#), which further reduces energy usage.
+As of October 18, 2023, [carbon results for evadecker.com](https://www.websitecarbon.com/website/evadecker-com/) indicate that the home page is **cleaner than 95% of web pages tested**, producing **0.05g of CO<sub>2</sub> per page view**. The site uses [Vercel's serverless architecture](https://vercel.com/guides/what-is-vercel-green-energy-policy#) to further cut energy consumption.
 
 ## Notice an issue?
 

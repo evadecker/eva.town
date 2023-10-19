@@ -11,7 +11,10 @@
 
 :root {
   /* Font families */
-  --font-serif: minion-3, georgia, cambria, "Times New Roman", times, serif;
+  --font-serif: minion-3, "New York", georgia, cambria, "Times New Roman", times,
+    serif;
+  --font-caption: minion-3-caption, "New York", georgia, cambria,
+    "Times New Roman", times, serif;
   --font-sans: franklin-gothic-urw, system-ui, -apple-system, "Segoe UI", roboto,
     "Helvetica Neue", sans-serif, serif;
   --font-mono: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono",
