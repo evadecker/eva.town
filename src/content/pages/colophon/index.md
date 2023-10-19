@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers evadecker.com.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2023-10-18 20:45:32-04:00
+dateModified: 2023-10-19 04:26:15-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -41,7 +41,7 @@ I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consiste
 
 ## Sounds
 
-The interactive synth uses a variety of samples from [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/Samulis/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples/banjo), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://maxtimkovich.com/hearthsounds?q=murloc), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
+The toy synth uses samples from [Mixkit](https://mixkit.co/), [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/Samulis/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples/banjo), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://maxtimkovich.com/hearthsounds?q=murloc), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
 
 ## Energy
 
