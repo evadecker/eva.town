@@ -7,7 +7,7 @@ import SynthScreen from "./SynthScreen.astro";
 <script>
   import { Howler } from "howler";
   import { sounds } from "./sounds.ts";
-  // import unmuteAudio from "unmute-ios-audio";
+  import { unmute } from "./unmute";
 
   Howler.autoUnlock = false;
 
@@ -523,7 +523,11 @@ import SynthScreen from "./SynthScreen.astro";
     };
 
     function startSynth() {
-      // unmuteAudio();
+      const audioContext = window.AudioContext
+        ? new window.AudioContext()
+        : null;
+
+      unmute(audioContext, false, false);
       enableSynth();
       bindEvents();
     }
