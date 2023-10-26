@@ -1,0 +1,111 @@
+---
+import dayjs from "dayjs";
+import { Icon } from "./Icon/Icon";
+import Picture from "./Picture.astro";
+
+type Props = {
+  title: string;
+  description: string;
+  datePublished: Date;
+  url: string;
+  repo?: string;
+  img?: ImageMetadata[];
+  imgAlt?: string;
+};
+
+const { title, description, datePublished, url, repo, img, imgAlt } =
+  Astro.props;
+
+const date = dayjs(datePublished).format("MMMM YYYY");
+---
+
+<div class="project">
+  {
+    img && imgAlt && (
+      <a class="img" href={url}>
+        <Picture img={img} imgAlt={imgAlt} />
+      </a>
+    )
+  }
+  <div class="details">
+    <a class="title" href={url}>
+      <h2>{title}</h2>
+    </a>
+    <div class="description">
+      {description}
+      <time class="date" datetime={datePublished.toString()}>{date}</time>
+    </div>
+  </div>
+  <footer class="links">
+    <a class="url" href={url}>
+      <Icon icon="link" />
+      {url.replace(/^https?:\/\//, "")}
+    </a>
+    {
+      repo && (
+        <a class="url" href={`https://github.com/${repo}`}>
+          <Icon icon="github" variant="filled" />
+          {repo}
+        </a>
+      )
+    }
+  </footer>
+</div>
+
+<style lang="scss">
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2em;
+  }
+
+  .img {
+    background-color: var(--mauve-3);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+
+    &:hover {
+      background-color: var(--pink-4);
+    }
+  }
+
+  .url {
+    color: var(--mauve-11);
+
+    &:hover {
+      color: var(--mauve-12);
+      text-decoration: underline;
+      text-decoration-color: var(--mauve-7);
+      text-underline-offset: 0.1em;
+    }
+  }
+
+  .date {
+    color: var(--mauve-11);
+
+    &::before {
+      content: "⬩";
+      margin-inline: 0.25em;
+      color: var(--mauve-8);
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.25em;
+    }
+  }
+</style>
