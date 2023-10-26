@@ -1,4 +1,6 @@
 ---
+import Banner from "src/components/Banner.astro";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AboutCard from "./index/AboutCard.astro";
 import HeroCard from "./index/HeroCard.astro";
@@ -13,6 +15,14 @@ import SynthCard from "./index/SynthCard.astro";
 >
   <div class="bento-wrapper">
     <div class="bento">
+      <div class="announcement">
+        <Banner
+          icon="music"
+          text="Hey, I made a new project. It's called Genderswap.fm and it's for covers."
+          type="info"
+          url="https://genderswap.fm"
+        />
+      </div>
       <div class="hero">
         <HeroCard />
       </div>
@@ -42,10 +52,11 @@ import SynthCard from "./index/SynthCard.astro";
     padding: 1em;
     gap: 1em;
     grid-template:
+      "announcement announcement announcement"
       "hero hero about"
       "subscribe synth synth";
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto repeat(2, minmax(0, 1fr));
     max-width: 1440px;
     margin-inline: auto;
   }
@@ -54,6 +65,7 @@ import SynthCard from "./index/SynthCard.astro";
     .bento {
       grid-template:
         "hero hero"
+        "announcement announcement"
         "about subscribe"
         "synth synth";
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -64,11 +76,16 @@ import SynthCard from "./index/SynthCard.astro";
     .bento {
       grid-template:
         "hero"
+        "announcement"
         "about"
         "synth"
         "subscribe";
       grid-template-columns: 1fr;
     }
+  }
+
+  .announcement {
+    grid-area: announcement;
   }
 
   .hero {

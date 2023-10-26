@@ -1,0 +1,7 @@
+title: NYC Boundaries Map
+description: A tool for viewing overlapping administrative boundaries in New York City. Built with the team at BetaNYC.
+datePublished: 2022-06-30
+url: https://boundaries.beta.nyc
+repo: BetaNYC/nyc-boundaries
+img: ["./img600.webp", "./img900.webp"]
+imgAlt: "A map of Manhattan, showing a highlighted community district and all the boundaries it intersects."

@@ -1,0 +1,79 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+
+import { Icon, type IconType } from "./Icon/Icon";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{
+  icon?: IconType;
+  text: string;
+  type?: "success" | "warning" | "error" | "info";
+  url?: string;
+  as: Tag;
+}>;
+
+const { icon, text, type, url, as: Tag = url ? "a" : "div" } = Astro.props;
+---
+
+<Tag class:list={["banner", type]} href={url}>
+  {icon && <Icon icon={icon} />}
+  <p class="text">{text}</p>
+  {url && <Icon icon="arrowRight" />}
+</Tag>
+
+<style lang="scss">
+  .banner {
+    background-color: var(--mauve-3);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+    width: 100%;
+    line-height: 1.1;
+    padding: 0.5em;
+
+    &.success {
+      background-color: var(--green-3);
+      color: var(--green-12);
+    }
+
+    &.warning {
+      background-color: var(--amber-3);
+      color: var(--amber-12);
+    }
+
+    &.error {
+      background-color: var(--red-3);
+      color: var(--red-12);
+    }
+
+    &.info {
+      background-color: var(--pink-3);
+      color: var(--pink-12);
+    }
+  }
+
+  a.banner:hover {
+    background-color: var(--mauve-4);
+
+    &.success {
+      background-color: var(--green-4);
+    }
+
+    &.warning {
+      background-color: var(--amber-4);
+    }
+
+    &.error {
+      background-color: var(--red-4);
+    }
+
+    &.info {
+      background-color: var(--pink-4);
+    }
+  }
+
+  .text {
+    flex: 1;
+  }
+</style>

@@ -1,0 +1,115 @@
+---
+import dayjs from "dayjs";
+import { Icon } from "./Icon/Icon";
+import Picture from "./Picture.astro";
+
+type Props = {
+  title: string;
+  description: string;
+  datePublished: Date;
+  url: string;
+  repo?: string;
+  img?: ImageMetadata[];
+  imgAlt?: string;
+};
+
+const { title, description, datePublished, url, repo, img, imgAlt } =
+  Astro.props;
+
+const date = dayjs(datePublished).format("MMMM YYYY");
+---
+
+<div class="project">
+  {
+    img && imgAlt && (
+      <a class="img" href={url}>
+        <Picture img={img} imgAlt={imgAlt} />
+      </a>
+    )
+  }
+  <div class="details">
+    <a class="title" href={url}>
+      <h2>{title}</h2>
+    </a>
+    <div class="description">
+      {description}{" "}
+      <time class="date" datetime={datePublished.toString()}>{date}</time>
+    </div>
+  </div>
+  <footer class="links">
+    <a class="link" href={url}>
+      <Icon icon="link" />
+      <span class="url">{url.replace(/^https?:\/\//, "")}</span>
+    </a>
+    {
+      repo && (
+        <a class="link" href={`https://github.com/${repo}`}>
+          <Icon icon="github" variant="filled" />
+          <span class="url">{repo}</span>
+        </a>
+      )
+    }
+  </footer>
+</div>
+
+<style lang="scss">
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2em;
+  }
+
+  .img {
+    background-color: var(--mauve-3);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+
+    &:hover {
+      background-color: var(--pink-4);
+    }
+  }
+
+  .date {
+    color: var(--mauve-11);
+
+    &::before {
+      content: "— ";
+      white-space: pre;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    padding-block: 0.1em;
+    color: var(--mauve-11);
+    max-width: 100%;
+
+    &:hover {
+      color: var(--mauve-12);
+      text-decoration: underline;
+      text-decoration-color: var(--mauve-7);
+      text-underline-offset: 0.1em;
+    }
+
+    .url {
+      word-wrap: break-word;
+      min-width: 1%;
+    }
+  }
+</style>

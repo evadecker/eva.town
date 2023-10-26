@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+
+import dayjs from "dayjs";
+import Center from "../../components/Center.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import SubscribeCallout from "../../components/Subscribe/SubscribeCallout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectPreview from "../../components/ProjectPreview.astro";
+
+const projects = await getCollection("projects");
+const sortedProjects = projects.sort((a, b) =>
+  dayjs(a.data.datePublished).isAfter(dayjs(b.data.datePublished)) ? -1 : 1
+);
+
+const title = "Projects";
+const description = "Little things I've built and put on the internet.";
+---
+
+<BaseLayout title={title} description={description} includeFooter padBottom>
+  <PageHeader title={title} description={description} slug="projects" />
+  <Center>
+    <section class="projects">
+      {
+        sortedProjects.map(({ data }) => (
+          <ProjectPreview
+            title={data.title}
+            description={data.description}
+            datePublished={data.datePublished}
+            img={data.img}
+            imgAlt={data.imgAlt}
+            url={data.url}
+            repo={data.repo}
+          />
+        ))
+      }
+    </section>
+    <SubscribeCallout />
+  </Center>
+</BaseLayout>
+
+<style>
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    padding-block-end: 4em;
+  }
+</style>
