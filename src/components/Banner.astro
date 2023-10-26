@@ -1,5 +1,6 @@
 ---
 import type { HTMLTag, Polymorphic } from "astro/types";
+
 import { Icon, type IconType } from "./Icon/Icon";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{
@@ -28,7 +29,8 @@ const { icon, text, type, url, as: Tag = url ? "a" : "div" } = Astro.props;
     align-items: center;
     gap: 0.5em;
     width: 100%;
-    padding: 0.2em 0.5em;
+    line-height: 1.1;
+    padding: 0.5em;
 
     &.success {
       background-color: var(--green-3);
