@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
+import dayjs from "dayjs";
 import Center from "../../components/Center.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import SubscribeCallout from "../../components/Subscribe/SubscribeCallout.astro";
@@ -8,6 +9,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectPreview from "../../components/ProjectPreview.astro";
 
 const projects = await getCollection("projects");
+const sortedProjects = projects.sort((a, b) =>
+  dayjs(a.data.datePublished).isAfter(dayjs(b.data.datePublished)) ? -1 : 1
+);
 
 const title = "Projects";
 const description = "Little things I've built and put on the internet.";
@@ -18,19 +22,17 @@ const description = "Little things I've built and put on the internet.";
   <Center>
     <section class="projects">
       {
-        projects
-          .sort((a, b) => b.data.datePublished - a.data.datePublished)
-          .map(({ data }) => (
-            <ProjectPreview
-              title={data.title}
-              description={data.description}
-              datePublished={data.datePublished}
-              img={data.img}
-              imgAlt={data.imgAlt}
-              url={data.url}
-              repo={data.repo}
-            />
-          ))
+        sortedProjects.map(({ data }) => (
+          <ProjectPreview
+            title={data.title}
+            description={data.description}
+            datePublished={data.datePublished}
+            img={data.img}
+            imgAlt={data.imgAlt}
+            url={data.url}
+            repo={data.repo}
+          />
+        ))
       }
     </section>
     <SubscribeCallout />
