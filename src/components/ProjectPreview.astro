@@ -32,20 +32,20 @@ const date = dayjs(datePublished).format("MMMM YYYY");
       <h2>{title}</h2>
     </a>
     <div class="description">
-      {description}
+      {description}{" "}
       <time class="date" datetime={datePublished.toString()}>{date}</time>
     </div>
   </div>
   <footer class="links">
-    <a class="url" href={url}>
+    <a class="link" href={url}>
       <Icon icon="link" />
-      {url.replace(/^https?:\/\//, "")}
+      <span class="url">{url.replace(/^https?:\/\//, "")}</span>
     </a>
     {
       repo && (
-        <a class="url" href={`https://github.com/${repo}`}>
+        <a class="link" href={`https://github.com/${repo}`}>
           <Icon icon="github" variant="filled" />
-          {repo}
+          <span class="url">{repo}</span>
         </a>
       )
     }
@@ -77,8 +77,28 @@ const date = dayjs(datePublished).format("MMMM YYYY");
     }
   }
 
-  .url {
+  .date {
     color: var(--mauve-11);
+
+    &::before {
+      content: "— ";
+      white-space: pre;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    padding-block: 0.1em;
+    color: var(--mauve-11);
+    max-width: 100%;
 
     &:hover {
       color: var(--mauve-12);
@@ -86,26 +106,10 @@ const date = dayjs(datePublished).format("MMMM YYYY");
       text-decoration-color: var(--mauve-7);
       text-underline-offset: 0.1em;
     }
-  }
 
-  .date {
-    color: var(--mauve-11);
-
-    &::before {
-      content: "⬩";
-      margin-inline: 0.25em;
-      color: var(--mauve-8);
-    }
-  }
-
-  .links {
-    display: flex;
-    flex-direction: column;
-
-    a {
-      display: flex;
-      align-items: center;
-      gap: 0.25em;
+    .url {
+      word-wrap: break-word;
+      min-width: 1%;
     }
   }
 </style>
