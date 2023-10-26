@@ -18,7 +18,7 @@ import SynthCard from "./index/SynthCard.astro";
       <div class="announcement">
         <Banner
           icon="music"
-          text="New project! Genderswap.fm—like drag, but for music."
+          text="Hey, I made a new project. It's called Genderswap.fm and it's for covers."
           type="info"
           url="https://genderswap.fm"
         />
@@ -64,8 +64,8 @@ import SynthCard from "./index/SynthCard.astro";
   @media (width < 1080px) {
     .bento {
       grid-template:
-        "announcement announcement"
         "hero hero"
+        "announcement announcement"
         "about subscribe"
         "synth synth";
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -75,8 +75,8 @@ import SynthCard from "./index/SynthCard.astro";
   @media (width < 560px) {
     .bento {
       grid-template:
-        "announcement"
         "hero"
+        "announcement"
         "about"
         "synth"
         "subscribe";
