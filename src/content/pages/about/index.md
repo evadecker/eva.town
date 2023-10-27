@@ -1,8 +1,8 @@
 ---
 title: About Eva
-description: Designer and developer. Lately exploring generative art.
+description: Designer and medium-good software engineer.
 datePublished: 2023-10-03 01:03:55-04:00
-dateModified: 2023-10-12 21:37:08-04:00
+dateModified: 2023-10-27 11:41:02-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: A Mac desktop with various application windows, including Figma and Chrome. At the front is Photo Booth, with the countdown timer at 1, about to take a photo of Eva.
 ogImage: ./img1200.webp

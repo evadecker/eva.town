@@ -39,7 +39,7 @@ export const collections = {
         img: image().array().optional(),
         imgAlt: z.string().optional(),
         url: z.string(),
-        repo: z.string().optional(), // Github repo, e.g. evadecker/america-my-face
+        repo: z.string().optional(), // GitHub repo, e.g. evadecker/america-my-face
       }),
   }),
 };
