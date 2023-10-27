@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-
 import dayjs from "dayjs";
+
 import Center from "../../components/Center.astro";
 import PageHeader from "../../components/PageHeader.astro";
+import ProjectPreview from "../../components/ProjectPreview.astro";
 import SubscribeCallout from "../../components/Subscribe/SubscribeCallout.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ProjectPreview from "../../components/ProjectPreview.astro";
 
 const projects = await getCollection("projects");
 const sortedProjects = projects.sort((a, b) =>

@@ -37,7 +37,7 @@ h6 {
 }
 
 h1 {
-  font-size: var(--step-6);
+  font-size: var(--step-5);
   line-height: var(--line-height-h1);
   letter-spacing: var(--letter-spacing-condensed);
 }
