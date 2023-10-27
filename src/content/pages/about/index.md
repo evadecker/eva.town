@@ -1,6 +1,6 @@
 ---
 title: About Eva
-description: Designer and developer. Lately exploring generative art.
+description: Designer and medium-good software engineer.
 datePublished: 2023-10-03 01:03:55-04:00
 dateModified: 2023-10-12 21:37:08-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
