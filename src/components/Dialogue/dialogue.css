@@ -4,22 +4,22 @@
   justify-content: flex-start;
   align-items: flex-end;
   height: 96px;
-  padding: 0 0.5rem;
-  margin-top: -8px;
+  padding: 0 var(--space-s);
+  user-select: none;
 }
 
 .bubble {
   background-color: var(--mauve-1);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem var(--space-m);
   font-family: var(--font-family-sans);
-  font-size: var(--text-small);
+  font-size: var(--step--1);
   line-height: 1.1;
   letter-spacing: var(--letter-spacing-loose);
   align-self: center;
 }
 
 .big {
-  font-size: var(--text-h5);
+  font-size: var(--step-1);
 }
 
 .character {
@@ -30,7 +30,7 @@
 .emote {
   width: auto;
   height: 100%;
-  margin-inline-end: 1rem;
+  margin-inline-end: var(--space-m);
   user-select: none;
   flex-shrink: 0;
 }

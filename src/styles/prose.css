@@ -2,9 +2,9 @@
   content: "⁂";
   display: block;
   text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  font-size: var(--text-h3);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  font-size: var(--step-3);
 }
 
 .prose p,
@@ -21,7 +21,7 @@
 .prose li a {
   position: relative;
   text-decoration: underline;
-  text-decoration-color: var(--mauve-7);
+  text-decoration-color: var(--mauve-8);
   text-underline-offset: 0.1em;
   transition: all 0.2s ease-in-out;
 }
@@ -31,8 +31,8 @@
 .prose h4,
 .prose h5,
 .prose h6 {
-  scroll-margin-top: 5rem;
-  margin-bottom: 1rem;
+  scroll-margin-top: calc(var(--space-2xl) * 2);
+  margin-bottom: var(--space-m);
 }
 
 .prose h1 a,
@@ -44,9 +44,11 @@
   color: var(--mauve-11);
   display: inline-flex;
   align-items: center;
-  margin-left: 0.15em;
-  padding: 0.15em;
+  margin-inline-start: var(--space-s);
+  padding: var(--space-xs);
   border-radius: var(--radius-full);
+  position: relative;
+  top: -0.1em;
 }
 
 .prose a:hover,
@@ -69,8 +71,8 @@
 .prose h4 a svg,
 .prose h5 a svg,
 .prose h6 a svg {
-  width: var(--text-body);
-  height: var(--text-body);
+  width: var(--step-0);
+  height: var(--step-0);
 }
 
 .prose p a:hover,
@@ -81,7 +83,7 @@
 }
 
 .prose h2 {
-  margin-top: 4rem;
+  margin-top: var(--space-2xl);
 }
 
 .prose h2:first-child {
@@ -95,8 +97,8 @@
 .prose * + ul,
 .prose * + ol,
 .prose * + blockquote {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: var(--space-m);
+  margin-bottom: var(--space-m);
 }
 
 .prose ul,
@@ -138,7 +140,7 @@
 .prose code {
   background-color: var(--mauve-3);
   border-radius: var(--radius-xs);
-  padding: 0.1rem 0.2rem;
+  padding: 0.15em 0.3em;
   font-size: 0.8em;
 }
 
@@ -153,7 +155,7 @@
 
 .prose blockquote {
   border-left: 2px solid var(--mauve-7);
-  padding-left: 1.3em;
+  padding-left: var(--space-l);
   font-style: italic;
   hanging-punctuation: first;
 }
@@ -166,7 +168,7 @@
 .prose blockquote cite::before {
   content: "—";
   color: var(--mauve-11);
-  margin-inline-end: 0.3em;
+  margin-inline-end: var(--space-xs);
 }
 
 .prose sup,

@@ -19,7 +19,7 @@ const { width } = Astro.props;
 <style>
   .grid {
     display: grid;
-    grid-gap: 1.5rem;
+    grid-gap: var(--space-xl);
   }
 
   @supports (width: min(200px, 100%)) {

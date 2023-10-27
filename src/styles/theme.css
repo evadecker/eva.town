@@ -33,22 +33,25 @@
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  /* Type sizing - https://utopia.fyi/type/calculator */
-  --text-h1: clamp(2.03rem, 0.64rem + 6.93vw, 4.11rem);
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,720,21,1.25,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --step--1: clamp(0.8888rem, 0.7598rem + 0.645vw, 1.05rem);
+  --step-0: clamp(1rem, 0.75rem + 1.25vw, 1.3125rem);
+  --step-1: clamp(1.125rem, 0.7125rem + 2.0625vw, 1.6406rem);
+  --step-2: clamp(1.2656rem, 0.6376rem + 3.14vw, 2.0506rem);
+  --step-3: clamp(1.4238rem, 0.5118rem + 4.56vw, 2.5638rem);
+  --step-4: clamp(1.6019rem, 0.3199rem + 6.41vw, 3.2044rem);
+  --step-5: clamp(1.8019rem, 0.0389rem + 8.815vw, 4.0056rem);
+  --step-6: clamp(2.0275rem, -0.356rem + 11.9175vw, 5.0069rem);
 
-  /* Skip one step in the scale clamp(1.80rem, 0.72rem + 5.40vw, 3.42rem) */
-  --text-h2: clamp(1.6rem, 0.77rem + 4.16vw, 2.85rem);
-  --text-h3: clamp(1.42rem, 0.79rem + 3.18vw, 2.38rem);
-  --text-h4: clamp(1.27rem, 0.79rem + 2.38vw, 1.98rem);
-  --text-h5: clamp(1.13rem, 0.78rem + 1.75vw, 1.65rem);
-  --text-body: clamp(1rem, 0.75rem + 1.25vw, 1.38rem);
-  --text-small: clamp(0.89rem, 0.72rem + 0.86vw, 1.15rem);
-
-  /* Font widths */
-  --font-width-normal: 93;
-  --font-width-wide: 115;
-  --font-width-extraWide: 125;
-  --font-width-superWide: 150;
+  /* @link https://utopia.fyi/space/calculator?c=320,8,1.2,1240,12,1.333,6,2,&s=0.75|0.5,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --space-2xs: clamp(0.25rem, 0.2065rem + 0.2174vw, 0.375rem);
+  --space-xs: clamp(0.375rem, 0.3098rem + 0.3261vw, 0.5625rem);
+  --space-s: clamp(0.5rem, 0.413rem + 0.4348vw, 0.75rem);
+  --space-m: clamp(0.75rem, 0.6196rem + 0.6522vw, 1.125rem);
+  --space-l: clamp(1rem, 0.8261rem + 0.8696vw, 1.5rem);
+  --space-xl: clamp(1.5rem, 1.2391rem + 1.3043vw, 2.25rem);
+  --space-2xl: clamp(2rem, 1.6522rem + 1.7391vw, 3rem);
+  --space-3xl: clamp(3rem, 2.4783rem + 2.6087vw, 4.5rem);
 
   /* Line heights */
   --line-height-h1: 1;
@@ -66,10 +69,10 @@
   --letter-spacing-loose: 0.01em;
 
   /* Radii */
-  --radius-xs: 0.25rem;
-  --radius-sm: 0.5rem;
-  --radius-md: 1rem;
-  --radius-lg: 1.5rem;
+  --radius-xs: var(--space-2xs);
+  --radius-s: var(--space-xs);
+  --radius-m: var(--space-m);
+  --radius-l: var(--space-l);
   --radius-full: 9999px;
 
   /* Font weights */

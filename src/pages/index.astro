@@ -49,8 +49,9 @@ import SynthCard from "./index/SynthCard.astro";
 
   .bento {
     display: grid;
-    padding: 1em;
-    gap: 1em;
+    padding: var(--space-xl);
+    padding-block-end: 0;
+    gap: var(--space-l);
     grid-template:
       "announcement announcement announcement"
       "hero hero about"

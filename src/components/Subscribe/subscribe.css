@@ -14,7 +14,7 @@
 .input {
   color: var(--mauve-12);
   background: var(--mauve-1);
-  padding: 0 1em;
+  padding: 0 var(--space-l);
   padding-inline-end: 4rem;
   z-index: 1;
 }
@@ -55,7 +55,7 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-m);
   padding: 0 0.5rem;
 }
 
