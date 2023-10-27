@@ -21,7 +21,7 @@
 .prose li a {
   position: relative;
   text-decoration: underline;
-  text-decoration-color: var(--mauve-7);
+  text-decoration-color: var(--mauve-8);
   text-underline-offset: 0.1em;
   transition: all 0.2s ease-in-out;
 }
