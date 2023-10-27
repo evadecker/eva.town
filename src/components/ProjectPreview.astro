@@ -38,13 +38,13 @@ const date = dayjs(datePublished).format("MMMM YYYY");
     </div>
     <footer class="links">
       <a class="link" href={url}>
-        <Icon icon="link" />
+        <Icon icon="link" size="small" />
         <span class="url">{url.replace(/^https?:\/\//, "")}</span>
       </a>
       {
         repo && (
           <a class="link" href={`https://github.com/${repo}`}>
-            <Icon icon="github" />
+            <Icon icon="github" size="small" />
             <span class="url">{repo}</span>
           </a>
         )
@@ -80,6 +80,10 @@ const date = dayjs(datePublished).format("MMMM YYYY");
     }
   }
 
+  .description {
+    line-height: 1.4;
+  }
+
   .date {
     color: var(--mauve-11);
 
@@ -99,9 +103,11 @@ const date = dayjs(datePublished).format("MMMM YYYY");
   .link {
     display: flex;
     align-items: center;
-    gap: var(--space-2xs);
+    gap: var(--space-xs);
     color: var(--mauve-11);
+    padding-block: var(--space-2xs);
     max-width: 100%;
+    line-height: 1.1;
 
     &:hover {
       color: var(--mauve-12);
