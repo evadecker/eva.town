@@ -1,9 +1,10 @@
 ---
 import dayjs from "dayjs";
+
 import { Icon } from "./Icon/Icon";
 import Picture from "./Picture.astro";
 
-type Props = {
+interface Props {
   title: string;
   description: string;
   datePublished: Date;
@@ -11,7 +12,7 @@ type Props = {
   repo?: string;
   img?: ImageMetadata[];
   imgAlt?: string;
-};
+}
 
 const { title, description, datePublished, url, repo, img, imgAlt } =
   Astro.props;
@@ -35,21 +36,21 @@ const date = dayjs(datePublished).format("MMMM YYYY");
       {description}{" "}
       <time class="date" datetime={datePublished.toString()}>{date}</time>
     </div>
+    <footer class="links">
+      <a class="link" href={url}>
+        <Icon icon="link" />
+        <span class="url">{url.replace(/^https?:\/\//, "")}</span>
+      </a>
+      {
+        repo && (
+          <a class="link" href={`https://github.com/${repo}`}>
+            <Icon icon="github" variant="filled" />
+            <span class="url">{repo}</span>
+          </a>
+        )
+      }
+    </footer>
   </div>
-  <footer class="links">
-    <a class="link" href={url}>
-      <Icon icon="link" />
-      <span class="url">{url.replace(/^https?:\/\//, "")}</span>
-    </a>
-    {
-      repo && (
-        <a class="link" href={`https://github.com/${repo}`}>
-          <Icon icon="github" variant="filled" />
-          <span class="url">{repo}</span>
-        </a>
-      )
-    }
-  </footer>
 </div>
 
 <style lang="scss">
@@ -65,6 +66,7 @@ const date = dayjs(datePublished).format("MMMM YYYY");
     flex-direction: column;
     align-items: flex-start;
     gap: 0.2em;
+    width: 100%;
   }
 
   .img {
@@ -88,8 +90,9 @@ const date = dayjs(datePublished).format("MMMM YYYY");
 
   .links {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     max-width: 100%;
+    column-gap: 0.5em;
   }
 
   .link {
