@@ -2,8 +2,8 @@
   content: "⁂";
   display: block;
   text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
   font-size: var(--step-3);
 }
 
@@ -31,7 +31,7 @@
 .prose h4,
 .prose h5,
 .prose h6 {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: calc(var(--space-2xl) * 2);
   margin-bottom: var(--space-m);
 }
 

@@ -101,11 +101,11 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
       }
 
       .main.padTop {
-        padding-block-start: 4rem;
+        padding-block-start: var(--space-3xl);
       }
 
       .main.padBottom {
-        padding-block-end: 4rem;
+        padding-block-end: var(--space-3xl);
       }
     </style>
   </body>

@@ -4,8 +4,8 @@
   justify-content: flex-start;
   align-items: flex-end;
   height: 96px;
-  padding: 0 0.5rem;
-  margin-top: -8px;
+  padding: 0 var(--space-s);
+  user-select: none;
 }
 
 .bubble {
