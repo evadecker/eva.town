@@ -26,7 +26,7 @@ const { slug, title, description, date, img, imgAlt } = Astro.props;
 <style>
   .card {
     display: block;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-l);
     transition: all 0.2s ease-in-out;
   }
 
@@ -41,13 +41,13 @@ const { slug, title, description, date, img, imgAlt } = Astro.props;
   .contents {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
-    padding: 1em;
+    gap: var(--space-s);
+    padding: var(--space-m);
     padding-inline-start: 0;
   }
 
   .title {
-    font-size: var(--text-h4);
+    font-size: var(--step-2);
     line-height: var(--line-height-h4);
     transition: all 0.2s ease-in-out;
     text-wrap: balance;

@@ -16,7 +16,7 @@ body {
   position: relative;
   flex-direction: column;
   align-items: flex-start;
-  font-size: var(--text-body);
+  font-size: var(--step-0);
   font-family: var(--font-sans);
   line-height: var(--line-height-body);
   text-rendering: optimizelegibility;
@@ -37,39 +37,39 @@ h6 {
 }
 
 h1 {
-  font-size: var(--text-h1);
+  font-size: var(--step-6);
   line-height: var(--line-height-h1);
   letter-spacing: var(--letter-spacing-condensed);
 }
 
 h2 {
-  font-size: var(--text-h2);
+  font-size: var(--step-4);
   line-height: var(--line-height-h2);
   letter-spacing: var(--letter-spacing-condensed);
 }
 
 h3 {
-  font-size: var(--text-h3);
+  font-size: var(--step-3);
   line-height: var(--line-height-h3);
 }
 
 h4 {
-  font-size: var(--text-h4);
+  font-size: var(--step-2);
   line-height: var(--line-height-h4);
 }
 
 h5 {
-  font-size: var(--text-h5);
+  font-size: var(--step-1);
   line-height: var(--line-height-h5);
 }
 
 h6 {
-  font-size: var(--text-body);
+  font-size: var(--step-0);
   line-height: var(--line-height-h6);
 }
 
 small {
-  font-size: var(--text-small);
+  font-size: var(--step--1);
   line-height: var(--line-height-small);
   letter-spacing: var(--letter-spacing-loose);
 }

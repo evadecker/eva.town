@@ -40,8 +40,7 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding-inline-start: 1.5rem;
-    padding-inline-end: 1.5rem;
+    padding-inline: var(--space-xl);
   }
 
   header::after {
@@ -62,12 +61,12 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
   }
 
   .wordmark {
-    font-size: var(--text-body);
+    font-size: var(--step-0);
     font-family: var(--font-sans);
     font-weight: var(--font-weight-bold);
     text-decoration: "none";
     position: "relative";
-    bottom: "-0.1em";
+    bottom: "-0.1rem";
   }
 
   .links {
@@ -81,7 +80,7 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     background: transparent;
     padding: 0.08em 0.4em 0.03em;
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-s);
     cursor: pointer;
   }
 
@@ -99,9 +98,10 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
 
   .toggle {
     position: relative;
-    width: 40px;
-    height: 40px;
-    margin-inline-start: 0.5em;
+    width: 32px;
+    height: 32px;
+    margin-inline-start: var(--space-s);
+    margin-inline-end: calc(var(--space-s) * -1);
   }
 
   .links .shoo {

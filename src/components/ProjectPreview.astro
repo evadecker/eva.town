@@ -44,7 +44,7 @@ const date = dayjs(datePublished).format("MMMM YYYY");
       {
         repo && (
           <a class="link" href={`https://github.com/${repo}`}>
-            <Icon icon="github" variant="filled" />
+            <Icon icon="github" />
             <span class="url">{repo}</span>
           </a>
         )
@@ -58,20 +58,20 @@ const date = dayjs(datePublished).format("MMMM YYYY");
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1em;
+    gap: var(--space-l);
   }
 
   .details {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.2em;
+    gap: var(--space-s);
     width: 100%;
   }
 
   .img {
     background-color: var(--mauve-3);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-m);
     overflow: hidden;
 
     &:hover {
@@ -92,14 +92,13 @@ const date = dayjs(datePublished).format("MMMM YYYY");
     display: flex;
     flex-flow: row wrap;
     max-width: 100%;
-    column-gap: 0.5em;
+    column-gap: var(--space-m);
   }
 
   .link {
     display: flex;
     align-items: center;
-    gap: 0.3em;
-    padding-block: 0.1em;
+    gap: var(--space-2xs);
     color: var(--mauve-11);
     max-width: 100%;
 

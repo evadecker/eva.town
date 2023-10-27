@@ -41,11 +41,11 @@ const dateModified = new Date();
 
 <style>
   footer {
-    font-size: var(--text-small);
+    font-size: var(--step--1);
     width: 100%;
-    padding-block: 0.5rem;
-    padding-inline-start: 1.5rem;
-    padding-inline-end: 1.5rem;
+    padding-block: var(--space-m);
+    padding-inline-start: var(--space-xl);
+    padding-inline-end: var(--space-xl);
     display: flex;
     align-items: center;
   }
@@ -65,19 +65,19 @@ const dateModified = new Date();
 
   @media (width <= 580px) {
     footer {
-      padding-block-start: 1rem;
+      padding-block-start: var(--space-m);
       flex-direction: column;
       align-items: flex-start;
     }
 
     .links {
-      margin-inline-start: -0.5rem;
+      margin-inline-start: calc(var(--space-s) * -1);
     }
   }
 
   .links a {
-    height: 2.5rem;
-    padding-inline: 0.5rem;
+    height: var(--space-2xl);
+    padding-inline: var(--space-s);
     display: flex;
     align-items: center;
   }

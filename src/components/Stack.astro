@@ -32,11 +32,11 @@ const { spacing } = Astro.props;
   }
 
   .stack :global(> * + *) {
-    margin-block-start: 1rem;
+    margin-block-start: var(--space-m);
   }
 
   .stack.tight :global(> * + *) {
-    margin-block-start: 0.5rem;
+    margin-block-start: var(--space-s);
   }
 
   .stack.none :global(> * + *) {

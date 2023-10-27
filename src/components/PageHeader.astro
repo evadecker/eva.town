@@ -2,7 +2,6 @@
 import Center from "./Center.astro";
 import Picture from "./Picture.astro";
 import { RelativeDate } from "./RelativeDate/RelativeDate";
-import Stack from "./Stack.astro";
 
 interface Props {
   slug: string;
@@ -27,34 +26,30 @@ const { title, description, img, imgAlt, datePublished, dateModified } =
     )
   }
   <Center>
-    <Stack>
-      <Stack spacing="tight">
-        <h1 itemprop="name" class="page-title">
-          {title}
-        </h1>
-        {description && <p class="page-subtitle">{description}</p>}
-      </Stack>
-      {
-        datePublished && (
-          <Stack>
+    <h1 itemprop="name" class="page-title">
+      {title}
+    </h1>
+    {description && <p class="page-subtitle">{description}</p>}
+    {
+      datePublished && (
+        <div class="page-dates">
+          <RelativeDate
+            date={datePublished}
+            prefix="Planted"
+            icon="seedling"
+            client:load
+          />
+          {dateModified && (
             <RelativeDate
-              date={datePublished}
-              prefix="Planted"
-              icon="seedling"
+              date={dateModified}
+              prefix="Last tended"
+              icon="sparkling"
               client:load
             />
-            {dateModified && (
-              <RelativeDate
-                date={dateModified}
-                prefix="Last tended"
-                icon="sparkling"
-                client:load
-              />
-            )}
-          </Stack>
-        )
-      }
-    </Stack>
+          )}
+        </div>
+      )
+    }
   </Center>
 </header>
 
@@ -71,7 +66,7 @@ const { title, description, img, imgAlt, datePublished, dateModified } =
   }
 
   .page-header {
-    padding-block-end: 2em;
+    padding-block-end: var(--space-2xl);
   }
 
   .page-image {
@@ -91,15 +86,22 @@ const { title, description, img, imgAlt, datePublished, dateModified } =
   }
 
   .page-title {
-    padding-block-start: 1em;
+    padding-block-start: var(--space-2xl);
     text-wrap: balance;
   }
 
   .page-subtitle {
     font-family: var(--font-serif);
-    font-size: var(--text-h4);
+    font-size: var(--step-2);
     line-height: var(--line-height-h4);
-    padding-block-start: 0.2em;
+    padding-block-start: var(--space-xs);
     text-wrap: balance;
+  }
+
+  .page-dates {
+    padding-block-start: var(--space-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
   }
 </style>

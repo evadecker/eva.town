@@ -150,8 +150,8 @@ export const Icon = ({ icon, variant, size, className }: IconProps) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      width="1em"
-      height="1em"
+      width="24"
+      height="24"
       className={classNames("icon", { small: size === "small" }, className)}
       aria-hidden="true"
     >

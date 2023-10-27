@@ -23,14 +23,14 @@ const { icon, text, type, url, as: Tag = url ? "a" : "div" } = Astro.props;
 <style lang="scss">
   .banner {
     background-color: var(--mauve-3);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-s);
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 0.5em;
+    gap: var(--space-s);
     width: 100%;
     line-height: 1.1;
-    padding: 0.5em;
+    padding: var(--space-s);
 
     &.success {
       background-color: var(--green-3);
