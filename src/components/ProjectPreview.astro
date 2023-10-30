@@ -1,6 +1,7 @@
 ---
 import dayjs from "dayjs";
 
+import { smartquotes } from "../helpers/helpers";
 import { Icon } from "./Icon/Icon";
 import Picture from "./Picture.astro";
 
@@ -33,7 +34,7 @@ const date = dayjs(datePublished).format("MMMM YYYY");
       <h2>{title}</h2>
     </a>
     <div class="description">
-      {description}{" "}
+      {smartquotes(description)}{" "}
       <time class="date" datetime={datePublished.toString()}>{date}</time>
     </div>
     <footer class="links">
