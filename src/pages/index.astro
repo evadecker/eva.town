@@ -1,107 +1,94 @@
 ---
-import Banner from "src/components/Banner.astro";
-
+import Banner from "../components/Banner.astro";
+import Center from "../components/Center.astro";
+import { Icon } from "../components/Icon/Icon";
+import Synth from "../components/Toys/Synth/Synth.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import AboutCard from "./index/AboutCard.astro";
-import HeroCard from "./index/HeroCard.astro";
 import SubscribeCard from "./index/SubscribeCard.astro";
-import SynthCard from "./index/SynthCard.astro";
 ---
 
 <BaseLayout
   title="Eva Decker"
   description="Eva is a designer and web developer based in Brooklyn, NY."
+  padBottom
   includeFooter
 >
-  <div class="bento-wrapper">
-    <div class="bento">
-      <div class="announcement">
-        <Banner
-          icon="music"
-          text="Hey, I made a new project. It's called Genderswap.fm and it's for covers."
-          type="info"
-          url="https://genderswap.fm"
-        />
-      </div>
-      <div class="hero">
-        <HeroCard />
-      </div>
-      <div class="about">
-        <AboutCard />
-      </div>
-      <div class="synth">
-        <SynthCard />
-      </div>
-      <div class="subscribe">
-        <SubscribeCard />
-      </div>
+  <Center>
+    <div class="announcement">
+      <Banner
+        icon="music"
+        text="New project: Genderswap.fm"
+        type="info"
+        url="https://genderswap.fm"
+      />
     </div>
-  </div>
+    <h1>Eva designs and builds for the web</h1>
+    <p class="about">
+      I’m a designer and developer currently freelancing in Brooklyn, NY, with
+      my tabby, <span class="noWrap"
+        ><button class="inlineButton" data-sam-button type="button"
+          >Samwise</button
+        >.</span
+      > In my free time I play piano. <a href="/about"
+        >More <Icon icon="arrowRight" /></a
+      >
+    </p>
+    <div class="synth">
+      <Synth />
+    </div>
+    <div class="subscribe">
+      <SubscribeCard />
+    </div>
+  </Center>
 </BaseLayout>
 
+<script>
+  import { addSam } from "../stores/sam";
+  document.addEventListener("astro:page-load", () => {
+    const samButton = document.querySelector("[data-sam-button]");
+    samButton?.addEventListener("click", () => addSam());
+  });
+</script>
+
 <style>
-  .bento-wrapper {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .bento {
-    display: grid;
-    padding: var(--space-xl);
-    padding-block-end: 0;
-    gap: var(--space-l);
-    grid-template:
-      "announcement announcement announcement"
-      "hero hero about"
-      "subscribe synth synth";
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: auto repeat(2, minmax(0, 1fr));
-    max-width: 1440px;
-    margin-inline: auto;
-  }
-
-  @media (width < 1080px) {
-    .bento {
-      grid-template:
-        "hero hero"
-        "announcement announcement"
-        "about subscribe"
-        "synth synth";
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media (width < 560px) {
-    .bento {
-      grid-template:
-        "hero"
-        "announcement"
-        "about"
-        "synth"
-        "subscribe";
-      grid-template-columns: 1fr;
-    }
-  }
-
   .announcement {
-    grid-area: announcement;
+    padding-block-start: var(--space-xl);
   }
 
-  .hero {
-    grid-area: hero;
+  h1 {
+    margin-block-start: var(--space-xl);
   }
 
   .about {
-    grid-area: about;
+    font-size: var(--step-1);
+    font-family: var(--font-sans);
+    letter-spacing: var(--letter-spacing-condensed);
+    line-height: var(--line-height-h5);
+    margin-block-start: var(--space-l);
+  }
+
+  .inlineButton {
+    all: unset;
+    cursor: pointer;
+    display: inline-block;
+    background: var(--mauve-5);
+    padding-inline: 0.2em;
+    border-radius: var(--radius-s);
+  }
+
+  .inlineButton:hover {
+    background: var(--mauve-6);
+  }
+
+  .inlineButton:active {
+    background: var(--mauve-7);
+  }
+
+  .noWrap {
+    white-space: nowrap;
   }
 
   .synth {
-    grid-area: synth;
-  }
-
-  .subscribe {
-    grid-area: subscribe;
+    margin-block: var(--space-xl);
   }
 </style>

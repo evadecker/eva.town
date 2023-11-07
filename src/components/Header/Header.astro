@@ -43,16 +43,6 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     padding-inline: var(--space-xl);
   }
 
-  header::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: var(--mauve-1);
-    opacity: 0.96;
-    box-shadow: 0 1px 0 var(--mauve-a6);
-  }
-
   nav {
     display: flex;
     align-items: center;
@@ -100,8 +90,7 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     position: relative;
     width: 32px;
     height: 32px;
-    margin-inline-start: var(--space-s);
-    margin-inline-end: calc(var(--space-s) * -1);
+    margin-inline: var(--space-s) calc(var(--space-s) * -1);
   }
 
   .links .shoo {

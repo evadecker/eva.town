@@ -10,7 +10,7 @@ body.dark {
 
 body {
   color: var(--mauve-12);
-  background-color: var(--mauve-1);
+  background-color: var(--mauve-3);
   display: flex;
   min-height: 100%;
   position: relative;
