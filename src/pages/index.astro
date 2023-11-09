@@ -17,9 +17,7 @@ import SubscribeCard from "./index/SubscribeCard.astro";
       <Phone />
     </div>
     <div class="about">
-      <p class="intro">
-        I’m a designer and developer based in Brooklyn, NY. (◕‿◕✿)
-      </p>
+      <p class="intro">Yet another designer living in Brooklyn.</p>
       <Synth />
     </div>
     <div class="subscribe">
@@ -27,14 +25,6 @@ import SubscribeCard from "./index/SubscribeCard.astro";
     </div>
   </div>
 </BaseLayout>
-
-<!-- <script>
-  import { addSam } from "../stores/sam";
-  document.addEventListener("astro:page-load", () => {
-    const samButton = document.querySelector("[data-sam-button]");
-    samButton?.addEventListener("click", () => addSam());
-  });
-</script> -->
 
 <style lang="scss">
   .visuallyhidden {
@@ -56,7 +46,7 @@ import SubscribeCard from "./index/SubscribeCard.astro";
       "projects subscribe";
     grid-template-columns: repeat(3);
     gap: var(--space-3xl);
-    max-width: 1440px;
+    max-width: 1080px;
     margin-inline: auto;
   }
 
@@ -68,7 +58,7 @@ import SubscribeCard from "./index/SubscribeCard.astro";
     grid-area: about;
     display: flex;
     flex-direction: column;
-    gap: var(--space-3xl);
+    gap: var(--space-2xl);
 
     .intro {
       background-color: var(--jade-3);
@@ -77,6 +67,7 @@ import SubscribeCard from "./index/SubscribeCard.astro";
       transform: rotate(-2deg);
       align-self: flex-end;
       text-align: center;
+      line-height: 1.2;
       padding: var(--space-s) var(--space-m);
       border: 3px solid var(--jade-12);
       border-radius: var(--radius-full);

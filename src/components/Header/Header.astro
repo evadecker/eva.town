@@ -1,35 +1,13 @@
 ---
-import { ToggleTheme } from "./ToggleTheme.tsx";
+
 ---
 
-<script>
-  import { numSams, clearSams } from "../../stores/sam";
-
-  const shooButton = document.querySelector("button.shoo");
-
-  if (shooButton) {
-    shooButton.addEventListener("click", () => {
-      clearSams();
-    });
-
-    numSams.subscribe((num) => {
-      num === 0
-        ? shooButton.classList.add("hidden")
-        : shooButton.classList.remove("hidden");
-    });
-  }
-</script>
-
 <header transition:persist>
-  <nav>
+  <nav id="nav">
     <a class="wordmark" href="/">Eva Decker</a>
     <div class="links">
-      <button class="shoo" type="button">Shoo</button>
       <a href="/about">About</a>
       <a href="/projects">Projects</a>
-    </div>
-    <div class="toggle">
-      <ToggleTheme client:only="react" />
     </div>
   </nav>
 </header>
@@ -44,7 +22,8 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    padding-block: 0.5rem;
+    transition: 0.4s ease padding;
   }
 
   .wordmark {
