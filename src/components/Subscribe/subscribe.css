@@ -12,15 +12,15 @@
 }
 
 .input {
-  color: var(--mauve-12);
-  background: var(--mauve-1);
+  color: var(--jade-12);
+  background: var(--jade-1);
   padding: 0 var(--space-l);
   padding-inline-end: 4rem;
   z-index: 1;
 }
 
 .iconButton {
-  background: var(--pink-9);
+  background: var(--jade-9);
   color: white;
   position: absolute;
   top: 50%;
@@ -38,17 +38,17 @@
 }
 
 .iconButton:hover {
-  background: var(--pink-10);
+  background: var(--jade-10);
 }
 
 .iconButton:disabled {
-  background: var(--pink-9);
+  background: var(--jade-9);
   opacity: 0.8;
   pointer-events: none;
 }
 
 .sniperLink {
-  background: var(--pink-9);
+  background: var(--jade-9);
   color: var(--white-a12);
   font-weight: var(--font-weight-bold);
   display: flex;
@@ -70,11 +70,11 @@
 }
 
 .input:hover {
-  outline: 3px solid var(--pink-a4);
+  outline: 3px solid var(--jade-a4);
 }
 
 .input:focus {
-  outline: 3px solid var(--pink-a9);
+  outline: 3px solid var(--jade-a9);
 }
 
 .input:disabled {
@@ -82,12 +82,12 @@
 }
 
 .sniperLink:hover {
-  background: var(--pink-10);
+  background: var(--jade-10);
 }
 
 .checkInbox {
-  background: var(--mauve-3);
-  color: var(--mauve-12);
+  background: var(--jade-3);
+  color: var(--jade-12);
   text-align: center;
   display: flex;
   align-items: center;
@@ -97,8 +97,7 @@
 .sniperLink svg {
   flex-shrink: 0;
   position: relative;
-  margin-inline-start: auto;
-  margin-inline-end: 0.25rem;
+  margin-inline: auto 0.25rem;
 }
 
 .sniperLogo {

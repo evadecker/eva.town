@@ -1,6 +1,6 @@
 import "./toggle-theme.css";
 
-import { mauve, mauveDark } from "@radix-ui/colors";
+import { jade, jadeDark } from "@radix-ui/colors";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 
@@ -29,7 +29,7 @@ export const ToggleTheme = () => {
     if (metaTheme !== null)
       metaTheme.setAttribute(
         "content",
-        activeTheme === "dark" ? mauveDark.mauve1 : mauve.mauve1
+        activeTheme === "dark" ? jadeDark.jade1 : jade.jade1
       );
   }, [activeTheme]);
 

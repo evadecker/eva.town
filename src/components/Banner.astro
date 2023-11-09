@@ -22,7 +22,7 @@ const { icon, text, type, url, as: Tag = url ? "a" : "div" } = Astro.props;
 
 <style lang="scss">
   .banner {
-    background-color: var(--mauve-3);
+    background-color: var(--jade-3);
     border-radius: var(--radius-s);
     display: flex;
     flex-direction: row;
@@ -48,13 +48,13 @@ const { icon, text, type, url, as: Tag = url ? "a" : "div" } = Astro.props;
     }
 
     &.info {
-      background-color: var(--pink-3);
-      color: var(--pink-12);
+      background-color: var(--jade-3);
+      color: var(--jade-12);
     }
   }
 
   a.banner:hover {
-    background-color: var(--mauve-4);
+    background-color: var(--jade-4);
 
     &.success {
       background-color: var(--green-4);
@@ -69,7 +69,7 @@ const { icon, text, type, url, as: Tag = url ? "a" : "div" } = Astro.props;
     }
 
     &.info {
-      background-color: var(--pink-4);
+      background-color: var(--jade-4);
     }
   }
 

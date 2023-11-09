@@ -4,8 +4,14 @@
 
 <Fragment>
   <g id="synth-screen" transform="translate(24.000000, 4.000000)">
-    <rect class="lcd-outline" x="0" y="0" width="222" height="52" rx="4"></rect>
-    <rect class="lcd-bg" x="2" y="2" width="218" height="48" rx="2"></rect>
+    <rect
+      class="lcd-bg"
+      x="1"
+      y="2"
+      width="220"
+      height="48"
+      rx="4"
+      stroke-width="1.5"></rect>
     <g class="synth-instruments" transform="translate(108.000000, 6.000000)">
       <g class="instrument-arrow instrument-prev" fill-rule="nonzero">
         <rect
@@ -490,9 +496,6 @@
       class="lcd-base"
       points="198 26 198 28 196 28 196 30 194 30 194 42 192 42 192 44 184 44 184 42 182 42 182 30 180 30 180 28 178 28 178 26 176 26 176 24 174 24 174 18 176 18 176 22 178 22 178 20 180 20 180 18 176 18 176 16 184 16 184 18 186 18 186 20 190 20 190 18 192 18 192 16 200 16 200 18 202 18 202 24 200 24 200 26"
     ></polygon>
-    <path
-      d="M108,20 L108,22 L106,22 L106,18 L110,18 L110,20 L108,20 Z M72,20 L72,22 L70,22 L70,18 L74,18 L74,20 L72,20 Z M142,20 L142,22 L140,22 L140,18 L144,18 L144,20 L142,20 Z M178,20 L178,22 L176,22 L176,18 L180,18 L180,20 L178,20 Z"
-      class="lcd-highlight"></path>
   </g>
 </Fragment>
 
@@ -500,16 +503,17 @@
   @keyframes press-start {
     0%,
     10% {
-      fill: var(--synth-lcd-dark);
+      transform: translateY(-5%);
     }
 
     100% {
-      fill: var(--synth-lcd-medium);
+      transform: translateY(0);
     }
   }
 
   .lcd-bg {
     fill: var(--synth-lcd-bg);
+    stroke: var(--synth-stroke);
   }
 
   .lcd-highlight {
@@ -521,13 +525,8 @@
   }
 
   .notehead,
-  .synth-instrument .lcd-base,
-  .instrument-arrow:hover .lcd-base {
+  .synth-instrument .lcd-base {
     fill: var(--synth-lcd-dark);
-  }
-
-  .lcd-outline {
-    fill: var(--synth-lcd-outline);
   }
 
   // Start button
@@ -538,27 +537,24 @@
       display: none;
     }
 
-    &:hover .lcd-base {
+    .lcd-base {
       fill: var(--synth-lcd-dark);
-    }
-
-    &:not(:hover) .lcd-base {
       animation: press-start 2s step-start infinite;
     }
 
-    &:not(:hover) .lcd-base:nth-child(2) {
+    .lcd-base:nth-child(2) {
       animation-delay: 0.15s;
     }
 
-    &:not(:hover) .lcd-base:nth-child(3) {
+    .lcd-base:nth-child(3) {
       animation-delay: 0.3s;
     }
 
-    &:not(:hover) .lcd-base:nth-child(4) {
+    .lcd-base:nth-child(4) {
       animation-delay: 0.45s;
     }
 
-    &:not(:hover) .lcd-base:nth-child(5) {
+    .lcd-base:nth-child(5) {
       animation-delay: 0.6s;
     }
   }
@@ -601,5 +597,9 @@
   .synth-instrument,
   .instrument-arrow {
     cursor: pointer;
+  }
+
+  .instrument-arrow:hover .lcd-base {
+    fill: var(--synth-lcd-dark);
   }
 </style>

@@ -1,9 +1,7 @@
 ---
-import Banner from "../components/Banner.astro";
-import Center from "../components/Center.astro";
-import { Icon } from "../components/Icon/Icon";
 import Synth from "../components/Toys/Synth/Synth.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Phone from "./index/Phone.astro";
 import SubscribeCard from "./index/SubscribeCard.astro";
 ---
 
@@ -13,82 +11,80 @@ import SubscribeCard from "./index/SubscribeCard.astro";
   padBottom
   includeFooter
 >
-  <Center>
-    <div class="announcement">
-      <Banner
-        icon="music"
-        text="New project: Genderswap.fm"
-        type="info"
-        url="https://genderswap.fm"
-      />
+  <div class="grid">
+    <h1 class="visuallyhidden">Eva designs and builds for the web</h1>
+    <div class="phone">
+      <Phone />
     </div>
-    <h1>Eva designs and builds for the web</h1>
-    <p class="about">
-      I’m a designer and developer currently freelancing in Brooklyn, NY, with
-      my tabby, <span class="noWrap"
-        ><button class="inlineButton" data-sam-button type="button"
-          >Samwise</button
-        >.</span
-      > In my free time I play piano. <a href="/about"
-        >More <Icon icon="arrowRight" /></a
-      >
-    </p>
-    <div class="synth">
+    <div class="about">
+      <p class="intro">
+        I’m a designer and developer based in Brooklyn, NY. (◕‿◕✿)
+      </p>
       <Synth />
     </div>
     <div class="subscribe">
       <SubscribeCard />
     </div>
-  </Center>
+  </div>
 </BaseLayout>
 
-<script>
+<!-- <script>
   import { addSam } from "../stores/sam";
   document.addEventListener("astro:page-load", () => {
     const samButton = document.querySelector("[data-sam-button]");
     samButton?.addEventListener("click", () => addSam());
   });
-</script>
+</script> -->
 
-<style>
-  .announcement {
-    padding-block-start: var(--space-xl);
+<style lang="scss">
+  .visuallyhidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
   }
 
-  h1 {
-    margin-block-start: var(--space-xl);
+  .grid {
+    display: grid;
+    padding: var(--space-xl);
+    padding-block-end: 0;
+    grid-template:
+      "phone about"
+      "projects subscribe";
+    grid-template-columns: repeat(3);
+    gap: var(--space-3xl);
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+  .phone {
+    grid-area: phone;
   }
 
   .about {
-    font-size: var(--step-1);
-    font-family: var(--font-sans);
-    letter-spacing: var(--letter-spacing-condensed);
-    line-height: var(--line-height-h5);
-    margin-block-start: var(--space-l);
+    grid-area: about;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
+
+    .intro {
+      background-color: var(--jade-3);
+      letter-spacing: var(--letter-spacing-condensed);
+      max-width: 40ch;
+      transform: rotate(-2deg);
+      align-self: flex-end;
+      text-align: center;
+      padding: var(--space-s) var(--space-m);
+      border: 3px solid var(--jade-12);
+      border-radius: var(--radius-full);
+      box-shadow: -1px 2px 0 var(--jade-12);
+    }
   }
 
-  .inlineButton {
-    all: unset;
-    cursor: pointer;
-    display: inline-block;
-    background: var(--mauve-5);
-    padding-inline: 0.2em;
-    border-radius: var(--radius-s);
-  }
-
-  .inlineButton:hover {
-    background: var(--mauve-6);
-  }
-
-  .inlineButton:active {
-    background: var(--mauve-7);
-  }
-
-  .noWrap {
-    white-space: nowrap;
-  }
-
-  .synth {
-    margin-block: var(--space-xl);
+  .subscribe {
+    grid-area: subscribe;
   }
 </style>
