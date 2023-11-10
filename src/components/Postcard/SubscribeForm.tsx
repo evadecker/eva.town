@@ -10,9 +10,9 @@ import {
 } from "react";
 
 import { isValidEmail } from "../../helpers/helpers";
-import { Dialogue } from "../Dialogue/Dialogue";
-import type { EmoteType } from "../Dialogue/Emote";
 import { Icon } from "../Icon/Icon";
+import { Dialogue } from "./Dialogue/Dialogue";
+import { emoteData, type EmoteType } from "./Dialogue/Emote";
 
 interface SniperResponse {
   url: string;
@@ -252,9 +252,31 @@ export const SubscribeForm = () => {
       });
   };
 
+  const handleEmoteClick = () => {
+    const emoteKeys = Object.keys(emoteData) as EmoteType[];
+    const currentEmoteIndex = emoteKeys.indexOf(currentEmote);
+    const nextEmote = emoteKeys[currentEmoteIndex + 1] || emoteKeys[0];
+    setCurrentEmote(nextEmote);
+    setCurrentText("");
+    setCurrentRemarkType(null);
+  };
+
   return (
     <div>
-      <Dialogue text={currentText} emote={currentEmote} />
+      <header className="postcard-header">
+        <div>
+          <h2>Subscribe</h2>
+          <p>
+            I send email a few times a year about design and web dev and life.
+            Sometimes with cat pics.
+          </p>
+        </div>
+        <Dialogue
+          text={currentText}
+          emote={currentEmote}
+          onEmoteClick={handleEmoteClick}
+        />
+      </header>
       <form onSubmit={handleSubmit}>
         {!hasSubmitted ? (
           <div

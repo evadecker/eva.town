@@ -1,11 +1,8 @@
 ---
-import Banner from "src/components/Banner.astro";
-
+import Phone from "../components/Phone.astro";
+import Postcard from "../components/Postcard/Postcard.astro";
+import Synth from "../components/Synth/Synth.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import AboutCard from "./index/AboutCard.astro";
-import HeroCard from "./index/HeroCard.astro";
-import SubscribeCard from "./index/SubscribeCard.astro";
-import SynthCard from "./index/SynthCard.astro";
 ---
 
 <BaseLayout
@@ -13,95 +10,110 @@ import SynthCard from "./index/SynthCard.astro";
   description="Eva is a designer and web developer based in Brooklyn, NY."
   includeFooter
 >
-  <div class="bento-wrapper">
-    <div class="bento">
-      <div class="announcement">
-        <Banner
-          icon="music"
-          text="Hey, I made a new project. It's called Genderswap.fm and it's for covers."
-          type="info"
-          url="https://genderswap.fm"
-        />
-      </div>
-      <div class="hero">
-        <HeroCard />
-      </div>
-      <div class="about">
-        <AboutCard />
-      </div>
-      <div class="synth">
-        <SynthCard />
-      </div>
-      <div class="subscribe">
-        <SubscribeCard />
-      </div>
+  <div class="grid">
+    <h1 class="visuallyhidden">Eva designs and builds for the web</h1>
+    <div class="phone">
+      <Phone />
+    </div>
+    <div class="intro">
+      <p>
+        I'm a designer and developer based in Brooklyn, NY. Past gigs include
+        product design and UX engineering at
+        <a href="https://dropbox.com">Dropbox</a>, <a
+          href="https://cityblock.com">Cityblock</a
+        >, and <a href="https://swiftype.com">Swiftype</a>. I'm currently <strong
+          >open to work</strong
+        >.
+      </p>
+    </div>
+    <div class="synth">
+      <Synth />
+    </div>
+    <div class="postcard">
+      <Postcard />
     </div>
   </div>
 </BaseLayout>
 
-<style>
-  .bento-wrapper {
+<style lang="scss">
+  .visuallyhidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .grid {
+    display: grid;
+    padding: var(--space-xl);
+    grid-template:
+      "phone intro intro"
+      "phone synth synth"
+      "postcard postcard postcard";
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3xl);
+    width: 1080px;
+    max-width: 100%;
+    margin-inline: auto;
+    overflow: hidden;
+
+    @media (width < 900px) {
+      width: 660px;
+      grid-template:
+        "phone"
+        "intro"
+        "synth"
+        "postcard";
+      align-items: center;
+    }
+  }
+
+  .phone {
+    grid-area: phone;
     display: flex;
-    flex: 1;
-    flex-direction: column;
     justify-content: center;
   }
 
-  .bento {
-    display: grid;
-    padding: var(--space-xl);
-    padding-block-end: 0;
-    gap: var(--space-l);
-    grid-template:
-      "announcement announcement announcement"
-      "hero hero about"
-      "subscribe synth synth";
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: auto repeat(2, minmax(0, 1fr));
-    max-width: 1440px;
-    margin-inline: auto;
-  }
+  .intro {
+    grid-area: intro;
+    justify-self: flex-start;
 
-  @media (width < 1080px) {
-    .bento {
-      grid-template:
-        "hero hero"
-        "announcement announcement"
-        "about subscribe"
-        "synth synth";
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    p {
+      font-size: var(--step-1);
+      max-width: 36ch;
+      transform: rotate(-2deg);
+      line-height: 1.2;
     }
-  }
 
-  @media (width < 560px) {
-    .bento {
-      grid-template:
-        "hero"
-        "announcement"
-        "about"
-        "synth"
-        "subscribe";
-      grid-template-columns: 1fr;
+    a {
+      text-decoration: underline;
+      text-decoration-color: var(--jade-11);
+      text-underline-offset: 0.1em;
+
+      &:hover {
+        text-decoration-color: var(--jade-12);
+      }
     }
-  }
 
-  .announcement {
-    grid-area: announcement;
-  }
+    @media (width < 900px) {
+      place-self: center;
 
-  .hero {
-    grid-area: hero;
-  }
-
-  .about {
-    grid-area: about;
+      p {
+        max-width: 26ch;
+      }
+    }
   }
 
   .synth {
     grid-area: synth;
+    display: flex;
+    justify-content: center;
   }
 
-  .subscribe {
-    grid-area: subscribe;
+  .postcard {
+    grid-area: postcard;
   }
 </style>

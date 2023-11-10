@@ -1,11 +1,7 @@
-@import "@radix-ui/colors/mauve.css";
-@import "@radix-ui/colors/mauve-alpha.css";
-@import "@radix-ui/colors/mauve-dark.css";
-@import "@radix-ui/colors/mauve-dark-alpha.css";
-@import "@radix-ui/colors/pink.css";
-@import "@radix-ui/colors/pink-alpha.css";
-@import "@radix-ui/colors/pink-dark.css";
-@import "@radix-ui/colors/pink-dark-alpha.css";
+@import "@radix-ui/colors/jade.css";
+@import "@radix-ui/colors/jade-alpha.css";
+@import "@radix-ui/colors/jade-dark.css";
+@import "@radix-ui/colors/jade-dark-alpha.css";
 @import "@radix-ui/colors/green.css";
 @import "@radix-ui/colors/green-alpha.css";
 @import "@radix-ui/colors/green-dark.css";
@@ -28,7 +24,7 @@
   --font-caption: minion-3-caption, "New York", georgia, cambria,
     "Times New Roman", times, serif;
   --font-sans: franklin-gothic-urw, system-ui, -apple-system, "Segoe UI", roboto,
-    "Helvetica Neue", sans-serif, serif;
+    "Helvetica Neue", sans-serif;
   --font-mono: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;

@@ -5,7 +5,6 @@ import dayjs from "dayjs";
 import Center from "../../components/Center.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import ProjectPreview from "../../components/ProjectPreview.astro";
-import SubscribeCallout from "../../components/Subscribe/SubscribeCallout.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const projects = await getCollection("projects");
@@ -35,7 +34,6 @@ const description = "It’s things I made for internet.";
         ))
       }
     </section>
-    <SubscribeCallout />
   </Center>
 </BaseLayout>
 

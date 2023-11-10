@@ -2,29 +2,10 @@
 import { ToggleTheme } from "./ToggleTheme.tsx";
 ---
 
-<script>
-  import { numSams, clearSams } from "../../stores/sam";
-
-  const shooButton = document.querySelector("button.shoo");
-
-  if (shooButton) {
-    shooButton.addEventListener("click", () => {
-      clearSams();
-    });
-
-    numSams.subscribe((num) => {
-      num === 0
-        ? shooButton.classList.add("hidden")
-        : shooButton.classList.remove("hidden");
-    });
-  }
-</script>
-
 <header transition:persist>
-  <nav>
+  <nav id="nav">
     <a class="wordmark" href="/">Eva Decker</a>
     <div class="links">
-      <button class="shoo" type="button">Shoo</button>
       <a href="/about">About</a>
       <a href="/projects">Projects</a>
     </div>
@@ -37,27 +18,15 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
 <style>
   header {
     width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     padding-inline: var(--space-xl);
-  }
-
-  header::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: var(--mauve-1);
-    opacity: 0.96;
-    box-shadow: 0 1px 0 var(--mauve-a6);
   }
 
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    padding-block: 0.5rem;
+    transition: 0.4s ease padding;
   }
 
   .wordmark {
@@ -86,36 +55,35 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
 
   .links a:hover,
   .links button:hover {
-    background: var(--pink-a3);
-    color: var(--pink-12);
+    background: var(--jade-a3);
+    color: var(--jade-12);
   }
 
   .links a:active,
   .links button:active {
-    background: var(--pink-a4);
-    color: var(--pink-12);
+    background: var(--jade-a4);
+    color: var(--jade-12);
   }
 
   .toggle {
     position: relative;
     width: 32px;
     height: 32px;
-    margin-inline-start: var(--space-s);
-    margin-inline-end: calc(var(--space-s) * -1);
+    margin-inline: var(--space-s) calc(var(--space-s) * -1);
   }
 
   .links .shoo {
-    background: var(--pink-9);
+    background: var(--jade-9);
     color: var(--white-a12);
   }
 
   .links .shoo:hover {
-    background: var(--pink-10);
+    background: var(--jade-10);
     color: var(--white-a12);
   }
 
   .links .shoo:active {
-    background: var(--pink-9);
+    background: var(--jade-9);
   }
 
   .shoo.hidden {

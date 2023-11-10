@@ -21,7 +21,7 @@ export const DialogueBubble = React.memo(
         scale: 0,
         x: -20,
         y: 20,
-        borderRadius: "1rem 1rem 1rem 0.2rem",
+        borderRadius: "1rem 1rem 0.2rem 1rem",
       },
       animate: {
         opacity: 1,

@@ -563,7 +563,7 @@ import SynthScreen from "./SynthScreen.astro";
 >
   <svg
     width="100%"
-    viewBox="0 0 270 148"
+    viewBox="0 0 270 156"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -578,41 +578,28 @@ import SynthScreen from "./SynthScreen.astro";
   .synth {
     width: 100%;
     max-width: 540px;
-    border-radius: var(--radius-l);
-    overflow: hidden;
+    transform: rotate(2deg);
 
-    --synth-base: var(--mauve-11);
-    --synth-endcap: var(--mauve-12);
-    --synth-lcd-outline: var(--mauve-12);
-    --synth-keys-outline: var(--mauve-12);
-    --synth-key-shadow: var(--black-a3);
-    --synth-whitekey: var(--white-a12);
-    --synth-whitekey-pressed: var(--pink-11);
-    --synth-blackkey: var(--mauve-12);
-    --synth-blackkey-pressed: var(--pink-5);
-    --synth-betweenkeys: var(--mauve-5);
-    --synth-keyletter: var(--black-a12);
-    --synth-lcd-bg: var(--pink-4);
-    --synth-lcd-light: var(--pink-1);
-    --synth-lcd-medium: var(--pink-8);
-    --synth-lcd-dark: var(--pink-9);
+    --synth-whitekey: var(--jade-4);
+    --synth-whitekey-pressed: var(--jade-1);
+    --synth-blackkey: var(--jade-12);
+    --synth-blackkey-pressed: var(--jade-11);
+    --synth-stroke: var(--jade-12);
+    --synth-lcd-bg: var(--jade-4);
+    --synth-lcd-light: var(--jade-2);
+    --synth-lcd-medium: var(--jade-11);
+    --synth-lcd-dark: var(--jade-12);
 
     :global(.dark) & {
-      --synth-base: var(--pink-7);
-      --synth-endcap: var(--pink-6);
-      --synth-lcd-outline: var(--pink-4);
-      --synth-keys-outline: var(--pink-4);
-      --synth-key-shadow: var(--black-a3);
-      --synth-whitekey: var(--white-a12);
-      --synth-whitekey-pressed: var(--pink-9);
-      --synth-blackkey: var(--mauve-1);
-      --synth-blackkey-pressed: var(--pink-9);
-      --synth-betweenkeys: var(--white-a10);
-      --synth-keyletter: var(--black-a12);
-      --synth-lcd-bg: var(--pink-12);
-      --synth-lcd-light: var(--white-a11);
-      --synth-lcd-medium: var(--pink-10);
-      --synth-lcd-dark: var(--pink-9);
+      --synth-whitekey: var(--jade-12);
+      --synth-whitekey-pressed: var(--jade-12);
+      --synth-blackkey: var(--jade-3);
+      --synth-blackkey-pressed: var(--jade-2);
+      --synth-stroke: var(--jade-1);
+      --synth-lcd-bg: var(--jade-12);
+      --synth-lcd-light: white;
+      --synth-lcd-medium: var(--jade-5);
+      --synth-lcd-dark: var(--jade-3);
     }
 
     &[data-loading="true"] {
@@ -622,7 +609,16 @@ import SynthScreen from "./SynthScreen.astro";
 
     &:focus,
     &:focus-within {
-      outline: 3px solid var(--pink-a9);
+      outline: none;
+    }
+
+    svg {
+      overflow: visible;
+    }
+
+    @media (width < 600px) {
+      width: 130%;
+      margin-inline: -15%;
     }
   }
 </style>
