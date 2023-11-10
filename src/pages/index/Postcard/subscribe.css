@@ -1,5 +1,6 @@
 .postcard-header {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   margin-block-end: var(--space-m);
   user-select: none;
@@ -32,7 +33,7 @@
 
 .input {
   color: var(--jade-12);
-  background: var(--jade-3);
+  background: var(--jade-4);
   padding: 0 var(--space-l);
   padding-inline-end: 4rem;
   z-index: 1;
@@ -45,7 +46,7 @@
 
 .iconButton {
   background: var(--jade-12);
-  color: var(--jade-3);
+  color: var(--jade-4);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -107,7 +108,7 @@
 }
 
 .checkInbox {
-  background: var(--jade-3);
+  background: var(--jade-4);
   color: var(--jade-12);
   text-align: center;
   display: flex;

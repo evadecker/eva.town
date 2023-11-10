@@ -53,23 +53,7 @@ const currentTime = dayjs().format("h:mm A");
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <defs>
-      <filter id="shadow" filterUnits="userSpaceOnUse">
-        <feOffset result="offOut" in="SourceGraphic" dx="-1.5" dy="2.5"
-        ></feOffset>
-        <feBlend in="SourceGraphic" in2="offOut" mode="normal"></feBlend>
-      </filter>
-    </defs>
-    <rect
-      class="phone"
-      width="228"
-      height="452"
-      x="2"
-      y="2"
-      rx="32"
-      stroke-width="3"
-      fill="#E3E3E3"
-      filter="url(#shadow)"></rect>
+    <rect class="phone" width="228" height="452" x="2" y="2" rx="32"></rect>
     <path
       d="M31.6518 109.308L21.1438 70.0918L49.2116 62.571L50.6678 68.0053L28.7625 73.8748L31.7047 84.8555L52.8817 79.1811L54.3378 84.6154L33.1609 90.2898L36.3583 102.223L58.7118 96.2332L60.1679 101.668L31.6518 109.308ZM72.4121 98.3867L53.9096 72.3607L59.8482 70.7695L73.8381 91.1594L75.7589 66.5062L81.7534 64.9L78.6868 96.7054L72.4121 98.3867ZM87.8586 85.2409C86.3875 79.7506 89.3715 75.6485 96.2954 73.2528L104.269 70.5159L103.983 69.4515C103.008 65.81 100.446 64.0944 96.5248 65.1452C92.9393 66.1059 91.2947 68.7082 91.5521 71.4615L85.7256 73.0227C85.1509 67.2921 88.627 62.3376 95.2378 60.5663C103.025 58.4797 108.312 61.6266 110.038 68.0694L115.097 86.9493L109.27 88.5105L108.115 84.1967C107.73 87.2421 105.081 90.3537 100.487 91.5847C94.2682 93.2509 89.3148 90.6752 87.8586 85.2409ZM93.6401 83.5117C94.4357 86.4809 96.9369 87.9724 100.691 86.9666C105.06 85.7957 107.361 82.0568 106.01 77.0147L105.365 74.6057L98.9298 76.8102C94.8031 78.2162 92.7994 80.3743 93.6401 83.5117Z"
       class="eva"></path>
@@ -145,12 +129,9 @@ const currentTime = dayjs().format("h:mm A");
 
 <style lang="scss">
   .link-wrapper {
-    display: block;
+    display: inline-block;
     transform: rotate(-5deg);
-
-    &:hover {
-      transform: rotate(-5deg) scale(1.05);
-    }
+    transform-origin: top left;
   }
 
   svg {
@@ -158,8 +139,10 @@ const currentTime = dayjs().format("h:mm A");
   }
 
   .phone {
-    fill: var(--jade-3);
+    fill: var(--jade-4);
     stroke: var(--jade-12);
+    stroke-width: 3px;
+    vector-effect: non-scaling-stroke;
   }
 
   .eva,

@@ -4,20 +4,6 @@ import { SubscribeForm } from "./SubscribeForm";
 
 <div class="subscribe">
   <SubscribeForm client:visible />
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="8"
-    height="314"
-    viewBox="0 0 8 314"
-    fill="none"
-    class="stripes"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M0 8.51562V17.0009L8 9.00088V0.515625L0 8.51562ZM0 33.0009V24.5156L8 16.5156V25.0009L0 33.0009ZM0 49.0009V40.5156L8 32.5156V41.0009L0 49.0009ZM0 65.0009V56.5156L8 48.5156V57.0009L0 65.0009ZM0 81.0009V72.5156L8 64.5156V73.0009L0 81.0009ZM0 97.0009V88.5156L8 80.5156V89.0009L0 97.0009ZM0 113.001V104.516L8 96.5156V105.001L0 113.001ZM0 129.001V120.516L8 112.516V121.001L0 129.001ZM0 145.001V136.516L8 128.516V137.001L0 145.001ZM0 161.001V152.516L8 144.516V153.001L0 161.001ZM0 177.001V168.516L8 160.516V169.001L0 177.001ZM0 193.001V184.516L8 176.516V185.001L0 193.001ZM0 209.001V200.516L8 192.516V201.001L0 209.001ZM0 225.001V216.516L8 208.516V217.001L0 225.001ZM0 241.001V232.516L8 224.516V233.001L0 241.001ZM0 257.001V248.516L8 240.516V249.001L0 257.001ZM0 273.001V264.516L8 256.516V265.001L0 273.001ZM0 289.001V280.516L8 272.516V281.001L0 289.001ZM0 305.001V296.516L8 288.516V297.001L0 305.001ZM7.00089 314H4C2.51432 314 1.21782 313.19 0.527988 311.988L8 304.516V313.001L7.00089 314Z"
-    ></path>
-  </svg>
 </div>
 
 <style lang="scss">
@@ -29,25 +15,25 @@ import { SubscribeForm } from "./SubscribeForm";
     justify-content: space-between;
     gap: var(--space-l);
     border: 3px solid var(--jade-12);
-    box-shadow: -1px 3px 0 var(--jade-12);
-    background-color: var(--jade-3);
+
+    // box-shadow: -1px 3px 0 var(--jade-12);
+    background-color: var(--jade-4);
     border-radius: var(--space-2xs);
+    margin-inline: auto;
     aspect-ratio: 3 / 2;
     max-width: 480px;
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
 
-    &:hover,
-    &:focus-within {
-      transform: rotate(-2deg) scale(1.05);
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      left: -1px;
+      mask: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='314' viewBox='0 0 8 314' fill='currentColor' class='stripes' %3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 8.51562V17.0009L8 9.00088V0.515625L0 8.51562ZM0 33.0009V24.5156L8 16.5156V25.0009L0 33.0009ZM0 49.0009V40.5156L8 32.5156V41.0009L0 49.0009ZM0 65.0009V56.5156L8 48.5156V57.0009L0 65.0009ZM0 81.0009V72.5156L8 64.5156V73.0009L0 81.0009ZM0 97.0009V88.5156L8 80.5156V89.0009L0 97.0009ZM0 113.001V104.516L8 96.5156V105.001L0 113.001ZM0 129.001V120.516L8 112.516V121.001L0 129.001ZM0 145.001V136.516L8 128.516V137.001L0 145.001ZM0 161.001V152.516L8 144.516V153.001L0 161.001ZM0 177.001V168.516L8 160.516V169.001L0 177.001ZM0 193.001V184.516L8 176.516V185.001L0 193.001ZM0 209.001V200.516L8 192.516V201.001L0 209.001ZM0 225.001V216.516L8 208.516V217.001L0 225.001ZM0 241.001V232.516L8 224.516V233.001L0 241.001ZM0 257.001V248.516L8 240.516V249.001L0 257.001ZM0 273.001V264.516L8 256.516V265.001L0 273.001ZM0 289.001V280.516L8 272.516V281.001L0 289.001ZM0 305.001V296.516L8 288.516V297.001L0 305.001ZM7.00089 314H4C2.51432 314 1.21782 313.19 0.527988 311.988L8 304.516V313.001L7.00089 314Z' %3E%3C/path%3E%3C/svg%3E");
+      mask-repeat: no-repeat;
+      mask-position: 0 4px;
+      background: var(--jade-12);
     }
-  }
-
-  .stripes {
-    position: absolute;
-    top: 2px;
-    left: 0;
-    bottom: 0;
-    fill: var(--jade-12);
   }
 
   p {

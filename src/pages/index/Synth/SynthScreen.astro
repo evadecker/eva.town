@@ -4,14 +4,7 @@
 
 <Fragment>
   <g id="synth-screen" transform="translate(24.000000, 4.000000)">
-    <rect
-      class="lcd-bg"
-      x="1"
-      y="2"
-      width="220"
-      height="48"
-      rx="4"
-      stroke-width="1.5"></rect>
+    <rect class="lcd-bg" x="1" y="2" width="220" height="48" rx="4"></rect>
     <g class="synth-instruments" transform="translate(108.000000, 6.000000)">
       <g class="instrument-arrow instrument-prev" fill-rule="nonzero">
         <rect
@@ -171,7 +164,6 @@
         </g>
       </g>
     </g>
-
     <g class="synth-staff" transform="translate(10.000000, 2.000000)">
       <path
         d="M4,22 L86,22 L86,18 L4,18 L4,22 Z M4,24 L4,28 L86,28 L86,24 L4,24 Z M4,30 L4,34 L86,34 L86,30 L4,30 Z M-1.42108547e-14,34 L-1.42108547e-14,12 L-1.43669798e-14,10 L90,10 L90,12 L90,34 L90,36 L-1.43669798e-14,36 L-1.43669798e-14,34 Z M4,12 L4,16 L86,16 L86,12 L4,12 Z"
@@ -502,8 +494,8 @@
 <style lang="scss">
   @keyframes press-start {
     0%,
-    10% {
-      transform: translateY(-5%);
+    20% {
+      transform: translateY(-10%);
     }
 
     100% {
@@ -514,6 +506,8 @@
   .lcd-bg {
     fill: var(--synth-lcd-bg);
     stroke: var(--synth-stroke);
+    stroke-width: 3px;
+    vector-effect: non-scaling-stroke;
   }
 
   .lcd-highlight {
@@ -539,23 +533,26 @@
 
     .lcd-base {
       fill: var(--synth-lcd-dark);
-      animation: press-start 2s step-start infinite;
     }
 
-    .lcd-base:nth-child(2) {
-      animation-delay: 0.15s;
-    }
+    &:hover .lcd-base {
+      animation: press-start 1s step-start infinite;
 
-    .lcd-base:nth-child(3) {
-      animation-delay: 0.3s;
-    }
+      &:nth-child(2) {
+        animation-delay: 0.1s;
+      }
 
-    .lcd-base:nth-child(4) {
-      animation-delay: 0.45s;
-    }
+      &:nth-child(3) {
+        animation-delay: 0.2s;
+      }
 
-    .lcd-base:nth-child(5) {
-      animation-delay: 0.6s;
+      &:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+
+      &:nth-child(5) {
+        animation-delay: 0.4s;
+      }
     }
   }
 
@@ -579,6 +576,10 @@
     .synth-randomize .synth-instrument:hover {
       display: block;
     }
+
+    .instrument-arrow:hover .lcd-base {
+      fill: var(--synth-lcd-dark);
+    }
   }
 
   // Default hidden state, overridden in JS
@@ -597,9 +598,5 @@
   .synth-instrument,
   .instrument-arrow {
     cursor: pointer;
-  }
-
-  .instrument-arrow:hover .lcd-base {
-    fill: var(--synth-lcd-dark);
   }
 </style>

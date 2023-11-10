@@ -8,7 +8,6 @@ import Synth from "./index/Synth/Synth.astro";
 <BaseLayout
   title="Eva Decker"
   description="Eva is a designer and web developer based in Brooklyn, NY."
-  padBottom
   includeFooter
 >
   <div class="grid">
@@ -16,8 +15,14 @@ import Synth from "./index/Synth/Synth.astro";
     <div class="phone">
       <Phone />
     </div>
-    <div class="about">
-      <p class="intro">Yet another designer in Brooklyn. Available for work!</p>
+    <div class="intro">
+      <p>
+        Yet another designer in Brooklyn. Freelancing through the chaos. <strong
+          >Open to new projects.</strong
+        >
+      </p>
+    </div>
+    <div class="synth">
       <Synth />
     </div>
     <div class="postcard">
@@ -42,38 +47,59 @@ import Synth from "./index/Synth/Synth.astro";
     padding: var(--space-xl);
     padding-block-end: 0;
     grid-template:
-      "phone about about"
+      "phone intro intro"
+      "phone synth synth"
       "postcard postcard projects";
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-3xl);
-    max-width: 1080px;
+    width: 1080px;
+    max-width: 100%;
     margin-inline: auto;
+
+    @media (width < 900px) {
+      width: 660px;
+      grid-template:
+        "phone intro"
+        "synth synth"
+        "postcard postcard"
+        "projects projects";
+      grid-template-columns: 3fr minmax(0, 1fr);
+      column-gap: var(--space-2xl);
+      align-items: center;
+    }
   }
 
   .phone {
     grid-area: phone;
+    display: flex;
+    justify-content: center;
   }
 
-  .about {
-    grid-area: about;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: var(--space-2xl);
+  .intro {
+    grid-area: intro;
+    align-self: start;
 
-    .intro {
-      background-color: var(--jade-3);
-      letter-spacing: var(--letter-spacing-condensed);
-      max-width: 40ch;
+    p {
+      font-size: var(--step-1);
+      max-width: 26ch;
       transform: rotate(-2deg);
-      align-self: flex-end;
-      text-align: center;
       line-height: 1.2;
-      padding: var(--space-s) var(--space-m);
-      border: 3px solid var(--jade-12);
-      border-radius: var(--radius-full);
-      box-shadow: -1px 2px 0 var(--jade-12);
     }
+
+    @media (width < 900px) {
+      padding-block-start: var(--space-xl);
+
+      p {
+        writing-mode: vertical-rl;
+        max-height: 26ch;
+      }
+    }
+  }
+
+  .synth {
+    grid-area: synth;
+    display: flex;
+    justify-content: center;
   }
 
   .postcard {

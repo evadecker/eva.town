@@ -3,28 +3,17 @@
 ---
 
 <Fragment>
-  <defs>
-    <filter id="shadow" filterUnits="userSpaceOnUse">
-      <feOffset result="offOut" in="SourceGraphic" dx="0.8" dy="1.2"></feOffset>
-      <feBlend in="SourceGraphic" in2="offOut" mode="normal"></feBlend>
-    </filter>
-  </defs>
   <g id="synth-base">
-    <rect
-      class="synth-base"
-      x="0"
-      y="0"
-      width="270"
-      height="156"
-      rx="12"
-      stroke-width="1.5"
-      filter="url(#shadow)"></rect>
+    <rect class="synth-base" x="0" y="0" width="270" height="156" rx="12"
+    ></rect>
   </g>
 </Fragment>
 
 <style>
   .synth-base {
-    fill: var(--jade-3);
+    fill: var(--jade-4);
     stroke: var(--jade-12);
+    stroke-width: 3px;
+    vector-effect: non-scaling-stroke;
   }
 </style>
