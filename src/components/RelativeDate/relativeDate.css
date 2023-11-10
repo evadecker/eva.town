@@ -1,7 +1,7 @@
 .date {
   display: inline-flex;
   align-items: center;
-  color: var(--jade-11);
+  color: var(--jade-12);
 }
 
 .date svg {
