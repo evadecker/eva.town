@@ -29,7 +29,7 @@ export const ToggleTheme = () => {
     if (metaTheme !== null)
       metaTheme.setAttribute(
         "content",
-        activeTheme === "dark" ? jadeDark.jade1 : jade.jade1
+        activeTheme === "dark" ? jadeDark.jade1 : jade.jade4
       );
   }, [activeTheme]);
 
