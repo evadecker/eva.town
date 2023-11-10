@@ -45,6 +45,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
 }
 
 .stamp:active {
