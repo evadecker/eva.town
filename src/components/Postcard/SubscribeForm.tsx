@@ -9,8 +9,8 @@ import {
   useState,
 } from "react";
 
-import { Icon } from "../../../components/Icon/Icon";
-import { isValidEmail } from "../../../helpers/helpers";
+import { isValidEmail } from "../../helpers/helpers";
+import { Icon } from "../Icon/Icon";
 import { Dialogue } from "./Dialogue/Dialogue";
 import { emoteData, type EmoteType } from "./Dialogue/Emote";
 
