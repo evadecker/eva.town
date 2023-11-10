@@ -1,5 +1,5 @@
 ---
-
+import { ToggleTheme } from "./ToggleTheme.tsx";
 ---
 
 <header transition:persist>
@@ -8,6 +8,9 @@
     <div class="links">
       <a href="/about">About</a>
       <a href="/projects">Projects</a>
+    </div>
+    <div class="toggle">
+      <ToggleTheme client:only="react" />
     </div>
   </nav>
 </header>
