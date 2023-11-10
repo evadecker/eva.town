@@ -1,8 +1,8 @@
 ---
-import Synth from "../components/Toys/Synth/Synth.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Phone from "./index/Phone.astro";
-import SubscribeCard from "./index/SubscribeCard.astro";
+import Postcard from "./index/Postcard/Postcard.astro";
+import Synth from "./index/Synth/Synth.astro";
 ---
 
 <BaseLayout
@@ -17,11 +17,11 @@ import SubscribeCard from "./index/SubscribeCard.astro";
       <Phone />
     </div>
     <div class="about">
-      <p class="intro">Yet another designer living in Brooklyn.</p>
+      <p class="intro">Yet another designer in Brooklyn. Available for work!</p>
       <Synth />
     </div>
-    <div class="subscribe">
-      <SubscribeCard />
+    <div class="postcard">
+      <Postcard />
     </div>
   </div>
 </BaseLayout>
@@ -42,9 +42,9 @@ import SubscribeCard from "./index/SubscribeCard.astro";
     padding: var(--space-xl);
     padding-block-end: 0;
     grid-template:
-      "phone about"
-      "projects subscribe";
-    grid-template-columns: repeat(3);
+      "phone about about"
+      "postcard postcard projects";
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-3xl);
     max-width: 1080px;
     margin-inline: auto;
@@ -57,6 +57,7 @@ import SubscribeCard from "./index/SubscribeCard.astro";
   .about {
     grid-area: about;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     gap: var(--space-2xl);
 
@@ -75,7 +76,7 @@ import SubscribeCard from "./index/SubscribeCard.astro";
     }
   }
 
-  .subscribe {
-    grid-area: subscribe;
+  .postcard {
+    grid-area: postcard;
   }
 </style>

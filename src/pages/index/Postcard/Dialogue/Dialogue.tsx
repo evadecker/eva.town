@@ -19,8 +19,8 @@ export const Dialogue = React.memo(({ text, emote, big }: DialogueProps) => {
   return (
     <div className="dialogueContainer">
       <AnimatePresence>
-        <Emote emote={emote} key="emote" />
         <DialogueBubble text={text} big={big} key="bubble" />
+        <Emote emote={emote} key="emote" />
       </AnimatePresence>
     </div>
   );

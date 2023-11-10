@@ -9,10 +9,10 @@ import {
   useState,
 } from "react";
 
-import { isValidEmail } from "../../helpers/helpers";
-import { Dialogue } from "../Dialogue/Dialogue";
-import type { EmoteType } from "../Dialogue/Emote";
-import { Icon } from "../Icon/Icon";
+import { Icon } from "../../../components/Icon/Icon";
+import { isValidEmail } from "../../../helpers/helpers";
+import { Dialogue } from "./Dialogue/Dialogue";
+import type { EmoteType } from "./Dialogue/Emote";
 
 interface SniperResponse {
   url: string;
@@ -254,7 +254,13 @@ export const SubscribeForm = () => {
 
   return (
     <div>
-      <Dialogue text={currentText} emote={currentEmote} />
+      <header className="postcard-header">
+        <div>
+          <h2>Subscribe</h2>
+          <p>I send notes a few times a year about design and stuff.</p>
+        </div>
+        <Dialogue text={currentText} emote={currentEmote} />
+      </header>
       <form onSubmit={handleSubmit}>
         {!hasSubmitted ? (
           <div

@@ -1,3 +1,20 @@
+.postcard-header {
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: var(--space-m);
+}
+
+.postcard-header h2 {
+  font-size: var(--step-2);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-h5);
+  margin-block-end: var(--space-2xs);
+}
+
+.postcard-header p {
+  line-height: 1.3;
+}
+
 .inputWrapper {
   position: relative;
   width: 100%;
@@ -13,15 +30,20 @@
 
 .input {
   color: var(--jade-12);
-  background: var(--jade-1);
+  background: var(--jade-3);
   padding: 0 var(--space-l);
   padding-inline-end: 4rem;
   z-index: 1;
 }
 
+.input::placeholder {
+  color: var(--jade-12);
+  opacity: 0.6;
+}
+
 .iconButton {
-  background: var(--jade-9);
-  color: white;
+  background: var(--jade-12);
+  color: var(--jade-3);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -48,8 +70,8 @@
 }
 
 .sniperLink {
-  background: var(--jade-9);
-  color: var(--white-a12);
+  background: var(--jade-12);
+  color: var(--jade-1);
   font-weight: var(--font-weight-bold);
   display: flex;
   align-items: center;
@@ -64,7 +86,7 @@
 .checkInbox {
   height: 3rem;
   width: 100%;
-  border: none;
+  border: 3px solid var(--jade-12);
   border-radius: var(--radius-full);
   line-height: 1;
 }
@@ -79,10 +101,6 @@
 
 .input:disabled {
   pointer-events: none;
-}
-
-.sniperLink:hover {
-  background: var(--jade-10);
 }
 
 .checkInbox {

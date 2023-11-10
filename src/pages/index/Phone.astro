@@ -22,9 +22,30 @@ const currentTime = dayjs().format("h:mm A");
 
   // Run every second
   setInterval(updateCurrentTime, 1000);
+
+  function handleAnimation() {
+    // Set animating status to let SVG animations run to completion
+    // Instead of being cut off when the user hovers away
+    const phoneElem = document.getElementById("phone");
+    phoneElem?.addEventListener("mouseenter", () => {
+      if (phoneElem.dataset.animating === "true") return;
+
+      phoneElem.dataset.animating = "true";
+
+      setTimeout(() => {
+        phoneElem.dataset.animating = "false";
+      }, 3000);
+    });
+  }
+
+  // Run on initial load
+  handleAnimation();
+
+  // Run after view transitions
+  document.addEventListener("astro:after-swap", () => handleAnimation());
 </script>
 
-<a href="/about" class="link-wrapper" aria-label="About Eva">
+<a href="/about" id="phone" class="link-wrapper" aria-label="About Eva">
   <svg
     width="229"
     height="458"
@@ -176,7 +197,7 @@ const currentTime = dayjs().format("h:mm A");
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    svg:hover {
+    [data-animating="true"] {
       .sketch {
         stroke-dasharray: 1;
         stroke-dashoffset: 1;

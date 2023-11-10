@@ -3,14 +3,9 @@ html {
   height: 100%;
 }
 
-body.dark {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 body {
   color: var(--jade-12);
-  background-color: var(--jade-1);
+  background-color: var(--jade-3);
   display: flex;
   min-height: 100%;
   position: relative;
@@ -23,8 +18,14 @@ body {
   font-synthesis: none;
 }
 
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--jade-1);
+}
+
 ::selection {
-  background: var(--jade-4);
+  background: var(--jade-9);
 }
 
 h1,

@@ -1,0 +1,35 @@
+---
+import { SubscribeForm } from "./SubscribeForm";
+---
+
+<div class="subscribe">
+  <SubscribeForm client:visible />
+</div>
+
+<style lang="scss">
+  .subscribe {
+    padding: var(--space-m);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-l);
+    border: 3px solid var(--jade-12);
+    box-shadow: 0 2px 0 var(--jade-12);
+    background-color: var(--jade-3);
+    border-radius: var(--space-xs);
+    aspect-ratio: 3 / 2;
+    max-width: 480px;
+    transform: rotate(-2deg);
+
+    &:hover,
+    &:focus-within {
+      transform: rotate(-2deg) scale(1.05);
+    }
+  }
+
+  p {
+    margin-block-start: 0.25em;
+    line-height: var(--line-height-h6);
+    text-wrap: balance;
+  }
+</style>
