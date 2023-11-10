@@ -49,7 +49,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .grid {
     display: grid;
     padding: var(--space-xl);
-    padding-block-end: 0;
     grid-template:
       "phone intro intro"
       "phone synth synth"
@@ -59,16 +58,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     width: 1080px;
     max-width: 100%;
     margin-inline: auto;
+    overflow: hidden;
 
     @media (width < 900px) {
       width: 660px;
       grid-template:
-        "phone intro"
-        "synth synth"
-        "postcard postcard"
-        "projects projects";
-      grid-template-columns: 3fr minmax(0, 1fr);
-      column-gap: var(--space-m);
+        "phone"
+        "intro"
+        "synth"
+        "postcard";
       align-items: center;
     }
   }
@@ -81,7 +79,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .intro {
     grid-area: intro;
-    align-self: start;
+    justify-self: flex-start;
 
     p {
       font-size: var(--step-1);
@@ -90,12 +88,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       line-height: 1.2;
     }
 
+    a {
+      text-decoration: underline;
+      text-decoration-color: var(--jade-11);
+      text-underline-offset: 0.1em;
+    }
+
     @media (width < 900px) {
-      padding-block-start: var(--space-m);
+      place-self: center;
 
       p {
-        writing-mode: vertical-rl;
-        max-height: 36ch;
+        max-width: 26ch;
       }
     }
   }

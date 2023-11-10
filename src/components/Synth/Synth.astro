@@ -578,7 +578,7 @@ import SynthScreen from "./SynthScreen.astro";
   .synth {
     width: 100%;
     max-width: 540px;
-    transform: rotate(4deg);
+    transform: rotate(2deg);
 
     --synth-whitekey: var(--jade-4);
     --synth-whitekey-pressed: var(--jade-1);
@@ -614,6 +614,11 @@ import SynthScreen from "./SynthScreen.astro";
 
     svg {
       overflow: visible;
+    }
+
+    @media (width < 600px) {
+      width: 130%;
+      margin-inline: -15%;
     }
   }
 </style>
