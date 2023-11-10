@@ -1,5 +1,5 @@
 import { jade } from "@radix-ui/colors";
-import type { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 export type EmoteType =
   | "drooling"
@@ -16,6 +16,7 @@ export type EmoteType =
 
 interface EmoteProps {
   emote: EmoteType;
+  onEmoteClick: () => void;
 }
 
 const color = {
@@ -24,7 +25,7 @@ const color = {
   dark: jade.jade12,
 };
 
-const emoteData: Record<EmoteType, ReactNode> = {
+export const emoteData: Record<EmoteType, ReactNode> = {
   drooling: (
     <>
       <path
@@ -203,9 +204,9 @@ const emoteData: Record<EmoteType, ReactNode> = {
   ),
 };
 
-export const Emote = ({ emote }: EmoteProps) => {
+export const Emote = ({ emote, onEmoteClick }: EmoteProps) => {
   return (
-    <div className="stamp">
+    <div className="stamp" onClick={onEmoteClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 -0.5 48 48"

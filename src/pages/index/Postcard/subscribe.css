@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-block-end: var(--space-m);
+  margin-block-end: var(--space-xl);
   user-select: none;
   cursor: default;
 }

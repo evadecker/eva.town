@@ -72,7 +72,6 @@ h6 {
 small {
   font-size: var(--step--1);
   line-height: var(--line-height-small);
-  letter-spacing: var(--letter-spacing-loose);
 }
 
 code,

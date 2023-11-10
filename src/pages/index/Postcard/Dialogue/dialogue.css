@@ -44,6 +44,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+.stamp:active {
+  transform: scale(0.95);
 }
 
 .stamp-border {

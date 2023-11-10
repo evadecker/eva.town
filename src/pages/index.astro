@@ -17,9 +17,13 @@ import Synth from "./index/Synth/Synth.astro";
     </div>
     <div class="intro">
       <p>
-        Yet another designer in Brooklyn. Freelancing through the chaos. <strong
-          >Open to new projects.</strong
-        >
+        I'm a designer and developer based in Brooklyn, NY. Past gigs include
+        product design and UX engineering at
+        <a href="https://dropbox.com">Dropbox</a>, <a
+          href="https://cityblock.com">Cityblock</a
+        >, and <a href="https://swiftype.com">Swiftype</a>. I'm currently <strong
+          >open to work</strong
+        >.
       </p>
     </div>
     <div class="synth">
@@ -49,7 +53,7 @@ import Synth from "./index/Synth/Synth.astro";
     grid-template:
       "phone intro intro"
       "phone synth synth"
-      "postcard postcard projects";
+      "postcard postcard postcard";
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-3xl);
     width: 1080px;
@@ -64,7 +68,7 @@ import Synth from "./index/Synth/Synth.astro";
         "postcard postcard"
         "projects projects";
       grid-template-columns: 3fr minmax(0, 1fr);
-      column-gap: var(--space-2xl);
+      column-gap: var(--space-m);
       align-items: center;
     }
   }
@@ -81,17 +85,17 @@ import Synth from "./index/Synth/Synth.astro";
 
     p {
       font-size: var(--step-1);
-      max-width: 26ch;
+      max-width: 36ch;
       transform: rotate(-2deg);
       line-height: 1.2;
     }
 
     @media (width < 900px) {
-      padding-block-start: var(--space-xl);
+      padding-block-start: var(--space-m);
 
       p {
         writing-mode: vertical-rl;
-        max-height: 26ch;
+        max-height: 36ch;
       }
     }
   }
