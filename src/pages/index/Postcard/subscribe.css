@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-between;
   margin-block-end: var(--space-m);
+  user-select: none;
+  cursor: default;
 }
 
 .postcard-header h2 {
@@ -97,6 +99,7 @@
 
 .input:focus {
   outline: 3px solid var(--jade-a9);
+  outline-offset: 2px;
 }
 
 .input:disabled {
