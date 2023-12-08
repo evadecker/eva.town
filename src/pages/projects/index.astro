@@ -34,14 +34,38 @@ const description = "It’s things I made for internet.";
         ))
       }
     </section>
+    <div class="banner">
+      <strong>Looking for case studies?</strong>
+      <p>
+        They’ll be here soon! In the meantime, for work samples from past
+        employers, email <a href="mailto:hey@evadecker.com">hey@evadecker.com</a
+        >.
+      </p>
+    </div>
   </Center>
 </BaseLayout>
 
-<style>
+<style lang="scss">
   .projects {
     display: flex;
     flex-direction: column;
     gap: 3em;
     padding-block-end: 4em;
+  }
+
+  .banner {
+    background: var(--jade-3);
+    border-radius: var(--radius-s);
+    padding: var(--space-m) var(--space-l);
+
+    p {
+      line-height: 1.2;
+      margin-block-start: var(--space-2xs);
+    }
+
+    a {
+      color: var(--jade-9);
+      text-decoration: underline;
+    }
   }
 </style>
