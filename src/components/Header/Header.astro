@@ -25,7 +25,7 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-block: 0.5rem;
+    padding-block: var(--space-m);
     transition: 0.4s ease padding;
   }
 
@@ -70,23 +70,5 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
     width: 32px;
     height: 32px;
     margin-inline: var(--space-s) calc(var(--space-s) * -1);
-  }
-
-  .links .shoo {
-    background: var(--jade-9);
-    color: var(--white-a12);
-  }
-
-  .links .shoo:hover {
-    background: var(--jade-10);
-    color: var(--white-a12);
-  }
-
-  .links .shoo:active {
-    background: var(--jade-9);
-  }
-
-  .shoo.hidden {
-    display: none;
   }
 </style>
