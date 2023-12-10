@@ -1,19 +1,8 @@
 ---
-import { Icon } from "../Icon/Icon";
-import { RelativeDate } from "../RelativeDate/RelativeDate";
 
-// This time will be captured as a snapshot when the site builds
-// And then display statically
-const dateModified = new Date();
 ---
 
 <footer transition:animate="fade">
-  <RelativeDate
-    date={dateModified}
-    prefix="Last tended"
-    icon="sparkling"
-    client:load
-  />
   <div class="links">
     <div class="pages">
       <a href="/about">About</a>
@@ -21,68 +10,48 @@ const dateModified = new Date();
       <a href="/colophon">Colophon</a>
     </div>
     <div class="social">
-      <a
-        href="https://github.com/evadecker"
-        target="_blank"
-        aria-label="Visit Eva's GitHub"
+      <a href="https://github.com/evadecker" target="_blank">GitHub</a>
+      <a href="https://www.goodreads.com/evadecker" target="_blank">Goodreads</a
       >
-        <Icon icon="github" variant="filled" />
-      </a>
-      <a
-        href="https://linkedin.com/in/evadecker"
-        target="_blank"
-        aria-label="Visit Eva's LinkedIn"
-      >
-        <Icon icon="linkedInBox" variant="filled" />
-      </a>
+      <a href="https://linkedin.com/in/evadecker" target="_blank">LinkedIn</a>
     </div>
   </div>
 </footer>
 
-<style>
+<style lang="scss">
   footer {
     font-size: var(--step--1);
     width: 100%;
-    padding-block: var(--space-m);
+    padding-block: var(--space-l);
     padding-inline: var(--space-xl);
     display: flex;
     align-items: center;
-  }
-
-  .links {
-    display: flex;
-    align-items: center;
-    line-height: 1;
-    margin-inline-start: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-s) var(--space-xl);
   }
 
   .pages,
   .social {
     display: flex;
     align-items: center;
+    gap: var(--space-s);
   }
 
-  @media (width <= 620px) {
-    footer {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: var(--space-xs);
-      padding-block-start: var(--space-xl);
-    }
-
-    .links {
-      margin-inline-start: calc(var(--space-s) * -1);
-    }
-  }
-
-  .links a {
-    height: var(--space-2xl);
-    padding-inline: var(--space-xs);
+  .links {
     display: flex;
     align-items: center;
-  }
+    justify-content: center;
+    gap: var(--space-s);
+    flex-wrap: wrap;
 
-  .links a:hover {
-    color: var(--jade-9);
+    a {
+      display: inline-block;
+
+      &:hover {
+        color: var(--jade-12);
+        text-decoration: underline;
+      }
+    }
   }
 </style>
