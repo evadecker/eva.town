@@ -40,9 +40,6 @@ const currentTime = dayjs().format("h:mm A");
 
   // Run on initial load
   handleAnimation();
-
-  // Run after view transitions
-  document.addEventListener("astro:after-swap", () => handleAnimation());
 </script>
 
 <a href="/about" id="phone" class="link-wrapper" aria-label="About Eva">

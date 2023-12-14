@@ -24,6 +24,3 @@ const setTheme = () => {
 };
 
 setTheme();
-
-// Update body class after swap
-document.addEventListener("astro:after-swap", setTheme);

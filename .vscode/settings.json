@@ -10,7 +10,7 @@
     "typescriptreact"
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "stylelint.validate": ["astro", "css", "scss"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
