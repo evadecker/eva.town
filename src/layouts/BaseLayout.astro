@@ -70,13 +70,10 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <link rel="stylesheet" href="https://use.typekit.net/qbm1slx.css" />
     <title>{pageTitle}</title>
   </head>
-  <body transition:animate="none">
+  <body>
     <script is:inline src="/scripts/preloadTheme.js"></script>
     <Header />
-    <main
-      class:list={["main", { padTop }, { padBottom }]}
-      transition:animate="fade"
-    >
+    <main class:list={["main", { padTop }, { padBottom }]}>
       <slot />
     </main>
     {includeFooter && <Footer />}

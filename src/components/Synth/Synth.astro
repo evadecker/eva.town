@@ -48,7 +48,7 @@ import SynthScreen from "./SynthScreen.astro";
 
   let timeout: NodeJS.Timeout;
 
-  document.addEventListener("astro:page-load", () => {
+  function loadSynth() {
     const synth: HTMLElement | null | undefined =
       document.getElementById("synth");
     const start: SVGElement | null | undefined = synth?.querySelector(".start");
@@ -322,7 +322,7 @@ import SynthScreen from "./SynthScreen.astro";
     const handleKeyDown = (e: KeyboardEvent) => {
       if (
         synth?.dataset.loading === "false" &&
-        synth.matches(":focus-within")
+        synth?.matches(":focus-within")
       ) {
         hideKeyboardLetters();
         switch (e.key) {
@@ -526,19 +526,23 @@ import SynthScreen from "./SynthScreen.astro";
     function startSynth() {
       enableSynth();
       bindEvents();
+
+      const audioContext = window.AudioContext
+        ? new window.AudioContext()
+        : null;
+      unmute(audioContext, false, false);
     }
 
     start?.addEventListener("click", () => {
       startSynth();
     });
 
-    const audioContext = window.AudioContext ? new window.AudioContext() : null;
-    unmute(audioContext, false, false);
-
     preloadUISounds();
-  });
+  }
 
-  document.addEventListener("astro:after-swap", () => {
+  document.addEventListener("DOMContentLoaded", loadSynth);
+
+  function unloadSynth() {
     const unloadSounds = () => {
       for (const [_key, value] of Object.entries(sounds.ui)) {
         value.howl.unload();
@@ -551,10 +555,18 @@ import SynthScreen from "./SynthScreen.astro";
 
     clearTimeout(timeout);
     unloadSounds();
-  });
+  }
+
+  document.addEventListener("beforeunload", unloadSynth);
 </script>
 
-<div id="synth" class="synth" data-enabled="false" data-loading="false">
+<div
+  id="synth"
+  class="synth"
+  tabindex="0"
+  data-enabled="false"
+  data-loading="false"
+>
   <svg
     width="100%"
     viewBox="0 0 270 156"
@@ -583,6 +595,7 @@ import SynthScreen from "./SynthScreen.astro";
     --synth-lcd-light: var(--jade-2);
     --synth-lcd-medium: var(--jade-11);
     --synth-lcd-dark: var(--jade-12);
+    --synth-keyletter: var(--jade-12);
 
     :global(.dark) & {
       --synth-whitekey: var(--jade-12);
@@ -594,6 +607,7 @@ import SynthScreen from "./SynthScreen.astro";
       --synth-lcd-light: white;
       --synth-lcd-medium: var(--jade-5);
       --synth-lcd-dark: var(--jade-3);
+      --synth-keyletter: var(--jade-3);
     }
 
     &[data-loading="true"] {
