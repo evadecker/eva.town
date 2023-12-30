@@ -19,11 +19,11 @@
 }
 
 .toggleButton:hover {
-  background: var(--jade-3);
+  background: var(--jade-a3);
 }
 
 .toggleButton:active {
-  background: var(--jade-2);
+  background: var(--jade-a4);
 }
 
 .toggleButton svg {
