@@ -1,16 +1,13 @@
 ---
-import { ToggleTheme } from "./ToggleTheme.tsx";
+import Logo from "./Logo.astro";
 ---
 
-<header transition:persist>
+<header>
   <nav id="nav">
-    <a class="wordmark" href="/">Eva Decker</a>
+    <Logo />
     <div class="links">
       <a href="/about">About</a>
       <a href="/projects">Projects</a>
-    </div>
-    <div class="toggle">
-      <ToggleTheme client:only="react" />
     </div>
   </nav>
 </header>
@@ -23,33 +20,25 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
 
   nav {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding-block: var(--space-m);
-    transition: 0.4s ease padding;
-  }
-
-  .wordmark {
-    font-size: var(--step-0);
-    font-family: var(--font-sans);
-    font-weight: var(--font-weight-bold);
-    text-decoration: "none";
-    position: "relative";
-    bottom: "-0.1rem";
+    justify-content: center;
+    gap: var(--space-s);
+    padding-block: var(--space-xl);
   }
 
   .links {
     display: flex;
-    gap: 0.25em;
-    margin-inline-start: auto;
+    align-items: center;
   }
 
   .links a,
   .links button {
     background: transparent;
-    padding: 0.08em 0.4em 0.03em;
+    line-height: 1;
+    padding: var(--space-xs) var(--space-s);
     border: none;
-    border-radius: var(--radius-s);
+    border-radius: var(--radius-full);
     cursor: pointer;
   }
 
@@ -63,12 +52,5 @@ import { ToggleTheme } from "./ToggleTheme.tsx";
   .links button:active {
     background: var(--jade-a4);
     color: var(--jade-12);
-  }
-
-  .toggle {
-    position: relative;
-    width: 32px;
-    height: 32px;
-    margin-inline: var(--space-s) calc(var(--space-s) * -1);
   }
 </style>

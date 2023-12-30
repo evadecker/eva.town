@@ -1,8 +1,11 @@
 ---
-
+import { ToggleTheme } from "../Header/ToggleTheme";
 ---
 
 <footer>
+  <div class="toggle">
+    <ToggleTheme client:only="react" />
+  </div>
   <div class="links">
     <div class="pages">
       <a href="/about">About</a>
@@ -27,7 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--space-s) var(--space-xl);
   }
 
@@ -53,5 +56,10 @@
         text-decoration: underline;
       }
     }
+  }
+
+  .toggle {
+    width: 32px;
+    height: 32px;
   }
 </style>
