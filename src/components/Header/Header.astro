@@ -1,30 +1,31 @@
 ---
+import Center from "../Center.astro";
 import Logo from "./Logo.astro";
 ---
 
 <header>
-  <nav id="nav">
-    <Logo />
-    <div class="links">
-      <a href="/about">About</a>
-      <a href="/projects">Projects</a>
-    </div>
-  </nav>
+  <Center>
+    <nav id="nav">
+      <Logo />
+      <div class="links">
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+      </div>
+    </nav>
+  </Center>
 </header>
 
 <style>
   header {
     width: 100%;
-    padding-inline: var(--space-xl);
   }
 
   nav {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: var(--space-s);
-    padding-block: var(--space-xl);
+    padding-block: var(--space-l);
   }
 
   .links {
