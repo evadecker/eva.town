@@ -1,15 +1,18 @@
 ---
+import Center from "../Center.astro";
 import Logo from "./Logo.astro";
 ---
 
 <header>
-  <nav id="nav">
-    <Logo />
-    <div class="links">
-      <a href="/about">About</a>
-      <a href="/projects">Projects</a>
-    </div>
-  </nav>
+  <Center>
+    <nav id="nav">
+      <Logo />
+      <div class="links">
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+      </div>
+    </nav>
+  </Center>
 </header>
 
 <style>
@@ -24,8 +27,6 @@ import Logo from "./Logo.astro";
     justify-content: space-between;
     gap: var(--space-s);
     padding-block: var(--space-l);
-    max-width: 70ch;
-    margin: 0 auto;
   }
 
   .links {
