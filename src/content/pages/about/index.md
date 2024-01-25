@@ -2,7 +2,7 @@
 title: About Eva
 description: Designer and medium-good software engineer.
 datePublished: 2023-10-03 01:03:55-04:00
-dateModified: 2023-10-27 11:41:02-04:00
+dateModified: 2024-01-25 14:05:21-05:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: A Mac desktop with various application windows, including Figma and Chrome. At the front is Photo Booth, with the countdown timer at 1, about to take a photo of Eva.
 ogImage: ./img1200.webp
@@ -22,4 +22,4 @@ For the past three years, I've worked as a freelance designer and developer, emb
 
 Occasionally I play piano and listen to city pop and noodle with synths. I like [reading](https://goodreads.com/evadecker) about urbanism, transit, and queer history. I'd like to have a garden one day. I'm still a Nintendo fan.
 
-I'm currently open to new freelance or full-time work. If you have a role that sounds like a fit, email me at hey@evadecker.com.
+I'm currently open to new freelance or full-time work—[download my resume.](/downloads/eva-decker-resume.pdf) If you have a role that sounds like a fit, email me at hey@evadecker.com.
