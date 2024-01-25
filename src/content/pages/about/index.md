@@ -22,4 +22,4 @@ For the past three years, I've worked as a freelance designer and developer, emb
 
 Occasionally I play piano and listen to city pop and noodle with synths. I like [reading](https://goodreads.com/evadecker) about urbanism, transit, and queer history. I'd like to have a garden one day. I'm still a Nintendo fan.
 
-I'm currently open to new freelance or full-time work—[download my resume.](/downloads/eva-decker-resume.pdf) If you have a role that sounds like a fit, email me at hey@evadecker.com.
+I'm currently open to new freelance or full-time work—[download my resume](/downloads/eva-decker-resume.pdf). If you have a role that sounds like a fit, email me at hey@evadecker.com.
