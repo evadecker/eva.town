@@ -85,7 +85,7 @@ const sentence = [
   </div>
 </UnstyledBase>
 
-<script>
+<script lang="ts">
   function selectRandomWords() {
     const sentence = document.querySelector(".sentence");
     const fieldsets = sentence?.querySelectorAll("fieldset");
@@ -98,6 +98,18 @@ const sentence = [
   }
 
   selectRandomWords();
+
+  function setPageTitle() {
+    const words = Array.from(document.querySelectorAll("input:checked")).map(
+      (input) => input.value
+    );
+    const title = `Design is ${words.join(" ")}`;
+    document.title = title;
+  }
+
+  setPageTitle();
+
+  document.body.addEventListener("change", setPageTitle);
 </script>
 
 <style lang="scss">
