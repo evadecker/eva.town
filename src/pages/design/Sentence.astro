@@ -48,8 +48,8 @@ const { sentence } = Astro.props;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    height: 100vh;
+    gap: 1.5rem;
+    min-height: 100vh;
     width: 100vw;
 
     @media (width < 960px) {
@@ -64,7 +64,6 @@ const { sentence } = Astro.props;
     align-items: center;
     justify-content: center;
     gap: 3rem;
-    position: relative;
     flex: 1;
 
     @media (width < 960px) {
@@ -77,6 +76,7 @@ const { sentence } = Astro.props;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
+        max-width: 400px;
       }
     }
   }
