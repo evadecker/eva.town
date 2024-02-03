@@ -1,0 +1,120 @@
+---
+interface Props {
+  sentence: string[][];
+}
+
+const { sentence } = Astro.props;
+---
+
+<div class="definition">
+  <h1>Design is</h1>
+  <div class="sentence">
+    {
+      sentence?.map((fragment) => (
+        <fieldset>
+          {fragment.map((word) => (
+            <div>
+              <input type="radio" id={word} name={fragment[0]} value={word} />
+              <label for={word}>{word}</label>
+            </div>
+          ))}
+        </fieldset>
+      ))
+    }
+  </div>
+  <a class="refresh" href="/design">Refresh to regenerate</a>
+</div>
+
+<script>
+  function selectRandomWords() {
+    const sentence = document.querySelector(".sentence");
+    const fieldsets = sentence?.querySelectorAll("fieldset");
+
+    fieldsets?.forEach((fieldset) => {
+      const inputs = fieldset.querySelectorAll("input");
+      const randomIndex = Math.floor(Math.random() * inputs.length);
+      inputs[randomIndex].checked = true;
+    });
+  }
+
+  selectRandomWords();
+</script>
+
+<style lang="scss">
+  .definition {
+    font-family: "Times New Roman", Times, serif;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100vh;
+    width: 100vw;
+
+    @media (width < 960px) {
+      padding: 2rem;
+    }
+  }
+
+  .sentence {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    position: relative;
+    flex: 1;
+
+    @media (width < 960px) {
+      gap: 1.5rem;
+      flex-direction: column;
+
+      fieldset {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .refresh {
+    font-style: italic;
+    opacity: 0.4;
+    font-size: 1.2rem;
+    padding: 1rem;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  fieldset {
+    all: unset;
+  }
+
+  input[type="radio"] {
+    display: none;
+
+    + label {
+      cursor: pointer;
+    }
+
+    &:not(:checked) + label {
+      opacity: 0.15;
+    }
+
+    &:checked + label,
+    + label:hover {
+      opacity: 1;
+    }
+  }
+</style>
