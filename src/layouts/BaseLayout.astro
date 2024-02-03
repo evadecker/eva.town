@@ -1,5 +1,4 @@
 ---
-import "../styles/reset.css";
 import "../styles/theme.css";
 import "../styles/base.css";
 import "../styles/animation.css";
@@ -7,6 +6,7 @@ import "../styles/animation.css";
 import Footer from "../components/Footer/Footer.astro";
 import Header from "../components/Header/Header.astro";
 import Toys from "../components/Toys/Toys.astro";
+import UnstyledBase from "./UnstyledBase.astro";
 
 interface Props {
   title: string;
@@ -20,80 +20,36 @@ interface Props {
 
 const { title, description, includeFooter, padTop, padBottom, ogImage, ogAlt } =
   Astro.props;
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#FDFCFD" />
-    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
-    <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
-    <link
-      rel="icon"
-      href="/favicon-light.png"
-      type="image/png"
-      media="(prefers-color-scheme: light)"
-    />
-    <link
-      rel="icon"
-      href="/favicon-dark.png"
-      type="image/png"
-      media="(prefers-color-scheme: dark)"
-    />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="canonical" href={canonicalURL} />
-    <meta name="description" content={description} />
-    <meta property="og:title" content={title} />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Eva Decker" />
-    <meta
-      property="og:image"
-      content={ogImage ?? `${Astro.url.origin}/og/default.png`}
-    />
-    <meta
-      property="og:image:alt"
-      content={ogAlt ?? "Eva designs and builds things for the web."}
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="stylesheet" href="https://use.typekit.net/qbm1slx.css" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <script is:inline src="/scripts/preloadTheme.js"></script>
-    <Header />
-    <main class:list={["main", { padTop }, { padBottom }]}>
-      <slot />
-    </main>
-    {includeFooter && <Footer />}
-    <Toys />
-    <slot name="after-footer" />
-    <style>
-      .main {
-        flex: 1;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-      }
+<UnstyledBase
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  ogAlt={ogAlt}
+>
+  <script is:inline src="/scripts/preloadTheme.js"></script>
+  <Header />
+  <main class:list={["main", { padTop }, { padBottom }]}>
+    <slot />
+  </main>
+  {includeFooter && <Footer />}
+  <Toys />
+  <slot name="after-footer" />
+  <style>
+    .main {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
 
-      .main.padTop {
-        padding-block-start: var(--space-3xl);
-      }
+    .main.padTop {
+      padding-block-start: var(--space-3xl);
+    }
 
-      .main.padBottom {
-        padding-block-end: var(--space-3xl);
-      }
-    </style>
-  </body>
-</html>
+    .main.padBottom {
+      padding-block-end: var(--space-3xl);
+    }
+  </style>
+</UnstyledBase>
