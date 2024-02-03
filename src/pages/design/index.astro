@@ -6,12 +6,13 @@ const sentence = [
   ["deliberate", "intentional", "purposeful"],
   [
     "arrangement",
+    "choreography",
     "combination",
     "creation",
+    "juxtaposition",
     "ordering",
     "selection",
-    "sequencing",
-    "sorting",
+    // "sorting",
   ],
   ["of"],
   [
@@ -29,9 +30,9 @@ const sentence = [
     "space",
     "systems",
     "tastes",
-    "text",
     "thoughts",
     "time",
+    "words",
   ],
   ["for"],
   [
@@ -43,7 +44,9 @@ const sentence = [
     "oneself",
     "others",
     "plants",
+    "remembering",
     "the universe",
+    "this moment only",
   ],
 ];
 ---
@@ -78,7 +81,7 @@ const sentence = [
       }
     </div>
     <footer>
-      <a class="refresh" href="/design">Refresh to redefine</a>
+      <a class="refresh" href="/design">refresh to redefine</a>
     </footer>
   </div>
 </UnstyledBase>
@@ -145,7 +148,8 @@ const sentence = [
         flex-flow: row wrap;
         align-items: center;
         justify-content: center;
-        gap: var(--space-xs);
+        gap: var(--space-2xs);
+        column-gap: var(--space-m);
         max-width: 35ch;
       }
     }
@@ -157,9 +161,9 @@ const sentence = [
   }
 
   .refresh {
+    font-size: 0.8em;
     font-style: italic;
     opacity: 0.6;
-    font-size: var(--step--1);
 
     &:hover {
       opacity: 1;
