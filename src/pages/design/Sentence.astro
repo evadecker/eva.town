@@ -10,9 +10,9 @@ const { sentence } = Astro.props;
   <h1>Design is</h1>
   <div class="sentence">
     {
-      sentence.map((fragment) => (
+      sentence?.map((fragment) => (
         <fieldset>
-          {fragment.map((word, i) => (
+          {fragment.map((word) => (
             <div>
               <input type="radio" id={word} name={fragment[0]} value={word} />
               <label for={word}>{word}</label>
