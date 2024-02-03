@@ -1,6 +1,51 @@
 ---
 import UnstyledBase from "../../layouts/UnstyledBase.astro";
-import Sentence from "./Sentence.astro";
+
+const sentence = [
+  ["the"],
+  ["deliberate", "intentional", "purposeful"],
+  [
+    "arrangement",
+    "combination",
+    "creation",
+    "ordering",
+    "selection",
+    "sequencing",
+    "sorting",
+  ],
+  ["of"],
+  [
+    "action",
+    "color",
+    "feeling",
+    "light",
+    "love",
+    "meaning",
+    "movement",
+    "objects",
+    "shapes",
+    "smell",
+    "sound",
+    "space",
+    "systems",
+    "taste",
+    "text",
+    "thought",
+    "time",
+  ],
+  ["for"],
+  [
+    "animals",
+    "friends",
+    "god",
+    "its own sake",
+    "lovers",
+    "oneself",
+    "others",
+    "plants",
+    "the universe",
+  ],
+];
 ---
 
 <UnstyledBase
@@ -9,49 +54,121 @@ import Sentence from "./Sentence.astro";
   ogImage="/images/design-is.png"
   ogAlt="Design is the purposeful creation of meaning for oneself."
 >
-  <Sentence
-    sentence={[
-      ["the"],
-      ["deliberate", "intentional", "purposeful"],
-      [
-        "arrangement",
-        "combination",
-        "creation",
-        "ordering",
-        "selection",
-        "sequencing",
-        "sorting",
-      ],
-      ["of"],
-      [
-        "color",
-        "feeling",
-        "light",
-        "meaning",
-        "movement",
-        "objects",
-        "shapes",
-        "smell",
-        "sound",
-        "taste",
-        "text",
-        "thought",
-        "time",
-        "space",
-        "systems",
-      ],
-      ["for"],
-      [
-        "animals",
-        "friends",
-        "god",
-        "lovers",
-        "no one",
-        "oneself",
-        "people",
-        "plants",
-        "the universe",
-      ],
-    ]}
-  />
+  <div class="definition">
+    <h1>Design is</h1>
+    <div class="sentence">
+      {
+        sentence.map((fragment, i) => (
+          <fieldset>
+            {fragment.sort().map((word) => (
+              <div>
+                <input
+                  type="radio"
+                  id={word}
+                  name={i.toString()}
+                  value={word}
+                />
+                <label for={word}>{word}</label>
+              </div>
+            ))}
+          </fieldset>
+        ))
+      }
+    </div>
+    <a class="refresh" href="/design">Refresh to regenerate</a>
+  </div>
 </UnstyledBase>
+
+<script>
+  function selectRandomWords() {
+    const sentence = document.querySelector(".sentence");
+    const fieldsets = sentence?.querySelectorAll("fieldset");
+
+    fieldsets?.forEach((fieldset) => {
+      const inputs = fieldset.querySelectorAll("input");
+      const randomIndex = Math.floor(Math.random() * inputs.length);
+      inputs[randomIndex].checked = true;
+    });
+  }
+
+  selectRandomWords();
+</script>
+
+<style lang="scss">
+  .definition {
+    font-family: "Times New Roman", Times, serif;
+    font-size: var(--step-1);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-l);
+    min-height: 100vh;
+    width: 100vw;
+  }
+
+  .sentence {
+    line-height: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xl);
+    flex: 1;
+
+    fieldset {
+      all: unset;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xs);
+    }
+
+    @media (width < 960px) {
+      gap: var(--space-xl);
+      flex-direction: column;
+
+      fieldset {
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-xs);
+        max-width: 35ch;
+      }
+    }
+  }
+
+  h1 {
+    font-weight: normal;
+    font-size: var(--step-2);
+    padding: var(--space-l);
+  }
+
+  .refresh {
+    font-style: italic;
+    opacity: 0.4;
+    font-size: var(--step--1);
+    padding: var(--space-l);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+
+    + label {
+      cursor: pointer;
+    }
+
+    &:not(:checked) + label {
+      opacity: 0.15;
+    }
+
+    &:checked + label,
+    + label:hover {
+      opacity: 1;
+    }
+  }
+</style>
