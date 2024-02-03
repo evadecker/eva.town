@@ -55,7 +55,9 @@ const sentence = [
   ogAlt="Design is the purposeful creation of meaning for oneself."
 >
   <div class="definition">
-    <h1>Design is</h1>
+    <header>
+      <h1>Design is</h1>
+    </header>
     <div class="sentence">
       {
         sentence.map((fragment, i) => (
@@ -75,7 +77,9 @@ const sentence = [
         ))
       }
     </div>
-    <a class="refresh" href="/design">Refresh to regenerate</a>
+    <footer>
+      <a class="refresh" href="/design">Refresh to regenerate</a>
+    </footer>
   </div>
 </UnstyledBase>
 
@@ -106,6 +110,15 @@ const sentence = [
     gap: var(--space-l);
     min-height: 100dvh;
     width: 100dvw;
+  }
+
+  header,
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding-block: var(--space-m);
   }
 
   .sentence {
@@ -141,14 +154,12 @@ const sentence = [
   h1 {
     font-weight: normal;
     font-size: var(--step-2);
-    margin-block: var(--space-m);
   }
 
   .refresh {
     font-style: italic;
     opacity: 0.6;
     font-size: var(--step--1);
-    padding: var(--space-l);
 
     &:hover {
       opacity: 1;
