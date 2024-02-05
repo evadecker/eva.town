@@ -2,14 +2,19 @@
 import UnstyledBase from "../../layouts/UnstyledBase.astro";
 ---
 
-<UnstyledBase title="HYPERSENSITIVE" description="Everything is too much.">
+<UnstyledBase
+  title="HYPERSENSITIVE"
+  description="It’s all too much."
+  ogImage="/images/hypersensitive.png"
+  ogAlt="The event is too bright. The city is too uncomfortable. The brain is too humid. The light is too nervous."
+>
   <main id="canvas"></main>
 </UnstyledBase>
 
 <script>
   const attribute = [
     ["everything", "is"],
-    ["it's", "all"],
+    ["it’s", "all"],
     ["the", "ads", "are"],
     ["the", "air", "is"],
     ["the", "atmosphere", "is"],
@@ -226,7 +231,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     };
   }
 
-  setRandomInterval(addSentence, 800, 1500);
+  setRandomInterval(addSentence, 100, 100);
 </script>
 
 <style is:global lang="scss">
