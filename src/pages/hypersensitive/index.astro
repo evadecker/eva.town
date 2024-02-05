@@ -145,19 +145,19 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "wet",
   ];
 
-  function getRandomValueWithinRange(min, max) {
+  function getRandomValueWithinRange(min: number, max: number): number {
     return Math.random() * (max - min) + min;
   }
 
-  function getRandomAttribute() {
+  function getRandomAttribute(): string[] {
     return attribute[Math.floor(Math.random() * attribute.length)];
   }
 
-  function getRandomQuality() {
+  function getRandomQuality(): string {
     return quality[Math.floor(Math.random() * quality.length)];
   }
 
-  function getSentence() {
+  function getSentence(): string {
     const sentence = [...getRandomAttribute(), "too", getRandomQuality()];
 
     return sentence.join(" ");
@@ -198,8 +198,12 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     sentence.style.transform = `rotate(${(Math.random() - 0.5) * 5}deg)`;
   }
 
-  function setRandomInterval(intervalFunction, minDelay, maxDelay) {
-    let timeout;
+  function setRandomInterval(
+    intervalFunction: () => void,
+    minDelay: number,
+    maxDelay: number
+  ) {
+    let timeout: NodeJS.Timeout;
 
     const runInterval = () => {
       const timeoutFunction = () => {
@@ -226,18 +230,6 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 </script>
 
 <style is:global lang="scss">
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-      filter: blur(0);
-    }
-
-    100% {
-      opacity: 0;
-      filter: blur(20px);
-    }
-  }
-
   html,
   body {
     background: #111;
