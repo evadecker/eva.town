@@ -17,6 +17,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     ["it’s", "all"],
     ["the", "ads", "are"],
     ["the", "air", "is"],
+    ["the", "app", "is"],
     ["the", "atmosphere", "is"],
     ["the", "bar", "is"],
     ["the", "beach", "is"],
@@ -28,24 +29,31 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     ["the", "cars", "are"],
     ["the", "chair", "is"],
     ["the", "city", "is"],
+    ["the", "climate", "is"],
     ["the", "clothes", "are"],
     ["the", "colors", "are"],
     ["the", "conversation", "is"],
     ["the", "crowd", "is"],
     ["the", "discussion", "is"],
     ["the", "electricity", "is"],
+    ["the", "email", "is"],
     ["the", "environment", "is"],
     ["the", "event", "is"],
+    ["the", "eye contact", "is"],
     ["the", "feet", "are"],
     ["the", "food", "is"],
     ["the", "furniture", "is"],
+    ["the", "future", "is"],
     ["the", "honking", "is"],
     ["the", "humming", "is"],
     ["the", "information", "is"],
     ["the", "internet", "is"],
     ["the", "light", "is"],
     ["the", "lights", "are"],
+    ["the", "message", "is"],
+    ["the", "motion", "is"],
     ["the", "mouthfeel", "is"],
+    ["the", "movement", "is"],
     ["the", "movie", "is"],
     ["the", "music", "is"],
     ["the", "news", "is"],
@@ -54,13 +62,16 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     ["the", "office", "is"],
     ["the", "park", "is"],
     ["the", "party", "is"],
+    ["the", "past", "is"],
     ["the", "people", "are"],
+    ["the", "phone call", "is"],
     ["the", "phone", "is"],
     ["the", "place", "is"],
     ["the", "restaurant", "is"],
     ["the", "road", "is"],
     ["the", "room", "is"],
     ["the", "screens", "are"],
+    ["the", "sensation", "is"],
     ["the", "shop", "is"],
     ["the", "show", "is"],
     ["the", "smells", "are"],
@@ -73,11 +84,18 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     ["the", "text", "is"],
     ["the", "texture", "is"],
     ["the", "thoughts", "are"],
+    ["the", "touch", "is"],
+    ["the", "traffic", "is"],
     ["the", "train", "is"],
+    ["the", "travel", "is"],
     ["the", "trucks", "are"],
     ["the", "TV", "is"],
     ["the", "voices", "are"],
+    ["the", "walk", "is"],
+    ["the", "walls", "are"],
+    ["the", "wealth", "is"],
     ["the", "weather", "is"],
+    ["the", "website", "is"],
     ["the", "words", "are"],
   ];
 
@@ -86,55 +104,82 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "acidic",
     "aggressive",
     "angry",
+    "backwards",
     "big",
     "bitter",
     "boomy",
     "bright",
+    "chalky",
     "chaotic",
     "clammy",
     "clanging",
     "claustrophobic",
     "close",
     "cloying",
+    "clumpy",
     "cold",
     "complex",
+    "confining",
     "confusing",
     "cramped",
     "crinkly",
     "crowded",
+    "crumbly",
+    "damp",
     "deafening",
+    "demanding",
     "dense",
+    "discordant",
+    "disjointed",
     "disordered",
     "disorienting",
     "dissonant",
+    "distorted",
     "distressing",
     "dizzying",
+    "dusty",
     "excessive",
+    "exhausting",
     "fast",
     "flickery",
+    "forced",
     "fragrant",
+    "giant",
     "grating",
+    "greasy",
     "harsh",
     "heavy",
     "high-pitched",
     "humid",
+    "hurried",
     "illegible",
+    "illogical",
     "impatient",
+    "impenetrable",
     "intense",
     "intrusive",
     "itchy",
+    "jarring",
     "jittery",
+    "littered",
     "looming",
     "loud",
+    "lumpy",
     "messy",
+    "metallic",
     "much",
+    "muddy",
     "mushy",
+    "musty",
     "narrow",
     "nauseating",
     "nervous",
     "noisy",
+    "nonsensical",
+    "oily",
     "packed",
     "painful",
+    "pressing",
     "prickly",
     "rapid",
     "repetitive",
@@ -144,22 +189,31 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "rushed",
     "scratchy",
     "screeching",
-    "sharp",
+    "sensational",
     "shaky",
+    "sharp",
     "shouty",
     "shrill",
     "slimy",
     "smelly",
     "spiky",
+    "squeaky",
+    "starchy",
     "stifling",
     "stinky",
     "stuffy",
     "sudden",
     "suffocating",
+    "synthetic",
     "talkative",
     "tight",
     "tinny",
+    "tiring",
+    "uncanny",
     "uncomfortable",
+    "unexpected",
+    "unhygienic",
+    "unnatural",
     "vibrant",
     "vibrating",
     "violent",
@@ -181,34 +235,37 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
   }
 
   function getSentence(): string {
-    const sentence = [...getRandomAttribute(), "too", getRandomQuality()];
-
-    return sentence.join(" ");
+    return [...getRandomAttribute(), "too", getRandomQuality()].join(" ");
   }
 
   function addSentence() {
     let canvasDOMElem = document.getElementById("canvas");
     if (!canvasDOMElem) return;
 
-    let fragment = document.createDocumentFragment();
-    let sentence = fragment.appendChild(document.createElement("span"));
-    sentence.textContent = getSentence();
-    sentence.classList.add("sentence");
+    const fragment = document.createDocumentFragment();
 
-    // Basic styling
+    let sentenceWrapper = fragment.appendChild(document.createElement("div"));
+    sentenceWrapper.classList.add("sentence-wrapper");
+
+    // Inline text
+    let sentence = sentenceWrapper.appendChild(document.createElement("p"));
+    sentence.classList.add("sentence");
+    sentence.style.fontSize = `${getRandomValueWithinRange(1, 1.2)}em`;
+    sentence.style.fontStretch = `${getRandomValueWithinRange(40, 80)}%`;
     sentence.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
     sentence.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 10%)`;
-    sentence.style.fontSize = `${getRandomValueWithinRange(1, 1.5)}em`;
-    sentence.style.fontStretch = `${getRandomValueWithinRange(80, 120)}%`;
 
-    canvasDOMElem.appendChild(sentence);
+    sentence.textContent = getSentence();
+
+    canvasDOMElem.appendChild(sentenceWrapper);
 
     // Positioning
+    // (Must take place after the element has been added to the DOM)
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    const elementWidth = sentence.offsetWidth;
-    const elementHeight = sentence.offsetHeight;
+    const elementWidth = sentenceWrapper.offsetWidth;
+    const elementHeight = sentenceWrapper.offsetHeight;
 
     const maxX = viewportWidth - elementWidth;
     const maxY = viewportHeight - elementHeight;
@@ -216,9 +273,9 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     const randomX = Math.floor(Math.random() * maxX);
     const randomY = Math.floor(Math.random() * maxY);
 
-    sentence.style.left = `${randomX}px`;
-    sentence.style.top = `${randomY}px`;
-    sentence.style.transform = `rotate(${(Math.random() - 0.5) * 5}deg)`;
+    sentenceWrapper.style.left = `${randomX}px`;
+    sentenceWrapper.style.top = `${randomY}px`;
+    sentenceWrapper.style.transform = `rotate(${(Math.random() - 0.5) * 10}deg)`;
   }
 
   function setRandomInterval(
@@ -249,7 +306,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     };
   }
 
-  setRandomInterval(addSentence, 800, 2000);
+  setRandomInterval(addSentence, 300, 300);
 </script>
 
 <style is:global lang="scss">
@@ -277,21 +334,25 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
       "Helvetica Neue",
       sans-serif;
     font-weight: 500;
-    font-size: 32px;
+    font-size: 40px;
     line-height: 1;
 
     @media (width < 960px) {
-      font-size: 24px;
+      font-size: 32px;
     }
 
     @media (width < 640px) {
-      font-size: 20px;
+      font-size: 28px;
     }
   }
 
-  .sentence {
+  .sentence-wrapper {
     position: absolute;
-    text-wrap: nowrap;
+  }
+
+  .sentence {
+    line-height: 1;
     text-transform: uppercase;
+    display: inline;
   }
 </style>
