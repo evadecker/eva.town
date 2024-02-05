@@ -198,7 +198,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "rumbly",
     "rushed",
     "scratchy",
-    "screeching",
+    "screechy",
     "sensational",
     "shaky",
     "sharp",
@@ -232,6 +232,9 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "wet",
   ];
 
+  let isFirstRun = true;
+  let timeouts: NodeJS.Timeout[] = [];
+
   function getRandomValueWithinRange(min: number, max: number): number {
     return Math.random() * (max - min) + min;
   }
@@ -261,8 +264,6 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 
     load();
   }
-
-  writeAffirmation();
 
   function generateSentence(): string {
     const randomAttribute =
@@ -311,37 +312,71 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     sentenceWrapper.style.transform = `rotate(${(Math.random() - 0.5) * 10}deg)`;
   }
 
-  function setRandomInterval(
-    intervalFunction: () => void,
-    minDelay: number,
-    maxDelay: number
-  ) {
-    let timeout: NodeJS.Timeout;
+  function run(): void {
+    function setRandomInterval(
+      intervalFunction: () => void,
+      minDelay: number,
+      maxDelay: number
+    ) {
+      let timeout: NodeJS.Timeout;
 
-    const runInterval = () => {
-      const timeoutFunction = () => {
-        intervalFunction();
-        runInterval();
+      const runInterval = () => {
+        const timeoutFunction = () => {
+          intervalFunction();
+          runInterval();
+        };
+
+        const delay =
+          Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+
+        timeout = setTimeout(timeoutFunction, delay);
+        timeouts.push(timeout);
       };
 
-      const delay =
-        Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+      runInterval();
 
-      timeout = setTimeout(timeoutFunction, delay);
-    };
+      return {
+        clear() {
+          clearTimeout(timeout);
+        },
+      };
+    }
 
-    runInterval();
+    if (!isFirstRun) {
+      // Add a delay in between consecutive runs
+      timeouts.push(setTimeout(writeAffirmation, 2000));
+    } else {
+      writeAffirmation();
+    }
 
-    return {
-      clear() {
-        clearTimeout(timeout);
-      },
-    };
+    timeouts.push(
+      setTimeout(
+        () => {
+          setRandomInterval(writeSentence, 300, 1500);
+        },
+        isFirstRun ? 2000 : 4000
+      )
+    );
+
+    isFirstRun = false;
   }
 
-  setTimeout(() => {
-    setRandomInterval(writeSentence, 300, 2400);
-  }, 2000);
+  function reset(): void {
+    let canvasDOMElem = document.getElementById("canvas");
+    if (!canvasDOMElem) return;
+
+    canvasDOMElem.innerHTML = "";
+
+    timeouts.forEach((timeout) => clearTimeout(timeout));
+  }
+
+  run();
+
+  // Reset every minute
+  setInterval(() => {
+    reset();
+    run();
+  }, 60000);
 </script>
 
 <style is:global lang="scss">
