@@ -1,0 +1,282 @@
+---
+import UnstyledBase from "../../layouts/UnstyledBase.astro";
+---
+
+<UnstyledBase title="HYPERSENSITIVE" description="Everything is too much.">
+  <main id="canvas"></main>
+</UnstyledBase>
+
+<script>
+  const attribute = [
+    ["everything", "is"],
+    ["it's", "all"],
+    ["the", "ads", "are"],
+    ["the", "air", "is"],
+    ["the", "atmosphere", "is"],
+    ["the", "bar", "is"],
+    ["the", "beach", "is"],
+    ["the", "brain", "is"],
+    ["the", "building", "is"],
+    ["the", "buildings", "are"],
+    ["the", "bus", "is"],
+    ["the", "car", "is"],
+    ["the", "cars", "are"],
+    ["the", "chair", "is"],
+    ["the", "city", "is"],
+    ["the", "clothes", "are"],
+    ["the", "colors", "are"],
+    ["the", "conversation", "is"],
+    ["the", "crowd", "is"],
+    ["the", "discussion", "is"],
+    ["the", "electricity", "is"],
+    ["the", "environment", "is"],
+    ["the", "event", "is"],
+    ["the", "feet", "are"],
+    ["the", "food", "is"],
+    ["the", "furniture", "is"],
+    ["the", "honking", "is"],
+    ["the", "humming", "is"],
+    ["the", "information", "is"],
+    ["the", "internet", "is"],
+    ["the", "light", "is"],
+    ["the", "lights", "are"],
+    ["the", "mouthfeel", "is"],
+    ["the", "movie", "is"],
+    ["the", "music", "is"],
+    ["the", "news", "is"],
+    ["the", "noises", "are"],
+    ["the", "objects", "are"],
+    ["the", "office", "is"],
+    ["the", "park", "is"],
+    ["the", "party", "is"],
+    ["the", "people", "are"],
+    ["the", "phone", "is"],
+    ["the", "place", "is"],
+    ["the", "restaurant", "is"],
+    ["the", "road", "is"],
+    ["the", "room", "is"],
+    ["the", "screens", "are"],
+    ["the", "shop", "is"],
+    ["the", "show", "is"],
+    ["the", "smells", "are"],
+    ["the", "sounds", "are"],
+    ["the", "space", "is"],
+    ["the", "street", "is"],
+    ["the", "talking", "is"],
+    ["the", "taste", "is"],
+    ["the", "temperature", "is"],
+    ["the", "text", "is"],
+    ["the", "texture", "is"],
+    ["the", "thoughts", "are"],
+    ["the", "train", "is"],
+    ["the", "trucks", "are"],
+    ["the", "TV", "is"],
+    ["the", "voices", "are"],
+    ["the", "weather", "is"],
+    ["the", "words", "are"],
+  ];
+
+  const quality = [
+    "acidic",
+    "aggressive",
+    "angry",
+    "big",
+    "bitter",
+    "boomy",
+    "bright",
+    "chaotic",
+    "clammy",
+    "close",
+    "cloying",
+    "cold",
+    "complex",
+    "confusing",
+    "cramped",
+    "crinkly",
+    "crowded",
+    "dense",
+    "disordered",
+    "distressing",
+    "fast",
+    "fragrant",
+    "harsh",
+    "heavy",
+    "high-pitched",
+    "humid",
+    "illegible",
+    "impatient",
+    "intense",
+    "intrusive",
+    "itchy",
+    "looming",
+    "loud",
+    "messy",
+    "much",
+    "mushy",
+    "narrow",
+    "nauseating",
+    "nervous",
+    "noisy",
+    "packed",
+    "painful",
+    "prickly",
+    "restless",
+    "rough",
+    "rushed",
+    "scratchy",
+    "screeching",
+    "sharp",
+    "shaky",
+    "shouty",
+    "slimy",
+    "smelly",
+    "stifling",
+    "stinky",
+    "stuffy",
+    "talkative",
+    "tight",
+    "tinny",
+    "uncomfortable",
+    "vibrant",
+    "vibrating",
+    "violent",
+    "vivid",
+    "warm",
+    "wet",
+  ];
+
+  function getRandomValueWithinRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function getRandomAttribute() {
+    return attribute[Math.floor(Math.random() * attribute.length)];
+  }
+
+  function getRandomQuality() {
+    return quality[Math.floor(Math.random() * quality.length)];
+  }
+
+  function getSentence() {
+    const sentence = [...getRandomAttribute(), "too", getRandomQuality()];
+
+    return sentence.join(" ");
+  }
+
+  function addSentence() {
+    let canvasDOMElem = document.getElementById("canvas");
+    if (!canvasDOMElem) return;
+
+    let fragment = document.createDocumentFragment();
+    let sentence = fragment.appendChild(document.createElement("span"));
+    sentence.textContent = getSentence();
+    sentence.classList.add("sentence");
+
+    // Basic styling
+    sentence.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    sentence.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 10%)`;
+    sentence.style.fontSize = `${getRandomValueWithinRange(1, 1.5)}em`;
+    sentence.style.fontStretch = `${getRandomValueWithinRange(80, 120)}%`;
+
+    canvasDOMElem.appendChild(sentence);
+
+    // Positioning
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    const elementWidth = sentence.offsetWidth;
+    const elementHeight = sentence.offsetHeight;
+
+    const maxX = viewportWidth - elementWidth;
+    const maxY = viewportHeight - elementHeight;
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    sentence.style.left = `${randomX}px`;
+    sentence.style.top = `${randomY}px`;
+    sentence.style.transform = `rotate(${(Math.random() - 0.5) * 5}deg)`;
+  }
+
+  function setRandomInterval(intervalFunction, minDelay, maxDelay) {
+    let timeout;
+
+    const runInterval = () => {
+      const timeoutFunction = () => {
+        intervalFunction();
+        runInterval();
+      };
+
+      const delay =
+        Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+
+      timeout = setTimeout(timeoutFunction, delay);
+    };
+
+    runInterval();
+
+    return {
+      clear() {
+        clearTimeout(timeout);
+      },
+    };
+  }
+
+  setRandomInterval(addSentence, 800, 1500);
+</script>
+
+<style is:global lang="scss">
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      filter: blur(0);
+    }
+
+    100% {
+      opacity: 0;
+      filter: blur(20px);
+    }
+  }
+
+  html,
+  body {
+    background: #111;
+  }
+
+  #canvas {
+    position: relative;
+    height: 100dvh;
+    width: 100vw;
+    overflow: hidden;
+    padding: var(--space-l);
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1;
+
+    @media (width < 960px) {
+      font-size: 24px;
+    }
+
+    @media (width < 640px) {
+      font-size: 20px;
+    }
+  }
+
+  .sentence {
+    position: absolute;
+    text-wrap: nowrap;
+    text-transform: uppercase;
+  }
+</style>
