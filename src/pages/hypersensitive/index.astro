@@ -12,33 +12,35 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 </UnstyledBase>
 
 <script>
+  const affirmation = "it’s all going to be okay";
+
   const attribute = [
     ["everything", "is"],
     ["it’s", "all"],
     ["the", "ads", "are"],
     ["the", "air", "is"],
-    ["the", "app", "is"],
+    ["the", "apps", "are"],
     ["the", "atmosphere", "is"],
-    ["the", "bar", "is"],
-    ["the", "beach", "is"],
+    ["the", "bars", "are"],
     ["the", "brain", "is"],
-    ["the", "building", "is"],
     ["the", "buildings", "are"],
     ["the", "bus", "is"],
-    ["the", "car", "is"],
     ["the", "cars", "are"],
     ["the", "chair", "is"],
     ["the", "city", "is"],
     ["the", "climate", "is"],
     ["the", "clothes", "are"],
     ["the", "colors", "are"],
+    ["the", "construction", "is"],
     ["the", "conversation", "is"],
-    ["the", "crowd", "is"],
+    ["the", "crowds", "are"],
     ["the", "discussion", "is"],
+    ["the", "dreams", "are"],
     ["the", "electricity", "is"],
-    ["the", "email", "is"],
+    ["the", "emails", "are"],
     ["the", "environment", "is"],
     ["the", "event", "is"],
+    ["the", "experience", "is"],
     ["the", "eye contact", "is"],
     ["the", "feet", "are"],
     ["the", "food", "is"],
@@ -46,50 +48,55 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     ["the", "future", "is"],
     ["the", "honking", "is"],
     ["the", "humming", "is"],
+    ["the", "images", "are"],
     ["the", "information", "is"],
     ["the", "internet", "is"],
-    ["the", "light", "is"],
     ["the", "lights", "are"],
-    ["the", "message", "is"],
+    ["the", "machines", "are"],
+    ["the", "messages", "are"],
     ["the", "motion", "is"],
     ["the", "mouthfeel", "is"],
-    ["the", "movement", "is"],
-    ["the", "movie", "is"],
+    ["the", "movements", "are"],
+    ["the", "movies", "are"],
     ["the", "music", "is"],
     ["the", "news", "is"],
     ["the", "noises", "are"],
     ["the", "objects", "are"],
     ["the", "office", "is"],
-    ["the", "park", "is"],
-    ["the", "party", "is"],
+    ["the", "parties", "are"],
     ["the", "past", "is"],
     ["the", "people", "are"],
-    ["the", "phone call", "is"],
-    ["the", "phone", "is"],
-    ["the", "place", "is"],
-    ["the", "restaurant", "is"],
-    ["the", "road", "is"],
+    ["the", "phone calls", "are"],
+    ["the", "phones", "are"],
+    ["the", "pictures", "are"],
+    ["the", "pipes", "are"],
+    ["the", "places", "are"],
+    ["the", "programs", "are"],
+    ["the", "prospect", "is"],
+    ["the", "restaurants", "are"],
+    ["the", "roads", "are"],
     ["the", "room", "is"],
     ["the", "screens", "are"],
     ["the", "sensation", "is"],
-    ["the", "shop", "is"],
+    ["the", "shops", "are"],
     ["the", "show", "is"],
     ["the", "smells", "are"],
     ["the", "sounds", "are"],
     ["the", "space", "is"],
-    ["the", "street", "is"],
+    ["the", "streets", "are"],
     ["the", "talking", "is"],
     ["the", "taste", "is"],
     ["the", "temperature", "is"],
     ["the", "text", "is"],
-    ["the", "texture", "is"],
+    ["the", "textures", "are"],
     ["the", "thoughts", "are"],
     ["the", "touch", "is"],
     ["the", "traffic", "is"],
-    ["the", "train", "is"],
+    ["the", "trains", "are"],
     ["the", "travel", "is"],
     ["the", "trucks", "are"],
     ["the", "TV", "is"],
+    ["the", "videos", "are"],
     ["the", "voices", "are"],
     ["the", "walk", "is"],
     ["the", "walls", "are"],
@@ -103,29 +110,29 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "abrasive",
     "acidic",
     "aggressive",
+    "all-consuming",
     "angry",
     "backwards",
     "big",
     "bitter",
     "boomy",
     "bright",
+    "ceaseless",
     "chalky",
     "chaotic",
     "clammy",
-    "clanging",
+    "clangy",
     "claustrophobic",
     "close",
     "cloying",
-    "clumpy",
     "cold",
     "complex",
     "confining",
     "confusing",
     "cramped",
-    "crinkly",
     "crowded",
-    "crumbly",
     "damp",
+    "dangerous",
     "deafening",
     "demanding",
     "dense",
@@ -149,6 +156,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "greasy",
     "harsh",
     "heavy",
+    "hectic",
     "high-pitched",
     "humid",
     "hurried",
@@ -156,6 +164,8 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "illogical",
     "impatient",
     "impenetrable",
+    "inescapable",
+    "inhospitable",
     "intense",
     "intrusive",
     "itchy",
@@ -164,7 +174,6 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "littered",
     "looming",
     "loud",
-    "lumpy",
     "messy",
     "metallic",
     "much",
@@ -186,9 +195,10 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "restless",
     "rigid",
     "rough",
+    "rumbly",
     "rushed",
     "scratchy",
-    "screeching",
+    "screechy",
     "sensational",
     "shaky",
     "sharp",
@@ -207,7 +217,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "synthetic",
     "talkative",
     "tight",
-    "tinny",
+    "tingly",
     "tiring",
     "uncanny",
     "uncomfortable",
@@ -215,30 +225,54 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "unhygienic",
     "unnatural",
     "vibrant",
-    "vibrating",
+    "vibratey",
     "violent",
     "vivid",
     "warm",
     "wet",
   ];
 
+  let isFirstRun = true;
+  let timeouts: NodeJS.Timeout[] = [];
+
   function getRandomValueWithinRange(min: number, max: number): number {
     return Math.random() * (max - min) + min;
   }
 
-  function getRandomAttribute(): string[] {
-    return attribute[Math.floor(Math.random() * attribute.length)];
+  function writeAffirmation(): void {
+    let canvasDOMElem = document.getElementById("canvas");
+    if (!canvasDOMElem) return;
+
+    const fragment = document.createDocumentFragment();
+
+    let affirmationWrapper = fragment.appendChild(
+      document.createElement("div")
+    );
+    affirmationWrapper.classList.add("affirmation");
+
+    const timer = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
+    async function load() {
+      for (let i = 0; i < affirmation.length; i++) {
+        affirmationWrapper.textContent += affirmation[i];
+
+        await timer(getRandomValueWithinRange(60, 120));
+      }
+    }
+
+    canvasDOMElem.appendChild(affirmationWrapper);
+
+    load();
   }
 
-  function getRandomQuality(): string {
-    return quality[Math.floor(Math.random() * quality.length)];
+  function generateSentence(): string {
+    const randomAttribute =
+      attribute[Math.floor(Math.random() * attribute.length)];
+    const randomQuality = quality[Math.floor(Math.random() * quality.length)];
+    return [...randomAttribute, "too", randomQuality].join(" ");
   }
 
-  function getSentence(): string {
-    return [...getRandomAttribute(), "too", getRandomQuality()].join(" ");
-  }
-
-  function addSentence() {
+  function writeSentence(): void {
     let canvasDOMElem = document.getElementById("canvas");
     if (!canvasDOMElem) return;
 
@@ -255,7 +289,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     sentence.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
     sentence.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 10%)`;
 
-    sentence.textContent = getSentence();
+    sentence.textContent = generateSentence();
 
     canvasDOMElem.appendChild(sentenceWrapper);
 
@@ -278,35 +312,71 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     sentenceWrapper.style.transform = `rotate(${(Math.random() - 0.5) * 10}deg)`;
   }
 
-  function setRandomInterval(
-    intervalFunction: () => void,
-    minDelay: number,
-    maxDelay: number
-  ) {
-    let timeout: NodeJS.Timeout;
+  function run(): void {
+    function setRandomInterval(
+      intervalFunction: () => void,
+      minDelay: number,
+      maxDelay: number
+    ) {
+      let timeout: NodeJS.Timeout;
 
-    const runInterval = () => {
-      const timeoutFunction = () => {
-        intervalFunction();
-        runInterval();
+      const runInterval = () => {
+        const timeoutFunction = () => {
+          intervalFunction();
+          runInterval();
+        };
+
+        const delay =
+          Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+
+        timeout = setTimeout(timeoutFunction, delay);
+        timeouts.push(timeout);
       };
 
-      const delay =
-        Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+      runInterval();
 
-      timeout = setTimeout(timeoutFunction, delay);
-    };
+      return {
+        clear() {
+          clearTimeout(timeout);
+        },
+      };
+    }
 
-    runInterval();
+    if (!isFirstRun) {
+      // Add a delay in between consecutive runs
+      timeouts.push(setTimeout(writeAffirmation, 2000));
+    } else {
+      writeAffirmation();
+    }
 
-    return {
-      clear() {
-        clearTimeout(timeout);
-      },
-    };
+    timeouts.push(
+      setTimeout(
+        () => {
+          setRandomInterval(writeSentence, 300, 1500);
+        },
+        isFirstRun ? 2000 : 4000
+      )
+    );
+
+    isFirstRun = false;
   }
 
-  setRandomInterval(addSentence, 300, 2400);
+  function reset(): void {
+    let canvasDOMElem = document.getElementById("canvas");
+    if (!canvasDOMElem) return;
+
+    canvasDOMElem.innerHTML = "";
+
+    timeouts.forEach((timeout) => clearTimeout(timeout));
+  }
+
+  run();
+
+  // Reset every minute
+  setInterval(() => {
+    reset();
+    run();
+  }, 60000);
 </script>
 
 <style is:global lang="scss">
@@ -344,6 +414,21 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     @media (width < 640px) {
       font-size: 28px;
     }
+  }
+
+  .affirmation {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(9rem, 20vw, 18rem);
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: -0.05em;
   }
 
   .sentence-wrapper {
