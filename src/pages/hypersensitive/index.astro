@@ -24,6 +24,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "the air is",
     "the apps are",
     "the atmosphere is",
+    "the attention is",
     "the bars are",
     "the brain is",
     "the buildings are",
@@ -111,7 +112,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 
   // 1. Can it complete: "it's all too ___"?
   // 2. Can it be used to describe war? (Prefer words with weight)
-  const quality = [
+  const overwhelm = [
     "abrasive",
     "acidic",
     "aggressive",
@@ -119,6 +120,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "angry",
     "anxious",
     "backwards",
+    "barren",
     "big",
     "bitter",
     "bleak",
@@ -127,6 +129,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "ceaseless",
     "chaotic",
     "clangy",
+    "clashing",
     "claustrophobic",
     "close",
     "cloying",
@@ -151,6 +154,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "dissonant",
     "distorted",
     "distressing",
+    "disturbing",
     "dizzying",
     "domineering",
     "dreary",
@@ -187,6 +191,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "itchy",
     "jagged",
     "jarring",
+    "jerky",
     "jittery",
     "jumbled",
     "jumpy",
@@ -202,6 +207,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "muddy",
     "mushy",
     "musty",
+    "mysterious",
     "nauseating",
     "nervous",
     "noisy",
@@ -213,8 +219,10 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "packed",
     "painful",
     "pressing",
+    "pressurized",
     "prickly",
     "rapid",
+    "rattly",
     "repetitive",
     "restless",
     "rigid",
@@ -231,6 +239,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     "slimy",
     "smelly",
     "sour",
+    "sped up",
     "spiky",
     "staticky",
     "stifling",
@@ -293,14 +302,15 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     load();
   }
 
-  function generateSentence(): string {
+  function generateOverwhelm(): string {
     const randomAttribute =
       attribute[Math.floor(Math.random() * attribute.length)];
-    const randomQuality = quality[Math.floor(Math.random() * quality.length)];
+    const randomQuality =
+      overwhelm[Math.floor(Math.random() * overwhelm.length)];
     return [randomAttribute, "too", randomQuality].join(" ");
   }
 
-  function writeSentence(): void {
+  function writeOverwhelm(): void {
     let canvasDOMElem = document.getElementById("canvas");
     if (!canvasDOMElem) return;
 
@@ -317,7 +327,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     sentence.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
     sentence.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 10%)`;
 
-    sentence.textContent = generateSentence();
+    sentence.textContent = generateOverwhelm();
 
     canvasDOMElem.appendChild(sentenceWrapper);
 
@@ -338,6 +348,10 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     sentenceWrapper.style.left = `${randomX}px`;
     sentenceWrapper.style.top = `${randomY}px`;
     sentenceWrapper.style.transform = `rotate(${(Math.random() - 0.5) * 10}deg)`;
+  }
+
+  function clearTimeouts(): void {
+    timeouts.forEach((timeout) => clearTimeout(timeout));
   }
 
   function run(): void {
@@ -377,14 +391,58 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
       writeAffirmation();
     }
 
-    timeouts.push(
-      setTimeout(
-        () => {
-          setRandomInterval(writeSentence, 300, 1500);
-        },
-        isFirstRun ? 3000 : 5000
-      )
-    );
+    // Set some overlap between each speed
+    // To mask the transitions
+    function writeSlowly() {
+      setRandomInterval(writeOverwhelm, 1280, 3200);
+    }
+
+    function writeNormally() {
+      setRandomInterval(writeOverwhelm, 640, 1600);
+    }
+
+    function writeQuickly() {
+      setRandomInterval(writeOverwhelm, 320, 800);
+    }
+
+    function writeRapidly() {
+      setRandomInterval(writeOverwhelm, 160, 400);
+    }
+
+    function writeImpossibly() {
+      setRandomInterval(writeOverwhelm, 80, 200);
+    }
+
+    function writeDeathfully() {
+      setRandomInterval(writeOverwhelm, 40, 100);
+    }
+
+    timeouts.push(setTimeout(writeSlowly, isFirstRun ? 3000 : 5000));
+
+    setTimeout(() => {
+      clearTimeouts();
+      timeouts.push(setTimeout(writeNormally));
+    }, 20000);
+
+    setTimeout(() => {
+      clearTimeouts();
+      timeouts.push(setTimeout(writeQuickly));
+    }, 40000);
+
+    setTimeout(() => {
+      clearTimeouts();
+      timeouts.push(setTimeout(writeRapidly));
+    }, 50000);
+
+    setTimeout(() => {
+      clearTimeouts();
+      timeouts.push(setTimeout(writeImpossibly));
+    }, 55000);
+
+    setTimeout(() => {
+      clearTimeouts();
+      timeouts.push(setTimeout(writeDeathfully));
+    }, 58000);
 
     isFirstRun = false;
   }
@@ -395,7 +453,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 
     canvasDOMElem.innerHTML = "";
 
-    timeouts.forEach((timeout) => clearTimeout(timeout));
+    clearTimeouts();
   }
 
   run();
