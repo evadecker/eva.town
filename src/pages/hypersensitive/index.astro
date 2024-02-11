@@ -394,27 +394,23 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     // Set some overlap between each speed
     // To mask the transitions
     function writeSlowly() {
-      setRandomInterval(writeOverwhelm, 1280, 3200);
+      setRandomInterval(writeOverwhelm, 400, 2400);
     }
 
     function writeNormally() {
-      setRandomInterval(writeOverwhelm, 640, 1600);
+      setRandomInterval(writeOverwhelm, 350, 2000);
     }
 
     function writeQuickly() {
-      setRandomInterval(writeOverwhelm, 320, 800);
+      setRandomInterval(writeOverwhelm, 300, 1400);
     }
 
     function writeRapidly() {
-      setRandomInterval(writeOverwhelm, 160, 400);
+      setRandomInterval(writeOverwhelm, 200, 800);
     }
 
     function writeImpossibly() {
-      setRandomInterval(writeOverwhelm, 80, 200);
-    }
-
-    function writeDeathfully() {
-      setRandomInterval(writeOverwhelm, 40, 100);
+      setRandomInterval(writeOverwhelm, 150, 400);
     }
 
     timeouts.push(setTimeout(writeSlowly, isFirstRun ? 3000 : 5000));
@@ -437,12 +433,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     setTimeout(() => {
       clearTimeouts();
       timeouts.push(setTimeout(writeImpossibly));
-    }, 55000);
-
-    setTimeout(() => {
-      clearTimeouts();
-      timeouts.push(setTimeout(writeDeathfully));
-    }, 58000);
+    }, 56000);
 
     isFirstRun = false;
   }
