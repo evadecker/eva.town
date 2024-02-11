@@ -1,0 +1,90 @@
+---
+import UnstyledBase from "../../../layouts/UnstyledBase.astro";
+---
+
+<UnstyledBase title="SVG Experiment" description="svgSVGsvgSVGsvgSVGsvg">
+  <svg id="svgOutput" xmlns="http://www.w3.org/2000/svg"></svg>
+</UnstyledBase>
+
+<script>
+  import { createNoise2D } from "simplex-noise";
+
+  const svg = document.getElementById("svgOutput");
+
+  var colors = ["orangered", "green", "blue", "tan", "teal", "magenta"];
+
+  let zoom: number = 3;
+  let scaleX: number;
+  let scaleY: number;
+
+  const cellSize = devicePixelRatio * zoom;
+
+  let gridWidth: number;
+  let gridHeight: number;
+
+  function setup() {
+    clearCanvas();
+
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
+    gridWidth = w / cellSize;
+    gridHeight = h / cellSize;
+
+    if (svg) {
+      svg.setAttribute("width", `${w}px`);
+      svg.setAttribute("height", `${h}px`);
+    }
+
+    // Shuffle colors
+    colors.sort(() => Math.random() - 0.5);
+
+    // Random scale factors for noise
+    scaleX = Math.random() * 50;
+    scaleY = Math.random() * 50;
+  }
+
+  function drawPixel(x: number, y: number, size: number, color: string) {
+    let rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    rect.setAttribute("x", `${x}px`);
+    rect.setAttribute("y", `${y}px`);
+    rect.setAttribute("width", `${size}px`);
+    rect.setAttribute("height", `${size}px`);
+    rect.setAttribute("fill", color);
+
+    svg?.prepend(rect);
+  }
+
+  function drawCanvas() {
+    setup();
+
+    const noise = createNoise2D();
+
+    for (let i = 0; i < gridWidth; i++) {
+      for (let j = 0; j < gridHeight; j++) {
+        // Max of 2
+        const noiseVal = noise(i / scaleX, j / scaleY) + 1;
+
+        let color;
+        if (noiseVal < 0.5) {
+          color = colors[0];
+        } else if (noiseVal < 1) {
+          Math.random() < 0.5 ? (color = colors[1]) : (color = colors[2]);
+        } else if (noiseVal < 1.5) {
+          color = colors[3];
+        } else color = colors[4];
+
+        drawPixel(i * cellSize, j * cellSize, cellSize, color);
+      }
+    }
+  }
+
+  function clearCanvas() {
+    if (!svg) return;
+    svg.innerHTML = "";
+  }
+
+  drawCanvas();
+
+  window.addEventListener("resize", drawCanvas);
+</script>

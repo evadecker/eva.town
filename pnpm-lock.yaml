@@ -62,6 +62,9 @@ dependencies:
   nanostores:
     specifier: ^0.9.5
     version: 0.9.5
+  p5:
+    specifier: ^1.9.0
+    version: 1.9.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -77,6 +80,9 @@ dependencies:
   sharp:
     specifier: ^0.32.6
     version: 0.32.6
+  simplex-noise:
+    specifier: ^4.0.1
+    version: 4.0.1
 
 devDependencies:
   '@lhci/cli':
@@ -94,6 +100,9 @@ devDependencies:
   '@types/node':
     specifier: ^18.19.9
     version: 18.19.9
+  '@types/p5':
+    specifier: ^1.7.6
+    version: 1.7.6
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.19.1
     version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.56.0)(typescript@5.3.3)
@@ -1473,6 +1482,10 @@ packages:
 
   /@types/normalize-package-data@2.4.4:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
+    dev: true
+
+  /@types/p5@1.7.6:
+    resolution: {integrity: sha512-6pLTOo0V3N5jZb5nTwjiv3lPHLK3Z/TjbhQUj8CTWXocUk1Z/f6OHTp3Pcwi1BhWnf5gqKUcyEb1gP0KIJuQgw==}
     dev: true
 
   /@types/prop-types@15.7.11:
@@ -6154,6 +6167,10 @@ packages:
     resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
     engines: {node: '>=6'}
 
+  /p5@1.9.0:
+    resolution: {integrity: sha512-+5/hz0ZokCDf7BMMAeemE7FIo7gFZK7ImL62acHLXZwerGjqj+171bnaAWj4aCFCx6fwysAr2U7/AKuPyPhehA==}
+    dev: false
+
   /parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
@@ -7132,6 +7149,10 @@ packages:
     requiresBuild: true
     dependencies:
       is-arrayish: 0.3.2
+    dev: false
+
+  /simplex-noise@4.0.1:
+    resolution: {integrity: sha512-zl/+bdSqW7HJOQ0oDbxrNYaF4F5ik0i7M6YOYmEoIJNtg16NpvWaTTM1Y7oV/7T0jFljawLgYPS81Uu2rsfo1A==}
     dev: false
 
   /sisteransi@1.0.5:
