@@ -38,11 +38,13 @@
     "howler": "^2.2.4",
     "nanoid": "^4.0.2",
     "nanostores": "^0.9.5",
+    "p5": "^1.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.6",
+    "simplex-noise": "^4.0.1"
   },
   "devDependencies": {
     "@lhci/cli": "^0.12.0",
@@ -50,6 +52,7 @@
     "@radix-ui/colors": "^3.0.0",
     "@types/howler": "^2.2.11",
     "@types/node": "^18.19.9",
+    "@types/p5": "^1.7.6",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "eslint": "^8.56.0",
