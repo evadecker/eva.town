@@ -8,19 +8,26 @@ import UnstyledBase from "../../../layouts/UnstyledBase.astro";
 
 <script>
   import p5 from "p5";
+  import colors from "nice-color-palettes";
 
   const sketch = (p: p5) => {
-    var gridSize = 50; // Number of cells in each row and column
-    var cellSize: number; // Size of each cell in the grid
-    var scaleX: number;
-    var scaleY: number;
-    var t = 0;
-    var colors = ["orangered", "green", "blue", "tan", "teal", "magenta"];
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
+    const cellSize = 8;
+
+    let palette = colors[0];
+
+    const gridWidth = w / cellSize;
+    const gridHeight = h / cellSize;
+
+    let scaleX: number;
+    let scaleY: number;
+
+    let t = 0;
 
     p.setup = () => {
-      var size = Math.floor(window.innerHeight / gridSize) * gridSize;
-      p.createCanvas(size, size);
-      cellSize = size / gridSize; // Calculate cell size based on canvas size
+      p.createCanvas(w, h);
 
       // Seed the noise function
       p.noiseSeed(Math.random());
@@ -28,33 +35,35 @@ import UnstyledBase from "../../../layouts/UnstyledBase.astro";
       // Random scale factors for noise
       scaleX = Math.random() * 50;
       scaleY = Math.random() * 50;
-      p.shuffle(colors, true);
+
+      palette = colors[Math.floor(Math.random() * colors.length)];
+
       // No loop needed unless you want to animate or interact
-      p.noLoop();
+      // p.noLoop();
     };
 
     p.draw = () => {
-      p.background(255); // Set background to white
+      p.background(255);
       p.noStroke();
-      t += 0.01;
-      // Draw loop for our grid
-      for (var y = 0; y < gridSize; y++) {
-        for (var x = 0; x < gridSize; x++) {
-          // Generate Perlin noise value for this cell
-          var noiseVal = p.noise(x / scaleX + t, y / scaleY + t);
+      t += 0.005;
 
-          if (noiseVal > 0 && noiseVal <= 0.4) {
-            p.fill(colors[0]); // Set fill color
-          }
-          if (noiseVal > 0.4 && noiseVal <= 0.5) {
-            p.fill(colors[1]); // Set fill color
-          }
-          if (noiseVal > 0.5 && noiseVal <= 1) {
-            p.fill(colors[2]); // Set fill color
-          }
+      for (var i = 0; i < gridWidth; i++) {
+        for (var j = 0; j < gridHeight; j++) {
+          // Generate Perlin noise value for this cell
+          var noiseVal = p.noise(i / scaleX + t, j / scaleY + t, t);
+
+          if (noiseVal < 0.3) {
+            p.fill(palette[0]);
+          } else if (noiseVal < 0.4) {
+            p.fill(palette[1]);
+          } else if (noiseVal < 0.5) {
+            p.fill(palette[2]);
+          } else if (noiseVal < 0.7) {
+            p.fill(palette[3]);
+          } else p.fill(palette[4]);
+
           // Draw the rectangle for this grid cell
-          p.rect(x * cellSize, y * cellSize, cellSize, cellSize);
-          //circle(x * cellSize, y * cellSize, cellSize*1.5);
+          p.rect(i * cellSize, j * cellSize, cellSize, cellSize);
         }
       }
     };
