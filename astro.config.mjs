@@ -9,7 +9,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
 
 export default defineConfig({
-  site: "https://evadecker.com",
+  site: "https://eva.town",
   integrations: [react(), mdx(), sitemap()],
   adapter: vercel({
     webAnalytics: {

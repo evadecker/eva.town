@@ -1,6 +1,6 @@
 ---
 title: Colophon
-description: Colophon is a designer-y word for “how it’s made”—here’s what powers evadecker.com.
+description: Colophon is a designer-y word for “how it’s made”—here’s what powers eva.town.
 datePublished: 2023-09-26 03:47:00-04:00
 dateModified: 2023-10-19 04:26:15-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
@@ -12,7 +12,7 @@ ogImage: ./img1200.webp
 
 I designed and built this site myself. It's a home to share things I'm exploring and things I've built. It's a place for me to learn in public.
 
-All code is open source and available on [GitHub](https://github.com/evadecker/evadecker.com). The first commit was December 5, 2018, but the earliest version of this site dates back to 2015, an era when I eschewed versioning and uploaded files manually via <abbr title="File Transfer Protocol">FTP</abbr>. I've grown a lot since then—and the technology around me has grown, too.
+All code is open source and available on [GitHub](https://github.com/evadecker/eva.town). The first commit was December 5, 2018, but the earliest version of this site dates back to 2015, an era when I eschewed versioning and uploaded files manually via <abbr title="File Transfer Protocol">FTP</abbr>. I've grown a lot since then—and the technology around me has grown, too.
 
 ## Technology
 
@@ -50,8 +50,8 @@ I minimize energy usage on this site by avoiding unnecessary scripts (such as tr
 > The internet consumes a lot of electricity. 416.2TWh per year to be precise. To give you some perspective, that's more than the entire United Kingdom.
 > <cite>[Website Carbon Calculator](https://www.websitecarbon.com)</cite>
 
-As of October 18, 2023, [carbon results for evadecker.com](https://www.websitecarbon.com/website/evadecker-com/) indicate that the home page is **cleaner than 95% of web pages tested**, producing **0.05g of CO<sub>2</sub> per page view**. The site uses [Vercel's serverless architecture](https://vercel.com/guides/what-is-vercel-green-energy-policy#) to further cut energy consumption.
+As of October 18, 2023, [carbon results for eva.town](https://www.websitecarbon.com/website/eva-town/) indicate that the home page is **cleaner than 95% of web pages tested**, producing **0.05g of CO<sub>2</sub> per page view**. The site uses [Vercel's serverless architecture](https://vercel.com/guides/what-is-vercel-green-energy-policy#) to further cut energy consumption.
 
 ## Notice an issue?
 
-If you spot a typo, encounter a broken feature, or have a recommendation for an improvement, [file an issue on GitHub](https://github.com/evadecker/evadecker.com/issues).
+If you spot a typo, encounter a broken feature, or have a recommendation for an improvement, [file an issue on GitHub](https://github.com/evadecker/eva.town/issues).
