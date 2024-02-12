@@ -1,5 +1,5 @@
 ---
-import UnstyledBase from "../../../layouts/UnstyledBase.astro";
+import UnstyledBase from "../../layouts/UnstyledBase.astro";
 ---
 
 <UnstyledBase title="P5 Experiments" description="p5p5p5p5p5p5p5p5">
@@ -10,14 +10,18 @@ import UnstyledBase from "../../../layouts/UnstyledBase.astro";
   import p5 from "p5";
 
   const sketch = (p: p5) => {
-    var gridSize = 50; // Number of cells in each row and column
-    var cellSize: number; // Size of each cell in the grid
-    var rStart: number;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
+    const cellSize = 24;
+
+    const gridWidth = w / cellSize;
+    const gridHeight = h / cellSize;
+
+    let rStart: number;
 
     p.setup = () => {
-      var size = Math.floor(window.innerHeight / gridSize) * gridSize;
-      p.createCanvas(size, size);
-      cellSize = size / gridSize; // Calculate cell size based on canvas size
+      p.createCanvas(w, h);
       rStart = p.random(0, 1000);
       // No loop needed unless you want to animate or interact
       p.noLoop();
@@ -31,15 +35,15 @@ import UnstyledBase from "../../../layouts/UnstyledBase.astro";
       // Draw loop for our grid
       t += 0.02 + rStart;
 
-      for (var y = 0; y < gridSize; y++) {
-        for (var x = 0; x < gridSize; x++) {
-          var sin = Math.sin(t + x / 20) * cellSize;
-          var cos = Math.cos(t + y / 20) * cellSize;
+      for (var i = 0; i < gridWidth; i++) {
+        for (var j = 0; j < gridHeight; j++) {
+          var sin = Math.sin(t + i / 20) * cellSize;
+          var cos = Math.cos(t + j / 20) * cellSize;
 
-          console.log(sin);
           p.fill("black"); // Set fill color
+
           // Draw the rectangle for this grid cell
-          p.rect(x * cellSize, y * cellSize, sin, cos);
+          p.rect(i * cellSize, j * cellSize, sin, cos);
         }
       }
     };
