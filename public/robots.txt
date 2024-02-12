@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://evadecker.com/sitemap-index.xml
+Sitemap: https://eva.town/sitemap-index.xml
