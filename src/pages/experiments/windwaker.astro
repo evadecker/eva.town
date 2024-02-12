@@ -18,67 +18,77 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     const w = window.innerWidth;
     const h = window.innerHeight;
 
-    const cellSize = 5;
+    const cellSize = 6;
 
     const gridWidth = w / cellSize;
     const gridHeight = h / cellSize;
 
-    let scaleX: number;
-    let scaleY: number;
+    let resolution: number;
 
     let t = 0;
 
     p.setup = () => {
-      p.createCanvas(w, h);
+      p.createCanvas(w, h, p.WEBGL);
+      p.angleMode(p.DEGREES);
+      p.noStroke();
+      p.noSmooth();
 
-      // Random scale factors for noise
-      scaleX = 50;
-      scaleY = 50;
-
-      // No loop needed unless you want to animate or interact
-      // p.noLoop();
+      resolution = 0.02; // Scale factor for noise
     };
 
     p.draw = () => {
       p.background("#136aff");
-      p.noStroke();
+      p.translate(-w / 2, -h / 2);
       t += 0.005;
 
       // Dark blue
-      p.noiseSeed(88);
-      for (var i = 0; i < gridWidth; i++) {
-        for (var j = 0; j < gridHeight; j++) {
-          // Generate Perlin noise value for this cell
-          var noiseVal = p.noise(i / scaleX - t / 4, j / scaleY - t / 4, t / 4);
+      for (var x = 0; x < gridWidth; x++) {
+        for (var y = 0; y < gridHeight; y++) {
+          // Because the Perlin noise pattern repeats starting at 0,0,
+          // we need to offset the pattern to avoid reflected symmetry
+          const initialOffset = 1000;
+          const vDrift = -t / 2; // Move down
+          const hDrift = -t / 2; // Move right
 
-          // const displaceY = p.sin(i / 40 + t * 5) * 10;
+          const noiseVal = p.noise(
+            x * resolution + hDrift + initialOffset,
+            y * resolution + vDrift + initialOffset,
+            t / 4
+          );
 
           if (
-            (noiseVal > 0.3 && noiseVal < 0.35) ||
-            (noiseVal > 0.6 && noiseVal < 0.65)
+            (noiseVal > 0.3 && noiseVal < 0.34) ||
+            (noiseVal > 0.5 && noiseVal < 0.54) ||
+            (noiseVal > 0.7 && noiseVal < 0.74)
           ) {
             p.fill("#1461e3");
-            p.rect(i * cellSize, j * cellSize, cellSize, cellSize);
+            p.rect(x * cellSize, y * cellSize, cellSize, cellSize);
           }
         }
       }
 
       // White seafoam
-      p.noiseSeed(99);
-      for (var i = 0; i < gridWidth; i++) {
-        for (var j = 0; j < gridHeight; j++) {
-          // Generate Perlin noise value for this cell
-          var noiseVal = p.noise(i / scaleX + t / 4, j / scaleY + t / 4, t / 4);
+      for (var x = 0; x < gridWidth; x++) {
+        for (var y = 0; y < gridHeight; y++) {
+          const vDrift = t / 2; // Move up
+          const hDrift = t / 2; // Move left
 
-          const displaceY = p.sin(i / 40 + t * 5) * 20;
+          const noiseVal = p.noise(
+            x * resolution + hDrift,
+            y * resolution + vDrift,
+            t / 4
+          );
+
+          // const yWave = p.sin(x / 4) * cellSize;
 
           if (
-            (noiseVal > 0.3 && noiseVal < 0.34) ||
-            (noiseVal > 0.5 && noiseVal < 0.54) ||
-            (noiseVal > 0.8 && noiseVal < 0.84)
+            (noiseVal > 0.3 && noiseVal < 0.33) ||
+            (noiseVal > 0.5 && noiseVal < 0.53) ||
+            (noiseVal > 0.7 && noiseVal < 0.73) ||
+            (noiseVal > 0.9 && noiseVal < 0.93)
           ) {
             p.fill(224, 252, 255);
-            p.rect(i * cellSize, j * cellSize, cellSize, cellSize);
+            p.rect(x * cellSize, y * cellSize, cellSize, cellSize);
           }
         }
       }
@@ -91,9 +101,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 
 <style>
   #p5canvas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    display: fixed;
+    inset: 0;
   }
 </style>
