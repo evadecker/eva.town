@@ -43,10 +43,6 @@ import UnstyledBase from "../../../layouts/UnstyledBase.astro";
           // Generate Perlin noise value for this cell
           var noiseVal = p.noise(x / scaleX + t, y / scaleY + t);
 
-          // Map noise value to grayscale color
-          var colorValue = Math.floor((noiseVal + 1) * 128);
-          //console.log(noiseVal)
-
           if (noiseVal > 0 && noiseVal <= 0.4) {
             p.fill(colors[0]); // Set fill color
           }

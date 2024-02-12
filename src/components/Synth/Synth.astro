@@ -70,7 +70,7 @@ import SynthScreen from "./SynthScreen.astro";
     // State -------------------------------------------------------//
     let activeInstrument = 0;
     let isMouseDown = false;
-    let isTouching = false;
+    // let isTouching = false;
     let noteFadeOut: NodeJS.Timeout;
 
     const enableSynth = () => {
@@ -292,7 +292,7 @@ import SynthScreen from "./SynthScreen.astro";
     const handleTouchStart = function (this: SVGElement, e: TouchEvent) {
       e.preventDefault();
       hideKeyboardLetters();
-      isTouching = true;
+      // isTouching = true;
       pressKey(this.id as NoteName);
     };
 
@@ -303,11 +303,11 @@ import SynthScreen from "./SynthScreen.astro";
     //   }
     // };
 
-    const handleTouchMove = (e: TouchEvent) => {
-      // TODO: Fix
-      // let touch = e.originalEvent.touches[0];
-      // pressKeyMatchingCoords(touch.clientX, touch.clientY);
-    };
+    // const handleTouchMove = (e: TouchEvent) => {
+    // TODO: Fix
+    // let touch = e.originalEvent.touches[0];
+    // pressKeyMatchingCoords(touch.clientX, touch.clientY);
+    // };
 
     const handleMouseUp = () => {
       isMouseDown = false;
@@ -315,7 +315,7 @@ import SynthScreen from "./SynthScreen.astro";
     };
 
     const handleTouchEnd = () => {
-      isTouching = false;
+      // isTouching = false;
       releaseAllKeys();
     };
 
@@ -516,7 +516,7 @@ import SynthScreen from "./SynthScreen.astro";
         key.addEventListener("mouseout", handleMouseOut);
         key.addEventListener("touchstart", handleTouchStart);
         // key.addEventListener("touchenter", handleTouchEnter); FIX
-        key.addEventListener("touchmove", handleTouchMove);
+        // key.addEventListener("touchmove", handleTouchMove);
       });
       instrumentIconWrapper?.addEventListener("click", handleClickInstrument);
       document.addEventListener("keydown", handleKeyDown);
