@@ -1,0 +1,97 @@
+---
+import UnstyledBase from "../../layouts/UnstyledBase.astro";
+---
+
+<UnstyledBase
+  title="Windwaker Water"
+  description="Generating water in the style of TLoZ: Windwaker using P5."
+>
+  <div id="p5canvas"></div>
+</UnstyledBase>
+
+<script>
+  import p5 from "p5";
+
+  const sketch = (p: p5) => {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
+    const cellSize = 5;
+
+    const gridWidth = w / cellSize;
+    const gridHeight = h / cellSize;
+
+    let scaleX: number;
+    let scaleY: number;
+
+    let t = 0;
+
+    p.setup = () => {
+      p.createCanvas(w, h);
+
+      // Random scale factors for noise
+      scaleX = 50;
+      scaleY = 50;
+
+      // No loop needed unless you want to animate or interact
+      // p.noLoop();
+    };
+
+    p.draw = () => {
+      p.background("#136aff");
+      p.noStroke();
+      t += 0.005;
+
+      // Dark blue
+      p.noiseSeed(88);
+      for (var i = 0; i < gridWidth; i++) {
+        for (var j = 0; j < gridHeight; j++) {
+          // Generate Perlin noise value for this cell
+          var noiseVal = p.noise(i / scaleX - t / 4, j / scaleY - t / 4, t / 4);
+
+          // const displaceY = p.sin(i / 40 + t * 5) * 10;
+
+          if (
+            (noiseVal > 0.3 && noiseVal < 0.35) ||
+            (noiseVal > 0.6 && noiseVal < 0.65)
+          ) {
+            p.fill("#1461e3");
+            p.rect(i * cellSize, j * cellSize, cellSize, cellSize);
+          }
+        }
+      }
+
+      // White seafoam
+      p.noiseSeed(99);
+      for (var i = 0; i < gridWidth; i++) {
+        for (var j = 0; j < gridHeight; j++) {
+          // Generate Perlin noise value for this cell
+          var noiseVal = p.noise(i / scaleX + t / 4, j / scaleY + t / 4, t / 4);
+
+          const displaceY = p.sin(i / 40 + t * 5) * 20;
+
+          if (
+            (noiseVal > 0.3 && noiseVal < 0.34) ||
+            (noiseVal > 0.5 && noiseVal < 0.54) ||
+            (noiseVal > 0.8 && noiseVal < 0.84)
+          ) {
+            p.fill(224, 252, 255);
+            p.rect(i * cellSize, j * cellSize, cellSize, cellSize);
+          }
+        }
+      }
+    };
+  };
+
+  const canvas = document.getElementById("p5canvas");
+  export const myp5 = new p5(sketch, canvas!);
+</script>
+
+<style>
+  #p5canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
