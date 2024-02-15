@@ -16,7 +16,7 @@
 
 .stickerPath:hover,
 .sticker:active .stickerPath {
-  stroke: var(--jade-9);
+  stroke: var(--gray-9);
   stroke-width: 6px;
 }
 

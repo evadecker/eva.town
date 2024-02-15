@@ -4,8 +4,8 @@ html {
 }
 
 body {
-  color: var(--jade-12);
-  background-color: var(--jade-4);
+  color: var(--gray-12);
+  background-color: var(--gray-1);
   display: flex;
   min-height: 100%;
   position: relative;
@@ -21,11 +21,10 @@ body {
 body.dark {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--jade-1);
 }
 
 ::selection {
-  background: var(--jade-9);
+  background: var(--amber-a4);
 }
 
 h1,

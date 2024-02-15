@@ -10,8 +10,8 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  color: var(--jade-12);
-  transition: transform 0.2s ease-in-out;
+  color: var(--gray-12);
+  transition: 0.2s ease-in-out;
 }
 
 .toggleButton:disabled {
@@ -19,11 +19,13 @@
 }
 
 .toggleButton:hover {
-  background: var(--jade-a3);
+  background: var(--amber-a3);
+  color: var(--amber-12);
 }
 
-.toggleButton:active {
-  background: var(--jade-a4);
+.toggleButton.dark:hover {
+  background: var(--purple-a3);
+  color: var(--purple-12);
 }
 
 .toggleButton svg {

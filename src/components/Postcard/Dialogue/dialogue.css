@@ -12,7 +12,7 @@
 }
 
 .bubble {
-  background-color: var(--jade-4);
+  background-color: var(--jade-3);
   border: 3px solid var(--jade-12);
   box-shadow: 0 2px 0 var(--jade-12);
   padding: 0.5rem var(--space-m);

@@ -36,10 +36,11 @@ export const collections = {
         title: z.string(),
         description: z.string(),
         datePublished: z.date(),
-        img: image().array().optional(),
+        img: image().optional(),
         imgAlt: z.string().optional(),
-        url: z.string(),
+        url: z.string().optional(),
         repo: z.string().optional(), // GitHub repo, e.g. evadecker/america-my-face
+        draft: z.boolean().optional(),
       }),
   }),
 };

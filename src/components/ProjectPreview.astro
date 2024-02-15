@@ -1,51 +1,51 @@
 ---
-import dayjs from "dayjs";
+import { Image } from "astro:assets";
 
 import { smartquotes } from "../helpers/helpers";
 import { Icon } from "./Icon/Icon";
-import Picture from "./Picture.astro";
 
 interface Props {
   title: string;
   description: string;
   datePublished: Date;
-  url: string;
+  url?: string;
   repo?: string;
-  img?: ImageMetadata[];
+  img?: ImageMetadata;
   imgAlt?: string;
+  disabled?: boolean;
 }
 
-const { title, description, datePublished, url, repo, img, imgAlt } =
-  Astro.props;
-
-const date = dayjs(datePublished).format("MMMM YYYY");
+const { title, description, url, repo, img, imgAlt, disabled } = Astro.props;
 ---
 
-<div class="project">
+<div class:list={["project", { disabled }]}>
   {
     img && imgAlt && (
       <a class="img" href={url}>
-        <Picture img={img} imgAlt={imgAlt} />
+        <Image src={img} alt={imgAlt} />
       </a>
     )
   }
   <div class="details">
     <a class="title" href={url}>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
     </a>
     <div class="description">
-      {smartquotes(description)}{" "}
-      <time class="date" datetime={datePublished.toString()}>{date}</time>
+      {smartquotes(description)}
     </div>
     <footer class="links">
-      <a class="link" href={url}>
-        <Icon icon="link" size="small" />
-        <span class="url">{url.replace(/^https?:\/\//, "")}</span>
-      </a>
+      {
+        url && (
+          <a class="link" href={url}>
+            <Icon icon="link" size="16" />
+            <span class="url">{url.replace(/^https?:\/\//, "")}</span>
+          </a>
+        )
+      }
       {
         repo && (
           <a class="link" href={`https://github.com/${repo}`}>
-            <Icon icon="github" size="small" />
+            <Icon icon="github" size="16" />
             <span class="url">{repo}</span>
           </a>
         )
@@ -59,39 +59,47 @@ const date = dayjs(datePublished).format("MMMM YYYY");
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-l);
+    background-color: var(--gray-3);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--gray-a3);
+      border-radius: var(--radius-m);
+      pointer-events: none;
+    }
+
+    &.disabled {
+      opacity: 0.5;
+    }
   }
 
   .details {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-s);
+    gap: var(--space-2xs);
+    padding: var(--space-m);
     width: 100%;
   }
 
   .img {
-    background-color: var(--jade-3);
-    border-radius: var(--radius-m);
-    overflow: hidden;
+    background-color: var(--gray-3);
     width: 100%;
+    display: block;
+    line-height: 0;
+  }
 
-    &:hover {
-      background-color: var(--jade-4);
-    }
+  .title h3 {
+    font-size: var(--step-1);
   }
 
   .description {
-    line-height: 1.4;
-  }
-
-  .date {
-    color: var(--jade-11);
-
-    &::before {
-      content: "— ";
-      white-space: pre;
-    }
+    line-height: 1.3;
   }
 
   .links {
@@ -99,21 +107,22 @@ const date = dayjs(datePublished).format("MMMM YYYY");
     flex-flow: row wrap;
     max-width: 100%;
     column-gap: var(--space-m);
+    font-size: var(--step--1);
   }
 
   .link {
     display: flex;
     align-items: center;
-    gap: var(--space-xs);
-    color: var(--jade-11);
+    gap: var(--space-2xs);
+    color: var(--gray-11);
     padding-block: var(--space-2xs);
     max-width: 100%;
     line-height: 1.1;
 
     &:hover {
-      color: var(--jade-12);
+      color: var(--gray-12);
       text-decoration: underline;
-      text-decoration-color: var(--jade-7);
+      text-decoration-color: var(--gray-7);
       text-underline-offset: 0.1em;
     }
 

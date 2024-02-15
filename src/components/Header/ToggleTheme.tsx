@@ -1,6 +1,6 @@
 import "./toggle-theme.css";
 
-import { jade, jadeDark } from "@radix-ui/colors";
+import { gray, grayDark } from "@radix-ui/colors";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 
@@ -29,7 +29,7 @@ export const ToggleTheme = () => {
     if (metaTheme !== null)
       metaTheme.setAttribute(
         "content",
-        activeTheme === "dark" ? jadeDark.jade1 : jade.jade4
+        activeTheme === "dark" ? grayDark.gray1 : gray.gray1
       );
   }, [activeTheme]);
 
@@ -48,11 +48,11 @@ export const ToggleTheme = () => {
         onMouseOut={() => {
           setIsHovering(false);
         }}
-        className="toggleButton"
+        className={classNames("toggleButton", { dark: activeTheme === "dark" })}
       >
         <Icon
           icon="sun"
-          size="small"
+          size="20"
           variant={isHovering ? "filled" : "line"}
           className={classNames("sun", {
             active: activeTheme === "light",
@@ -60,7 +60,7 @@ export const ToggleTheme = () => {
         />
         <Icon
           icon="moon"
-          size="small"
+          size="20"
           variant={isHovering ? "filled" : "line"}
           className={classNames("moon", {
             active: activeTheme === "dark",
