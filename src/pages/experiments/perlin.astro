@@ -19,7 +19,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     const w = window.innerWidth;
     const h = window.innerHeight;
 
-    const cellSize = 8;
+    const cellSize = 6;
 
     let palette = colors[0];
 
@@ -38,19 +38,16 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
       p.noiseSeed(Math.random());
 
       // Random scale factors for noise
-      scaleX = Math.random() * 50;
-      scaleY = Math.random() * 50;
+      scaleX = Math.random() * 40;
+      scaleY = Math.random() * 40;
 
       palette = colors[Math.floor(Math.random() * colors.length)];
-
-      // No loop needed unless you want to animate or interact
-      // p.noLoop();
     };
 
     p.draw = () => {
       p.background(255);
       p.noStroke();
-      t += 0.005;
+      t += 0.01;
 
       for (var i = 0; i < gridWidth; i++) {
         for (var j = 0; j < gridHeight; j++) {
@@ -83,6 +80,8 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100dvh;
+    position: fixed;
+    inset: 0;
   }
 </style>
