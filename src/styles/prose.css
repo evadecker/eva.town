@@ -21,7 +21,7 @@
 .prose li a {
   position: relative;
   text-decoration: underline;
-  text-decoration-color: var(--jade-8);
+  text-decoration-color: var(--gray-8);
   text-underline-offset: 0.1em;
   transition: all 0.2s ease-in-out;
 }
@@ -41,7 +41,7 @@
 .prose h4 a,
 .prose h5 a,
 .prose h6 a {
-  color: var(--jade-11);
+  color: var(--gray-11);
   display: inline-flex;
   align-items: center;
   margin-inline-start: var(--space-s);
@@ -53,7 +53,7 @@
 
 .prose a:hover,
 .prose a:focus {
-  color: var(--jade-11);
+  color: var(--gray-11);
 }
 
 .prose h1 a:hover,
@@ -62,7 +62,7 @@
 .prose h4 a:hover,
 .prose h5 a:hover,
 .prose h6 a:hover {
-  background-color: var(--jade-3);
+  background-color: var(--gray-3);
 }
 
 .prose h1 a svg,
@@ -79,7 +79,7 @@
 .prose p a:focus,
 .prose li a:hover,
 .prose li a:focus {
-  text-decoration-color: var(--jade-9);
+  text-decoration-color: var(--gray-9);
 }
 
 .prose h2 {
@@ -121,7 +121,7 @@
   position: absolute;
   width: 1.3em;
   left: -1.3em;
-  color: var(--jade-11);
+  color: var(--gray-11);
 }
 
 .prose ul li::before {
@@ -138,7 +138,7 @@
 }
 
 .prose code {
-  background-color: var(--jade-3);
+  background-color: var(--gray-3);
   border-radius: var(--radius-xs);
   padding: 0.15em 0.3em;
   font-size: 0.8em;
@@ -147,14 +147,14 @@
 .prose abbr {
   border-bottom: none;
   text-decoration: dotted underline;
-  text-decoration-color: var(--jade-7);
+  text-decoration-color: var(--gray-7);
   text-underline-offset: 0.1em;
   position: relative;
   cursor: help;
 }
 
 .prose blockquote {
-  border-left: 2px solid var(--jade-7);
+  border-left: 2px solid var(--gray-7);
   padding-left: var(--space-l);
   font-style: italic;
   hanging-punctuation: first;
@@ -167,7 +167,7 @@
 
 .prose blockquote cite::before {
   content: "—";
-  color: var(--jade-11);
+  color: var(--gray-11);
   margin-inline-end: var(--space-xs);
 }
 

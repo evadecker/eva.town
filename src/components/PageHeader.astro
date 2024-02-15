@@ -18,14 +18,14 @@ const { title, description, img, imgAlt, datePublished, dateModified } =
 ---
 
 <header class="page-header">
-  {
-    img && imgAlt && (
-      <div class="page-image">
-        <Picture img={img} imgAlt={imgAlt} />
-      </div>
-    )
-  }
   <Center>
+    {
+      img && imgAlt && (
+        <div class="page-image">
+          <Picture img={img} imgAlt={imgAlt} />
+        </div>
+      )
+    }
     <h1 itemprop="name" class="page-title">
       {title}
     </h1>
@@ -54,35 +54,18 @@ const { title, description, img, imgAlt, datePublished, dateModified } =
 </header>
 
 <style>
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    100% {
-      opacity: 0;
-    }
-  }
-
   .page-header {
     padding-block-end: var(--space-3xl);
   }
 
   .page-image {
-    background: var(--jade-5);
+    background: var(--gray-5);
     display: flex;
     flex-direction: row;
     justify-content: center;
     overflow: hidden;
-  }
-
-  @supports (animation-timeline: view()) {
-    .page-image {
-      animation: fadeOut linear forwards;
-      animation-timeline: view();
-      animation-range: exit 0% exit calc(100% - 80px);
-    }
+    border-radius: var(--radius-s);
+    margin-block-start: var(--space-m);
   }
 
   .page-title {

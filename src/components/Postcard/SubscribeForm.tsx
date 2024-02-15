@@ -267,8 +267,8 @@ export const SubscribeForm = () => {
         <div>
           <h2>Subscribe</h2>
           <p>
-            I send email a few times a year about design and web dev and life.
-            Sometimes with cat pics.
+            I send newsletters a few times a year about design and web dev and
+            life.
           </p>
         </div>
         <Dialogue

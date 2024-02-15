@@ -34,7 +34,7 @@
 
 .input {
   color: var(--jade-12);
-  background: var(--jade-4);
+  background: var(--jade-3);
   padding: 0 var(--space-l);
   padding-inline-end: 4rem;
   z-index: 1;
@@ -47,7 +47,7 @@
 
 .iconButton {
   background: var(--jade-12);
-  color: var(--jade-4);
+  color: var(--jade-3);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -109,7 +109,7 @@
 }
 
 .checkInbox {
-  background: var(--jade-4);
+  background: var(--jade-3);
   color: var(--jade-12);
   text-align: center;
   display: flex;

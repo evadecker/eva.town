@@ -13,11 +13,11 @@ const sortedProjects = projects.sort((a, b) =>
 );
 
 const title = "Projects";
-const description = "It’s things I made for internet.";
+const description = "Utilities and artworks for the web.";
 ---
 
 <BaseLayout title={title} description={description} includeFooter padBottom>
-  <PageHeader title={title} description={description} slug="projects" />
+  <PageHeader title={title} slug="projects" />
   <Center>
     <section class="projects">
       {
@@ -54,7 +54,7 @@ const description = "It’s things I made for internet.";
   }
 
   .banner {
-    background: var(--jade-3);
+    background: var(--gray-3);
     border-radius: var(--radius-s);
     padding: var(--space-m) var(--space-l);
 
@@ -64,7 +64,7 @@ const description = "It’s things I made for internet.";
     }
 
     a {
-      color: var(--jade-9);
+      color: var(--gray-9);
       text-decoration: underline;
     }
   }
