@@ -38,19 +38,3 @@ To insert dates in the frontmatter of Markdown files, use the [Insert Date Strin
 
 > [!IMPORTANT]  
 > Remember to update `dateModified` when revising articles! It's a mildly annoying manual step, yes, but it's easier (for now) than building something to handle setting dates automatically.
-
-### Adding New Dithered Images
-
-![Dithering!](src/content/pages/about/img900.webp)
-
-The primary images on pages use Atkinson dithering. I'd like to automate this pipeline at some point, but it's manual for now. Here's how to do it.
-
-1. Grab your source image and scale the width to 1200px using an app like Preview. Crop the height to 630px. 1200&times;630 is the aspect ratio used for Open Graph images and this ratio is currently enforced for header images in order to prevent layout shift on image load.
-2. Open up https://app.dithermark.com and upload the cropped image.
-3. Change the settings to "BW Dither" and change the algorithm to "Atkinson".
-4. (Optional) Drag the threshold slider until you have a result that feels nice.
-5. Export the file as `.webp`. I like to prefix the size at the end of the image, like `img1200.webp`.
-6. Resize your image again, down to 900px. Repeat the steps in Dithermark for the new image and export another `.webp`.
-7. Repeat the same steps for 600px.
-8. Add the images to the content directory and link them from the frontmatter as an array, [like this](https://github.com/evadecker/eva.town/blob/9257f833528852114ffa88cb4907113697072b43/src/content/pages/about/index.md?plain=1#L6).
-9. Add an `imgAlt` in the frontmatter.
