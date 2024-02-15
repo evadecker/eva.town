@@ -37,10 +37,10 @@ export interface IconProps {
   variant?: "line" | "filled";
 
   /**
-   * Use small (16px) or default (24px) icon
-   * @default "default"
+   * Icon size in px
+   * @default "24"
    */
-  size?: "small" | "default";
+  size?: "16" | "20" | "24";
 
   className?: string;
 }
@@ -152,7 +152,11 @@ export const Icon = ({ icon, variant, size, className }: IconProps) => {
       fill="currentColor"
       width="24"
       height="24"
-      className={classNames("icon", { small: size === "small" }, className)}
+      className={classNames(
+        "icon",
+        { small: size === "20", extraSmall: size === "16" },
+        className
+      )}
       aria-hidden="true"
     >
       <path d={pathData}></path>

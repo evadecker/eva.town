@@ -52,7 +52,7 @@ export const ToggleTheme = () => {
       >
         <Icon
           icon="sun"
-          size="small"
+          size="20"
           variant={isHovering ? "filled" : "line"}
           className={classNames("sun", {
             active: activeTheme === "light",
@@ -60,7 +60,7 @@ export const ToggleTheme = () => {
         />
         <Icon
           icon="moon"
-          size="small"
+          size="20"
           variant={isHovering ? "filled" : "line"}
           className={classNames("moon", {
             active: activeTheme === "dark",
