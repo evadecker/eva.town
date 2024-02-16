@@ -24,7 +24,8 @@ body.dark {
 }
 
 ::selection {
-  background: var(--amber-a4);
+  background: var(--amber-4);
+  color: var(--amber-12);
 }
 
 h1,
