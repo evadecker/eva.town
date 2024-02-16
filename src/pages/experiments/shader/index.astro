@@ -8,6 +8,8 @@ import UnstyledBase from "../../../layouts/UnstyledBase.astro";
 
 <script>
   import p5 from "p5";
+  import shaderVert from "./shader.vert?raw";
+  import shaderFrag from "./shader.frag?raw";
 
   const sketch = (p: p5) => {
     const w = window.innerWidth;
@@ -16,7 +18,7 @@ import UnstyledBase from "../../../layouts/UnstyledBase.astro";
     let shader: p5.Shader;
 
     p.preload = () => {
-      shader = p.loadShader("shader.vert", "shader.frag");
+      shader = p.createShader(shaderVert, shaderFrag);
     };
 
     p.setup = () => {
@@ -26,6 +28,9 @@ import UnstyledBase from "../../../layouts/UnstyledBase.astro";
 
     p.draw = () => {
       p.shader(shader);
+      shader.setUniform("u_resolution", [w, h]);
+      shader.setUniform("u_mouse", [p.mouseX, p.mouseY]);
+      shader.setUniform("u_time", p.millis() / 1000);
       p.rect(0, 0, w, h);
     };
 
