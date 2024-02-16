@@ -16,7 +16,8 @@
     "stylelint": "npx stylelint '**/*.{css,scss,astro}'",
     "test": "playwright test",
     "prettier": "prettier --write .",
-    "html-validate": "pnpm build && pnpm exec html-validate .vercel/output/static/*.html"
+    "html-validate": "pnpm build && pnpm exec html-validate .vercel/output/static/*.html",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
@@ -67,6 +68,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "hastscript": "^8.0.0",
     "html-validate": "^8.9.1",
+    "husky": "^9.0.11",
     "postcss-html": "^1.6.0",
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.13.0",
