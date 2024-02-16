@@ -19,12 +19,12 @@
 }
 
 .toggleButton:hover {
-  background: var(--amber-a3);
+  background: var(--amber-4);
   color: var(--amber-12);
 }
 
 .toggleButton.dark:hover {
-  background: var(--purple-a3);
+  background: var(--purple-4);
   color: var(--purple-12);
 }
 

@@ -1,12 +1,3 @@
-.prose::after {
-  content: "⁂";
-  display: block;
-  text-align: center;
-  padding-top: var(--space-2xl);
-  padding-bottom: var(--space-2xl);
-  font-size: var(--step-3);
-}
-
 .prose a {
   text-indent: 0;
 }
