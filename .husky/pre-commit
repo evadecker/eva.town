@@ -1,2 +1,1 @@
-astro check
-pnpm lint
+pnpm astro check
