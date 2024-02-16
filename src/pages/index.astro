@@ -17,8 +17,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
     <div class="intro">
       <p>
-        Eva Decker is a freelance web developer based in Brooklyn, NY. She has
-        worked as a product designer and UX engineer at places like
+        <strong>Eva Decker</strong>
+        <span class="pronouns">(she/they)</span> is a designer and engineer based
+        in Brooklyn, NY. She has worked at places like
         <a href="https://www.dropbox.com">Dropbox</a>, <a
           href="https://www.cityblock.com">Cityblock</a
         >, and <a href="https://swiftype.com">Swiftype</a>. She likes writing
@@ -43,6 +44,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     position: absolute;
     white-space: nowrap;
     width: 1px;
+  }
+
+  .pronouns {
+    color: var(--gray-11);
   }
 
   .grid {
