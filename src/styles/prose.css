@@ -7,12 +7,6 @@
   font-size: var(--step-3);
 }
 
-.prose p,
-.prose ol,
-.prose ul {
-  font-family: var(--font-serif);
-}
-
 .prose a {
   text-indent: 0;
 }

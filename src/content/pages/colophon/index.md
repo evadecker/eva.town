@@ -26,7 +26,7 @@ Domain registration, hosting, and deployment are via [Vercel](https://vercel.com
 
 ## Typography
 
-Body text is set in [Minion](https://fonts.adobe.com/fonts/minion-3), while headings and UI are set in [Franklin Gothic URW](https://fonts.adobe.com/fonts/franklin-gothic-urw). Both typefaces are served via [Adobe Fonts](https://fonts.adobe.com). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
+Text is set in [Franklin Gothic URW](https://fonts.adobe.com/fonts/franklin-gothic-urw) served via [Adobe Fonts](https://fonts.adobe.com). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
 
 Type inspiration can be found anywhere, from comic art and video games to bodega window displays, but I often return to a handful of resources:
 
