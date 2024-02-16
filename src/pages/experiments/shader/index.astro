@@ -1,0 +1,50 @@
+---
+import UnstyledBase from "../../../layouts/UnstyledBase.astro";
+---
+
+<UnstyledBase title="Shader experiments" description="Playing with shaders.">
+  <div id="p5canvas"></div>
+</UnstyledBase>
+
+<script>
+  import p5 from "p5";
+
+  const sketch = (p: p5) => {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
+    let shader: p5.Shader;
+
+    p.preload = () => {
+      shader = p.loadShader("shader.vert", "shader.frag");
+    };
+
+    p.setup = () => {
+      p.createCanvas(w, h, p.WEBGL);
+      p.noStroke();
+    };
+
+    p.draw = () => {
+      p.shader(shader);
+      p.rect(0, 0, w, h);
+    };
+
+    p.windowResized = () => {
+      p.resizeCanvas(window.innerWidth, window.innerHeight);
+    };
+  };
+
+  const canvas = document.getElementById("p5canvas");
+  export const myp5 = new p5(sketch, canvas!);
+</script>
+
+<style>
+  #p5canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    position: fixed;
+    inset: 0;
+  }
+</style>

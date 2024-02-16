@@ -16,15 +16,9 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
   import colors from "nice-color-palettes";
 
   const sketch = (p: p5) => {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-
     const cellSize = 6;
 
     let palette = colors[0];
-
-    const gridWidth = w / cellSize;
-    const gridHeight = h / cellSize;
 
     let scaleX: number;
     let scaleY: number;
@@ -32,7 +26,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     let t = 0;
 
     p.setup = () => {
-      p.createCanvas(w, h);
+      p.createCanvas(p.windowWidth, p.windowHeight);
 
       // Seed the noise function
       p.noiseSeed(Math.random());
@@ -47,6 +41,10 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     p.draw = () => {
       p.background(255);
       p.noStroke();
+
+      const gridWidth = p.windowWidth / cellSize;
+      const gridHeight = p.windowHeight / cellSize;
+
       t += 0.01;
 
       for (var i = 0; i < gridWidth; i++) {
@@ -68,6 +66,10 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
           p.rect(i * cellSize, j * cellSize, cellSize, cellSize);
         }
       }
+    };
+
+    p.windowResized = () => {
+      p.resizeCanvas(p.windowWidth, p.windowHeight);
     };
   };
 
