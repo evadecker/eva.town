@@ -1,8 +1,8 @@
 ---
 title: About Eva
-description: Designer and medium-good software engineer.
+description: Pushing pixels (non-derogatory).
 datePublished: 2023-10-03 01:03:55-04:00
-dateModified: 2024-01-25 14:05:21-05:00
+dateModified: 2024-02-16 17:48:39-05:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: A Mac desktop with various application windows, including Figma and Chrome. At the front is Photo Booth, with the countdown timer at 1, about to take a photo of Eva.
 ogImage: ./img1200.webp
