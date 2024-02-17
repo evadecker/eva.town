@@ -70,24 +70,44 @@ const description = "Utilities and artworks for the web.";
   .projects {
     display: flex;
     flex-direction: column;
-    gap: 3em;
     padding-block: 2em 4em;
   }
 
   .year {
-    display: block;
     background-color: var(--gray-1);
+    display: block;
+    text-align: center;
+    font-size: var(--step-1);
+    padding-block: var(--space-s);
     position: sticky;
     top: 0;
-    font-size: var(--step-3);
-    padding-block: var(--space-s);
     z-index: 1;
+
+    time {
+      background: var(--gray-1);
+      padding: 0 var(--space-xs);
+      position: relative;
+      z-index: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gray-5);
+      top: 50%;
+      z-index: -1;
+    }
   }
 
   .projects-list {
     display: flex;
     flex-direction: column;
     gap: var(--space-m);
+    padding-block: var(--space-m);
   }
 
   .banner {
