@@ -36,13 +36,23 @@ export const collections = {
         title: z.string(),
         description: z.string(),
         datePublished: z.date(),
-        img: image().optional(),
-        imgAlt: z.string().optional(),
-        video: z.string().optional(),
-        videoPoster: z.string().optional(),
-        url: z.string().optional(),
+        img: z
+          .object({
+            src: image(),
+            alt: z.string(),
+          })
+          .optional(),
+        video: z
+          .object({
+            src: z.string(),
+            poster: z.string(),
+          })
+          .optional(),
         repo: z.string().optional(), // GitHub repo, e.g. evadecker/america-my-face
-        draft: z.boolean().optional(),
+        cta: z.object({
+          text: z.string(),
+          url: z.string().optional(), // If no URL is set, button will be disabled
+        }),
       }),
   }),
 };
