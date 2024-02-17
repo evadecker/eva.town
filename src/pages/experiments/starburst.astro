@@ -18,9 +18,6 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
   import * as brush from "p5.brush";
 
   const sketch = (p: p5) => {
-    const w = p.windowWidth;
-    const h = p.windowHeight;
-
     let canvasSize = p.min(p.windowWidth, p.windowHeight);
 
     const count = 90;
