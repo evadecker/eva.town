@@ -1,4 +1,5 @@
 ---
+import InlineBrandLink from "../components/InlineBrandLink.astro";
 import Phone from "../components/Phone.astro";
 import Postcard from "../components/Postcard/Postcard.astro";
 import Synth from "../components/Synth/Synth.astro";
@@ -17,13 +18,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
     <div class="intro">
       <p>
-        <strong>Eva Decker</strong>
+        <a href="/about" class="inline-link">Eva Decker</a>
         <span class="pronouns">(she/they)</span> is a designer and engineer based
         in Brooklyn, NY. She has worked at places like
-        <a href="https://www.dropbox.com">Dropbox</a>, <a
-          href="https://www.cityblock.com">Cityblock</a
-        >, and <a href="https://swiftype.com">Swiftype</a>. She likes writing
-        CSS.
+        <InlineBrandLink brand="dropbox" punctuation="," />
+        <InlineBrandLink brand="cityblock" punctuation="," /> and <InlineBrandLink
+          brand="swiftype"
+          punctuation="."
+        /> She likes writing CSS.
       </p>
     </div>
     <div class="synth">
@@ -33,91 +35,91 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <Postcard />
     </div>
   </div>
-</BaseLayout>
 
-<style lang="scss">
-  .visuallyhidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
+  <style lang="scss">
+    .visuallyhidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
 
-  .pronouns {
-    color: var(--gray-11);
-  }
+    .pronouns {
+      color: var(--gray-11);
+    }
 
-  .grid {
-    display: grid;
-    padding: var(--space-xl);
-    grid-template:
-      "phone intro intro"
-      "phone synth synth"
-      "postcard postcard postcard";
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-3xl);
-    width: 1080px;
-    max-width: 100%;
-    margin-inline: auto;
-    overflow: hidden;
-
-    @media (width < 900px) {
-      width: 660px;
+    .grid {
+      display: grid;
+      padding: var(--space-xl);
       grid-template:
-        "phone"
-        "intro"
-        "synth"
-        "postcard";
-      align-items: center;
-    }
-  }
+        "phone intro intro"
+        "phone synth synth"
+        "postcard postcard postcard";
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3xl);
+      width: 1080px;
+      max-width: 100%;
+      margin-inline: auto;
+      overflow: hidden;
 
-  .phone {
-    grid-area: phone;
-    display: flex;
-    justify-content: center;
-  }
-
-  .intro {
-    grid-area: intro;
-    justify-self: flex-start;
-
-    p {
-      font-size: var(--step-1);
-      max-width: 36ch;
-      transform: rotate(-2deg);
-      line-height: 1.2;
-    }
-
-    a {
-      text-decoration: underline;
-      text-decoration-color: var(--gray-11);
-      text-underline-offset: 0.1em;
-
-      &:hover {
-        text-decoration-color: var(--gray-12);
+      @media (width < 900px) {
+        width: 660px;
+        grid-template:
+          "phone"
+          "intro"
+          "synth"
+          "postcard";
+        align-items: center;
       }
     }
 
-    @media (width < 900px) {
-      place-self: center;
+    .phone {
+      grid-area: phone;
+      display: flex;
+      justify-content: center;
+    }
+
+    .intro {
+      grid-area: intro;
+      justify-self: flex-start;
+
+      :global(a) {
+        font-weight: var(--font-weight-bold);
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: var(--gray-8);
+          text-underline-offset: 0.1em;
+        }
+      }
 
       p {
-        max-width: 26ch;
+        font-size: var(--step-1);
+        max-width: 36ch;
+        transform: rotate(-2deg);
+        line-height: 1.2;
+      }
+
+      @media (width < 900px) {
+        place-self: center;
+
+        p {
+          max-width: 26ch;
+        }
       }
     }
-  }
 
-  .synth {
-    grid-area: synth;
-    display: flex;
-    justify-content: center;
-  }
+    .synth {
+      grid-area: synth;
+      display: flex;
+      justify-content: center;
+    }
 
-  .postcard {
-    grid-area: postcard;
-  }
-</style>
+    .postcard {
+      grid-area: postcard;
+    }
+  </style>
+</BaseLayout>
