@@ -8,6 +8,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
   ogImage="/og/hypersensitive.png"
   ogAlt="The event is too bright. The city is too uncomfortable. The brain is too humid. The light is too nervous."
 >
+  <div class="scanlines"></div>
   <main id="canvas"></main>
 </UnstyledBase>
 
@@ -457,12 +458,28 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 </script>
 
 <style is:global lang="scss">
-  html,
-  body {
-    background: #111;
+  @keyframes flicker {
+    0% {
+      opacity: 0.95;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGCAYAAAD37n+BAAAALElEQVQYV2NkYGD4/x9IMAIxAxoDmzhIHfU0gCxFB9S1AacfsFmNJQzAoQIAH84j/OCkeYUAAAAASUVORK5CYII=");
+    background-size: 12px 6px;
+    opacity: 0.05;
   }
 
   #canvas {
+    background: #111;
     position: relative;
     height: 100dvh;
     width: 100vw;
@@ -483,6 +500,9 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     font-weight: 500;
     font-size: 40px;
     line-height: 1;
+    animation: flicker 20ms infinite;
+    z-index: -1;
+    filter: blur(1px);
 
     @media (width < 960px) {
       font-size: 32px;
@@ -494,8 +514,10 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
   }
 
   .affirmation {
+    color: white;
     height: 100%;
     width: 100%;
+    padding-inline: 2vw;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -516,5 +538,9 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     line-height: 1;
     text-transform: uppercase;
     display: inline;
+    box-shadow:
+      -1.5px 0 0 rgb(0 0 255 / 30%),
+      1.5px 0 0 rgb(255 0 0 / 30%),
+      0 1.5px 0 rgb(0 255 0 / 10%);
   }
 </style>
