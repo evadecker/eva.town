@@ -12,10 +12,22 @@ interface Props {
   repo?: string;
   img?: ImageMetadata;
   imgAlt?: string;
+  video?: string;
+  videoPoster?: string;
   disabled?: boolean;
 }
 
-const { title, description, url, repo, img, imgAlt, disabled } = Astro.props;
+const {
+  title,
+  description,
+  url,
+  repo,
+  img,
+  imgAlt,
+  video,
+  videoPoster,
+  disabled,
+} = Astro.props;
 ---
 
 <div class:list={["project", { disabled }]}>
@@ -24,6 +36,20 @@ const { title, description, url, repo, img, imgAlt, disabled } = Astro.props;
       <a class="img" href={url}>
         <Image src={img} alt={imgAlt} />
       </a>
+    )
+  }
+  {
+    video && videoPoster && (
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="none"
+        poster={videoPoster}
+      >
+        <source src={video} type="video/mp4" />
+      </video>
     )
   }
   <div class="details">

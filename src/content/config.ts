@@ -38,6 +38,8 @@ export const collections = {
         datePublished: z.date(),
         img: image().optional(),
         imgAlt: z.string().optional(),
+        video: z.string().optional(),
+        videoPoster: z.string().optional(),
         url: z.string().optional(),
         repo: z.string().optional(), // GitHub repo, e.g. evadecker/america-my-face
         draft: z.boolean().optional(),
