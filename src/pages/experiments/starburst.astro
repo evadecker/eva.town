@@ -1,0 +1,88 @@
+---
+import UnstyledBase from "../../layouts/UnstyledBase.astro";
+---
+
+<UnstyledBase
+  title="Starburst"
+  description="Procedurally generated"
+  ogImage="/og/perlin.png"
+  ogAlt="A collection of pixelated blobs in various colors."
+>
+  <div id="p5canvas"></div>
+</UnstyledBase>
+
+<script>
+  import p5 from "p5";
+  // No existing type defs for p5.brush
+  // @ts-ignore
+  import * as brush from "p5.brush";
+
+  const sketch = (p: p5) => {
+    const w = p.windowWidth;
+    const h = p.windowHeight;
+
+    const margin = p.min(w, h) * 0.01;
+
+    let canvasSize = p.min(p.windowWidth, p.windowHeight);
+
+    const count = 90;
+    const maxLength = canvasSize * 0.5 - margin;
+
+    const whiteLineIntensity = 2;
+    const redLineIntensity = 0.5;
+
+    brush.instance(p);
+
+    p.setup = () => {
+      p.createCanvas(canvasSize, canvasSize, p.WEBGL);
+      p.angleMode(p.DEGREES);
+
+      brush.load();
+
+      p.noLoop();
+    };
+
+    p.draw = () => {
+      p.background("#111111");
+
+      brush.set("rotring", "#f5f5f5", 8);
+
+      for (let i = 0; i < count; i++) {
+        let currentAngle = (360 / count) * i;
+        let xoff = p.map(p.cos(currentAngle), -1, 1, 0, whiteLineIntensity);
+        let yoff = p.map(p.sin(currentAngle), -1, 1, 0, whiteLineIntensity);
+        brush.flowLine(
+          0,
+          0,
+          p.noise(xoff, yoff) * maxLength,
+          (360 / count) * i
+        );
+      }
+
+      brush.beginShape(0.5);
+      brush.stroke("red");
+      for (let a = 0; a < 360; a += 0.5) {
+        let xoff = p.map(p.cos(a), -1, 1, 0, redLineIntensity);
+        let yoff = p.map(p.sin(a), -1, 1, 0, redLineIntensity);
+        let r = p.map(p.noise(xoff, yoff), 0, 1, 0, maxLength);
+        let x = r * p.cos(a);
+        let y = r * p.sin(a);
+        brush.vertex(x, y);
+      }
+      brush.endShape();
+    };
+  };
+
+  const canvas = document.getElementById("p5canvas");
+  export const myp5 = new p5(sketch, canvas!);
+</script>
+
+<style>
+  #p5canvas {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+  }
+</style>
