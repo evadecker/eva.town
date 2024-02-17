@@ -1,0 +1,90 @@
+---
+import UnstyledBase from "../../layouts/UnstyledBase.astro";
+---
+
+<UnstyledBase
+  title="Topography"
+  description="Generative topographical sketches using P5.js and P5.brush."
+  ogImage="/og/topography.png"
+  ogAlt="Three layers of mountains fade into the distance. The mountains are made up of hatch lines in a variety of colors."
+>
+  <div id="p5canvas"></div>
+</UnstyledBase>
+
+<script>
+  import p5 from "p5";
+  // No existing type defs for p5.brush
+  // @ts-ignore
+  import * as brush from "p5.brush";
+
+  const sketch = (p: p5) => {
+    const margin = p.min(p.windowWidth, p.windowHeight) * 0.05;
+
+    let canvasWidth = p.windowWidth;
+    let canvasHeight = p.windowHeight;
+
+    const rowCount = 3;
+
+    const intensity = p.random(0.0005, 0.002);
+
+    const palettes = [
+      ["#FFEBC9", "#D79771", "#B05B3B", "#753422"],
+      ["#FFE7E7", "#CAA6A6", "#B47B84", "#944E63"],
+      ["#ECE3CE", "#739072", "#4F6F52", "#3A4D39"],
+      ["#EEF5FF", "#94aed1", "#476794", "#313e72"],
+    ];
+
+    const hatchWidth = [0.003, 0.001, 0.0005];
+    const hatchAngle = [p.random(15, 30), p.random(45, 60), p.random(20, 50)];
+
+    // ["HB", "2B", "2H", "cpencil", "rotring", "pen"];
+
+    brush.instance(p);
+
+    p.setup = () => {
+      p.createCanvas(canvasWidth, canvasHeight, p.WEBGL);
+      p.angleMode(p.DEGREES);
+
+      brush.load();
+
+      p.noLoop();
+    };
+
+    p.draw = () => {
+      const palette = p.random(palettes);
+
+      p.background(palette[0]);
+      p.translate(-canvasWidth / 2, -canvasHeight / 2);
+
+      for (let y = 0; y < rowCount; y++) {
+        brush.noFill();
+        brush.noStroke();
+
+        brush.set("2H", palette[y + 1]);
+        brush.hatch(canvasWidth * hatchWidth[y], hatchAngle[y]);
+        brush.setHatch("2H", palette[y + 1]);
+
+        brush.beginShape();
+        for (let i = margin; i < canvasWidth - margin; i++) {
+          brush.vertex(i, p.noise(i * intensity, y) * canvasHeight);
+        }
+        brush.vertex(canvasWidth - margin, canvasHeight - margin);
+        brush.vertex(margin, canvasHeight - margin);
+        brush.endShape();
+      }
+    };
+  };
+
+  const canvas = document.getElementById("p5canvas");
+  export const myp5 = new p5(sketch, canvas!);
+</script>
+
+<style>
+  #p5canvas {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+  }
+</style>
