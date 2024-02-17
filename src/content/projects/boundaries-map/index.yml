@@ -3,5 +3,5 @@ description: View administrative boundaries in New York City—school districts,
 datePublished: 2022-06-30
 url: https://boundaries.beta.nyc
 repo: betanyc/nyc-boundaries
-img: "./boundaries-map.png"
-imgAlt: "A map of Manhattan, showing a highlighted community district and all the boundaries it intersects."
+video: "video/boundaries-map.mp4"
+videoPoster: "video/boundaries-map-poster.png"
