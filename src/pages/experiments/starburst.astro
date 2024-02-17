@@ -46,12 +46,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
         let currentAngle = (360 / count) * i;
         let xoff = p.map(p.cos(currentAngle), -1, 1, 0, whiteLineIntensity);
         let yoff = p.map(p.sin(currentAngle), -1, 1, 0, whiteLineIntensity);
-        brush.flowLine(
-          0,
-          0,
-          p.noise(xoff, yoff) * maxLength,
-          (360 / count) * i
-        );
+        brush.flowLine(0, 0, p.noise(xoff, yoff) * maxLength, currentAngle);
       }
 
       brush.beginShape(0.5);
