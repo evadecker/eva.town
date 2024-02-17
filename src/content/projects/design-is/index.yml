@@ -1,6 +1,10 @@
 title: Design Is
 description: A choose-your-own-adventure poem about what it means to design.
 datePublished: 2024-02-02
-url: /design
-video: "video/design-is.mp4"
-videoPoster: "video/design-is-poster.png"
+video:
+  src: "video/design-is.mp4"
+  poster: "video/design-is-poster.png"
+cta:
+  text: Visit the site
+  url: /design
+repo: evadecker/eva.town/blob/main/src/pages/design/index.astro

@@ -44,19 +44,8 @@ const description = "Utilities and artworks for the web.";
                       ? -1
                       : 1
                   )
-                  .map(({ data }) => (
-                    <ProjectPreview
-                      title={data.title}
-                      description={data.description}
-                      datePublished={data.datePublished}
-                      img={data.img}
-                      imgAlt={data.imgAlt}
-                      url={data.url}
-                      repo={data.repo}
-                      disabled={data.draft}
-                      video={data.video}
-                      videoPoster={data.videoPoster}
-                    />
+                  .map((project) => (
+                    <ProjectPreview project={project} />
                   ))}
               </div>
             </section>

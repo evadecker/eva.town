@@ -1,6 +1,10 @@
 title: HYPERSENSITIVE
-description: A looping, generative meditation on overwhelm, synesthesia, and autism in a city.
+description: A looping, generative meditation on overwhelm, synesthesia, and autism.
 datePublished: 2024-02-11
-url: /hypersensitive
-video: "video/hypersensitive.mp4"
-videoPoster: "video/hypersensitive-poster.png"
+video:
+  src: "video/hypersensitive.mp4"
+  poster: "video/hypersensitive-poster.png"
+cta:
+  text: Visit the site
+  url: /hypersensitive
+repo: evadecker/eva.town/blob/main/src/pages/hypersensitive/index.astro
