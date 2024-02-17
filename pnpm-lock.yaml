@@ -68,6 +68,9 @@ dependencies:
   p5:
     specifier: ^1.9.0
     version: 1.9.0
+  p5.brush:
+    specifier: ^1.1.2
+    version: 1.1.2(p5@1.9.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -3621,6 +3624,10 @@ packages:
       - supports-color
     dev: true
 
+  /esm-seedrandom@3.0.5:
+    resolution: {integrity: sha512-pMAq0mFIr5JQ3Ihbng7EBLMJ+llMbaDKkiG44pqbSXS0NIZWtEANpOpxb5s6Q8Q2R562P26qMHPv8YtP/NHh9g==}
+    dev: false
+
   /espree@9.6.1:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -6414,6 +6421,15 @@ packages:
   /p-try@2.2.0:
     resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
     engines: {node: '>=6'}
+
+  /p5.brush@1.1.2(p5@1.9.0):
+    resolution: {integrity: sha512-odDgTY8+KkvtVEV95YT16VY976kJguAgsbpHsXdwkaLUUEXsiWwe51mRcvRvDYriaQ9BCSIxIHey321qKtm93Q==}
+    peerDependencies:
+      p5: ^1.9.0
+    dependencies:
+      esm-seedrandom: 3.0.5
+      p5: 1.9.0
+    dev: false
 
   /p5@1.9.0:
     resolution: {integrity: sha512-+5/hz0ZokCDf7BMMAeemE7FIo7gFZK7ImL62acHLXZwerGjqj+171bnaAWj4aCFCx6fwysAr2U7/AKuPyPhehA==}
