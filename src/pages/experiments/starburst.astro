@@ -3,10 +3,10 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 ---
 
 <UnstyledBase
-  title="Starburst"
+  title="✳️"
   description="Procedurally generated"
-  ogImage="/og/perlin.png"
-  ogAlt="A collection of pixelated blobs in various colors."
+  ogImage="/og/starburst.png"
+  ogAlt="White spokes undulate outward from the center of the canvas. An irregular shaped red line encircles them."
 >
   <div id="p5canvas"></div>
 </UnstyledBase>
@@ -21,12 +21,10 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     const w = p.windowWidth;
     const h = p.windowHeight;
 
-    const margin = p.min(w, h) * 0.01;
-
     let canvasSize = p.min(p.windowWidth, p.windowHeight);
 
     const count = 90;
-    const maxLength = canvasSize * 0.5 - margin;
+    const maxLength = canvasSize * 0.5;
 
     const whiteLineIntensity = 2;
     const redLineIntensity = 0.5;
