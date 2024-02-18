@@ -15,19 +15,23 @@ const { title, description, repo, img, video, cta } = project.data;
 ---
 
 <div class="project">
-  {img && <Image src={img.src} alt={img.alt} class="img" />}
   {
-    video && (
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        preload="none"
-        poster={video.poster}
-      >
-        <source src={video.src} type="video/mp4" />
-      </video>
+    (img ?? video) && (
+      <div class="media">
+        {img && <Image src={img.src} alt={img.alt} class="img" />}
+        {video && (
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="none"
+            poster={video.poster}
+          >
+            <source src={video.src} type="video/mp4" />
+          </video>
+        )}
+      </div>
     )
   }
   <div class="details">
@@ -70,19 +74,7 @@ const { title, description, repo, img, video, cta } = project.data;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--gray-3);
-    border-radius: var(--radius-m);
-    overflow: hidden;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px solid var(--gray-a3);
-      border-radius: var(--radius-m);
-      pointer-events: none;
-    }
+    gap: var(--space-m);
   }
 
   .details {
@@ -90,7 +82,6 @@ const { title, description, repo, img, video, cta } = project.data;
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-m);
-    padding: var(--space-m);
     width: 100%;
   }
 
@@ -100,11 +91,23 @@ const { title, description, repo, img, video, cta } = project.data;
     gap: var(--space-2xs);
   }
 
-  .img {
+  .media {
     background-color: var(--gray-3);
     width: 100%;
-    display: block;
+    max-width: 100%;
+    border-radius: var(--radius-s);
+    overflow: hidden;
     line-height: 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--gray-a3);
+      border-radius: var(--radius-s);
+      pointer-events: none;
+    }
   }
 
   h3 {
@@ -124,8 +127,7 @@ const { title, description, repo, img, video, cta } = project.data;
 
   .button {
     font-weight: var(--font-weight-medium);
-    background-color: var(--gray-2);
-    border: 1px solid var(--gray-a4);
+    border: 1px solid var(--gray-6);
     color: var(--gray-11);
     padding-inline: var(--space-m);
     padding-block: var(--space-xs);
@@ -133,6 +135,8 @@ const { title, description, repo, img, video, cta } = project.data;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--gray-3);
+    border-color: var(--gray-a2);
 
     &.disabled {
       opacity: 0.5;
@@ -143,17 +147,9 @@ const { title, description, repo, img, video, cta } = project.data;
     }
   }
 
-  :global(.dark) .button {
-    background-color: var(--gray-4);
-    border-color: var(--gray-a2);
-  }
-
   .button:not(.disabled):hover {
-    background-color: var(--gray-1);
+    background-color: var(--gray-4);
+    border-color: var(--gray-6);
     color: var(--gray-12);
-  }
-
-  :global(.dark) .button:not(.disabled):hover {
-    background-color: var(--gray-5);
   }
 </style>
