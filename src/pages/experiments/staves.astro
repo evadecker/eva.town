@@ -1,0 +1,85 @@
+---
+import UnstyledBase from "../../layouts/UnstyledBase.astro";
+---
+
+<UnstyledBase
+  title="Staves"
+  description="Generative music staff patterns using P5.js and P5.brush."
+  ogImage="/og/staves.png"
+  ogAlt="Music staves twist and collapse innward."
+>
+  <div id="p5canvas"></div>
+</UnstyledBase>
+
+<script>
+  import p5 from "p5";
+  // No existing type defs for p5.brush
+  // @ts-ignore
+  import * as brush from "p5.brush";
+
+  const sketch = (p: p5) => {
+    const margin = p.min(p.windowWidth, p.windowHeight) * 0.08;
+
+    let canvasWidth = p.windowWidth;
+    let canvasHeight = p.windowHeight;
+
+    const staffCount = 10;
+
+    brush.instance(p);
+
+    p.setup = () => {
+      p.createCanvas(canvasWidth, canvasHeight, p.WEBGL);
+      p.angleMode(p.DEGREES);
+
+      brush.load();
+
+      // ["HB", "2B", "2H", "cpencil", "rotring", "pen"];
+
+      p.noLoop();
+    };
+
+    p.draw = () => {
+      brush.field(
+        p.random(["curved", "zigzag", "seabed", "truncated", "waves"])
+      );
+      p.background("#f5f5f5");
+      p.translate(-canvasWidth / 2, -canvasHeight / 2);
+
+      // Create music staves
+      for (let i = 0; i < staffCount; i++) {
+        const lineHeight = canvasHeight * 0.01;
+
+        const startY = p.lerp(
+          margin,
+          canvasHeight - margin - lineHeight * 5,
+          i / (staffCount - 1)
+        );
+
+        // Each 5-line staff
+        for (let j = 0; j < 5; j++) {
+          brush.set("rotring", "#111", canvasWidth < canvasHeight ? 5 : 1);
+          const posY = startY + lineHeight * j;
+          brush.flowLine(margin, posY, canvasWidth - margin * 2, 0);
+        }
+
+        // Staff barlines
+        brush.strokeWeight(canvasWidth < canvasHeight ? 12 : 6);
+        brush.flowLine(margin, startY, lineHeight * 4, -90);
+        brush.flowLine(canvasWidth - margin, startY, lineHeight * 4, -90);
+      }
+    };
+  };
+
+  const canvas = document.getElementById("p5canvas");
+  export const myp5 = new p5(sketch, canvas!);
+</script>
+
+<style>
+  #p5canvas {
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+  }
+</style>
