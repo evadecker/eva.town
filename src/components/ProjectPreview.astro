@@ -143,7 +143,11 @@ const { title, description, repo, img, video, cta } = project.data;
     }
 
     &.cta {
-      flex: 1;
+      min-width: 260px;
+
+      @media (width < 600px) {
+        flex: 1;
+      }
     }
   }
 
