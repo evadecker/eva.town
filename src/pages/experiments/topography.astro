@@ -23,19 +23,17 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     let canvasWidth = p.windowWidth;
     let canvasHeight = p.windowHeight;
 
-    const rowCount = 3;
+    const rowCount = 4;
 
     const intensity = p.random(0.0005, 0.002);
 
     const palettes = [
-      ["#FFEBC9", "#D79771", "#B05B3B", "#753422"],
-      ["#FFE7E7", "#CAA6A6", "#B47B84", "#944E63"],
-      ["#ECE3CE", "#739072", "#4F6F52", "#3A4D39"],
-      ["#EEF5FF", "#94aed1", "#476794", "#313e72"],
+      ["#FFEBC9", "#D79771", "#B05B3B", "#753422", "#502418"],
+      ["#FFE7E7", "#CAA6A6", "#B47B84", "#944E63", "#6a2f41"],
+      ["#ECE3CE", "#739072", "#4F6F52", "#3A4D39", "#263725"],
+      ["#EEF5FF", "#94aed1", "#476794", "#313e72", "#232e57"],
+      ["#f1d0d1", "#E493B3", "#B784B7", "#8E7AB5", "#312645"],
     ];
-
-    const hatchWidth = [0.003, 0.001, 0.0005];
-    const hatchAngle = [p.random(15, 30), p.random(45, 60), p.random(20, 50)];
 
     // ["HB", "2B", "2H", "cpencil", "rotring", "pen"];
 
@@ -60,9 +58,9 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
         brush.noFill();
         brush.noStroke();
 
-        brush.set("2H", palette[y + 1]);
-        brush.hatch(canvasWidth * hatchWidth[y], hatchAngle[y]);
-        brush.setHatch("2H", palette[y + 1]);
+        brush.bleed(0.001, "out");
+        brush.fill(palette[y + 1], 255);
+        brush.fillTexture(0.2, 1);
 
         brush.beginShape();
         for (let i = margin; i < canvasWidth - margin; i++) {
