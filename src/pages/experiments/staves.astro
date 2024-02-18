@@ -66,31 +66,6 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
         brush.strokeWeight(canvasWidth < canvasHeight ? 12 : 6);
         brush.flowLine(margin, startY, lineHeight * 4, -90);
         brush.flowLine(canvasWidth - margin, startY, lineHeight * 4, -90);
-
-        // Blobs
-        // const blobCount = 8;
-        // const maxSize = lineHeight * p.random(1, 7);
-
-        // for (let i = 0; i < blobCount; i++) {
-        //   const originX = p.random(0, canvasWidth);
-        //   const originY = startY + p.random(0, lineHeight * 5);
-
-        //   // Color strokes
-        //   brush.set("pen", "#f5f5f5", 3);
-        //   // brush.hatch(9, hatchAngle, { rand: 0.05, continuous: true });
-        //   brush.beginShape(0.5);
-        //   p.noiseSeed(p.random(1000));
-
-        //   for (let a = 0; a <= 360; a += 8) {
-        //     let xoff = p.map(p.cos(a), -1, 1, 0, 0.8);
-        //     let yoff = p.map(p.sin(a), -1, 1, 0, 0.8);
-        //     let r = p.map(p.noise(xoff, yoff), 0, 1, 0, maxSize);
-        //     let x = r * p.cos(a) + originX;
-        //     let y = r * p.sin(a) + originY;
-        //     brush.vertex(x, y);
-        //   }
-        //   brush.endShape();
-        // }
       }
     };
   };
@@ -106,9 +81,5 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     justify-content: center;
     align-items: center;
     height: 100dvh;
-
-    /* canvas {
-      box-shadow: 0 0 16px rgb(0 0 0 / 8%);
-    } */
   }
 </style>
