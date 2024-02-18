@@ -20,13 +20,15 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
   const sketch = (p: p5) => {
     let canvasSize = p.min(p.windowWidth, p.windowHeight);
 
-    const count = 90;
-    const maxLength = canvasSize * 0.5;
+    const count = 27;
+    const maxLength = canvasSize * 0.6;
 
-    const whiteLineIntensity = 2;
-    const redLineIntensity = 0.5;
+    const whiteLineIntensity = 2.5;
+    const redLineIntensity = 0.8;
 
     brush.instance(p);
+
+    let t = 0;
 
     p.setup = () => {
       p.createCanvas(canvasSize, canvasSize, p.WEBGL);
@@ -34,27 +36,29 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 
       brush.load();
 
-      p.noLoop();
+      // p.noLoop();
+      p.frameRate(3);
     };
 
     p.draw = () => {
       p.background("#111111");
+      t += 0.1;
 
-      brush.set("rotring", "#f5f5f5", 8);
+      brush.set("rotring", "#f5f5f5", 12);
 
       for (let i = 0; i < count; i++) {
         let currentAngle = (360 / count) * i;
         let xoff = p.map(p.cos(currentAngle), -1, 1, 0, whiteLineIntensity);
         let yoff = p.map(p.sin(currentAngle), -1, 1, 0, whiteLineIntensity);
-        brush.flowLine(0, 0, p.noise(xoff, yoff) * maxLength, currentAngle);
+        brush.flowLine(0, 0, p.noise(xoff, yoff, t) * maxLength, currentAngle);
       }
 
       brush.beginShape(0.5);
       brush.stroke("red");
-      for (let a = 0; a < 360; a += 0.5) {
+      for (let a = 0; a <= 360; a += 8) {
         let xoff = p.map(p.cos(a), -1, 1, 0, redLineIntensity);
         let yoff = p.map(p.sin(a), -1, 1, 0, redLineIntensity);
-        let r = p.map(p.noise(xoff, yoff), 0, 1, 0, maxLength);
+        let r = p.map(p.noise(xoff, yoff, t / 20), 0, 1, 0, maxLength);
         let x = r * p.cos(a);
         let y = r * p.sin(a);
         brush.vertex(x, y);
