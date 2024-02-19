@@ -12,56 +12,84 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 </UnstyledBase>
 
 <script>
-  import * as dat from "dat.gui";
+  import { Pane } from "tweakpane";
   import p5 from "p5";
   // No existing type defs for p5.brush
   // @ts-ignore
   import * as brush from "p5.brush";
 
-  const gui = new dat.GUI();
+  const PARAMS = {
+    background: "#f4ecd2",
+    stroke: "#12110f",
+    strokeWeight: 2,
+    field: "truncated",
+    staves: 9,
+    square: false,
+  };
 
   const sketch = (p: p5) => {
+    const pane = new Pane({
+      title: "Parameters",
+    });
+
+    let background = PARAMS.background;
+    let stroke = PARAMS.stroke;
+    let strokeWeight = PARAMS.strokeWeight;
+    let staves = PARAMS.staves;
+    let isSquare = PARAMS.square;
+
     const margin = p.min(p.windowWidth, p.windowHeight) * 0.08;
 
-    let canvasWidth = p.min(p.windowWidth, p.windowHeight);
-    let canvasHeight = canvasWidth;
-
-    let staffCount = 9;
-    gui.add({ staffCount }, "staffCount", 1, 20, 1).onChange((value) => {
-      staffCount = value;
-      p.redraw();
-    });
+    let canvasWidth = p.windowWidth;
+    let canvasHeight = p.windowHeight;
 
     brush.instance(p);
 
-    const fields = [
-      "converge",
-      "curved",
-      "diverge",
-      "range",
-      "seabed",
-      "truncated",
-      "waves",
-      "zigzag",
-      "disabled",
-    ];
-
-    const initialField = p.random(fields);
-    let currentField = initialField;
-    gui
-      .add({ currentField }, "currentField")
-      .options(fields)
-      .onChange((value) => {
-        currentField = value;
-        brush.field(value);
+    pane
+      .addBinding(PARAMS, "background", {
+        label: "Background",
+      })
+      .on("change", (value) => {
+        background = value.value;
         p.redraw();
       });
 
-    const refreshField = () => {
-      brush.refreshField();
-      p.redraw();
-    };
-    gui.add({ refreshField }, "refreshField");
+    pane
+      .addBinding(PARAMS, "stroke", {
+        label: "Stroke",
+      })
+      .on("change", (value) => {
+        stroke = value.value;
+        p.redraw();
+      });
+
+    pane
+      .addBinding(PARAMS, "strokeWeight", {
+        label: "Stroke Weight",
+        step: 1,
+        min: 1,
+        max: 10,
+      })
+      .on("change", (value) => {
+        strokeWeight = value.value;
+        p.redraw();
+      });
+
+    pane.addBlade({
+      view: "separator",
+    });
+
+    pane
+      .addBinding(PARAMS, "staves", {
+        label: "Staves",
+        step: 1,
+        max: 12,
+        min: 3,
+      })
+      .on("change", (value) => {
+        staves = value.value;
+        p.redraw();
+      });
 
     p.setup = () => {
       p.createCanvas(canvasWidth, canvasHeight, p.WEBGL);
@@ -74,9 +102,9 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
       brush.field();
 
       brush.addField("range", function (t: number, field: number[][]) {
-        for (let column = 0; column < field[0].length; column++) {
+        for (let column = 0; column < field.length; column++) {
           let randomAngle = p.random(-30, 30);
-          for (let row = 0; row < field[1].length; row++) {
+          for (let row = 0; row < field[0].length; row++) {
             let angle = p.noise(column, row, t) - 0.5 + randomAngle;
             field[column][row] = angle;
           }
@@ -114,48 +142,92 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
         return field;
       });
 
-      brush.field(initialField);
+      brush.field(PARAMS.field);
+
+      pane.addBlade({
+        view: "separator",
+      });
+
+      pane
+        .addBinding(PARAMS, "field", {
+          label: "Distortion",
+          options: {
+            converge: "converge",
+            curved: "curved",
+            diverge: "diverge",
+            range: "range",
+            seabed: "seabed",
+            truncated: "truncated",
+            waves: "waves",
+            zigzag: "zigzag",
+            disabled: "disabled",
+          },
+        })
+        .on("change", (distortion) => {
+          brush.field(distortion.value);
+          p.redraw();
+        });
+      pane.addButton({ title: "Regenerate" }).on("click", () => {
+        brush.refreshField();
+        p.redraw();
+      });
+
+      pane.addBlade({
+        view: "separator",
+      });
+
+      pane
+        .addBinding(PARAMS, "square", {
+          label: "Square",
+        })
+        .on("change", (value) => {
+          isSquare = value.value;
+          p.redraw();
+        });
+
+      pane.addBlade({
+        view: "separator",
+      });
 
       const saveImage = () => {
         let timestamp = new Date().toISOString();
         p.save(`staves-${p.str(timestamp)}.png`);
       };
-      gui.add({ saveImage }, "saveImage");
+      pane.addButton({ title: "Save .png" }).on("click", saveImage);
     };
 
     p.draw = () => {
-      let palette = {
-        background: "#f4ecd2",
-        stroke: "#12110f",
-      };
+      if (isSquare) {
+        canvasWidth = p.min(p.windowWidth, p.windowHeight);
+        canvasHeight = canvasWidth;
+      } else {
+        canvasWidth = p.windowWidth;
+        canvasHeight = p.windowHeight;
+      }
 
-      p.background(palette.background);
+      p.background(background);
 
       p.translate(-canvasWidth / 2, -canvasHeight / 2);
 
       // Create music staves
-      for (let i = 0; i < staffCount; i++) {
+      for (let i = 0; i < staves; i++) {
         const lineHeight = canvasHeight * 0.01;
 
         const startY = p.lerp(
           margin,
           canvasHeight - margin - lineHeight * 5,
-          i / (staffCount - 1)
+          i / (staves - 1)
         );
 
         // Each 5-line staff
         for (let j = 0; j < 5; j++) {
-          brush.set(
-            "rotring",
-            palette.stroke,
-            canvasWidth <= canvasHeight ? 4 : 1
-          );
+          brush.set("rotring", stroke, strokeWeight);
           const posY = startY + lineHeight * j;
           brush.flowLine(margin, posY, canvasWidth - margin * 2, 0);
         }
 
         // Staff barlines
-        brush.strokeWeight(canvasWidth <= canvasHeight ? 10 : 6);
+        brush.strokeWeight(strokeWeight * 3);
         brush.flowLine(margin, startY, lineHeight * 4, -90);
         brush.flowLine(canvasWidth - margin, startY, lineHeight * 4, -90);
       }
