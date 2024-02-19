@@ -12,37 +12,122 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 </UnstyledBase>
 
 <script>
+  import * as dat from "dat.gui";
   import p5 from "p5";
   // No existing type defs for p5.brush
   // @ts-ignore
   import * as brush from "p5.brush";
 
+  const gui = new dat.GUI();
+
   const sketch = (p: p5) => {
     const margin = p.min(p.windowWidth, p.windowHeight) * 0.08;
 
-    let canvasWidth = p.windowWidth;
-    let canvasHeight = p.windowHeight;
+    let canvasWidth = p.min(p.windowWidth, p.windowHeight);
+    let canvasHeight = canvasWidth;
 
-    const staffCount = 10;
+    let staffCount = 9;
+    gui.add({ staffCount }, "staffCount", 1, 20, 1).onChange((value) => {
+      staffCount = value;
+      p.redraw();
+    });
+
+    const fields = [
+      "converge",
+      "curved",
+      "diverge",
+      "range",
+      "seabed",
+      "truncated",
+      "waves",
+      "zigzag",
+      "disabled",
+    ];
+
+    let currentField = p.random(fields);
+    gui
+      .add({ currentField }, "currentField")
+      .options(fields)
+      .onChange((value) => {
+        currentField = value;
+        brush.field(value);
+        p.redraw();
+      });
+
+    const refreshField = () => {
+      brush.refreshField();
+      p.redraw();
+    };
+    gui.add({ refreshField }, "refreshField");
 
     brush.instance(p);
 
     p.setup = () => {
       p.createCanvas(canvasWidth, canvasHeight, p.WEBGL);
       p.angleMode(p.DEGREES);
+      p.pixelDensity(4);
+      p.noLoop();
 
       brush.load();
 
-      // ["HB", "2B", "2H", "cpencil", "rotring", "pen"];
+      brush.field(currentField);
 
-      p.noLoop();
+      brush.addField("range", function (t: number, field: number[][]) {
+        for (let column = 0; column < field[0].length; column++) {
+          let randomAngle = p.random(-30, 30);
+          for (let row = 0; row < field[1].length; row++) {
+            let angle = p.noise(column, row, t) - 0.5 + randomAngle;
+            field[column][row] = angle;
+          }
+        }
+        return field;
+      });
+
+      brush.addField("converge", function (t: number, field: number[][]) {
+        let converge = p.random(500, 720);
+        let offset = p.random(-60, 60);
+
+        for (let column = 0; column < field.length; column++) {
+          for (let row = 0; row < field[0].length; row++) {
+            let angle =
+              (row / field[0].length) * -converge + converge / 2 + offset;
+            field[column][row] = angle;
+          }
+        }
+        return field;
+      });
+
+      brush.addField("diverge", function (t: number, field: number[][]) {
+        let diverge = p.random(30, 720);
+
+        for (let column = 0; column < field.length; column++) {
+          for (let row = 0; row < field[0].length; row++) {
+            let angle = (row / field[0].length) * diverge - diverge / 2;
+            field[column][row] = angle;
+          }
+        }
+        return field;
+      });
+
+      brush.addField("disabled", function (t: number, field: number[][]) {
+        return field;
+      });
+
+      const saveImage = () => {
+        let timestamp = new Date().toISOString();
+        p.save(`staves-${p.str(timestamp)}.png`);
+      };
+      gui.add({ saveImage }, "saveImage");
     };
 
     p.draw = () => {
-      brush.field(
-        p.random(["curved", "zigzag", "seabed", "truncated", "waves"])
-      );
-      p.background("#f5f5f5");
+      let palette = {
+        background: "#f4ecd2",
+        stroke: "#12110f",
+      };
+
+      p.background(palette.background);
+
       p.translate(-canvasWidth / 2, -canvasHeight / 2);
 
       // Create music staves
@@ -57,13 +142,17 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 
         // Each 5-line staff
         for (let j = 0; j < 5; j++) {
-          brush.set("rotring", "#111", canvasWidth < canvasHeight ? 5 : 1);
+          brush.set(
+            "rotring",
+            palette.stroke,
+            canvasWidth <= canvasHeight ? 4 : 1
+          );
           const posY = startY + lineHeight * j;
           brush.flowLine(margin, posY, canvasWidth - margin * 2, 0);
         }
 
         // Staff barlines
-        brush.strokeWeight(canvasWidth < canvasHeight ? 12 : 6);
+        brush.strokeWeight(canvasWidth <= canvasHeight ? 10 : 6);
         brush.flowLine(margin, startY, lineHeight * 4, -90);
         brush.flowLine(canvasWidth - margin, startY, lineHeight * 4, -90);
       }
@@ -76,7 +165,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 
 <style>
   #p5canvas {
-    background: #f5f5f5;
+    background: #f4ecd2;
     display: flex;
     justify-content: center;
     align-items: center;
