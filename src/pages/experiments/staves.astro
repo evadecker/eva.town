@@ -32,6 +32,8 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
       p.redraw();
     });
 
+    brush.instance(p);
+
     const fields = [
       "converge",
       "curved",
@@ -44,7 +46,8 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
       "disabled",
     ];
 
-    let currentField = p.random(fields);
+    const initialField = p.random(fields);
+    let currentField = initialField;
     gui
       .add({ currentField }, "currentField")
       .options(fields)
@@ -60,8 +63,6 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
     };
     gui.add({ refreshField }, "refreshField");
 
-    brush.instance(p);
-
     p.setup = () => {
       p.createCanvas(canvasWidth, canvasHeight, p.WEBGL);
       p.angleMode(p.DEGREES);
@@ -70,7 +71,7 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
 
       brush.load();
 
-      brush.field(currentField);
+      brush.field();
 
       brush.addField("range", function (t: number, field: number[][]) {
         for (let column = 0; column < field[0].length; column++) {
@@ -112,6 +113,8 @@ import UnstyledBase from "../../layouts/UnstyledBase.astro";
       brush.addField("disabled", function (t: number, field: number[][]) {
         return field;
       });
+
+      brush.field(initialField);
 
       const saveImage = () => {
         let timestamp = new Date().toISOString();
