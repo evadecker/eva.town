@@ -5,6 +5,8 @@ video:
   src: "video/design-is.mp4"
   poster: "video/design-is-poster.png"
 cta:
-  text: Visit the site
+  text: Find a definition
   url: /design
-repo: evadecker/eva.town/blob/main/src/pages/design/index.astro
+repo: evadecker/eva.town/blob/main/src/pages/design.astro
+tags:
+  - web art

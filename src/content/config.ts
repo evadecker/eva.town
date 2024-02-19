@@ -53,6 +53,7 @@ export const collections = {
           text: z.string(),
           url: z.string().optional(), // If no URL is set, button will be disabled
         }),
+        tags: z.array(z.string()),
       }),
   }),
 };

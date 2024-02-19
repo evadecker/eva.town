@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import dayjs from "dayjs";
 
 import Center from "../../components/Center.astro";
+import PageHeader from "../../components/PageHeader.astro";
 import ProjectPreview from "../../components/ProjectPreview.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
@@ -21,10 +22,12 @@ const projectsGroupedByYear = projects.reduce(
 );
 
 const title = "Projects";
-const description = "Utilities and artworks for the web.";
+const description =
+  "A collection of product design, development, web art, and other things I've made.";
 ---
 
 <BaseLayout title={title} description={description} includeFooter padBottom>
+  <PageHeader title={title} description={description} />
   <Center>
     <section class="projects">
       {
@@ -59,7 +62,6 @@ const description = "Utilities and artworks for the web.";
   .projects {
     display: flex;
     flex-direction: column;
-    padding-block: var(--space-l);
     gap: var(--space-xl);
   }
 
