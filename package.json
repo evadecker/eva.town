@@ -34,7 +34,6 @@
     "astro": "^4.4.0",
     "autoprefixer": "^10.4.17",
     "classnames": "^2.5.1",
-    "dat.gui": "^0.7.9",
     "dayjs": "^1.11.10",
     "framer-motion": "^10.18.0",
     "howler": "^2.2.4",
@@ -48,13 +47,14 @@
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "sharp": "^0.32.6",
-    "simplex-noise": "^4.0.1"
+    "simplex-noise": "^4.0.1",
+    "tweakpane": "^4.0.3"
   },
   "devDependencies": {
     "@lhci/cli": "^0.12.0",
     "@playwright/test": "^1.41.2",
     "@radix-ui/colors": "^3.0.0",
-    "@types/dat.gui": "^0.7.12",
+    "@tweakpane/core": "^2.0.3",
     "@types/howler": "^2.2.11",
     "@types/node": "^18.19.17",
     "@types/p5": "^1.7.6",
