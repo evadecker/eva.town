@@ -1,5 +1,5 @@
 title: Genderswap.fm
-description: A place to catalogue gender reversal in cover songs and all its queer implications. Because a Spotify playlist got a little too big. Andrea Lawlor called it "THE COOLEST thing I have EVER SEEN IN MY LIFE."
+description: A place to catalogue gender reversal in cover songs and all its queer implications. Because a Spotify playlist got a little too big. Andrea Lawlor called it "THE COOLEST thing I have EVER SEEN IN MY LIFE." Built using SvelteKit, Supabase, and the Spotify TypeScript SDK.
 datePublished: 2023-10-23
 repo: evadecker/genderswap.fm
 img:
@@ -8,3 +8,7 @@ img:
 cta:
   text: Visit the site
   url: https://genderswap.fm
+tags:
+  - personal
+  - product design
+  - development

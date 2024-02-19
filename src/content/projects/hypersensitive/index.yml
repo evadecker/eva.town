@@ -5,6 +5,8 @@ video:
   src: "video/hypersensitive.mp4"
   poster: "video/hypersensitive-poster.png"
 cta:
-  text: Visit the site
+  text: Meditate and reflect
   url: /hypersensitive
-repo: evadecker/eva.town/blob/main/src/pages/hypersensitive/index.astro
+repo: evadecker/eva.town/blob/main/src/pages/hypersensitive.astro
+tags:
+  - web art

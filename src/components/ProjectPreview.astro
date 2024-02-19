@@ -11,7 +11,7 @@ interface Props {
 
 const { project } = Astro.props;
 
-const { title, description, repo, img, video, cta } = project.data;
+const { title, description, repo, img, video, cta, tags } = project.data;
 ---
 
 <div class="project">
@@ -36,7 +36,12 @@ const { title, description, repo, img, video, cta } = project.data;
   }
   <div class="details">
     <div class="details-text">
-      <h3 class="title">{title}</h3>
+      <div class="title-and-tags">
+        <h3 class="title">{title}</h3>
+        <div class="tags">
+          {tags.map((tag) => <span class="tag">{tag}</span>)}
+        </div>
+      </div>
       <div class="description">
         {smartquotes(description)}
       </div>
@@ -80,7 +85,6 @@ const { title, description, repo, img, video, cta } = project.data;
   .details {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: var(--space-m);
     width: 100%;
   }
@@ -89,6 +93,38 @@ const { title, description, repo, img, video, cta } = project.data;
     display: flex;
     flex-direction: column;
     gap: var(--space-2xs);
+  }
+
+  .title-and-tags {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (width < 600px) {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: var(--space-s);
+
+      .tags {
+        order: -1;
+      }
+    }
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--space-xs);
+    font-size: var(--step--1);
+    color: var(--gray-11);
+
+    .tag {
+      background-color: var(--gray-3);
+      padding-inline: var(--space-2xs);
+      border-radius: var(--radius-xs);
+    }
   }
 
   .media {
@@ -143,11 +179,7 @@ const { title, description, repo, img, video, cta } = project.data;
     }
 
     &.cta {
-      min-width: 260px;
-
-      @media (width < 600px) {
-        flex: 1;
-      }
+      flex: 1;
     }
   }
 
