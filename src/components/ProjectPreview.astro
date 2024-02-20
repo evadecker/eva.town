@@ -54,8 +54,10 @@ const { title, description, repo, img, video, cta, tags } = project.data;
             href={cta.url}
             target="_blank"
             aria-disabled={cta.url === undefined}
+            title="Visit the site"
           >
             {cta.text}
+            {cta.url && <Icon icon="externalLink" size="20" />}
           </a>
         )
       }
@@ -65,8 +67,9 @@ const { title, description, repo, img, video, cta, tags } = project.data;
             class="button repo"
             href={`https://github.com/${repo}`}
             target="_blank"
+            title="View source code on GitHub"
           >
-            <Icon icon="github" size="24" />
+            <Icon icon="github" size="20" />
           </a>
         )
       }
@@ -116,7 +119,7 @@ const { title, description, repo, img, video, cta, tags } = project.data;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: var(--space-xs);
+    gap: var(--space-2xs);
     font-size: var(--step--1);
     color: var(--gray-11);
 
@@ -171,6 +174,7 @@ const { title, description, repo, img, video, cta, tags } = project.data;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: var(--space-xs);
     background-color: var(--gray-3);
     border-color: var(--gray-a2);
 

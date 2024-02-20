@@ -6,7 +6,7 @@ video:
   src: "video/boundaries-map.mp4"
   poster: "video/boundaries-map-poster.png"
 cta:
-  text: Visit the site
+  text: Explore boundaries
   url: https://boundaries.beta.nyc
 tags:
   - civic tech

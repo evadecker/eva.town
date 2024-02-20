@@ -3,9 +3,9 @@ import UnstyledBase from "../layouts/UnstyledBase.astro";
 ---
 
 <UnstyledBase
-  title="Staves"
-  description="Generative music staff patterns using P5.js and P5.brush."
-  ogImage="/og/staves.png"
+  title="Composed"
+  description="What does it look like to compose music for non-linear time? How do we visualize alternative space-times for sound?"
+  ogImage="/og/composed.png"
   ogAlt="Music staves twist and collapse innward."
 >
   <div id="p5canvas"></div>
@@ -112,7 +112,7 @@ import UnstyledBase from "../layouts/UnstyledBase.astro";
         return field;
       });
 
-      brush.addField("converge", function (t: number, field: number[][]) {
+      brush.addField("converge", function (_t: number, field: number[][]) {
         let converge = p.random(500, 720);
         let offset = p.random(-60, 60);
 
@@ -126,7 +126,7 @@ import UnstyledBase from "../layouts/UnstyledBase.astro";
         return field;
       });
 
-      brush.addField("diverge", function (t: number, field: number[][]) {
+      brush.addField("diverge", function (_t: number, field: number[][]) {
         let diverge = p.random(30, 720);
 
         for (let column = 0; column < field.length; column++) {
@@ -138,7 +138,7 @@ import UnstyledBase from "../layouts/UnstyledBase.astro";
         return field;
       });
 
-      brush.addField("disabled", function (t: number, field: number[][]) {
+      brush.addField("disabled", function (_t: number, field: number[][]) {
         return field;
       });
 
