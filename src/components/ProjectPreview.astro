@@ -46,34 +46,38 @@ const { title, description, repo, img, video, cta, tags } = project.data;
         {smartquotes(description)}
       </div>
     </div>
-    <footer>
-      {
-        cta && (
-          <a
-            class:list={["button", "cta", { disabled: cta.url === undefined }]}
-            href={cta.url}
-            target="_blank"
-            aria-disabled={cta.url === undefined}
-            title="Visit the site"
-          >
-            {cta.text}
-            {cta.url && <Icon icon="externalLink" size="20" />}
-          </a>
-        )
-      }
-      {
-        repo && (
-          <a
-            class="button repo"
-            href={`https://github.com/${repo}`}
-            target="_blank"
-            title="View source code on GitHub"
-          >
-            <Icon icon="github" size="20" />
-          </a>
-        )
-      }
-    </footer>
+    {
+      (cta || repo) && (
+        <footer>
+          {cta && (
+            <a
+              class:list={[
+                "button",
+                "cta",
+                { disabled: cta.url === undefined },
+              ]}
+              href={cta.url}
+              target="_blank"
+              aria-disabled={cta.url === undefined}
+              title="Visit the site"
+            >
+              {cta.text}
+              {cta.url && <Icon icon="externalLink" size="20" />}
+            </a>
+          )}
+          {repo && (
+            <a
+              class="button repo"
+              href={`https://github.com/${repo}`}
+              target="_blank"
+              title="View source code on GitHub"
+            >
+              <Icon icon="github" size="20" />
+            </a>
+          )}
+        </footer>
+      )
+    }
   </div>
 </div>
 

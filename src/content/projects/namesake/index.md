@@ -6,7 +6,7 @@ img:
   src: ./namesake.png
   alt: A collection of components for Namesake.
 cta:
-  text: Case study coming soon
+  text: Coming soon
 tags:
   - product design
   - development

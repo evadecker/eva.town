@@ -7,7 +7,7 @@ img:
   src: ./america-my-face.png
   alt: Monique Heart from Ru Paul's Drag Race looks concerned.
 cta:
-  text: Dot com
+  text: dot com
   url: https://americamyfaceissayingeverythingthatyouneedtoknow.com
 tags:
   - web art
