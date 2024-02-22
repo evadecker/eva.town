@@ -1,3 +1,4 @@
+---
 title: HYPERSENSITIVE
 description: Everything is too much. A looping, generative meditation on overwhelm, autism, and synesthesia.
 datePublished: 2024-02-11
@@ -10,3 +11,4 @@ cta:
 repo: evadecker/eva.town/blob/main/src/pages/hypersensitive.astro
 tags:
   - web art
+---

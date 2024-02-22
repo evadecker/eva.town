@@ -30,7 +30,7 @@ export const collections = {
   }),
 
   projects: defineCollection({
-    type: "data",
+    type: "content",
     schema: ({ image }) =>
       z.object({
         title: z.string(),
@@ -49,10 +49,12 @@ export const collections = {
           })
           .optional(),
         repo: z.string().optional(), // GitHub repo, e.g. evadecker/america-my-face
-        cta: z.object({
-          text: z.string(),
-          url: z.string().optional(), // If no URL is set, button will be disabled
-        }),
+        cta: z
+          .object({
+            text: z.string(),
+            url: z.string().optional(), // If no URL is set, button will be disabled
+          })
+          .optional(),
         tags: z.array(z.string()),
       }),
   }),

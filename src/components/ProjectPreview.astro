@@ -46,34 +46,38 @@ const { title, description, repo, img, video, cta, tags } = project.data;
         {smartquotes(description)}
       </div>
     </div>
-    <footer>
-      {
-        cta && (
-          <a
-            class:list={["button", "cta", { disabled: cta.url === undefined }]}
-            href={cta.url}
-            target="_blank"
-            aria-disabled={cta.url === undefined}
-            title="Visit the site"
-          >
-            {cta.text}
-            {cta.url && <Icon icon="externalLink" size="20" />}
-          </a>
-        )
-      }
-      {
-        repo && (
-          <a
-            class="button repo"
-            href={`https://github.com/${repo}`}
-            target="_blank"
-            title="View source code on GitHub"
-          >
-            <Icon icon="github" size="20" />
-          </a>
-        )
-      }
-    </footer>
+    {
+      (cta || repo) && (
+        <footer>
+          {cta && (
+            <a
+              class:list={[
+                "button",
+                "cta",
+                { disabled: cta.url === undefined },
+              ]}
+              href={cta.url}
+              target="_blank"
+              aria-disabled={cta.url === undefined}
+              title="Visit the site"
+            >
+              {cta.text}
+              {cta.url && <Icon icon="externalLink" size="16" />}
+            </a>
+          )}
+          {repo && (
+            <a
+              class="button repo"
+              href={`https://github.com/${repo}`}
+              target="_blank"
+              title="View source code on GitHub"
+            >
+              <Icon icon="github" size="20" />
+            </a>
+          )}
+        </footer>
+      )
+    }
   </div>
 </div>
 
@@ -174,9 +178,8 @@ const { title, description, repo, img, video, cta, tags } = project.data;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-xs);
-    background-color: var(--gray-3);
-    border-color: var(--gray-a2);
+    gap: var(--space-2xs);
+    border-color: var(--gray-6);
 
     &.disabled {
       opacity: 0.5;
@@ -187,9 +190,19 @@ const { title, description, repo, img, video, cta, tags } = project.data;
     }
   }
 
+  :global(.dark) .button {
+    background-color: var(--gray-3);
+    border-color: var(--gray-a3);
+  }
+
   .button:not(.disabled):hover {
+    background-color: white;
+    border-color: var(--gray-7);
+    color: var(--gray-12);
+  }
+
+  :global(.dark) .button:not(.disabled):hover {
     background-color: var(--gray-4);
     border-color: var(--gray-6);
-    color: var(--gray-12);
   }
 </style>

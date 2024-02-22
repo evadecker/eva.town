@@ -1,3 +1,4 @@
+---
 title: Composed
 description: What does it look like to compose music for non-linear time? How do we visualize alternative space-times for sound?
 datePublished: 2024-02-19
@@ -10,3 +11,4 @@ cta:
 repo: evadecker/eva.town/blob/main/src/pages/composed.astro
 tags:
   - web art
+---
