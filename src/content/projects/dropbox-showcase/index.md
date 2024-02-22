@@ -6,7 +6,7 @@ img:
   src: ./dropbox-showcase.png
   alt: A preview of creating a collection within Dropbox Showcase.
 cta:
-  text: Read the product announcement
+  text: Read the announcement
   url: https://blog.dropbox.com/topics/product/new-plan-dropbox-professional
 tags:
   - product design
