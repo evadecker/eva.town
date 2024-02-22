@@ -11,5 +11,3 @@ tags:
   - product design
   - development
 ---
-
-## Testing content
