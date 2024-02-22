@@ -30,7 +30,7 @@ export const collections = {
   }),
 
   projects: defineCollection({
-    type: "data",
+    type: "content",
     schema: ({ image }) =>
       z.object({
         title: z.string(),
