@@ -15,7 +15,7 @@ const sortedProjects = projects.sort((a, b) =>
 );
 
 const title = "Projects";
-const description = "A collection of tools I've helped build.";
+const description = "A collection of tools I've helped design and build.";
 ---
 
 <BaseLayout title={title} description={description} includeFooter padBottom>
@@ -66,8 +66,10 @@ const description = "A collection of tools I've helped build.";
       border-top: 1px solid var(--gray-4);
     }
 
-    &:hover {
-      padding-inline: var(--space-s) 0;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        padding-inline: var(--space-s) 0;
+      }
     }
   }
 
