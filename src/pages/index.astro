@@ -20,12 +20,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p>
         <a href="/about" class="inline-link">Eva Decker</a>
         <span class="pronouns">(she/they)</span> is a designer and engineer based
-        in Brooklyn, NY. She has worked at places like
+        in Brooklyn, NY. She’s worked at
         <InlineBrandLink brand="dropbox" punctuation="," />
         <InlineBrandLink brand="cityblock" punctuation="," /> and <InlineBrandLink
           brand="swiftype"
           punctuation="."
-        /> Lately she's been making web art.
+        /> She likes playing piano and writing CSS.
       </p>
     </div>
     <div class="synth">
@@ -35,91 +35,108 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <Postcard />
     </div>
   </div>
-
-  <style lang="scss">
-    .visuallyhidden {
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      height: 1px;
-      overflow: hidden;
-      position: absolute;
-      white-space: nowrap;
-      width: 1px;
-    }
-
-    .pronouns {
-      color: var(--gray-11);
-    }
-
-    .grid {
-      display: grid;
-      padding: var(--space-xl);
-      grid-template:
-        "phone intro intro"
-        "phone synth synth"
-        "postcard postcard postcard";
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-3xl);
-      width: 1080px;
-      max-width: 100%;
-      margin-inline: auto;
-      overflow: hidden;
-
-      @media (width < 900px) {
-        width: 660px;
-        grid-template:
-          "phone"
-          "intro"
-          "synth"
-          "postcard";
-        align-items: center;
-      }
-    }
-
-    .phone {
-      grid-area: phone;
-      display: flex;
-      justify-content: center;
-    }
-
-    .intro {
-      grid-area: intro;
-      justify-self: flex-start;
-
-      :global(a) {
-        font-weight: var(--font-weight-bold);
-
-        &:hover {
-          text-decoration: underline;
-          text-decoration-color: var(--gray-8);
-          text-underline-offset: 0.1em;
-        }
-      }
-
-      p {
-        font-size: var(--step-1);
-        max-width: 36ch;
-        transform: rotate(-2deg);
-        line-height: 1.2;
-      }
-
-      @media (width < 900px) {
-        place-self: center;
-
-        p {
-          max-width: 26ch;
-        }
-      }
-    }
-
-    .synth {
-      grid-area: synth;
-      display: flex;
-      justify-content: center;
-    }
-
-    .postcard {
-      grid-area: postcard;
-    }
-  </style>
 </BaseLayout>
+
+<style lang="scss">
+  .visuallyhidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .pronouns {
+    color: var(--gray-11);
+  }
+
+  .grid {
+    display: grid;
+    padding: var(--space-xl);
+    grid-template:
+      "phone intro intro"
+      "phone synth synth"
+      "postcard postcard postcard";
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3xl);
+    width: 960px;
+    max-width: 100%;
+    margin-inline: auto;
+    overflow: hidden;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMjMiIHZpZXdCb3g9IjAgMCAyMyAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMS4wNDE3IDExLjk1ODNWMjNIMTJWMTEuOTU4M0gyM1YxMUgxMlYwSDExLjA0MTdWMTFIMFYxMS45NTgzSDExLjA0MTdaIiBmaWxsPSIjODA4MDgwIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4K");
+    background-position: top left;
+    background-position: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      background-image: radial-gradient(
+        closest-side,
+        transparent 75%,
+        var(--gray-1) 100%
+      );
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    @media (width < 900px) {
+      width: 660px;
+      grid-template:
+        "phone"
+        "intro"
+        "synth"
+        "postcard";
+      align-items: center;
+    }
+
+    > * {
+      z-index: 1;
+    }
+  }
+
+  .phone {
+    grid-area: phone;
+    display: flex;
+    justify-content: center;
+  }
+
+  .intro {
+    grid-area: intro;
+    justify-self: flex-start;
+
+    :global(a) {
+      font-weight: var(--font-weight-bold);
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--gray-8);
+        text-underline-offset: 0.1em;
+      }
+    }
+
+    p {
+      font-size: var(--step-1);
+      max-width: 36ch;
+      line-height: 1.2;
+      transform: rotate(-2deg);
+      text-wrap: balance;
+    }
+
+    @media (width < 900px) {
+      place-self: center;
+    }
+  }
+
+  .synth {
+    grid-area: synth;
+    display: flex;
+    justify-content: center;
+  }
+
+  .postcard {
+    grid-area: postcard;
+  }
+</style>
