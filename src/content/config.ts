@@ -58,4 +58,14 @@ export const collections = {
         tags: z.array(z.string()),
       }),
   }),
+
+  sideProjects: defineCollection({
+    type: "data",
+    schema: () =>
+      z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        url: z.string(),
+      }),
+  }),
 };

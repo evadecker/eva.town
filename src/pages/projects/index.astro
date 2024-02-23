@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import dayjs from "dayjs";
 
 import Center from "../../components/Center.astro";
@@ -8,51 +8,33 @@ import ProjectPreview from "../../components/ProjectPreview.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const projects = await getCollection("projects");
+const sideProjects = await getCollection("sideProjects");
 
-const projectsGroupedByYear = projects.reduce(
-  (acc: Record<number, Array<CollectionEntry<"projects">>>, project) => {
-    const year = dayjs(project.data.datePublished).year();
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(project);
-    return acc;
-  },
-  {}
+const sortedProjects = projects.sort((a, b) =>
+  dayjs(a.data.datePublished).isAfter(dayjs(b.data.datePublished)) ? -1 : 1
 );
 
 const title = "Projects";
-const description =
-  "A collection of product design, development, web art, and other things I've made.";
+const description = "A collection of tools I've helped design and build.";
 ---
 
 <BaseLayout title={title} description={description} includeFooter padBottom>
   <PageHeader title={title} description={description} />
   <Center>
     <section class="projects">
+      {sortedProjects.map((project) => <ProjectPreview project={project} />)}
+    </section>
+    <section class="side-projects">
+      <h2>Other little projects</h2>
       {
-        Object.entries(projectsGroupedByYear)
-          .reverse()
-          .map(([year, projects]) => (
-            <section>
-              <h2 class="year">
-                <time datetime={year}>{year}</time>
-              </h2>
-              <div class="projects-list">
-                {projects
-                  .sort((a, b) =>
-                    dayjs(a.data.datePublished).isAfter(
-                      dayjs(b.data.datePublished)
-                    )
-                      ? -1
-                      : 1
-                  )
-                  .map((project) => (
-                    <ProjectPreview project={project} />
-                  ))}
-              </div>
-            </section>
-          ))
+        sideProjects.map(({ data }) => (
+          <a href={data.url} class="side-project">
+            <strong>{data.title}</strong>
+            {data.description && (
+              <span class="description">{data.description}</span>
+            )}
+          </a>
+        ))
       }
     </section>
   </Center>
@@ -62,59 +44,40 @@ const description =
   .projects {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
+    gap: var(--space-3xl);
   }
 
-  .year {
-    background-color: var(--gray-1);
-    display: block;
-    text-align: center;
-    font-size: var(--step-1);
-    padding-block: var(--space-s);
-    position: sticky;
-    top: 0;
-    z-index: 1;
+  .side-projects {
+    margin-block-start: var(--space-3xl);
 
-    time {
-      background: var(--gray-1);
-      padding: 0 var(--space-xs);
-      position: relative;
-      z-index: 1;
-      font-variant-numeric: tabular-nums;
+    h2 {
+      margin-block-end: var(--space-l);
     }
+  }
+
+  .side-project {
+    display: block;
+    word-wrap: break-word;
+    padding-block: var(--space-s);
+    padding-inline: 0 var(--space-s);
+    transition: 0.15s padding ease;
+
+    & + .side-project {
+      border-top: 1px solid var(--gray-4);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        padding-inline: var(--space-s) 0;
+      }
+    }
+  }
+
+  .description {
+    color: var(--gray-11);
 
     &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--gray-5);
-      top: 50%;
-      z-index: -1;
-    }
-  }
-
-  .projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2xl);
-    padding-block: var(--space-l);
-  }
-
-  .banner {
-    background: var(--gray-3);
-    border-radius: var(--radius-s);
-    padding: var(--space-m) var(--space-l);
-
-    p {
-      line-height: 1.2;
-      margin-block-start: var(--space-2xs);
-    }
-
-    a {
-      color: var(--gray-9);
-      text-decoration: underline;
+      content: "— ";
     }
   }
 </style>
