@@ -60,10 +60,12 @@ const { title, description } = data;
     a {
       flex: 1;
       display: flex;
-      gap: var(--space-s);
+      align-items: center;
+      gap: var(--space-m);
       padding: var(--space-m);
       border-radius: var(--radius-s);
       border: 1px solid var(--gray-5);
+      line-height: 1.1;
 
       &.prev::before {
         content: "←";
@@ -75,16 +77,18 @@ const { title, description } = data;
 
       &.prev::before,
       &.next::after {
-        color: var(--gray-9);
+        font-size: var(--step-2);
+        color: var(--gray-10);
       }
 
       &.next {
         justify-content: flex-end;
+        text-align: right;
       }
 
       &:hover {
         color: var(--gray-12);
-        border-color: var(--gray-6);
+        border-color: var(--gray-7);
 
         &::before,
         &::after {
