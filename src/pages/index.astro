@@ -65,22 +65,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     max-width: 100%;
     margin-inline: auto;
     overflow: hidden;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMjMiIHZpZXdCb3g9IjAgMCAyMyAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMS4wNDE3IDExLjk1ODNWMjNIMTJWMTEuOTU4M0gyM1YxMUgxMlYwSDExLjA0MTdWMTFIMFYxMS45NTgzSDExLjA0MTdaIiBmaWxsPSIjODA4MDgwIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4K");
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjE5MjA5ZS0wNyAxTDAgMjRIMUwxIDFIMjRWMEgxSDEuMDcyODhlLTA2TDEuMTkyMDllLTA3IDFaIiBmaWxsPSIjODA4MDgwIiBmaWxsLW9wYWNpdHk9IjAuMTUiLz4KPC9zdmc+Cg==");
     background-position: top left;
     background-position: center;
-    position: relative;
-
-    &::before {
-      content: "";
-      background-image: radial-gradient(
-        closest-side,
-        transparent 75%,
-        var(--gray-1) 100%
-      );
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
+    box-shadow: inset 0 0 var(--space-3xl) var(--space-3xl) var(--gray-1);
 
     @media (width < 900px) {
       width: 660px;
