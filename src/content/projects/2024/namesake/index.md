@@ -5,7 +5,7 @@ slug: namesake
 roles:
   - Research
   - Product Design
-  - Front-End Engineering
+  - Engineering
 timeline: Jan 2024 – Ongoing
 collaborators: 
   - name: Luke Lennon

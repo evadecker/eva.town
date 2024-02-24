@@ -4,7 +4,7 @@ description: Swiftype is a site search and enterprise search platform. I created
 slug: swiftype
 roles: 
   - Product Design
-  - Front-End Engineering
+  - Engineering
   - Illustration
   - Iconography
 timeline: Oct 2015 – Aug 2016

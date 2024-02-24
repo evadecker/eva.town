@@ -4,7 +4,7 @@ description: A catalogue of gender reversal in cover songs and all its queer imp
 slug: genderswap
 roles: 
   - Product Design
-  - Full-Stack Engineering
+  - Engineering
 timeline: Oct 2023 – Dec 2023
 collaborators:
   - name: ABBA

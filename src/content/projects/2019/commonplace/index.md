@@ -5,7 +5,7 @@ slug: commonplace
 roles:
   - Strategy
   - Product Design
-  - Front-End Engineering
+  - Engineering
 collaborators:
   - name: Neves Rodrigues
     url: https://www.nevesrodrigues.com/

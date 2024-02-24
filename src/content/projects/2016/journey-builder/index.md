@@ -5,7 +5,7 @@ slug: journey-builder
 roles: 
   - Research
   - Product Design
-  - Front-End Engineering
+  - Engineering
 timeline: Nov 2016 – May 2017
 collaborators:
   - name: Aditi Jain

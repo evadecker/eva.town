@@ -5,7 +5,7 @@ slug: boundaries-map
 roles:
   - Research
   - Product Design
-  - Front-End Engineering
+  - Engineering
 timeline: Jul 2022 – Aug 2022
 collaborators:
   - name: Zhi Keng He
