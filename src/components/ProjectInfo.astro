@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 import { Icon } from "./Icon/Icon";
+import ProjectInfoBlock from "./ProjectInfoBlock.astro";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -12,31 +13,22 @@ const { project } = Astro.props;
 const { timeline, roles, collaborators, tech, repo } = project.data;
 ---
 
-<aside class="project-info">
-  {
-    timeline && (
-      <div class="project-info-block">
-        <strong>Timeline</strong>
-        <span>{timeline}</span>
-      </div>
-    )
-  }
+<dl class="project-info">
+  {timeline && <ProjectInfoBlock title="Timeline">{timeline}</ProjectInfoBlock>}
   {
     roles && (
-      <div class="project-info-block">
-        <strong>My Role</strong>
+      <ProjectInfoBlock title="My Role">
         <ul>
           {roles.map((role) => (
             <li>{role}</li>
           ))}
         </ul>
-      </div>
+      </ProjectInfoBlock>
     )
   }
   {
     collaborators && (
-      <div class="project-info-block">
-        <strong>Key Collaborators</strong>
+      <ProjectInfoBlock title="Collaborators">
         <ul>
           {collaborators.map((collaborator) => (
             <li>
@@ -51,50 +43,48 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
                   alt={`A photo of ${collaborator.name}`}
                   class="avatar"
                 />
-                {collaborator.name}
+                <span class="truncate">{collaborator.name}</span>
               </a>
             </li>
           ))}
         </ul>
-      </div>
+      </ProjectInfoBlock>
     )
   }
   {
     tech && (
-      <div class="project-info-block">
-        <strong>Tech</strong>
+      <ProjectInfoBlock title="Tech">
         <ul>
           {tech.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
-      </div>
+      </ProjectInfoBlock>
     )
   }
   {
     repo && (
-      <div class="project-info-block">
-        <strong>Source</strong>
+      <ProjectInfoBlock title="Source">
         <a href={`https://github.com/${repo}`} target="_blank" rel="noopener">
-          <Icon icon="github" size="20" /> Github
+          <Icon icon="github" size="20" /> Github{" "}
+          <Icon icon="externalLink" size="16" />
         </a>
-      </div>
+      </ProjectInfoBlock>
     )
   }
-</aside>
+</dl>
 
 <style lang="scss">
   .project-info {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid var(--gray-5);
     border: 1px solid var(--gray-5);
-    border-radius: var(--radius-s);
+    border-radius: var(--radius-m);
     padding: var(--space-l);
-    gap: var(--space-l);
+    gap: var(--space-s);
 
-    @media (width > 630px) {
-      width: 280px;
+    @media (width > 800px) {
+      width: 420px;
       float: right;
       margin-left: var(--space-xl);
       margin-bottom: var(--space-xl);
@@ -117,24 +107,17 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
     }
   }
 
-  .project-info-block {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2xs);
-    flex: 1;
-
-    strong {
-      font-size: var(--step--1);
-      font-weight: var(--font-weight-normal);
-      color: var(--gray-11);
-    }
-  }
-
   .avatar {
     background: var(--gray-4);
-    width: var(--space-l);
-    height: var(--space-l);
+    width: 20px;
+    height: 20px;
     border-radius: var(--radius-full);
-    margin-block: -0.5em;
+  }
+
+  .truncate {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 </style>
