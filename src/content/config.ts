@@ -35,7 +35,18 @@ export const collections = {
       z.object({
         title: z.string(),
         description: z.string(),
-        datePublished: z.date(),
+        roles: z.array(z.string()),
+        timeline: z.string(),
+        collaborators: z
+          .array(
+            z.object({
+              name: z.string(),
+              url: z.string(),
+              img: image(),
+            })
+          )
+          .optional(),
+        tech: z.array(z.string()).optional(),
         img: z
           .object({
             src: image(),
@@ -55,7 +66,6 @@ export const collections = {
             url: z.string().optional(), // If no URL is set, button will be disabled
           })
           .optional(),
-        tags: z.array(z.string()),
       }),
   }),
 

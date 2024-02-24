@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import dayjs from "dayjs";
 
 import Center from "../../components/Center.astro";
 import PageHeader from "../../components/PageHeader.astro";
@@ -10,8 +9,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const projects = await getCollection("projects");
 const sideProjects = await getCollection("sideProjects");
 
+// Sort by year subdirectory
 const sortedProjects = projects.sort((a, b) =>
-  dayjs(a.data.datePublished).isAfter(dayjs(b.data.datePublished)) ? -1 : 1
+  parseInt(a.id.substring(0, 4)) > parseInt(b.id.substring(0, 4)) ? -1 : 1
 );
 
 const title = "Projects";

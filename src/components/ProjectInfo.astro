@@ -1,0 +1,140 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+import { Icon } from "./Icon/Icon";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const { timeline, roles, collaborators, tech, repo } = project.data;
+---
+
+<aside class="project-info">
+  {
+    timeline && (
+      <div class="project-info-block">
+        <strong>Timeline</strong>
+        <span>{timeline}</span>
+      </div>
+    )
+  }
+  {
+    roles && (
+      <div class="project-info-block">
+        <strong>My Role</strong>
+        <ul>
+          {roles.map((role) => (
+            <li>{role}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    collaborators && (
+      <div class="project-info-block">
+        <strong>Key Collaborators</strong>
+        <ul>
+          {collaborators.map((collaborator) => (
+            <li>
+              <a
+                class="collaborator"
+                href={collaborator.url}
+                target="_blank"
+                rel="noopener"
+              >
+                <Image
+                  src={collaborator.img}
+                  alt={`A photo of ${collaborator.name}`}
+                  class="avatar"
+                />
+                {collaborator.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tech && (
+      <div class="project-info-block">
+        <strong>Tech</strong>
+        <ul>
+          {tech.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    repo && (
+      <div class="project-info-block">
+        <strong>Source</strong>
+        <a href={`https://github.com/${repo}`} target="_blank" rel="noopener">
+          <Icon icon="github" size="20" /> Github
+        </a>
+      </div>
+    )
+  }
+</aside>
+
+<style lang="scss">
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--gray-5);
+    border: 1px solid var(--gray-5);
+    border-radius: var(--radius-s);
+    padding: var(--space-l);
+    gap: var(--space-l);
+
+    @media (width > 630px) {
+      width: 280px;
+      float: right;
+      margin-left: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    ul,
+    li {
+      all: unset;
+    }
+
+    li {
+      display: block;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      text-decoration: none;
+    }
+  }
+
+  .project-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    flex: 1;
+
+    strong {
+      font-size: var(--step--1);
+      font-weight: var(--font-weight-normal);
+      color: var(--gray-11);
+    }
+  }
+
+  .avatar {
+    background: var(--gray-4);
+    width: var(--space-l);
+    height: var(--space-l);
+    border-radius: var(--radius-full);
+    margin-block: -0.5em;
+  }
+</style>

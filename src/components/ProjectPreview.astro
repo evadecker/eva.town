@@ -11,7 +11,7 @@ interface Props {
 
 const { project } = Astro.props;
 
-const { title, description, repo, img, video, cta, tags } = project.data;
+const { title, description, repo, img, video, cta, roles } = project.data;
 ---
 
 <div class="project">
@@ -39,7 +39,7 @@ const { title, description, repo, img, video, cta, tags } = project.data;
       <div class="title-and-tags">
         <h3 class="title">{title}</h3>
         <div class="tags">
-          {tags.map((tag) => <span class="tag">{tag}</span>)}
+          {roles.map((role) => <span class="tag">{role}</span>)}
         </div>
       </div>
       <div class="description">
@@ -47,7 +47,7 @@ const { title, description, repo, img, video, cta, tags } = project.data;
       </div>
     </div>
     {
-      (cta || repo) && (
+      (cta ?? repo) && (
         <footer>
           {cta && (
             <a
@@ -108,13 +108,14 @@ const { title, description, repo, img, video, cta, tags } = project.data;
     align-items: center;
     justify-content: space-between;
 
-    @media (width < 600px) {
+    @media (width < 740px) {
       align-items: flex-start;
       flex-direction: column;
       gap: var(--space-s);
 
       .tags {
         order: -1;
+        justify-content: flex-start;
       }
     }
   }
