@@ -32,12 +32,7 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
         <ul>
           {collaborators.map((collaborator) => (
             <li>
-              <a
-                class="collaborator"
-                href={collaborator.url}
-                target="_blank"
-                rel="noopener"
-              >
+              <a class="collaborator" href={collaborator.url}>
                 <Image
                   src={collaborator.img}
                   alt={`A photo of ${collaborator.name}`}
@@ -65,10 +60,11 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
   {
     repo && (
       <ProjectInfoBlock title="Source">
-        <a href={`https://github.com/${repo}`} target="_blank" rel="noopener">
-          <Icon icon="github" size="20" /> Github{" "}
-          <Icon icon="externalLink" size="16" />
-        </a>
+        <ul>
+          <li>
+            <a href={`https://github.com/${repo}`}>View on Github</a>
+          </li>
+        </ul>
       </ProjectInfoBlock>
     )
   }
@@ -103,14 +99,13 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
       display: inline-flex;
       align-items: center;
       gap: var(--space-xs);
-      text-decoration: none;
     }
   }
 
   .avatar {
     background: var(--gray-4);
-    width: 20px;
-    height: 20px;
+    width: var(--space-l);
+    height: var(--space-l);
     border-radius: var(--radius-full);
   }
 
