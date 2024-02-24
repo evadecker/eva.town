@@ -1,0 +1,96 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+
+import ProjectInfo from "../../components/ProjectInfo.astro";
+import ProseLayout from "../../layouts/ProseLayout.astro";
+
+export interface Props {
+  project: CollectionEntry<"projects">;
+  prev: CollectionEntry<"projects"> | null;
+  next: CollectionEntry<"projects"> | null;
+}
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project, index) => ({
+    params: { slug: project.slug },
+    props: {
+      project,
+      prev: projects[index - 1] ?? projects[projects.length - 1],
+      next: projects[index + 1] ?? projects[0],
+    },
+  }));
+}
+const { project, prev, next } = Astro.props;
+const { Content } = await project.render();
+
+const { data } = project;
+const { title, description } = data;
+---
+
+<ProseLayout title={title} description={description}>
+  <ProjectInfo project={project} />
+  <Content />
+  <div class="pagination">
+    {
+      prev && (
+        <a href={prev.slug} class="prev">
+          {prev.data.title}
+        </a>
+      )
+    }
+    {
+      next && (
+        <a href={next.slug} class="next">
+          {next.data.title}
+        </a>
+      )
+    }
+  </div>
+</ProseLayout>
+
+<style lang="scss">
+  .pagination {
+    display: flex;
+    margin-block-start: var(--space-3xl);
+    gap: var(--space-m);
+    clear: both;
+
+    a {
+      flex: 1;
+      display: flex;
+      gap: var(--space-s);
+      padding: var(--space-m);
+      border-radius: var(--radius-s);
+      border: 1px solid var(--gray-5);
+
+      &.prev::before {
+        content: "←";
+      }
+
+      &.next::after {
+        content: "→";
+      }
+
+      &.prev::before,
+      &.next::after {
+        color: var(--gray-9);
+      }
+
+      &.next {
+        justify-content: flex-end;
+      }
+
+      &:hover {
+        color: var(--gray-12);
+        border-color: var(--gray-6);
+
+        &::before,
+        &::after {
+          color: var(--gray-12);
+        }
+      }
+    }
+  }
+</style>
