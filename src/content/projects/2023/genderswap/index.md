@@ -5,7 +5,7 @@ slug: genderswap
 roles: 
   - Product Design
   - Engineering
-timeline: Oct 2023 – Dec 2023
+timeline: October 2023 – December 2023
 collaborators:
   - name: ABBA
     url: https://youtu.be/GHddJnNo_BQ?si=E9kbils39dAbpdky

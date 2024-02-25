@@ -6,7 +6,7 @@ roles:
   - Research
   - Product Design
   - Engineering
-timeline: Nov 2016 – May 2017
+timeline: November 2016 – May 2017
 collaborators:
   - name: Aditi Jain
     url: https://www.linkedin.com/in/jainaditi

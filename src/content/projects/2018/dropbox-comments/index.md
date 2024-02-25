@@ -9,7 +9,7 @@ collaborators:
   - name: Alessandra Mosenifar
     url: https://alessandramosenifar.com/
     img: ./alessandra.jpeg
-timeline: Jan 2018 – Aug 2018
+timeline: January 2018 – August 2018
 img:
   src: ./dropbox-comments.png
   alt: A preview of commenting UI used on Dropbox web.
