@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel/static";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import imgAttr from "remark-imgattr";
 
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
 
@@ -21,6 +22,7 @@ export default defineConfig({
   }),
   markdown: {
     rehypePlugins: [rehypeHeadingIds, [rehypeAutolinkHeadings, autolinkConfig]],
+    remarkPlugins: [imgAttr],
   },
   vite: {
     optimizeDeps: {

@@ -5,6 +5,7 @@ slug: commonplace
 timeline: Mar 2019 – Jul 2021
 roles:
   - Strategy
+  - Research
   - Product Design
   - Engineering
 collaborators:
@@ -26,12 +27,12 @@ collaborators:
   - name: Owen Tran
     url: https://www.linkedin.com/in/owentran27/
     img: ./owen.jpeg
-  - name: Craig Spaeth
-    url: http://www.craigspaeth.com/
-    img: ./craig.jpeg
   - name: Brennan Moore
     url: https://www.zamiang.com/
     img: ./brennan.jpeg
+  - name: Craig Spaeth
+    url: http://www.craigspaeth.com/
+    img: ./craig.jpeg
   - name: Aster Ryan
     url: https://aster.fyi/
     img: ./aster.png
@@ -39,6 +40,7 @@ tech:
   - Figma
   - React
   - React Spring
+  - Storybook
   - TypeScript
 img:
   src: ./commonplace.png
@@ -70,13 +72,13 @@ To support care teams and the members they serve, Cityblock builds and maintains
 
 ## The Challenge
 
-Despite Cityblock's young age (it was founded in 2017), by 2019, Commons already offered a sprawling set of features, including: tracking member status, charting member acuity, coordinating member outreach, storing and editing core demographics, viewing health history, scheduling events, managing tasks for individuals and teams, creating and administering health assessments with automated scoring, texting members... all that, and more planned.
+Despite Cityblock's young age (less than 2 years), Commons already offered a sprawling set of features, including: tracking member status, charting member acuity, coordinating member outreach, storing and editing core demographics, viewing health history, scheduling events, managing tasks for individuals and teams, creating and administering health assessments with automated scoring, texting members... all that, and more planned.
 
 These features all converged in an interface that looked like this:
 
 <figure>
   ![The Cityblock dashboard. There are many different styles, colors, and
-  fonts.](./initial.png)
+  fonts.](./initial.png)(quality:100)
   <figcaption>
     **The appearance of Commons when I joined Cityblock.** Here, in the
     right-hand drawer, a user is composing a progress note about the current
@@ -140,7 +142,7 @@ Care team members at Cityblock were each given a small Chromebook. They used thi
 It was essential, then, to design a typographic scale and provide suitable contrast to ensure that care teams could easily read Commons on a sub-standard display in a variety of real-world, less-than-ideal lighting conditions.
 
 <figure>
-  ![A screen within Commons](./low-contrast-typography.png)
+  ![A screen within Commons](./low-contrast-typography.png)(quality:100)
   <figcaption>
     **Low-contrast typography within Commons.** Many views contained small,
     light text which was difficult to read under ideal conditions, and
@@ -159,13 +161,13 @@ I also examined the use of color in film to portray two separate settings—the 
 <figure>
   <div class="two-up">
     ![A collage of various hospital settings portrayed in film and
-    TV.](./hospital-palette.png)
+    TV.](./hospital-palette.png)(quality:100)
 
-    ![test](./home-palette.png)
+    ![test](./home-palette.png)(quality:100)
 
   </div>
   <figcaption>
-    **Colors of the hospital, and colors of home.**
+    **Colors of the hospital, and colors of home.** What feelings do these scenes evoke?
   </figcaption>
 </figure>
 
@@ -179,11 +181,11 @@ This led to guiding principles:
 > 2. **Use high contrast elements sparingly.** What is the one action on any given view that deserves attention?
 > 3. **Skew warm.** Do not tint neutrals blue.
 
-And the resulting palette:
+And the resulting palette, defined as matching Figma styles and CSS variables:
 
 <figure>
-  ![A screenshot of Figma displaying the Cityblock color
-  palette.](./palette.png)
+  ![The Commonplace color palette with matching variables in
+  CSS.](./color-palette.png)(quality:100)
   <figcaption>
     **The color palette.** Colors are arranged along a spectrum from 100 (light)
     to 900 (dark). Some colors are aliased with a semantic name, so developers
@@ -194,16 +196,36 @@ And the resulting palette:
 
 ### Spacing
 
-We agreed to use an 8px grid for all components, and we agreed on specific fixed widths for sidebars while leaving the rest of the app responsive to scale with the browser.
+We agreed to use an 8 pixel grid for all components, and we agreed on specific fixed widths for sidebars while leaving the rest of the app responsive to scale with the browser.
 
-## Building in Code
+## Building Components
 
-Once foundations were in place, primitives were set up both in Figma and as CSS Variables in the codebase, and we were able to quickly and easily replace all existing hex codes with new color variables, existing padding, margin, widths, and heights with the new spacing scale, and swap out the typography.
+Once foundations were in place, primitives were set up both in Figma and as CSS Variables in the codebase, and we were able to quickly and easily replace all existing hex codes with new color variables, replace existing padding, margin, widths, and heights with the new spacing scale, and swap out the typography. Then began the long and steady process of building and replacing components one-by-one.
+
+Create a new `Button`, test it, swap out all existing buttons and delete all existing styles. Now onto `Input`. Rinse and repeat. This took place over the course of many months, alongside other feature work I was involved in, and it took place largely independently, although I continued to collaborate with Neves for visual and interaction design feedback, and engineers like [Brennan](https://www.zamiang.com/), [Craig](http://www.craigspaeth.com/), and [Aster](https://aster.fyi/) for code review.
+
+[Before and after components video]
+
+We chose an incremental approach, rather than building and shipping an entirely new design system all at once, in order to maintain forward momentum, bug test along the way, and enable new features to be built with new components as quickly as possible.
 
 ## Outcomes
 
-Incididunt fugiat non enim enim sunt laborum. Minim commodo consequat incididunt est adipisicing. Aute et nostrud amet culpa cupidatat sit anim deserunt officia veniam ex. Pariatur reprehenderit eu adipisicing ut Lorem consectetur sit cillum laboris sit eiusmod Lorem est. Nisi et et anim sint.
+By January 2020, the majority of components within Commons had been built using the newly-designed and engineered components. **Responses from engineers and care team members were overwhelmingly positive.** Bug reports decreased, new features became easier to build, and despite all the new variants and components added to the system, **several thousand lines of code were deleted** since the start of the project due to the reusability and modular nature of the design system, representing a net reduction in complexity and technical debt.
+
+[Before and after pages video]
+
+Around this time, I gave a company-wide talk about design systems, a concept which was unfamiliar to many people outside of the tech team. There was palpable excitement over seeing the drastic comparisons of screens before and after the design system.
+
+### From Sketch to Figma
+
+During the process, Neves and I migrated Cityblock from Sketch (with [Abstract](https://www.abstract.com/) for versioning and [Invision](https://www.invisionapp.com/product/prototype) for prototyping) to Figma (for all designing, versioning, and prototyping). With its [2019 launch of auto-layout](https://techcrunch.com/2019/12/05/figma-launches-auto-layout/), Figma enabled us to build components which more closely matched what existed in code.
+
+### Inaugurating Cityblock UX Engineering
+
+Recognizing the need for more design-focused engineering, I helped found Cityblock's first UX Enginering role to bridge the gap between design and development, and [multiple](https://www.hopetambala.com/) [others](https://desandro.com/) have taken up the role since my departure.
 
 ## Reflections
 
-Sit cupidatat sint do sit. Ex qui occaecat dolor irure magna irure excepteur do. Enim laborum quis ea irure minim culpa do tempor ullamco.
+The care teams at Cityblock do difficult, meaningful work, and it's essential that the technology we build for them respects their time and energy. I'm proud of the way I was able—with the help of my team—to transform Cityblock's approach to design and engineering, and (one hopes) reduce stress for our hard-working care teams.
+
+Incidentally, as I write this, in February 2024, **I've just [agreed to return to Cityblock](https://www.linkedin.com/posts/evadecker_its-been-awhile-but-im-excited-to-be-back-activity-7166518870042730496-bUhd?utm_source=share&utm_medium=member_desktop) for a 3-month contract to focus on design systems.** After 3 years' absence, the system foundations I put in place have held up remarkably well! Some areas have flourished, others have remained the same, and a few weeds have sprouted, but it's a wonderful feeling to see the work you put so much effort into continue to endure.
