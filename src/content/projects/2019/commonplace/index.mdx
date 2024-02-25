@@ -32,22 +32,17 @@ cta:
   text: Case study coming soon
 ---
 
-import Banner from "../../../../components/Banner.astro";
-
 ## Background
 
-[Cityblock](https://www.cityblock.com/) is a health tech company which spun out of Google's [Sidewalk Labs](https://www.sidewalklabs.com/). Through an on-staff team of clinicians and other health professionals, Cityblock provides in-community care to people on Medicare and Medicaid, aiming to improve health and reduce costs for an often-neglected population.
+[Cityblock](https://www.cityblock.com/) is a health tech company which spun out of Google's [Sidewalk Labs](https://www.sidewalklabs.com/). Teams of clinicians and other health professionals provide in-community care to people on Medicare and Medicaid, aiming to improve health and reduce costs for an often-neglected population.
 
-Cityblock builds and maintains an internal care management tool called **Commons**. I joined Cityblock in February 2019 as a Product Designer and quickly recognized the need for a more systematic approach to designing for Commons. Over the following two years, I built and expanded a design system in Figma and React. It's called **Commonplace**.
+To support these teams and the members they serve, Cityblock builds and maintains an internal tool called **Commons**. I joined Cityblock in February 2019 as a Product Designer and quickly recognized the need for a more systematic approach to designing for Commons. Over the following two years, I built and expanded a design system in Figma and React. I named it **Commonplace**.
 
 ## The Challenge
 
-Despite Cityblock's young age, Commons already offered a sprawling set of features, including:
+Despite Cityblock's young age, Commons already offered a sprawling set of features, including: tracking member status, acuity, outreach, core demographics, and health history; task management for individuals and teams; health assessment creation, editing, versioning, and automated scoring; scheduling; texting members; and many more.
 
-- tracking member status, acuity, outreach, core demographics, and progress,
-- individual and cross-functional task management,
-- health assessment creation, editing, and automated scoring,
-- scheduling, texting members, and more.
+These features all converged in an interface that looked like this:
 
 <figure>
   ![The Cityblock dashboard. There are many different styles, colors, and
@@ -61,25 +56,33 @@ Despite Cityblock's young age, Commons already offered a sprawling set of featur
   </figcaption>
 </figure>
 
-These features had largely been built piecemeal, and although there were some underlying commonalities and shared language throughout the product, **the design was not scaling to meet the needs of its users or developers.**
+Although there were some underlying commonalities and shared language throughout the product, **the design was not scaling to meet the needs of its users or developers.**
 
-Specifically, a lack of systemization was leading to longer development times, more time spent on undifferentiated work, more bugs in the product, and a user experience that was inconsistent and confusing. These problems would only worsen as Cityblock grew.
+A lack of systemization was leading to longer development times, more time spent on undifferentiated work, more bugs in the product, and a user experience that was inconsistent and confusing. These problems would only worsen as Cityblock grew.
 
 ## Mapping the Territory
 
 Together with [Neves](https://www.nevesrodrigues.com/), we began by cataloguing the available views. I conducted a product audit, clicking through and taking screenshots of every view, dialog, drawer, and dropdown within Commons. The images were then organized into folders for future reference.
 
 <figure>
-  ![A Google Drive with a collection of screenshots from Commons, organized
-  under the folder "360 View".](./product-audit.png)
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="none"
+    poster="/video/product-audit-poster.png"
+  >
+    <source src="/video/product-audit.mp4" type="video/mp4" />
+  </video>
   <figcaption>
     **A product audit.** We captured screenshots from every corner of Commons
-    and organized them in folders according to the information architecture of
-    the app.
+    and organized them in folders according to the app's information
+    architecture.
   </figcaption>
 </figure>
 
-The product audit helped understand the current state of Commons, and it served as a wonderful archival practice for the future. Throughout my tenure at Cityblock, I would continue to catalogue a product audit at least once a year.
+The product audit helped understand the current state of Commons, and it served as a wonderful archival practice for the future. Throughout my tenure at Cityblock, I would continue to catalogue product interfaces at least once a year.
 
 Following the product audit, we created an [interface inventory](https://bradfrost.com/blog/post/interface-inventory/), collecting all variations and permutations of each component and displaying a collage of those permutations on a large poster board.
 
@@ -147,10 +150,10 @@ And the resulting palette:
   ![A screenshot of Figma displaying the Cityblock color
   palette.](./palette.png)
   <figcaption>
-    **The color palette.** Colors are arranged along a consistent spectrum from
-    100 (light) to 900 (dark). Some colors are aliased with a semantic name, so
-    in code, developers can use `--color-icon` instead of needing to remember to
-    use `--color-neutral-700`.
+    **The color palette.** Colors are arranged along a spectrum from 100 (light)
+    to 900 (dark). Some colors are aliased with a semantic name, so developers
+    don't need to remember that icons are `--color-neutral-600`. They can just
+    use `--color-icon`.
   </figcaption>
 </figure>
 
