@@ -14,6 +14,12 @@ collaborators:
   - name: Minji Lee
     url: https://www.linkedin.com/in/minji-lee-ba045518/
     img: ./minji.jpeg
+  - name: Amber Greene
+    url: https://www.linkedin.com/in/amberhamptongreene/
+    img: ./amber.jpeg
+  - name: Taylor Maynard
+    url: https://www.linkedin.com/in/taylorjmaynard/
+    img: ./taylor.jpeg
   - name: Liza Fryberger
     url: https://www.linkedin.com/in/liza-fryberger/
     img: ./liza.jpeg
@@ -55,7 +61,7 @@ cta:
     <source src="/video/cityblock-member-story.mp4" type="video/mp4" />
   </video>
   <figcaption>
-    Andre, a Cityblock member, tells his story. Via{" "}
+    **Andre, a Cityblock member, tells his story.** Via{" "}
     <a href="https://vimeo.com/796683739">Vimeo</a>, 2023.
   </figcaption>
 </figure>
@@ -64,7 +70,7 @@ To support care teams and the members they serve, Cityblock builds and maintains
 
 ## The Challenge
 
-Despite Cityblock's young age, Commons already offered a sprawling set of features, including: tracking member status, charting member acuity, coordinating member outreach, storing and editing core demographics, viewing health history, scheduling events, managing tasks for individuals and teams, creating and administering health assessments with automated scoring, texting members... all that, and more planned.
+Despite Cityblock's young age (it was founded in 2017), by 2019, Commons already offered a sprawling set of features, including: tracking member status, charting member acuity, coordinating member outreach, storing and editing core demographics, viewing health history, scheduling events, managing tasks for individuals and teams, creating and administering health assessments with automated scoring, texting members... all that, and more planned.
 
 These features all converged in an interface that looked like this:
 
@@ -86,7 +92,7 @@ A lack of systemization was leading to longer development times, more time spent
 
 ## Mapping the Territory
 
-Together with [Neves](https://www.nevesrodrigues.com/), we began by cataloguing the available views. I conducted a product audit, clicking through and taking screenshots of every view, dialog, drawer, and dropdown within Commons. The images were then organized into folders for future reference.
+Together with Cityblock's Director of Design, [Neves](https://www.nevesrodrigues.com/), we began by cataloguing the available views. I conducted a product audit, clicking through and taking screenshots of every view, dialog, drawer, and dropdown within Commons. The images were then organized into folders for future reference.
 
 <figure>
   <video
@@ -129,7 +135,20 @@ Once the interface inventory was complete, we began to focus on design foundatio
 
 ### Typography
 
-With Cityblock's brand designer, [Minji](https://www.linkedin.com/in/minji-lee-ba045518/), we tested various typefaces for the product before landing on [Graphik](https://commercialtype.com/catalog/graphik) for its legibility and understated friendliness.
+Care team members at Cityblock were each given a small Chromebook. They used this device to access Commons in many locations—in the office, at community hubs, in members' homes, and in their car or on the subway.
+
+It was essential, then, to design a typographic scale and provide suitable contrast to ensure that care teams could easily read Commons on a sub-standard display in a variety of real-world, less-than-ideal lighting conditions.
+
+<figure>
+  ![A screen within Commons](./low-contrast-typography.png)
+  <figcaption>
+    **Low-contrast typography within Commons.** Many views contained small,
+    light text which was difficult to read under ideal conditions, and
+    practically impossible in others. All data is notional.
+  </figcaption>
+</figure>
+
+With Cityblock's brand designer, [Minji](https://www.linkedin.com/in/minji-lee-ba045518/), we tested various typefaces for the product before landing on [Graphik](https://commercialtype.com/catalog/graphik) for its legibility and understated friendliness. All text colors within the new design system would adhere to [WCAG AA](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum) or [AAA](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced) contrast ratios.
 
 ### Color
 
@@ -137,23 +156,20 @@ We considered colors for the product, prioritizing their pure function, their ac
 
 I also examined the use of color in film to portray two separate settings—the hospital and the home.
 
-<div class="two-up half-bleed">
-  <figure>
+<figure>
+  <div class="two-up">
     ![A collage of various hospital settings portrayed in film and
     TV.](./hospital-palette.png)
-    <figcaption>
-      <p>Hospital colors.</p>
-    </figcaption>
-  </figure>
-  <figure>
-    ![test](./home-palette.png)
-    <figcaption>
-      <p>Home colors.</p>
-    </figcaption>
-  </figure>
-</div>
 
-The hospital blue-greens are distinctly clinical (down to the robes worn by patients and doctors) and off-putting. “Home” tones, in contrast, feel soft and welcoming. I wrote at the time, "Cityblock should feel less like the hospital, and more like home."
+    ![test](./home-palette.png)
+
+  </div>
+  <figcaption>
+    **Colors of the hospital, and colors of home.**
+  </figcaption>
+</figure>
+
+The hospital blue-greens are distinctly clinical, down to the robes worn by patients and doctors, and feel somber and sterile. “Home” tones, in contrast, emit a warm, welcoming glow. I wrote at the time, "Cityblock should feel less like the hospital, and more like home."
 
 This led to guiding principles:
 
@@ -182,7 +198,7 @@ We agreed to use an 8px grid for all components, and we agreed on specific fixed
 
 ## Building in Code
 
-Once our foundations were in place, primitives were set up both in Figma and as CSS Variables in the codebase, and we were able to quickly and easily replace all existing hex codes with new color variables, existing padding, margin, widths, and heights with the new spacing scale, and swap out the typography.
+Once foundations were in place, primitives were set up both in Figma and as CSS Variables in the codebase, and we were able to quickly and easily replace all existing hex codes with new color variables, existing padding, margin, widths, and heights with the new spacing scale, and swap out the typography.
 
 ## Outcomes
 

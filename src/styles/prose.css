@@ -192,15 +192,15 @@
   top: 0.3em;
 }
 
-.prose > figure,
-.prose .two-up {
+.prose > figure {
   margin-block: var(--space-2xl);
   width: 100%;
   grid-column: 1 / -1;
 }
 
 .prose figure img,
-.prose figure video {
+.prose figure video,
+.prose figure .two-up {
   width: 100%;
   max-width: var(--image-max-width);
   margin-inline: auto;
@@ -208,14 +208,16 @@
 }
 
 /* Hacky way to target the image container without an extra div */
-.prose figure > p:first-child {
+.prose figure > p,
+.prose .two-up > p {
   margin-inline: auto;
   max-width: var(--image-max-width);
   overflow: hidden;
   position: relative;
 }
 
-.prose figure > p:first-child::after {
+.prose figure > p::after,
+.prose .two-up > p::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -230,7 +232,7 @@
     border-radius: 0;
   }
 
-  .prose figure > p:first-child::after {
+  .prose figure > p::after {
     border-radius: 0;
   }
 }
@@ -251,7 +253,7 @@
 .prose .two-up {
   display: flex;
   justify-content: center;
-  gap: var(--space-s);
+  gap: var(--space-2xs);
 }
 
 .prose .two-up > * {
