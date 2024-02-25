@@ -204,11 +204,11 @@
   width: 100%;
   max-width: var(--image-max-width);
   margin-inline: auto;
+  border-radius: var(--radius-m);
 }
 
 /* Hacky way to target the image container without an extra div */
 .prose figure > p:first-child {
-  border-radius: var(--radius-s);
   margin-inline: auto;
   max-width: var(--image-max-width);
   overflow: hidden;
@@ -220,12 +220,13 @@
   position: absolute;
   inset: 0;
   border: 1px solid var(--gray-a3);
-  border-radius: var(--radius-s);
+  border-radius: var(--radius-m);
   pointer-events: none;
 }
 
 @media (width <= 1200px) {
-  .prose figure > p:first-child {
+  .prose figure img,
+  .prose figure video {
     border-radius: 0;
   }
 
@@ -250,7 +251,7 @@
 .prose .two-up {
   display: flex;
   justify-content: center;
-  gap: var(--space-m);
+  gap: var(--space-s);
 }
 
 .prose .two-up > * {
