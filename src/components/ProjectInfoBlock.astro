@@ -18,12 +18,16 @@ const { title } = Astro.props;
 <style lang="scss">
   .project-info-block {
     display: flex;
-    flex: 1;
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--space-2xs);
 
     dt {
       font-weight: var(--font-weight-bold);
+      width: 140px;
+    }
+
+    dd {
+      flex: 1;
     }
   }
 </style>

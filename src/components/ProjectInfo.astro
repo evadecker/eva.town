@@ -29,23 +29,16 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
     collaborators && (
       <ProjectInfoBlock title="Collaborators">
         <ul>
-          {collaborators.map((collaborator) => (
-            <li>
-              <a class="collaborator" href={collaborator.url}>
-                <Image
-                  src={collaborator.img}
-                  alt={`A photo of ${collaborator.name}`}
-                  class="avatar"
-                />
-                <span class="truncate">{collaborator.name}</span>
-              </a>
-            </li>
-          ))}
+          {collaborators.map((collaborator) =>
+            // Condense whitespace
+            // prettier-ignore
+            <li><a class="collaborator" href={collaborator.url}><Image src={collaborator.img} alt={`A photo of ${collaborator.name}`} class="avatar" />{collaborator.name}</a></li>
+          )}
         </ul>
       </ProjectInfoBlock>
     )
   }
-  <!-- {
+  {
     tech && (
       <ProjectInfoBlock title="Tech">
         <ul>
@@ -66,32 +59,40 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
         </ul>
       </ProjectInfoBlock>
     )
-  } -->
+  }
 </dl>
 
 <style lang="scss">
   .project-info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border: 1px solid var(--gray-5);
     border-radius: var(--radius-m);
     padding: var(--space-l);
-    gap: var(--space-xl);
+    gap: var(--space-m);
+    columns: 2;
 
     ul,
     li {
       all: unset;
     }
 
-    li {
-      display: block;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: var(--space-2xs);
     }
 
-    a {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-xs);
+    li:not(:last-child)::after {
+      content: ",";
+      color: var(--gray-11);
     }
+  }
+
+  .collaborator {
+    display: inline;
+    padding-left: calc(var(--space-l) + var(--space-2xs));
+    position: relative;
   }
 
   .avatar {
@@ -99,12 +100,10 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
     width: var(--space-l);
     height: var(--space-l);
     border-radius: var(--radius-full);
-  }
-
-  .truncate {
-    min-width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 </style>
