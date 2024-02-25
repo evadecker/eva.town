@@ -1,3 +1,21 @@
+.prose {
+  display: grid;
+  grid-template-columns:
+    1fr 1fr
+    min(800px, 100%)
+    1fr 1fr;
+  padding-inline: var(--space-xl);
+}
+
+.prose > * {
+  grid-column: 3;
+}
+
+.prose .full-bleed {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
 .prose a {
   text-indent: 0;
 }
@@ -61,7 +79,7 @@
   .prose p a:focus,
   .prose li a:hover,
   .prose li a:focus {
-    text-decoration-color: var(--gray-9);
+    text-decoration-color: var(--gray-11);
   }
 }
 
@@ -73,6 +91,10 @@
   margin-top: 0;
 }
 
+.prose h3 {
+  margin-top: var(--space-xl);
+}
+
 .prose p + p {
   text-indent: 1.3em;
 }
@@ -80,8 +102,8 @@
 .prose * + ul,
 .prose * + ol,
 .prose * + blockquote {
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
+  margin-top: var(--space-l);
+  margin-bottom: var(--space-l);
 }
 
 .prose ul,
@@ -93,6 +115,11 @@
 .prose ul ul,
 .prose ol ol {
   margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prose ul:last-child,
+.prose ol:last-child {
   margin-bottom: 0;
 }
 
@@ -116,7 +143,7 @@
 
 .prose ol li::before {
   font-family: var(--font-sans);
-  content: counter(list-item, decimal-leading-zero);
+  content: counter(list-item);
   font-variant-numeric: tabular-nums;
 }
 
@@ -139,7 +166,6 @@
 .prose blockquote {
   border-left: 2px solid var(--gray-7);
   padding-left: var(--space-l);
-  font-style: italic;
   hanging-punctuation: first;
 }
 
@@ -165,3 +191,57 @@
 .prose sub {
   top: 0.3em;
 }
+
+.prose figure,
+.prose .half-bleed {
+  margin-block: var(--space-l);
+  width: 100%;
+  grid-column: 2 / -2;
+}
+
+.prose figure img {
+  width: 100%;
+}
+
+/* Hacky way to target the image container without an extra div */
+.prose figure > p:first-child {
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  position: relative;
+}
+
+.prose figure > p:first-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--gray-a3);
+  border-radius: var(--radius-s);
+  pointer-events: none;
+}
+
+.prose figcaption {
+  font-size: var(--step--1);
+  margin-block-start: var(--space-s);
+  max-inline-size: 800px;
+  margin-inline: auto;
+  display: flex;
+  position: relative;
+}
+
+.prose figcaption p:first-child::before {
+  content: "▲ ";
+}
+
+.prose .two-up {
+  display: flex;
+  gap: var(--space-m);
+}
+
+.prose .two-up > * {
+  flex: 1;
+}
+
+/* .prose .extra-wide {
+  width: calc(100% + 160px);
+  margin-inline: -80px;
+} */

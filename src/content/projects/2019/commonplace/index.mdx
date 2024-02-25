@@ -1,0 +1,169 @@
+---
+title: Commonplace
+description: Building a better design system for Cityblock.
+slug: commonplace
+timeline: Mar 2019 – Jul 2021
+roles:
+  - Strategy
+  - Product Design
+  - Engineering
+collaborators:
+  - name: Neves Rodrigues
+    url: https://www.nevesrodrigues.com/
+    img: ./neves.jpeg
+  - name: Liza Fryberger
+    url: https://www.linkedin.com/in/liza-fryberger/
+    img: ./liza.jpeg
+  - name: Craig Spaeth
+    url: http://www.craigspaeth.com/
+    img: ./craig.jpeg
+  - name: Brennan Moore
+    url: https://www.zamiang.com/
+    img: ./brennan.jpeg
+tech:
+  - Figma
+  - React
+  - React Spring
+  - TypeScript
+img:
+  src: ./commonplace.png
+  alt: A collection of Commonplace components represented in Figma and in code.
+cta:
+  text: Case study coming soon
+---
+
+import Banner from "../../../../components/Banner.astro";
+
+## Background
+
+[Cityblock](https://www.cityblock.com/) is a health tech company which spun out of Google's [Sidewalk Labs](https://www.sidewalklabs.com/). Through an on-staff team of clinicians and other health professionals, Cityblock provides in-community care to people on Medicare and Medicaid, aiming to improve health and reduce costs for an often-neglected population.
+
+Cityblock builds and maintains an internal care management tool called **Commons**. I joined Cityblock in February 2019 as a Product Designer and quickly recognized the need for a more systematic approach to designing for Commons. Over the following two years, I built and expanded a design system in Figma and React. It's called **Commonplace**.
+
+## The Challenge
+
+Despite Cityblock's young age, Commons already offered a sprawling set of features, including:
+
+- tracking member status, acuity, outreach, core demographics, and progress,
+- individual and cross-functional task management,
+- health assessment creation, editing, and automated scoring,
+- scheduling, texting members, and more.
+
+<figure>
+  ![The Cityblock dashboard. There are many different styles, colors, and
+  fonts.](./initial.png)
+  <figcaption>
+    **The appearance of Commons when I joined Cityblock.** Here, in the
+    right-hand drawer, a clinician is composing a progress note about the
+    current member. The varying colors, typography, and hierarchy make the
+    interface difficult to understand. All member data displayed in this case
+    study is notional.
+  </figcaption>
+</figure>
+
+These features had largely been built piecemeal, and although there were some underlying commonalities and shared language throughout the product, **the design was not scaling to meet the needs of its users or developers.**
+
+Specifically, a lack of systemization was leading to longer development times, more time spent on undifferentiated work, more bugs in the product, and a user experience that was inconsistent and confusing. These problems would only worsen as Cityblock grew.
+
+## Mapping the Territory
+
+Together with [Neves](https://www.nevesrodrigues.com/), we began by cataloguing the available views. I conducted a product audit, clicking through and taking screenshots of every view, dialog, drawer, and dropdown within Commons. The images were then organized into folders for future reference.
+
+<figure>
+  ![A Google Drive with a collection of screenshots from Commons, organized
+  under the folder "360 View".](./product-audit.png)
+  <figcaption>
+    **A product audit.** We captured screenshots from every corner of Commons
+    and organized them in folders according to the information architecture of
+    the app.
+  </figcaption>
+</figure>
+
+The product audit was helpful exercise in understanding the current state of Commons, and it served as a wonderful archival practice for the future. Throughout my tenure at Cityblock, I would continue to catalogue a product audit at least once a year.
+
+Following the product audit, we created an [interface inventory](https://bradfrost.com/blog/post/interface-inventory/), collecting all variations and permutations of each component and displaying a collage of those permutations on a large poster board.
+
+<figure>
+  ![A black foam board with several sheets of paper pinned to it. Each sheet of
+  paper displays a component name and a collection of variations on that
+  component observed in the product.](./inventory.png)
+  <figcaption>
+    **The interface inventory.** The product audit screenshots were used to
+    create a collage of each component's variations. How many header styles can
+    you count?
+  </figcaption>
+</figure>
+
+## Laying Foundations
+
+Once the interface inventory was complete, we began to focus on design foundations—typography, color, and spacing. All components rest on top of these three primitives, and we wanted to get the essentials right.
+
+### Typography
+
+With Cityblock's brand designer, [Minji Lee](https://www.linkedin.com/in/minji-lee-ba045518/), we tested various typefaces for the product before landing on [Graphik](https://commercialtype.com/catalog/graphik) for its legibility and understated friendliness.
+
+### Color
+
+We considered colors for the product, prioritizing their pure function, their accessibility and contrast, their relation to the brand, and their coherence as a whole. I also examined the use of color in film to portray two separate settings—the hospital and the home.
+
+<div class="two-up half-bleed">
+  <figure>
+    ![A collage of various hospital settings portrayed in film and
+    TV.](./hospital-palette.png)
+    <figcaption>
+      <p>The colors of the hospital.</p>
+    </figcaption>
+  </figure>
+  <figure>
+    ![test](./home-palette.png)
+    <figcaption>
+      <p>The colors of home.</p>
+    </figcaption>
+  </figure>
+</div>
+
+Compiling my thoughts at the time, I wrote:
+
+> The scenes [in the hospital] are cold. Sad. Notice the strong use of blues and cool greens. Stark whites. Dark blacks. Rarely, in a hospital, do we see the warmer end of the spectrum—and often when we do, it's to portray a certain grungy decrepitude. These blue-greens are distinctly clinical (down to the robes worn by patients and doctors), and they feel off-putting—if only because films like these have taught us that they _should_ be off-putting.
+>
+> Now, consider how film portrays home. Look at the difference! “Home” tones are warm—even the blues and greens (as in _The Lion King_, bottom left) take on yellow-orange hues. Everything appears soft and golden; Frodo’s sheets are practically glowing. Textures are natural. Sunlight. Stone. Lots of wood. Few synthetic things.
+>
+> Does this mean that everything in Commons needs to be golden beige? That we need to immediately scrap Cityblock cobalt blue? No. What this frame of mind offers us is a point of view. A guiding logic. Colors should be chosen to serve the needs of our care teams and our members, and align our brand to our goals. In my view, Cityblock should feel less like the hospital, and more like home.
+
+These thoughts were shared with the team and led to guiding principles:
+
+> **Guiding Principles for Color in Commons**
+>
+> 1. **Color gently.** Opt for soft, subdued tones. Avoid highly-saturated, electric colors.
+> 2. **Use high contrast elements sparingly.** This applies to fills, borders, and icons; text should always achieve a AA contrast ratio—AAA when possible. Avoid inverted and excessively thin text.
+> 3. **Use high saturation sparingly, and with intent.** What is the one action on any given view that deserves attention?
+> 4. **Skew warm.** Do not tint neutrals blue.
+
+And the resulting palette:
+
+<figure>
+  ![A screenshot of Figma displaying the Cityblock color
+  palette.](./color-palette.png)
+  <figcaption>
+    **The color palette.** Colors are arranged along a consistent spectrum from
+    100 (light) to 900 (dark). Some colors are aliased with a semantic name, so
+    in code, developers can use `--color-icon` instead of needing to remember to
+    use `--color-neutral-700`.
+  </figcaption>
+</figure>
+
+### Spacing
+
+We agreed to use an 8px grid for all components, and we agreed on specific fixed widths for sidebars while leaving the rest of the app responsive to scale with the browser.
+
+## Building in Code
+
+Once our foundations were in place, primitives were set up both in Figma and as CSS Variables in the codebase, and we were able to quickly and easily replace all existing hex codes with new color variables, existing padding, margin, widths, and heights with the new spacing scale, and swap out the typography.
+
+## Outcomes
+
+Incididunt fugiat non enim enim sunt laborum. Minim commodo consequat incididunt est adipisicing. Aute et nostrud amet culpa cupidatat sit anim deserunt officia veniam ex. Pariatur reprehenderit eu adipisicing ut Lorem consectetur sit cillum laboris sit eiusmod Lorem est. Nisi et et anim sint.
+
+## Reflections
+
+Sit cupidatat sint do sit. Ex qui occaecat dolor irure magna irure excepteur do. Enim laborum quis ea irure minim culpa do tempor ullamco.

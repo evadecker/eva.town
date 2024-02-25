@@ -45,7 +45,7 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
       </ProjectInfoBlock>
     )
   }
-  {
+  <!-- {
     tech && (
       <ProjectInfoBlock title="Tech">
         <ul>
@@ -66,24 +66,17 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
         </ul>
       </ProjectInfoBlock>
     )
-  }
+  } -->
 </dl>
 
 <style lang="scss">
   .project-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border: 1px solid var(--gray-5);
     border-radius: var(--radius-m);
     padding: var(--space-l);
-    gap: var(--space-s);
-
-    @media (width > 800px) {
-      width: 420px;
-      float: right;
-      margin-left: var(--space-xl);
-      margin-bottom: var(--space-xl);
-    }
+    gap: var(--space-xl);
 
     ul,
     li {
