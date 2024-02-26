@@ -2,6 +2,9 @@
 import Center from "../Center.astro";
 import { Icon } from "../Icon/Icon";
 import Logo from "./Logo.astro";
+
+const currentPath = Astro.url.pathname;
+const topLevelPath = currentPath.split("/")[1];
 ---
 
 <header>
@@ -9,8 +12,12 @@ import Logo from "./Logo.astro";
     <nav id="nav">
       <Logo />
       <div class="links">
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
+        <a href="/about" class={topLevelPath === "about" ? "active" : ""}
+          >About</a
+        >
+        <a href="/projects" class={topLevelPath === "projects" ? "active" : ""}
+          >Projects</a
+        >
         <button type="button" data-theme-toggle aria-label="Toggle theme">
           <Icon icon="sun" size="20" variant="line" className="sun" />
           <Icon icon="moon" size="20" variant="line" className="moon" />
@@ -118,6 +125,10 @@ import Logo from "./Logo.astro";
       &:active {
         background: var(--gray-a4);
         transition: none;
+      }
+
+      &.active {
+        background: var(--gray-a3);
       }
     }
 
