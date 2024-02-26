@@ -193,9 +193,13 @@
 }
 
 .prose > figure {
-  margin-block: var(--space-2xl);
+  margin-block-start: var(--space-2xl);
   width: 100%;
   grid-column: 1 / -1;
+}
+
+.prose > figure + *:not(h2) {
+  margin-block-start: var(--space-2xl);
 }
 
 .prose figure img,
@@ -232,7 +236,8 @@
     border-radius: 0;
   }
 
-  .prose figure > p::after {
+  .prose figure > p::after,
+  .prose .two-up > p::after {
     border-radius: 0;
   }
 }
