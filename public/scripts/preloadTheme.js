@@ -10,8 +10,9 @@ function getUserPreference() {
 
 const setTheme = () => {
   const userPreference = getUserPreference();
-  document.body.classList.remove("light", "dark");
-  document.body.classList.add(userPreference);
+
+  if (userPreference === "light") document.body.classList.remove("dark");
+  else document.body.classList.add("dark");
 
   const metaTheme = document.querySelector('meta[name="theme-color"]');
   if (metaTheme !== null)

@@ -88,6 +88,10 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
     }
   }
 
+  :global(.transitioning) .project-info {
+    transition: border-color 0.2s ease-in-out;
+  }
+
   .collaborator {
     display: inline;
     padding-left: calc(var(--space-l) + var(--space-2xs));

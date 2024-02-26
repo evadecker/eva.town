@@ -73,11 +73,19 @@ const description = "A collection of tools I've helped design and build.";
     }
   }
 
+  :global(.transitioning) .side-project {
+    transition: border-color 0.2s ease-in-out;
+  }
+
   .description {
     color: var(--gray-11);
 
     &::before {
       content: "— ";
     }
+  }
+
+  :global(.transitioning) .description {
+    transition: color 0.2s ease-in-out;
   }
 </style>

@@ -85,6 +85,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
   }
 
+  :global(.transitioning) .grid {
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
   .phone {
     grid-area: phone;
     display: flex;

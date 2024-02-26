@@ -23,6 +23,12 @@ body.dark {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body.transitioning {
+  transition:
+    background-color 0.2s ease-in-out 0s,
+    color 0.2s ease-in-out 0s;
+}
+
 ::selection {
   background: var(--amber-4);
   color: var(--amber-12);
