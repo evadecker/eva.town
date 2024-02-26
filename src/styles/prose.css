@@ -1,3 +1,24 @@
+.prose {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(800px, calc(100% - var(--space-xl) * 2))
+    1fr;
+  grid-column-gap: var(--space-xl);
+
+  --image-max-width: 1200px;
+}
+
+.prose > * {
+  grid-column: 2;
+}
+
+.prose .full-bleed {
+  width: 100%;
+  grid-column: 1 / -1;
+  padding-inline: 0;
+}
+
 .prose a {
   text-indent: 0;
 }
@@ -25,14 +46,10 @@
 .prose h4 a,
 .prose h5 a,
 .prose h6 a {
-  color: var(--gray-11);
-  display: inline-flex;
-  align-items: center;
-  margin-inline-start: var(--space-s);
-  padding: var(--space-xs);
-  border-radius: var(--radius-full);
+  color: var(--gray-9);
+  display: inline-block;
+  margin-inline-start: 0.25em;
   position: relative;
-  top: -0.1em;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -42,7 +59,7 @@
   .prose h4 a:hover,
   .prose h5 a:hover,
   .prose h6 a:hover {
-    background-color: var(--gray-3);
+    color: var(--gray-12);
   }
 }
 
@@ -52,8 +69,9 @@
 .prose h4 a svg,
 .prose h5 a svg,
 .prose h6 a svg {
-  width: var(--step-0);
-  height: var(--step-0);
+  width: 0.6em;
+  height: 0.6em;
+  margin-bottom: -0.05em;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -61,16 +79,20 @@
   .prose p a:focus,
   .prose li a:hover,
   .prose li a:focus {
-    text-decoration-color: var(--gray-9);
+    text-decoration-color: var(--gray-11);
   }
 }
 
 .prose h2 {
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-3xl);
 }
 
 .prose h2:first-child {
   margin-top: 0;
+}
+
+.prose h3 {
+  margin-top: var(--space-xl);
 }
 
 .prose p + p {
@@ -80,8 +102,8 @@
 .prose * + ul,
 .prose * + ol,
 .prose * + blockquote {
-  margin-top: var(--space-m);
-  margin-bottom: var(--space-m);
+  margin-top: var(--space-l);
+  margin-bottom: var(--space-l);
 }
 
 .prose ul,
@@ -93,6 +115,11 @@
 .prose ul ul,
 .prose ol ol {
   margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prose ul:last-child,
+.prose ol:last-child {
   margin-bottom: 0;
 }
 
@@ -116,7 +143,7 @@
 
 .prose ol li::before {
   font-family: var(--font-sans);
-  content: counter(list-item, decimal-leading-zero);
+  content: counter(list-item);
   font-variant-numeric: tabular-nums;
 }
 
@@ -139,7 +166,6 @@
 .prose blockquote {
   border-left: 2px solid var(--gray-7);
   padding-left: var(--space-l);
-  font-style: italic;
   hanging-punctuation: first;
 }
 
@@ -164,4 +190,78 @@
 
 .prose sub {
   top: 0.3em;
+}
+
+.prose > figure {
+  margin-block-start: var(--space-2xl);
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.prose > figure + *:not(h2) {
+  margin-block-start: var(--space-2xl);
+}
+
+.prose figure img,
+.prose figure video,
+.prose figure .two-up {
+  width: 100%;
+  max-width: var(--image-max-width);
+  margin-inline: auto;
+  border-radius: var(--radius-m);
+}
+
+/* Hacky way to target the image container without an extra div */
+.prose figure > p,
+.prose .two-up > p {
+  margin-inline: auto;
+  max-width: var(--image-max-width);
+  overflow: hidden;
+  position: relative;
+}
+
+.prose figure > p::after,
+.prose .two-up > p::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--gray-a3);
+  border-radius: var(--radius-m);
+  pointer-events: none;
+}
+
+@media (width <= 1200px) {
+  .prose figure img,
+  .prose figure video {
+    border-radius: 0;
+  }
+
+  .prose figure > p::after,
+  .prose .two-up > p::after {
+    border-radius: 0;
+  }
+}
+
+.prose figcaption {
+  font-size: var(--step--1);
+  margin-block-start: var(--space-s);
+  max-inline-size: min(800px, calc(100% - var(--space-xl) * 2));
+  margin-inline: auto;
+  display: flex;
+  position: relative;
+}
+
+.prose figcaption p:first-child::before {
+  content: "▲ ";
+}
+
+.prose .two-up {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xs);
+}
+
+.prose .two-up > * {
+  flex: 1;
+  max-width: calc((var(--image-max-width) - var(--space-m)) / 2);
 }

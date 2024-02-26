@@ -21,10 +21,13 @@ const { title } = Astro.props;
     flex-direction: row;
     gap: var(--space-2xs);
 
+    @media (width < 600px) {
+      flex-direction: column;
+    }
+
     dt {
       font-weight: var(--font-weight-bold);
-      flex: 0.75;
-      max-width: 140px;
+      width: 140px;
     }
 
     dd {

@@ -6,7 +6,7 @@ roles:
   - Research
   - Product Design
   - Engineering
-timeline: Jul 2022 – Aug 2022
+timeline: July 2022 – August 2022
 collaborators:
   - name: Zhi Keng He
     url: https://github.com/zhik

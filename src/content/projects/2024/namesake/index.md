@@ -6,7 +6,7 @@ roles:
   - Research
   - Product Design
   - Engineering
-timeline: Jan 2024 – Ongoing
+timeline: January 2024 – Ongoing
 collaborators: 
   - name: Luke Lennon
     url: https://www.linkedin.com/in/lukeblennon/

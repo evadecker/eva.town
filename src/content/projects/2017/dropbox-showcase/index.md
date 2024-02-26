@@ -5,7 +5,7 @@ slug: dropbox-showcase
 roles:
   - Product Design
   - Iconography
-timeline: Aug 2017 – Oct 2017
+timeline: August 2017 – October 2017
 collaborators:
   - name: Jason Perez
     url: https://www.jpg.xyz/
