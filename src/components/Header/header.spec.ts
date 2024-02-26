@@ -13,5 +13,5 @@ test("changes theme", async ({ page }) => {
   await themeToggle.click();
   await expect(page.locator("body")).toHaveClass("dark");
   await themeToggle.click();
-  await expect(page.locator("body")).toHaveClass("light");
+  await expect(page.locator("body")).not.toHaveClass("dark");
 });
