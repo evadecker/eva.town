@@ -125,6 +125,12 @@ const currentTime = dayjs().format("h:mm A");
 </a>
 
 <style lang="scss">
+  :global(.transitioning) #phone * {
+    transition:
+      fill 0.2s ease-in-out,
+      stroke 0.2s ease-in-out;
+  }
+
   .link-wrapper {
     display: inline-block;
     transform: rotate(-4deg);

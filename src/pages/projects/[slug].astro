@@ -36,14 +36,16 @@ const { title, description } = data;
     {
       prev && (
         <a href={prev.slug} class="prev">
-          {prev.data.title}
+          <span class="label">Previous</span>
+          <span class="title">{prev.data.title}</span>
         </a>
       )
     }
     {
       next && (
         <a href={next.slug} class="next">
-          {next.data.title}
+          <span class="label">Next</span>
+          <span class="title">{next.data.title}</span>
         </a>
       )
     }
@@ -57,42 +59,77 @@ const { title, description } = data;
     gap: var(--space-m);
     clear: both;
 
+    @media (width < 600px) {
+      flex-direction: column;
+      gap: var(--space-m);
+    }
+
     a {
       flex: 1;
-      display: flex;
-      align-items: center;
-      gap: var(--space-m);
+      display: grid;
+      column-gap: var(--space-m);
       padding: var(--space-m);
-      border-radius: var(--radius-s);
+      border-radius: var(--radius-m);
       border: 1px solid var(--gray-5);
       line-height: 1.1;
+      align-items: center;
+      transition:
+        background-color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out;
 
-      &.prev::before {
-        content: "←";
+      &.prev {
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+          "arrow label"
+          "arrow title";
       }
 
-      &.next::after {
-        content: "→";
+      &.next {
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+          "label arrow"
+          "title arrow";
+        text-align: right;
       }
 
       &.prev::before,
       &.next::after {
-        font-size: var(--step-2);
+        font-size: var(--step-1);
         color: var(--gray-10);
+        transition: color 0.2s ease-in-out;
       }
 
-      &.next {
-        justify-content: flex-end;
-        text-align: right;
+      &.prev::before {
+        content: "←";
+        grid-area: arrow;
       }
 
-      &:hover {
-        color: var(--gray-12);
-        border-color: var(--gray-7);
+      &.next::after {
+        content: "→";
+        grid-area: arrow;
+      }
 
-        &::before,
-        &::after {
+      .label {
+        grid-area: label;
+        font-size: var(--step--1);
+        color: var(--gray-11);
+        transition: color 0.2s ease-in-out;
+      }
+
+      .title {
+        grid-area: title;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--gray-3);
           color: var(--gray-12);
+          border-color: var(--gray-6);
+
+          &::before,
+          &::after {
+            color: var(--gray-12);
+          }
         }
       }
     }

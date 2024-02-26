@@ -38,8 +38,13 @@ const topLevelPath = currentPath.split("/")[1];
 
   function setActiveTheme(theme: Theme) {
     // Update class on body
-    document.body.classList.remove("light", "dark");
-    document.body.classList.add(theme);
+    document.body.classList.remove("transitioning");
+    document.body.classList.add("transitioning");
+
+    setTimeout(() => {
+      if (theme === "light") document.body.classList.remove("dark");
+      else document.body.classList.add("dark");
+    }, 100);
 
     // Update localStorage
     window.localStorage.setItem("theme", theme);
@@ -51,6 +56,11 @@ const topLevelPath = currentPath.split("/")[1];
         "content",
         theme === "dark" ? grayDark.gray1 : gray.gray1
       );
+
+    // Wait for transition to finish
+    setTimeout(() => {
+      document.body.classList.remove("transitioning");
+    }, 300);
   }
 
   let toggleButton = document.querySelector("[data-theme-toggle]");
@@ -63,11 +73,14 @@ const topLevelPath = currentPath.split("/")[1];
 
 <style lang="scss">
   header {
+    // Extend header beyond canvas to prevent blur artifacts along edge
+    --header-offset: 20px;
+
     width: 100%;
     position: sticky;
-    top: 0;
+    top: calc(var(--header-offset) * -1);
     z-index: 100;
-    padding-block: var(--space-m);
+    padding-block: calc(var(--space-m) + var(--header-offset)) var(--space-m);
     box-shadow: inset 0 0 var(--space-m) var(--gray-1);
     overflow: hidden;
 
@@ -76,7 +89,7 @@ const topLevelPath = currentPath.split("/")[1];
       position: absolute;
       inset: 0;
       background: var(--gray-1);
-      opacity: 0.75;
+      opacity: 0.65;
       z-index: -2;
     }
 
@@ -86,10 +99,18 @@ const topLevelPath = currentPath.split("/")[1];
 
       // Pick up colors beyond the borders of the base element
       // This currently does not work in Chrome, but does in Safari
-      inset: 0 0 -16px;
+      inset: 0;
       backdrop-filter: blur(20px) saturate(180%);
       z-index: -1;
     }
+  }
+
+  :global(.transitioning) header {
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  :global(.transitioning) header::before {
+    transition: background-color 0.2s ease-in-out;
   }
 
   nav {
@@ -118,13 +139,15 @@ const topLevelPath = currentPath.split("/")[1];
       cursor: pointer;
       transition: background-color 0.2s ease-in-out;
 
-      &:hover {
-        background: var(--gray-a3);
-      }
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background: var(--gray-a3);
+        }
 
-      &:active {
-        background: var(--gray-a4);
-        transition: none;
+        &:active {
+          background: var(--gray-a4);
+          transition: none;
+        }
       }
 
       &.active {

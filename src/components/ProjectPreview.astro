@@ -135,6 +135,13 @@ const { title, description, repo, img, video, cta, roles } = project.data;
     }
   }
 
+  :global(.transitioning) .tags,
+  :global(.transitioning) .tag {
+    transition:
+      color 0.2s ease-in-out,
+      background-color 0.2s ease-in-out;
+  }
+
   .media {
     background-color: var(--gray-3);
     width: 100%;
@@ -194,6 +201,13 @@ const { title, description, repo, img, video, cta, roles } = project.data;
   :global(.dark) .button {
     background-color: var(--gray-3);
     border-color: var(--gray-a3);
+  }
+
+  :global(.transitioning) .button {
+    transition:
+      color 0.2s ease-in-out,
+      background-color 0.2s ease-in-out,
+      border-color 0.2s ease-in-out;
   }
 
   .button:not(.disabled):hover {
