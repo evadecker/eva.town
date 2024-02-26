@@ -90,23 +90,22 @@ import Logo from "./Logo.astro";
     align-items: center;
     justify-content: space-between;
     gap: var(--space-s);
-    position: relative;
   }
 
   .links {
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    gap: var(--space-2xs);
     margin-right: calc(-1 * var(--space-s));
 
     a,
     button {
       display: inline-flex;
       align-items: center;
-      height: 40px;
       background: transparent;
       line-height: 1;
       color: var(--gray-12);
-      padding: 0 var(--space-s);
+      padding: var(--space-xs) var(--space-s);
       border: none;
       border-radius: var(--radius-full);
       cursor: pointer;
@@ -121,24 +120,23 @@ import Logo from "./Logo.astro";
         transition: none;
       }
     }
-  }
 
-  [data-theme-toggle] {
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+    button[data-theme-toggle] {
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-sizing: content-box;
+      width: 20px;
+      height: 20px;
+      padding-inline: var(--space-xs);
 
-    :global(svg) {
-      transform-origin: 50% 200%;
-      transition:
-        transform 0.4s ease-out,
-        opacity 0.2s ease-in-out;
-      position: absolute;
-      width: 24px;
-      height: 24px;
+      :global(svg) {
+        transform-origin: 50% 200%;
+        transition:
+          transform 0.4s ease-out,
+          opacity 0.2s ease-in-out;
+        position: absolute;
+      }
     }
   }
 
