@@ -1,24 +1,14 @@
 ---
-import { ToggleTheme } from "../Header/ToggleTheme";
+
 ---
 
 <footer>
-  <div class="toggle">
-    <ToggleTheme client:only="react" />
-  </div>
   <div class="links">
-    <div class="pages">
-      <a href="/about">About</a>
-      <a href="/projects">Projects</a>
-      <a href="/colophon">Colophon</a>
-    </div>
-    <div class="social">
-      <a href="https://www.are.na/eva-decker/" target="_blank">Are.na</a>
-      <a href="https://github.com/evadecker" target="_blank">GitHub</a>
-      <a href="https://www.goodreads.com/evadecker" target="_blank">Goodreads</a
-      >
-      <a href="https://linkedin.com/in/evadecker" target="_blank">LinkedIn</a>
-    </div>
+    <a href="https://www.are.na/eva-decker/" target="_blank">Are.na</a>
+    <a href="https://github.com/evadecker" target="_blank">GitHub</a>
+    <a href="https://www.goodreads.com/evadecker" target="_blank">Goodreads</a>
+    <a href="https://linkedin.com/in/evadecker" target="_blank">LinkedIn</a>
+    <a href="/colophon">Colophon</a>
   </div>
 </footer>
 
@@ -35,17 +25,9 @@ import { ToggleTheme } from "../Header/ToggleTheme";
     gap: var(--space-s) var(--space-xl);
   }
 
-  .pages,
-  .social {
-    display: flex;
-    align-items: center;
-    gap: var(--space-s);
-  }
-
   .links {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: var(--space-s);
     flex-wrap: wrap;
 
@@ -57,10 +39,5 @@ import { ToggleTheme } from "../Header/ToggleTheme";
         text-decoration: underline;
       }
     }
-  }
-
-  .toggle {
-    width: 32px;
-    height: 32px;
   }
 </style>

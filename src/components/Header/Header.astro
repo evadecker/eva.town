@@ -1,6 +1,10 @@
 ---
 import Center from "../Center.astro";
+import { Icon } from "../Icon/Icon";
 import Logo from "./Logo.astro";
+
+const currentPath = Astro.url.pathname;
+const topLevelPath = currentPath.split("/")[1];
 ---
 
 <header>
@@ -8,16 +12,84 @@ import Logo from "./Logo.astro";
     <nav id="nav">
       <Logo />
       <div class="links">
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
+        <a href="/about" class={topLevelPath === "about" ? "active" : ""}
+          >About</a
+        >
+        <a href="/projects" class={topLevelPath === "projects" ? "active" : ""}
+          >Projects</a
+        >
+        <button type="button" data-theme-toggle aria-label="Toggle theme">
+          <Icon icon="sun" size="20" variant="line" className="sun" />
+          <Icon icon="moon" size="20" variant="line" className="moon" />
+        </button>
       </div>
     </nav>
   </Center>
 </header>
 
-<style>
+<script>
+  import { gray, grayDark } from "@radix-ui/colors";
+
+  type Theme = "light" | "dark";
+
+  function getActiveTheme(): Theme {
+    return document.body.classList.contains("dark") ? "dark" : "light";
+  }
+
+  function setActiveTheme(theme: Theme) {
+    // Update class on body
+    document.body.classList.remove("light", "dark");
+    document.body.classList.add(theme);
+
+    // Update localStorage
+    window.localStorage.setItem("theme", theme);
+
+    // Update meta theme
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme !== null)
+      metaTheme.setAttribute(
+        "content",
+        theme === "dark" ? grayDark.gray1 : gray.gray1
+      );
+  }
+
+  let toggleButton = document.querySelector("[data-theme-toggle]");
+
+  toggleButton &&
+    toggleButton.addEventListener("click", () => {
+      setActiveTheme(getActiveTheme() === "light" ? "dark" : "light");
+    });
+</script>
+
+<style lang="scss">
   header {
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding-block: var(--space-m);
+    box-shadow: inset 0 0 var(--space-m) var(--gray-1);
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--gray-1);
+      opacity: 0.75;
+      z-index: -2;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+
+      // Pick up colors beyond the borders of the base element
+      // This currently does not work in Chrome, but does in Safari
+      inset: 0 0 -16px;
+      backdrop-filter: blur(20px) saturate(180%);
+      z-index: -1;
+    }
   }
 
   nav {
@@ -25,33 +97,65 @@ import Logo from "./Logo.astro";
     align-items: center;
     justify-content: space-between;
     gap: var(--space-s);
-    padding-block: var(--space-l);
   }
 
   .links {
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    gap: var(--space-2xs);
+    margin-right: calc(-1 * var(--space-s));
+
+    a,
+    button {
+      display: inline-flex;
+      align-items: center;
+      background: transparent;
+      line-height: 1;
+      color: var(--gray-12);
+      padding: var(--space-xs) var(--space-s);
+      border: none;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background: var(--gray-a3);
+      }
+
+      &:active {
+        background: var(--gray-a4);
+        transition: none;
+      }
+
+      &.active {
+        background: var(--gray-a3);
+      }
+    }
+
+    button[data-theme-toggle] {
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-sizing: content-box;
+      width: 20px;
+      height: 20px;
+      padding-inline: var(--space-xs);
+
+      :global(svg) {
+        transform-origin: 50% 200%;
+        transition:
+          transform 0.4s ease-out,
+          opacity 0.2s ease-in-out;
+        position: absolute;
+      }
+    }
   }
 
-  .links a,
-  .links button {
-    background: transparent;
-    line-height: 1;
-    padding: var(--space-xs) var(--space-s);
-    border: none;
-    border-radius: var(--radius-full);
-    cursor: pointer;
+  :global(body:not(.dark) .moon) {
+    transform: rotate(60deg);
   }
 
-  .links a:hover,
-  .links button:hover {
-    background: var(--gray-a3);
-    color: var(--gray-12);
-  }
-
-  .links a:active,
-  .links button:active {
-    background: var(--gray-a4);
-    color: var(--gray-12);
+  :global(.dark .sun) {
+    transform: rotate(-60deg);
   }
 </style>
