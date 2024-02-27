@@ -26,10 +26,10 @@ const { project, prev, next } = Astro.props;
 const { Content } = await project.render();
 
 const { data } = project;
-const { title, description } = data;
+const { title, description, ogImage } = data;
 ---
 
-<ProseLayout title={title} description={description}>
+<ProseLayout title={title} description={description} ogImage={ogImage?.src}>
   <ProjectInfo project={project} />
   <Content />
   <div class="pagination">
