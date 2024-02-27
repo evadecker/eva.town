@@ -52,7 +52,7 @@ cta:
 
 ## Background
 
-[Cityblock](https://www.cityblock.com/) is a health company which first got its start within Google's [Sidewalk Labs](https://www.sidewalklabs.com/). Teams of clinicians and other health professionals provide in-community care to people on Medicare and Medicaid, aiming to improve health for an often-neglected population.
+[Cityblock](https://www.cityblock.com/) is a health company which got its start within Google's [Sidewalk Labs](https://www.sidewalklabs.com/). Teams of clinicians and other health professionals provide in-community care to people on Medicare and Medicaid to improve health for an often-neglected population.
 
 <figure>
   <video
@@ -73,9 +73,9 @@ To support care teams and the members they serve, Cityblock builds and maintains
 
 ## The Challenge
 
-Despite Cityblock's young age (less than 2 years), Commons already offered a sprawling set of features, including: tracking member status, charting member acuity, coordinating member outreach, storing and editing core demographics, viewing health history, scheduling events, managing tasks for individuals and teams, creating and administering health assessments with automated scoring, texting members... all that, and more planned.
+Cityblock was less than two years old, but Commons already offered a sprawling set of features, including: tracking member status, charting member acuity, coordinating member outreach, storing and editing core demographics, viewing health history, scheduling events, managing tasks for individuals and teams, creating and administering health assessments with automated scoring, texting members... all that, and more planned.
 
-These features all converged in an interface that looked like this:
+All of these features converged in an interface that looked like this:
 
 <figure>
   ![The Cityblock dashboard. There are many different styles, colors, and
@@ -95,7 +95,7 @@ A lack of systemization was leading to longer development times, more time spent
 
 ## Mapping the Territory
 
-Together with Cityblock's Director of Design, [Neves](https://www.nevesrodrigues.com/), we began by cataloguing the available views. I conducted a product audit, clicking through and taking screenshots of every view, dialog, drawer, and dropdown within Commons. The images were then organized into folders for future reference.
+Together with Cityblock's Director of Design, [Neves](https://www.nevesrodrigues.com/), we catalogued the available views. I conducted a product audit, clicking through and taking screenshots of every view, dialog, drawer, and dropdown within Commons. The images were then organized into folders for future reference.
 
 <figure>
   <video
@@ -115,7 +115,7 @@ Together with Cityblock's Director of Design, [Neves](https://www.nevesrodrigues
   </figcaption>
 </figure>
 
-The product audit helped understand the current state of Commons, and it served as a wonderful archival practice for the future. Throughout my tenure at Cityblock, I would continue to catalogue product interfaces at least once a year.
+The product audit helped us understand the current state of Commons, and it ushered in an essential archival practice for the future. Throughout my tenure at Cityblock, I would continue to catalogue product interfaces at least once a year.
 
 Following the product audit, we created an [interface inventory](https://bradfrost.com/blog/post/interface-inventory/), collecting all variations and permutations of each component and displaying a collage of those permutations on a large poster board.
 
@@ -134,11 +134,11 @@ This inventory allowed us to more easily spot inconsistencies and discuss how be
 
 ## Laying Foundations
 
-Once the interface inventory was complete, we began to focus on design foundations—typography, color, and spacing. All components rest on top of these three primitives, and we wanted to get the essentials right.
+Once the interface inventory was complete, we focused on design foundations—typography, color, and spacing. All components rest on top of these three primitives, and we wanted to get the essentials right.
 
 ### Typography
 
-Care teams at Cityblock are given small Chromebooks to take with them around the city. They use their Chromebook to access Commons in many locations, like the office, at community hubs, in members' homes, and in their car or on the subway.
+Care teams at Cityblock are given small Chromebooks to take with them around the city. They use their Chromebooks to access Commons in many locations: the office, at community hubs, in members' homes, and in their car or on the subway.
 
 As we laid out a typographic scale and compared different typefaces, we made sure to test text on the Chromebook's low-DPI display in a variety of real-world, less-than-ideal lighting conditions, in order to ensure that Commons was legible in every setting.
 
@@ -168,7 +168,7 @@ With Cityblock's brand designer, [Minji](https://www.linkedin.com/in/minji-lee-b
 
 ### Color
 
-We considered colors for the product, prioritizing their pure function, their accessibility and contrast, their relation to the brand, and their coherence as a whole.
+We considered colors use in Commons, prioritizing pure function, accessibility and contrast, relation to the brand, and coherence as a whole.
 
 I also examined the use of color in film to portray two separate settings—the hospital and the home.
 
@@ -216,7 +216,7 @@ We agreed to use an 8 pixel grid for all components, and we agreed on specific f
 
 Once foundations were in place, primitives were set up both in Figma and as CSS Variables in the codebase, and we were able to quickly and easily replace all existing hex codes with new color variables, replace existing padding, margin, widths, and heights with the new spacing scale, and swap out the typography.
 
-Then began the long and steady process of building and replacing components one-by-one. Create a new `Button`. Test it. Swap out all existing buttons and delete all existing styles. Merge in the changes. Pick a new component, then rinse and repeat.
+Then began the long and steady process of building and replacing components one-by-one. Create a new `Button`. Test it. Swap out all existing buttons and delete all existing styles. Merge in the changes. Pick a new component, rinse and repeat.
 
 <figure>
   ![Components displayed in Figma and in code.](./components.png)(quality:100)
@@ -230,7 +230,7 @@ Then began the long and steady process of building and replacing components one-
 
 Component work took place over the course of many months, alongside other feature work I was involved in. It took place largely independently, although I continued to collaborate with [Neves](https://www.nevesrodrigues.com/) for visual and interaction design feedback, researchers like [Amber](https://www.linkedin.com/in/amberhamptongreene/) and [Taylor](https://www.linkedin.com/in/taylorjmaynard/) for user insights, and engineers like [Brennan](https://www.zamiang.com/), [Aster](https://aster.fyi/), and [Craig](http://www.craigspaeth.com/), for code review.
 
-We chose an incremental approach, rather than building and shipping an entirely new design system all at once, in order to maintain forward momentum, bug test along the way, and enable new features to be built with new components as quickly as possible.
+We chose an incremental approach—rather than building and shipping an entirely new design system all at once—in order to maintain forward momentum, bug test along the way, and enable new features to be built with new components as quickly as possible.
 
 ## Outcomes
 
