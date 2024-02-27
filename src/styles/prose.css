@@ -9,7 +9,8 @@
   --image-max-width: 1200px;
 }
 
-.prose > * {
+.prose > *,
+.prose .no-bleed {
   grid-column: 2;
 }
 
@@ -207,6 +208,7 @@
 
 .prose > figure {
   margin-block-start: var(--space-2xl);
+  margin-inline: auto;
   width: 100%;
   grid-column: 1 / -1;
 }

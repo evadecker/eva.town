@@ -1,0 +1,101 @@
+---
+title: Genderswap.fm
+description: Cataloguing gender reversal in cover songs.
+slug: genderswap
+roles:
+  - Product Design
+  - Engineering
+timeline: October 2023 – December 2023
+collaborators:
+  - name: ABBA
+    url: https://youtu.be/GHddJnNo_BQ?si=E9kbils39dAbpdky
+    img: ./abba.jpeg
+tech:
+  - Melt UI
+  - Svelte
+  - SvelteKit
+  - Supabase
+  - Spotify Web API
+  - TypeScript
+website: https://genderswap.fm
+repo: evadecker/genderswap.fm
+img:
+  src: "./genderswap-fm.png"
+  alt: "A collection of original and cover album art for different songs."
+url: /projects/genderswap
+---
+
+## Background
+
+In 2021, I read the novel _[Paul Takes the Form of a Mortal Girl](https://www.goodreads.com/en/book/show/35838277)_ by Andrea Lawlor. Early in the book, Paul gushes about his love of gender-swapped covers:
+
+> Some covers deliver the age-old simple pleasures of drag—knowledge, the opportunity to investigate the simulacra and make comparisons, that obscure little frisson of dissonance. Take Joan Baez singing “Virgil Kane is my name… like my father before me, I’m a working man” (which, of course, is originally from The Band’s “The Night They Drove Old Dixie Down)” or Cait O’Riordan from the Pogues crooning, “My name is Jock Stewart, I’m a canny gun man” (from the traditional “I’m a Man You Don’t Meet Every Day”). Joan Baez’s contralto can, if you squint your ears, pass as a farm-boy tenor; Cait O’Riordan’s chalky delivery might be that of a rich ponce.
+
+I listened to each song mentioned, both the cover and the original, enamored with how lyrics could completely transform under another artist's tone, tempo, and gender.
+
+With Paul's songs, and the addition of other covers I'd fallen in love with—like [The Czars' sparse, gravelly rendition of ABBA's Angeleyes](https://genderswap.fm/cover/angel-eyes-the-czars)—I compiled a large Spotify playlist.
+
+## The Challenge
+
+As my covers playlist grew, so did the tedium of managing it in Spotify. I kept all covers alphabetized (by hand), and I maintained two separate playlists—one for both [covers and originals](https://open.spotify.com/playlist/5YQ4AyxQ6DeDxKJgSryAU2?si=68e701a76c854e5c), and another for [covers only](https://open.spotify.com/playlist/50iUGmY3cSUETCHGfUgf6a?si=f078e27420334399).
+
+[Showing example of adding a new song to the covers and originals playlist]
+
+After managing this playlist for two years, I decided to build a custom solution to host and catalogue covers. I named it [Genderswap.fm](https://genderswap.fm/).
+
+## Designing and Building
+
+Before I could begin building, I had to get familiar with a new domain—databases! Although I've been building for the web for over a decade now, I've primarily dealt with front-end technology. This personal project was my first time working directly on the back-end.
+
+Thankfully, [Supabase](https://supabase.com/)—an open source alternative to Google's [Firebase](https://firebase.google.com/)—made it easy to get started. I experimented with how I wanted to structure my data and landed on a two table model: one table for `songs`, where each row holds discrete data about a single `song`, and one table for `covers`, which links two `song` rows together along with extra metadata about their relation.
+
+<figure style="max-width: 520px">
+  ![A visualization of the database schema for
+  Genderswap.fm.](./schema.png)(quality:100)
+  <figcaption>
+    **Database schema for Genderswap.fm.** This is the shape of the data for
+    Genderswap.fm. It's minimal, but it works.
+  </figcaption>
+</figure>
+
+### Tooling
+
+I decided to use [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelte.dev/]) for my application framework. I had previously used Svelte in my build for the [NYC Boundaries Map](/projects/boundaries-map), and the addition of SvelteKit made it easier to manage routing, server-side rendering, and API requests. I set up a Spotify Developer account and used the [Spotify Web API TypeScript SDK](https://github.com/spotify/spotify-web-api-ts-sdk) to make it easy for users to search for and enter songs. I also added [Melt UI](https://melt-ui.com/), a Svelte-based component library, to make it easier to build forms.
+
+### Design
+
+[Sketches]
+
+Design concept: browsing albums, but always shown together; showing songs in relation
+
+Visually: swapped, queer, off-kilter, overlapping
+
+Typography: using Labil Grotesk, a queer font — show 'upside down' 8 character
+
+Little details
+
+[Showing earlier release]
+
+[Showing context-dependent "covered as"]
+
+[Mobile]
+
+[Confetti]
+
+## Outcomes
+
+Excitement from friends and folks online
+
+Better management
+
+More interesting things to do with data
+
+## Reflections
+
+Many improvements I'd still love to make.
+
+Learned the back-end is not as scary as it seemed
+
+Still would like to build on-app support for listening to songs, but requires login and auth
+
+I track [all issues and ideas on GitHub](https://github.com/evadecker/genderswap.fm/issues), and contributions are welcome.
