@@ -67,6 +67,7 @@ export const collections = {
             url: z.string().optional(), // If no URL is set, button will be disabled
           })
           .optional(),
+        ogImage: image().optional(),
       }),
   }),
 
