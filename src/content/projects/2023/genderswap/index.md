@@ -1,6 +1,6 @@
 ---
 title: Genderswap.fm
-description: A catalogue of gender reversal in cover songs and all its queer implications. Because a Spotify playlist got a little too big.
+description: Cataloguing gender reversal in cover songs.
 slug: genderswap
 roles: 
   - Product Design
@@ -21,9 +21,6 @@ repo: evadecker/genderswap.fm
 img:
   src: "./genderswap-fm.png"
   alt: "A collection of original and cover album art for different songs."
-cta:
-  text: Discover music
-  url: https://genderswap.fm
 ---
 
 ## Case study coming soon.

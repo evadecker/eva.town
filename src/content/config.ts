@@ -61,12 +61,7 @@ export const collections = {
           .optional(),
         website: z.string().url().optional(),
         repo: z.string().optional(), // GitHub repo, e.g. evadecker/america-my-face
-        cta: z
-          .object({
-            text: z.string(),
-            url: z.string().optional(), // If no URL is set, button will be disabled
-          })
-          .optional(),
+        url: z.string().optional(), // If no case study URL, project will be disabled
         ogImage: image().optional(),
       }),
   }),

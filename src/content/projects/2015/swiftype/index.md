@@ -1,6 +1,6 @@
 ---
 title: Swiftype
-description: Swiftype is a site search and enterprise search platform. I created illustrations and iconography and helped redesign their marketing site and product dashboard.
+description: Redesigning a product dashboard for simpler site search management.
 slug: swiftype
 roles: 
   - Product Design
@@ -18,8 +18,6 @@ tech:
 video:
   src: "video/swiftype.mp4"
   poster: "video/swiftype.png"
-cta:
-  text: Case study coming soon
 ---
 
 ## Case study coming soon.

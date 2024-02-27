@@ -1,6 +1,6 @@
 ---
 title: Namesake
-description: Work-in-progress design and build for a web app to help trans people navigate the (often byzantine) legal name change process.
+description: Streamlining the legal name change process for trans people in the U.S.
 slug: namesake
 roles:
   - Research
@@ -20,8 +20,6 @@ tech:
 img:
   src: ./namesake.png
   alt: A collection of components for Namesake.
-cta:
-  text: Coming soon
 ---
 
 ## Case study coming soon.
