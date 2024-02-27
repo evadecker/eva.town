@@ -14,6 +14,7 @@ const { title, description, img, video, url, roles } = project.data;
 ---
 
 <div class:list={["project", { draft: url === undefined }]}>
+  {url === undefined && <div class="coming-soon">Coming Soon</div>}
   {
     (img ?? video) && (
       <div class="media">
@@ -30,7 +31,6 @@ const { title, description, img, video, url, roles } = project.data;
             <source src={video.src} type="video/mp4" />
           </video>
         )}
-        {url === undefined && <div class="coming-soon">Coming Soon</div>}
       </div>
     )
   }
@@ -64,7 +64,6 @@ const { title, description, img, video, url, roles } = project.data;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    overflow: hidden;
     background-color: var(--gray-2);
     border-radius: var(--radius-m);
     transition: background-color 0.2s ease-in-out;
@@ -153,6 +152,9 @@ const { title, description, img, video, url, roles } = project.data;
     max-width: 100%;
     line-height: 0;
     position: relative;
+    border-top-left-radius: var(--radius-m);
+    border-top-right-radius: var(--radius-m);
+    overflow: hidden;
 
     &::after {
       content: "";
@@ -168,15 +170,16 @@ const { title, description, img, video, url, roles } = project.data;
 
   .coming-soon {
     position: absolute;
+    font-weight: var(--font-weight-medium);
     font-size: var(--step-1);
     line-height: 1;
     background: var(--gray-12);
     color: var(--gray-1);
     padding: var(--space-xs);
     border-radius: var(--radius-s);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-12deg);
+    top: var(--space-2xs);
+    left: calc(-1 * var(--space-m));
+    transform: rotate(-12deg);
     z-index: 1;
     box-shadow:
       0 0.9px 1.4px rgb(0 0 0 / 0.6%),
