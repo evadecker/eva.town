@@ -1,0 +1,116 @@
+---
+title: NYC Boundaries Map
+description: View administrative boundaries in New York City—school districts, sanitation districts, police precincts, and more.
+slug: boundaries-map
+roles:
+  - Research
+  - Product Design
+  - Engineering
+timeline: July 2022 – August 2022
+collaborators:
+  - name: Zhi Keng He
+    url: https://github.com/zhik
+    img: ./zhi.jpeg
+tech:
+  - Mapbox
+  - Svelte
+  - Tailwind
+repo: betanyc/nyc-boundaries
+video:
+  src: video/boundaries-map.mp4
+  poster: video/boundaries-map-poster.png
+cta:
+  text: Explore boundaries
+  url: https://boundaries.beta.nyc
+---
+
+## Background
+
+[BetaNYC](https://beta.nyc/) is a non-profit civic tech organization which works out of the Manhattan Borough President's office. BetaNYC builds tools and hosts public events to increase access to civic data and demystify government processes. I joined BetaNYC for 8 weeks during the Summer of 2022 as a Civic Innovation Fellow.
+
+<figure>
+  ![A low-angle shot of the Manhattan Municipal
+  Building.](./manhattan-municipal-building.jpg)
+  <figcaption>
+    **BetaNYC operates out of the Manhattan Borough President's Office.**
+    Technologists work alongside urban planners and other city professionals.
+    Photo by Mattia Panciroli via [Flickr](https://flic.kr/p/bPBHUc), 2012.
+  </figcaption>
+</figure>
+
+## The Challenge
+
+In 2018, BetaNYC built a small, open source web app called [NYC Boundaries Map](https://boundaries.beta.nyc/). The Boundaries Map allowed anyone to view and explore overlapping jurisdictional boundaries within the city. This was commonly used by city council staff in order to field questions and direct feedback from constituents to the correct department. It helps answer questions like "what community boards are in this council district?" and "which sanitation district do I contact about the trash at 2nd Avenue and East 14th Street?"
+
+However, the map was not pleasant to use.
+
+<figure>
+  ![The NYC Boundaries Map as of June 2022.](./boundaries-map-initial.png)
+  <figcaption>
+    **The original Boundaries Map.** 13 separate boundaries render with 13
+    separate border colors and labels. A rainbow spaghetti.
+  </figcaption>
+</figure>
+
+Working together with [Zhi](https://github.com/zhik), we noted several usability issues:
+
+1. Toggling on more than two districts quickly made the map illegible.
+2. Boundaries on the map itself were not interactive.
+3. The map's implementation in [Leaflet](https://leafletjs.com/) rasterized borders and labels, which looked blurry on high-DPI screens.
+4. The map did not respond to queries in the sidebar and required frequent manual zooming and panning.
+5. Viewing overlaps required a complex sequence of "querying" boundaries by selecting an administrative region and then selecting which districts to intersect with, and the query itself was slow to execute.
+6. Searching for an address required selecting a borough beforehand.
+7. Viewing additional data about a district required leaving the app and searching Google.
+8. The app was desktop-only.
+9. Visual design polish was generally lacking.
+
+Additionally, there was no frontend framework in use (!) and I felt there was an opportunity to modernize and speed up development by adding one.
+
+## Research and Build
+
+With a solid list of usability tickets to address, I got to work sketching ideas for how we might fit things together.
+
+<figure>
+  ![A sketchbook containing several small ideas for maps and
+  dropdowns.](./sketchbook.png)
+  <figcaption>
+    **Sketching ideas.** Considering how we might combine location search,
+    district browsing, and overlap browsing within a single interface.
+  </figcaption>
+</figure>
+
+Then we dove into code, where after some exploration with various frontend libraries, I installed [Svelte](https://svelte.dev/) and [Tailwind](https://tailwindcss.com/). These frameworks would allow us to build more advanced functionality more easily. We also moved from Leaflet to [Mapbox](https://www.mapbox.com/), which offered us exciting opportunities to interact with the map directly.
+
+Additionally, we scheduled video calls with some frequent users of the Boundaries Map in order to better understand how they were using the tool and what could be improved. We shared our work-in-progress prototype for feedback. The participants were excited to be a part of the process and helped validate assumptions we had made.
+
+## Outcomes
+
+After a few short weeks, we announced the updated app to an appropriate degree of fanfare for a civic tool. ;)
+
+<figure>
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="none"
+    poster="/video/boundaries-map-poster.png"
+  >
+    <source src="/video/boundaries-map.mp4" type="video/mp4" />
+  </video>
+  <figcaption>
+    **The new Boundaries Map.** The updated app features overlaps on hover,
+    direct interaction with the map, a unified navigation bar, and clearer
+    information hierarchy.
+  </figcaption>
+</figure>
+
+The new map automatically zooms and pans to the selected boundaries, displays boundary overlaps on hover, allows single-click filtering by clicking any boundary, is mobile-friendly. It also links out to relevant webpages for a district, when available, so you can quickly jump to the webpage for a specific community district, city council district, and more. Additionally, each filtered view is shareable via URL, and overlaps can be copied to clipboard as JSON for processing in other tools—two totally new features.
+
+[Read the announcement](https://beta.nyc/2022/09/07/summer-associates-wrap-up/) or [explore boundaries](https://boundaries.beta.nyc/?).
+
+## Reflections
+
+I had never worked with mapping technology before, so it was fun to learn about how to wield geospatial data with Mapbox, which wouldn't have been possible in such a short time frame without help from [Zhi](https://github.com/zhik). Svelte and Tailwind were also new frameworks for me, and this project helped me get more familiar with their capabilities.
+
+BetaNYC introduced me to the city's vast library of [open data](https://opendata.cityofnewyork.us/), and I've continued to think about other possibilities for design and technology to surface public data for good.
