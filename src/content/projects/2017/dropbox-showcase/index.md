@@ -1,6 +1,6 @@
 ---
 title: Dropbox Showcase
-description: I contributed design and iconography for Dropbox Showcase, a (now defunct) tool to help creatives show their work to clients and receive feedback.
+description: Helping creatives show their work to clients and receive feedback.
 slug: dropbox-showcase
 roles:
   - Product Design
@@ -19,8 +19,6 @@ collaborators:
 img:
   src: ./dropbox-showcase.png
   alt: A preview of creating a collection within Dropbox Showcase.
-cta:
-  text: Case study coming soon
 ---
 
 ## Case study coming soon.
