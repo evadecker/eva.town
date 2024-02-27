@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
+import { Icon } from "./Icon/Icon";
 import ProjectInfoBlock from "./ProjectInfoBlock.astro";
 
 interface Props {
@@ -32,7 +33,7 @@ const { timeline, roles, collaborators, tech, website, repo } = project.data;
           {collaborators.map((collaborator) =>
             // Condense whitespace
             // prettier-ignore
-            <li><a class="collaborator" href={collaborator.url}><Image src={collaborator.img} alt={`A photo of ${collaborator.name}`} class="avatar" />{collaborator.name}</a></li>
+            <li><a class="collaborator" href={collaborator.url} target="_blank"><Image src={collaborator.img} alt={`A photo of ${collaborator.name}`} class="avatar" />{collaborator.name}</a></li>
           )}
         </ul>
       </ProjectInfoBlock>
@@ -54,7 +55,9 @@ const { timeline, roles, collaborators, tech, website, repo } = project.data;
       <ProjectInfoBlock title="Website">
         <ul>
           <li>
-            <a href={website}>{website}</a>
+            <a href={website} target="_blank">
+              {website}
+            </a>
           </li>
         </ul>
       </ProjectInfoBlock>
@@ -65,7 +68,9 @@ const { timeline, roles, collaborators, tech, website, repo } = project.data;
       <ProjectInfoBlock title="Source">
         <ul>
           <li>
-            <a href={`https://github.com/${repo}`}>View on Github</a>
+            <a href={`https://github.com/${repo}`} target="_blank">
+              View on Github
+            </a>
           </li>
         </ul>
       </ProjectInfoBlock>
