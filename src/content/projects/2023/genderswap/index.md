@@ -16,6 +16,7 @@ tech:
   - Supabase
   - Spotify Web API
   - TypeScript
+website: https://genderswap.fm
 repo: evadecker/genderswap.fm
 img:
   src: "./genderswap-fm.png"

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { timeline, roles, collaborators, tech, repo } = project.data;
+const { timeline, roles, collaborators, tech, website, repo } = project.data;
 ---
 
 <dl class="project-info">
@@ -45,6 +45,17 @@ const { timeline, roles, collaborators, tech, repo } = project.data;
           {tech.map((item) => (
             <li>{item}</li>
           ))}
+        </ul>
+      </ProjectInfoBlock>
+    )
+  }
+  {
+    website && (
+      <ProjectInfoBlock title="Website">
+        <ul>
+          <li>
+            <a href={website}>{website}</a>
+          </li>
         </ul>
       </ProjectInfoBlock>
     )
