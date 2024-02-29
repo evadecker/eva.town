@@ -10,6 +10,9 @@
     <a href="https://linkedin.com/in/evadecker" target="_blank">LinkedIn</a>
     <a href="/colophon">Colophon</a>
   </div>
+  <a class="banner" href="https://www.jewishvoiceforpeace.org/" target="_blank">
+    <span class="emoji">🇵🇸</span> Standing with Palestine, now and always.
+  </a>
 </footer>
 
 <style lang="scss">
@@ -33,9 +36,31 @@
     a {
       display: inline-block;
 
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--gray-12);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .banner {
+    background-color: var(--gray-3);
+    border-radius: var(--radius-full);
+    padding: var(--space-2xs) var(--space-m);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-s);
+    transition: background-color 0.2s ease-in-out;
+
+    .emoji {
+      transform: scale(1.5);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
       &:hover {
-        color: var(--gray-12);
-        text-decoration: underline;
+        background-color: var(--gray-4);
       }
     }
   }
