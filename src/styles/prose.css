@@ -261,13 +261,13 @@
 }
 
 @media (width <= 1200px) {
-  .prose figure img,
-  .prose figure video {
+  .prose figure:not(.no-bleed) img,
+  .prose figure:not(.no-bleed) video {
     border-radius: 0;
   }
 
-  .prose figure > p::after,
-  .prose .two-up > p::after {
+  .prose .two-up > p::after,
+  .prose figure:not(.no-bleed) > p::after {
     border-radius: 0;
   }
 }
@@ -279,6 +279,10 @@
   margin-inline: auto;
   display: flex;
   position: relative;
+}
+
+.prose .no-bleed figcaption {
+  max-inline-size: 100%;
 }
 
 .prose figcaption p:first-child::before {

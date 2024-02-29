@@ -43,26 +43,31 @@ As my covers playlist grew, so did the tedium of managing it in Spotify. I kept 
 
 After managing this playlist for two years, I decided to build a custom solution to host and catalogue covers. I named it [Genderswap.fm](https://genderswap.fm/).
 
-## Designing and Building
-
-Before I could begin building, I had to get familiar with a new domain—databases! Although I've been building for the web for over a decade now, I've primarily dealt with front-end technology. This personal project was my first time working directly on the back-end.
-
-Thankfully, [Supabase](https://supabase.com/)—an open source alternative to Google's [Firebase](https://firebase.google.com/)—made it easy to get started. I experimented with how I wanted to structure my data and landed on a two table model: one table for `songs`, where each row holds discrete data about a single `song`, and one table for `covers`, which links two `song` rows together along with extra metadata about their relation.
-
-<figure style="max-width: 520px">
-  ![A visualization of the database schema for
-  Genderswap.fm.](./schema.png)(quality:100)
+<figure>
+  ![The Genderswap.fm logo.](./genderswap-fm.png)(quality:100)
   <figcaption>
-    **Database schema for Genderswap.fm.** This is the shape of the data for
-    Genderswap.fm. It's minimal, but it works.
+    **Genderswap.fm.** The overlapping pills in the logo echo the overlapping
+    albums on the app. TODO: higher quality image here
   </figcaption>
 </figure>
 
-### Tooling
+## Laying Architectural Foundations
+
+Before I could begin building, I had to get familiar with a new domain—databases! Although I've been building for the web for over a decade now, I've primarily dealt with front-end technology. This personal project was my first time working directly on the back-end.
+
+Thankfully, [Supabase](https://supabase.com/)—an open source alternative to Google's [Firebase](https://firebase.google.com/)—made it easy to get started. I experimented with how I wanted to structure my data and landed on a two table model: one table for `songs`, where each row holds discrete data about a single `song`, and one table for `covers`, which links two `song` rows together along with extra metadata about their relation. This approach avoids duplicating `song` data if the same song is covered by multiple artists.
+
+<figure class="no-bleed" style="max-width: 600px">
+  ![A visualization of the database schema for
+  Genderswap.fm.](./schema.png)(quality:100)
+  <figcaption>
+    **Database schema.** This is the shape of the data for Genderswap.fm.
+  </figcaption>
+</figure>
 
 I decided to use [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelte.dev/]) for my application framework. I had previously used Svelte in my build for the [NYC Boundaries Map](/projects/boundaries-map), and the addition of SvelteKit made it easier to manage routing, server-side rendering, and API requests. I set up a Spotify Developer account and used the [Spotify Web API TypeScript SDK](https://github.com/spotify/spotify-web-api-ts-sdk) to make it easy for users to search for and enter songs. I also added [Melt UI](https://melt-ui.com/), a Svelte-based component library, to make it easier to build forms.
 
-### Design
+## Design
 
 [Sketches]
 
@@ -81,6 +86,8 @@ Little details
 [Mobile]
 
 [Confetti]
+
+[OG Images]
 
 ## Outcomes
 
