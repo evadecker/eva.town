@@ -49,6 +49,13 @@ url: /projects/commonplace
 ogImage: ./commonplace-og.png
 ---
 
+import BeforeAfter from "../../../../components/BeforeAfter.astro";
+import actionPlanBefore from "./action-plan-before.png";
+import actionPlanAfter from "./action-plan-after.png";
+import memberTableBefore from "./member-table-before.png";
+import memberTableAfter from "./member-table-after.png";
+import { table } from "console";
+
 ## Background
 
 [Cityblock](https://www.cityblock.com/) is a health company which got its start within Google's [Sidewalk Labs](https://www.sidewalklabs.com/). Teams of clinicians and other health professionals provide in-community care to people on Medicare and Medicaid to improve health for an often-neglected population.
@@ -238,20 +245,38 @@ By January 2020, most views within Commons used Commonplace components. **Respon
 Despite the addition of new components, several thousand lines of code had been deleted since the start of the project due to the reusability and modular nature of the design system—a meaningful reduction in complexity and technical debt.
 
 <figure>
-  ![The member table in Commons after the introduction of
-  Commonplace.](./member-table-after.png)(quality:100)
+  <BeforeAfter
+    before={{
+      src: actionPlanBefore,
+      alt: "The action plan in Commons before the introduction of Commonplace.",
+    }}
+    after={{
+      src: actionPlanAfter,
+      alt: "The action plan in Commons after the introduction of Commonplace.",
+    }}
+  />
   <figcaption>
-    **After.** The member table, early 2020. Still data-dense, but easier to
-    scan. Truncated table cells display a tooltip on hover.
+    **Member action plan, before (early 2019) and after (early 2020).** More
+    information is available at a glance, without drilling down into cards and
+    accordions.
   </figcaption>
 </figure>
 
 <figure>
-  ![The action plan in Commons after the introduction of
-  Commonplace.](./action-plan-after.png)(quality:100)
+  <BeforeAfter
+    before={{
+      src: memberTableBefore,
+      alt: "The member table in Commons before the introduction of Commonplace.",
+    }}
+    after={{
+      src: memberTableAfter,
+      alt: "The member table in Commons after the introduction of Commonplace.",
+    }}
+  />
   <figcaption>
-    **After.** The member action plan, early 2020. More information is available
-    at a glance, without drilling down into cards and accordions.
+    **Member table, before (early 2019) and after (early 2020).** We aimed to
+    main medium-high data density, helpful for our care staff, while making the
+    UI feel more approachable and calm.
   </figcaption>
 </figure>
 
