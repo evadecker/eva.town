@@ -31,9 +31,9 @@ In 2021, I read the novel _[Paul Takes the Form of a Mortal Girl](https://www.go
 
 > Some covers deliver the age-old simple pleasures of drag—knowledge, the opportunity to investigate the simulacra and make comparisons, that obscure little frisson of dissonance. Take Joan Baez singing “Virgil Kane is my name… like my father before me, I’m a working man” (which, of course, is originally from The Band’s “The Night They Drove Old Dixie Down)” or Cait O’Riordan from the Pogues crooning, “My name is Jock Stewart, I’m a canny gun man” (from the traditional “I’m a Man You Don’t Meet Every Day”). Joan Baez’s contralto can, if you squint your ears, pass as a farm-boy tenor; Cait O’Riordan’s chalky delivery might be that of a rich ponce.
 
-I listened to each song mentioned, both the cover and the original, enamored with how lyrics could completely transform under another artist's tone, tempo, and gender.
+I listened to each cover and original, enamored with how lyrics could completely transform under another artist's tone, tempo, and gender.
 
-With Paul's songs, and the addition of other covers I'd fallen in love with—like [The Czars' sparse, gravelly rendition of ABBA's Angeleyes](https://genderswap.fm/cover/angel-eyes-the-czars)—I compiled a large Spotify playlist.
+With Paul's songs, plus other covers I'd fallen in love with—like [The Czars' sparse, gravelly rendition of ABBA's Angeleyes](https://genderswap.fm/cover/angel-eyes-the-czars)—I compiled a large Spotify playlist.
 
 ## The Challenge
 
@@ -51,7 +51,7 @@ After managing this playlist for two years, I decided to build a custom solution
   </figcaption>
 </figure>
 
-## Laying Architectural Foundations
+## Laying Foundations
 
 Before I could begin building, I had to get familiar with a new domain—databases! Although I've been building for the web for over a decade now, I've primarily dealt with front-end technology. This personal project was my first time working directly on the back-end.
 
@@ -65,17 +65,60 @@ Thankfully, [Supabase](https://supabase.com/)—an open source alternative to Go
   </figcaption>
 </figure>
 
-I decided to use [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelte.dev/]) for my application framework. I had previously used Svelte in my build for the [NYC Boundaries Map](/projects/boundaries-map), and the addition of SvelteKit made it easier to manage routing, server-side rendering, and API requests. I set up a Spotify Developer account and used the [Spotify Web API TypeScript SDK](https://github.com/spotify/spotify-web-api-ts-sdk) to make it easy for users to search for and enter songs. I also added [Melt UI](https://melt-ui.com/), a Svelte-based component library, to make it easier to build forms.
+I decided to use [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelte.dev/]) for my application framework. I had previously used Svelte in my build for the [NYC Boundaries Map](/projects/boundaries-map), and the addition of SvelteKit made it easier to manage routing, server-side rendering, and API requests. I set up a Spotify Developer account and used the [Spotify Web API TypeScript SDK](https://github.com/spotify/spotify-web-api-ts-sdk) to make it easy for users to search for and enter songs. I also added [Melt UI](https://melt-ui.com/), a Svelte-based component library, to help build the submission form.
 
 ## Design
 
-[Sketches]
+For the design, I knew I wanted to allow users to browse by pairs of songs shown together. It wouldn't be too different from browsing "by album" in any other music tool, but rather than displaying a single album cover for each result, I'd display pairs of originals and covers would show.
 
-Design concept: browsing albums, but always shown together; showing songs in relation
+<figure>
+  <div class="two-up">
+    ![A collage of various hospital settings portrayed in film and
+    TV.](./sketch-1.png)
 
-Visually: swapped, queer, off-kilter, overlapping
+    ![Search and filtering sketches.](./sketch-2.png)(quality:100)
+
+  </div>
+  <figcaption>
+    **Exploratory sketches.** Ideating around the display of albums, how to structure the submission form, and how to surface filters.
+  </figcaption>
+</figure>
+
+### Visual Language
+
+To communicate the way these covers remixed sound, reinterpreted lyrics, and reconfigured meaning, I established a visual cue to thread its way through the app: two objects, overlapping and slightly askew. Sharing space, but different.
+
+<figure class="no-bleed">
+  <div class="video-wrapper">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="none"
+      poster="/video/album-overlap-poster.png"
+    >
+      <source src="/video/album-overlap.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <figcaption>
+    **Askew, off-grid elements.** The album overlap helps present the original
+    and cover as a "unit" of information, and emphasize their shared traits. The
+    cover album is larger and foregrounded for emphasis. Full album covers are
+    revealed on hover and within the detail view.
+  </figcaption>
+</figure>
 
 Typography: using Labil Grotesk, a queer font — show 'upside down' 8 character
+
+<figure class="no-bleed">
+  ![Header typography for a detail page within the app. The text reads: Sonata
+  No. 8 in C Minor, Op. 13 “Pathétique”: II. Adagio cantabile. Jun Fukamachi
+  covering Ludwig van Beethoven](./typography.png)(quality:100)
+  <figcaption>
+    **Typography.** This is the shape of the data for Genderswap.fm.
+  </figcaption>
+</figure>
 
 Little details
 

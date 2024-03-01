@@ -243,7 +243,8 @@
 
 /* Hacky way to target the image container without an extra div */
 .prose figure > p,
-.prose .two-up > p {
+.prose .two-up > p,
+.prose .video-wrapper {
   margin-inline: auto;
   max-width: var(--image-max-width);
   overflow: hidden;
@@ -251,7 +252,8 @@
 }
 
 .prose figure > p::after,
-.prose .two-up > p::after {
+.prose .two-up > p::after,
+.prose .video-wrapper::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -262,12 +264,14 @@
 
 @media (width <= 1200px) {
   .prose figure:not(.no-bleed) img,
-  .prose figure:not(.no-bleed) video {
+  .prose figure:not(.no-bleed) video,
+  .prose figure:not(.no-bleed) .video-wrapper {
     border-radius: 0;
   }
 
   .prose .two-up > p::after,
-  .prose figure:not(.no-bleed) > p::after {
+  .prose figure:not(.no-bleed) > p::after,
+  .prose .video-wrapper::after {
     border-radius: 0;
   }
 }
