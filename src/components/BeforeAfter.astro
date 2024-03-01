@@ -23,7 +23,6 @@ const { before, after } = Astro.props;
       type="range"
       min="0"
       max="100"
-      step="0.1"
       value="50"
       class="slider"
       aria-label="Percentage of before photo shown"
@@ -89,6 +88,7 @@ const { before, after } = Astro.props;
     position: absolute;
     left: 0;
     width: var(--position);
+    transition: width 0.1s ease-out;
   }
 
   .slider-line {
@@ -98,9 +98,9 @@ const { before, after } = Astro.props;
     background-color: #232323;
     z-index: 10;
     left: var(--position);
+    transition: left 0.1s ease-out;
     transform: translateX(-50%);
     pointer-events: none;
-    transition: background-color 0.2s ease-in-out;
   }
 
   .slider-button {
@@ -110,6 +110,7 @@ const { before, after } = Astro.props;
     top: 50%;
     left: var(--position);
     transform: translate(-50%, -50%);
+    transition: left 0.1s ease-out;
     z-index: 20;
     border-radius: var(--radius-full);
     width: var(--space-2xl);
@@ -118,7 +119,6 @@ const { before, after } = Astro.props;
       0 1.3px 1.3px rgb(0 0 0 / 3.5%),
       0 10px 10px rgb(0 0 0 / 7%);
     pointer-events: none;
-    transition: background-color 0.2s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
