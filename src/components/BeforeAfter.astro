@@ -1,0 +1,142 @@
+---
+import { Image } from "astro:assets";
+
+type Props = {
+  before: {
+    src: ImageMetadata;
+    alt: string;
+  };
+  after: {
+    src: ImageMetadata;
+    alt: string;
+  };
+};
+
+const { before, after } = Astro.props;
+---
+
+<before-after>
+  <div class="container">
+    <Image src={before.src} alt={before.alt} class="image image-before" />
+    <Image src={after.src} alt={after.alt} class="image image-after" />
+    <input
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      class="slider"
+      aria-label="Percentage of before photo shown"
+    />
+    <div class="slider-line"></div>
+    <div class="slider-button" aria-hidden="true">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        ><path d="M9 6 3 12 9 18V6ZM15 18 21 12 15 6V18Z"></path></svg
+      >
+    </div>
+  </div>
+</before-after>
+
+<script>
+  class BeforeAfter extends HTMLElement {
+    constructor() {
+      super();
+
+      const container: HTMLElement | null = this.querySelector(".container");
+
+      this.querySelector(".slider")?.addEventListener("input", (event) => {
+        const { target } = event;
+        if (container && target)
+          container.style.setProperty(
+            "--position",
+            `${(target as HTMLInputElement).value}%`
+          );
+      });
+    }
+  }
+
+  customElements.define("before-after", BeforeAfter);
+</script>
+
+<style lang="scss">
+  .container {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: var(--radius-m);
+
+    --position: 50%;
+
+    @media (width <= 1200px) {
+      border-radius: 0;
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  .image-before {
+    position: absolute;
+    left: 0;
+    width: var(--position);
+    transition: width 0.1s ease-out;
+  }
+
+  .slider-line {
+    position: absolute;
+    inset: 0;
+    width: var(--space-2xs);
+    background-color: #232323;
+    z-index: 10;
+    left: var(--position);
+    transition: left 0.1s ease-out;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .slider-button {
+    position: absolute;
+    background-color: #111;
+    color: #fff;
+    top: 50%;
+    left: var(--position);
+    transform: translate(-50%, -50%);
+    transition: left 0.1s ease-out;
+    z-index: 20;
+    border-radius: var(--radius-full);
+    width: var(--space-2xl);
+    height: var(--space-2xl);
+    box-shadow:
+      0 1.3px 1.3px rgb(0 0 0 / 3.5%),
+      0 10px 10px rgb(0 0 0 / 7%);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .slider {
+    position: absolute;
+    inset: 0;
+    cursor: col-resize;
+    opacity: 0;
+
+    // Firefox
+    width: 100%;
+    height: 100%;
+
+    &:focus-visible ~ .slider-button {
+      outline: 3px solid var(--blue-a9);
+    }
+  }
+</style>
