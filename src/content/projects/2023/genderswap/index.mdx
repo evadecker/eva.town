@@ -54,10 +54,9 @@ As my covers playlist grew, so did the tedium of managing it in Spotify. I kept 
   </div>
   <figcaption>
     **Difficulties organizing in Spotify.** The interface makes it challenging
-    to organize songs within large playlists. (Yes, I know sorting by title
-    exists, but it's unreliable here—John Denver's "Take Me Home, Country Roads"
-    deserves to live beside Judy Collins's "Leaving on a Jet Plane/Take Me Home
-    Country Roads"!)
+    to organize songs within large playlists. (Sorting by title exists, but it's
+    unreliable here—John Denver's "Take Me Home, Country Roads" deserves to live
+    beside Judy Collins's "Leaving on a Jet Plane/Take Me Home Country Roads".)
   </figcaption>
 </figure>
 
@@ -81,7 +80,9 @@ I decided to use [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelt
 
 ## Ideation
 
-For the design, I knew I wanted to allow users to browse by pairs of songs shown together. It wouldn't be too different from browsing "by album" in any other music tool, but rather than displaying a single album cover for each result, I'd display pairs of albums.
+For the design, I knew I wanted to allow users to browse by pairs of songs shown together. It wouldn't be too different from browsing "by album" in any other music tool, but rather than displaying a single album for each result, I'd display original/cover pairs.
+
+From there, users could tap in to view the details of a cover, and listen to the original and the cover side-by-side, with notes about their differences.
 
 <figure>
   <div class="two-up">
@@ -95,9 +96,9 @@ For the design, I knew I wanted to allow users to browse by pairs of songs shown
   </figcaption>
 </figure>
 
-## Design and Typography
+## Finding a Design Language
 
-To communicate the way these covers remix sound, reinterpret lyrics, and reconfigure meaning, I established a visual cue to thread its way through the app: two objects, overlapping and slightly askew. Sharing space, but different. This is represented in the logo and the display of albums on the main grid.
+To communicate the way these covers remix sound, reinterpret lyrics, and reconfigure meaning, I established a visual motif to thread its way through the app: two objects, overlapping and askew. Sharing space, but different. This is represented in the logo and the display of albums on the main grid.
 
 <figure class="no-bleed">
   <div class="video-wrapper">
@@ -134,9 +135,9 @@ Typography is set in [Labil Grotesk](https://www.kometa.xyz/typefaces/labil-grot
 
 While the topsy-turvy contextual alternates were enabled for page-level headings, I disabled them for smaller text to prioritize legibility. Even without leaning, Labil's quirky nature still shines through.
 
-## Little Big Details
+## Little Big Features
 
-As with all my work, I looked for opportunities to introduce small but meaningful details. Here are some of my favorites for Genderswap.fm.
+As with all my work, I looked for opportunities to introduce small but meaningful details. Here are some of my favorite features I built for Genderswap.fm.
 
 <figure class="no-bleed" style="max-width: 462px">
   ![Header typography for a detail page within the app. The text reads: Sonata
@@ -148,9 +149,10 @@ As with all my work, I looked for opportunities to introduce small but meaningfu
   </figcaption>
 </figure>
 <figure class="no-bleed" style="max-width: 502px">
-  ![Header typography for a detail page within the app. The text reads: Sonata
-  No. 8 in C Minor, Op. 13 “Pathétique”: II. Adagio cantabile. Jun Fukamachi
-  covering Ludwig van Beethoven](./readable-urls.png)(quality:100)
+  ![A collection of three browser URL boxes with associated titles. The URLs are
+  nicely formatted with hyphens and human readable text. The titles are
+  formatted like "Cat Power's cover of Sea Of Love by Phil Phillips & The
+  Twilights."](./readable-urls.png)(quality:100)
   <figcaption>
     **Readable URLs and page titles.** Cover data is used to generate
     human-readable URLs while accommodating diacritics and non-Latin characters.

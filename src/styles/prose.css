@@ -292,3 +292,7 @@
 .prose figcaption p:first-child::before {
   content: "▲ ";
 }
+
+.prose > p:last-child::after {
+  content: "\a0⁕";
+}
