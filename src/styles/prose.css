@@ -257,7 +257,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid var(--gray-a3);
+  border: 1px solid var(--gray-a5);
   border-radius: var(--radius-m);
   pointer-events: none;
 }
