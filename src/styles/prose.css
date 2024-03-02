@@ -217,6 +217,36 @@
   margin-block-start: var(--space-2xl);
 }
 
+.prose .figure-carousel {
+  margin-block-start: var(--space-2xl);
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: var(--space-xl);
+  scroll-padding-inline: var(--space-xl);
+  grid-column: 1 / -1;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-xl);
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  scroll-snap-type: x mandatory;
+}
+
+.prose .figure-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.prose .figure-carousel > figure {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.prose .figure-carousel > figure:last-child {
+  scroll-snap-align: end;
+}
+
 .prose .two-up {
   display: flex;
   justify-content: center;
@@ -271,7 +301,7 @@
 
   .prose .two-up > p::after,
   .prose figure:not(.no-bleed) > p::after,
-  .prose .video-wrapper::after {
+  .prose figure:not(.no-bleed) .video-wrapper::after {
     border-radius: 0;
   }
 }

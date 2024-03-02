@@ -33,27 +33,36 @@ In 2021, I read the novel _[Paul Takes the Form of a Mortal Girl](https://www.go
 
 I listened to each cover and original, enamored with how lyrics could completely transform under another artist's tone, tempo, and gender.
 
-With Paul's songs, plus other covers I'd fallen in love with—like [The Czars' sparse, gravelly rendition of ABBA's Angeleyes](https://genderswap.fm/cover/angel-eyes-the-czars)—I compiled a large Spotify playlist.
+I began compiling Paul's songs into a playlist, and then I added more of my own. And more. And more. For another two years.
 
 ## The Challenge
 
 As my covers playlist grew, so did the tedium of managing it in Spotify. I kept all covers alphabetized (by hand), and I maintained two separate playlists—one for both [covers and originals](https://open.spotify.com/playlist/5YQ4AyxQ6DeDxKJgSryAU2?si=68e701a76c854e5c), and another for [covers only](https://open.spotify.com/playlist/50iUGmY3cSUETCHGfUgf6a?si=f078e27420334399).
 
-[Showing example of adding a new song to the covers and originals playlist]
-
-After managing this playlist for two years, I decided to build a custom solution to host and catalogue covers. I named it [Genderswap.fm](https://genderswap.fm/).
-
 <figure>
-  ![The Genderswap.fm logo.](./genderswap-fm.png)(quality:100)
+  <div class="video-wrapper">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="none"
+      poster="/video/adding-spotify-poster.png"
+    >
+      <source src="/video/adding-spotify.mp4" type="video/mp4" />
+    </video>
+  </div>
   <figcaption>
-    **Genderswap.fm.** The overlapping pills in the logo echo the overlapping
-    albums on the app. TODO: higher quality image here
+    **Difficulties organizing in Spotify.** The interface makes it challenging
+    to organize songs within large playlists.
   </figcaption>
 </figure>
 
+After managing this playlist for two years, I decided to build a custom solution to host and catalogue covers. I named it [Genderswap.fm](https://genderswap.fm/).
+
 ## Laying Foundations
 
-Before I could begin building, I had to get familiar with a new domain—databases! Although I've been building for the web for over a decade now, I've primarily dealt with front-end technology. This personal project was my first time working directly on the back-end.
+Before I could begin building, I had to get familiar with a new domain—databases! Although I've been building for the web for over a decade now, I've primarily dealt with frontend technology. This personal project was my first time working directly on the backend.
 
 Thankfully, [Supabase](https://supabase.com/)—an open source alternative to Google's [Firebase](https://firebase.google.com/)—made it easy to get started. I experimented with how I wanted to structure my data and landed on a two table model: one table for `songs`, where each row holds discrete data about a single `song`, and one table for `covers`, which links two `song` rows together along with extra metadata about their relation. This approach avoids duplicating `song` data if the same song is covered by multiple artists.
 
@@ -67,26 +76,25 @@ Thankfully, [Supabase](https://supabase.com/)—an open source alternative to Go
 
 I decided to use [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelte.dev/]) for my application framework. I had previously used Svelte in my build for the [NYC Boundaries Map](/projects/boundaries-map), and the addition of SvelteKit made it easier to manage routing, server-side rendering, and API requests. I set up a Spotify Developer account and used the [Spotify Web API TypeScript SDK](https://github.com/spotify/spotify-web-api-ts-sdk) to make it easy for users to search for and enter songs. I also added [Melt UI](https://melt-ui.com/), a Svelte-based component library, to help build the submission form.
 
-## Design
+## Ideation
 
-For the design, I knew I wanted to allow users to browse by pairs of songs shown together. It wouldn't be too different from browsing "by album" in any other music tool, but rather than displaying a single album cover for each result, I'd display pairs of originals and covers would show.
+For the design, I knew I wanted to allow users to browse by pairs of songs shown together. It wouldn't be too different from browsing "by album" in any other music tool, but rather than displaying a single album cover for each result, I'd display pairs of albums.
 
 <figure>
   <div class="two-up">
-    ![A collage of various hospital settings portrayed in film and
-    TV.](./sketch-1.png)
+    ![Detail page and form field sketches.](./sketch-1.png)
 
     ![Search and filtering sketches.](./sketch-2.png)(quality:100)
 
   </div>
   <figcaption>
-    **Exploratory sketches.** Ideating around the display of albums, how to structure the submission form, and how to surface filters.
+    **Exploratory sketches.** Ideating around the display of albums, how to structure the submission form, and how to surface filters. I still hadn't figured out what I would ask users to tag manually, and what I could tag automatically using Spotify's API.
   </figcaption>
 </figure>
 
-### Visual Language
+## Design and Typography
 
-To communicate the way these covers remixed sound, reinterpreted lyrics, and reconfigured meaning, I established a visual cue to thread its way through the app: two objects, overlapping and slightly askew. Sharing space, but different.
+To communicate the way these covers remix sound, reinterpret lyrics, and reconfigure meaning, I established a visual cue to thread its way through the app: two objects, overlapping and slightly askew. Sharing space, but different. This is represented in the logo and the display of albums on the main grid.
 
 <figure class="no-bleed">
   <div class="video-wrapper">
@@ -109,22 +117,79 @@ To communicate the way these covers remixed sound, reinterpreted lyrics, and rec
   </figcaption>
 </figure>
 
-Typography: using Labil Grotesk, a queer font — show 'upside down' 8 character
+Typography is set in [Labil Grotesk](https://www.kometa.xyz/typefaces/labil-grotesk/) by KOMETA Typefaces, a queer font which topples over itself, unable to rest upright, mirroring the off-kilter elements elsewhere in the app.
 
 <figure class="no-bleed">
   ![Header typography for a detail page within the app. The text reads: Sonata
   No. 8 in C Minor, Op. 13 “Pathétique”: II. Adagio cantabile. Jun Fukamachi
   covering Ludwig van Beethoven](./typography.png)(quality:100)
   <figcaption>
-    **Typography.** This is the shape of the data for Genderswap.fm.
+    **Labil Grotesk in use on Genderswap.fm.** I love the way the 'O' falls
+    over, ready to roll off the screen.
   </figcaption>
 </figure>
 
-Little details
+While the topsy-turvy contextual alternates were enabled for page-level headings, I disabled them for smaller text to prioritize legibility. Even without leaning, Labil's quirky nature still shines through.
 
-[Showing earlier release]
+## Little Big Details
 
-[Showing context-dependent "covered as"]
+As with all my work, I looked for opportunities to introduce small but meaningful details. Here are some of my favorites for Genderswap.fm.
+
+<figure class="no-bleed" style="max-width: 462px">
+  ![Header typography for a detail page within the app. The text reads: Sonata
+  No. 8 in C Minor, Op. 13 “Pathétique”: II. Adagio cantabile. Jun Fukamachi
+  covering Ludwig van Beethoven](./tags.png)(quality:100)
+  <figcaption>
+    **Automated tagging.** Covers are automatically tagged with over a dozen
+    acoustic attributes comparing it to the original.
+  </figcaption>
+</figure>
+<figure class="no-bleed" style="max-width: 502px">
+  ![Header typography for a detail page within the app. The text reads: Sonata
+  No. 8 in C Minor, Op. 13 “Pathétique”: II. Adagio cantabile. Jun Fukamachi
+  covering Ludwig van Beethoven](./readable-urls.png)(quality:100)
+  <figcaption>
+    **Readable URLs and page titles.** Cover data is used to generate
+    human-readable URLs while accommodating diacritics and non-Latin characters.
+    For page titles, it'll convert 3 periods to an ellipsis, and straight quotes
+    to curly quotes.
+  </figcaption>
+</figure>
+<figure class="no-bleed" style="max-width: 364px">
+  !["Girls Just Wanna Have Fun" covered as "Girls Just Wanna Have
+  Some"](./covered-as.png)(quality:100)
+  <figcaption>
+    **"Covered as..."** Only shown when a cover's title diverges from the
+    original, ignoring minor changes in punctuation or casing.
+  </figcaption>
+</figure>
+<figure class="no-bleed" style="max-width: 388px">
+  <div class="video-wrapper">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="none"
+      poster="/video/earlier-release-poster.png"
+    >
+      <source src="/video/earlier-release.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <figcaption>
+    **Earlier release prompting.** Behind the scenes, the app will search for
+    earlier album releases for your original song. If one is found, it'll prompt
+    you to update your submission.
+  </figcaption>
+</figure>
+
+In addition:
+
+- Extra song info will be stripped from the ends of song titles—so `Can't Get You out of My Head - Live at KEXP` will become simply `Can't Get You out of My Head`, and `What Was I Made For? [From The Motion Picture "Barbie"]` will be `What Was I Made For?`.
+- The submission form will save your name between submissions so you don't have to re-enter it.
+- The search input in the submission form will also accept a Spotify song URL, so you can paste directly from the app. This is especially helpful for songs that are difficult to search, like [this cover from Shigeo Sekito](https://genderswap.fm/cover/%E3%82%B5%E3%83%B3%E3%82%B7%E3%83%A3%E3%82%A4%E3%83%B3-%E3%82%BB%E3%82%AD%E3%83%88%E3%82%AA%E3%83%BB%E3%82%B7%E3%82%B1%E3%82%99%E3%82%AA).
+- Dark and light mode are set automatically according to the user's color mode preference.
+- There's a [random cover](https://genderswap.fm/random) link.
 
 [Mobile]
 
@@ -134,18 +199,28 @@ Little details
 
 ## Outcomes
 
-Excitement from friends and folks online
+I didn't have any massive ambitions for this app—it was mostly a way for me to learn new technology, and see if I could manage my covers library in a way that felt a little more natural. In that sense, it was a success!
 
-Better management
+After finishing the first version of the app, I emailed it to Andrea Lawlor, sharing how _Paul Takes the Form_ had inspired me. A few days later, I received this reply:
 
-More interesting things to do with data
+<figure class="no-bleed" style="max-width: 585px">
+  !["Andrea Lawlor email to me, 2:45PM: Whoa this is THE COOLEST thing I have
+  EVER SEEN IN MY LIFE. Thank you!
+  Wow!"](./andrea-lawlor-email.jpg)(quality:100)
+  <figcaption>
+    **[Andrea Lawlor](https://www.anderlawlor.com/)'s reply.** You heard it
+    here, folks. The coolest thing ever.
+  </figcaption>
+</figure>
+
+I was overjoyed. Thanks, Andrea. Thanks, Paul.
+
+Genderswap.fm is now showcased on [Made with Svelte](https://madewithsvelte.com/genderswap-fm) and the [Utopia.fyi Showcase](https://utopia.fyi/showcase).
 
 ## Reflections
 
-Many improvements I'd still love to make.
+There are many improvements I'd still love to make to the app. At the top of the list is an [in-app audio player](https://github.com/evadecker/genderswap.fm/issues/7). I'd also like [better search](https://github.com/evadecker/genderswap.fm/issues/133), a way to [automatically generate and sync the Genderswap.fm database to a Spotify playlist](https://github.com/evadecker/genderswap.fm/issues/16), and [more](https://github.com/evadecker/genderswap.fm/issues).
 
-Learned the back-end is not as scary as it seemed
+I learned a lot building this out. The backend is not as scary as it seems, and I taught myself that it's possible for me to build a full-stack app from start to finish! There's still more to learn there, so I hope to continue working on this project when I have time.
 
-Still would like to build on-app support for listening to songs, but requires login and auth
-
-I track [all issues and ideas on GitHub](https://github.com/evadecker/genderswap.fm/issues), and contributions are welcome.
+I track [all issues and ideas on GitHub](https://github.com/evadecker/genderswap.fm/issues), and contributions are welcome. Otherwise, [explore covers](https://genderswap.fm/) or [submit your own](https://genderswap.fm/new).
