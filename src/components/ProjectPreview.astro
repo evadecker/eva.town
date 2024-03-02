@@ -72,7 +72,7 @@ const { title, description, img, video, url, roles } = project.data;
       content: "";
       position: absolute;
       inset: 0;
-      border: 1px solid var(--gray-a6);
+      border: 1px solid var(--gray-a4);
       border-radius: var(--radius-m);
       pointer-events: none;
       transition: border-color 0.2s ease-in-out;
@@ -155,17 +155,6 @@ const { title, description, img, video, url, roles } = project.data;
     border-top-left-radius: var(--radius-m);
     border-top-right-radius: var(--radius-m);
     overflow: hidden;
-
-    &::after {
-      content: "";
-      height: 1px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      position: absolute;
-      background-color: var(--gray-a4);
-      transition: background-color 0.2s ease-in-out;
-    }
   }
 
   .coming-soon {

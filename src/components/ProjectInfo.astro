@@ -55,7 +55,7 @@ const { timeline, roles, collaborators, tech, website, repo } = project.data;
         <ul>
           <li>
             <a href={website} target="_blank">
-              {website}
+              {website.split("//")[1]}
             </a>
           </li>
         </ul>
@@ -68,7 +68,7 @@ const { timeline, roles, collaborators, tech, website, repo } = project.data;
         <ul>
           <li>
             <a href={`https://github.com/${repo}`} target="_blank">
-              View on Github
+              View on GitHub
             </a>
           </li>
         </ul>

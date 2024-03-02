@@ -9,7 +9,8 @@
   --image-max-width: 1200px;
 }
 
-.prose > * {
+.prose > *,
+.prose .no-bleed {
   grid-column: 2;
 }
 
@@ -207,6 +208,7 @@
 
 .prose > figure {
   margin-block-start: var(--space-2xl);
+  margin-inline: auto;
   width: 100%;
   grid-column: 1 / -1;
 }
@@ -241,7 +243,8 @@
 
 /* Hacky way to target the image container without an extra div */
 .prose figure > p,
-.prose .two-up > p {
+.prose .two-up > p,
+.prose .video-wrapper {
   margin-inline: auto;
   max-width: var(--image-max-width);
   overflow: hidden;
@@ -249,23 +252,26 @@
 }
 
 .prose figure > p::after,
-.prose .two-up > p::after {
+.prose .two-up > p::after,
+.prose .video-wrapper::after {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid var(--gray-a3);
+  border: 1px solid var(--gray-a5);
   border-radius: var(--radius-m);
   pointer-events: none;
 }
 
 @media (width <= 1200px) {
-  .prose figure img,
-  .prose figure video {
+  .prose figure:not(.no-bleed) img,
+  .prose figure:not(.no-bleed) video,
+  .prose figure:not(.no-bleed) .video-wrapper {
     border-radius: 0;
   }
 
-  .prose figure > p::after,
-  .prose .two-up > p::after {
+  .prose .two-up > p::after,
+  .prose figure:not(.no-bleed) > p::after,
+  .prose figure:not(.no-bleed) .video-wrapper::after {
     border-radius: 0;
   }
 }
@@ -279,6 +285,14 @@
   position: relative;
 }
 
+.prose .no-bleed figcaption {
+  max-inline-size: 100%;
+}
+
 .prose figcaption p:first-child::before {
   content: "▲ ";
+}
+
+.prose > p:last-child::after {
+  content: "\a0⁕";
 }
