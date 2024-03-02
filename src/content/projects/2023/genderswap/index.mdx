@@ -64,9 +64,9 @@ After managing this playlist for two years, I decided to build a custom solution
 
 ## Laying Foundations
 
-Before I could begin building, I had to get familiar with a new domain—databases! Although I've been building for the web for over a decade now, I've primarily dealt with frontend technology. This personal project was my first time working directly on the backend.
+This personal project was my first time working directly on the backend. Thankfully, [Supabase](https://supabase.com/)—an open source alternative to Google's [Firebase](https://firebase.google.com/)—made it easy to get started.
 
-Thankfully, [Supabase](https://supabase.com/)—an open source alternative to Google's [Firebase](https://firebase.google.com/)—made it easy to get started. I experimented with how I wanted to structure my data and landed on a two table model: one table for `songs`, where each row holds discrete data about a single `song`, and one table for `covers`, which links two `song` rows together along with extra metadata about their relation. This approach avoids duplicating `song` data if the same song is covered by multiple artists.
+I experimented with alternative data structures and landed on a two table model: one table for `songs`, and one table for `covers`, which links two `song` rows together along with extra metadata about their relation.
 
 <figure class="no-bleed" style="max-width: 600px">
   ![A visualization of the database schema for
@@ -76,7 +76,7 @@ Thankfully, [Supabase](https://supabase.com/)—an open source alternative to Go
   </figcaption>
 </figure>
 
-I decided to use [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelte.dev/]) for my application framework. I had previously used Svelte in my build for the [NYC Boundaries Map](/projects/boundaries-map), and the addition of SvelteKit made it easier to manage routing, server-side rendering, and API requests. I set up a Spotify Developer account and used the [Spotify Web API TypeScript SDK](https://github.com/spotify/spotify-web-api-ts-sdk) to make it easy for users to search for and enter songs. I also added [Melt UI](https://melt-ui.com/), a Svelte-based component library, to help build the submission form.
+I decided to use [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelte.dev/]) for my application framework. I had previously used Svelte in my build for the [NYC Boundaries Map](/projects/boundaries-map), and the addition of SvelteKit made it easy to manage routing, server-side rendering, and API requests. I set up a Spotify Developer account and used the [Spotify Web API TypeScript SDK](https://github.com/spotify/spotify-web-api-ts-sdk) to make it easy for users to search for and enter songs. I also added [Melt UI](https://melt-ui.com/), a Svelte-based component library, to help build the submission form.
 
 ## Ideation
 
@@ -98,46 +98,35 @@ From there, users could tap in to view the details of a cover, and listen to the
 
 ## Finding a Design Language
 
-To communicate the way these covers remix sound, reinterpret lyrics, and reconfigure meaning, I established a visual motif to thread its way through the app: two objects, overlapping and askew. Sharing space, but different. This is represented in the logo and the display of albums on the main grid.
+To communicate the way these covers remix sound, reinterpret lyrics, and reconfigure meaning, I established a visual motif to thread its way through the app: two objects, overlapping and askew. Sharing space, but different.
 
-<figure class="no-bleed">
-  <div class="video-wrapper">
-    <video
-      autoplay
-      loop
-      muted
-      playsinline
-      preload="none"
-      poster="/video/album-overlap-poster.png"
-    >
-      <source src="/video/album-overlap.mp4" type="video/mp4" />
-    </video>
-  </div>
+<figure>
+  ![A grid of albums and covers displayed on
+  Genderswap.fm](./album-grid.png)(quality:100)
   <figcaption>
-    **Askew, off-grid elements.** The album overlap helps present the original
-    and cover as a "unit" of information, and emphasize their shared traits. The
-    cover album is larger and foregrounded for emphasis. Full album covers are
-    revealed on hover and within the detail view.
+    **Overlapping visual motif.** Intentional overlapping groups the original
+    and cover as a single unit. The cover album is larger and foregrounded for
+    emphasis.
   </figcaption>
 </figure>
 
-Typography is set in [Labil Grotesk](https://www.kometa.xyz/typefaces/labil-grotesk/) by KOMETA Typefaces, a queer font which topples over itself, unable to rest upright, mirroring the off-kilter elements elsewhere in the app.
+Typography is set in [Labil Grotesk](https://www.kometa.xyz/typefaces/labil-grotesk/), a queer font which topples over itself, unable to rest upright, mirroring the off-kilter elements elsewhere in the app.
 
 <figure class="no-bleed">
   ![Header typography for a detail page within the app. The text reads: Sonata
   No. 8 in C Minor, Op. 13 “Pathétique”: II. Adagio cantabile. Jun Fukamachi
   covering Ludwig van Beethoven](./typography.png)(quality:100)
   <figcaption>
-    **Labil Grotesk in use on Genderswap.fm.** I love the way the 'O' falls
-    over, ready to roll off the screen.
+    **Labil Grotesk in use.** I love the way the 'O' falls over, ready to roll
+    off the screen.
   </figcaption>
 </figure>
 
-While the topsy-turvy contextual alternates were enabled for page-level headings, I disabled them for smaller text to prioritize legibility. Even without leaning, Labil's quirky nature still shines through.
+While the topsy-turvy contextual alternates were enabled for page-level headings, I disabled them for smaller text to prioritize legibility.
 
 ## Little Big Features
 
-As with all my work, I looked for opportunities to introduce small but meaningful details. Here are some of my favorite features I built for Genderswap.fm.
+As with all my work, I looked for opportunities to introduce small but meaningful details.
 
 <figure class="no-bleed" style="max-width: 462px">
   ![Header typography for a detail page within the app. The text reads: Sonata
