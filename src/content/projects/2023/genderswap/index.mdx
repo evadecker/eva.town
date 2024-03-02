@@ -128,64 +128,119 @@ While the topsy-turvy contextual alternates were enabled for page-level headings
 
 As with all my work, I looked for opportunities to introduce small but meaningful details.
 
-<figure class="no-bleed" style="max-width: 462px">
-  ![Header typography for a detail page within the app. The text reads: Sonata
-  No. 8 in C Minor, Op. 13 “Pathétique”: II. Adagio cantabile. Jun Fukamachi
-  covering Ludwig van Beethoven](./tags.png)(quality:100)
-  <figcaption>
-    **Automated tagging.** Covers are automatically tagged with over a dozen
-    acoustic attributes comparing it to the original.
-  </figcaption>
-</figure>
-<figure class="no-bleed" style="max-width: 502px">
-  ![A collection of three browser URL boxes with associated titles. The URLs are
-  nicely formatted with hyphens and human readable text. The titles are
-  formatted like "Cat Power's cover of Sea Of Love by Phil Phillips & The
-  Twilights."](./readable-urls.png)(quality:100)
-  <figcaption>
-    **Readable URLs and page titles.** Cover data is used to generate
-    human-readable URLs while accommodating diacritics and non-Latin characters.
-    For page titles, it'll convert 3 periods to an ellipsis, and straight quotes
-    to curly quotes.
-  </figcaption>
-</figure>
-<figure class="no-bleed" style="max-width: 364px">
-  !["Girls Just Wanna Have Fun" covered as "Girls Just Wanna Have
-  Some"](./covered-as.png)(quality:100)
-  <figcaption>
-    **"Covered as..."** Only shown when a cover's title diverges from the
-    original, ignoring minor changes in punctuation or casing.
-  </figcaption>
-</figure>
-<figure class="no-bleed" style="max-width: 388px">
-  <div class="video-wrapper">
-    <video
-      autoplay
-      loop
-      muted
-      playsinline
-      preload="none"
-      poster="/video/earlier-release-poster.png"
-    >
-      <source src="/video/earlier-release.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <figcaption>
-    **Earlier release prompting.** Behind the scenes, the app will search for
-    earlier album releases for your original song. If one is found, it'll prompt
-    you to update your submission.
-  </figcaption>
-</figure>
+<div class="two-col">
+  <figure class="no-bleed">
+    <div class="video-wrapper">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="none"
+        poster="/video/tag-filtering-poster.png"
+      >
+        <source src="/video/tag-filtering.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <figcaption>
+      **Automated tagging.** Covers are automatically tagged with attributes
+      like "sadder" or "more danceable", and you can search and filter by tag.
+    </figcaption>
+  </figure>
+  <figure class="no-bleed">
+    ![A collection of three browser URL boxes with associated titles. The URLs
+    are nicely formatted with hyphens and human readable text. The titles are
+    formatted like "Cat Power's cover of Sea Of Love by Phil Phillips & The
+    Twilights."](./readable-urls.png)(quality:100)
+    <figcaption>
+      **Readable URLs and page titles.** Share human-readable URLs which
+      accommodate diacritics and non-Latin characters.
+    </figcaption>
+  </figure>
+  <figure class="no-bleed">
+    !["Girls Just Wanna Have Fun" covered as "Girls Just Wanna Have
+    Some"](./covered-as.png)(quality:100)
+    <figcaption>
+      **"Covered as..."** Conditionally see when a cover's title diverges from
+      the original.
+    </figcaption>
+  </figure>
+  <figure class="no-bleed">
+    ![The user has selected ABBA's Dancing Queen from ABBA Gold. A banner says
+    there's an earlier release, and prompts the user to choose the album
+    Arrival, which was released 32 years
+    earlier.](./earlier-release.png)(quality:100)
+    <figcaption>
+      **Earlier release prompting.** Behind the scenes, the app will search for
+      earlier album releases for your original song. If one is found, it'll
+      prompt you to update your submission.
+    </figcaption>
+  </figure>
+  <figure class="no-bleed">
+    ![A text message with a preview of the album art and page
+    title.](./og-image.png)(quality:100)
+    <figcaption>
+      **Rich social previews.** Custom Open Graph images generated using
+      [Satori](https://github.com/vercel/satori) and
+      [Sharp](https://github.com/lovell/sharp) display a cover's title, album
+      art, and tags.
+    </figcaption>
+  </figure>
+  <figure class="no-bleed">
+    ![A list of titles displaying remaster dates and other non-title info
+    scratched out by a red marker.](./just-titles.png)(quality:100)
+    <figcaption>
+      **Just the titles.** Remaster dates, "(Featured on...)", "[From the
+      Movie...]", and other cruft is stripped out, leaving only the artistic
+      title.
+    </figcaption>
+  </figure>
+  <figure class="no-bleed">
+    <div class="video-wrapper">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="none"
+        poster="/video/confetti-poster.png"
+      >
+        <source src="/video/confetti.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <figcaption>
+      **Celebrate contribution.** Confetti erupts after each new submission. 🎉
+    </figcaption>
+  </figure>
+  <figure class="no-bleed">
+    !["An input with the label "Your first name (optional)". The input is
+    prefilled with the name "Eva".](./saved-name.png)(quality:100)
+    <figcaption>
+      **Pre-filled name for repeat submissions.** Entered names will be
+      pre-filled for future submissions on the same device.
+    </figcaption>
+  </figure>
+  <figure class="no-bleed">
+    <div class="video-wrapper">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="none"
+        poster="/video/paste-link-poster.png"
+      >
+        <source src="/video/paste-link.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <figcaption>
+      **Paste links into search.** Title too hard to type? Just copy and paste
+      the Spotify link.
+    </figcaption>
+  </figure>
+</div>
 
-In addition:
-
-- There are custom Open Graph images for every cover, generated using Sharp.
-- Confetti displays after a new submission.
-- Extra song info will be stripped from the ends of song titles—so `Can't Get You out of My Head - Live at KEXP` will become simply `Can't Get You out of My Head`, and `What Was I Made For? [From The Motion Picture "Barbie"]` will be `What Was I Made For?`.
-- The submission form will save your name between submissions so you don't have to re-enter it.
-- The search input in the submission form will also accept a Spotify song URL, so you can paste directly from the app. This is especially helpful for songs that are difficult to search, like [this cover from Shigeo Sekito](https://genderswap.fm/cover/%E3%82%B5%E3%83%B3%E3%82%B7%E3%83%A3%E3%82%A4%E3%83%B3-%E3%82%BB%E3%82%AD%E3%83%88%E3%82%AA%E3%83%BB%E3%82%B7%E3%82%B1%E3%82%99%E3%82%AA).
-- Dark and light mode are set automatically according to the user's color mode preference.
-- There's a [random cover](https://genderswap.fm/random) link.
+Explore covers on on [Genderswap.fm](https://genderswap.fm), get a [random cover](https://genderswap.fm/random), or [submit your own](https://genderswap.fm/new).
 
 ## Outcomes
 
@@ -209,8 +264,6 @@ Genderswap.fm is now showcased on [Made with Svelte](https://madewithsvelte.com/
 
 ## Reflections
 
-There are many improvements I'd still love to make to the app. At the top of the list is an [in-app audio player](https://github.com/evadecker/genderswap.fm/issues/7). I'd also like [better search](https://github.com/evadecker/genderswap.fm/issues/133), a way to [automatically generate and sync the Genderswap.fm database to a Spotify playlist](https://github.com/evadecker/genderswap.fm/issues/16), and [more](https://github.com/evadecker/genderswap.fm/issues).
+There are many improvements I'd still love to make to the app. At the top of the list is an [in-app audio player](https://github.com/evadecker/genderswap.fm/issues/7). I'd also like [better search](https://github.com/evadecker/genderswap.fm/issues/133), and a way to [automatically generate and sync the Genderswap.fm database to a Spotify playlist](https://github.com/evadecker/genderswap.fm/issues/16). I track [all issues and ideas on GitHub](https://github.com/evadecker/genderswap.fm/issues), and contributions are welcome.
 
-I learned a lot building this out. The backend is not as scary as it seems, and I taught myself that it's possible for me to build a full-stack app from start to finish! There's still more to learn there, so I hope to continue working on this project when I have time.
-
-I track [all issues and ideas on GitHub](https://github.com/evadecker/genderswap.fm/issues), and contributions are welcome. Otherwise, [explore covers](https://genderswap.fm/) or [submit your own](https://genderswap.fm/new).
+I learned a lot building this out. The backend is not as scary as it seems, and I taught myself that it's possible for me to build a full-stack app from start to finish! There's still more to learn, and I hope to continue working on this project when I have time.
