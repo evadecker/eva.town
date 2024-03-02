@@ -257,7 +257,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid var(--gray-a5);
+  border: 0.5px solid var(--gray-a6);
   border-radius: var(--radius-m);
   pointer-events: none;
 }
@@ -273,6 +273,12 @@
   .prose figure:not(.no-bleed) > p::after,
   .prose figure:not(.no-bleed) .video-wrapper::after {
     border-radius: 0;
+  }
+
+  .prose figure:not(.no-bleed) > p::after,
+  .prose figure:not(.no-bleed) .video-wrapper::after {
+    border-right: none;
+    border-left: none;
   }
 }
 
@@ -295,4 +301,21 @@
 
 .prose > p:last-child::after {
   content: "\a0⁕";
+}
+
+.prose .two-col {
+  columns: 2;
+  column-gap: var(--space-xl);
+  margin-block: var(--space-xl);
+}
+
+@media (width < 400px) {
+  .prose .two-col {
+    columns: 1;
+  }
+}
+
+.prose .two-col figure {
+  break-inside: avoid;
+  margin-block-end: var(--space-xl);
 }
