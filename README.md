@@ -10,17 +10,19 @@
 
 This is the source code for [eva.town](https://eva.town), designed, coded, and written by Eva—that's me! It's a place for me to share notes and learn in public. I try to update things regularly.
 
-You're welcome to fork this site, use it as inspiration, and modify things for your own projects—just don't steal it or try to claim my work as your own. That's not cool.
+You're welcome to fork this site, use it as inspiration, and modify things for your own projects—just pls don't steal it or try to claim it as your own.
 
-For information about the technology and tools behind this site, visit [eva.town/colophon](https://eva.town/colophon).
+For information about the technology and tools behind the site, visit [eva.town/colophon](https://eva.town/colophon).
 
 ## Getting Started
 
-This site uses the [pnpm](https://pnpm.io) package manager because it's faster than npm and produces more readable, diff-able lock files. If you've used `npm` the `pnpm` command is the same as `npm run`. So to get started, clone the repo and run:
+To get started, run:
 
 ```bash
 pnpm dev
 ```
+
+If it's the first time running the repo you may need to run `pnpm i` to install packages.
 
 Other scripts in [package.json](/package.json) can also be run with `pnpm`.
 
