@@ -1,4 +1,4 @@
-import { jade } from "@radix-ui/colors";
+import { gray } from "@radix-ui/colors";
 import { type ReactNode } from "react";
 
 export type EmoteType =
@@ -20,9 +20,9 @@ interface EmoteProps {
 }
 
 const color = {
-  outline: jade.jade4,
-  highlight: jade.jade9,
-  dark: jade.jade12,
+  outline: gray.gray1,
+  highlight: gray.gray9,
+  dark: gray.gray12,
 };
 
 export const emoteData: Record<EmoteType, ReactNode> = {

@@ -66,7 +66,8 @@
   --line-height-small: 1.4;
 
   /* Letter spacing */
-  --letter-spacing-condensed: -0.01em;
+
+  --letter-spacing-condensed: -0.005em;
   --letter-spacing-normal: 0;
   --letter-spacing-loose: 0.01em;
 
