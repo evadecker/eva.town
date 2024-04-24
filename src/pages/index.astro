@@ -18,13 +18,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="intro">
         <p>
           <a href="/about" class="inline-link">Eva Decker</a>
-          <span class="pronouns">(she/they)</span> is a design engineer based in
-          NYC. She’s previously worked at
+          <span class="pronouns">(she/they)</span> is a design engineer who lives
+          with her tabby <button data-sam-button>Samwise</button> in NYC. She’s previously
+          worked at
           <InlineBrandLink brand="dropbox" punctuation="," />
           <InlineBrandLink brand="cityblock" punctuation="," /> and <InlineBrandLink
             brand="swiftype"
             punctuation="."
-          /> She likes playing piano and writing CSS.
+          /> She likes playing piano and writing CSS. <button data-sam-shoo
+            >Tell Sam to shoo.</button
+          >
         </p>
       </div>
       <div class="synth">
@@ -34,6 +37,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
   </Center>
 </BaseLayout>
+
+<script>
+  import { addSam, clearSams, numSams } from "../stores/sam";
+
+  const samButton = document.querySelector("[data-sam-button]");
+  samButton?.addEventListener("click", () => addSam());
+
+  const shooButton = document.querySelector("[data-sam-shoo]");
+
+  if (shooButton) {
+    shooButton.addEventListener("click", () => {
+      clearSams();
+    });
+
+    numSams.subscribe((num) => {
+      num > 0
+        ? shooButton.classList.add("visible")
+        : shooButton.classList.remove("visible");
+    });
+  }
+</script>
 
 <style lang="scss">
   .visuallyhidden {
@@ -59,7 +83,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .intro {
     padding-block-start: var(--space-2xl);
 
-    :global(a) {
+    :global(a),
+    :global(button) {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      color: var(--gray-12);
       font-weight: var(--font-weight-bold);
 
       &:hover {
@@ -73,7 +104,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       font-size: var(--step-3);
       letter-spacing: var(--letter-spacing-condensed);
       line-height: 1.1;
-      text-wrap: balance;
     }
   }
 
@@ -87,5 +117,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       border-radius: var(--radius-m);
       padding: var(--space-xl) var(--space-l);
     }
+  }
+
+  [data-sam-shoo] {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  [data-sam-shoo].visible {
+    opacity: 1;
+    display: inline;
+    pointer-events: initial;
   }
 </style>
