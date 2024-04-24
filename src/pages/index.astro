@@ -20,14 +20,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p>
           <a href="/about" class="inline-link">Eva Decker</a>
           <span class="pronouns">(she/they)</span> is a design engineer who lives
-          with her tabby <button data-sam-button>Samwise</button> in NYC. She’s previously
-          worked at
+          with her tabby <button data-sam-button type="button">Samwise</button> in
+          NYC. She’s previously worked at
           <InlineBrandLink brand="dropbox" punctuation="," />
           <InlineBrandLink brand="cityblock" punctuation="," /> and <InlineBrandLink
             brand="swiftype"
             punctuation="."
-          /> She likes playing piano and writing CSS. <button data-sam-shoo
-            >Tell Sam to shoo.</button
+          /> She likes playing piano and writing CSS. <button
+            data-sam-shoo
+            type="button">Tell Sam to shoo.</button
           >
         </p>
       </div>
@@ -44,12 +45,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   import { addSam, clearSams, numSams } from "../stores/sam";
 
   const samButton = document.querySelector("[data-sam-button]");
-  samButton?.addEventListener("click", () => addSam());
+  samButton?.addEventListener("mousedown", () => addSam());
 
   const shooButton = document.querySelector("[data-sam-shoo]");
 
   if (shooButton) {
-    shooButton.addEventListener("click", () => {
+    shooButton.addEventListener("mousedown", () => {
       clearSams();
     });
 
@@ -118,6 +119,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       background: var(--gray-3);
       border-radius: var(--radius-m);
       padding: var(--space-xl) var(--space-l);
+    }
+  }
+
+  [data-sam-button] {
+    transition: transform 0.2s ease;
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 
