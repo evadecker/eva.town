@@ -50,16 +50,14 @@ export const Stickers = () => {
             data-sam-shoo
             type="button"
             onClick={clearSams}
-            initial={{ opacity: 0, bottom: -20, left: "50%", x: "-50%" }}
+            initial={{ bottom: -50, left: "50%", x: "-50%" }}
             animate={{
-              opacity: 1,
               left: "50%",
               x: "-50%",
               bottom: 16,
             }}
             exit={{
-              opacity: 0,
-              bottom: -20,
+              bottom: -50,
               left: "50%",
               x: "-50%",
             }}
