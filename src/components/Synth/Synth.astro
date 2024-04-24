@@ -584,30 +584,29 @@ import SynthScreen from "./SynthScreen.astro";
   .synth {
     width: 100%;
     max-width: 540px;
-    transform: rotate(2deg);
 
-    --synth-whitekey: var(--red-4);
-    --synth-whitekey-pressed: var(--red-1);
-    --synth-blackkey: var(--red-12);
-    --synth-blackkey-pressed: var(--red-11);
-    --synth-stroke: var(--red-12);
-    --synth-lcd-bg: var(--red-4);
-    --synth-lcd-light: var(--red-2);
-    --synth-lcd-medium: var(--red-11);
-    --synth-lcd-dark: var(--red-12);
-    --synth-keyletter: var(--red-12);
+    --synth-whitekey: var(--gray-4);
+    --synth-whitekey-pressed: var(--gray-1);
+    --synth-blackkey: var(--gray-12);
+    --synth-blackkey-pressed: var(--gray-11);
+    --synth-stroke: var(--gray-12);
+    --synth-lcd-bg: var(--gray-4);
+    --synth-lcd-light: var(--gray-2);
+    --synth-lcd-medium: var(--gray-11);
+    --synth-lcd-dark: var(--gray-12);
+    --synth-keyletter: var(--gray-12);
 
     :global(.dark) & {
-      --synth-whitekey: var(--red-12);
+      --synth-whitekey: var(--gray-12);
       --synth-whitekey-pressed: white;
-      --synth-blackkey: var(--red-3);
-      --synth-blackkey-pressed: var(--red-1);
-      --synth-stroke: var(--red-1);
-      --synth-lcd-bg: var(--red-12);
+      --synth-blackkey: var(--gray-3);
+      --synth-blackkey-pressed: var(--gray-1);
+      --synth-stroke: var(--gray-1);
+      --synth-lcd-bg: var(--gray-12);
       --synth-lcd-light: white;
-      --synth-lcd-medium: var(--red-5);
-      --synth-lcd-dark: var(--red-3);
-      --synth-keyletter: var(--red-3);
+      --synth-lcd-medium: var(--gray-5);
+      --synth-lcd-dark: var(--gray-3);
+      --synth-keyletter: var(--gray-3);
     }
 
     &[data-loading="true"] {
@@ -622,11 +621,6 @@ import SynthScreen from "./SynthScreen.astro";
 
     svg {
       overflow: visible;
-    }
-
-    @media (width < 600px) {
-      width: 130%;
-      margin-inline: -15%;
     }
   }
 </style>
