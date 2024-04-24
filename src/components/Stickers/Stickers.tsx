@@ -1,13 +1,14 @@
 import { useStore } from "@nanostores/react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 
-import { numSams } from "../../stores/sam";
+import { clearSams, numSams } from "../../stores/sam";
 import { Sticker, type StickerProps } from "./Sticker";
 
 export const Stickers = () => {
   const [stickers, setStickers] = useState<StickerProps[]>([]);
+  const [showShoo, setShowShoo] = useState(false);
   const $numSams = useStore(numSams);
 
   const addSticker = () => {
@@ -30,12 +31,42 @@ export const Stickers = () => {
     }
   }, [$numSams]);
 
+  useEffect(() => {
+    if ($numSams > 2) {
+      setShowShoo(true);
+    } else {
+      setShowShoo(false);
+    }
+  }, [$numSams]);
+
   return (
     <div className="stickers">
       <AnimatePresence>
         {stickers.map(({ id, variant }) => (
           <Sticker key={id} id={id} variant={variant} />
         ))}
+        {showShoo && (
+          <motion.button
+            data-sam-shoo
+            type="button"
+            onClick={clearSams}
+            initial={{ opacity: 0, bottom: -20, left: "50%", x: "-50%" }}
+            animate={{
+              opacity: 1,
+              left: "50%",
+              x: "-50%",
+              bottom: 16,
+            }}
+            exit={{
+              opacity: 0,
+              bottom: -20,
+              left: "50%",
+              x: "-50%",
+            }}
+          >
+            Tell Sam to shoo?
+          </motion.button>
+        )}
       </AnimatePresence>
     </div>
   );

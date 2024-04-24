@@ -45,3 +45,17 @@
   user-select: none;
   filter: drop-shadow(0 1px 1px var(--black-a5));
 }
+
+[data-sam-shoo] {
+  position: fixed;
+  bottom: var(--space-m);
+  background-color: var(--gray-12);
+  border: none;
+  color: var(--gray-1);
+  border-radius: var(--radius-full);
+  padding: var(--space-2xs) var(--space-m);
+  transition: opacity 0.2s ease;
+  z-index: 999;
+  cursor: pointer;
+  pointer-events: auto;
+}

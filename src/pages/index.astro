@@ -26,10 +26,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <InlineBrandLink brand="cityblock" punctuation="," /> and <InlineBrandLink
             brand="swiftype"
             punctuation="."
-          /> She likes playing piano and writing CSS. <button
-            data-sam-shoo
-            type="button">Tell Sam to shoo.</button
-          >
+          /> She likes playing piano and writing CSS.
         </p>
       </div>
       <div class="synth">
@@ -128,17 +125,5 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     &:active {
       transform: scale(0.95);
     }
-  }
-
-  [data-sam-shoo] {
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-  }
-
-  [data-sam-shoo].visible {
-    opacity: 1;
-    display: inline;
-    pointer-events: initial;
   }
 </style>
