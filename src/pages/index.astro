@@ -45,12 +45,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   import { addSam, clearSams, numSams } from "../stores/sam";
 
   const samButton = document.querySelector("[data-sam-button]");
-  samButton?.addEventListener("mousedown", () => addSam());
+  samButton?.addEventListener("click", () => addSam());
 
   const shooButton = document.querySelector("[data-sam-shoo]");
 
   if (shooButton) {
-    shooButton.addEventListener("mousedown", () => {
+    shooButton.addEventListener("click", () => {
       clearSams();
     });
 
