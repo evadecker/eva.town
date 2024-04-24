@@ -4,7 +4,6 @@ import "../styles/animation.css";
 
 import Footer from "../components/Footer/Footer.astro";
 import Header from "../components/Header/Header.astro";
-import Toys from "../components/Toys/Toys.astro";
 import UnstyledBase from "./UnstyledBase.astro";
 
 interface Props {
@@ -33,7 +32,6 @@ const { title, description, includeFooter, padTop, padBottom, ogImage, ogAlt } =
     <slot />
   </main>
   {includeFooter && <Footer />}
-  <Toys />
   <slot name="after-footer" />
   <style>
     .main {
@@ -51,5 +49,4 @@ const { title, description, includeFooter, padTop, padBottom, ogImage, ogAlt } =
       padding-block-end: var(--space-3xl);
     }
   </style>
-  <script is:inline src="/scripts/nakedDay.js"></script>
 </UnstyledBase>

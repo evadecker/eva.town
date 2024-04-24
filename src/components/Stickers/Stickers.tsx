@@ -3,7 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 
-import { numSams } from "../../../stores/sam";
+import { numSams } from "../../stores/sam";
 import { Sticker, type StickerProps } from "./Sticker";
 
 export const Stickers = () => {
@@ -31,10 +31,12 @@ export const Stickers = () => {
   }, [$numSams]);
 
   return (
-    <AnimatePresence>
-      {stickers.map(({ id, variant }) => (
-        <Sticker key={id} id={id} variant={variant} />
-      ))}
-    </AnimatePresence>
+    <div className="stickers">
+      <AnimatePresence>
+        {stickers.map(({ id, variant }) => (
+          <Sticker key={id} id={id} variant={variant} />
+        ))}
+      </AnimatePresence>
+    </div>
   );
 };

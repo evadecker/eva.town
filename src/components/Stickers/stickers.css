@@ -1,3 +1,11 @@
+.stickers {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  user-select: none;
+}
+
 .sticker {
   position: absolute;
   width: 200px;

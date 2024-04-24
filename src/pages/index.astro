@@ -3,6 +3,7 @@ import Center from "src/components/Center.astro";
 
 import InlineBrandLink from "../components/InlineBrandLink.astro";
 import Postcard from "../components/Postcard/Postcard.astro";
+import { Stickers } from "../components/Stickers/Stickers";
 import Synth from "../components/Synth/Synth.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -35,6 +36,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <Postcard />
     </section>
+    <Stickers client:idle />
   </Center>
 </BaseLayout>
 

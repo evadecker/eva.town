@@ -4,8 +4,8 @@ import { useStore } from "@nanostores/react";
 import { type DragHandlers, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-import { getRandomValueBetween } from "../../../helpers";
-import { incrementTopZIndex, topZIndex } from "../../../stores/sam";
+import { getRandomValueBetween } from "../../helpers";
+import { incrementTopZIndex, topZIndex } from "../../stores/sam";
 
 interface VariantData {
   path: string;
