@@ -55,7 +55,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     });
 
     numSams.subscribe((num) => {
-      num > 0
+      num > 2
         ? shooButton.classList.add("visible")
         : shooButton.classList.remove("visible");
     });
