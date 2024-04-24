@@ -4,8 +4,8 @@ import { useStore } from "@nanostores/react";
 import { type DragHandlers, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-import { getRandomValueBetween } from "../../../helpers";
-import { incrementTopZIndex, topZIndex } from "../../../stores/sam";
+import { getRandomValueBetween } from "../../helpers";
+import { incrementTopZIndex, topZIndex } from "../../stores/sam";
 
 interface VariantData {
   path: string;
@@ -135,13 +135,11 @@ export const Sticker = ({ variant }: StickerProps) => {
   const initialRotation = rotate + getRandomValueBetween(-20, 20);
 
   const handleDragStart: DragHandlers["onDragStart"] = () => {
-    // setIsGrabbing(true);
     incrementTopZIndex();
     setZIndex($topZIndex);
   };
 
   const handleDragEnd: DragHandlers["onDragEnd"] = (_, info) => {
-    // setIsGrabbing(false);
     const { x, y } = info.point;
     setX(x);
     setY(y);
