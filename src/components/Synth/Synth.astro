@@ -585,10 +585,11 @@ import SynthScreen from "./SynthScreen.astro";
     width: 100%;
     max-width: 540px;
 
-    --synth-whitekey: var(--gray-4);
-    --synth-whitekey-pressed: var(--gray-1);
+    --synth-whitekey: var(--gray-1);
+    --synth-whitekey-pressed: var(--gray-2);
     --synth-blackkey: var(--gray-12);
     --synth-blackkey-pressed: var(--gray-11);
+    --synth-base: var(--gray-1);
     --synth-stroke: var(--gray-12);
     --synth-lcd-bg: var(--gray-4);
     --synth-lcd-light: var(--gray-2);
@@ -599,14 +600,15 @@ import SynthScreen from "./SynthScreen.astro";
     :global(.dark) & {
       --synth-whitekey: var(--gray-12);
       --synth-whitekey-pressed: white;
-      --synth-blackkey: var(--gray-3);
-      --synth-blackkey-pressed: var(--gray-1);
+      --synth-blackkey: var(--gray-1);
+      --synth-blackkey-pressed: var(--gray-4);
+      --synth-base: var(--gray-12);
       --synth-stroke: var(--gray-1);
       --synth-lcd-bg: var(--gray-12);
       --synth-lcd-light: white;
-      --synth-lcd-medium: var(--gray-5);
+      --synth-lcd-medium: var(--gray-9);
       --synth-lcd-dark: var(--gray-3);
-      --synth-keyletter: var(--gray-3);
+      --synth-keyletter: var(--gray-4);
     }
 
     &[data-loading="true"] {
