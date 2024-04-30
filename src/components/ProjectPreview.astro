@@ -64,7 +64,6 @@ const { title, description, img, video, url, roles } = project.data;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    background-color: var(--gray-2);
     border-radius: var(--radius-m);
     transition: background-color 0.2s ease-in-out;
 
@@ -95,8 +94,8 @@ const { title, description, img, video, url, roles } = project.data;
     }
 
     @media (hover: hover) and (pointer: fine) {
-      &:not(.draft):hover {
-        background-color: var(--gray-3);
+      &:not(.draft):hover::after {
+        border-color: var(--gray-a6);
       }
     }
   }

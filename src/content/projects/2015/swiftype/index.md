@@ -7,7 +7,8 @@ roles:
   - Engineering
   - Illustration
   - Iconography
-timeline: October 2015 – August 2016
+startMonth: October 2015
+endMonth: August 2016
 collaborators:
   - name: Casey Zumwalt
     url: https://zumwa.lt/
