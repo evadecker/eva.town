@@ -1,30 +1,47 @@
 ---
-
+import Center from "../Center.astro";
 ---
 
 <footer>
-  <div class="links">
-    <a href="https://www.are.na/eva-decker/" target="_blank">Are.na</a>
-    <a href="https://github.com/evadecker" target="_blank">GitHub</a>
-    <a href="https://www.goodreads.com/evadecker" target="_blank">Goodreads</a>
-    <a href="https://linkedin.com/in/evadecker" target="_blank">LinkedIn</a>
-    <a href="/colophon">Colophon</a>
-  </div>
-  <a class="banner" href="https://www.jewishvoiceforpeace.org/" target="_blank">
-    <span class="emoji">🇵🇸</span> Standing with Palestine, now and always.
-  </a>
+  <Center>
+    <div class="content">
+      <a
+        class="banner"
+        href="https://www.jewishvoiceforpeace.org/"
+        target="_blank"
+      >
+        <span class="emoji">🇵🇸</span> Standing with Palestine, now and always.
+      </a>
+      <div class="links">
+        <a href="https://www.are.na/eva-decker/" target="_blank">Are.na</a>
+        <a href="https://github.com/evadecker" target="_blank">GitHub</a>
+        <a href="https://www.goodreads.com/evadecker" target="_blank"
+          >Goodreads</a
+        >
+        <a href="https://linkedin.com/in/evadecker" target="_blank">LinkedIn</a>
+        <a href="/colophon">Colophon</a>
+      </div>
+    </div>
+  </Center>
 </footer>
 
 <style lang="scss">
   footer {
     font-size: var(--step--1);
+    padding-block: var(--space-2xl);
     width: 100%;
-    padding: var(--space-xl);
+  }
+
+  .content {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: var(--space-s) var(--space-xl);
+    justify-content: space-between;
+    flex-direction: row;
+    gap: var(--space-m) var(--space-xl);
+
+    @media (width < 800px) {
+      flex-direction: column;
+    }
   }
 
   .links {
@@ -46,21 +63,19 @@
   }
 
   .banner {
-    background-color: var(--gray-3);
-    border-radius: var(--radius-full);
-    padding: var(--space-2xs) var(--space-m);
+    color: var(--gray-11);
     display: inline-flex;
     align-items: center;
-    gap: var(--space-s);
+    gap: var(--space-xs);
     transition: background-color 0.2s ease-in-out;
 
     .emoji {
-      transform: scale(1.5);
+      transform: scale(1.3) translateY(0.04em);
     }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background-color: var(--gray-4);
+        color: var(--gray-12);
       }
     }
   }
