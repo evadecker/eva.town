@@ -40,30 +40,31 @@ export const Stickers = () => {
   }, [$numSams]);
 
   return (
-    <div className="stickers">
+    <div className="stickers" style={{ viewTransitionName: "stickers" }}>
       <AnimatePresence>
         {stickers.map(({ id, variant }) => (
           <Sticker key={id} id={id} variant={variant} />
         ))}
         {showShoo && (
-          <motion.button
-            data-sam-shoo
-            type="button"
-            onClick={clearSams}
-            initial={{ bottom: -50, left: "50%", x: "-50%" }}
-            animate={{
-              left: "50%",
-              x: "-50%",
-              bottom: 16,
-            }}
-            exit={{
-              bottom: -50,
-              left: "50%",
-              x: "-50%",
-            }}
-          >
-            Tell Sam to shoo?
-          </motion.button>
+          <div className="shoo-wrapper">
+            <motion.button
+              data-sam-shoo
+              type="button"
+              onClick={clearSams}
+              initial={{ bottom: -50 }}
+              animate={{
+                bottom: 16,
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              exit={{
+                rotate: [-2, 2, -3, 3, -6, 6, -8, 8],
+                // bottom: -50,
+              }}
+            >
+              Tell Sam to shoo?
+            </motion.button>
+          </div>
         )}
       </AnimatePresence>
     </div>

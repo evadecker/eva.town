@@ -46,16 +46,26 @@
   filter: drop-shadow(0 1px 1px var(--black-a5));
 }
 
-[data-sam-shoo] {
+.shoo-wrapper {
   position: fixed;
-  bottom: var(--space-m);
+  bottom: var(--space-l);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-sam-shoo] {
   background-color: var(--gray-12);
   border: none;
   color: var(--gray-1);
   border-radius: var(--radius-full);
   padding: var(--space-2xs) var(--space-m);
+  font-weight: var(--font-weight-medium);
   transition: opacity 0.2s ease;
   z-index: 999;
   cursor: pointer;
   pointer-events: auto;
+  box-shadow: var(--shadow-m);
 }
