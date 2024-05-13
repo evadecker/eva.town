@@ -54,6 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
 }
 
 [data-sam-shoo] {
@@ -64,8 +65,11 @@
   padding: var(--space-2xs) var(--space-m);
   font-weight: var(--font-weight-medium);
   transition: opacity 0.2s ease;
-  z-index: 999;
   cursor: pointer;
   pointer-events: auto;
   box-shadow: var(--shadow-m);
+}
+
+::view-transition-group("stickers") {
+  animation: none;
 }

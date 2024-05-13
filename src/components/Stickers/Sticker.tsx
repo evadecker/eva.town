@@ -189,6 +189,7 @@ export const Sticker = ({ variant }: StickerProps) => {
       }}
       exit={{
         ...getNearestOffCanvasCoordinates(x, y, 400),
+        rotate: getRandomValueBetween(-90, 90),
         transition: {
           type: "spring",
           mass: 4,

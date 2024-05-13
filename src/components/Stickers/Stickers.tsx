@@ -56,10 +56,12 @@ export const Stickers = () => {
                 bottom: 16,
               }}
               whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 1 }}
               exit={{
-                rotate: [-2, 2, -3, 3, -6, 6, -8, 8],
-                // bottom: -50,
+                scale: 1.2,
+                x: [0, -8, -12, -12, 16, -36, 80, -48, 16, -8, 2, 0],
+                y: [0, 0, 0, 0, 0, 0, 0, 0, 60],
+                opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
               }}
             >
               Tell Sam to shoo?
