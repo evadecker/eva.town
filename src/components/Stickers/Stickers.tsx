@@ -22,16 +22,10 @@ export const Stickers = () => {
   };
 
   useEffect(() => {
-    if ($numSams > stickers.length) {
-      addSticker();
-    }
+    if ($numSams > stickers.length) addSticker();
 
-    if ($numSams === 0) {
-      setStickers([]);
-    }
-  }, [$numSams]);
+    if ($numSams === 0) setStickers([]);
 
-  useEffect(() => {
     if ($numSams > 2) {
       setShowShoo(true);
     } else {
