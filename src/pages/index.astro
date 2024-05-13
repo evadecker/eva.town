@@ -11,7 +11,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const work = await getCollection("work");
 
 // Sort by year subdirectory
-const sortedWork = work.sort((a, b) =>
+work.sort((a, b) =>
   parseInt(a.id.substring(0, 4)) > parseInt(b.id.substring(0, 4)) ? -1 : 1
 );
 ---
@@ -38,7 +38,7 @@ const sortedWork = work.sort((a, b) =>
       </div>
     </section>
     <section class="work">
-      {sortedWork.map((project) => <ProjectPreview project={project} />)}
+      {work.map((project) => <ProjectPreview project={project} />)}
     </section>
     <Postcard />
     <Stickers client:idle />
