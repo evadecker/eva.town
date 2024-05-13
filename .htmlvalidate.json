@@ -4,6 +4,12 @@
     "attr-case": "off",
     "void-style": "off",
     "element-permitted-content": "off",
-    "no-inline-style": "off"
+    "no-inline-style": "off",
+    "prefer-native-element": [
+      "error",
+      {
+        "exclude": ["button"]
+      }
+    ]
   }
 }

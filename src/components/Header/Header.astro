@@ -106,17 +106,21 @@ const topLevelPath = currentPath.split("/")[1];
       display: inline-flex;
       align-items: center;
       background: transparent;
+      text-decoration: none;
       line-height: 1;
       color: var(--gray-12);
       padding: var(--space-xs) var(--space-s);
       border: none;
       border-radius: var(--radius-full);
       cursor: pointer;
-      transition: background-color 0.2s ease-in-out;
+      transition:
+        background-color 0.2s ease-in-out,
+        font-weight 0.2s ease-in-out;
 
       @media (hover: hover) and (pointer: fine) {
         &:hover {
           background: var(--gray-3);
+          font-weight: var(--font-weight-bold);
         }
 
         &:active {
@@ -127,6 +131,7 @@ const topLevelPath = currentPath.split("/")[1];
 
       &.active {
         background: var(--gray-4);
+        font-weight: var(--font-weight-bold);
       }
     }
 

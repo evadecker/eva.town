@@ -41,6 +41,9 @@ dependencies:
   astro:
     specifier: ^4.4.0
     version: 4.4.0(@types/node@18.19.17)(sass@1.71.0)(typescript@5.3.3)
+  astro-font:
+    specifier: ^0.0.81
+    version: 0.0.81
   autoprefixer:
     specifier: ^10.4.17
     version: 10.4.17(postcss@8.4.38)
@@ -2363,6 +2366,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /astro-font@0.0.81:
+    resolution: {integrity: sha512-VmK4kqzNpOAt2LASVbw2cbbe9sD6K30E7jOjqzHxHieHMTWInkdOljtzHmNGvKr3P0MeF4Wy+Z7j6CdETFecDA==}
+    dev: false
 
   /astro@4.4.0(@types/node@18.19.17)(sass@1.71.0)(typescript@5.3.3):
     resolution: {integrity: sha512-JAsMrm1Z6W4Iqg9Q7LW/6lCXrqa4jndEOlR/yu7NGNP0BrPwSM8i4+yzya6hxgsNvyyVK8ywthaNhFmqd8Z+cg==}
