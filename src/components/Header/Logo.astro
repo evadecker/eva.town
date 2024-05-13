@@ -7,7 +7,7 @@
     // Set animating status to let SVG animations run to completion
     // Instead of being cut off when the user hovers away
     const logoElem = document.getElementById("logo");
-    logoElem?.addEventListener("mouseenter", () => {
+    logoElem?.addEventListener("click", () => {
       if (logoElem.dataset.animating === "true") return;
 
       logoElem.dataset.animating = "true";
@@ -19,9 +19,11 @@
   }
 
   handleAnimation();
+
+  document.addEventListener("astro:after-swap", () => handleAnimation());
 </script>
 
-<a id="logo" href="/">
+<a id="logo" href="/" transition:persist="logo">
   <svg
     viewBox="0 0 125 82"
     width="125px"

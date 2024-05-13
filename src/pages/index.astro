@@ -4,7 +4,6 @@ import { getCollection } from "astro:content";
 import Center from "../components/Center.astro";
 import Postcard from "../components/Postcard/Postcard.astro";
 import ProjectPreview from "../components/ProjectPreview.astro";
-import { Stickers } from "../components/Stickers/Stickers";
 import Synth from "../components/Synth/Synth.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -41,29 +40,34 @@ work.sort((a, b) =>
       {work.map((project) => <ProjectPreview project={project} />)}
     </section>
     <Postcard />
-    <Stickers client:idle />
   </Center>
 </BaseLayout>
 
 <script>
   import { addSam, clearSams, numSams } from "../stores/sam";
 
-  const samButton = document.querySelector("[data-sam-button]");
-  samButton?.addEventListener("click", () => addSam());
+  function setupSam() {
+    const samButton = document.querySelector("[data-sam-button]");
+    samButton?.addEventListener("click", () => addSam());
 
-  const shooButton = document.querySelector("[data-sam-shoo]");
+    const shooButton = document.querySelector("[data-sam-shoo]");
 
-  if (shooButton) {
-    shooButton.addEventListener("click", () => {
-      clearSams();
-    });
+    if (shooButton) {
+      shooButton.addEventListener("click", () => {
+        clearSams();
+      });
 
-    numSams.subscribe((num) => {
-      num > 2
-        ? shooButton.classList.add("visible")
-        : shooButton.classList.remove("visible");
-    });
+      numSams.subscribe((num) => {
+        num > 2
+          ? shooButton.classList.add("visible")
+          : shooButton.classList.remove("visible");
+      });
+    }
   }
+
+  setupSam();
+
+  document.addEventListener("astro:after-swap", () => setupSam());
 </script>
 
 <style lang="scss">
