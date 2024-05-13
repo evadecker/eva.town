@@ -124,10 +124,10 @@ export const Sticker = ({ variant }: StickerProps) => {
   const $topZIndex = useStore(topZIndex);
   const [zIndex, setZIndex] = useState($topZIndex);
   const [x, setX] = useState(
-    getRandomValueBetween(0, document.body.clientWidth - BUFFER)
+    getRandomValueBetween(0, window.innerWidth - BUFFER)
   );
   const [y, setY] = useState(
-    getRandomValueBetween(0, document.body.clientHeight - BUFFER)
+    getRandomValueBetween(0, window.innerHeight - BUFFER)
   );
   const [rotate] = useState(getRandomValueBetween(-10, 10));
 
