@@ -1,8 +1,8 @@
 ---
-title: Studio
+title: Freelance
 timeline:
   start: "2012"
   end: Ongoing
 ---
 
-I frequently work independently with teams of all sizes on product design, branding, leadership, and front-end engineering. I especially enjoy partnering with organizations in civic tech, social justice, the creative arts, and gaming. If that's you, [send me an email](mailto:hey@evadecker.com).
+I often work solo with teams of all sizes on product design and front-end engineering (plus occasional branding and illustration). I love partnering with organizations in civic tech, social justice, the creative arts, and gaming. If you want to work together, [send me an email](mailto:hey@evadecker.com).
