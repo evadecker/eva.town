@@ -48,13 +48,14 @@
 
 .shoo-wrapper {
   position: fixed;
-  bottom: var(--space-l);
+  bottom: 0;
   left: 0;
   right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
+  padding-bottom: var(--space-xl);
 }
 
 [data-sam-shoo] {
@@ -68,8 +69,4 @@
   cursor: pointer;
   pointer-events: auto;
   box-shadow: var(--shadow-m);
-}
-
-::view-transition-group("stickers") {
-  animation: none;
 }
