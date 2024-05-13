@@ -4,6 +4,7 @@ import "../styles/theme.css";
 
 import { join } from "node:path";
 
+import { ViewTransitions } from "astro:transitions";
 import { AstroFont } from "astro-font";
 
 export interface Props {
@@ -20,7 +21,7 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <meta charset="UTF-8" />
     <meta name="generator" content={Astro.generator} />
@@ -82,6 +83,7 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <link rel="manifest" href="/manifest.json" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{pageTitle}</title>
+    <ViewTransitions />
   </head>
   <body>
     <slot />

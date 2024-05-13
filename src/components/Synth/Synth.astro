@@ -540,7 +540,7 @@ import SynthScreen from "./SynthScreen.astro";
     preloadUISounds();
   }
 
-  document.addEventListener("DOMContentLoaded", loadSynth);
+  document.addEventListener("astro:page-load", loadSynth);
 
   function unloadSynth() {
     const unloadSounds = () => {

@@ -22,16 +22,10 @@ export const Stickers = () => {
   };
 
   useEffect(() => {
-    if ($numSams > stickers.length) {
-      addSticker();
-    }
+    if ($numSams > stickers.length) addSticker();
 
-    if ($numSams === 0) {
-      setStickers([]);
-    }
-  }, [$numSams]);
+    if ($numSams === 0) setStickers([]);
 
-  useEffect(() => {
     if ($numSams > 2) {
       setShowShoo(true);
     } else {
@@ -40,30 +34,33 @@ export const Stickers = () => {
   }, [$numSams]);
 
   return (
-    <div className="stickers">
+    <div className="stickers" style={{ viewTransitionName: "stickers" }}>
       <AnimatePresence>
         {stickers.map(({ id, variant }) => (
           <Sticker key={id} id={id} variant={variant} />
         ))}
         {showShoo && (
-          <motion.button
-            data-sam-shoo
-            type="button"
-            onClick={clearSams}
-            initial={{ bottom: -50, left: "50%", x: "-50%" }}
-            animate={{
-              left: "50%",
-              x: "-50%",
-              bottom: 16,
-            }}
-            exit={{
-              bottom: -50,
-              left: "50%",
-              x: "-50%",
-            }}
-          >
-            Tell Sam to shoo?
-          </motion.button>
+          <div className="shoo-wrapper">
+            <motion.button
+              data-sam-shoo
+              type="button"
+              onClick={clearSams}
+              initial={{ bottom: -50 }}
+              animate={{
+                bottom: 16,
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1 }}
+              exit={{
+                scale: 1.2,
+                x: [0, -8, -12, -12, 16, -36, 80, -48, 16, -8, 2, 0],
+                y: [0, 0, 0, 0, 0, 0, 0, 0, 60],
+                opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+              }}
+            >
+              Tell Sam to shoo?
+            </motion.button>
+          </div>
         )}
       </AnimatePresence>
     </div>

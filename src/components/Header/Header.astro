@@ -29,6 +29,10 @@ const topLevelPath = currentPath.split("/")[1];
 
 <script>
   import { gray, grayDark } from "@radix-ui/colors";
+  import {
+    TRANSITION_BEFORE_SWAP,
+    isTransitionBeforeSwapEvent,
+  } from "astro:transitions/client";
 
   type Theme = "light" | "dark";
 
@@ -36,15 +40,10 @@ const topLevelPath = currentPath.split("/")[1];
     return document.body.classList.contains("dark") ? "dark" : "light";
   }
 
-  function setActiveTheme(theme: Theme) {
-    // Update class on body
-    document.body.classList.remove("transitioning");
-    document.body.classList.add("transitioning");
-
-    setTimeout(() => {
-      if (theme === "light") document.body.classList.remove("dark");
-      else document.body.classList.add("dark");
-    }, 100);
+  function setActiveTheme(theme: Theme, document = window.document) {
+    theme === "light"
+      ? document.body.classList.remove("dark")
+      : document.body.classList.add("dark");
 
     // Update localStorage
     window.localStorage.setItem("theme", theme);
@@ -56,6 +55,21 @@ const topLevelPath = currentPath.split("/")[1];
         "content",
         theme === "dark" ? grayDark.gray1 : gray.gray1
       );
+  }
+
+  function setupToggle(document = window.document) {
+    let toggleButton = document.querySelector("[data-theme-toggle]");
+
+    toggleButton &&
+      toggleButton.addEventListener("click", () => handleToggleTheme());
+  }
+
+  function handleToggleTheme() {
+    // Update class on body
+    document.body.classList.remove("transitioning");
+    document.body.classList.add("transitioning");
+
+    setActiveTheme(getActiveTheme() === "light" ? "dark" : "light");
 
     // Wait for transition to finish
     setTimeout(() => {
@@ -63,12 +77,16 @@ const topLevelPath = currentPath.split("/")[1];
     }, 300);
   }
 
-  let toggleButton = document.querySelector("[data-theme-toggle]");
+  // Run on initial load
+  setupToggle();
 
-  toggleButton &&
-    toggleButton.addEventListener("click", () => {
-      setActiveTheme(getActiveTheme() === "light" ? "dark" : "light");
-    });
+  document.addEventListener(TRANSITION_BEFORE_SWAP, (ev) => {
+    if (isTransitionBeforeSwapEvent(ev)) {
+      // Run after view transitions
+      setupToggle(ev.newDocument);
+      setActiveTheme(getActiveTheme(), ev.newDocument);
+    }
+  });
 </script>
 
 <style lang="scss">
@@ -113,24 +131,19 @@ const topLevelPath = currentPath.split("/")[1];
       border: none;
       border-radius: var(--radius-full);
       cursor: pointer;
-      transition:
-        background-color 0.2s ease-in-out,
-        font-weight 0.2s ease-in-out;
+      transition: font-weight 0.2s ease-in-out;
 
       @media (hover: hover) and (pointer: fine) {
         &:hover {
-          background: var(--gray-3);
           font-weight: var(--font-weight-bold);
         }
 
         &:active {
-          background: var(--gray-4);
           transition: none;
         }
       }
 
       &.active {
-        background: var(--gray-4);
         font-weight: var(--font-weight-bold);
       }
     }
