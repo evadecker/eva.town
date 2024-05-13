@@ -36,7 +36,8 @@ export const collections = {
         title: z.string(),
         description: z.string(),
         roles: z.array(z.string()),
-        timeline: z.string(),
+        startMonth: z.string(),
+        endMonth: z.string(),
         collaborators: z
           .array(
             z.object({

@@ -9,11 +9,18 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { timeline, roles, collaborators, tech, website, repo } = project.data;
+const { startMonth, endMonth, roles, collaborators, tech, website, repo } =
+  project.data;
 ---
 
 <dl class="project-info">
-  {timeline && <ProjectInfoBlock title="Timeline">{timeline}</ProjectInfoBlock>}
+  {
+    startMonth && endMonth && (
+      <ProjectInfoBlock title="Timeline">
+        {startMonth}&hairsp;&ndash;&hairsp;{endMonth}
+      </ProjectInfoBlock>
+    )
+  }
   {
     roles && (
       <ProjectInfoBlock title="My Role">

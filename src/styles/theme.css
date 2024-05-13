@@ -74,8 +74,8 @@
   /* Radii */
   --radius-xs: var(--space-2xs);
   --radius-s: var(--space-xs);
-  --radius-m: var(--space-m);
-  --radius-l: var(--space-l);
+  --radius-m: var(--space-s);
+  --radius-l: var(--space-m);
   --radius-full: 9999px;
 
   /* Font weights */
