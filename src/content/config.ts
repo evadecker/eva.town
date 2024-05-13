@@ -1,7 +1,7 @@
 import { defineCollection, z } from "astro:content";
 
 export const collections = {
-  notes: defineCollection({
+  posts: defineCollection({
     type: "content",
     schema: ({ image }) =>
       z.object({
@@ -9,8 +9,12 @@ export const collections = {
         description: z.string(),
         datePublished: z.date(),
         dateModified: z.date().optional(),
-        img: image().array().optional(),
-        imgAlt: z.string().optional(),
+        img: z
+          .object({
+            src: image(),
+            alt: z.string(),
+          })
+          .optional(),
         ogImage: image().optional(),
       }),
   }),
@@ -29,25 +33,15 @@ export const collections = {
       }),
   }),
 
-  projects: defineCollection({
+  work: defineCollection({
     type: "content",
     schema: ({ image }) =>
       z.object({
         title: z.string(),
-        description: z.string(),
-        roles: z.array(z.string()),
-        startMonth: z.string(),
-        endMonth: z.string(),
-        collaborators: z
-          .array(
-            z.object({
-              name: z.string(),
-              url: z.string(),
-              img: image(),
-            })
-          )
-          .optional(),
-        tech: z.array(z.string()).optional(),
+        timeline: z.object({
+          start: z.string(),
+          end: z.string(),
+        }),
         img: z
           .object({
             src: image(),
@@ -60,14 +54,11 @@ export const collections = {
             poster: z.string(),
           })
           .optional(),
-        website: z.string().url().optional(),
-        repo: z.string().optional(), // GitHub repo, e.g. evadecker/america-my-face
-        url: z.string().optional(), // If no case study URL, project will be disabled
         ogImage: image().optional(),
       }),
   }),
 
-  sideProjects: defineCollection({
+  experiments: defineCollection({
     type: "data",
     schema: () =>
       z.object({

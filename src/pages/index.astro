@@ -1,11 +1,19 @@
 ---
-import Center from "src/components/Center.astro";
+import { getCollection } from "astro:content";
 
-import InlineBrandLink from "../components/InlineBrandLink.astro";
+import Center from "../components/Center.astro";
 import Postcard from "../components/Postcard/Postcard.astro";
+import ProjectPreview from "../components/ProjectPreview.astro";
 import { Stickers } from "../components/Stickers/Stickers";
 import Synth from "../components/Synth/Synth.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const work = await getCollection("work");
+
+// Sort by year subdirectory
+work.sort((a, b) =>
+  parseInt(a.id.substring(0, 4)) > parseInt(b.id.substring(0, 4)) ? -1 : 1
+);
 ---
 
 <BaseLayout
@@ -18,24 +26,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h1 class="visuallyhidden">Eva designs and builds for the web</h1>
       <div class="intro">
         <p>
-          <a href="/about" class="inline-link">Eva Decker</a>
-          <span class="pronouns">(they/them)</span> is a design engineer who lives
-          in NYC with their tabby, <button data-sam-button type="button"
-            >Samwise</button
-          >. Previously they built things at <InlineBrandLink
-            brand="cityblock"
-            punctuation=","
-          /><InlineBrandLink brand="dropbox" punctuation="," /> and <InlineBrandLink
-            brand="swiftype"
-            punctuation="."
-          /> They like playing piano and writing CSS.
+          <a href="/about" class="inline-link">Eva Decker</a> is a design engineer
+          who likes playing piano and writing CSS. Currently living in NYC with <button
+            data-sam-button
+            type="button">Samwise</button
+          >.
         </p>
       </div>
       <div class="synth">
         <Synth />
       </div>
-      <Postcard />
     </section>
+    <section class="work">
+      {work.map((project) => <ProjectPreview project={project} />)}
+    </section>
+    <Postcard />
     <Stickers client:idle />
   </Center>
 </BaseLayout>
@@ -72,14 +77,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     width: 1px;
   }
 
-  .pronouns {
-    color: var(--gray-11);
-  }
-
   .home {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2xl);
+    gap: var(--space-3xl);
+  }
+
+  .work {
+    padding-block: var(--space-3xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
   }
 
   .intro {
@@ -103,7 +111,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     p {
-      font-size: var(--step-3);
+      font-size: var(--step-4);
       letter-spacing: var(--letter-spacing-condensed);
       line-height: 1.1;
     }

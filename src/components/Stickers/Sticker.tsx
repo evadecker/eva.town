@@ -150,8 +150,8 @@ export const Sticker = ({ variant }: StickerProps) => {
     y: number,
     offset: number
   ): { x: number; y: number } => {
-    const canvasWidth = document.body.clientWidth;
-    const canvasHeight = document.body.clientHeight;
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
 
     // Calculate the center of the canvas
     const centerX = canvasWidth / 2;

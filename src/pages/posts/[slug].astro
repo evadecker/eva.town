@@ -1,0 +1,137 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+
+import ProseLayout from "../../layouts/ProseLayout.astro";
+
+export interface Props {
+  post: CollectionEntry<"posts">;
+  prev: CollectionEntry<"posts"> | null;
+  next: CollectionEntry<"posts"> | null;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((post, index) => ({
+    params: { slug: post.slug },
+    props: {
+      post,
+      prev: posts[index - 1] ?? posts[posts.length - 1],
+      next: posts[index + 1] ?? posts[0],
+    },
+  }));
+}
+const { post, prev, next } = Astro.props;
+const { Content } = await post.render();
+
+const { data } = post;
+const { title, description, ogImage, datePublished, dateModified } = data;
+---
+
+<ProseLayout
+  title={title}
+  description={description}
+  ogImage={ogImage?.src}
+  datePublished={datePublished}
+  dateModified={dateModified}
+>
+  <Content />
+  <div class="pagination" slot="after-prose">
+    {
+      prev && (
+        <a href={prev.slug} class="prev">
+          <span class="label">Previous</span>
+          <span class="title">{prev.data.title}</span>
+        </a>
+      )
+    }
+    {
+      next && (
+        <a href={next.slug} class="next">
+          <span class="label">Next</span>
+          <span class="title">{next.data.title}</span>
+        </a>
+      )
+    }
+  </div>
+</ProseLayout>
+
+<style lang="scss">
+  .pagination {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: var(--space-3xl);
+    margin-inline: auto;
+    width: min(800px, calc(100% - var(--space-xl) * 2));
+    gap: var(--space-m);
+
+    a {
+      flex: 1;
+      display: grid;
+      column-gap: var(--space-m);
+      padding: var(--space-m);
+      border-radius: var(--radius-m);
+      border: 1px solid var(--gray-5);
+      line-height: 1.1;
+      align-items: center;
+      transition:
+        background-color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out;
+
+      &.prev {
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+          "arrow label"
+          "arrow title";
+      }
+
+      &.next {
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+          "label arrow"
+          "title arrow";
+        text-align: right;
+      }
+
+      &.prev::before,
+      &.next::after {
+        font-size: var(--step-1);
+        color: var(--gray-10);
+        transition: color 0.2s ease-in-out;
+      }
+
+      &.prev::before {
+        content: "←";
+        grid-area: arrow;
+      }
+
+      &.next::after {
+        content: "→";
+        grid-area: arrow;
+      }
+
+      .label {
+        grid-area: label;
+        font-size: var(--step--1);
+        color: var(--gray-11);
+        transition: color 0.2s ease-in-out;
+      }
+
+      .title {
+        grid-area: title;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--gray-12);
+          border-color: var(--gray-7);
+
+          &::before,
+          &::after {
+            color: var(--gray-12);
+          }
+        }
+      }
+    }
+  }
+</style>
