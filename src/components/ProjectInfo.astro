@@ -1,23 +1,32 @@
 ---
 import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
 
 import ProjectInfoBlock from "./ProjectInfoBlock.astro";
 
 interface Props {
-  project: CollectionEntry<"projects">;
+  timeline?: {
+    start: string;
+    end: string;
+  };
+  roles?: string[];
+  tech?: string[];
+  website?: string;
+  repo?: string;
+  collaborators?: {
+    name: string;
+    img: ImageMetadata;
+    url: string;
+  }[];
 }
 
-const { project } = Astro.props;
-const { startMonth, endMonth, roles, collaborators, tech, website, repo } =
-  project.data;
+const { timeline, roles, tech, website, repo, collaborators } = Astro.props;
 ---
 
 <dl class="project-info">
   {
-    startMonth && endMonth && (
+    timeline && (
       <ProjectInfoBlock title="Timeline">
-        {startMonth}&hairsp;&ndash;&hairsp;{endMonth}
+        {timeline.start}&hairsp;&ndash;&hairsp;{timeline.end}
       </ProjectInfoBlock>
     )
   }

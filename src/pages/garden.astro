@@ -1,0 +1,107 @@
+---
+import { getCollection } from "astro:content";
+import dayjs from "dayjs";
+import PostLink from "src/components/PostLink.astro";
+
+import Center from "../components/Center.astro";
+import PageHeader from "../components/PageHeader.astro";
+import { smartquotes } from "../helpers/helpers";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const posts = await getCollection("posts");
+posts.sort((a, b) => {
+  return dayjs(b.data.datePublished).isBefore(dayjs(a.data.datePublished))
+    ? -1
+    : 1;
+});
+
+const experiments = await getCollection("experiments");
+
+const title = "The Garden";
+const description =
+  "It's a little barren right now, but every garden starts somewhere.";
+---
+
+<BaseLayout title={title} description={description} includeFooter padBottom>
+  <PageHeader title={title} description={description} />
+  <Center>
+    <section>
+      <h2>Writing</h2>
+      {
+        posts.map((post) => (
+          <PostLink
+            url={`posts/${post.slug}`}
+            title={smartquotes(post.data.title)}
+            datePublished={post.data.datePublished}
+          />
+        ))
+      }
+    </section>
+    <section>
+      <h2>Experiments</h2>
+      {
+        experiments.map((experiment) => (
+          <PostLink
+            url={experiment.data.url}
+            title={experiment.data.title}
+            description={experiment.data.description}
+          />
+        ))
+      }
+    </section>
+  </Center>
+</BaseLayout>
+
+<style lang="scss">
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+
+    & + section {
+      margin-block-start: var(--space-3xl);
+    }
+  }
+
+  .side-projects {
+    margin-block-start: var(--space-3xl);
+
+    h2 {
+      margin-block-end: var(--space-l);
+    }
+  }
+
+  .side-project {
+    display: block;
+    word-wrap: break-word;
+    padding-block: var(--space-s);
+    padding-inline: 0 var(--space-s);
+    transition: 0.15s padding ease;
+
+    & + .side-project {
+      border-top: 1px solid var(--gray-4);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        padding-inline: var(--space-s) 0;
+      }
+    }
+  }
+
+  :global(.transitioning) .side-project {
+    transition: border-color 0.2s ease-in-out;
+  }
+
+  .description {
+    color: var(--gray-11);
+
+    &::before {
+      content: "— ";
+    }
+  }
+
+  :global(.transitioning) .description {
+    transition: color 0.2s ease-in-out;
+  }
+</style>
