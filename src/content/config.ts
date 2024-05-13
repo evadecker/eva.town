@@ -54,9 +54,6 @@ export const collections = {
             poster: z.string(),
           })
           .optional(),
-        website: z.string().url().optional(),
-        repo: z.string().optional(), // GitHub repo, e.g. evadecker/america-my-face
-        url: z.string().optional(),
         ogImage: image().optional(),
       }),
   }),
