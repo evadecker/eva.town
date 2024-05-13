@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers eva.town.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2024-04-30 11:54:44-04:00
+dateModified: 2024-05-13 07:41:47-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -26,7 +26,7 @@ Domain registration, hosting, and deployment are via [Vercel](https://vercel.com
 
 ## Typography
 
-Text is set in [Franklin Gothic URW](https://fonts.adobe.com/fonts/franklin-gothic-urw) served via [Adobe Fonts](https://fonts.adobe.com). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
+Text is set in [HEX Franklin Variable](https://hex.xyz/HEX_Franklin/). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
 
 Type inspiration can be found anywhere, from comic art and video games to [bodega window displays](https://www.are.na/eva-decker/nyc-bodega-art), but I often return to a handful of resources:
 
@@ -50,7 +50,7 @@ I minimize energy usage on this site by avoiding unnecessary scripts (such as tr
 > The internet consumes a lot of electricity. 416.2TWh per year to be precise. To give you some perspective, that's more than the entire United Kingdom.
 > <cite>[Website Carbon Calculator](https://www.websitecarbon.com)</cite>
 
-As of October 18, 2023, [carbon results for eva.town](https://www.websitecarbon.com/website/eva-town/) indicate that the home page is **cleaner than 95% of web pages tested**, producing **0.05g of CO<sub>2</sub> per page view**. The site uses [Vercel's serverless architecture](https://vercel.com/guides/what-is-vercel-green-energy-policy#) to further cut energy consumption.
+As of October 18, 2023, [carbon results for eva.town](https://www.websitecarbon.com/website/eva-town/) indicate that the home page is cleaner than 95% of web pages tested, producing 0.05g of CO<sub>2</sub> per page view. The site uses [Vercel's serverless architecture](https://vercel.com/guides/what-is-vercel-green-energy-policy#) to further cut energy consumption.
 
 ## Notice an issue?
 

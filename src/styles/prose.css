@@ -37,7 +37,7 @@
 .prose h4,
 .prose h5,
 .prose h6 {
-  scroll-margin-top: calc(var(--space-2xl) * 2);
+  scroll-margin-top: var(--space-2xl);
   margin-bottom: var(--space-m);
 }
 
@@ -90,7 +90,7 @@
 }
 
 .prose h2 {
-  margin-top: var(--space-3xl);
+  margin-top: var(--space-2xl);
 }
 
 .prose h2:first-child {

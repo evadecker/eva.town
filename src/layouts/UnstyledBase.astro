@@ -2,6 +2,10 @@
 import "../styles/reset.css";
 import "../styles/theme.css";
 
+import { join } from "node:path";
+
+import { AstroFont } from "astro-font";
+
 export interface Props {
   title: string;
   description: string;
@@ -22,7 +26,28 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
-    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <AstroFont
+      config={[
+        {
+          name: "HEX Franklin",
+          src: [
+            {
+              style: "normal",
+              path: join(
+                process.cwd(),
+                "public",
+                "fonts",
+                "HEX_Franklin_v0.3_Variable.woff2"
+              ),
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif",
+        },
+      ]}
+    />
     <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
     <link
       rel="icon"
@@ -56,7 +81,6 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="stylesheet" href="https://use.typekit.net/qbm1slx.css" />
     <title>{pageTitle}</title>
   </head>
   <body>
