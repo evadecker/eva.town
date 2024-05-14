@@ -45,17 +45,16 @@ export const Stickers = () => {
               data-sam-shoo
               type="button"
               onClick={clearSams}
-              initial={{ bottom: -50 }}
-              animate={{
-                bottom: 16,
-              }}
+              initial={{ y: 50 }}
+              animate={{ y: 0 }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1 }}
               exit={{
-                scale: 1.2,
+                cursor: "default",
+                scale: [1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 0.8],
                 x: [0, -8, -12, -12, 16, -36, 80, -48, 16, -8, 2, 0],
-                y: [0, 0, 0, 0, 0, 0, 0, 0, 60],
-                opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+                // y: [0, 0, 0, 0, 0, 0, 0, 0],
+                opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
               }}
             >
               Tell Sam to shoo?
