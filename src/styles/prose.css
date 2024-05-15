@@ -53,11 +53,6 @@
   position: relative;
 }
 
-.transitioning .prose p a,
-.transitioning .prose li a {
-  transition: text-decoration-color 0.2s ease-in-out;
-}
-
 @media (hover: hover) and (pointer: fine) {
   .prose h1 a:hover,
   .prose h2 a:hover,
@@ -160,10 +155,6 @@
   font-size: 0.8em;
 }
 
-.transitioning .prose code {
-  transition: background-color 0.2s ease-in-out;
-}
-
 .prose abbr {
   border-bottom: none;
   text-decoration: dotted underline;
@@ -177,10 +168,6 @@
   border-left: 2px solid var(--gray-7);
   padding-left: var(--space-l);
   hanging-punctuation: first;
-}
-
-.transitioning .prose blockquote {
-  transition: border-color 0.2s ease-in-out;
 }
 
 .prose blockquote cite {

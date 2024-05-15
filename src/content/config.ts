@@ -46,13 +46,17 @@ export const collections = {
           .object({
             src: image(),
             alt: z.string(),
+            url: z.string().optional(),
           })
+          .array()
           .optional(),
         video: z
           .object({
             src: z.string(),
             poster: z.string(),
+            url: z.string().optional(),
           })
+          .array()
           .optional(),
         ogImage: image().optional(),
       }),

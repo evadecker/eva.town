@@ -12,11 +12,11 @@ interface Props {
   tech?: string[];
   website?: string;
   repo?: string;
-  collaborators?: {
+  collaborators?: Array<{
     name: string;
     img: ImageMetadata;
     url: string;
-  }[];
+  }>;
 }
 
 const { timeline, roles, tech, website, repo, collaborators } = Astro.props;
@@ -117,10 +117,6 @@ const { timeline, roles, tech, website, repo, collaborators } = Astro.props;
       content: ",";
       color: var(--gray-11);
     }
-  }
-
-  :global(.transitioning) .project-info {
-    transition: border-color 0.2s ease-in-out;
   }
 
   .collaborator {

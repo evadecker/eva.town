@@ -65,16 +65,7 @@ const topLevelPath = currentPath.split("/")[1];
   }
 
   function handleToggleTheme() {
-    // Update class on body
-    document.body.classList.remove("transitioning");
-    document.body.classList.add("transitioning");
-
     setActiveTheme(getActiveTheme() === "light" ? "dark" : "light");
-
-    // Wait for transition to finish
-    setTimeout(() => {
-      document.body.classList.remove("transitioning");
-    }, 300);
   }
 
   // Run on initial load
@@ -91,19 +82,12 @@ const topLevelPath = currentPath.split("/")[1];
 
 <style lang="scss">
   header {
-    // Extend header beyond canvas to prevent blur artifacts along edge
-    --header-offset: 20px;
-
     width: 100%;
-    padding-block: calc(var(--space-s) + var(--header-offset)) var(--space-s);
-  }
-
-  :global(.transitioning) header {
-    transition: box-shadow 0.2s ease-in-out;
-  }
-
-  :global(.transitioning) header::before {
-    transition: background-color 0.2s ease-in-out;
+    padding-block: var(--space-l);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, var(--gray-1) 0%, transparent);
   }
 
   nav {

@@ -53,9 +53,9 @@
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   z-index: 999;
-  padding-bottom: var(--space-xl);
+  padding: var(--space-xl);
 }
 
 [data-sam-shoo] {

@@ -53,11 +53,10 @@ export const Stickers = () => {
                 cursor: "default",
                 scale: [1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 0.8],
                 x: [0, -8, -12, -12, 16, -36, 80, -48, 16, -8, 2, 0],
-                // y: [0, 0, 0, 0, 0, 0, 0, 0],
                 opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
               }}
             >
-              Tell Sam to shoo?
+              Shoo Sam
             </motion.button>
           </div>
         )}
