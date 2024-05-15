@@ -72,7 +72,10 @@ const { Content } = await render();
     animation: fadeOut linear forwards;
     animation-range: cover 70% cover 95%;
     animation-timeline: view();
-    padding-bottom: var(--space-l);
+
+    &:not(:last-child) {
+      padding-bottom: var(--space-l);
+    }
   }
 
   .sticky {
