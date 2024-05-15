@@ -12,4 +12,4 @@ video:
     poster: video/design-is-poster.png
 ---
 
-I work solo with teams of all sizes on [design](/design) and front-end engineering (plus occasional branding and illustration). I love pairing with orgs in [civic tech](/posts/boundaries-map), social justice, art, and gaming. [Send me an email](mailto:hey@evadecker.com) and let's make something great.
+I work solo with teams of all sizes on [design](https://design.eva.town) and front-end engineering (plus occasional branding and illustration). I love pairing with orgs in [civic tech](/posts/boundaries-map), social justice, art, and gaming. [Send me an email](mailto:hey@evadecker.com) and let's make something great.
