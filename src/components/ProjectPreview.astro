@@ -15,68 +15,122 @@ const { Content } = await render();
 ---
 
 <div class="project">
-  <div class="details">
+  {
+    img?.map((img) => (
+      <div class="media">
+        <Image src={img.src} alt={img.alt} class="img" />
+      </div>
+    ))
+  }
+  {
+    video?.map((video) => (
+      <div class="media">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="none"
+          poster={video.poster}
+        >
+          <source src={video.src} type="video/mp4" />
+        </video>
+      </div>
+    ))
+  }
+  <div class="sticky">
     <time>{timeline.start}&ndash;{timeline.end}</time>
     <h2>{title}</h2>
     <Content />
   </div>
-  {
-    (img ?? video) && (
-      <div class="media">
-        {img && <Image src={img.src} alt={img.alt} class="img" />}
-        {video && (
-          <video
-            autoplay
-            loop
-            muted
-            playsinline
-            preload="none"
-            poster={video.poster}
-          >
-            <source src={video.src} type="video/mp4" />
-          </video>
-        )}
-      </div>
-    )
-  }
 </div>
 
 <style lang="scss">
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
   .project {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    gap: var(--space-l);
+    padding-top: var(--space-2xl);
+
+    @supports (animation-timeline: view()) {
+      animation: fadeOut linear forwards;
+      animation-range: cover 70% cover 95%;
+      animation-timeline: view();
+    }
   }
 
-  .details time {
-    color: var(--gray-11);
+  .sticky {
+    padding-block: var(--space-2xl);
+    position: sticky;
+    bottom: 0;
+    align-self: flex-end;
+    flex-basis: 100%;
+    background-image: linear-gradient(to top, var(--gray-1) 40%, transparent);
   }
 
-  .details h2 {
+  .sticky time {
+    color: var(--gray-a11);
+    text-shadow: 0 0 24px var(--gray-1);
+  }
+
+  .sticky h2 {
     margin-block: var(--space-xs) var(--space-s);
+    text-shadow: 0 0 32px var(--gray-1);
   }
 
-  .details :global(p) {
+  .sticky :global(p) {
     font-size: var(--step-1);
     line-height: var(--line-height-snug);
+    text-shadow: 0 0 32px var(--gray-1);
   }
 
   .media {
-    width: 100%;
-    max-width: 100%;
-    line-height: 0;
-    position: relative;
-    border-radius: var(--radius-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    margin-inline: auto;
     overflow: hidden;
+    border-radius: var(--radius-s);
+    transform-origin: top center;
 
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px solid var(--gray-a3);
-      border-radius: var(--radius-m);
+    @supports (animation-timeline: view()) {
+      animation:
+        fadeIn ease-in-out both,
+        fadeOut ease-in forwards;
+      animation-range:
+        cover 30% contain 50%,
+        contain 90% cover 100%;
+      animation-timeline: view();
+    }
+
+    img,
+    video {
+      width: auto;
+      max-width: 100%;
+    }
+
+    & + .media {
+      margin-top: var(--space-xl);
     }
   }
 </style>

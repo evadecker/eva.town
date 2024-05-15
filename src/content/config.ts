@@ -47,12 +47,14 @@ export const collections = {
             src: image(),
             alt: z.string(),
           })
+          .array()
           .optional(),
         video: z
           .object({
             src: z.string(),
             poster: z.string(),
           })
+          .array()
           .optional(),
         ogImage: image().optional(),
       }),

@@ -35,9 +35,83 @@ work.sort((a, b) =>
       <div class="synth">
         <Synth />
       </div>
+      <div class="continue">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="40px"
+          fill="currentColor"
+          ><path
+            d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"
+          ></path></svg
+        >
+      </div>
     </section>
-    <section class="work">
+    <section class="work" id="work">
       {work.map((project) => <ProjectPreview project={project} />)}
+    </section>
+    <section class="flower">
+      <svg
+        width="113"
+        height="320"
+        viewBox="0 0 113 320"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="flower-svg"
+      >
+        <path
+          d="M55.9999 3C55.9999 9.37703 55.2514 16.3551 56.3888 22.6111C56.9849 25.8895 56.8632 29.4488 58.3888 32.5C60.1618 36.046 61.5209 39.9756 62.9722 43.6944C64.744 48.2348 66.7538 52.592 68.7499 57.0278C70.6795 61.3156 73.6135 65.4089 74.8888 70C75.9439 73.7982 77.3733 77.4415 78.3888 81.2778C79.5937 85.8297 79.4247 88.2053 77.2777 92.6944C75.1858 97.0685 72.5834 101.153 69.5277 104.972C67.2574 107.81 64.6773 111.387 63.4444 114.778C62.7995 116.551 60.5675 118.038 59.4999 119.611C58.4418 121.171 57.9002 123.001 56.7222 124.5C54.0988 127.839 52.1211 131.56 49.611 135C46.0845 139.833 37.0541 151.372 42.2499 157.722C47.5889 164.248 58.2221 166.459 65.4999 170C73.3986 173.843 80.4999 180.329 80.4999 190C80.4999 203.599 63.891 206.5 53.3333 206.5C49.6382 206.5 43.3374 207.335 40.2499 204.722C36.6577 201.683 35.8557 198.589 34.611 194.389C33.5734 190.887 37.3759 187.187 40.3888 186.111C44.4292 184.668 50.6975 184.918 54.6944 186.25C59.1739 187.743 63.4403 189.625 65.2499 194.25C67.1716 199.161 68.143 206.658 65.7222 211.5C63.6925 215.559 62.3132 219.67 60.4999 223.75C59.249 226.565 58.9999 227.792 58.9999 231C58.9999 233.639 57.4999 236.373 57.4999 238.889C57.4999 244.935 57.9999 250.961 57.9999 257"
+          pathLength="1"
+          class="stem"></path>
+        <path
+          d="M59 258.5C56.6304 258.5 51.8808 257.609 49.5 258.611C46.7213 259.781 44.1655 260.945 41.5 262.278C35.9276 265.064 35.5 274.794 35.5 279.972C35.5 287.834 40.5782 291.278 47.5 293.75C53.9459 296.052 64.8667 297.854 70.75 293.278C77.0949 288.343 80.4883 276.379 76.3889 269C74.262 265.172 72.3349 263.593 68.5 261.889C66.6467 261.065 65.2048 260.407 63.25 259.972C61.9309 259.679 59.1135 259.727 58.5 258.5"
+          pathLength="1"
+          class="middle"></path>
+        <path
+          d="M46.5 285C49.8839 286.791 51.9556 287.725 56 287.5C58.9005 287.339 62.7444 286.011 64 283.5"
+          pathLength="1"
+          class="smile"></path>
+        <path
+          d="M42 278C42 280.193 45.5044 279.502 42.5 278"
+          pathLength="1"
+          class="eye-left"></path>
+        <path
+          d="M61.5 276.5C61.5 280.067 64.1787 277.589 62 276.5"
+          pathLength="1"
+          class="eye-right"></path>
+        <path
+          d="M58.0002 258.5C58.0002 248.639 53.3772 239 42.5002 239C29.1753 239 31.706 257.353 41.0002 262"
+          pathLength="1"
+          class="petal-1"></path>
+        <path
+          d="M39.4996 262C31.7887 257.594 13.4996 255.099 13.4996 268.833C13.4996 271.709 12.0996 274.559 14.7773 276.75C16.6009 278.242 19.0059 278.5 21.2496 278.5C23.6873 278.5 25.7255 278.469 28.0273 277.75C29.7603 277.208 32.191 276 33.9996 276"
+          pathLength="1"
+          class="petal-2"></path>
+        <path
+          d="M34.5002 277C28.8152 278.066 22.7774 280.782 19.5002 285.611C17.6568 288.328 15.7014 293.389 19.5002 295.389C23.0611 297.263 27.7894 297.744 31.5002 295.889C33.8131 294.732 35.0645 291.468 37.0002 290.5"
+          pathLength="1"
+          class="petal-3"></path>
+        <path
+          d="M37.9999 290.5C36.6885 293.779 33.7587 295.71 32.9721 299.25C32.5825 301.003 31.0991 302.715 30.9999 304.5C30.7348 309.272 37.3566 311.5 41.2499 311.5C43.9037 311.5 47.9338 308.149 48.9999 305.75C50.1825 303.089 52.9999 298.842 52.9999 296"
+          pathLength="1"
+          class="petal-4"></path>
+        <path
+          d="M52.5001 297.5C52.5001 302.624 51.8015 307.426 57.0001 309.889C60.4301 311.514 67.736 315.011 71.2501 312.278C78.0998 306.95 79.6307 298.631 73.5001 292.5"
+          pathLength="1"
+          class="petal-5"></path>
+        <path
+          d="M72 292C77.9197 292.455 85.5332 297.926 91.25 294.75C92.4399 294.089 95 292.236 95 290.75C95 289.858 95.2322 286.853 95.6111 286C97.4191 281.932 92.6186 278.844 89.75 277.25C87.0059 275.725 82.6016 275.5 79.5 275.5"
+          pathLength="1"
+          class="petal-6"></path>
+        <path
+          d="M78 275.5C82.6217 273.989 87.0415 272.299 91.4722 270.305C93.1272 269.561 94.1686 269.196 95.1111 267.5C95.6129 266.597 96.2156 265.606 96.7778 264.722C97.5473 263.513 97.2063 262.418 97.75 261.222C99.7471 256.828 92.3839 252.178 89 252C86.7731 251.883 84.8056 251.214 82.6111 251.889C80.5458 252.524 79.4989 253.485 77.7222 254.5C75.2417 255.917 72 261.169 72 264"
+          pathLength="1"
+          class="petal-7"></path>
+        <path
+          d="M71.25 263C71.5261 261.988 72.8066 260.851 73.4444 260C74.2093 258.98 74.906 257.941 75.625 256.903C76.9516 254.987 78.2438 253.283 79 251.014C79.9485 248.168 79.8419 246.119 77.7361 243.75C76.3068 242.142 74.8992 240.301 72.7361 239.625C69.8237 238.715 66.2348 239.17 63.5 240.5C60.6323 241.895 58.9567 245.16 58.25 248.111C57.7168 250.338 57.5 252.774 57.5 255.056C57.5 255.771 57.6271 257.689 58.25 258"
+          pathLength="1"
+          class="petal-8"></path>
+      </svg>
     </section>
     <Postcard />
   </Center>
@@ -85,13 +159,19 @@ work.sort((a, b) =>
     display: flex;
     flex-direction: column;
     gap: var(--space-3xl);
+    min-height: calc(100svh - var(--space-3xl) * 1.8);
+  }
+
+  .continue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    color: var(--gray-10);
   }
 
   .work {
     padding-block: var(--space-3xl);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3xl);
   }
 
   .intro {
@@ -123,6 +203,104 @@ work.sort((a, b) =>
 
     &:active {
       transform: scale(0.95);
+    }
+  }
+
+  @keyframes stroke {
+    0% {
+      stroke: transparent;
+      stroke-dashoffset: 1;
+    }
+
+    0.0001% {
+      stroke: currentcolor;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes pop {
+    0% {
+      stroke: transparent;
+    }
+
+    100% {
+      stroke: var(--gray-12);
+    }
+  }
+
+  .flower {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block-end: var(--space-3xl);
+  }
+
+  .flower-svg {
+    path {
+      stroke: var(--gray-12);
+      stroke-width: 3px;
+      stroke-linecap: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation-name: stroke;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: view();
+
+      &.stem {
+        animation-range: contain 5% contain 60%;
+      }
+
+      &.middle {
+        animation-range: contain 70% contain 72%;
+      }
+
+      &.petal-1 {
+        animation-range: contain 72% contain 73%;
+      }
+
+      &.petal-2 {
+        animation-range: contain 73% contain 74%;
+      }
+
+      &.petal-3 {
+        animation-range: contain 74% contain 75%;
+      }
+
+      &.petal-4 {
+        animation-range: contain 75% contain 76%;
+      }
+
+      &.petal-5 {
+        animation-range: contain 76% contain 77%;
+      }
+
+      &.petal-6 {
+        animation-range: contain 77% contain 78%;
+      }
+
+      &.petal-7 {
+        animation-range: contain 78% contain 79%;
+      }
+
+      &.petal-8 {
+        animation-range: contain 79% contain 80%;
+      }
+
+      &.smile {
+        animation-range: contain 82% contain 84%;
+      }
+
+      &.eye-left {
+        animation-range: contain 84% contain 85%;
+      }
+
+      &.eye-right {
+        animation-range: contain 86% contain 87%;
+      }
     }
   }
 </style>
