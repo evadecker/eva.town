@@ -79,25 +79,28 @@ const { Content } = await render();
   }
 
   .sticky {
-    padding-block: var(--space-3xl);
+    padding-block: var(--space-2xl) var(--space-3xl);
     position: sticky;
     bottom: 0;
     align-self: flex-end;
     flex-basis: 100%;
-    background-image: linear-gradient(to top, var(--gray-1) 50%, transparent);
+    background-image: linear-gradient(to top, var(--gray-1) 40%, transparent);
   }
 
   .sticky time {
     color: var(--gray-a11);
+    text-shadow: 0 0 24px var(--gray-1);
   }
 
   .sticky h2 {
     margin-block: var(--space-xs) var(--space-s);
+    text-shadow: 0 0 32px var(--gray-1);
   }
 
   .sticky :global(p) {
     font-size: var(--step-1);
     line-height: var(--line-height-snug);
+    text-shadow: 0 0 32px var(--gray-1);
   }
 
   .media {
