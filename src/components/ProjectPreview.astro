@@ -69,19 +69,17 @@ const { Content } = await render();
   }
 
   .project {
+    padding-top: var(--space-2xl);
+
     @supports (animation-timeline: view()) {
       animation: fadeOut linear forwards;
       animation-range: cover 70% cover 95%;
       animation-timeline: view();
     }
-
-    &:not(:last-child) {
-      padding-bottom: var(--space-l);
-    }
   }
 
   .sticky {
-    padding-block: var(--space-2xl);
+    padding-block: var(--space-3xl);
     position: sticky;
     bottom: 0;
     align-self: flex-end;
