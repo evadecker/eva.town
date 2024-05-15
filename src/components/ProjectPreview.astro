@@ -69,9 +69,11 @@ const { Content } = await render();
   }
 
   .project {
-    animation: fadeOut linear forwards;
-    animation-range: cover 70% cover 95%;
-    animation-timeline: view();
+    @supports (animation-timeline: view()) {
+      animation: fadeOut linear forwards;
+      animation-range: cover 70% cover 95%;
+      animation-timeline: view();
+    }
 
     &:not(:last-child) {
       padding-bottom: var(--space-l);
@@ -84,11 +86,11 @@ const { Content } = await render();
     bottom: 0;
     align-self: flex-end;
     flex-basis: 100%;
-    background-image: linear-gradient(to top, var(--gray-1) 0%, transparent);
+    background-image: linear-gradient(to top, var(--gray-1) 50%, transparent);
   }
 
   .sticky time {
-    color: var(--gray-11);
+    color: var(--gray-a11);
   }
 
   .sticky h2 {
@@ -109,19 +111,21 @@ const { Content } = await render();
     overflow: hidden;
     border-radius: var(--radius-s);
     transform-origin: top center;
-    animation:
-      fadeIn ease-in-out both,
-      fadeOut ease-in forwards;
-    animation-range:
-      cover 30% contain 50%,
-      contain 90% cover 100%;
-    animation-timeline: view();
+
+    @supports (animation-timeline: view()) {
+      animation:
+        fadeIn ease-in-out both,
+        fadeOut ease-in forwards;
+      animation-range:
+        cover 30% contain 50%,
+        contain 90% cover 100%;
+      animation-timeline: view();
+    }
 
     img,
     video {
       width: auto;
       max-width: 100%;
-      max-height: 55vh;
     }
 
     & + .media {
