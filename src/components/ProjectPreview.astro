@@ -16,23 +16,15 @@ const { Content } = await render();
 
 <div class="project">
   {
-    img?.map((img) => {
-      const content = <Image src={img.src} alt={img.alt} class="img" />;
-
-      if (img.url) {
-        return (
-          <a class="media" href={img.url}>
-            {content}
-          </a>
-        );
-      }
-
-      return <div class="media">{content}</div>;
-    })
+    img?.map((img) => (
+      <div class="media">
+        <Image src={img.src} alt={img.alt} class="img" />
+      </div>
+    ))
   }
   {
-    video?.map((video) => {
-      const content = (
+    video?.map((video) => (
+      <div class="media">
         <video
           autoplay
           loop
@@ -43,20 +35,9 @@ const { Content } = await render();
         >
           <source src={video.src} type="video/mp4" />
         </video>
-      );
-
-      if (video.url) {
-        return (
-          <a class="media" href={video.url}>
-            {content}
-          </a>
-        );
-      }
-
-      return <div class="media">{content}</div>;
-    })
+      </div>
+    ))
   }
-  <!-- MUST be last to stick -->
   <div class="sticky">
     <time>{timeline.start}&ndash;{timeline.end}</time>
     <h2>{title}</h2>

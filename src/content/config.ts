@@ -46,7 +46,6 @@ export const collections = {
           .object({
             src: image(),
             alt: z.string(),
-            url: z.string().optional(),
           })
           .array()
           .optional(),
@@ -54,7 +53,6 @@ export const collections = {
           .object({
             src: z.string(),
             poster: z.string(),
-            url: z.string().optional(),
           })
           .array()
           .optional(),

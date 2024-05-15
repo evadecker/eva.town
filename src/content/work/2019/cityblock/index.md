@@ -8,7 +8,6 @@ img:
     alt: A user interface displays health history.
   - src: ./commonplace.png
     alt: The word "Commonplace" is surrounded by components like buttons and progress bars.
-    url: /posts/commonplace
 ---
 
 I inaugurated the first UX Engineering role at [Cityblock](https://www.cityblock.com/). During my time, I built a [design system](/posts/commonplace) and led the design and build of multiple complex product features for health history, documentation, and planning.
