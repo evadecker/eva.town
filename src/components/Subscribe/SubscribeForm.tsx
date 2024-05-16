@@ -264,7 +264,7 @@ export const SubscribeForm = () => {
   return (
     <div className="subscribe">
       <div className="subscribe-content">
-        <header className="subscribe-header">
+        <div className="subscribe-header">
           <div>
             <h2>Subscribe</h2>
             <p>
@@ -272,7 +272,7 @@ export const SubscribeForm = () => {
               like notes to friends. No trackers, unsubscribe anytime.
             </p>
           </div>
-        </header>
+        </div>
         <form onSubmit={handleSubmit}>
           {!hasSubmitted ? (
             <>
