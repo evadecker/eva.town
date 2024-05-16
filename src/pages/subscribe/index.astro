@@ -1,5 +1,5 @@
 ---
-import Postcard from "../../components/Postcard/Postcard.astro";
+import { SubscribeForm } from "../../components/Subscribe/SubscribeForm";
 import CenteredLayout from "../../layouts/CenteredLayout.astro";
 ---
 
@@ -7,5 +7,5 @@ import CenteredLayout from "../../layouts/CenteredLayout.astro";
   title="Subscribe"
   description="Occasional notes on design, text, and things outside a screen."
 >
-  <Postcard />
+  <SubscribeForm client:load />
 </CenteredLayout>
