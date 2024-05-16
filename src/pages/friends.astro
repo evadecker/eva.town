@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import Webring from "src/components/Webring.astro";
+
+import Center from "../components/Center.astro";
+import PageHeader from "../components/PageHeader.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const webrings = await getCollection("webrings");
+
+const title = "Friends";
+const description = "Cool people and places on the web.";
+---
+
+<BaseLayout title={title} description={description} includeFooter padBottom>
+  <PageHeader title={title} description={description} />
+  <Center>
+    <section>
+      <h2>Webrings</h2>
+      <p>
+        <a href="https://en.wikipedia.org/wiki/Webring">Webrings</a> are collections
+        of fun, strange, related sites. You can browse back and forth between sites
+        in one big loop. Here are the webrings this website belongs to.
+      </p>
+      <div class="webrings">
+        {webrings.map((webring) => <Webring webring={webring} />)}
+      </div>
+    </section>
+  </Center>
+</BaseLayout>
+
+<style lang="scss">
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+
+    & + section {
+      margin-block-start: var(--space-3xl);
+    }
+  }
+
+  .webrings {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    padding-block: var(--space-m);
+  }
+</style>

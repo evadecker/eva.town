@@ -62,38 +62,4 @@ const description = "Every garden starts somewhere. This is mine.";
       margin-block-start: var(--space-3xl);
     }
   }
-
-  .side-projects {
-    margin-block-start: var(--space-3xl);
-
-    h2 {
-      margin-block-end: var(--space-l);
-    }
-  }
-
-  .side-project {
-    display: block;
-    word-wrap: break-word;
-    padding-block: var(--space-s);
-    padding-inline: 0 var(--space-s);
-    transition: 0.15s padding ease;
-
-    & + .side-project {
-      border-top: 1px solid var(--gray-4);
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        padding-inline: var(--space-s) 0;
-      }
-    }
-  }
-
-  .description {
-    color: var(--gray-11);
-
-    &::before {
-      content: "— ";
-    }
-  }
 </style>
