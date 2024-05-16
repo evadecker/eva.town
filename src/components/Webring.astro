@@ -15,12 +15,18 @@ const { title, description, url, prev, next, random, color } = data;
   style={`--webring-bg: var(--${color}-3); --webring-text: var(--${color}-12); --webring-hover: var(--${color}-4);`}
 >
   <div class="main">
-    <h3><a href={url}>{title}</a></h3>
+    <h3><a href={url} rel="external">{title}</a></h3>
     <p>{description}</p>
   </div>
   {
     random && (
-      <a href={random} class="random" aria-label="Random">
+      <a
+        rel="external"
+        referrerpolicy="strict-origin"
+        href={random}
+        class="random"
+        aria-label="Random website"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -32,7 +38,13 @@ const { title, description, url, prev, next, random, color } = data;
       </a>
     )
   }
-  <a href={prev} class="prev" aria-label="Previous">
+  <a
+    rel="external"
+    referrerpolicy="strict-origin"
+    href={prev}
+    class="prev"
+    aria-label="Previous website"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -42,7 +54,13 @@ const { title, description, url, prev, next, random, color } = data;
       <path d="M7 18V6H9V18H7ZM11 12 17 6V18L11 12Z"></path>
     </svg>
   </a>
-  <a href={next} class="next" aria-label="Next">
+  <a
+    rel="external"
+    referrerpolicy="strict-origin"
+    href={next}
+    class="next"
+    aria-label="Next website"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
