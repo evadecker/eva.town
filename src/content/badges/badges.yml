@@ -1,0 +1,8 @@
+- img: ./gossips-web.jpeg
+  alt: This website was made with hands.
+  url: https://gossipsweb.net/
+  height: 43
+- img: ./queer-coded.gif
+  alt: Queer Coded
+  url: https://queercoded.dev/
+  height: 31

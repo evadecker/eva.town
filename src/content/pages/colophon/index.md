@@ -52,6 +52,10 @@ I minimize energy usage on this site by avoiding unnecessary scripts (such as tr
 
 As of October 18, 2023, [carbon results for eva.town](https://www.websitecarbon.com/website/eva-town/) indicate that the home page is cleaner than 95% of web pages tested, producing 0.05g of CO<sub>2</sub> per page view. The site uses [Vercel's serverless architecture](https://vercel.com/guides/what-is-vercel-green-energy-policy#) to further cut energy consumption.
 
+## Accessibility
+
+This site aims to conform to the Level AA accessibility standards outlined in the [WCAG 2.1 specification](https://www.w3.org/TR/WCAG21/). If you experience an issue with accessing any part of this site, please [let me know](https://github.com/evadecker/eva.town/issues) and I’ll do my best to correct it.
+
 ## Notice an issue?
 
 If you spot a typo, encounter a broken feature, or have a recommendation for an improvement, [file an issue on GitHub](https://github.com/evadecker/eva.town/issues).

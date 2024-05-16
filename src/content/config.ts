@@ -83,4 +83,17 @@ export const collections = {
         color: z.string(), // Radix color
       }),
   }),
+
+  badges: defineCollection({
+    type: "data",
+    schema: ({ image }) =>
+      z
+        .object({
+          img: image(),
+          alt: z.string(),
+          url: z.string().url(),
+          height: z.number().optional(),
+        })
+        .array(),
+  }),
 };

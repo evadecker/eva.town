@@ -5,8 +5,11 @@ import Webring from "src/components/Webring.astro";
 import Center from "../components/Center.astro";
 import PageHeader from "../components/PageHeader.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
+import { Image } from "astro:assets";
 
 const webrings = await getCollection("webrings");
+const badges = await getEntry("badges", "badges");
 
 const title = "Friends";
 const description = "Cool people and places on the web.";
@@ -24,6 +27,22 @@ const description = "Cool people and places on the web.";
       </p>
       <div class="webrings">
         {webrings.map((webring) => <Webring webring={webring} />)}
+      </div>
+    </section>
+    <section>
+      <h2>Badges</h2>
+      <div class="badges">
+        {
+          badges.data.map((badge) => (
+            <a href={badge.url} target="_blank">
+              <img
+                src={badge.img.src}
+                alt={badge.alt}
+                style={`height: ${badge.height}px`}
+              />
+            </a>
+          ))
+        }
       </div>
     </section>
   </Center>
@@ -45,5 +64,16 @@ const description = "Cool people and places on the web.";
     flex-direction: column;
     gap: var(--space-m);
     padding-block: var(--space-m);
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+
+    img {
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
   }
 </style>
