@@ -49,8 +49,9 @@ const year = new Date().getFullYear();
     grid-template: "links1 links2 form" 1fr "banner banner form" auto / 0.5fr 0.5fr 2fr;
     gap: var(--space-m) var(--space-xl);
 
-    @media (width < 800px) {
-      flex-direction: column;
+    @media (width < 650px) {
+      grid-template: "form form" "links1 links2" "banner banner" / 1fr 1fr;
+      gap: var(--space-xl);
     }
   }
 

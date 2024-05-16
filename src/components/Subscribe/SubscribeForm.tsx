@@ -264,7 +264,7 @@ export const SubscribeForm = () => {
   return (
     <div className="subscribe">
       <div className="subscribe-content">
-        <header className="postcard-header">
+        <header className="subscribe-header">
           <div>
             <h2>Subscribe</h2>
             <p>

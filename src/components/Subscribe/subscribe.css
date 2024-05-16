@@ -2,7 +2,6 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--space-m);
   margin-inline: auto;
   position: relative;
   max-width: 600px;
@@ -24,11 +23,15 @@
   cursor: default;
 }
 
-.postcard-header h2 {
+.subscribe-header h2 {
   font-size: var(--step-1);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin-block-end: var(--space-2xs);
+}
+
+.subscribe-header p {
+  text-wrap: balance;
 }
 
 .inputWrapper {
