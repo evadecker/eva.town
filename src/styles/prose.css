@@ -104,24 +104,24 @@
 .prose * + ol,
 .prose * + blockquote {
   margin-top: var(--space-l);
-  margin-bottom: var(--space-l);
+}
+
+.prose ul + p,
+.prose ol + p,
+.prose blockquote + p {
+  margin-top: var(--space-l);
 }
 
 .prose ul,
 .prose ol {
   list-style-type: none;
   padding-left: 1.3em;
+  margin-bottom: 0;
 }
 
 .prose ul ul,
 .prose ol ol {
   margin-top: 0;
-  margin-bottom: 0;
-}
-
-.prose ul:last-child,
-.prose ol:last-child {
-  margin-bottom: 0;
 }
 
 .prose li {
@@ -168,6 +168,7 @@
   border-left: 2px solid var(--gray-7);
   padding-left: var(--space-l);
   hanging-punctuation: first;
+  margin-bottom: 0;
 }
 
 .prose blockquote cite {
