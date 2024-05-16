@@ -1,24 +1,37 @@
 ---
 import Center from "../Center.astro";
+import { SubscribeForm } from "../Subscribe/SubscribeForm";
+
+const year = new Date().getFullYear();
 ---
 
 <footer>
   <Center>
     <div class="content">
-      <div class="banner">
-        <span class="emoji">🇵🇸</span>
-        <a href="https://www.jewishvoiceforpeace.org/" target="_blank"
-          >Standing with Palestine. Ceasefire now.
-        </a>
+      <div class="links">
+        <a href="/about">About</a>
+        <a href="/garden">The Garden</a>
+        <a href="/downloads/eva-decker-resume.pdf" target="_blank">Resume</a>
+        <a href="/colophon">Colophon</a>
+        <span class="copyright">&copy; {year}</span>
       </div>
       <div class="links">
         <a href="https://www.are.na/eva-decker/" target="_blank">Are.na</a>
+        <a href="https://bsky.app/profile/eva.town" target="_blank">Bluesky</a>
         <a href="https://github.com/evadecker" target="_blank">GitHub</a>
         <a href="https://www.goodreads.com/evadecker" target="_blank"
           >Goodreads</a
         >
         <a href="https://linkedin.com/in/evadecker" target="_blank">LinkedIn</a>
-        <a href="/colophon">Colophon</a>
+      </div>
+      <div class="banner">
+        <span class="emoji">🇵🇸</span>
+        <a href="https://www.jewishvoiceforpeace.org/" target="_blank"
+          >Freedom for Palestine.
+        </a>
+      </div>
+      <div class="subscribe">
+        <SubscribeForm client:visible />
       </div>
     </div>
   </Center>
@@ -29,34 +42,46 @@ import Center from "../Center.astro";
     font-size: var(--step--1);
     padding-block: var(--space-2xl);
     width: 100%;
+    border-top: 1px solid var(--gray-6);
   }
 
   .content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
+    display: grid;
+    grid-template: "links1 links2 form" 1fr "banner banner form" auto / 0.5fr 0.5fr 2fr;
     gap: var(--space-m) var(--space-xl);
 
-    @media (width < 800px) {
-      flex-direction: column;
+    @media (width < 650px) {
+      grid-template: "form form" "links1 links2" "banner banner" / 1fr 1fr;
+      gap: var(--space-xl);
     }
   }
 
   .links {
     display: flex;
-    align-items: center;
-    gap: var(--space-s);
-    flex-wrap: wrap;
+    flex-flow: column wrap;
+    gap: var(--space-2xs);
 
     a {
       display: inline-block;
     }
+
+    &:first-child {
+      grid-area: links1;
+    }
+
+    &:last-child {
+      grid-area: links2;
+    }
+  }
+
+  .copyright {
+    color: var(--gray-11);
   }
 
   .banner {
+    grid-area: banner;
     color: var(--gray-11);
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: var(--space-s);
     transition: background-color 0.2s ease-in-out;
@@ -74,5 +99,9 @@ import Center from "../Center.astro";
         color: var(--gray-12);
       }
     }
+  }
+
+  .subscribe {
+    grid-area: form;
   }
 </style>
