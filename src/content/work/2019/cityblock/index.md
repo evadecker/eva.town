@@ -10,4 +10,4 @@ img:
     alt: The word "Commonplace" is surrounded by components like buttons and progress bars.
 ---
 
-I inaugurated the first UX Engineering role at [Cityblock](https://www.cityblock.com/). During my time, I built a [design system](/posts/commonplace) and led the design and build of multiple complex product features for health history, documentation, and planning.
+I established the first design engineering role at [Cityblock](https://www.cityblock.com/). Over 2½ years, I built a [design system](/posts/commonplace) and led the design of multiple complex product features for health history, documentation, and planning.
