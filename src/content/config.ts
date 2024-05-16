@@ -1,5 +1,4 @@
 import { defineCollection, z } from "astro:content";
-import { random } from "nanoid";
 
 export const collections = {
   posts: defineCollection({
