@@ -69,4 +69,18 @@ export const collections = {
         url: z.string(),
       }),
   }),
+
+  webrings: defineCollection({
+    type: "data",
+    schema: () =>
+      z.object({
+        title: z.string(),
+        description: z.string(),
+        url: z.string().url(),
+        prev: z.string().url(),
+        next: z.string().url(),
+        random: z.string().url().optional(),
+        color: z.string(), // Radix color
+      }),
+  }),
 };
