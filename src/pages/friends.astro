@@ -6,7 +6,6 @@ import Center from "../components/Center.astro";
 import PageHeader from "../components/PageHeader.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getEntry } from "astro:content";
-import { Image } from "astro:assets";
 
 const webrings = await getCollection("webrings");
 const badges = await getEntry("badges", "badges");
