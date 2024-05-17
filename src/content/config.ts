@@ -91,8 +91,7 @@ export const collections = {
         .object({
           img: image(),
           alt: z.string(),
-          url: z.string().url(),
-          height: z.number().optional(),
+          url: z.string().optional(),
         })
         .array(),
   }),
