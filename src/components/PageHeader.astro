@@ -33,7 +33,9 @@ const { title, description, img, imgAlt, datePublished, dateModified } =
     {
       datePublished && (
         <div class="date">
-          <Icon icon="seedling" size="20" />
+          <div class="icon">
+            <Icon icon="seedling" size="20" />
+          </div>
           <span>
             Planted <RelativeDate date={datePublished} client:load />
             {dateModified && (
@@ -75,10 +77,15 @@ const { title, description, img, imgAlt, datePublished, dateModified } =
   }
 
   .date {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2xs);
+    display: flex;
+    align-items: baseline;
+    column-gap: var(--space-2xs);
     margin-block-start: var(--space-m);
+    font-size: var(--step--1);
+  }
+
+  .icon {
+    align-self: center;
   }
 
   .tended {
