@@ -13,6 +13,9 @@ const badges = await getEntry("badges", "badges");
 const title = "Webrings";
 const description =
   "Webrings let you browse between related sites in one big loop. Here are the webrings this site belongs to.";
+
+const datePublished = new Date("2024-05-16");
+const dateModified = new Date("2024-05-17 02:14:33-04:00");
 ---
 
 <BaseLayout
@@ -23,7 +26,12 @@ const description =
   ogImage="/og/webrings.png"
   ogAlt="A collection of old-school gifs."
 >
-  <PageHeader title={title} description={description} />
+  <PageHeader
+    title={title}
+    description={description}
+    datePublished={datePublished}
+    dateModified={dateModified}
+  />
   <Center>
     <section>
       <div class="webrings">

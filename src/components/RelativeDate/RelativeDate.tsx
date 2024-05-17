@@ -1,5 +1,3 @@
-import "./relativeDate.css";
-
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -7,18 +5,11 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 
-import { Icon, type IconType } from "../Icon/Icon";
-
 interface RelativeDateProps {
-  /**
-   * Language to put before the date, e.g. "Published", "Last tended"
-   */
-  prefix: string;
   date: Date | null;
-  icon?: IconType;
 }
 
-export const RelativeDate = ({ prefix, date, icon }: RelativeDateProps) => {
+export const RelativeDate = ({ date }: RelativeDateProps) => {
   dayjs.extend(utc);
   dayjs.extend(timezone); // Support 'z' to display timezone
   dayjs.extend(localizedFormat); // Support 'LLLL' to display full date
@@ -26,25 +17,31 @@ export const RelativeDate = ({ prefix, date, icon }: RelativeDateProps) => {
   dayjs.extend(relativeTime); // Support .fromNow()
 
   let formattedTimestamp: string;
-  let relativeTimeInWords: string;
+  let displayTime: string;
 
   if (date === null) {
     formattedTimestamp = "";
-    relativeTimeInWords = "at some point";
+    displayTime = "at some point";
   } else {
     formattedTimestamp = dayjs(date).format("LLLL z");
-    relativeTimeInWords = dayjs(date).fromNow();
+
+    if (dayjs().diff(dayjs(date), "day") < 2) {
+      // If less than 2 days, display relative date, e.g. "a day ago", "6 hours ago"
+      displayTime = dayjs(date).fromNow();
+    } else {
+      if (dayjs().isSame(date, "year")) {
+        // If current year, display month and day, e.g. "Jan 15"
+        displayTime = dayjs(date).format("MMM D");
+      } else {
+        // Otherwise display full date, e.g. "Jan 15, 2021"
+        displayTime = dayjs(date).format("ll");
+      }
+    }
   }
 
   return (
-    <small className="date">
-      {icon && <Icon icon={icon} size="20" />}
-      <span>
-        {prefix}{" "}
-        <time dateTime={dayjs(date).format()} title={formattedTimestamp}>
-          {relativeTimeInWords}
-        </time>
-      </span>
-    </small>
+    <time dateTime={dayjs(date).format()} title={formattedTimestamp}>
+      {displayTime}
+    </time>
   );
 };
