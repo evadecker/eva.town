@@ -4,6 +4,7 @@ import "../styles/theme.css";
 
 import { join } from "node:path";
 
+import SpeedInsights from "@vercel/speed-insights/astro";
 import { ViewTransitions } from "astro:transitions";
 import { AstroFont } from "astro-font";
 
@@ -84,6 +85,7 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{pageTitle}</title>
     <ViewTransitions />
+    <SpeedInsights />
   </head>
   <body>
     <slot />
