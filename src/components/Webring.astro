@@ -14,10 +14,10 @@ const { title, description, url, prev, next, color } = data;
   class="webring"
   style={`--webring-bg: var(--${color}-3); --webring-text: var(--${color}-12); --webring-hover: var(--${color}-4); --webring-border: var(--${color}-5)`}
 >
-  <div class="main">
-    <h3><a href={url} rel="external">{title}</a></h3>
-    <p>{description}</p>
-  </div>
+  <a class="main" href={url} rel="external">
+    <h3>{title}</h3>
+    <span>{description}</span>
+  </a>
   <a
     rel="external"
     referrerpolicy="strict-origin"
@@ -55,7 +55,6 @@ const { title, description, url, prev, next, color } = data;
 <style lang="scss">
   .webring {
     display: flex;
-    gap: var(--space-s);
     flex-wrap: nowrap;
     background: var(--webring-bg);
     color: var(--webring-text);
@@ -81,6 +80,13 @@ const { title, description, url, prev, next, color } = data;
     a {
       text-align: center;
       text-decoration: none;
+
+      @media (hover: hover) {
+        &:hover {
+          background: var(--webring-hover);
+          font-weight: inherit;
+        }
+      }
     }
 
     .prev,
@@ -90,12 +96,6 @@ const { title, description, url, prev, next, color } = data;
       justify-content: center;
       flex-shrink: 0;
       width: 56px;
-
-      @media (hover: hover) {
-        &:hover {
-          background: var(--webring-hover);
-        }
-      }
     }
 
     .prev {
