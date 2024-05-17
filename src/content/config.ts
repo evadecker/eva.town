@@ -79,7 +79,6 @@ export const collections = {
         url: z.string().url(),
         prev: z.string().url(),
         next: z.string().url(),
-        random: z.string().url().optional(),
         color: z.string(), // Radix color
       }),
   }),
