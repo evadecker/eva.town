@@ -1,9 +1,10 @@
+- img: ./eva.gif
+  alt: EVA
 - img: ./queer-coded.gif
   alt: Queer Coded
   url: https://queercoded.dev/
 - img: ./no-ai.svg
   alt: There's no AI here!
-  url: https://ko-fi.com/s/4662b19f61
 - img: ./mac.gif
   alt: Made with Macintosh
 - img: ./smile.gif
@@ -44,8 +45,6 @@
   alt: Holodeck 3
 - img: ./enhanced-html.gif
   alt: Enhanced HTML
-- img: ./eva.gif
-  alt: EVA
 - img: ./sailor-moon.jpeg
   alt: Sailor Moon
 - img: ./girl-gamers.gif
@@ -125,10 +124,10 @@
   alt: Powered by Bob
 - img: ./gay-website.gif
   alt: This website is GAY
-- img: ./digital-blasphemy.gif
-  alt: digital blasphemy
-- img: ./gimp.gif
-  alt: Graphics by Gimp
+- img: ./trans.webp
+  alt: Trans flag
+- img: ./tv.webp
+  alt: TV broadcast error
 - img: ./no-web3.gif
   alt: Say no to Web3! Keep the web Free
 - img: ./learn-html.gif
