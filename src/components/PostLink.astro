@@ -12,9 +12,15 @@ const { url, title, description, datePublished } = Astro.props;
 ---
 
 <div class="post">
+  {
+    datePublished && (
+      <div class="date">
+        <RelativeDate date={datePublished} />
+      </div>
+    )
+  }
   <a href={url} class="title">{title}</a>
   <span class="description">{description}</span>
-  {datePublished && <RelativeDate date={datePublished} prefix="" />}
 </div>
 
 <style lang="scss">
@@ -22,6 +28,11 @@ const { url, title, description, datePublished } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--space-2xs);
+  }
+
+  .date {
+    color: var(--gray-11);
+    font-size: var(--step--1);
   }
 
   .title {
