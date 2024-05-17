@@ -80,14 +80,15 @@ const description = "Cool people and places on the web.";
 
   .badge-section {
     align-items: center;
+    text-align: center;
   }
 
   .badges {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 88px);
-    grid-gap: var(--space-s);
-    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xs);
 
     img {
       flex-grow: 0;

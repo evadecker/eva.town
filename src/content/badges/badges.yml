@@ -6,20 +6,12 @@
   url: https://ko-fi.com/s/4662b19f61
 - img: ./mac.gif
   alt: Made with Macintosh
-- img: ./dragons.jpeg
-  alt: Dragons Now!
 - img: ./smile.gif
   alt: Have a smile!
-- img: ./big-brother.gif
-  alt: Big brother is watching
 - img: ./yu-gi-oh.gif
   alt: Yu-Gi-Oh! Extreme
-- img: ./magic.gif
-  alt: Magic
 - img: ./web-browser.gif
   alt: Best viewed with a web browser
-- img: ./green.gif
-  alt: A green 6-pointed shiny effect
 - img: ./dafont.gif
   alt: Dafont
 - img: ./powerpuff.jpeg
@@ -36,8 +28,6 @@
   alt: Best Hi-Colors
 - img: ./trillian.gif
   alt: Trillian - Get it now!
-- img: ./women-designers.gif
-  alt: Women Designer's Group
 - img: ./whoop-ass.jpeg
   alt: 12oz 100% Whoop Ass
 - img: ./family.gif
@@ -46,8 +36,6 @@
   alt: Get paid to surf the net
 - img: ./toad-mania.jpeg
   alt: Toad Mania
-- img: ./cool.gif
-  alt: Cool!
 - img: ./top-100-cats.gif
   alt: Top 100 Cat Sites VOTE HERE
 - img: ./catgirl-obsession.gif
@@ -62,18 +50,12 @@
   alt: Sailor Moon
 - img: ./girl-gamers.gif
   alt: Girl Gamers
-- img: ./protect-senshi.gif
-  alt: Protect our senshi
 - img: ./site-of-the-week.gif
   alt: Site of the week
-- img: ./w3c.gif
-  alt: W3C HTML 4.01 Validation
 - img: ./evangelion.gif
   alt: Evangelion
 - img: ./ban-time-travel.jpeg
   alt: Ban Time Travel "Now"
-- img: ./yoshi-domain.gif
-  alt: The Yoshi Domain
 - img: ./give-credit.gif
   alt: Give credit on the same page!
 - img: ./carp-net.gif
@@ -86,15 +68,10 @@
   alt: I Believe in Dragons!
 - img: ./wee-one-kitty.gif
   alt: You've been tickled by Wee One Kitty
-- img: ./elmo-now.gif
-  alt: Elmo Now!
 - img: ./garden-maze.gif
   alt: Garden Maze
 - img: ./good-clean-fun.gif
   alt: Good Clean Fun
-- img: ./back-index.gif
-  alt: back to the index
-  url: /
 - img: ./stupid-sleep.jpeg
   alt: too stupid to sleep
 - img: ./lotr-addict.jpeg
@@ -107,8 +84,6 @@
   alt: Rainbow
 - img: ./power-of-friendship.png
   alt: Believe in the radical power of friendship
-- img: ./links-links-links.gif
-  alt: Links Links Links
 - img: ./believe-fairies.gif
   alt: I believe in Fairies
 - img: ./brake-for-elves.jpeg
@@ -138,14 +113,8 @@
   alt: Kitty
 - img: ./what.gif
   alt: "?"
-- img: ./stamp-out-spam.gif
-  alt: Help Stamp Out Spamming
-- img: ./free-clipart.gif
-  alt: Free Clipart Gifart
 - img: ./dogs-fan.jpeg
   alt: Dogs Fan
-- img: ./gui-stuff.gif
-  alt: GUI Stuff FREE Interfaces
 - img: ./open-eyes.gif
   alt: Best viewed with Open Eyes
 - img: ./dungeon-meshi.webp
@@ -156,8 +125,6 @@
   alt: Powered by Bob
 - img: ./gay-website.gif
   alt: This website is GAY
-- img: ./nintendo.gif
-  alt: Nintendo
 - img: ./digital-blasphemy.gif
   alt: digital blasphemy
 - img: ./gimp.gif

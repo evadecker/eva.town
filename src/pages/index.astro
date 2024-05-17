@@ -103,11 +103,14 @@ work.sort((a, b) =>
     align-items: center;
     margin-top: auto;
     color: var(--gray-10);
-    animation-name: fadeOut;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-timeline: view();
-    animation-range: contain 50% contain 80%;
+
+    @supports (animation-timeline: view()) {
+      animation-name: fadeOut;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: contain 50% contain 80%;
+    }
   }
 
   @keyframes rotate {
