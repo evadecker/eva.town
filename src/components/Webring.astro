@@ -64,16 +64,22 @@ const { title, description, url, prev, next, color } = data;
     .main {
       flex: 1;
       text-align: center;
-      padding-block: var(--space-m);
+      padding: var(--space-m);
 
       h3 {
         margin: 0;
         font-size: var(--step-1);
       }
 
-      p {
+      span {
+        display: block;
         margin-block-start: var(--space-2xs);
         line-height: var(--line-height-tight);
+        text-wrap: balance;
+
+        @media (width < 700px) {
+          font-size: var(--step--1);
+        }
       }
     }
 
