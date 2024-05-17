@@ -35,5 +35,6 @@ export default defineConfig({
     "/projects/boundaries-map": "/posts/boundaries-map",
     "/projects/commonplace": "/posts/commonplace",
     "/design": "https://design.eva.town",
+    "/friends": "/webrings",
   },
 });
