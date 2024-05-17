@@ -1,12 +1,196 @@
-- img: ./gossips-web.jpeg
-  alt: This website was made with hands.
-  url: https://gossipsweb.net/
-  height: 43
 - img: ./queer-coded.gif
   alt: Queer Coded
   url: https://queercoded.dev/
-  height: 31
 - img: ./no-ai.svg
   alt: There's no AI here!
   url: https://ko-fi.com/s/4662b19f61
-  height: 31
+- img: ./mac.gif
+  alt: Made with Macintosh
+- img: ./dragons.jpeg
+  alt: Dragons Now!
+- img: ./smile.gif
+  alt: Have a smile!
+- img: ./big-brother.gif
+  alt: Big brother is watching
+- img: ./yu-gi-oh.gif
+  alt: Yu-Gi-Oh! Extreme
+- img: ./magic.gif
+  alt: Magic
+- img: ./web-browser.gif
+  alt: Best viewed with a web browser
+- img: ./green.gif
+  alt: A green 6-pointed shiny effect
+- img: ./dafont.gif
+  alt: Dafont
+- img: ./powerpuff.jpeg
+  alt: Powerpuff Girls
+- img: ./graphics-dreams.gif
+  alt: Graphics, dreams, and things
+- img: ./wow.gif
+  alt: Wow Now!
+- img: ./catlover.gif
+  alt: Catlover
+- img: ./css.gif
+  alt: Made with Cascading Style Sheets
+- img: ./best-colors.gif
+  alt: Best Hi-Colors
+- img: ./trillian.gif
+  alt: Trillian - Get it now!
+- img: ./women-designers.gif
+  alt: Women Designer's Group
+- img: ./whoop-ass.jpeg
+  alt: 12oz 100% Whoop Ass
+- img: ./family.gif
+  alt: Me and my family
+- img: ./get-paid.gif
+  alt: Get paid to surf the net
+- img: ./toad-mania.jpeg
+  alt: Toad Mania
+- img: ./cool.gif
+  alt: Cool!
+- img: ./top-100-cats.gif
+  alt: Top 100 Cat Sites VOTE HERE
+- img: ./catgirl-obsession.gif
+  alt: Catgirl obsession
+- img: ./holodeck.gif
+  alt: Holodeck 3
+- img: ./enhanced-html.gif
+  alt: Enhanced HTML
+- img: ./eva.gif
+  alt: EVA
+- img: ./sailor-moon.jpeg
+  alt: Sailor Moon
+- img: ./girl-gamers.gif
+  alt: Girl Gamers
+- img: ./protect-senshi.gif
+  alt: Protect our senshi
+- img: ./site-of-the-week.gif
+  alt: Site of the week
+- img: ./w3c.gif
+  alt: W3C HTML 4.01 Validation
+- img: ./evangelion.gif
+  alt: Evangelion
+- img: ./ban-time-travel.jpeg
+  alt: Ban Time Travel "Now"
+- img: ./yoshi-domain.gif
+  alt: The Yoshi Domain
+- img: ./give-credit.gif
+  alt: Give credit on the same page!
+- img: ./carp-net.gif
+  alt: Carp Net (Free) Click The Fish
+- img: ./harley-davidson.gif
+  alt: Harley Davidson
+- img: ./nothingness-awards.jpeg
+  alt: nothingness awards
+- img: ./believe-dragons.gif
+  alt: I Believe in Dragons!
+- img: ./wee-one-kitty.gif
+  alt: You've been tickled by Wee One Kitty
+- img: ./elmo-now.gif
+  alt: Elmo Now!
+- img: ./garden-maze.gif
+  alt: Garden Maze
+- img: ./good-clean-fun.gif
+  alt: Good Clean Fun
+- img: ./back-index.gif
+  alt: back to the index
+  url: /
+- img: ./stupid-sleep.jpeg
+  alt: too stupid to sleep
+- img: ./lotr-addict.jpeg
+  alt: LOTR addict
+- img: ./wanna-chill.gif
+  alt: Wanna Chill? OK
+- img: ./flower.gif
+  alt: Flower
+- img: ./rainbow.gif
+  alt: Rainbow
+- img: ./power-of-friendship.png
+  alt: Believe in the radical power of friendship
+- img: ./links-links-links.gif
+  alt: Links Links Links
+- img: ./believe-fairies.gif
+  alt: I believe in Fairies
+- img: ./brake-for-elves.jpeg
+  alt: I brake for elves!
+- img: ./internet-tourbus.gif
+  alt: Hop on the internet tourbus!
+- img: ./click-it-now.gif
+  alt: Click it Now!
+- img: ./welcome-hello-kitty.gif
+  alt: Welcome Hello Kitty!
+- img: ./gundam-union.gif
+  alt: Gundam Union
+- img: ./home.gif
+  alt: Home
+  url: /
+- img: ./hunks.gif
+  alt: 100% Hunks
+- img: ./bunner.gif
+  alt: Bunner
+- img: ./hamtaro.gif
+  alt: Hamtaro
+- img: ./cheat-fan.gif
+  alt: The Cheat Fan
+- img: ./bowsers-temple.gif
+  alt: Bowser's Temple
+- img: ./kitty.gif
+  alt: Kitty
+- img: ./what.gif
+  alt: "?"
+- img: ./stamp-out-spam.gif
+  alt: Help Stamp Out Spamming
+- img: ./free-clipart.gif
+  alt: Free Clipart Gifart
+- img: ./dogs-fan.jpeg
+  alt: Dogs Fan
+- img: ./gui-stuff.gif
+  alt: GUI Stuff FREE Interfaces
+- img: ./open-eyes.gif
+  alt: Best viewed with Open Eyes
+- img: ./dungeon-meshi.webp
+  alt: Dungeon Meshi
+- img: ./glitch.gif
+  alt: Glitch Pup
+- img: ./bob.gif
+  alt: Powered by Bob
+- img: ./gay-website.gif
+  alt: This website is GAY
+- img: ./nintendo.gif
+  alt: Nintendo
+- img: ./digital-blasphemy.gif
+  alt: digital blasphemy
+- img: ./gimp.gif
+  alt: Graphics by Gimp
+- img: ./no-web3.gif
+  alt: Say no to Web3! Keep the web Free
+- img: ./learn-html.gif
+  alt: HTML Learn it today!
+- img: ./powered-by-imagination.gif
+  alt: This site is powered by imagination
+- img: ./pokemon.gif
+  alt: Pokemon
+- img: ./jirachi.gif
+  alt: Jirachi
+- img: ./they-them.gif
+  alt: They/Them
+- img: ./powered-by-void.gif
+  alt: Powered by the void
+- img: ./acab.gif
+  alt: All Cops Are Bastards
+- img: ./up-all-night.gif
+  alt: Up all night
+- img: ./trans-rights-now.gif
+  alt: Trans Rights Now!
+- img: ./trans-your-gender.gif
+  alt: Trans your gender
+- img: ./kawaii.gif
+  alt: All things kawaii
+- img: ./undertale.png
+  alt: I love Undertale
+- img: ./smilies.gif
+  alt: Smilies
+- img: ./forever-online.gif
+  alt: Forever Online
+- img: ./web-design-passion.gif
+  alt: Web design is my passion
