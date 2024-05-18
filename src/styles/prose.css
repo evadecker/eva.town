@@ -151,8 +151,8 @@
 .prose code {
   background-color: var(--gray-3);
   border-radius: var(--radius-xs);
-  padding: 0.15em 0.3em;
-  font-size: 0.8em;
+  padding: 0.1em 0.2em;
+  font-size: 0.9em;
 }
 
 .prose abbr {

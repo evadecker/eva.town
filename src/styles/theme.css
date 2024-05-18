@@ -33,20 +33,7 @@
 @import "@radix-ui/colors/white-alpha.css";
 @import "@radix-ui/colors/black-alpha.css";
 
-@font-face {
-  font-family: "HEX Franklin";
-  src: url("/fonts/HEX_Franklin_v0.3_Variable.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  --font-sans: "HEX Franklin", system-ui, -apple-system, "Segoe UI", roboto,
-    "Helvetica Neue", sans-serif;
-  --font-mono: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
   /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,720,21,1.25,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   --step--1: clamp(0.8889rem, 0.88rem + 0.0444vi, 0.9rem);
   --step-0: clamp(1rem, 0.9rem + 0.5vi, 1.125rem);
