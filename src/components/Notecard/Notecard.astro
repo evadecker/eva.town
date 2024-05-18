@@ -1,0 +1,83 @@
+---
+import { RelativeDate } from "../RelativeDate/RelativeDate";
+
+type Props = {
+  content: string;
+  url?: string | null;
+  author: string;
+  timestamp: Date;
+  theme: number;
+};
+
+const { content, url, author, timestamp, theme } = Astro.props;
+
+const rotation = `${Math.random() * 6 - 3}deg`;
+const backgroundImage = `url(/images/notecards/notecard${theme}.png)`;
+---
+
+<div class="notecard-container">
+  <div class="notecard">
+    <pre class="content">{content}</pre>
+    <div class="credit">
+      <div class="author">
+        {
+          url ? (
+            <a href={url} rel="external">
+              {author}
+            </a>
+          ) : (
+            author
+          )
+        }
+      </div>
+      <div class="date">
+        <RelativeDate date={timestamp} />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss" define:vars={{ background: backgroundImage, rotation }}>
+  .notecard-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    transform: rotate(var(--rotation));
+  }
+
+  .notecard {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    font-family: var(--font-mono);
+    padding: var(--space-3xl);
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: var(--background);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .content {
+    width: 30ch;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  .credit {
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .author {
+    a {
+      text-decoration-color: inherit;
+    }
+  }
+
+  .date {
+    font-size: var(--step--1);
+  }
+</style>

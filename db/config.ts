@@ -7,6 +7,7 @@ const Guestbook = defineTable({
     author: column.text(),
     url: column.text({ optional: true }),
     timestamp: column.date({ default: NOW }),
+    theme: column.number(),
   },
 });
 

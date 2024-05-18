@@ -3,8 +3,8 @@ import { db, Guestbook as GuestbookDB } from "astro:db";
 
 import PageHeader from "../components/PageHeader.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { RelativeDate } from "src/components/RelativeDate/RelativeDate";
 import dayjs from "dayjs";
+import Notecard from "src/components/Notecard/Notecard.astro";
 
 const guestbook = await db.select().from(GuestbookDB);
 guestbook.sort((a, b) =>
@@ -64,23 +64,15 @@ const datePublished = new Date("2024-05-17");
       </div>
     </form>
     {
-      guestbook.map(({ author, url, content, timestamp }) => (
+      guestbook.map(({ author, url, content, timestamp, theme }) => (
         <div class="submission">
-          <div class="notecard">
-            <pre class="content">{content}</pre>
-            <div class="author">
-              {url ? (
-                <a href={url} rel="external">
-                  {author}
-                </a>
-              ) : (
-                author
-              )}
-            </div>
-          </div>
-          <div class="date">
-            <RelativeDate date={timestamp} />
-          </div>
+          <Notecard
+            author={author}
+            url={url}
+            content={content}
+            timestamp={timestamp}
+            theme={theme}
+          />
         </div>
       ))
     }
@@ -93,24 +85,8 @@ const datePublished = new Date("2024-05-17");
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: var(--space-l);
+    gap: var(--space-xl);
     padding-inline: var(--space-xl);
-  }
-
-  .notecard {
-    aspect-ratio: 5 / 3.5;
-    background-color: var(--gray-3);
-    font-family: var(--font-mono);
-    padding: var(--space-xl);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .content {
-    width: 30ch;
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
   }
 
   .content-input,
@@ -131,18 +107,6 @@ const datePublished = new Date("2024-05-17");
   .name-input {
     align-self: flex-end;
     text-align: right;
-  }
-
-  .author,
-  .date {
-    align-self: flex-end;
-  }
-
-  .date {
-    padding-block-start: var(--space-xs);
-    text-align: right;
-    font-size: var(--step--1);
-    color: var(--gray-11);
   }
 
   .control-bar {
