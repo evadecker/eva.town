@@ -47,6 +47,26 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
           display: "swap",
           selector: "body",
           fallback: "sans-serif",
+          cssVariable: "font-sans",
+        },
+        {
+          name: "MonoLisa",
+          src: [
+            {
+              style: "normal",
+              path: join(
+                process.cwd(),
+                "public",
+                "fonts",
+                "MonoLisaVariableNormal.woff2"
+              ),
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: "code",
+          fallback: "monospace",
+          cssVariable: "font-mono",
         },
       ]}
     />

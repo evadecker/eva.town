@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers eva.town.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2024-05-13 07:41:47-04:00
+dateModified: 2024-05-18 11:08:23-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -18,7 +18,7 @@ All code is open source and available on [GitHub](https://github.com/evadecker/e
 
 This site is built using [Astro](https://astro.build). Astro handles the content-heavy views (written in [MDX](https://mdxjs.com)), but for more interactive components I use [React](https://react.dev) and [TypeScript](https://www.typescriptlang.org).
 
-Code is edited using [VS Code](https://code.visualstudio.com) on a [MacBook Pro](https://www.apple.com/macbook-pro/). My terminal of choice is [Warp](https://www.warp.dev). My go-to coding font is [MonoLisa](https://www.monolisa.dev).
+Code is edited using [VS Code](https://code.visualstudio.com) on a [MacBook Pro](https://www.apple.com/macbook-pro/). My terminal of choice is [Warp](https://www.warp.dev).
 
 End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview devices, test accessibility, and toggle user preferences like `(prefers-color-scheme)`.
 
@@ -26,7 +26,7 @@ Domain registration, hosting, and deployment are via [Vercel](https://vercel.com
 
 ## Typography
 
-Text is set in [HEX Franklin Variable](https://hex.xyz/HEX_Franklin/). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
+Text is set in [HEX Franklin Variable](https://hex.xyz/HEX_Franklin/) with code in [MonoLisa](https://www.monolisa.dev/). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
 
 Type inspiration can be found anywhere, from comic art and video games to [bodega window displays](https://www.are.na/eva-decker/nyc-bodega-art), but I often return to a handful of resources:
 
