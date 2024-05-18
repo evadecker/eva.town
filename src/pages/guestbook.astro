@@ -1,10 +1,31 @@
 ---
 import { db, Guestbook as GuestbookDB } from "astro:db";
 
-import PageHeader from "../components/PageHeader.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import dayjs from "dayjs";
-import Notecard from "src/components/Notecard/Notecard.astro";
+import Notecard from "../components/Notecard/Notecard.astro";
+import { NotecardComposer } from "../components/Notecard/NotecardComposer";
+
+if (Astro.request.method === "POST") {
+  let formData = await Astro.request.formData();
+  let author = formData.get("author");
+  let content = formData.get("content");
+  let url = formData.get("url");
+  let theme = formData.get("theme");
+  let honeypot = formData.get("special");
+
+  if (
+    !honeypot &&
+    typeof author === "string" &&
+    typeof content === "string" &&
+    typeof url === "string" &&
+    typeof theme === "number"
+  ) {
+    await db.insert(GuestbookDB).values({ author, content, url, theme });
+
+    return Astro.redirect("/guestbook");
+  }
+}
 
 const guestbook = await db.select().from(GuestbookDB);
 guestbook.sort((a, b) =>
@@ -13,56 +34,11 @@ guestbook.sort((a, b) =>
 
 const title = "Guestbook";
 const description = "Leave a message in eva.town.";
-
-const datePublished = new Date("2024-05-17");
 ---
 
 <BaseLayout title={title} description={description} includeFooter padBottom>
-  <PageHeader
-    title={title}
-    description={description}
-    datePublished={datePublished}
-  />
   <div class="notecards">
-    <form method="POST">
-      <div class="notecard new">
-        <label for="content" hidden>Message</label>
-        <textarea
-          class="content-input"
-          name="content"
-          placeholder="Leave a message..."
-          required
-          maxlength="180"
-          rows="6"
-          cols="30"
-          wrap="hard"></textarea>
-        <label for="author" hidden>Your name</label>
-        <input
-          class="name-input"
-          type="text"
-          name="author"
-          placeholder="Your name"
-          required
-          maxlength="28"
-          autocomplete="off"
-          data-1p-ignore
-        />
-      </div>
-      <div class="control-bar">
-        <button type="submit">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="16px"
-            fill="currentColor"
-            ><path
-              d="M3 12.9999H9V10.9999H3V1.84558C3 1.56944 3.22386 1.34558 3.5 1.34558C3.58425 1.34558 3.66714 1.36687 3.74096 1.40747L22.2034 11.5618C22.4454 11.6949 22.5337 11.9989 22.4006 12.2409C22.3549 12.324 22.2865 12.3924 22.2034 12.4381L3.74096 22.5924C3.499 22.7255 3.19497 22.6372 3.06189 22.3953C3.02129 22.3214 3 22.2386 3 22.1543V12.9999Z"
-            ></path>
-          </svg>
-          Submit
-        </button>
-      </div>
-    </form>
+    <NotecardComposer client:load />
     {
       guestbook.map(({ author, url, content, timestamp, theme }) => (
         <div class="submission">
@@ -85,52 +61,8 @@ const datePublished = new Date("2024-05-17");
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: var(--space-xl);
+    gap: var(--space-2xl);
     padding-inline: var(--space-xl);
-  }
-
-  .content-input,
-  .name-input {
-    background: transparent;
-    padding: 0;
-    width: 30ch;
-    resize: none;
-    border: none;
-    outline-offset: 8px;
-    color: var(--gray-12);
-  }
-
-  .content-input {
-    background-color: transparent;
-  }
-
-  .name-input {
-    align-self: flex-end;
-    text-align: right;
-  }
-
-  .control-bar {
-    padding-block-start: var(--space-s);
-    border-radius: var(--radius-m);
-    display: flex;
-    justify-content: flex-end;
-
-    button {
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-xs);
-      background: var(--gray-12);
-      border: none;
-      color: var(--gray-1);
-      padding: var(--space-2xs) var(--space-m);
-      border-radius: var(--radius-full);
-
-      @media (hover: hover) {
-        &:hover {
-          font-weight: var(--font-weight-bold);
-        }
-      }
-    }
+    padding-block-start: var(--space-3xl);
   }
 </style>

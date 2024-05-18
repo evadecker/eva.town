@@ -3,9 +3,10 @@ import { db, Guestbook } from "astro:db";
 export default async function seed() {
   await db.insert(Guestbook).values([
     {
-      author: "jimmy",
-      content: "You are so cool!",
-      timestamp: new Date("2021-01-01T12:00:00Z"),
+      author: "dril",
+      content: "sorry boys.. im goin A.W.O.L.. !!!  Another Weekend On-Line",
+      url: "https://twitter.com/dril/status/531211135606091777",
+      timestamp: new Date("2014-11-08T12:00:00Z"),
       theme: 1,
     },
     {
