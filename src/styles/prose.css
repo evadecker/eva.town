@@ -152,7 +152,8 @@
   background-color: var(--gray-3);
   border-radius: var(--radius-xs);
   padding: 0.1em 0.2em;
-  font-size: 0.9em;
+  font-size: 0.95em;
+  letter-spacing: var(--letter-spacing-condensed);
 }
 
 .prose abbr {

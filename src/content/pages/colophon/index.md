@@ -20,13 +20,13 @@ This site is built using [Astro](https://astro.build). Astro handles the content
 
 Code is edited using [VS Code](https://code.visualstudio.com) on a [MacBook Pro](https://www.apple.com/macbook-pro/). My terminal of choice is [Warp](https://www.warp.dev).
 
-End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview devices, test accessibility, and toggle user preferences like `(prefers-color-scheme)`.
+End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview devices, test accessibility, and toggle user preferences like `prefers-reduced-motion`.
 
 Domain registration, hosting, and deployment are via [Vercel](https://vercel.com/). Email forwarding is through [ImprovMX](https://improvmx.com). I send occasional [newsletters](https://buttondown.email/notesfromeva) using [Buttondown](https://buttondown.email).
 
 ## Typography
 
-Text is set in [HEX Franklin Variable](https://hex.xyz/HEX_Franklin/) with code in [MonoLisa](https://www.monolisa.dev/). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
+Text is set in [HEX Franklin Variable](https://hex.xyz/HEX_Franklin/) with code in [`MonoLisa`](https://www.monolisa.dev/). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
 
 Type inspiration can be found anywhere, from comic art and video games to [bodega window displays](https://www.are.na/eva-decker/nyc-bodega-art), but I often return to a handful of resources:
 
