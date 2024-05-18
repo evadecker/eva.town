@@ -1,18 +1,21 @@
 ---
 import { db, Guestbook as GuestbookDB } from "astro:db";
-
-import BaseLayout from "../layouts/BaseLayout.astro";
 import dayjs from "dayjs";
+
 import Notecard from "../components/Notecard/Notecard.astro";
 import { NotecardComposer } from "../components/Notecard/NotecardComposer";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Server-render page
+export const prerender = false;
 
 if (Astro.request.method === "POST") {
-  let formData = await Astro.request.formData();
-  let author = formData.get("author");
-  let content = formData.get("content");
-  let url = formData.get("url");
-  let theme = formData.get("theme");
-  let honeypot = formData.get("special");
+  const formData = await Astro.request.formData();
+  const author = formData.get("author");
+  const content = formData.get("content");
+  const url = formData.get("url");
+  const theme = formData.get("theme");
+  const honeypot = formData.get("special");
 
   if (
     !honeypot &&

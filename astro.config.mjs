@@ -13,7 +13,7 @@ import { autolinkConfig } from "./plugins/rehype-autolink-config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://eva.town",
-  output: "server",
+  output: "hybrid",
   integrations: [react(), mdx(), sitemap(), db()],
   adapter: vercel({
     webAnalytics: {
