@@ -1,10 +1,13 @@
 name: HTML5 Validation
+
+env:
+  ASTRO_STUDIO_APP_TOKEN: ${{ secrets.ASTRO_STUDIO_APP_TOKEN }}
+
 on:
   push:
     branches: main
   pull_request:
     branches: main
-env:
 
 jobs:
   html-validate:
@@ -24,6 +27,4 @@ jobs:
       - name: Install dependencies
         run: pnpm i
       - name: Build and validate HTML5
-        env:
-          ASTRO_STUDIO_APP_TOKEN: ${{ secrets.ASTRO_STUDIO_APP_TOKEN }}
         run: pnpm html-validate
