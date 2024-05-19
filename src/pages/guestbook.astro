@@ -1,0 +1,72 @@
+---
+import { db, Guestbook as GuestbookDB } from "astro:db";
+import dayjs from "dayjs";
+
+import Notecard from "../components/Notecard/Notecard.astro";
+import { NotecardComposer } from "../components/Notecard/NotecardComposer";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Server-render page
+export const prerender = false;
+
+if (Astro.request.method === "POST") {
+  const formData = await Astro.request.formData();
+  const author = formData.get("author");
+  const content = formData.get("content");
+  const url = formData.get("url");
+  const theme = formData.get("theme");
+  const honeypot = formData.get("special");
+
+  if (
+    !honeypot &&
+    typeof author === "string" &&
+    typeof content === "string" &&
+    content.length <= 140 &&
+    typeof url === "string" &&
+    typeof theme === "number"
+  ) {
+    await db.insert(GuestbookDB).values({ author, content, url, theme });
+
+    return Astro.redirect("/guestbook");
+  }
+}
+
+const guestbook = await db.select().from(GuestbookDB);
+guestbook.sort((a, b) =>
+  dayjs(b.timestamp).isBefore(dayjs(a.timestamp)) ? -1 : 1
+);
+
+const title = "Guestbook";
+const description = "Leave a message in eva.town.";
+---
+
+<BaseLayout title={title} description={description} includeFooter padBottom>
+  <div class="notecards">
+    <NotecardComposer client:load />
+    {
+      guestbook.map(({ author, url, content, timestamp, theme }) => (
+        <div class="submission">
+          <Notecard
+            author={author}
+            url={url}
+            content={content}
+            timestamp={timestamp}
+            theme={theme}
+          />
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  .notecards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--space-2xl);
+    padding-inline: var(--space-xl);
+    padding-block-start: var(--space-3xl);
+  }
+</style>

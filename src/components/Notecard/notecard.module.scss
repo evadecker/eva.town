@@ -1,0 +1,149 @@
+.composer {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  font-family: var(--font-mono);
+  padding: var(--space-3xl);
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.name,
+.url {
+  text-align: right;
+}
+
+.url {
+  font-size: var(--step--1);
+  width: 100%;
+}
+
+.content,
+.name {
+  width: 30ch;
+}
+
+.content,
+.name,
+.url {
+  background: transparent;
+  padding-inline: 1ch;
+  font-size: 16px;
+  resize: none;
+  border: none;
+  border-radius: var(--radius-xs);
+  color: #111;
+
+  &::placeholder {
+    color: rgb(0 0 0 / 50%);
+  }
+
+  &:focus-visible {
+    outline: rgb(0 0 0 / 20%) solid 2px;
+    outline-offset: 0;
+  }
+}
+
+.top {
+  height: fit-content;
+  position: relative;
+}
+
+.warning {
+  position: absolute;
+  font-size: var(--step--1);
+  font-family: var(--font-sans);
+  line-height: 1;
+  right: 1ch;
+  bottom: 0;
+  transform: translateY(100%);
+  color: var(--red-9);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-block-start: auto;
+}
+
+.controls {
+  font-family: var(--font-sans);
+  padding: var(--space-s) var(--space-3xl);
+  border-radius: var(--radius-m);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  transform: translateY(50%);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  button {
+    cursor: pointer;
+    background: transparent;
+    color: #111;
+    gap: var(--space-s);
+    border-radius: var(--radius-full);
+    border: none;
+
+    &:focus-visible {
+      outline: rgb(0 0 0 / 20%) solid 2px;
+      outline-offset: 0;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        font-weight: var(--font-weight-bold);
+      }
+    }
+  }
+
+  button[type="submit"] {
+    padding: var(--space-2xs) var(--space-m);
+  }
+
+  .style,
+  button[type="submit"] {
+    background: #fff;
+    box-shadow: var(--shadow-m);
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    transition: 0.1s ease;
+  }
+
+  .styleWrapper {
+    perspective: 200px;
+  }
+
+  .style {
+    button {
+      padding: var(--space-2xs) var(--space-s);
+    }
+
+    button:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    button:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:has(button:first-child:active) {
+      transform: rotateY(-10deg);
+    }
+
+    &:has(button:last-child:active) {
+      transform: rotateY(10deg);
+    }
+  }
+}
