@@ -12,6 +12,7 @@ interface Props {
 const { content, url, author, timestamp, theme } = Astro.props;
 
 const rotation = `${Math.random() * 6 - 3}deg`;
+const translateX = `${Math.random() * 24 - 12}px`;
 const backgroundImage = `url(/images/notecards/notecard${theme}.png)`;
 ---
 
@@ -35,10 +36,12 @@ const backgroundImage = `url(/images/notecards/notecard${theme}.png)`;
   </div>
 </div>
 
-<style lang="scss" define:vars={{ background: backgroundImage, rotation }}>
+<style
+  lang="scss"
+  define:vars={{ background: backgroundImage, rotation, translateX }}
+>
   .notecard {
     aspect-ratio: 4 / 3;
-    width: 100%;
     font-family: var(--font-mono);
     padding: var(--space-3xl);
     color: #111;
@@ -49,7 +52,7 @@ const backgroundImage = `url(/images/notecards/notecard${theme}.png)`;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transform: rotate(var(--rotation));
+    transform: translateX(var(--translateX)) rotate(var(--rotation));
   }
 
   .content {

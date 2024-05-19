@@ -73,15 +73,13 @@ const description = "Leave a message in eva.town.";
     <NotecardComposer client:load />
     {
       guestbook.map(({ author, url, content, timestamp, theme }) => (
-        <div class="submission">
-          <Notecard
-            author={author}
-            url={url}
-            content={content}
-            timestamp={timestamp}
-            theme={theme}
-          />
-        </div>
+        <Notecard
+          author={author}
+          url={url}
+          content={content}
+          timestamp={timestamp}
+          theme={theme}
+        />
       ))
     }
   </div>
@@ -96,5 +94,6 @@ const description = "Leave a message in eva.town.";
     gap: var(--space-2xl);
     padding-inline: var(--space-xl);
     padding-block-start: var(--space-3xl);
+    overflow: hidden;
   }
 </style>

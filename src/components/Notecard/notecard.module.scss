@@ -1,9 +1,10 @@
 .composer {
   aspect-ratio: 4 / 3;
-  width: 100%;
+  width: min-content;
   font-family: var(--font-mono);
   padding: var(--space-3xl);
   color: #111;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   background-size: contain;
