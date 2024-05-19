@@ -1,12 +1,32 @@
-import { useState } from "react";
+import { type ChangeEvent, useEffect, useState } from "react";
 
 import styles from "./notecard.module.scss";
 
 export const NotecardComposer = () => {
   const TOTAL_THEMES = 18;
-  const randomTheme = Math.floor(Math.random() * TOTAL_THEMES) + 1;
 
-  const [selectedTheme, setSelectedTheme] = useState(randomTheme);
+  const [selectedTheme, setSelectedTheme] = useState(1);
+  const [contentValue, setContentValue] = useState("");
+  const [showWarning, setShowWarning] = useState(false);
+
+  const handleContentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const content = e.target;
+    const parent = content.parentElement;
+    if (!parent) return;
+
+    if (
+      content.scrollHeight > parent.clientHeight ||
+      e.target.value.length > 140
+    ) {
+      setContentValue(contentValue);
+      setShowWarning(true);
+    } else {
+      setContentValue(e.target.value);
+      setShowWarning(false);
+    }
+  };
+
+  useEffect(() => {}, [contentValue]);
 
   const handleNextTheme = () => {
     setSelectedTheme((selectedTheme) =>
@@ -28,19 +48,27 @@ export const NotecardComposer = () => {
           backgroundImage: `url(/images/notecards/notecard${selectedTheme}.png)`,
         }}
       >
-        <label htmlFor="content" hidden>
-          Message
-        </label>
-        <textarea
-          className={styles.content}
-          name="content"
-          placeholder="Leave a message..."
-          required
-          maxLength={180}
-          rows={6}
-          cols={30}
-          wrap="hard"
-        ></textarea>
+        <div className={styles.top}>
+          <label htmlFor="content" hidden>
+            Message
+          </label>
+          <textarea
+            className={styles.content}
+            name="content"
+            placeholder="Leave a message..."
+            required
+            rows={5}
+            cols={28}
+            wrap="hard"
+            onChange={handleContentChange}
+            value={contentValue}
+          ></textarea>
+          {showWarning && (
+            <div className={styles.warning}>
+              There’s not enough room for that.
+            </div>
+          )}
+        </div>
         <div className={styles.bottom}>
           <label htmlFor="author" hidden>
             Your name
@@ -51,7 +79,7 @@ export const NotecardComposer = () => {
             name="author"
             placeholder="Your name"
             required
-            maxLength={30}
+            maxLength={28}
             autoComplete="off"
             data-1p-ignore
           />

@@ -1,13 +1,13 @@
 ---
 import { RelativeDate } from "../RelativeDate/RelativeDate";
 
-type Props = {
+interface Props {
   content: string;
   url?: string | null;
   author: string;
   timestamp: Date;
   theme: number;
-};
+}
 
 const { content, url, author, timestamp, theme } = Astro.props;
 
@@ -61,7 +61,7 @@ const backgroundImage = `url(/images/notecards/notecard${theme}.png)`;
   }
 
   .content {
-    width: 30ch;
+    width: 28ch;
     white-space: pre-wrap;
     overflow-wrap: break-word;
   }

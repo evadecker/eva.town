@@ -24,7 +24,7 @@
 
 .content,
 .name {
-  width: 32ch;
+  width: 30ch;
 }
 
 .content,
@@ -32,6 +32,7 @@
 .url {
   background: transparent;
   padding-inline: 1ch;
+  font-size: 16px;
   resize: none;
   border: none;
   border-radius: var(--radius-xs);
@@ -45,6 +46,32 @@
     outline: rgb(0 0 0 / 20%) solid 2px;
     outline-offset: 0;
   }
+}
+
+.top {
+  height: fit-content;
+  position: relative;
+}
+
+.warning {
+  position: absolute;
+  font-size: var(--step--1);
+  font-family: var(--font-sans);
+  right: 1ch;
+  bottom: 0;
+  transform: translateY(100%);
+  color: var(--red-9);
+}
+
+.mirror {
+  // opacity: 0;
+  text-align: left;
+  pointer-events: none;
+  background: red;
+  position: absolute;
+  overflow-wrap: break-word;
+  top: 0;
+  left: 0;
 }
 
 .bottom {
