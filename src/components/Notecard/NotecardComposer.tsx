@@ -2,9 +2,9 @@ import { type ChangeEvent, useEffect, useState } from "react";
 
 import styles from "./notecard.module.scss";
 
-export const NotecardComposer = () => {
-  const TOTAL_THEMES = 18;
+export const TOTAL_THEMES = 31;
 
+export const NotecardComposer = () => {
   const [selectedTheme, setSelectedTheme] = useState(1);
   const [contentValue, setContentValue] = useState("");
   const [showWarning, setShowWarning] = useState(false);
