@@ -15,36 +15,27 @@ const rotation = `${Math.random() * 6 - 3}deg`;
 const backgroundImage = `url(/images/notecards/notecard${theme}.png)`;
 ---
 
-<div class="notecard-container">
-  <div class="notecard">
-    <pre class="content">{content}</pre>
-    <div class="credit">
-      <div class="author">
-        {
-          url ? (
-            <a href={url} rel="external">
-              {author}
-            </a>
-          ) : (
-            author
-          )
-        }
-      </div>
-      <div class="date">
-        <RelativeDate date={timestamp} />
-      </div>
+<div class="notecard">
+  <pre class="content">{content}</pre>
+  <div class="credit">
+    <div class="author">
+      {
+        url ? (
+          <a href={url} rel="external">
+            {author}
+          </a>
+        ) : (
+          author
+        )
+      }
+    </div>
+    <div class="date">
+      <RelativeDate date={timestamp} />
     </div>
   </div>
 </div>
 
 <style lang="scss" define:vars={{ background: backgroundImage, rotation }}>
-  .notecard-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-    transform: rotate(var(--rotation));
-  }
-
   .notecard {
     aspect-ratio: 4 / 3;
     width: 100%;
@@ -58,6 +49,7 @@ const backgroundImage = `url(/images/notecards/notecard${theme}.png)`;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    transform: rotate(var(--rotation));
   }
 
   .content {

@@ -31,7 +31,6 @@ export default async function seed() {
     {
       author: "text emotes with space",
       content: `
-
            ʕ•́ᴥ•̀ʔっ♡`,
       theme: 5,
     },
@@ -40,78 +39,6 @@ export default async function seed() {
       content: "somethingnewtotellyou friend ok let's try this to go",
       url: "https://example.com",
       theme: 6,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 7,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 8,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 9,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 10,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 11,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 12,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 13,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 14,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 15,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 16,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 17,
-    },
-    {
-      author: "With URL",
-      content: "somethingnewtotellyou friend ok let's try this to go",
-      url: "https://example.com",
-      theme: 18,
     },
   ]);
 }

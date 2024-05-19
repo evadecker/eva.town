@@ -57,21 +57,11 @@
   position: absolute;
   font-size: var(--step--1);
   font-family: var(--font-sans);
+  line-height: 1;
   right: 1ch;
   bottom: 0;
   transform: translateY(100%);
   color: var(--red-9);
-}
-
-.mirror {
-  // opacity: 0;
-  text-align: left;
-  pointer-events: none;
-  background: red;
-  position: absolute;
-  overflow-wrap: break-word;
-  top: 0;
-  left: 0;
 }
 
 .bottom {
@@ -126,6 +116,11 @@
     border-radius: var(--radius-full);
     display: inline-flex;
     align-items: center;
+    transition: 0.1s ease;
+  }
+
+  .styleWrapper {
+    perspective: 200px;
   }
 
   .style {
@@ -141,6 +136,14 @@
     button:last-child {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+    }
+
+    &:has(button:first-child:active) {
+      transform: rotateY(-10deg);
+    }
+
+    &:has(button:last-child:active) {
+      transform: rotateY(10deg);
     }
   }
 }

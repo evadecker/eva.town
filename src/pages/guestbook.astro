@@ -21,6 +21,7 @@ if (Astro.request.method === "POST") {
     !honeypot &&
     typeof author === "string" &&
     typeof content === "string" &&
+    content.length <= 140 &&
     typeof url === "string" &&
     typeof theme === "number"
   ) {
