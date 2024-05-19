@@ -55,7 +55,7 @@ export const NotecardComposer = () => {
           <textarea
             className={styles.content}
             name="content"
-            placeholder="Leave a message..."
+            placeholder="Leave a message, write a poem, draw some ASCII art..."
             required
             rows={5}
             cols={28}
