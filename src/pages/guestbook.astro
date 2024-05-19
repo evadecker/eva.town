@@ -61,7 +61,14 @@ const title = "Guestbook";
 const description = "Leave a message in eva.town.";
 ---
 
-<BaseLayout title={title} description={description} includeFooter padBottom>
+<BaseLayout
+  title={title}
+  description={description}
+  includeFooter
+  padBottom
+  ogImage="/og/guestbook.png"
+  ogAlt="A collection of hand-drawn postcards. The middle one has a flower drawn with a green highlighter."
+>
   <div class="notecards">
     <NotecardComposer client:load />
     {
