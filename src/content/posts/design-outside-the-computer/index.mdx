@@ -2,6 +2,7 @@
 title: Design outside the computer
 description: Your digital UI can come from the physical world.
 datePublished: 2024-05-20 13:30:34-04:00
+dateModified: 2024-05-20 15:57:08-04:00
 img:
   src: ./guestbook-cover.png
   alt: A collection of hand-drawn postcards. The middle one has a flower drawn with a green highlighter.
@@ -53,7 +54,7 @@ Although the usability of the digital landscape has improved greatly over the pa
 
 Let's push that pendulum back the other direction! A bit, at least. Let's give the web some soul. Let's give it some **texture**.
 
-How do you add texture? You could browse for Photoshop packs and fiddle with layers and blend modes to emulate real life. Or, you could grab some paper, scissors, and markers, and go craft in you living room on a nice Spring day.
+How do you add texture? You could browse for Photoshop packs and fiddle with layers and blend modes to emulate real life. Or, you could grab some paper, scissors, and markers, and go craft in your living room on a nice Spring day.
 
 The second option is way more fun.
 
@@ -82,7 +83,7 @@ Before starting, ask yourself: will text need to wrap to multiple lines? Will th
 
 When designing cards for the guestbook, I decided to design around a consistent 4:3 aspect ratio. For this, you can use `aspect-ratio` in CSS, which has coverage in [94% of browsers used globally](https://caniuse.com/?search=aspect-ratio).
 
-```scss
+```css
 .notecard {
   aspect-ratio: 4 / 3;
 }
@@ -92,7 +93,7 @@ Enforcing a static aspect ratio means we need to be thoughtful about how much te
 
 We can use the `ch` unit in CSS to define the maximum width of the text. The `ch` unit is equal to the width of the character `0` in the selected font, and since we're using a monospace font where all characters are the same width, we can use `ch` to display exactly 28 characters per line.
 
-```scss {2}
+```css
 .notecard .content {
   width: 28ch;
 }
@@ -100,7 +101,7 @@ We can use the `ch` unit in CSS to define the maximum width of the text. The `ch
 
 We want to allow users to draw ASCII art and other fun things, too. To do that, we need to preserve whitespace for entries and prevent long lines of unbroken text from overflowing the container.
 
-```scss {3-4}
+```scss ins={3-4}
 .notecard .content {
   width: 28ch;
   white-space: pre-wrap; // Preserve whitespace
