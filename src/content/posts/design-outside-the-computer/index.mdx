@@ -68,13 +68,13 @@ The second option is way more fun.
 
 I spent an afternoon cutting out same-sized rectangles of card stock and doodling on them with whatever drawing tools I had around. Highlighters, pencil, crayons. Washi tape. Some ORAL stickers I stole from the queer health clinic. Every card is a little bit different.
 
-I scanned in the cards using a flatbed scanner, cleaned up the images in Photoshop, and optimized them for web. Now now all these physical objects have a digital home. :)
+I scanned in the cards using a flatbed scanner, cleaned up the images in Photoshop, and optimized them for web. Now all these physical objects have a digital home. :)
 
 ## Tips for bringing physical media into digital UI
 
-Working with physical media is really rewarding. Quirks of the medium show up in ways that would require large effort to reproduce digitally—the edges I cut are not quite straight; the lines I drew are not perfectly even. Sometimes the ink smudged. It's okay! Desirable, even.
+Working with physical media is rewarding. Quirks of the medium show up in ways that would require large effort to reproduce digitally—the edges I cut are not quite straight; the lines I drew are not perfectly even. Sometimes the ink smudged. It's okay! Desirable, even.
 
-But translating media into digital space takes care to show up and perform well. Here are a few tips if you're thinking of bringing real-life objects into your digital designs:
+But translating media into digital space takes care to show up and perform well. Here are a few tips if you're thinking of bringing real-life objects into your digital designs.
 
 ### Know how your layout will flow and reflow
 
@@ -121,7 +121,7 @@ We can enforce these limits in our HTML for form submission:
 ></textarea>
 ```
 
-We can also tell the form to preserve implicit newlines on submission by adding `wrap="hard"`, which will guarantee that even if we change our CSS in the future, handcrafted ASCII art will remain intact.
+We can also tell the form to preserve implicit newlines on submission with `wrap="hard"`, which will guarantee that even if we change our CSS in the future or decide to display guestbook entries somewhere else, handcrafted ASCII art will remain intact.
 
 ```html ins={8}
 <textarea
@@ -137,19 +137,26 @@ We can also tell the form to preserve implicit newlines on submission by adding 
 
 There are a few other details to take care of, like showing a warning message when there's no room left for text, but the above code takes care of the basic setup for a fixed-size, fixed-length textarea.
 
-### Get a flatbed scanner
+### Use a flatbed scanner
 
-Scanners are cheap nowadays, and produce much better results than photography.
+Dedicated scanners are cheap nowadays, and produce better results than photography.
 
 There are two types of scanners: CIS scanners have a very shallow focus, while CCD scanners have a [wider depth of field](http://www.microscopy-uk.org.uk/mag/artjan13/dw-scanner-type.html). (I used a $60 [CIS scanner](https://www.amazon.com/Canon-CanoScan-Lide-Slim-Scanner/dp/B07G5YBS1W?th=1) for this project, but if I needed to buy a new scanner today it would be a CCD!)
 
-I've found that 300 DPI is enough resolution for retina displays. Through trial and error, I also learned that putting a black background behind your light documents will make it much easier to isolate the subject in tools like Photoshop after scanning.
+I've found that 300 DPI is enough resolution for retina displays. Through trial and error, I also learned that putting a contrasting backdrop behind your documents will make it much easier to isolate the subject in tools like Photoshop after scanning.
 
-### Be mindful of color contrast
+<figure class="no-bleed">
 
-Image backgrounds make it more difficult to measure accessible color contrast ratios for text on top; don't make any backgrounds too high-contrast. If you realize a shade you used was too dark, you can adjust contrast settings after scanning your images in. If there are any busy or loud elements in your object, try to position them in a spot where text is unlikely to overlap.
+![](./magic-wand.png)
 
-### Be conscious of file size
+  <figcaption>
+    **Use a dark backdrop.** A contrasting backdrop makes documents easier to isolate using tools like the magic wand.
+  </figcaption>
+</figure>
+
+### Be mindful of color contrast and file size
+
+Image backgrounds make it more difficult to measure [accessible color contrast](https://contrast.tools/) ratios for text on top; don't make any backgrounds too high-contrast. If you realize a shade you used was too dark, you can adjust contrast settings after scanning your images in. If there are any busy or loud elements in your object, try to position them in a spot where text is unlikely to overlap.
 
 The downside to working with images can be increased bandwidth. Use a command line tool like [optipng](https://optipng.sourceforge.net/) to losslessly compress files, or a build tool like Astro's [`<Image />`](https://docs.astro.build/en/guides/images/#image--astroassets) to handle it for you.
 
@@ -179,7 +186,7 @@ const randomTranslateX = `${Math.random() * 24 - 12}px`;
 
 ### Have fun!
 
-Embrace experimentation and the freedom of designing things without a screen. There are so many potential areas to bring physical media into digital experiences. It isn't always called for or necessary, but for the right moment, a touch of real, physical texture can go a long way toward making an experience that's a joy to use.
+Embrace experimentation and the freedom of designing without a screen. There are so many potential areas to bring physical objects into digital experiences. It isn't always called for or necessary, but for the right moment, a touch of real, physical texture can go a long way toward making an experience that's a joy to use.
 
 Now go off and draw your own UI. Don't forget to [sign the guestbook](/guestbook) before you go.
 

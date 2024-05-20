@@ -1,6 +1,7 @@
 ---
 import { db, Guestbook as GuestbookDB } from "astro:db";
 import dayjs from "dayjs";
+import Center from "src/components/Center.astro";
 
 import Notecard from "../components/Notecard/Notecard.astro";
 import { NotecardComposer } from "../components/Notecard/NotecardComposer";
@@ -64,6 +65,13 @@ const description = "Leave a message in eva.town.";
       ))
     }
   </div>
+  <Center>
+    <div class="postscript">
+      You've reached the end! <a href="/posts/design-outside-the-computer"
+        >Learn how I created this guestbook.
+      </a>
+    </div>
+  </Center>
 </BaseLayout>
 
 <style lang="scss">
@@ -75,5 +83,10 @@ const description = "Leave a message in eva.town.";
     gap: var(--space-2xl);
     padding: var(--space-xl);
     overflow: hidden;
+  }
+
+  .postscript {
+    text-align: center;
+    padding-block-start: var(--space-xl);
   }
 </style>
