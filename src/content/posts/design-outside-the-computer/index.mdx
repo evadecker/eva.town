@@ -1,34 +1,37 @@
 ---
 title: Design outside the computer
 description: Your digital UI can come from the physical world.
-datePublished: 2024-05-20 03:17:53-04:00
-# img:
-#   src: ./genderswap-fm.png
-#   alt: A collection of original and cover album art for different songs.
-# ogImage: ./genderswap-fm.png
+datePublished: 2024-05-20 11:53:29-04:00
+img:
+  src: ./guestbook-cover.png
+  alt: A collection of hand-drawn postcards. The middle one has a flower drawn with a green highlighter.
+ogImage: ./guestbook-cover.png
 ---
 
 Yesterday I added a new feature to my site. It's an old-school kind of webpage—something I've always wanted to create, but never really had the tools for until now.
 
-It's a [guestbook](/guestbook). :)
+It's a [guestbook](/guestbook).
+
+In the guestbook, anyone can write and publish a short message accompanying a name and optional URL. Once submitted, the message gets published to the top of the page for everyone to see. That's it—no likes, no shares, no threads. Nothing fancy.
 
 <figure>
 
 ![A collection of notecards with monospace text on them.](guestbook.png)
 
+  <figcaption>
+    **The guestbook.** People have already written kind things and drawn snails.
+  </figcaption>
 </figure>
 
-In the guestbook, anyone can write and publish a short message, accompanying a name and optional URL. Once submitted, the message (if it's not spam) gets published to the top of the page for everyone to see. That's it—no likes, no shares, no threads. Nothing fancy.
+[Astro DB](https://astro.build/db/), recently released, made it a breeze to spin up a database and implement publishing, even for a backend novice like me. But this post isn't a tutorial about how to implement a guestbook. (UX developer [Ryan Trimble](https://ryantrimble.com/) already wrote a [great tutorial](https://ryantrimble.com/blog/creating-a-guestbook-with-astro-db/) about that!)
 
-[Astro DB](https://astro.build/db/), recently released, made it a breeze to spin up a database and implement publishing, even for a backend novice like me. And UX Developer [Ryan Trimble](https://ryantrimble.com/) had already written a great tutorial about [how to build a guestbook with Astro DB](https://ryantrimble.com/blog/creating-a-guestbook-with-astro-db/).
-
-But I didn't want to build just any plain stream of messages and text—I wanted to create something that felt warm, personable, and tactile—like signing a real book. To accomplish that, I first did something important: I shut my laptop.
+I didn't want to build just any plain stream of messages and text—I wanted to create something that felt warm, personable, and tactile—like signing a real book. To accomplish that, I first did something important: I shut my laptop.
 
 ## The death of texture
 
 The world around us is full of texture. From the bark of an elm tree to the weave of a linen blanket... even the body of a MacBook isn't completely smooth. Most digital spaces, in contrast, are textureless. Flat expanses of nothingness, stretching into a grainless void.
 
-Our interfaces used to be more textured—during the heydey of skeuomorphism in the late 2000s, designers prided themselves on being able to craft realistic-looking page turns, stitching, glass, and other effects.
+Our interfaces used to be more textured—during the heydey of skeuomorphism in the late 2000s, designers prided themselves on being able to craft realistic-looking wood grain, leather, glass, and other effects.
 
 In 2013, Apple released iOS 7, featuring a redesigned user interface which, under Jony Ive, fully embraced flat design, bringing a swift death to the iPhone's skeuomorphism. The vast majority of digital spaces soon followed suit.
 
@@ -50,9 +53,9 @@ Although the usability of the digital landscape has improved greatly over the pa
 
 Let's push that pendulum back the other direction! A bit, at least. Let's give the web some soul. Let's give it some **texture**.
 
-How do you add texture? You could browse for Photoshop packs and fiddle with layers and blend modes to emulate real life. Or you could grab some paper, scissors, and markers, and go craft in you living room on a nice Spring day.
+How do you add texture? You could browse for Photoshop packs and fiddle with layers and blend modes to emulate real life. Or, you could grab some paper, scissors, and markers, and go craft in you living room on a nice Spring day.
 
-The second option, in my opinion, is way more fun.
+The second option is way more fun.
 
 <figure class="no-bleed">
 
@@ -71,15 +74,114 @@ I scanned in the cards using a flatbed scanner, cleaned up the images in Photosh
 
 Working with physical media is really rewarding. Quirks of the medium show up in ways that would require large effort to reproduce digitally—the edges I cut are not quite straight; the lines I drew are not perfectly even. Sometimes the ink smudged. It's okay! Desirable, even.
 
-That said, here are a few tips if you're thinking of bringing real-life objects into your digital designs:
+But translating media into digital space takes care to show up and perform well. Here are a few tips if you're thinking of bringing real-life objects into your digital designs:
 
-1. **Know beforehand how your layout will flow/reflow.** Does text need to wrap to multiple lines? Will the element grow or is it a static size? Does the design need to adapt to mobile? All of the cards I use have a consistent aspect ratio, and text is limited to only what will fit within the card. I intentionally placed the busiest graphics in the bottom left of the card, where the least text is.
-2. **Get a flatbed scanner.** They're cheap nowadays, and produce much better results than photography. There are two types of scanners: CIS scanners have a very shallow focus, while CCD scanners have a [wider depth of field](http://www.microscopy-uk.org.uk/mag/artjan13/dw-scanner-type.html). (I used a [CIS scanner](https://www.amazon.com/Canon-CanoScan-Lide-Slim-Scanner/dp/B07G5YBS1W?th=1) for this project, but if I needed to buy a new scanner today it would be a CCD!)
-3. **Be mindful of color contrast.** Text against an image makes it more difficult to measure accessible color contrast ratios; don't make your backgrounds too high-contrast. If you realize a marker you used was too dark, you can adjust contrast settings after scanning your images in.
-4. **Be conscious of file size.** The downside to working with images can be increased bandwidth. Use a command line tool like [optipng](https://optipng.sourceforge.net/) to losslessly compress files, or a build tool like Astro's [`<Image />`](https://docs.astro.build/en/guides/images/#image--astroassets) to handle it for you.
-5. **Have fun!** Embrace experimentation and the freedom of designing things without a screen.
+### Know how your layout will flow and reflow
 
-Now go [sign the guestbook](/guestbook).
+Before starting, ask yourself: will text need to wrap to multiple lines? Will the element grow, or is it a static size? Does the design need to adapt to mobile? The more flexible the size of your elements, the more difficult it may be to craft physical media to support them.
+
+When designing cards for the guestbook, I decided to design around a consistent 4:3 aspect ratio. For this, you can use `aspect-ratio` in CSS, which has coverage in [94% of browsers used globally](https://caniuse.com/?search=aspect-ratio).
+
+```scss
+.notecard {
+  aspect-ratio: 4 / 3;
+}
+```
+
+Enforcing a static aspect ratio means we need to be thoughtful about how much text a user can enter. How wide is each line of text? How many total characters can the content area support?
+
+We can use the `ch` unit in CSS to define the maximum width of the text. The `ch` unit is equal to the width of the character `0` in the selected font, and since we're using a monospace font where all characters are the same width, we can use `ch` to display exactly 28 characters per line.
+
+```scss {2}
+.notecard .content {
+  width: 28ch;
+}
+```
+
+We want to allow users to draw ASCII art and other fun things, too. To do that, we need to preserve whitespace for entries and prevent long lines of unbroken text from overflowing the container.
+
+```scss {3-4}
+.notecard .content {
+  width: 28ch;
+  white-space: pre-wrap; // Preserve whitespace
+  overflow-wrap: break-word; // Break long lines of text
+}
+```
+
+We can enforce these limits in our HTML for form submission:
+
+```html {5-7}
+<textarea
+  name="content"
+  placeholder="Leave a message, write a poem, draw some ASCII art..."
+  required
+  rows="5"
+  cols="28"
+  maxlength="140"
+></textarea>
+```
+
+We can also tell the form to preserve implicit newlines on submission by adding `wrap="hard"`, which will guarantee that even if we change our CSS in the future, handcrafted ASCII art will remain intact.
+
+```html ins={8}
+<textarea
+  name="content"
+  placeholder="Leave a message, write a poem, draw some ASCII art..."
+  required
+  rows="5"
+  cols="28"
+  maxlength="140"
+  wrap="hard"
+></textarea>
+```
+
+There are a few other details to take care of, like showing a warning message when there's no room left for text, but the above code takes care of the basic setup for a fixed-size, fixed-width textarea.
+
+### Get a flatbed scanner
+
+They're cheap nowadays, and produce much better results than photography.
+
+There are two types of scanners: CIS scanners have a very shallow focus, while CCD scanners have a [wider depth of field](http://www.microscopy-uk.org.uk/mag/artjan13/dw-scanner-type.html). (I used a [CIS scanner](https://www.amazon.com/Canon-CanoScan-Lide-Slim-Scanner/dp/B07G5YBS1W?th=1) for this project, but if I needed to buy a new scanner today it would be a CCD!)
+
+I've found that 300 DPI is enough resolution for retina displays. Through trial and error, I also learned that putting a black background behind your light documents will make it much easier to isolate the subject in tools like Photoshop after scanning.
+
+### Be mindful of color contrast
+
+Image backgrounds make it more difficult to measure accessible color contrast ratios for text on top; don't make any backgrounds too high-contrast. If you realize a shade you used was too dark, you can adjust contrast settings after scanning your images in. If there are any busy or loud elements in your object, try to position them in a spot where text is unlikely to overlap.
+
+### Be conscious of file size
+
+The downside to working with images can be increased bandwidth. Use a command line tool like [optipng](https://optipng.sourceforge.net/) to losslessly compress files, or a build tool like Astro's [`<Image />`](https://docs.astro.build/en/guides/images/#image--astroassets) to handle it for you.
+
+### Incorporate some randomness
+
+The real world isn't often aligned in perfect 90 degree angles; your interface doesn't have to align to the grid, either. Consider incorporating some variation in how you position elements, for example, by using Astro's [`define:vars`](https://docs.astro.build/en/reference/directives-reference/#definevars) style directive to pass variables into CSS:
+
+```astro
+---
+// Rotate each notecard randomly between 3 and -3 degrees
+const randomRotation = `${Math.random() * 6 - 3}deg`;
+
+// Offset each notecard randomly between 12 and -12 pixels
+const randomTranslateX = `${Math.random() * 24 - 12}px`;
+---
+
+<div class="notecard">
+  <!-- Notecard contents -->
+</div>
+
+<style define:vars={{ rotation: randomRotation, translateX: randomTranslateX }}>
+  .notecard {
+    transform: translateX(var(--translateX)) rotate(var(--rotation));
+  }
+</style>
+```
+
+### Have fun!
+
+Embrace experimentation and the freedom of designing things without a screen. There are so many potential areas to bring physical media into digital experiences. It isn't always called for or necessary, but for the right moment, a touch of real, physical texture can go a long way toward making an experience that's a joy to use.
+
+Now go off and draw your own UI. Don't forget to [sign the guestbook](/guestbook) before you go.
 
 ---
 

@@ -148,7 +148,16 @@
   font-variant-numeric: tabular-nums;
 }
 
-.prose code {
+.prose .expressive-code {
+  border-radius: var(--radius-xs);
+  margin-block: var(--space-l);
+}
+
+.prose .expressive-code .frame {
+  box-shadow: none;
+}
+
+.prose :not(pre) code {
   background-color: var(--gray-3);
   border-radius: var(--radius-xs);
   padding: 0.1em 0.2em;
