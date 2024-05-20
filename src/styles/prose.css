@@ -293,10 +293,6 @@
   max-inline-size: 100%;
 }
 
-.prose figcaption p:first-child::before {
-  content: "▲ ";
-}
-
 .prose .two-col {
   columns: 2;
   column-gap: var(--space-xl);
