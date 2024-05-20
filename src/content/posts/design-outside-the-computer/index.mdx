@@ -1,7 +1,7 @@
 ---
 title: Design outside the computer
 description: Your digital UI can come from the physical world.
-datePublished: 2024-05-20 11:53:29-04:00
+datePublished: 2024-05-20 13:30:34-04:00
 img:
   src: ./guestbook-cover.png
   alt: A collection of hand-drawn postcards. The middle one has a flower drawn with a green highlighter.
@@ -139,9 +139,7 @@ There are a few other details to take care of, like showing a warning message wh
 
 ### Use a flatbed scanner
 
-Dedicated scanners are cheap nowadays, and produce better results than photography.
-
-There are two types of scanners: CIS scanners have a very shallow focus, while CCD scanners have a [wider depth of field](http://www.microscopy-uk.org.uk/mag/artjan13/dw-scanner-type.html). (I used a $60 [CIS scanner](https://www.amazon.com/Canon-CanoScan-Lide-Slim-Scanner/dp/B07G5YBS1W?th=1) for this project, but if I needed to buy a new scanner today it would be a CCD!)
+Dedicated scanners are cheap nowadays, and produce better results than photography. There are two types of scanners: CIS scanners have a very shallow focus, while CCD scanners have a [wider depth of field](http://www.microscopy-uk.org.uk/mag/artjan13/dw-scanner-type.html). (I used a $60 [CIS scanner](https://www.amazon.com/Canon-CanoScan-Lide-Slim-Scanner/dp/B07G5YBS1W?th=1) for this project, but if I needed to buy a new scanner today it would be a CCD!)
 
 I've found that 300 DPI is enough resolution for retina displays. Through trial and error, I also learned that putting a contrasting backdrop behind your documents will make it much easier to isolate the subject in tools like Photoshop after scanning.
 
@@ -156,9 +154,9 @@ I've found that 300 DPI is enough resolution for retina displays. Through trial 
 
 ### Be mindful of color contrast and file size
 
-Image backgrounds make it more difficult to measure [accessible color contrast](https://contrast.tools/) ratios for text on top; don't make any backgrounds too high-contrast. If you realize a shade you used was too dark, you can adjust contrast settings after scanning your images in. If there are any busy or loud elements in your object, try to position them in a spot where text is unlikely to overlap.
+Image backgrounds make it more difficult to measure [accessible color contrast](https://contrast.tools/) ratios for text on top; don't make any backgrounds too high-contrast. If you realize a shade you used was too dark, you can adjust contrast settings after scanning your images in. If there are any busy elements in your object, try to position them in a spot where text is unlikely to overlap. For the guestbook, I put the loudest elements in the margins, away from text.
 
-The downside to working with images can be increased bandwidth. Use a command line tool like [optipng](https://optipng.sourceforge.net/) to losslessly compress files, or a build tool like Astro's [`<Image />`](https://docs.astro.build/en/guides/images/#image--astroassets) to handle it for you.
+The downside to working with images can be increased bandwidth. Use a command line tool like [optipng](https://optipng.sourceforge.net/) to losslessly compress files, or a build tool like Astro's [`<Image />`](https://docs.astro.build/en/guides/images/#image--astroassets) to handle it for you. There's no use in designing beautiful objects if a massive file size will prevent them from ever being seen!
 
 ### Incorporate some randomness
 
