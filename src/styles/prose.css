@@ -37,7 +37,7 @@
 .prose h4,
 .prose h5,
 .prose h6 {
-  scroll-margin-top: var(--space-2xl);
+  scroll-margin-top: var(--space-3xl);
   margin-bottom: var(--space-m);
 }
 
@@ -148,7 +148,16 @@
   font-variant-numeric: tabular-nums;
 }
 
-.prose code {
+.prose .expressive-code {
+  border-radius: var(--radius-xs);
+  margin-block: var(--space-l);
+}
+
+.prose .expressive-code .frame {
+  box-shadow: none;
+}
+
+.prose :not(pre) code {
   background-color: var(--gray-3);
   border-radius: var(--radius-xs);
   padding: 0.1em 0.2em;
@@ -227,7 +236,7 @@
   width: 100%;
   max-width: var(--image-max-width);
   margin-inline: auto;
-  border-radius: var(--radius-m);
+  border-radius: var(--radius-xs);
 }
 
 /* Hacky way to target the image container without an extra div */
@@ -247,7 +256,7 @@
   position: absolute;
   inset: 0;
   border: 0.5px solid var(--gray-a6);
-  border-radius: var(--radius-m);
+  border-radius: var(--radius-xs);
   pointer-events: none;
 }
 
@@ -284,14 +293,6 @@
   max-inline-size: 100%;
 }
 
-.prose figcaption p:first-child::before {
-  content: "▲ ";
-}
-
-.prose > p:last-child::after {
-  content: "\a0⁕";
-}
-
 .prose .two-col {
   columns: 2;
   column-gap: var(--space-xl);
@@ -307,4 +308,14 @@
 .prose .two-col figure {
   break-inside: avoid;
   margin-block-end: var(--space-xl);
+}
+
+.prose hr {
+  border: 0;
+  margin-block: var(--space-2xl);
+  text-align: center;
+
+  &::before {
+    content: "\a0⁕ ⁕ ⁕";
+  }
 }

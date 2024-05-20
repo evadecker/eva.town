@@ -5,6 +5,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel/serverless";
 import { defineConfig } from "astro/config";
+import expressiveCode from "astro-expressive-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import imgAttr from "remark-imgattr";
 
@@ -14,7 +15,18 @@ import { autolinkConfig } from "./plugins/rehype-autolink-config";
 export default defineConfig({
   site: "https://eva.town",
   output: "hybrid",
-  integrations: [react(), mdx(), sitemap(), db()],
+  integrations: [
+    react(),
+    expressiveCode({
+      styleOverrides: {
+        codeFontFamily:
+          "'MonoLisa', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+      },
+    }),
+    mdx(),
+    sitemap(),
+    db(),
+  ],
   adapter: vercel({
     webAnalytics: {
       enabled: true,
