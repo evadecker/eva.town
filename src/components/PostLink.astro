@@ -15,7 +15,7 @@ const { url, title, description, datePublished } = Astro.props;
   {
     datePublished && (
       <div class="date">
-        <RelativeDate date={datePublished} />
+        <RelativeDate date={datePublished} client:load />
       </div>
     )
   }
