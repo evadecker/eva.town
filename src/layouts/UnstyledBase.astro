@@ -7,8 +7,7 @@ import { join } from "node:path";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import { ViewTransitions } from "astro:transitions";
 import { AstroFont } from "astro-font";
-
-import LoadingIndicator from "../components/LoadingIndicator.astro";
+import LoadingIndicator from "astro-loading-indicator/component";
 
 export interface Props {
   title: string;
@@ -106,9 +105,9 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <title>{pageTitle}</title>
     <ViewTransitions />
     <SpeedInsights />
+    <LoadingIndicator color="var(--blue-9)" height="3px" />
   </head>
   <body>
-    <LoadingIndicator />
     <slot />
   </body>
 </html>

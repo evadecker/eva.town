@@ -53,6 +53,9 @@ dependencies:
   astro-font:
     specifier: ^0.0.81
     version: 0.0.81
+  astro-loading-indicator:
+    specifier: ^0.4.0
+    version: 0.4.0(astro@4.8.6)
   autoprefixer:
     specifier: ^10.4.17
     version: 10.4.17(postcss@8.4.38)
@@ -3059,6 +3062,14 @@ packages:
 
   /astro-font@0.0.81:
     resolution: {integrity: sha512-VmK4kqzNpOAt2LASVbw2cbbe9sD6K30E7jOjqzHxHieHMTWInkdOljtzHmNGvKr3P0MeF4Wy+Z7j6CdETFecDA==}
+    dev: false
+
+  /astro-loading-indicator@0.4.0(astro@4.8.6):
+    resolution: {integrity: sha512-8GX6hSy1Wbnto1GCPokNtBndjrRwf94KaBOdaqe3PQSC1vrBATrUcHovcctPkfUXvOopbnow92CwmXdTrbE74Q==}
+    peerDependencies:
+      astro: ^4.0.0
+    dependencies:
+      astro: 4.8.6(@types/node@18.19.17)(sass@1.71.0)(typescript@5.3.3)
     dev: false
 
   /astro@4.8.6(@types/node@18.19.17)(sass@1.71.0)(typescript@5.3.3):

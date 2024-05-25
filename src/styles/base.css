@@ -107,7 +107,4 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  transition:
-    transform 300ms ease-out,
-    opacity 100ms ease-in;
 }
