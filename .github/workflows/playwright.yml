@@ -23,11 +23,11 @@ jobs:
       - name: Install dependencies
         run: pnpm i
       - name: Install Playwright
-        run: npx playwright install --with-deps
+        run: npx playwright install-deps chromium
+      - name: Start dev server
+        run: pnpm dev
       - name: Run Playwright tests
         run: npx playwright test --project="Google Chrome"
-        env:
-          PLAYWRIGHT_TEST_BASE_URL: ${{ github.event.deployment_status.target_url }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
