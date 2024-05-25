@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i
       - name: Install Playwright
-        run: pnpm exec playwright install
+        run: pnpm exec playwright install chromium
       - name: Run Playwright tests
         run: pnpm test
       - uses: actions/upload-artifact@v4
