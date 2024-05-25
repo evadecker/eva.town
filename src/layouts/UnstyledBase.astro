@@ -105,7 +105,7 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <title>{pageTitle}</title>
     <ViewTransitions />
     <SpeedInsights />
-    <LoadingIndicator color="var(--blue-9)" height="3px" />
+    <LoadingIndicator color="var(--blue-9)" height="3px" threshold={600} />
   </head>
   <body>
     <slot />
