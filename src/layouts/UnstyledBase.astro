@@ -7,7 +7,8 @@ import { join } from "node:path";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import { ViewTransitions } from "astro:transitions";
 import { AstroFont } from "astro-font";
-import LoadingIndicator from "astro-loading-indicator/component";
+
+import LoadingIndicator from "../components/LoadingIndicator.astro";
 
 export interface Props {
   title: string;
@@ -44,7 +45,6 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
               ),
             },
           ],
-          preload: true,
           display: "swap",
           selector: "body",
           fallback: "sans-serif",
@@ -63,7 +63,6 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
               ),
             },
           ],
-          preload: true,
           display: "swap",
           selector: "code",
           fallback: "monospace",
@@ -106,10 +105,10 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{pageTitle}</title>
     <ViewTransitions />
-    <LoadingIndicator color="var(--blue-9)" />
     <SpeedInsights />
   </head>
   <body>
+    <LoadingIndicator />
     <slot />
   </body>
 </html>
