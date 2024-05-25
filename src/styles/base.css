@@ -101,3 +101,10 @@ a {
 .nowrap {
   white-space: nowrap;
 }
+
+.astro-loading-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
