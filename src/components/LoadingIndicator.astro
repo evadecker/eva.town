@@ -27,7 +27,7 @@
   }
 </style>
 
-<script is:inline lang="ts">
+<script is:inline>
   (() => {
     let animationDuration = 300;
     let progress = 0;
@@ -63,13 +63,12 @@
     });
 
     document.addEventListener("astro:before-swap", (ev) => {
-      setProgress(1);
       ev.newDocument.body.prepend(element);
       window.clearInterval(trickleInterval);
       trickleInterval = undefined;
-    });
 
-    document.addEventListener("astro:after-swap", () => {
+      setProgress(1);
+
       window.setTimeout(() => {
         setOpacity(0);
       }, animationDuration / 2);
