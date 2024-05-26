@@ -31,9 +31,6 @@ scheme = ["https"]
 # When links are available using HTTPS, treat HTTP links as errors.
 require_https = true
 
-# Base URL or website root directory to check relative URLs.
-base = "https://eva.town"
-
 #############################  Exclusions  ##########################
 
 # Exclude URLs and mail addresses from checking (supports regex).

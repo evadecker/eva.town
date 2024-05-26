@@ -13,18 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Restore Lychee cache
-        uses: actions/cache@v3
-        with:
-          path: .lycheecache
-          key: cache-lychee-${{ github.sha }}
-          restore-keys: cache-lychee-
-
       - name: Run Lychee
         uses: lycheeverse/lychee-action@v1
         with:
           args: "--no-progress --config .lychee.toml ."
-          fail: true
 
       - name: Create Issue From File
         if: env.lychee_exit_code != 0
@@ -32,4 +24,4 @@ jobs:
         with:
           title: Link Checker Report
           content-filepath: ./lychee/out.md
-          labels: report, automated issue
+          labels: automated
