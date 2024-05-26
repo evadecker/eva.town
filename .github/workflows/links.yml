@@ -23,7 +23,8 @@ jobs:
       - name: Run Lychee
         uses: lycheeverse/lychee-action@v1
         with:
-          args: "--base . --cache --max-cache-age 1d ."
+          args: "--no-progress --config .lychee.toml ."
+          fail: true
 
       - name: Create Issue From File
         if: env.lychee_exit_code != 0

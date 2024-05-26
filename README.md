@@ -1,4 +1,4 @@
-![Eva designs and builds things for the web.](/public/og/default.png)
+![Eva designs and builds things for the web.](https://raw.githubusercontent.com/evadecker/eva.town/main/public/og/default.png)
 
 <div align="center">
 
@@ -24,7 +24,7 @@ pnpm dev
 
 If it's the first time running the repo you may need to run `pnpm i` to install packages.
 
-Other scripts in [package.json](/package.json) can also be run with `pnpm`.
+Other scripts in `package.json` can also be run with `pnpm`.
 
 ## Notes To Self
 

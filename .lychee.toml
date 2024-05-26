@@ -1,0 +1,43 @@
+# https://github.com/lycheeverse/lychee/blob/master/lychee.example.toml
+
+#############################  Runtime  #############################
+
+# Number of threads to utilize.
+# Defaults to number of cores available to the system if omitted.
+threads = 2
+
+# Maximum number of allowed redirects.
+max_redirects = 10
+
+# Maximum number of allowed retries before a link is declared dead.
+max_retries = 2
+
+# Maximum number of concurrent link checks.
+max_concurrency = 14
+
+#############################  Requests  ############################
+
+# Comma-separated list of accepted status codes for valid links.
+accept = ["100..=103", "200..=204", "429"]
+
+# Proceed for server connections considered insecure (invalid TLS).
+insecure = false
+
+# Only test links with the given schemes (e.g. https).
+# Omit to check links with any other scheme.
+# At the moment, we support http, https, file, and mailto.
+scheme = ["https"]
+
+# When links are available using HTTPS, treat HTTP links as errors.
+require_https = true
+
+# Base URL or website root directory to check relative URLs.
+base = "https://eva.town"
+
+#############################  Exclusions  ##########################
+
+# Exclude URLs and mail addresses from checking (supports regex).
+exclude = ['^https://www\.linkedin\.com', '^https://bookshop\.org']
+
+# Check mail addresses
+include_mail = true

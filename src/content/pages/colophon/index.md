@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers eva.town.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2024-05-18 11:08:23-04:00
+dateModified: 2024-05-26 14:16:44-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -37,11 +37,11 @@ Type inspiration can be found anywhere, from comic art and video games to [bodeg
 
 ## Styling
 
-I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consistently, ensure accessibility, and seamlessly switch between light and dark mode. Icons are from [Remix Icon](https://remixicon.com). Styles are written using plain 'ol CSS. I [don’t use a grid](https://gridless.design). Pixel portraits of me were created by [@NullTheFool](https://mastodon.gamedev.place/@NullTheFool) on the [Pixel Art Discord](https://discord.com/invite/pixelart). Pixelated header images are created using the Atkinson dithering algorithm via [Dithermark](https://app.dithermark.com).
+I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consistently, ensure accessibility, and seamlessly switch between light and dark mode. Icons are from [Remix Icon](https://remixicon.com). Styles are written using plain 'ol CSS. Pixel portraits of me were created by [@NullTheFool](https://mastodon.gamedev.place/@NullTheFool) on the [Pixel Art Discord](https://discord.com/invite/pixelart). Pixelated header images are created using the Atkinson dithering algorithm via [Dithermark](https://app.dithermark.com).
 
 ## Sounds
 
-The toy synth uses samples from [Mixkit](https://mixkit.co/), [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/Samulis/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples/banjo), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://maxtimkovich.com/hearthsounds?q=murloc), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
+The toy synth uses samples from [Mixkit](https://mixkit.co/), [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/Samulis/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples/banjo), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://github.com/mtimkovich/hearthsounds), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
 
 ## Energy
 

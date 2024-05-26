@@ -17,7 +17,8 @@
     "test": "playwright test",
     "prettier": "prettier --write .",
     "html-validate": "pnpm build && pnpm exec html-validate .vercel/output/static/*.html",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check-links": "lychee --config .lychee.toml ."
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
