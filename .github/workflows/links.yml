@@ -1,0 +1,38 @@
+name: Links
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+  repository_dispatch:
+  workflow_dispatch:
+  schedule:
+    # Run once a week
+    - cron: "0 0 * * 0"
+
+jobs:
+  link-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore Lychee cache
+        uses: actions/cache@v3
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
+      - name: Run Lychee
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: "--base . --cache --max-cache-age 1d ."
+
+      - name: Create Issue From File
+        if: env.lychee_exit_code != 0
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: report, automated issue
