@@ -12,7 +12,7 @@ on:
     - cron: "0 0 * * 0"
 
 jobs:
-  linkChecker:
+  link-checker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
