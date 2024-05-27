@@ -6,12 +6,13 @@ env:
 on:
   push:
     branches: main
-  pull_request_target:
+  pull_request:
     branches: main
 
 jobs:
   html-validate:
     runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
       - uses: actions/checkout@v3
         with:
