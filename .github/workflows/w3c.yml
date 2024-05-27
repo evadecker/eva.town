@@ -8,10 +8,13 @@ on:
     branches: main
   pull_request:
     branches: main
+    paths:
+      - src/**
 
 jobs:
   html-validate:
     runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
       - uses: actions/checkout@v3
         with:
