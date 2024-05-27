@@ -6,8 +6,6 @@ env:
 on:
   push:
     branches: main
-    paths:
-      - db/**
   pull_request:
     types: [opened, reopened, synchronize]
     paths:

@@ -6,8 +6,6 @@ env:
 on:
   push:
     branches: main
-    paths:
-      - src/**
   pull_request:
     branches: main
     paths:
