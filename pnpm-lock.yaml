@@ -21,8 +21,8 @@ dependencies:
     specifier: ^3.3.4
     version: 3.3.4(@types/react-dom@18.2.19)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.11)
   '@astrojs/sitemap':
-    specifier: ^3.1.4
-    version: 3.1.4
+    specifier: ^3.1.5
+    version: 3.1.5
   '@astrojs/vercel':
     specifier: ^7.6.0
     version: 7.6.0(astro@4.8.6)(react@18.2.0)
@@ -402,8 +402,8 @@ packages:
       - vite
     dev: false
 
-  /@astrojs/sitemap@3.1.4:
-    resolution: {integrity: sha512-po8CqDCK14O6phU1mB5C8SyVLyQEa+7pJM8oXxs1mVh8DgvxxaA5E7lak1vzOmBcyyyHBW32jakGqNYc66sBRw==}
+  /@astrojs/sitemap@3.1.5:
+    resolution: {integrity: sha512-GLdzJ01387Uzb8RKYpsYLlg/GzoPnGbmDeQNkarSE11i2+l9Qp8Nj/WoTEy9nkTS25fxxy0kxDfJmreeVleCqg==}
     dependencies:
       sitemap: 7.1.1
       stream-replace-string: 2.0.0
