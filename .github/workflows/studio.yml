@@ -5,10 +5,13 @@ env:
 
 on:
   push:
-    branches:
-      - main
+    branches: main
+    paths:
+      - db/**
   pull_request:
     types: [opened, reopened, synchronize]
+    paths:
+      - db/**
 
 jobs:
   DB:
