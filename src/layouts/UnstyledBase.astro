@@ -112,13 +112,14 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <ViewTransitions />
     <SpeedInsights />
     <LoadingIndicator color="var(--blue-9)" height="3px" threshold={600} />
+  </head>
+  <body>
+    <slot />
     <script
       src="https://cdn.usefathom.com/script.js"
       data-site="WKFTECUZ"
       defer
-      is:inline></script>
-  </head>
-  <body>
-    <slot />
+      is:inline
+      data-astro-rerun></script>
   </body>
 </html>
