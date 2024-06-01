@@ -107,9 +107,6 @@ dependencies:
   simplex-noise:
     specifier: ^4.0.1
     version: 4.0.1
-  tweakpane:
-    specifier: ^4.0.3
-    version: 4.0.3
 
 devDependencies:
   '@playwright/test':
@@ -118,9 +115,6 @@ devDependencies:
   '@radix-ui/colors':
     specifier: ^3.0.0
     version: 3.0.0
-  '@tweakpane/core':
-    specifier: ^2.0.3
-    version: 2.0.3
   '@types/howler':
     specifier: ^2.2.11
     version: 2.2.11
@@ -2124,10 +2118,6 @@ packages:
     dependencies:
       defer-to-connect: 1.1.3
     dev: false
-
-  /@tweakpane/core@2.0.3:
-    resolution: {integrity: sha512-qHci4XA1Wngpwy8IzsLh5JEdscz8aDti/9YhyOaq01si+cgNDaZfwzTtXdn1+xTxSnCM+pW4Zb2/4eqn+K1ATw==}
-    dev: true
 
   /@types/acorn@4.0.6:
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
@@ -8591,10 +8581,6 @@ packages:
     requiresBuild: true
     dependencies:
       safe-buffer: 5.2.1
-    dev: false
-
-  /tweakpane@4.0.3:
-    resolution: {integrity: sha512-BlcWOAe8oe4c+k9pmLBARGdWB6MVZMszayekkixQXTgkxTaYoTUpHpwVEp+3HkoamZkomodpbBf0CkguIHTgLg==}
     dev: false
 
   /type-check@0.4.0:
