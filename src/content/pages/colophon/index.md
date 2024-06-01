@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers eva.town.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2024-05-26 14:16:44-04:00
+dateModified: 2024-05-31 23:57:31-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -55,6 +55,10 @@ As of October 18, 2023, [carbon results for eva.town](https://www.websitecarbon.
 ## Accessibility
 
 This site aims to conform to the Level AA accessibility standards outlined in the [WCAG 2.1 specification](https://www.w3.org/TR/WCAG21/). If you experience an issue with accessing any part of this site, please [let me know](https://github.com/evadecker/eva.town/issues) and I’ll do my best to correct it.
+
+## Privacy
+
+I collect basic, fully-anonymized page view analytics using [Fathom](https://usefathom.com/). Fathom [anonymizes IP addresses](https://usefathom.com/data) and other visitor data [without using cookies](https://usefathom.com/why-fathom-analytics/cookieless-analytics). I don't want your data! But if you'd like to share who you are and where you're visiting from—just for kicks—you can sign the [guestbook](/guestbook).
 
 ## Notice an issue?
 
