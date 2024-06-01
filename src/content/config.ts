@@ -94,4 +94,12 @@ export const collections = {
         })
         .array(),
   }),
+
+  now: defineCollection({
+    type: "content",
+    schema: () =>
+      z.object({
+        date: z.date(),
+      }),
+  }),
 };
