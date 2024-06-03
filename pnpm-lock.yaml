@@ -99,8 +99,8 @@ dependencies:
     specifier: ^6.0.0
     version: 6.0.0
   remark-imgattr:
-    specifier: ^1.0.3
-    version: 1.0.3
+    specifier: ^1.0.5
+    version: 1.0.5
   sharp:
     specifier: ^0.32.6
     version: 0.32.6
@@ -7554,8 +7554,8 @@ packages:
       - supports-color
     dev: false
 
-  /remark-imgattr@1.0.3:
-    resolution: {integrity: sha512-6by5+996jyg4cCjqmEqU/KKXDGUOzl5eLUZu064T5KVqlacKRbj4TTjUr7SGwKolCWlmIleZ5Ekz77pe7b7UUA==}
+  /remark-imgattr@1.0.5:
+    resolution: {integrity: sha512-Goa7uOvKE9iYNsCFvKwePsuvk84VR/O0HFn68vDsuDGoJVY1IfUhCPqhJRS3F69g4tNoSmMkcDTCXw8Tof6ldw==}
     dev: false
 
   /remark-mdx@3.0.1:
