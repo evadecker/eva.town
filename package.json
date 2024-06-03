@@ -73,7 +73,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-simple-import-sort": "^12.1.0",
-    "hastscript": "^8.0.0",
+    "hastscript": "^9.0.0",
     "html-validate": "^8.9.1",
     "husky": "^9.0.11",
     "postcss-html": "^1.6.0",
