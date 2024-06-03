@@ -52,7 +52,7 @@
     "react-dom": "^18.2.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
-    "remark-imgattr": "^1.0.3",
+    "remark-imgattr": "^1.0.5",
     "sharp": "^0.32.6",
     "simplex-noise": "^4.0.1"
   },
