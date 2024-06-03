@@ -10,7 +10,7 @@ dependencies:
     version: 0.7.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
   '@astrojs/db':
     specifier: ^0.11.3
-    version: 0.11.3(@types/react@18.2.55)(react@18.2.0)
+    version: 0.11.3(@types/react@18.3.3)(react@18.3.1)
   '@astrojs/markdown-remark':
     specifier: ^5.1.0
     version: 5.1.0
@@ -19,31 +19,31 @@ dependencies:
     version: 3.0.0(astro@4.8.6)
   '@astrojs/react':
     specifier: ^3.4.0
-    version: 3.4.0(@types/react-dom@18.2.19)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.11)
+    version: 3.4.0(@types/react-dom@18.2.19)(@types/react@18.3.3)(react-dom@18.2.0)(react@18.3.1)(vite@5.2.11)
   '@astrojs/sitemap':
     specifier: ^3.1.5
     version: 3.1.5
   '@astrojs/vercel':
     specifier: ^7.6.0
-    version: 7.6.0(astro@4.8.6)(react@18.2.0)
+    version: 7.6.0(astro@4.8.6)(react@18.3.1)
   '@nanostores/react':
     specifier: ^0.7.1
-    version: 0.7.1(nanostores@0.9.5)(react@18.2.0)
+    version: 0.7.1(nanostores@0.9.5)(react@18.3.1)
   '@react-spring/web':
     specifier: ^9.7.3
-    version: 9.7.3(react-dom@18.2.0)(react@18.2.0)
+    version: 9.7.3(react-dom@18.2.0)(react@18.3.1)
   '@types/react':
-    specifier: ^18.2.55
-    version: 18.2.55
+    specifier: ^18.3.3
+    version: 18.3.3
   '@types/react-dom':
     specifier: ^18.2.19
     version: 18.2.19
   '@vercel/analytics':
     specifier: ^1.3.1
-    version: 1.3.1(react@18.2.0)
+    version: 1.3.1(react@18.3.1)
   '@vercel/speed-insights':
     specifier: ^1.0.10
-    version: 1.0.10(react@18.2.0)
+    version: 1.0.10(react@18.3.1)
   astro:
     specifier: ^4.8.6
     version: 4.8.6(@types/node@18.19.17)(sass@1.77.2)(typescript@5.3.3)
@@ -67,7 +67,7 @@ dependencies:
     version: 1.11.10
   framer-motion:
     specifier: ^10.18.0
-    version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
+    version: 10.18.0(react-dom@18.2.0)(react@18.3.1)
   howler:
     specifier: ^2.2.4
     version: 2.2.4
@@ -87,11 +87,11 @@ dependencies:
     specifier: ^1.1.2
     version: 1.1.2(p5@1.9.0)
   react:
-    specifier: ^18.2.0
-    version: 18.2.0
+    specifier: ^18.3.1
+    version: 18.3.1
   react-dom:
     specifier: ^18.2.0
-    version: 18.2.0(react@18.2.0)
+    version: 18.2.0(react@18.3.1)
   rehype-autolink-headings:
     specifier: ^7.1.0
     version: 7.1.0
@@ -233,7 +233,7 @@ packages:
     resolution: {integrity: sha512-yrpD1WRGqsJwANaDIdtHo+YVjvIOFAjC83lu5qENIgrafwZcJgSXDuwVMXOgok4tFzpeKLsFQ6c3FoUdloLWBQ==}
     dev: false
 
-  /@astrojs/db@0.11.3(@types/react@18.2.55)(react@18.2.0):
+  /@astrojs/db@0.11.3(@types/react@18.3.3)(react@18.3.1):
     resolution: {integrity: sha512-F4EofNw7QRBWzfNYmHKHlq1v5y9GrLjzGX8h2RkabH8gIhF7ZQKCU/movE//9WRURvouBS3KDzsqUgdHvMdJ5A==}
     dependencies:
       '@astrojs/studio': 0.1.0
@@ -241,7 +241,7 @@ packages:
       async-listen: 3.0.1
       ci-info: 4.0.0
       deep-diff: 1.0.2
-      drizzle-orm: 0.30.10(@libsql/client@0.6.0)(@types/react@18.2.55)(react@18.2.0)
+      drizzle-orm: 0.30.10(@libsql/client@0.6.0)(@types/react@18.3.3)(react@18.3.1)
       github-slugger: 2.0.0
       kleur: 4.1.5
       nanoid: 5.0.7
@@ -376,7 +376,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/react@3.4.0(@types/react-dom@18.2.19)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.11):
+  /@astrojs/react@3.4.0(@types/react-dom@18.2.19)(@types/react@18.3.3)(react-dom@18.2.0)(react@18.3.1)(vite@5.2.11):
     resolution: {integrity: sha512-5MpU+1WVqirEIoEmF1r6HkxqjOWEMjni/qCzPX/oaSyumOZNdCGfDN9GoGJhgSxiZOVfob+MNy46H4d3AgrYpQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
@@ -385,11 +385,11 @@ packages:
       react: ^17.0.2 || ^18.0.0 || ^19.0.0-beta
       react-dom: ^17.0.2 || ^18.0.0 || ^19.0.0-beta
     dependencies:
-      '@types/react': 18.2.55
+      '@types/react': 18.3.3
       '@types/react-dom': 18.2.19
       '@vitejs/plugin-react': 4.2.1(vite@5.2.11)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.2.0(react@18.3.1)
       ultrahtml: 1.5.3
     transitivePeerDependencies:
       - supports-color
@@ -427,13 +427,13 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vercel@7.6.0(astro@4.8.6)(react@18.2.0):
+  /@astrojs/vercel@7.6.0(astro@4.8.6)(react@18.3.1):
     resolution: {integrity: sha512-LLOpXWYwTlYgZJCC+ulCpSUnUzOzLrlna2T0WCkhkH1UeavBY5NI0Agpq3rcQd012I7Vr2io+ZKUgKGW+EFvhg==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
       '@astrojs/internal-helpers': 0.4.0
-      '@vercel/analytics': 1.3.1(react@18.2.0)
+      '@vercel/analytics': 1.3.1(react@18.3.1)
       '@vercel/edge': 1.1.1
       '@vercel/nft': 0.26.5
       astro: 4.8.6(@types/node@18.19.17)(sass@1.77.2)(typescript@5.3.3)
@@ -1696,7 +1696,7 @@ packages:
       - supports-color
     dev: false
 
-  /@nanostores/react@0.7.1(nanostores@0.9.5)(react@18.2.0):
+  /@nanostores/react@0.7.1(nanostores@0.9.5)(react@18.3.1):
     resolution: {integrity: sha512-EXQg9N4MdI4eJQz/AZLIx3hxQ6BuBmV4Q55bCd5YCSgEOAW7tGTsIZxpRXxvxLXzflNvHTBvfrDNY38TlSVBkQ==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     peerDependencies:
@@ -1704,7 +1704,7 @@ packages:
       react: '>=18.0.0'
     dependencies:
       nanostores: 0.9.5
-      react: 18.2.0
+      react: 18.3.1
     dev: false
 
   /@neon-rs/load@0.0.4:
@@ -1753,52 +1753,52 @@ packages:
     resolution: {integrity: sha512-FUOsGBkHrYJwCSEtWRCIfQbZG7q1e6DgxCIOe1SUQzDe/7rXXeA47s8yCn6fuTNQAj1Zq4oTFi9Yjp3wzElcxg==}
     dev: true
 
-  /@react-spring/animated@9.7.3(react@18.2.0):
+  /@react-spring/animated@9.7.3(react@18.3.1):
     resolution: {integrity: sha512-5CWeNJt9pNgyvuSzQH+uy2pvTg8Y4/OisoscZIR8/ZNLIOI+CatFBhGZpDGTF/OzdNFsAoGk3wiUYTwoJ0YIvw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@react-spring/shared': 9.7.3(react@18.2.0)
+      '@react-spring/shared': 9.7.3(react@18.3.1)
       '@react-spring/types': 9.7.3
-      react: 18.2.0
+      react: 18.3.1
     dev: false
 
-  /@react-spring/core@9.7.3(react@18.2.0):
+  /@react-spring/core@9.7.3(react@18.3.1):
     resolution: {integrity: sha512-IqFdPVf3ZOC1Cx7+M0cXf4odNLxDC+n7IN3MDcVCTIOSBfqEcBebSv+vlY5AhM0zw05PDbjKrNmBpzv/AqpjnQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@react-spring/animated': 9.7.3(react@18.2.0)
-      '@react-spring/shared': 9.7.3(react@18.2.0)
+      '@react-spring/animated': 9.7.3(react@18.3.1)
+      '@react-spring/shared': 9.7.3(react@18.3.1)
       '@react-spring/types': 9.7.3
-      react: 18.2.0
+      react: 18.3.1
     dev: false
 
-  /@react-spring/shared@9.7.3(react@18.2.0):
+  /@react-spring/shared@9.7.3(react@18.3.1):
     resolution: {integrity: sha512-NEopD+9S5xYyQ0pGtioacLhL2luflh6HACSSDUZOwLHoxA5eku1UPuqcJqjwSD6luKjjLfiLOspxo43FUHKKSA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@react-spring/types': 9.7.3
-      react: 18.2.0
+      react: 18.3.1
     dev: false
 
   /@react-spring/types@9.7.3:
     resolution: {integrity: sha512-Kpx/fQ/ZFX31OtlqVEFfgaD1ACzul4NksrvIgYfIFq9JpDHFwQkMVZ10tbo0FU/grje4rcL4EIrjekl3kYwgWw==}
     dev: false
 
-  /@react-spring/web@9.7.3(react-dom@18.2.0)(react@18.2.0):
+  /@react-spring/web@9.7.3(react-dom@18.2.0)(react@18.3.1):
     resolution: {integrity: sha512-BXt6BpS9aJL/QdVqEIX9YoUy8CE6TJrU0mNCqSoxdXlIeNcEBWOfIyE6B14ENNsyQKS3wOWkiJfco0tCr/9tUg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@react-spring/animated': 9.7.3(react@18.2.0)
-      '@react-spring/core': 9.7.3(react@18.2.0)
-      '@react-spring/shared': 9.7.3(react@18.2.0)
+      '@react-spring/animated': 9.7.3(react@18.3.1)
+      '@react-spring/core': 9.7.3(react@18.3.1)
+      '@react-spring/shared': 9.7.3(react@18.3.1)
       '@react-spring/types': 9.7.3
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.2.0(react@18.3.1)
     dev: false
 
   /@rollup/pluginutils@4.2.1:
@@ -2088,14 +2088,13 @@ packages:
   /@types/react-dom@18.2.19:
     resolution: {integrity: sha512-aZvQL6uUbIJpjZk4U8JZGbau9KDeAwMfmhyWorxgBkqDIEf6ROjRozcmPIicqsUwPUjbkDfHKgGee1Lq65APcA==}
     dependencies:
-      '@types/react': 18.2.55
+      '@types/react': 18.3.3
     dev: false
 
-  /@types/react@18.2.55:
-    resolution: {integrity: sha512-Y2Tz5P4yz23brwm2d7jNon39qoAtMMmalOQv6+fEFt1mT+FcM3D841wDpoUvFXhaYenuROCy3FZYqdTjM7qVyA==}
+  /@types/react@18.3.3:
+    resolution: {integrity: sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==}
     dependencies:
       '@types/prop-types': 15.7.11
-      '@types/scheduler': 0.16.8
       csstype: 3.1.3
     dev: false
 
@@ -2109,10 +2108,6 @@ packages:
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
     dependencies:
       '@types/node': 18.19.17
-    dev: false
-
-  /@types/scheduler@0.16.8:
-    resolution: {integrity: sha512-WZLiwShhwLRmeV6zH+GkbOFT6Z6VklCItrDioxUnv+u4Ll+8vKeFySoFyK/0ctcRpOmwAicELfmys1sDc/Rw+A==}
     dev: false
 
   /@types/semver@7.5.7:
@@ -2288,7 +2283,7 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  /@vercel/analytics@1.3.1(react@18.2.0):
+  /@vercel/analytics@1.3.1(react@18.3.1):
     resolution: {integrity: sha512-xhSlYgAuJ6Q4WQGkzYTLmXwhYl39sWjoMA3nHxfkvG+WdBT25c563a7QhwwKivEOZtPJXifYHR1m2ihoisbWyA==}
     peerDependencies:
       next: '>= 13'
@@ -2299,7 +2294,7 @@ packages:
       react:
         optional: true
     dependencies:
-      react: 18.2.0
+      react: 18.3.1
       server-only: 0.0.1
     dev: false
 
@@ -2329,7 +2324,7 @@ packages:
       - supports-color
     dev: false
 
-  /@vercel/speed-insights@1.0.10(react@18.2.0):
+  /@vercel/speed-insights@1.0.10(react@18.3.1):
     resolution: {integrity: sha512-4uzdKB0RW6Ff2FkzshzjZ+RlJfLPxgm/00i0XXgxfMPhwnnsk92YgtqsxT9OcPLdJUyVU1DqFlSWWjIQMPkh0g==}
     requiresBuild: true
     peerDependencies:
@@ -2353,7 +2348,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      react: 18.2.0
+      react: 18.3.1
     dev: false
 
   /@vitejs/plugin-react@4.2.1(vite@5.2.11):
@@ -3563,7 +3558,7 @@ packages:
       domhandler: 5.0.3
     dev: true
 
-  /drizzle-orm@0.30.10(@libsql/client@0.6.0)(@types/react@18.2.55)(react@18.2.0):
+  /drizzle-orm@0.30.10(@libsql/client@0.6.0)(@types/react@18.3.3)(react@18.3.1):
     resolution: {integrity: sha512-IRy/QmMWw9lAQHpwbUh1b8fcn27S/a9zMIzqea1WNOxK9/4EB8gIo+FZWLiPXzl2n9ixGSv8BhsLZiOppWEwBw==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -3644,8 +3639,8 @@ packages:
         optional: true
     dependencies:
       '@libsql/client': 0.6.0
-      '@types/react': 18.2.55
-      react: 18.2.0
+      '@types/react': 18.3.3
+      react: 18.3.1
     dev: false
 
   /dset@3.1.3:
@@ -4525,7 +4520,7 @@ packages:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
     dev: false
 
-  /framer-motion@10.18.0(react-dom@18.2.0)(react@18.2.0):
+  /framer-motion@10.18.0(react-dom@18.2.0)(react@18.3.1):
     resolution: {integrity: sha512-oGlDh1Q1XqYPksuTD/usb0I70hq95OUzmL9+6Zd+Hs4XV0oaISBa/UUMSjYiq6m8EUF32132mOJ8xVZS+I0S6w==}
     peerDependencies:
       react: ^18.0.0
@@ -4536,8 +4531,8 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.2.0(react@18.3.1)
       tslib: 2.6.2
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
@@ -7212,13 +7207,13 @@ packages:
       strip-json-comments: 2.0.1
     dev: false
 
-  /react-dom@18.2.0(react@18.2.0):
+  /react-dom@18.2.0(react@18.3.1):
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
       react: ^18.2.0
     dependencies:
       loose-envify: 1.4.0
-      react: 18.2.0
+      react: 18.3.1
       scheduler: 0.23.0
     dev: false
 
@@ -7231,8 +7226,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /react@18.2.0:
-    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+  /react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
