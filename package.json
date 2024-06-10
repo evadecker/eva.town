@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/db": "^0.11.3",
+    "@astrojs/db": "^0.11.4",
     "@astrojs/markdown-remark": "^5.1.0",
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/react": "^3.4.0",
