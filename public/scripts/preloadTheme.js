@@ -18,7 +18,7 @@ const setTheme = () => {
   if (metaTheme !== null)
     metaTheme.setAttribute(
       "content",
-      userPreference === "dark" ? "#0D1512" : "#D6F1E3"
+      userPreference === "dark" ? "#111111" : "#FCFCFC"
     );
 
   window.localStorage.setItem("theme", userPreference);
