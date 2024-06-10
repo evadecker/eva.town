@@ -43,7 +43,7 @@
     "dayjs": "^1.11.10",
     "framer-motion": "^10.18.0",
     "howler": "^2.2.4",
-    "nanoid": "^4.0.2",
+    "nanoid": "^5.0.7",
     "nanostores": "^0.9.5",
     "nice-color-palettes": "^3.0.0",
     "p5": "^1.9.0",
