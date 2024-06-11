@@ -1,7 +1,4 @@
 ---
-import type { ImageMetadata } from "astro";
-import { Image } from "astro:assets";
-
 import { RelativeDate } from "../RelativeDate/RelativeDate";
 import { TOTAL_THEMES } from "./NotecardComposer";
 
@@ -17,15 +14,7 @@ const { content, url, author, timestamp, theme } = Astro.props;
 
 const rotation = `${Math.random() * 6 - 3}deg`;
 const translateX = `${Math.random() * 24 - 12}px`;
-
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  "./notecards/*.png"
-);
-const fileName = `notecard${theme <= TOTAL_THEMES ? theme : 1}.png`;
-const imagePath = `./notecards/${fileName}`;
-
-if (!images[imagePath])
-  throw new Error(`"${imagePath}" does not exist in glob: "./notecards/*.png"`);
+const backgroundImage = `url(/images/notecards/notecard${theme <= TOTAL_THEMES ? theme : 1}.webp)`;
 ---
 
 <div class="notecard">
@@ -46,16 +35,12 @@ if (!images[imagePath])
       <RelativeDate date={timestamp} />
     </div>
   </div>
-  <Image
-    src={images[imagePath]()}
-    alt="A notecard"
-    width="570"
-    quality={95}
-    class="background"
-  />
 </div>
 
-<style lang="scss" define:vars={{ rotation, translateX }}>
+<style
+  lang="scss"
+  define:vars={{ background: backgroundImage, rotation, translateX }}
+>
   .notecard {
     aspect-ratio: 4 / 3;
     font-family: var(--font-mono);
@@ -64,16 +49,11 @@ if (!images[imagePath])
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-image: var(--background);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     transform: translateX(var(--translateX)) rotate(var(--rotation));
-  }
-
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
   }
 
   .content {

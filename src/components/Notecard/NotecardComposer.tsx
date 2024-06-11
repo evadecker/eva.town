@@ -45,7 +45,7 @@ export const NotecardComposer = () => {
       <div
         className={styles.composer}
         style={{
-          backgroundImage: `url(/images/notecards/notecard${selectedTheme}.png)`,
+          backgroundImage: `url(/images/notecards/notecard${selectedTheme}.webp)`,
         }}
       >
         <div className={styles.top}>
