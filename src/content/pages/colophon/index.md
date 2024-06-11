@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers eva.town.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2024-05-31 23:57:31-04:00
+dateModified: 2024-06-11 18:03:16-04:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -58,7 +58,7 @@ This site aims to conform to the Level AA accessibility standards outlined in th
 
 ## Privacy
 
-I collect basic, fully-anonymized page view analytics using [Fathom](https://usefathom.com/). Fathom [anonymizes IP addresses](https://usefathom.com/data) and other visitor data [without using cookies](https://usefathom.com/why-fathom-analytics/cookieless-analytics). I don't want your data! But if you'd like to share who you are and where you're visiting from—just for kicks—you can sign the [guestbook](/guestbook).
+I collect basic, fully-anonymized page view analytics using [Fathom](https://usefathom.com/ref/VMZJZD). Fathom anonymizes IP addresses and other visitor data without using cookies. I don't want your data! But if you'd like to share who you are and where you're visiting from—just for kicks—you can sign the [guestbook](/guestbook).
 
 ## Notice an issue?
 
