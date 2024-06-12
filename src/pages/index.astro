@@ -53,6 +53,7 @@ work.sort((a, b) =>
 </BaseLayout>
 
 <script>
+  import * as Fathom from "fathom-client";
   import { addSam, clearSams, numSams } from "../stores/sam";
 
   function setupSam() {
@@ -77,6 +78,18 @@ work.sort((a, b) =>
   setupSam();
 
   document.addEventListener("astro:after-swap", () => setupSam());
+
+  document.addEventListener("astro:page-load", () => {
+    document
+      .querySelector("[data-sam-button]")
+      ?.addEventListener("click", () => {
+        Fathom.trackEvent("stickers: add sam");
+      });
+
+    document.querySelector("[data-sam-shoo]")?.addEventListener("click", () => {
+      Fathom.trackEvent("stickers: shoo sam");
+    });
+  });
 </script>
 
 <style lang="scss">
