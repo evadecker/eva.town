@@ -4,6 +4,7 @@
   pointer-events: none;
   overflow: hidden;
   user-select: none;
+  z-index: 999;
 }
 
 .sticker {
