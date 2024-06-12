@@ -2,28 +2,7 @@
 
 ---
 
-<script>
-  function handleAnimation() {
-    // Set animating status to let SVG animations run to completion
-    // Instead of being cut off when the user hovers away
-    const logoElem = document.getElementById("logo");
-    logoElem?.addEventListener("click", () => {
-      if (logoElem.dataset.animating === "true") return;
-
-      logoElem.dataset.animating = "true";
-
-      setTimeout(() => {
-        logoElem.dataset.animating = "false";
-      }, 1300);
-    });
-  }
-
-  handleAnimation();
-
-  document.addEventListener("astro:after-swap", () => handleAnimation());
-</script>
-
-<a id="logo" href="/" transition:persist="logo">
+<a id="logo" href="/" data-fathom="logo" transition:persist="logo">
   <svg
     viewBox="0 0 125 82"
     width="125px"
@@ -97,3 +76,34 @@
     width: 1px;
   }
 </style>
+
+<script>
+  function handleAnimation() {
+    // Set animating status to let SVG animations run to completion
+    // Instead of being cut off when the user hovers away
+    const logoElem = document.getElementById("logo");
+    logoElem?.addEventListener("click", () => {
+      if (logoElem.dataset.animating === "true") return;
+
+      logoElem.dataset.animating = "true";
+
+      setTimeout(() => {
+        logoElem.dataset.animating = "false";
+      }, 1300);
+    });
+  }
+
+  handleAnimation();
+
+  document.addEventListener("astro:after-swap", () => handleAnimation());
+</script>
+
+<script is:inline data-astro-rerun>
+  import * as Fathom from "fathom-client";
+
+  document
+    .querySelector("[data-fathom='logo']")
+    ?.addEventListener("click", () => {
+      Fathom.trackEvent("nav: click logo");
+    });
+</script>
