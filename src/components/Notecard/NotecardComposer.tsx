@@ -1,3 +1,4 @@
+import * as Fathom from "fathom-client";
 import { type ChangeEvent, useEffect, useState } from "react";
 
 import styles from "./notecard.module.scss";
@@ -20,9 +21,11 @@ export const NotecardComposer = () => {
     ) {
       setContentValue(contentValue);
       setShowWarning(true);
+      Fathom.trackEvent("guestbook: show textarea warning");
     } else {
       setContentValue(e.target.value);
       setShowWarning(false);
+      Fathom.trackEvent("guestbook: hide textarea warning");
     }
   };
 
@@ -32,16 +35,22 @@ export const NotecardComposer = () => {
     setSelectedTheme((selectedTheme) =>
       selectedTheme === TOTAL_THEMES ? 1 : selectedTheme + 1
     );
+    Fathom.trackEvent("guestbook: next theme");
   };
 
   const handlePrevTheme = () => {
     setSelectedTheme((selectedTheme) =>
       selectedTheme === 1 ? TOTAL_THEMES : selectedTheme - 1
     );
+    Fathom.trackEvent("guestbook: prev theme");
+  };
+
+  const handleSubmit = () => {
+    Fathom.trackEvent("guestbook: submit");
   };
 
   return (
-    <form method="POST">
+    <form method="POST" onSubmit={handleSubmit}>
       <div
         className={styles.composer}
         style={{

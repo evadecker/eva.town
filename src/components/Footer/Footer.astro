@@ -7,24 +7,49 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
   <Center>
     <div class="content">
       <div class="links">
-        <a href="/about">About</a>
-        <a href="/downloads/eva-decker-resume.pdf" target="_blank">Resume</a>
-        <a href="/webrings">Webrings</a>
-        <a href="/guestbook">Guestbook</a>
-        <a href="/colophon">Colophon</a>
+        <a href="/about" data-fathom="footer-link">About</a>
+        <a
+          href="/downloads/eva-decker-resume.pdf"
+          target="_blank"
+          data-fathom="footer-link">Resume</a
+        >
+        <a href="/webrings" data-fathom="footer-link">Webrings</a>
+        <a href="/guestbook" data-fathom="footer-link">Guestbook</a>
+        <a href="/colophon" data-fathom="footer-link">Colophon</a>
       </div>
       <div class="links">
-        <a href="https://www.are.na/eva-decker/" target="_blank">Are.na</a>
-        <a href="https://bsky.app/profile/eva.town" target="_blank">Bluesky</a>
-        <a href="https://github.com/evadecker" target="_blank">GitHub</a>
-        <a href="https://www.goodreads.com/evadecker" target="_blank"
-          >Goodreads</a
+        <a
+          href="https://www.are.na/eva-decker/"
+          target="_blank"
+          data-fathom="footer-link">Are.na</a
         >
-        <a href="https://linkedin.com/in/evadecker" target="_blank">LinkedIn</a>
+        <a
+          href="https://bsky.app/profile/eva.town"
+          target="_blank"
+          data-fathom="footer-link">Bluesky</a
+        >
+        <a
+          href="https://github.com/evadecker"
+          target="_blank"
+          data-fathom="footer-link">GitHub</a
+        >
+        <a
+          href="https://www.goodreads.com/evadecker"
+          target="_blank"
+          data-fathom="footer-link">Goodreads</a
+        >
+        <a
+          href="https://linkedin.com/in/evadecker"
+          target="_blank"
+          data-fathom="footer-link">LinkedIn</a
+        >
       </div>
       <div class="banner">
         <span class="emoji">🇵🇸</span>
-        <a href="https://www.jewishvoiceforpeace.org/" target="_blank"
+        <a
+          href="https://www.jewishvoiceforpeace.org/"
+          target="_blank"
+          data-fathom="footer-link"
           >Freedom for Palestine.
         </a>
       </div>
@@ -103,3 +128,16 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
     grid-area: form;
   }
 </style>
+
+<script is:inline data-astro-rerun>
+  import * as Fathom from "fathom-client";
+
+  document
+    .querySelectorAll("[data-fathom='footer-link']")
+    .forEach((navlink) => {
+      navlink.addEventListener("click", () => {
+        const url = navlink.getAttribute("href");
+        Fathom.trackEvent(`nav: click link (${url})`);
+      });
+    });
+</script>

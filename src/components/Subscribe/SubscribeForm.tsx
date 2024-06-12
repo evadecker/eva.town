@@ -1,6 +1,7 @@
 import "./subscribe.css";
 
 import classNames from "classnames";
+import * as Fathom from "fathom-client";
 import {
   type ChangeEvent,
   type FormEvent,
@@ -259,6 +260,8 @@ export const SubscribeForm = () => {
     setCurrentEmote(nextEmote);
     setCurrentText("");
     setCurrentRemarkType(null);
+
+    Fathom.trackEvent("subscribe: click stamp");
   };
 
   return (

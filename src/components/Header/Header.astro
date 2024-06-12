@@ -12,13 +12,21 @@ const topLevelPath = currentPath.split("/")[1];
     <nav id="nav">
       <Logo />
       <div class="links">
-        <a href="/garden" class={topLevelPath === "garden" ? "active" : ""}
-          >The Garden</a
+        <a
+          href="/garden"
+          data-fathom="nav-link"
+          class={topLevelPath === "garden" ? "active" : ""}>The Garden</a
         >
-        <a href="/about" class={topLevelPath === "about" ? "active" : ""}
-          >About</a
+        <a
+          href="/about"
+          data-fathom="nav-link"
+          class={topLevelPath === "about" ? "active" : ""}>About</a
         >
-        <a href="/now" class={topLevelPath === "now" ? "active" : ""}>Now</a>
+        <a
+          href="/now"
+          data-fathom="nav-link"
+          class={topLevelPath === "now" ? "active" : ""}>Now</a
+        >
         <button type="button" data-theme-toggle aria-label="Toggle theme">
           <Icon icon="sun" size="20" variant="line" className="sun" />
           <Icon icon="moon" size="20" variant="line" className="moon" />
@@ -29,6 +37,7 @@ const topLevelPath = currentPath.split("/")[1];
 </header>
 
 <script>
+  import * as Fathom from "fathom-client";
   import { gray, grayDark } from "@radix-ui/colors";
   import {
     TRANSITION_BEFORE_SWAP,
@@ -67,6 +76,8 @@ const topLevelPath = currentPath.split("/")[1];
 
   function handleToggleTheme() {
     setActiveTheme(getActiveTheme() === "light" ? "dark" : "light");
+
+    Fathom.trackEvent("nav: toggle theme");
   }
 
   // Run on initial load
@@ -78,6 +89,17 @@ const topLevelPath = currentPath.split("/")[1];
       setupToggle(ev.newDocument);
       setActiveTheme(getActiveTheme(), ev.newDocument);
     }
+  });
+</script>
+
+<script is:inline data-astro-rerun>
+  import * as Fathom from "fathom-client";
+
+  document.querySelectorAll("[data-fathom='nav-link']").forEach((navlink) => {
+    navlink.addEventListener("click", () => {
+      const url = navlink.getAttribute("href");
+      Fathom.trackEvent(`nav: click link (${url})`);
+    });
   });
 </script>
 

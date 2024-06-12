@@ -41,6 +41,7 @@
     "autoprefixer": "^10.4.19",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.10",
+    "fathom-client": "^3.6.0",
     "framer-motion": "^10.18.0",
     "howler": "^2.2.4",
     "nanoid": "^5.0.7",

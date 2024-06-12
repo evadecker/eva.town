@@ -67,7 +67,9 @@ const description = "Leave a message in eva.town.";
   </div>
   <Center>
     <div class="postscript">
-      You've reached the end! <a href="/posts/design-outside-the-computer"
+      You've reached the end! <a
+        href="/posts/design-outside-the-computer"
+        data-fathom="explanation"
         >Learn how I created this guestbook.
       </a>
     </div>
@@ -90,3 +92,13 @@ const description = "Leave a message in eva.town.";
     padding-block-start: var(--space-xl);
   }
 </style>
+
+<script is:inline data-astro-rerun>
+  import * as Fathom from "fathom-client";
+
+  document
+    .querySelector("[data-fathom='explanation']")
+    ?.addEventListener("click", () => {
+      Fathom.trackEvent("guestbook: learn more");
+    });
+</script>
