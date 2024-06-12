@@ -126,6 +126,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <script>
   import * as Fathom from "fathom-client";
 
-  const path = window.location.pathname;
-  Fathom.trackEvent("404: " + path);
+  document.addEventListener("astro:page-load", () => {
+    const path = window.location.pathname;
+    Fathom.trackEvent("404: " + path);
+  });
 </script>

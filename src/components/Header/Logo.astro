@@ -101,9 +101,11 @@
 <script>
   import * as Fathom from "fathom-client";
 
-  document
-    .querySelector("[data-fathom='logo']")
-    ?.addEventListener("click", () => {
-      Fathom.trackEvent("nav: click logo");
-    });
+  document.addEventListener("astro:page-load", () => {
+    document
+      .querySelector("[data-fathom='logo']")
+      ?.addEventListener("click", () => {
+        Fathom.trackEvent("nav: click logo");
+      });
+  });
 </script>

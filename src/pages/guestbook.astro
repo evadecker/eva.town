@@ -96,9 +96,11 @@ const description = "Leave a message in eva.town.";
 <script>
   import * as Fathom from "fathom-client";
 
-  document
-    .querySelector("[data-fathom='explanation']")
-    ?.addEventListener("click", () => {
-      Fathom.trackEvent("guestbook: learn more");
-    });
+  document.addEventListener("astro:page-load", () => {
+    document
+      .querySelector("[data-fathom='explanation']")
+      ?.addEventListener("click", () => {
+        Fathom.trackEvent("guestbook: learn more");
+      });
+  });
 </script>
