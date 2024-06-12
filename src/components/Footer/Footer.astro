@@ -132,12 +132,14 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
 <script>
   import * as Fathom from "fathom-client";
 
-  document
-    .querySelectorAll("[data-fathom='footer-link']")
-    .forEach((navlink) => {
-      navlink.addEventListener("click", () => {
-        const url = navlink.getAttribute("href");
-        Fathom.trackEvent(`nav: click link (${url})`);
+  document.addEventListener("astro:page-load", () => {
+    document
+      .querySelectorAll("[data-fathom='footer-link']")
+      .forEach((navlink) => {
+        navlink.addEventListener("click", () => {
+          const url = navlink.getAttribute("href");
+          Fathom.trackEvent(`nav: click link (${url})`);
+        });
       });
-    });
+  });
 </script>
