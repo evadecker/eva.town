@@ -87,7 +87,7 @@ const backgroundImage = `url(/images/notecards/notecard${theme <= TOTAL_THEMES ?
       .forEach((author) => {
         author.addEventListener("click", () => {
           const url = author.getAttribute("href");
-          Fathom.trackEvent("guestbook: author link " + url);
+          Fathom.trackEvent(`guestbook: click link (${url})`);
         });
       });
   });
