@@ -24,8 +24,7 @@ export const NotecardComposer = () => {
       Fathom.trackEvent("guestbook: show textarea warning");
     } else {
       setContentValue(e.target.value);
-      setShowWarning(false);
-      Fathom.trackEvent("guestbook: hide textarea warning");
+      if (showWarning) setShowWarning(false);
     }
   };
 
