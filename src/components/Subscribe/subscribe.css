@@ -1,15 +1,16 @@
 .subscribe {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
   margin-inline: auto;
   position: relative;
   max-width: 600px;
+  gap: var(--space-m);
 }
 
 .subscribe-content {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: var(--space-m);
   flex: 1;
 }
@@ -115,6 +116,7 @@
   border: 2.5px solid var(--gray-12);
   border-radius: var(--radius-full);
   line-height: 1;
+  font-size: var(--step-0);
 }
 
 .input:hover {

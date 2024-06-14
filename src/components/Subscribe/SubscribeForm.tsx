@@ -276,65 +276,63 @@ export const SubscribeForm = () => {
             </p>
           </div>
         </div>
-        <form onSubmit={handleSubmit}>
-          {!hasSubmitted ? (
-            <>
-              <div
-                className="inputWrapper"
-                aria-disabled={isSubmitting || hasSubmitted}
-              >
-                <input
-                  aria-label="Your email"
-                  className="input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Your email"
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={recipientEmail}
-                  disabled={isSubmitting || hasSubmitted}
-                />
-                <button
-                  type="submit"
-                  className={classNames("iconButton", {
-                    loading: isSubmitting,
-                  })}
-                  disabled={isSubmitting || hasSubmitted}
-                  aria-label="Subscribe"
-                  onMouseOver={() => {
-                    setIsHoveringSubscribe(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHoveringSubscribe(false);
-                  }}
-                >
-                  <Icon
-                    icon={isSubmitting ? "loader" : "mailAdd"}
-                    variant={isHoveringSubscribe ? "filled" : "line"}
-                  />
-                </button>
-              </div>
-            </>
-          ) : sniperData ? (
-            <a href={sniperData.url} className="sniperLink" target="_blank">
-              <div className="sniperLogo">
-                <img src={sniperData.image} />
-              </div>
-              Open {sniperData.provider_pretty}
-              <Icon icon="arrowRight" />
-            </a>
-          ) : (
-            <div className="checkInbox">Check your inbox</div>
-          )}
-        </form>
+        <Dialogue
+          text={currentText}
+          emote={currentEmote}
+          onEmoteClick={handleEmoteClick}
+        />
       </div>
-      <Dialogue
-        text={currentText}
-        emote={currentEmote}
-        onEmoteClick={handleEmoteClick}
-      />
+      <form onSubmit={handleSubmit}>
+        {!hasSubmitted ? (
+          <div
+            className="inputWrapper"
+            aria-disabled={isSubmitting || hasSubmitted}
+          >
+            <input
+              aria-label="Your email"
+              className="input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email"
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={recipientEmail}
+              disabled={isSubmitting || hasSubmitted}
+            />
+            <button
+              type="submit"
+              className={classNames("iconButton", {
+                loading: isSubmitting,
+              })}
+              disabled={isSubmitting || hasSubmitted}
+              aria-label="Subscribe"
+              onMouseOver={() => {
+                setIsHoveringSubscribe(true);
+              }}
+              onMouseLeave={() => {
+                setIsHoveringSubscribe(false);
+              }}
+            >
+              <Icon
+                icon={isSubmitting ? "loader" : "mailAdd"}
+                variant={isHoveringSubscribe ? "filled" : "line"}
+              />
+            </button>
+          </div>
+        ) : sniperData ? (
+          <a href={sniperData.url} className="sniperLink" target="_blank">
+            <div className="sniperLogo">
+              <img src={sniperData.image} />
+            </div>
+            Open {sniperData.provider_pretty}
+            <Icon icon="arrowRight" />
+          </a>
+        ) : (
+          <div className="checkInbox">Check your inbox</div>
+        )}
+      </form>
     </div>
   );
 };
