@@ -1,16 +1,16 @@
 .subscribe {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
   margin-inline: auto;
   position: relative;
   max-width: 600px;
+  gap: var(--space-m);
 }
 
 .subscribe-content {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-m);
+  align-items: flex-start;
+  justify-content: space-between;
   flex: 1;
 }
 
@@ -28,10 +28,6 @@
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin-block-end: var(--space-2xs);
-}
-
-.subscribe-header p {
-  text-wrap: balance;
 }
 
 .inputWrapper {
@@ -115,6 +111,7 @@
   border: 2.5px solid var(--gray-12);
   border-radius: var(--radius-full);
   line-height: 1;
+  font-size: var(--step-0);
 }
 
 .input:hover {
