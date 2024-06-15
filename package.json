@@ -26,6 +26,7 @@
     "@astrojs/markdown-remark": "^5.1.0",
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/react": "^3.4.0",
+    "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/vercel": "^7.6.0",
     "@nanostores/react": "^0.7.1",
@@ -44,6 +45,7 @@
     "fathom-client": "^3.6.0",
     "framer-motion": "^10.18.0",
     "howler": "^2.2.4",
+    "markdown-it": "^14.1.0",
     "nanoid": "^5.0.7",
     "nanostores": "^0.9.5",
     "nice-color-palettes": "^3.0.0",
@@ -54,6 +56,7 @@
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-imgattr": "^1.0.5",
+    "sanitize-html": "^2.13.0",
     "sharp": "^0.32.6",
     "simplex-noise": "^4.0.1"
   },

@@ -90,6 +90,12 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalURL} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Dispatches from Eva Town"
+      href={`${!!Astro.site}rss.xml`}
+    />
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
