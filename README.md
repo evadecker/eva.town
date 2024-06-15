@@ -2,7 +2,8 @@
 
 <div align="center">
 
-![Vercel](https://vercelbadge.vercel.app/api/evadecker/eva.town) [![Playwright](https://github.com/evadecker/eva.town/actions/workflows/playwright.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/playwright.yml) [![HTML5 Validation](https://github.com/evadecker/eva.town/actions/workflows/w3c.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/w3c.yml) [![Check Links](https://github.com/evadecker/eva.town/actions/workflows/links.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/links.yml) ![GitHub](https://img.shields.io/github/license/evadecker/eva.town) 
+![Vercel](https://vercelbadge.vercel.app/api/evadecker/eva.town) [![Playwright](https://github.com/evadecker/eva.town/actions/workflows/playwright.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/playwright.yml) [![HTML5 Validation](https://github.com/evadecker/eva.town/actions/workflows/w3c.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/w3c.yml) [![Check Links](https://github.com/evadecker/eva.town/actions/workflows/links.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/links.yml) ![GitHub](https://img.shields.io/github/license/evadecker/eva.town) [![RSS](https://img.shields.io/badge/rss-eb7817?logo=rss&logoColor=white)
+](https://eva.town/rss.xml)
 
 </div>
 
