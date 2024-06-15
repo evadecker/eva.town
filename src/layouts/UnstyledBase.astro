@@ -94,7 +94,7 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
       rel="alternate"
       type="application/rss+xml"
       title="Dispatches from Eva Town"
-      href={`${!!Astro.site}rss.xml`}
+      href={`${Astro.site}rss.xml`}
     />
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
