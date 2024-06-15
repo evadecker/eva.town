@@ -27,6 +27,7 @@ export default defineConfig({
     sitemap(),
     db(),
   ],
+  trailingSlash: "never",
   adapter: vercel({
     webAnalytics: {
       enabled: true,
