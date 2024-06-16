@@ -24,20 +24,18 @@
 }
 
 .content,
-.name {
-  width: 30ch;
-}
-
-.content,
 .name,
 .url {
   background: transparent;
   padding-inline: 1ch;
-  font-size: 16px;
+  font-size: var(--step-0);
+  display: block;
   resize: none;
   border: none;
   border-radius: var(--radius-xs);
   color: #111;
+  width: 30ch;
+  margin-inline: -1ch;
 
   &::placeholder {
     color: rgb(0 0 0 / 50%);
@@ -58,11 +56,14 @@
   position: absolute;
   font-size: var(--step--1);
   font-family: var(--font-sans);
+  padding: var(--space-2xs);
+  border-radius: var(--radius-xs);
   line-height: 1;
-  right: 1ch;
+  right: -2ch;
   bottom: 0;
-  transform: translateY(100%);
-  color: var(--red-9);
+  transform: translateY(100%) rotate(-2deg);
+  background-color: var(--red-9);
+  color: var(--white-a12);
 }
 
 .bottom {
