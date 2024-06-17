@@ -25,7 +25,7 @@
     "@astrojs/db": "^0.11.4",
     "@astrojs/markdown-remark": "^5.1.0",
     "@astrojs/mdx": "^3.0.0",
-    "@astrojs/react": "^3.4.0",
+    "@astrojs/react": "^3.5.0",
     "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/vercel": "^7.6.0",
