@@ -11,7 +11,6 @@ import imgAttr from "remark-imgattr";
 
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://eva.town",
   output: "hybrid",
@@ -28,11 +27,7 @@ export default defineConfig({
     db(),
   ],
   trailingSlash: "never",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
+  adapter: vercel(),
   markdown: {
     rehypePlugins: [rehypeHeadingIds, [rehypeAutolinkHeadings, autolinkConfig]],
     remarkPlugins: [imgAttr],

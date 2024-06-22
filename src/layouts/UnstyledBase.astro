@@ -4,7 +4,6 @@ import "../styles/theme.css";
 
 import { join } from "node:path";
 
-import SpeedInsights from "@vercel/speed-insights/astro";
 import { ViewTransitions } from "astro:transitions";
 import { AstroFont } from "astro-font";
 import LoadingIndicator from "astro-loading-indicator/component";
@@ -94,7 +93,7 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
       rel="alternate"
       type="application/rss+xml"
       title="Dispatches from Eva Town"
-      href={`${Astro.site}rss.xml`}
+      href={new URL("rss.xml", Astro.site)}
     />
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
@@ -116,7 +115,6 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{pageTitle}</title>
     <ViewTransitions />
-    <SpeedInsights />
     <LoadingIndicator color="var(--blue-9)" height="3px" threshold={600} />
     <script>
       import * as Fathom from "fathom-client";
