@@ -9,9 +9,12 @@ on:
 
 jobs:
   link-checker:
+    name: Check Link Validity
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Run Lychee
         uses: lycheeverse/lychee-action@v1
