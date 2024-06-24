@@ -3,30 +3,10 @@ name: CI
 on:
   push:
     branches: main
-    paths:
-      [
-        "src/components/**",
-        "src/helpers/**",
-        "src/layouts/**",
-        "src/pages/**",
-        "src/stores/**",
-        "playwright.config.ts",
-        "astro.config.mjs",
-        ".htmlvalidate.json",
-      ]
+    paths-ignore: ["**/*.md", "**/*.mdx"]
   pull_request:
     branches: main
-    paths:
-      [
-        "src/components/**",
-        "src/helpers/**",
-        "src/layouts/**",
-        "src/pages/**",
-        "src/stores/**",
-        "playwright.config.ts",
-        "astro.config.mjs",
-        ".htmlvalidate.json",
-      ]
+    paths-ignore: ["**/*.md", "**/*.mdx"]
 
 jobs:
   test:
