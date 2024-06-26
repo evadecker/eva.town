@@ -5,6 +5,21 @@ import Logo from "./Logo.astro";
 
 const currentPath = Astro.url.pathname;
 const topLevelPath = currentPath.split("/")[1];
+
+const navigation = [
+  {
+    label: "Garden",
+    url: "/garden",
+  },
+  {
+    label: "About",
+    url: "/about",
+  },
+  {
+    label: "Now",
+    url: "/now",
+  },
+];
 ---
 
 <header>
@@ -12,21 +27,17 @@ const topLevelPath = currentPath.split("/")[1];
     <nav id="nav">
       <Logo />
       <div class="links">
-        <a
-          href="/garden"
-          data-fathom="nav-link"
-          class={topLevelPath === "garden" ? "active" : ""}>The Garden</a
-        >
-        <a
-          href="/about"
-          data-fathom="nav-link"
-          class={topLevelPath === "about" ? "active" : ""}>About</a
-        >
-        <a
-          href="/now"
-          data-fathom="nav-link"
-          class={topLevelPath === "now" ? "active" : ""}>Now</a
-        >
+        {
+          navigation.map((item) => (
+            <a
+              href={item.url}
+              data-fathom="nav-link"
+              class={topLevelPath === item.url.split("/")[1] ? "active" : ""}
+            >
+              {item.label}
+            </a>
+          ))
+        }
         <button type="button" data-theme-toggle aria-label="Toggle theme">
           <Icon icon="sun" size="20" variant="line" className="sun" />
           <Icon icon="moon" size="20" variant="line" className="moon" />

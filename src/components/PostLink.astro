@@ -1,14 +1,20 @@
 ---
 import { RelativeDate } from "./RelativeDate/RelativeDate";
 
+interface Feature {
+  name: string;
+  url: string;
+}
+
 interface Props {
   url: string;
   title: string;
   description?: string;
   datePublished?: Date;
+  features?: Feature[];
 }
 
-const { url, title, description, datePublished } = Astro.props;
+const { url, title, description, datePublished, features } = Astro.props;
 ---
 
 <div class="post">
@@ -21,6 +27,17 @@ const { url, title, description, datePublished } = Astro.props;
   }
   <a href={url} class="title">{title}</a>
   <span class="description">{description}</span>
+  {
+    features && (
+      <span class="features">
+        Featured on{" "}
+        {features.map(({ name, url }, i) => [
+          i > 0 && ", ",
+          <a href={url}>{name}</a>,
+        ])}
+      </span>
+    )
+  }
 </div>
 
 <style lang="scss">
@@ -30,7 +47,8 @@ const { url, title, description, datePublished } = Astro.props;
     gap: var(--space-2xs);
   }
 
-  .date {
+  .date,
+  .features {
     color: var(--gray-11);
     font-size: var(--step--1);
   }

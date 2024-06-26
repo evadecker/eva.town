@@ -16,6 +16,13 @@ export const collections = {
           })
           .optional(),
         ogImage: image().optional(),
+        features: z
+          .object({
+            name: z.string(),
+            url: z.string().url(),
+          })
+          .array()
+          .optional(),
       }),
   }),
 
@@ -65,8 +72,16 @@ export const collections = {
     schema: () =>
       z.object({
         title: z.string(),
+        datePublished: z.date(),
         description: z.string().optional(),
         url: z.string(),
+        features: z
+          .object({
+            name: z.string(),
+            url: z.string().url(),
+          })
+          .array()
+          .optional(),
       }),
   }),
 
