@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Vercel](https://vercelbadge.vercel.app/api/evadecker/eva.town) [![Playwright](https://github.com/evadecker/eva.town/actions/workflows/playwright.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/playwright.yml) [![HTML5 Validation](https://github.com/evadecker/eva.town/actions/workflows/w3c.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/w3c.yml) [![Check Links](https://github.com/evadecker/eva.town/actions/workflows/links.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/links.yml) ![GitHub](https://img.shields.io/github/license/evadecker/eva.town) [![RSS](https://img.shields.io/badge/RSS-gray?logo=rss&logoColor=white&labelColor=eb7817)](https://eva.town/rss.xml)
+![Vercel](https://vercelbadge.vercel.app/api/evadecker/eva.town) ![GitHub](https://img.shields.io/github/license/evadecker/eva.town) [![RSS](https://img.shields.io/badge/RSS-gray?logo=rss&logoColor=white&labelColor=eb7817)](https://eva.town/rss.xml)
 
 </div>
 
@@ -25,6 +25,20 @@ pnpm dev
 If it's the first time running the repo you may need to run `pnpm i` to install packages.
 
 Other scripts in `package.json` can also be run with `pnpm`.
+
+## Link Checking
+
+[![Check Links](https://github.com/evadecker/eva.town/actions/workflows/links.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/links.yml)
+
+A weekly [GitHub workflow](https://github.com/evadecker/eva.town/actions/workflows/links.yml) scans the site for broken links and will open an issue if one is found.
+
+## Accessibility
+
+[![CI](https://github.com/evadecker/eva.town/actions/workflows/ci.yml/badge.svg)](https://github.com/evadecker/eva.town/actions/workflows/ci.yml)
+
+Every pull request is tested for automatically-detectable accessibility issues and HTML5 compliance.
+
+This site aims to conform to the Level AA accessibility standards outlined in the [WCAG 2.2 specification](https://www.w3.org/TR/WCAG22/). If you experience an issue with accessing any part of this site, please [file an issue](https://github.com/evadecker/eva.town/issues) and I’ll do my best to correct it.
 
 ## Notes To Self
 

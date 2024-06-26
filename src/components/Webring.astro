@@ -15,7 +15,7 @@ const { title, description, url, prev, next, color } = data;
   style={`--webring-bg: var(--${color}-3); --webring-text: var(--${color}-12); --webring-hover: var(--${color}-4); --webring-border: var(--${color}-5)`}
 >
   <a class="main" href={url} rel="external">
-    <h3>{title}</h3>
+    <h2>{title}</h2>
     <span>{description}</span>
   </a>
   <a
@@ -66,7 +66,7 @@ const { title, description, url, prev, next, color } = data;
       text-align: center;
       padding: var(--space-m);
 
-      h3 {
+      h2 {
         margin: 0;
         font-size: var(--step-1);
       }

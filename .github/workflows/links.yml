@@ -1,4 +1,4 @@
-name: Links
+name: Valid Links
 
 on:
   repository_dispatch:

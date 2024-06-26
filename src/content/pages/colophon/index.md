@@ -54,7 +54,7 @@ As of October 18, 2023, [carbon results for eva.town](https://www.websitecarbon.
 
 ## Accessibility
 
-This site aims to conform to the Level AA accessibility standards outlined in the [WCAG 2.1 specification](https://www.w3.org/TR/WCAG21/). If you experience an issue with accessing any part of this site, please [let me know](https://github.com/evadecker/eva.town/issues) and I’ll do my best to correct it.
+This site aims to conform to the Level AA accessibility standards outlined in the [WCAG 2.2 specification](https://www.w3.org/TR/WCAG22/). If you experience an issue with accessing any part of this site, please [file an issue](https://github.com/evadecker/eva.town/issues) and I’ll do my best to correct it.
 
 ## Privacy
 

@@ -103,7 +103,7 @@ export const NotecardComposer = () => {
             data-1p-ignore
           />
           <label htmlFor="special" hidden>
-            <input name="special" />
+            <input name="special" aria-hidden />
           </label>
         </div>
         <div className={styles.controls}>
@@ -115,6 +115,7 @@ export const NotecardComposer = () => {
                   viewBox="0 0 24 24"
                   width="24"
                   fill="currentColor"
+                  aria-label="Previous theme"
                 >
                   <path d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"></path>
                 </svg>
@@ -127,6 +128,7 @@ export const NotecardComposer = () => {
                   width="24"
                   viewBox="0 0 24 24"
                   fill="currentColor"
+                  aria-label="Next theme"
                 >
                   <path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path>
                 </svg>
