@@ -14,6 +14,7 @@ import { autolinkConfig } from "./plugins/rehype-autolink-config";
 export default defineConfig({
   site: "https://eva.town",
   output: "hybrid",
+  prefetch: true,
   integrations: [
     react(),
     expressiveCode({
