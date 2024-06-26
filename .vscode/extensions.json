@@ -4,7 +4,8 @@
     "yzhang.markdown-all-in-one",
     "jsynowiec.vscode-insertdatestring",
     "esbenp.prettier-vscode",
-    "vunguyentuan.vscode-css-variables"
+    "vunguyentuan.vscode-css-variables",
+    "deque-systems.vscode-axe-linter"
   ],
   "unwantedRecommendations": []
 }

@@ -115,6 +115,9 @@ dependencies:
     version: 4.0.1
 
 devDependencies:
+  '@axe-core/playwright':
+    specifier: ^4.9.1
+    version: 4.9.1(playwright-core@1.44.1)
   '@playwright/test':
     specifier: ^1.44.1
     version: 1.44.1
@@ -465,6 +468,15 @@ packages:
       - react
       - supports-color
     dev: false
+
+  /@axe-core/playwright@4.9.1(playwright-core@1.44.1):
+    resolution: {integrity: sha512-8m4WZbZq7/aq7ZY5IG8GqV+ZdvtGn/iJdom+wBg+iv/3BAOBIfNQtIu697a41438DzEEyptXWmC3Xl5Kx/o9/g==}
+    peerDependencies:
+      playwright-core: '>= 1.0.0'
+    dependencies:
+      axe-core: 4.9.1
+      playwright-core: 1.44.1
+    dev: true
 
   /@babel/code-frame@7.24.2:
     resolution: {integrity: sha512-y5+tLQyV8pg3fsiln67BVLD1P13Eg4lh5RW9mF0zUuvLrv9uIQ4MCL+CRT+FTsBlBjcIan6PGsLcBN0m3ClUyQ==}
@@ -2823,6 +2835,11 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       possible-typed-array-names: 1.0.0
+    dev: true
+
+  /axe-core@4.9.1:
+    resolution: {integrity: sha512-QbUdXJVTpvUTHU7871ppZkdOLBeGUKBQWHkHrvN2V9IQWGMt61zf3B45BtzjxEJzYuj0JBjBZP/hmYS/R9pmAw==}
+    engines: {node: '>=4'}
     dev: true
 
   /axobject-query@4.0.0:

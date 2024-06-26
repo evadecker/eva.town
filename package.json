@@ -59,6 +59,7 @@
     "simplex-noise": "^4.0.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.9.1",
     "@playwright/test": "^1.44.1",
     "@radix-ui/colors": "^3.0.0",
     "@types/howler": "^2.2.11",
