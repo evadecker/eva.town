@@ -71,8 +71,6 @@
   aspect-ratio: 1;
   user-select: none;
   flex-shrink: 0;
-  box-shadow: 0 0 0 2px var(--gray-12);
-  background-color: var(--gray-12);
   border-radius: var(--radius-xs);
   transform: scale(-1, 1);
 }

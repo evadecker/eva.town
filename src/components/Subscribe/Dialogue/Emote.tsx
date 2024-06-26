@@ -20,7 +20,7 @@ interface EmoteProps {
 }
 
 const color = {
-  outline: gray.gray1,
+  outline: gray.gray6,
   highlight: gray.gray9,
   dark: gray.gray12,
 };
@@ -212,6 +212,7 @@ export const Emote = ({ emote, onEmoteClick }: EmoteProps) => {
         viewBox="0 -0.5 48 48"
         shapeRendering="crispEdges"
         className="emote"
+        style={{ backgroundColor: color.outline }}
         width="48"
         height="48"
       >
