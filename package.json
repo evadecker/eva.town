@@ -46,17 +46,13 @@
     "markdown-it": "^14.1.0",
     "nanoid": "^5.0.7",
     "nanostores": "^0.10.3",
-    "nice-color-palettes": "^3.0.0",
-    "p5": "^1.9.4",
-    "p5.brush": "^1.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-imgattr": "^1.0.5",
     "sanitize-html": "^2.13.0",
-    "sharp": "^0.33.4",
-    "simplex-noise": "^4.0.1"
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.9.1",
