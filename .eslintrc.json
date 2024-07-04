@@ -4,12 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": [
-    "eslint:recommended",
-    "standard-with-typescript",
-    "prettier",
-    "plugin:astro/recommended"
-  ],
+  "extends": ["eslint:recommended", "prettier", "plugin:astro/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "tsconfig.json",
