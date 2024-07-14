@@ -34,7 +34,7 @@ require_https = true
 #############################  Exclusions  ##########################
 
 # Exclude URLs and mail addresses from checking (supports regex).
-exclude = ['^https://www\.linkedin\.com', '^https://bookshop\.org']
+exclude = ['^https://www\.linkedin\.com', '^https://bookshop\.org', '^https://vimeo\.com']
 
 # Check mail addresses
 include_mail = true
