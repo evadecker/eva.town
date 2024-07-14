@@ -22,6 +22,7 @@ export const sounds = {
       name: "Piano",
       staffType: "normal",
       howl: new Howl({
+        preload: false,
         src: [`${SOUNDS_DIRECTORY}piano.mp3`],
         sprite: {
           A3: [0, 3776.2131519274376],
@@ -48,6 +49,7 @@ export const sounds = {
       name: "Harp",
       staffType: "normal",
       howl: new Howl({
+        preload: false,
         src: [`${SOUNDS_DIRECTORY}harp.mp3`],
         sprite: {
           A3: [0, 12151.768707482994],
@@ -74,6 +76,7 @@ export const sounds = {
       name: "Xylophone",
       staffType: "normal",
       howl: new Howl({
+        preload: false,
         src: [`${SOUNDS_DIRECTORY}xylophone.mp3`],
         sprite: {
           A3: [0, 898.2993197278911],
@@ -100,6 +103,7 @@ export const sounds = {
       name: "Banjo",
       staffType: "normal",
       howl: new Howl({
+        preload: false,
         src: [`${SOUNDS_DIRECTORY}banjo.mp3`],
         sprite: {
           A3: [0, 2340.3401360544217],
@@ -126,6 +130,7 @@ export const sounds = {
       name: "Ocarina",
       staffType: "normal",
       howl: new Howl({
+        preload: false,
         src: [`${SOUNDS_DIRECTORY}ocarina.mp3`],
         sprite: {
           A3: [0, 195.37414965986395],
@@ -152,6 +157,7 @@ export const sounds = {
       name: "Drag",
       staffType: "drag",
       howl: new Howl({
+        preload: false,
         src: [`${SOUNDS_DIRECTORY}rupaul.mp3`],
         sprite: {
           A3: [0, 2972.154195011338],
@@ -178,6 +184,7 @@ export const sounds = {
       name: "Butts",
       staffType: "butts",
       howl: new Howl({
+        preload: false,
         src: [`${SOUNDS_DIRECTORY}farts.mp3`],
         sprite: {
           A3: [0, 1255.1927437641723],
@@ -204,6 +211,7 @@ export const sounds = {
       name: "Super Mario World",
       staffType: "mario",
       howl: new Howl({
+        preload: false,
         src: [`${SOUNDS_DIRECTORY}mario.mp3`],
         sprite: {
           A3: [0, 433.78684807256235],
