@@ -76,12 +76,10 @@ import SynthScreen from "./SynthScreen.astro";
     const enableSynth = () => {
       clearTimeout(timeout);
 
-      if (synth) {
-        if (synth.dataset.enabled !== "true") {
-          synth.dataset.enabled = "true";
-          loadInstrumentSounds();
-          setRandomInstrument(revealKeyboardLetters);
-        }
+      if (synth && synth.dataset.enabled !== "true") {
+        synth.dataset.enabled = "true";
+        loadInstrumentSounds();
+        setRandomInstrument(revealKeyboardLetters);
       }
     };
 
@@ -427,7 +425,8 @@ import SynthScreen from "./SynthScreen.astro";
 
     const handleKeyUp = (e: KeyboardEvent) => {
       if (
-        synth?.dataset.loading === "false" &&
+        synth &&
+        synth.dataset.loading === "false" &&
         synth.matches(":focus-within")
       ) {
         switch (e.key) {
