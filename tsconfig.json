@@ -14,7 +14,7 @@
   },
   "extends": "astro/tsconfigs/strict",
   "include": [
-    "astro.config.mjs",
+    "astro.config.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.astro",
