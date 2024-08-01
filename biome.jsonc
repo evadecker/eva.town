@@ -1,0 +1,32 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "files": {
+    "ignore": [
+      "**/build",
+      "**/dist",
+      "**/node_modules",
+      "**/playwright-report",
+      ".vercel",
+      ".vscode",
+      ".astro",
+      "src/components/Synth/unmute.js"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf"
+  },
+  "organizeImports": { "enabled": true },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      }
+    }
+  },
+  "overrides": [{ "include": ["*.astro"] }]
+}

@@ -1,4 +1,4 @@
-import { db, Guestbook } from "astro:db";
+import { Guestbook, db } from "astro:db";
 
 export default async function seed() {
   await db.insert(Guestbook).values([

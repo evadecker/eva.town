@@ -10,7 +10,9 @@ const work = await getCollection("work");
 
 // Sort by year subdirectory
 work.sort((a, b) =>
-  parseInt(a.id.substring(0, 4)) > parseInt(b.id.substring(0, 4)) ? -1 : 1
+  Number.parseInt(a.id.substring(0, 4)) > Number.parseInt(b.id.substring(0, 4))
+    ? -1
+    : 1,
 );
 ---
 
