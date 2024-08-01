@@ -3,9 +3,9 @@
     "astro-build.astro-vscode",
     "yzhang.markdown-all-in-one",
     "jsynowiec.vscode-insertdatestring",
-    "esbenp.prettier-vscode",
     "vunguyentuan.vscode-css-variables",
-    "deque-systems.vscode-axe-linter"
+    "deque-systems.vscode-axe-linter",
+    "biomejs.biome"
   ],
-  "unwantedRecommendations": []
+  "unwantedRecommendations": ["esbenp.prettier-vscode"]
 }

@@ -21,6 +21,7 @@ export const Stickers = () => {
     setStickers((prev) => [...prev, getNewSticker()]);
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: addSticker changes on every render and should not be used as a dependency
   useEffect(() => {
     if ($numSams > stickers.length) addSticker();
 
@@ -31,7 +32,7 @@ export const Stickers = () => {
     } else {
       setShowShoo(false);
     }
-  }, [$numSams]);
+  }, [$numSams, stickers]);
 
   return (
     <div className="stickers" style={{ viewTransitionName: "stickers" }}>

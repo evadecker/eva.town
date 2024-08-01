@@ -1,4 +1,3 @@
-"use strict";
 /**
  * @file unmute.ts
  * @author Spencer Evans evans.spencer@gmail.com
@@ -127,7 +126,7 @@ export function unmute(context, allowBackgroundPlayback, forceIOSBehavior) {
       [pageVisibilityAPI.visibilitychange],
       doc_visChange,
       true,
-      true
+      true,
     );
   /**
    * Handles blur events (only used on iOS because it doesn't dispatch vis change events properly).
@@ -290,14 +289,14 @@ export function unmute(context, allowBackgroundPlayback, forceIOSBehavior) {
     mediaPlaybackEvents,
     win_mediaPlaybackEvent,
     true,
-    true
+    true,
   );
   // #endregion
   return {
     /**
      * Disposes unmute, relinquishing all control of media playback.
      */
-    dispose: function () {
+    dispose: () => {
       // Stop / clean up the channel tag
       destroyChannelTag();
       // Remove all listeners
@@ -307,7 +306,7 @@ export function unmute(context, allowBackgroundPlayback, forceIOSBehavior) {
           [pageVisibilityAPI.visibilitychange],
           doc_visChange,
           true,
-          true
+          true,
         );
       if (isIOS)
         removeEventListeners(
@@ -315,21 +314,21 @@ export function unmute(context, allowBackgroundPlayback, forceIOSBehavior) {
           ["focus", "blur"],
           win_focusChange,
           true,
-          true
+          true,
         );
       removeEventListeners(
         window,
         mediaPlaybackEvents,
         win_mediaPlaybackEvent,
         true,
-        true
+        true,
       );
       removeEventListeners(
         context,
         ["statechange"],
         context_statechange,
         true,
-        true
+        true,
       );
       if (context.onstatechange === context_statechange)
         context.onstatechange = null;

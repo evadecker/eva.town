@@ -1,5 +1,5 @@
 import { gray } from "@radix-ui/colors";
-import { type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export type EmoteType =
   | "drooling"
@@ -206,7 +206,7 @@ export const emoteData: Record<EmoteType, ReactNode> = {
 
 export const Emote = ({ emote, onEmoteClick }: EmoteProps) => {
   return (
-    <div className="stamp" onClick={onEmoteClick}>
+    <div className="stamp" onClick={onEmoteClick} onKeyDown={onEmoteClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 -0.5 48 48"

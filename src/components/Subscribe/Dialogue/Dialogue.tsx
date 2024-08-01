@@ -26,5 +26,5 @@ export const Dialogue = React.memo(
         </AnimatePresence>
       </div>
     );
-  }
+  },
 );

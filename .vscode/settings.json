@@ -1,22 +1,15 @@
 {
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "eslint.validate": [
-    "astro",
-    "javascript",
-    "javascriptreact",
-    "json",
-    "typescript",
-    "typescriptreact"
-  ],
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
-  "stylelint.validate": ["astro", "css", "scss"],
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "biomejs.biome",
+  "cSpell.words": ["astro", "flexbox", "Photoshop"],
+  "[jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome"
   },
-  "eslint.enable": true,
-  "cSpell.words": ["astro", "flexbox", "Photoshop"]
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }

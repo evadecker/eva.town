@@ -1,7 +1,7 @@
 import "./dialogue.css";
 
 import classNames from "classnames";
-import { motion, type Variants } from "framer-motion";
+import { type Variants, motion } from "framer-motion";
 import React from "react";
 
 import type { Variant } from "./Dialogue";
@@ -56,5 +56,5 @@ export const DialogueBubble = React.memo(
         </motion.div>
       )
     );
-  }
+  },
 );

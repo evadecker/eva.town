@@ -1,5 +1,5 @@
 ---
-import { db, Guestbook as GuestbookDB } from "astro:db";
+import { Guestbook as GuestbookDB, db } from "astro:db";
 import dayjs from "dayjs";
 import Center from "src/components/Center.astro";
 
@@ -28,7 +28,7 @@ if (Astro.request.method === "POST") {
   ) {
     await db
       .insert(GuestbookDB)
-      .values({ author, content, url, theme: parseInt(theme) });
+      .values({ author, content, url, theme: Number.parseInt(theme) });
 
     return Astro.redirect("/guestbook");
   }
@@ -36,7 +36,7 @@ if (Astro.request.method === "POST") {
 
 const guestbook = await db.select().from(GuestbookDB);
 guestbook.sort((a, b) =>
-  dayjs(b.timestamp).isBefore(dayjs(a.timestamp)) ? -1 : 1
+  dayjs(b.timestamp).isBefore(dayjs(a.timestamp)) ? -1 : 1,
 );
 
 const title = "Guestbook";

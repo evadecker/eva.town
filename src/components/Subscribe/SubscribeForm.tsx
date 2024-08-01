@@ -13,7 +13,7 @@ import {
 import { isValidEmail } from "../../helpers/helpers";
 import { Icon } from "../Icon/Icon";
 import { Dialogue } from "./Dialogue/Dialogue";
-import { emoteData, type EmoteType } from "./Dialogue/Emote";
+import { type EmoteType, emoteData } from "./Dialogue/Emote";
 
 interface SniperResponse {
   url: string;
@@ -146,7 +146,7 @@ const getRandomRemark = (remarks: string[]): string => {
 
 export const SubscribeForm = () => {
   const [currentRemarkType, setCurrentRemarkType] = useState<RemarkType | null>(
-    null
+    null,
   );
   const [justDisplayedRemarks, setJustDisplayedRemarks] = useState(false);
   const [recipientEmail, setRecipientEmail] = useState<string>("");
@@ -154,14 +154,15 @@ export const SubscribeForm = () => {
   const [currentText, setCurrentText] = useState<string | null>("");
   const [currentEmote, setCurrentEmote] = useState<EmoteType>("neutral");
 
-  const [isHoveringSubscribe, setIsHoveringSubscribe] = useState(false);
+  const [isHoveringOrFocusingSubscribe, setIsHoveringOrFocusingSubscribe] =
+    useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [sniperData, setSniperData] = useState<SniperResponse | null>(null);
 
   const displayNewRemark = (
     remarkType: RemarkType,
-    options?: { force?: boolean }
+    options?: { force?: boolean },
   ) => {
     const shouldDisplayNewRemark =
       options?.force === true || !justDisplayedRemarks;
@@ -178,7 +179,7 @@ export const SubscribeForm = () => {
     setTimeout(() => {
       setJustDisplayedRemarks(false);
     }, REMARK_TIMEOUT);
-  }, [currentRemarkType]);
+  }, []);
 
   const handleFocus = () => {
     if (currentRemarkType === null) {
@@ -216,7 +217,8 @@ export const SubscribeForm = () => {
     setIsSubmitting(true);
     displayNewRemark("submitting", { force: true });
 
-    const url = `https://buttondown.email/api/emails/embed-subscribe/notesfromeva`;
+    const url =
+      "https://buttondown.email/api/emails/embed-subscribe/notesfromeva";
     const data = new FormData(e.target as HTMLFormElement);
 
     fetch(url, { method: "POST", body: data })
@@ -308,23 +310,34 @@ export const SubscribeForm = () => {
               })}
               disabled={isSubmitting || hasSubmitted}
               aria-label="Subscribe"
+              onFocus={() => {
+                setIsHoveringOrFocusingSubscribe(true);
+              }}
+              onBlur={() => {
+                setIsHoveringOrFocusingSubscribe(false);
+              }}
               onMouseOver={() => {
-                setIsHoveringSubscribe(true);
+                setIsHoveringOrFocusingSubscribe(true);
               }}
               onMouseLeave={() => {
-                setIsHoveringSubscribe(false);
+                setIsHoveringOrFocusingSubscribe(false);
               }}
             >
               <Icon
                 icon={isSubmitting ? "loader" : "mailAdd"}
-                variant={isHoveringSubscribe ? "filled" : "line"}
+                variant={isHoveringOrFocusingSubscribe ? "filled" : "line"}
               />
             </button>
           </div>
         ) : sniperData ? (
-          <a href={sniperData.url} className="sniperLink" target="_blank">
+          <a
+            href={sniperData.url}
+            className="sniperLink"
+            target="_blank"
+            rel="noreferrer"
+          >
             <div className="sniperLogo">
-              <img src={sniperData.image} />
+              <img src={sniperData.image} alt={sniperData.provider_pretty} />
             </div>
             Open {sniperData.provider_pretty}
             <Icon icon="arrowRight" />

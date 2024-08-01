@@ -1,6 +1,0 @@
-# Ignore artifacts:
-build
-dist
-node_modules
-playwright-report
-**/*.md

@@ -1,7 +1,7 @@
-import { motion, type Variants } from "framer-motion";
+import { type Variants, motion } from "framer-motion";
 import { nanoid } from "nanoid";
 
-import { type Variant } from "./Dialogue";
+import type { Variant } from "./Dialogue";
 
 const SPEED = 0.04;
 
@@ -48,7 +48,7 @@ const TypedCharacter = ({
   const generateRandomValuesArray = (
     num: number,
     min: number,
-    max: number
+    max: number,
   ): number[] => {
     const randomNumberBetweenValues = (): number => {
       return Math.random() * (max - min) + min;
@@ -60,9 +60,9 @@ const TypedCharacter = ({
   const generateRandomEmsArray = (
     num: number,
     min: number,
-    max: number
+    max: number,
   ): string[] => {
-    return generateRandomValuesArray(num, min, max).map((i) => i + "em");
+    return generateRandomValuesArray(num, min, max).map((i) => `${i}em`);
   };
 
   const characterVariants: Variants = {
@@ -93,7 +93,7 @@ const TypedCharacter = ({
       rotate: generateRandomValuesArray(10, 10, -10),
       transition: {
         type: "tween",
-        repeat: Infinity,
+        repeat: Number.POSITIVE_INFINITY,
         repeatType: "mirror",
         ease: "anticipate",
         delay: -i,
@@ -108,7 +108,7 @@ const TypedCharacter = ({
       y: "0.12em",
       transition: {
         type: "tween",
-        repeat: Infinity,
+        repeat: Number.POSITIVE_INFINITY,
         ease: "easeInOut",
         repeatType: "reverse",
         delay: -i * 0.05,
