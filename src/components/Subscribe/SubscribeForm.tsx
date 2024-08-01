@@ -175,11 +175,13 @@ export const SubscribeForm = () => {
   };
 
   useEffect(() => {
-    setJustDisplayedRemarks(true);
-    setTimeout(() => {
-      setJustDisplayedRemarks(false);
-    }, REMARK_TIMEOUT);
-  }, []);
+    if (currentRemarkType) {
+      setJustDisplayedRemarks(true);
+      setTimeout(() => {
+        setJustDisplayedRemarks(false);
+      }, REMARK_TIMEOUT);
+    }
+  }, [currentRemarkType]);
 
   const handleFocus = () => {
     if (currentRemarkType === null) {

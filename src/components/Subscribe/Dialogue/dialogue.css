@@ -27,10 +27,6 @@
   cursor: default;
 }
 
-.big {
-  font-size: var(--step-1);
-}
-
 .character {
   display: inline-block;
   white-space: pre;
