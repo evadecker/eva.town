@@ -16,31 +16,40 @@ export const RelativeDate = ({ date }: RelativeDateProps) => {
   dayjs.extend(advancedFormat); // Support 'z' to display timezone
   dayjs.extend(relativeTime); // Support .fromNow()
 
+  let dateTime: string;
   let formattedTimestamp: string;
   let displayTime: string;
 
   if (date === null) {
+    dateTime = "";
     formattedTimestamp = "";
     displayTime = "at some point";
   } else {
-    formattedTimestamp = dayjs(date).format("LLLL z");
+    // Set timezone if undefined, keeping local time the same
+    const dateObj = dayjs(date);
 
-    if (dayjs().diff(dayjs(date), "day") < 2) {
+    // Display date as ISO string, e.g. "2021-01-15T20:00:00-05:00"
+    dateTime = dateObj.toISOString();
+
+    // Display date as title tooltip, e.g. "January 15, 2021 8:00 PM"
+    formattedTimestamp = dateObj.format("LLL z");
+
+    if (dayjs().diff(dateObj, "day") < 2) {
       // If less than 2 days, display relative date, e.g. "a day ago", "6 hours ago"
-      displayTime = dayjs(date).fromNow();
+      displayTime = dateObj.fromNow();
     } else {
       if (dayjs().isSame(date, "year")) {
         // If current year, display month and day, e.g. "Jan 15"
-        displayTime = dayjs(date).format("MMM D");
+        displayTime = dateObj.format("MMM D");
       } else {
         // Otherwise display full date, e.g. "Jan 15, 2021"
-        displayTime = dayjs(date).format("ll");
+        displayTime = dateObj.format("ll");
       }
     }
   }
 
   return (
-    <time dateTime={dayjs(date).format()} title={formattedTimestamp}>
+    <time dateTime={dateTime} title={formattedTimestamp}>
       {displayTime}
     </time>
   );
