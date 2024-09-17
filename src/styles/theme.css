@@ -80,14 +80,17 @@
 
   /* Shadows */
   --shadow-color: 0deg 0% 0%;
-  --shadow-s: 0px 0.6px 0.6px hsl(var(--shadow-color) / 17%),
+  --shadow-s:
+    0px 0.6px 0.6px hsl(var(--shadow-color) / 17%),
     0px 0.9px 0.9px -1.7px hsl(var(--shadow-color) / 14%),
     0px 2.5px 2.4px -3.5px hsl(var(--shadow-color) / 11%);
-  --shadow-m: 0px 0.6px 0.6px hsl(var(--shadow-color) / 12%),
+  --shadow-m:
+    0px 0.6px 0.6px hsl(var(--shadow-color) / 12%),
     0px 1.6px 1.6px -1.2px hsl(var(--shadow-color) / 10%),
     0px 4.7px 4.6px -2.3px hsl(var(--shadow-color) / 7%),
     0px 12.5px 12.2px -3.5px hsl(var(--shadow-color) / 4%);
-  --shadow-l: 0px 0.6px 0.6px hsl(var(--shadow-color) / 17%),
+  --shadow-l:
+    0px 0.6px 0.6px hsl(var(--shadow-color) / 17%),
     0px 2.6px 2.5px -0.5px hsl(var(--shadow-color) / 16%),
     0px 5.3px 5.2px -1px hsl(var(--shadow-color) / 15%),
     0px 9.7px 9.5px -1.5px hsl(var(--shadow-color) / 13%),
