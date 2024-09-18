@@ -10,9 +10,10 @@
 
 This is the source code for [eva.town](https://eva.town), designed, coded, and written by Eva—that's me! It's a place for me to share notes and learn in public. I try to update things regularly.
 
-You're welcome to fork this site, use it as inspiration, and modify things for your own projects—just pls don't steal it or try to claim it as your own.
-
 For information about the technology and tools behind the site, visit [eva.town/colophon](https://eva.town/colophon).
+
+> [!NOTE]
+> You're welcome to fork this site, use it as inspiration, and modify things for your own projects—just don't steal it or try to claim it as your own. When in doubt, message me and we can chat about what you want to do.
 
 ## Getting Started
 
