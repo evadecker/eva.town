@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Vercel](https://vercelbadge.vercel.app/api/evadecker/eva.town) [![RSS](https://img.shields.io/badge/RSS-gray?logo=rss&logoColor=white&labelColor=eb7817)](https://eva.town/rss.xml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1454513e-f8a3-468f-9f62-933c9225d8c2/deploy-status)](https://app.netlify.com/sites/eva-town/deploys) [![RSS](https://img.shields.io/badge/RSS-gray?logo=rss&logoColor=white&labelColor=eb7817)](https://eva.town/rss.xml)
 
 </div>
 
