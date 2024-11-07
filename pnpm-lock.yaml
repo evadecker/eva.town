@@ -9,16 +9,16 @@ importers:
   .:
     dependencies:
       '@astrojs/check':
-        specifier: ^0.9.3
+        specifier: ^0.9.4
         version: 0.9.4(typescript@5.6.3)
       '@astrojs/db':
-        specifier: ^0.14.1
+        specifier: ^0.14.3
         version: 0.14.3(@types/react@18.3.12)(react@18.3.1)
       '@astrojs/markdown-remark':
-        specifier: ^5.2.0
+        specifier: ^5.3.0
         version: 5.3.0
       '@astrojs/mdx':
-        specifier: ^3.1.6
+        specifier: ^3.1.9
         version: 3.1.9(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(sass@1.80.6)(typescript@5.6.3))
       '@astrojs/netlify':
         specifier: ^5.5.4
@@ -27,26 +27,26 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.10(@types/node@22.9.0)(sass@1.80.6))
       '@astrojs/rss':
-        specifier: ^4.0.7
+        specifier: ^4.0.9
         version: 4.0.9
       '@astrojs/sitemap':
-        specifier: ^3.1.6
+        specifier: ^3.2.1
         version: 3.2.1
       '@nanostores/react':
-        specifier: ^0.7.3
-        version: 0.7.3(nanostores@0.11.3)(react@18.3.1)
+        specifier: ^0.8.0
+        version: 0.8.0(nanostores@0.11.3)(react@18.3.1)
       '@types/react':
-        specifier: ^18.3.5
+        specifier: ^18.3.12
         version: 18.3.12
       '@types/react-dom':
-        specifier: ^18.3.0
+        specifier: ^18.3.1
         version: 18.3.1
       astro:
-        specifier: ^4.15.6
+        specifier: ^4.16.8
         version: 4.16.10(@types/node@22.9.0)(rollup@4.24.4)(sass@1.80.6)(typescript@5.6.3)
       astro-expressive-code:
-        specifier: ^0.36.1
-        version: 0.36.1(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(sass@1.80.6)(typescript@5.6.3))
+        specifier: ^0.38.1
+        version: 0.38.3(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(sass@1.80.6)(typescript@5.6.3))
       astro-font:
         specifier: ^0.1.81
         version: 0.1.81
@@ -66,7 +66,7 @@ importers:
         specifier: ^3.7.2
         version: 3.7.2
       framer-motion:
-        specifier: ^11.5.4
+        specifier: ^11.11.11
         version: 11.11.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       howler:
         specifier: ^2.2.4
@@ -75,7 +75,7 @@ importers:
         specifier: ^14.1.0
         version: 14.1.0
       nanoid:
-        specifier: ^5.0.7
+        specifier: ^5.0.8
         version: 5.0.8
       nanostores:
         specifier: ^0.11.3
@@ -96,7 +96,7 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5
       sanitize-html:
-        specifier: ^2.13.0
+        specifier: ^2.13.1
         version: 2.13.1
       sharp:
         specifier: ^0.33.5
@@ -106,25 +106,25 @@ importers:
         specifier: ^4.10.0
         version: 4.10.0(playwright-core@1.48.2)
       '@biomejs/biome':
-        specifier: ^1.9.1
+        specifier: ^1.9.4
         version: 1.9.4
       '@playwright/test':
-        specifier: ^1.47.1
+        specifier: ^1.48.2
         version: 1.48.2
       '@radix-ui/colors':
         specifier: ^3.0.0
         version: 3.0.0
       '@types/howler':
-        specifier: ^2.2.11
+        specifier: ^2.2.12
         version: 2.2.12
       '@types/node':
-        specifier: ^22.5.5
+        specifier: ^22.8.7
         version: 22.9.0
       hastscript:
         specifier: ^9.0.0
         version: 9.0.0
       html-validate:
-        specifier: ^8.22.0
+        specifier: ^8.24.2
         version: 8.24.2
       husky:
         specifier: ^9.1.6
@@ -133,7 +133,7 @@ importers:
         specifier: ^1.7.0
         version: 1.7.0
       sass:
-        specifier: ^1.78.0
+        specifier: ^1.80.6
         version: 1.80.6
       stylelint:
         specifier: ^15.11.0
@@ -148,7 +148,7 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0(postcss@8.4.47)(stylelint@15.11.0(typescript@5.6.3))
       typescript:
-        specifier: ^5.6.2
+        specifier: ^5.6.3
         version: 5.6.3
 
 packages:
@@ -572,17 +572,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@expressive-code/core@0.36.1':
-    resolution: {integrity: sha512-9Y+vLlDEQeRQiPKTtab0NRmnUwS8GkJxobwvsXKoqWrRTWyVjV0VLI7BwXFUVVbbuuvMnwXpzfxY2mC64n3Jow==}
+  '@expressive-code/core@0.38.3':
+    resolution: {integrity: sha512-s0/OtdRpBONwcn23O8nVwDNQqpBGKscysejkeBkwlIeHRLZWgiTVrusT5Idrdz1d8cW5wRk9iGsAIQmwDPXgJg==}
 
-  '@expressive-code/plugin-frames@0.36.1':
-    resolution: {integrity: sha512-HAWH5gcX7avdtKhwSp/RLtqqEq04/JFOIQ6enAClHY8Kbr3c5T+C0Ki6G/3IVKnIjy2y0U7E6b9dOqzKSsanxw==}
+  '@expressive-code/plugin-frames@0.38.3':
+    resolution: {integrity: sha512-qL2oC6FplmHNQfZ8ZkTR64/wKo9x0c8uP2WDftR/ydwN/yhe1ed7ZWYb8r3dezxsls+tDokCnN4zYR594jbpvg==}
 
-  '@expressive-code/plugin-shiki@0.36.1':
-    resolution: {integrity: sha512-nmzJ2TUHBDtYgOzDONTKt27n2B9S++hmvPxlPM1HZtjwO+2fhGGGW7M3VfO//6FIlcD4X36jy38DfPB4T9/m3Q==}
+  '@expressive-code/plugin-shiki@0.38.3':
+    resolution: {integrity: sha512-kqHnglZeesqG3UKrb6e9Fq5W36AZ05Y9tCREmSN2lw8LVTqENIeCIkLDdWtQ5VoHlKqwUEQFTVlRehdwoY7Gmw==}
 
-  '@expressive-code/plugin-text-markers@0.36.1':
-    resolution: {integrity: sha512-CNxkTuXmQtRWMQZcRRsLEfZIYStMdRMPzbisNU2a/RTgovqDsOQiyh1abnewxz0y7VuXW330D+etcEHjFWXU/A==}
+  '@expressive-code/plugin-text-markers@0.38.3':
+    resolution: {integrity: sha512-dPK3+BVGTbTmGQGU3Fkj3jZ3OltWUAlxetMHI6limUGCWBCucZiwoZeFM/WmqQa71GyKRzhBT+iEov6kkz2xVA==}
 
   '@html-validate/stylish@4.2.0':
     resolution: {integrity: sha512-Nl8HCv0hGRSLQ+n1OD4Hk3a+Urwk9HH0vQkAzzCarT4KlA7bRl+6xEiS5PZVwOmjtC7XiH/oNe3as9Fxcr2A1w==}
@@ -773,8 +773,8 @@ packages:
   '@mdx-js/mdx@3.1.0':
     resolution: {integrity: sha512-/QxEhPAvGwbQmy1Px8F899L5Uc2KZ6JtXwlCgJmjSTBedwOZkByYcBG4GceIGPXRDsmfxhHazuS+hlOShRLeDw==}
 
-  '@nanostores/react@0.7.3':
-    resolution: {integrity: sha512-/XuLAMENRu/Q71biW4AZ4qmU070vkZgiQ28gaTSNRPm2SZF5zGAR81zPE1MaMB4SeOp6ZTst92NBaG75XSspNg==}
+  '@nanostores/react@0.8.0':
+    resolution: {integrity: sha512-MhbVB7NQLboq/Z9fRTDen9zib/YCffe6mn+3Xg5MOYByMX5Xx98SOZjk/Nd3yvOd/g7GjlQqwXj0KF2lPb6CEQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0
@@ -1230,10 +1230,10 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro-expressive-code@0.36.1:
-    resolution: {integrity: sha512-D2nmBQ56wfnS/CBqCWoEGqIivNqaKJoACIK8eNa7TeDUwHzEWNSNoj5yK+wUJzpC7gI9XKPDh0Q/j8Dy7s84vA==}
+  astro-expressive-code@0.38.3:
+    resolution: {integrity: sha512-Tvdc7RV0G92BbtyEOsfJtXU35w41CkM94fOAzxbQP67Wj5jArfserJ321FO4XA7WG9QMV0GIBmQq77NBIRDzpQ==}
     peerDependencies:
-      astro: ^4.0.0-beta || ^3.3.0
+      astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0
 
   astro-font@0.1.81:
     resolution: {integrity: sha512-rbrv/+ZSYdgyjBlhkAqfCjMxqqo6iEwnSo/rAdDt/POILsF0ChxMFhefIIzKEukrRGtVjEj1lrLRYk+AdV9scQ==}
@@ -1746,8 +1746,8 @@ packages:
   eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
 
-  expressive-code@0.36.1:
-    resolution: {integrity: sha512-/cEqiBUMJXe9PJ74MFupcChi1quO7+kqFcKiG/29yBZ6G09V4s6d3X53wIOBlNYmQI+5YLDPdyB/aDSTP+MxPA==}
+  expressive-code@0.38.3:
+    resolution: {integrity: sha512-COM04AiUotHCKJgWdn7NtW2lqu8OW8owAidMpkXt1qxrZ9Q2iC7+tok/1qIn2ocGnczvr9paIySgGnEwFeEQ8Q==}
 
   extend-shallow@2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
@@ -2231,7 +2231,6 @@ packages:
 
   libsql@0.4.7:
     resolution: {integrity: sha512-T9eIRCs6b0J1SHKYIvD8+KCJMcWZ900iZyxdnSCdqxN12Z1ijzT+jY5nrk72Jw4B0HGzms2NgpryArlJqvc3Lw==}
-    cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
 
   lines-and-columns@1.2.4:
@@ -2863,8 +2862,8 @@ packages:
   rehype-autolink-headings@7.1.0:
     resolution: {integrity: sha512-rItO/pSdvnvsP4QRB1pmPiNHUskikqtPojZKJPPPAVx9Hj8i8TwMBhofrrAYRhYOOBZH9tgmG5lPqDLuIWPWmw==}
 
-  rehype-expressive-code@0.36.1:
-    resolution: {integrity: sha512-q5TFftM8m64vYIou1tcJ2oHHDox2dWAa/x6uFw+v55xsyCNicJhVN86LHBnktTPxXvOuUA7ovk1GIG9sjLA6Aw==}
+  rehype-expressive-code@0.38.3:
+    resolution: {integrity: sha512-RYSSDkMBikoTbycZPkcWp6ELneANT4eTpND1DSRJ6nI2eVFUwTBDCvE2vO6jOOTaavwnPiydi4i/87NRyjpdOA==}
 
   rehype-parse@9.0.1:
     resolution: {integrity: sha512-ksCzCD0Fgfh7trPDxr2rSylbwq9iYDkSn8TCDmEJ49ljEUBxDVCzCHv7QNzZOfODanX4+bWQ4WZqLCRWYLfhag==}
@@ -4075,7 +4074,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@expressive-code/core@0.36.1':
+  '@expressive-code/core@0.38.3':
     dependencies:
       '@ctrl/tinycolor': 4.1.0
       hast-util-select: 6.0.3
@@ -4087,18 +4086,18 @@ snapshots:
       unist-util-visit: 5.0.0
       unist-util-visit-parents: 6.0.1
 
-  '@expressive-code/plugin-frames@0.36.1':
+  '@expressive-code/plugin-frames@0.38.3':
     dependencies:
-      '@expressive-code/core': 0.36.1
+      '@expressive-code/core': 0.38.3
 
-  '@expressive-code/plugin-shiki@0.36.1':
+  '@expressive-code/plugin-shiki@0.38.3':
     dependencies:
-      '@expressive-code/core': 0.36.1
+      '@expressive-code/core': 0.38.3
       shiki: 1.22.2
 
-  '@expressive-code/plugin-text-markers@0.36.1':
+  '@expressive-code/plugin-text-markers@0.38.3':
     dependencies:
-      '@expressive-code/core': 0.36.1
+      '@expressive-code/core': 0.38.3
 
   '@html-validate/stylish@4.2.0':
     dependencies:
@@ -4306,7 +4305,7 @@ snapshots:
       - acorn
       - supports-color
 
-  '@nanostores/react@0.7.3(nanostores@0.11.3)(react@18.3.1)':
+  '@nanostores/react@0.8.0(nanostores@0.11.3)(react@18.3.1)':
     dependencies:
       nanostores: 0.11.3
       react: 18.3.1
@@ -4742,10 +4741,10 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-expressive-code@0.36.1(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(sass@1.80.6)(typescript@5.6.3)):
+  astro-expressive-code@0.38.3(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(sass@1.80.6)(typescript@5.6.3)):
     dependencies:
       astro: 4.16.10(@types/node@22.9.0)(rollup@4.24.4)(sass@1.80.6)(typescript@5.6.3)
-      rehype-expressive-code: 0.36.1
+      rehype-expressive-code: 0.38.3
 
   astro-font@0.1.81: {}
 
@@ -5215,12 +5214,12 @@ snapshots:
 
   eventemitter3@5.0.1: {}
 
-  expressive-code@0.36.1:
+  expressive-code@0.38.3:
     dependencies:
-      '@expressive-code/core': 0.36.1
-      '@expressive-code/plugin-frames': 0.36.1
-      '@expressive-code/plugin-shiki': 0.36.1
-      '@expressive-code/plugin-text-markers': 0.36.1
+      '@expressive-code/core': 0.38.3
+      '@expressive-code/plugin-frames': 0.38.3
+      '@expressive-code/plugin-shiki': 0.38.3
+      '@expressive-code/plugin-text-markers': 0.38.3
 
   extend-shallow@2.0.1:
     dependencies:
@@ -6680,9 +6679,9 @@ snapshots:
       unified: 11.0.5
       unist-util-visit: 5.0.0
 
-  rehype-expressive-code@0.36.1:
+  rehype-expressive-code@0.38.3:
     dependencies:
-      expressive-code: 0.36.1
+      expressive-code: 0.38.3
 
   rehype-parse@9.0.1:
     dependencies:
