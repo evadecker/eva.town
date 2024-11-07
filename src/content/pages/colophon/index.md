@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers eva.town.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2024-06-22 22:03:28-04:00
+dateModified: 2024-11-07 17:25:26-05:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -22,7 +22,7 @@ Code is edited using [VS Code](https://code.visualstudio.com) on a [MacBook Pro]
 
 End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview devices, test accessibility, and toggle user preferences like `prefers-reduced-motion`.
 
-Domain registration, hosting, and deployment are via [Vercel](https://vercel.com/). Email forwarding is through [ImprovMX](https://improvmx.com). I send occasional [newsletters](https://buttondown.email/notesfromeva) using [Buttondown](https://buttondown.email).
+Domain registration, hosting, and deployment are via [Netlify](https://netlify.com/). Email forwarding is through [ImprovMX](https://improvmx.com). I send occasional [newsletters](https://buttondown.email/notesfromeva) using [Buttondown](https://buttondown.email).
 
 ## Typography
 
@@ -50,7 +50,7 @@ I minimize energy usage on this site by avoiding unnecessary scripts (such as tr
 > The internet consumes a lot of electricity. 416.2TWh per year to be precise. To give you some perspective, that's more than the entire United Kingdom.
 > <cite>[Website Carbon Calculator](https://www.websitecarbon.com)</cite>
 
-As of October 18, 2023, [carbon results for eva.town](https://www.websitecarbon.com/website/eva-town/) indicate that the home page is cleaner than 95% of web pages tested, producing 0.05g of CO<sub>2</sub> per page view. The site uses [Vercel's serverless architecture](https://vercel.com/guides/what-is-vercel-green-energy-policy#) to further cut energy consumption.
+As of October 18, 2023, [carbon results for eva.town](https://www.websitecarbon.com/website/eva-town/) indicate that the home page is cleaner than 95% of web pages tested, producing 0.05g of CO<sub>2</sub> per page view.
 
 ## Accessibility
 
