@@ -24,6 +24,8 @@ End-to-end tests are written using [Playwright](https://playwright.dev), and I u
 
 Domain registration, hosting, and deployment are via [Netlify](https://netlify.com/). Email forwarding is through [ImprovMX](https://improvmx.com). I send occasional [newsletters](https://buttondown.email/notesfromeva) using [Buttondown](https://buttondown.email).
 
+I shared more about the hardware I use on [Uses This](https://usesthis.com/interviews/eva.decker/).
+
 ## Typography
 
 Text is set in [HEX Franklin Variable](https://hex.xyz/HEX_Franklin/) with code in [`MonoLisa`](https://www.monolisa.dev/). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
