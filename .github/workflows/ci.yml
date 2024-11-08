@@ -1,5 +1,8 @@
 name: CI
 
+env:
+  ASTRO_DB_APP_TOKEN: ${{ secrets.ASTRO_DB_APP_TOKEN }}
+
 on:
   push:
     branches: main
