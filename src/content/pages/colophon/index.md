@@ -2,7 +2,7 @@
 title: Colophon
 description: Colophon is a designer-y word for “how it’s made”—here’s what powers eva.town.
 datePublished: 2023-09-26 03:47:00-04:00
-dateModified: 2024-11-07 17:25:26-05:00
+dateModified: 2024-11-08 01:47:39-05:00
 img: ["./img600.webp", "./img900.webp", "./img1200.webp"]
 imgAlt: The spines of 12 books, including Visual Explanations, The Display of Quantitative Information, The Geometry of Type, Understanding Comics, Nicely Said, Don't Make Me Think!, Queer by Design, The 99% Invisible City, Interaction of Color, The Elements of Style, Thinking Fast and Slow, and The Death and Life of Great American Cities.
 ogImage: ./img1200.webp
@@ -16,13 +16,15 @@ All code is open source and available on [GitHub](https://github.com/evadecker/e
 
 ## Technology
 
-This site is built using [Astro](https://astro.build). Astro handles the content-heavy views (written in [MDX](https://mdxjs.com)), but for more interactive components I use [React](https://react.dev) and [TypeScript](https://www.typescriptlang.org).
+This site is built using [Astro](https://astro.build). Astro handles the content-heavy views (written in [MDX](https://mdxjs.com)), but for more interactive components I use [React](https://react.dev) and [TypeScript](https://www.typescriptlang.org). [Guestbook](/guestbook) entries are stored on [Turso](https://turso.tech/).
 
-Code is edited using [VS Code](https://code.visualstudio.com) on a [MacBook Pro](https://www.apple.com/macbook-pro/). My terminal of choice is [Warp](https://www.warp.dev).
+Code is edited using [Cursor](https://www.cursor.com/) on a [MacBook Pro](https://www.apple.com/macbook-pro/). My terminal of choice is [Warp](https://www.warp.dev).
 
 End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview devices, test accessibility, and toggle user preferences like `prefers-reduced-motion`.
 
 Domain registration, hosting, and deployment are via [Netlify](https://netlify.com/). Email forwarding is through [ImprovMX](https://improvmx.com). I send occasional [newsletters](https://buttondown.email/notesfromeva) using [Buttondown](https://buttondown.email).
+
+I shared more about the hardware I use on [Uses This](https://usesthis.com/interviews/eva.decker/).
 
 ## Typography
 
