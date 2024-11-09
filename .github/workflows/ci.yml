@@ -99,8 +99,5 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-      - name: Push to Astro DB
-        run: pnpm astro db push --remote
-
       - name: Build and validate HTML5
         run: pnpm html-validate
