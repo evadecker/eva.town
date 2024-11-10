@@ -1,23 +1,22 @@
 import { useStore } from "@nanostores/react";
-import { AnimatePresence, motion } from "framer-motion";
+import classNames from "classnames";
+import { AnimatePresence } from "framer-motion";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
-
 import { clearSams, numSams } from "../../stores/sam";
 import { Sticker, type StickerProps } from "./Sticker";
 
 export const Stickers = () => {
   const [stickers, setStickers] = useState<StickerProps[]>([]);
   const [showShoo, setShowShoo] = useState(false);
+  const [exiting, setExiting] = useState(false);
   const $numSams = useStore(numSams);
 
   const addSticker = () => {
-    const getNewSticker = () => {
-      return {
-        id: nanoid(),
-        variant: $numSams,
-      };
-    };
+    const getNewSticker = () => ({
+      id: nanoid(),
+      variant: $numSams,
+    });
     setStickers((prev) => [...prev, getNewSticker()]);
   };
 
@@ -34,6 +33,14 @@ export const Stickers = () => {
     }
   }, [$numSams, stickers]);
 
+  const handleShoo = () => {
+    setExiting(true);
+    clearSams();
+    setTimeout(() => {
+      setExiting(false);
+    }, 300);
+  };
+
   return (
     <div className="stickers" style={{ viewTransitionName: "stickers" }}>
       <AnimatePresence>
@@ -42,25 +49,16 @@ export const Stickers = () => {
         ))}
         {showShoo && (
           <div className="shoo-wrapper">
-            <motion.button
+            <button
               data-sam-shoo
+              onClick={handleShoo}
+              className={classNames({
+                exiting,
+              })}
               type="button"
-              onClick={clearSams}
-              initial={{ y: 50 }}
-              animate={{ y: 0 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 1 }}
-              exit={{
-                cursor: "default",
-                scale: [
-                  1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 0.8,
-                ],
-                x: [0, -8, -12, -12, 16, -36, 80, -48, 16, -8, 2, 0],
-                opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
-              }}
             >
               Shoo Sam
-            </motion.button>
+            </button>
           </div>
         )}
       </AnimatePresence>
