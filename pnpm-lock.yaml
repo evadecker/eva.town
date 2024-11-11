@@ -124,8 +124,8 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0
       html-validate:
-        specifier: ^8.24.2
-        version: 8.24.2
+        specifier: ^8.25.0
+        version: 8.25.0
       husky:
         specifier: ^9.1.6
         version: 9.1.6
@@ -2004,8 +2004,8 @@ packages:
     resolution: {integrity: sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==}
     engines: {node: '>=8'}
 
-  html-validate@8.24.2:
-    resolution: {integrity: sha512-PpZLlH3gpOSBLRBID4QovOyZ97Ka5dCIhHMPjUxQlMGqk5pc+mgG5enCXbC8ngdjG0jpkTvM8AMhnPv1EiU9Pw==}
+  html-validate@8.25.0:
+    resolution: {integrity: sha512-ZMQcxHxQJ7vrj8o9mKGexkCBENfuyXSZOeBop2CanbbyeBgHwKhIKhksmc2TmhT8+chi657O+XqdDWZLAhMCJA==}
     engines: {node: '>= 16.14'}
     hasBin: true
     peerDependencies:
@@ -2231,6 +2231,7 @@ packages:
 
   libsql@0.4.7:
     resolution: {integrity: sha512-T9eIRCs6b0J1SHKYIvD8+KCJMcWZ900iZyxdnSCdqxN12Z1ijzT+jY5nrk72Jw4B0HGzms2NgpryArlJqvc3Lw==}
+    cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
 
   lines-and-columns@1.2.4:
@@ -5585,7 +5586,7 @@ snapshots:
 
   html-tags@3.3.1: {}
 
-  html-validate@8.24.2:
+  html-validate@8.25.0:
     dependencies:
       '@html-validate/stylish': 4.2.0
       '@sidvind/better-ajv-errors': 3.0.1(ajv@8.17.1)
