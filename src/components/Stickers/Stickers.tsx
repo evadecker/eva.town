@@ -12,26 +12,25 @@ export const Stickers = () => {
   const [exiting, setExiting] = useState(false);
   const $numSams = useStore(numSams);
 
-  const addSticker = () => {
-    const getNewSticker = () => ({
-      id: nanoid(),
-      variant: $numSams,
-    });
-    setStickers((prev) => [...prev, getNewSticker()]);
-  };
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: addSticker changes on every render and should not be used as a dependency
   useEffect(() => {
-    if ($numSams > stickers.length) addSticker();
-
-    if ($numSams === 0) setStickers([]);
-
-    if ($numSams > 2) {
-      setShowShoo(true);
-    } else {
+    if ($numSams === 0) {
+      setStickers([]);
       setShowShoo(false);
+      return;
     }
-  }, [$numSams, stickers]);
+
+    setShowShoo($numSams > 2);
+
+    if ($numSams > stickers.length) {
+      setStickers((prev) => [
+        ...prev,
+        {
+          id: nanoid(),
+          variant: $numSams,
+        },
+      ]);
+    }
+  }, [$numSams, stickers.length]);
 
   const handleShoo = () => {
     setExiting(true);

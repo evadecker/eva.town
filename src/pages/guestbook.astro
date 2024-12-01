@@ -1,14 +1,45 @@
 ---
-import { Guestbook as GuestbookDB, db } from "astro:db";
-import dayjs from "dayjs";
-import Center from "src/components/Center.astro";
-
+import { Guestbook as GuestbookDB, count, db, desc } from "astro:db";
+import { Icon } from "src/components/Icon/Icon";
+import Center from "../components/Center.astro";
 import Notecard from "../components/Notecard/Notecard.astro";
 import { NotecardComposer } from "../components/Notecard/NotecardComposer";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Server-render page
 export const prerender = false;
+
+// Get the current page from search params
+const currentPage = Number(Astro.url.searchParams.get("page")) || 1;
+
+// Redirect page=1 to base URL
+if (currentPage === 1 && Astro.url.searchParams.has("page")) {
+  return Astro.redirect("/guestbook");
+}
+
+// Adjust entries per page based on whether we're on the first page
+const baseEntriesPerPage = 24;
+const entriesPerPage =
+  currentPage === 1 ? baseEntriesPerPage - 1 : baseEntriesPerPage;
+
+const entryCount = await db.select({ count: count() }).from(GuestbookDB);
+const totalEntries = entryCount[0].count;
+// Calculate total pages accounting for one less entry on first page
+const remainingEntries = Math.max(0, totalEntries - 1); // Subtract one for composer
+const totalPages = Math.max(
+  1,
+  Math.ceil(remainingEntries / baseEntriesPerPage),
+);
+const isFirstPage = currentPage === 1;
+const isLastPage = currentPage === totalPages;
+
+// Redirect if page number is invalid
+if (currentPage > totalPages) {
+  return Astro.redirect("/guestbook");
+}
+
+// Adjust offset calculation for pagination
+const offset = isFirstPage ? 0 : (currentPage - 1) * baseEntriesPerPage - 1;
 
 if (Astro.request.method === "POST") {
   const formData = await Astro.request.formData();
@@ -34,10 +65,16 @@ if (Astro.request.method === "POST") {
   }
 }
 
-const guestbook = await db.select().from(GuestbookDB);
-guestbook.sort((a, b) =>
-  dayjs(b.timestamp).isBefore(dayjs(a.timestamp)) ? -1 : 1,
-);
+const guestbook = await db
+  .select()
+  .from(GuestbookDB)
+  .orderBy(desc(GuestbookDB.timestamp))
+  .limit(entriesPerPage)
+  .offset(offset);
+
+if (guestbook.length === 0) {
+  return Astro.redirect("/guestbook");
+}
 
 const title = "Guestbook";
 const description = "Leave a message in eva.town.";
@@ -53,7 +90,7 @@ const description = "Leave a message in eva.town.";
 >
   <h1 class="visually-hidden">Guestbook</h1>
   <div class="notecards">
-    <NotecardComposer client:load />
+    {isFirstPage && <NotecardComposer client:load />}
     {
       guestbook.map(({ author, url, content, timestamp, theme }) => (
         <Notecard
@@ -66,13 +103,40 @@ const description = "Leave a message in eva.town.";
       ))
     }
   </div>
+  {isLastPage && (
+    <Center>
+      <div class="postscript">
+        You've reached the end! <a
+          href="/posts/design-outside-the-computer"
+          data-fathom="explanation"
+          >Learn how I created this guestbook.
+        </a>
+      </div>
+    </Center>
+  )}
   <Center>
-    <div class="postscript">
-      You've reached the end! <a
-        href="/posts/design-outside-the-computer"
-        data-fathom="explanation"
-        >Learn how I created this guestbook.
-      </a>
+    <div class="pagination">
+      <span>
+        Page {currentPage} of {totalPages}
+      </span>
+      <div class="pages">
+        {currentPage > 1 && (
+          <a 
+            aria-label="Previous page" 
+            href={currentPage === 2 ? '/guestbook' : `/guestbook?page=${currentPage - 1}`}
+          >
+            <Icon icon="arrowLeft" />
+          </a>
+        )}
+        {currentPage < totalPages && (
+          <a 
+            aria-label="Next page" 
+            href={`/guestbook?page=${currentPage + 1}`}
+          >
+            <Icon icon="arrowRight" />
+          </a>
+        )}
+      </div>
     </div>
   </Center>
 </BaseLayout>
@@ -91,6 +155,33 @@ const description = "Leave a message in eva.town.";
   .postscript {
     text-align: center;
     padding-block-start: var(--space-xl);
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+    padding-block-start: var(--space-xl);
+
+    .pages {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-s);
+    }
+
+    a {
+      cursor: pointer;
+      border-radius: var(--radius-full);
+      padding: var(--space-2xs) var(--space-m);
+      background-color: var(--gray-12);
+      color: var(--gray-1);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2xs);
+    }
   }
 </style>
 
