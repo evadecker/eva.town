@@ -4,6 +4,7 @@ import classNames from "classnames";
 
 // Icons sourced from https://remixicon.com
 export type IconType =
+  | "arrowLeft"
   | "arrowRight"
   | "code"
   | "download"
@@ -46,6 +47,10 @@ export interface IconProps {
 }
 
 const iconData: Record<IconType, { line: string; filled: string }> = {
+  arrowLeft: {
+    line: "M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z",
+    filled: "M12 13V20L4 12L12 4V11H20V13H12Z",
+  },
   arrowRight: {
     line: "M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z",
     filled: "M12 13H4V11H12V4L20 12L12 20V13Z",
