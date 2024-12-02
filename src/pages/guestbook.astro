@@ -18,7 +18,7 @@ if (currentPage === 1 && Astro.url.searchParams.has("page")) {
 }
 
 // Adjust entries per page based on whether we're on the first page
-const baseEntriesPerPage = 24;
+const baseEntriesPerPage = 2;
 const entriesPerPage =
   currentPage === 1 ? baseEntriesPerPage - 1 : baseEntriesPerPage;
 
@@ -78,6 +78,21 @@ if (guestbook.length === 0) {
 
 const title = "Guestbook";
 const description = "Leave a message in eva.town.";
+
+const entriesSuffix = [
+  "messages so far.",
+  "little notes from across the globe.",
+  "entries (and counting).",
+  "notes from friends and strangers.",
+  "thoughts posted.",
+  "notes total.",
+  "messages as of now.",
+];
+
+const totalEntriesText = `${totalEntries} ${
+  entriesSuffix[Math.floor(Math.random() * entriesSuffix.length)]
+}`;
+const pageText = `Viewing page ${currentPage} of ${totalPages}.`;
 ---
 
 <BaseLayout
@@ -103,40 +118,39 @@ const description = "Leave a message in eva.town.";
       ))
     }
   </div>
-  {isLastPage && (
-    <Center>
+  <Center>
+    {isLastPage ? (
       <div class="postscript">
-        You've reached the end! <a
+        You've reached the end!<br/><a
           href="/posts/design-outside-the-computer"
           data-fathom="explanation"
-          >Learn how I created this guestbook.
+          >Read how I made this guestbook.
         </a>
       </div>
-    </Center>
-  )}
-  <Center>
+      ) : (
+        <div class="postscript">
+          {totalEntriesText}<br/>
+          {pageText}
+        </div>
+      )
+    }
     <div class="pagination">
-      <span>
-        Page {currentPage} of {totalPages}
-      </span>
-      <div class="pages">
-        {currentPage > 1 && (
-          <a 
-            aria-label="Previous page" 
-            href={currentPage === 2 ? '/guestbook' : `/guestbook?page=${currentPage - 1}`}
-          >
-            <Icon icon="arrowLeft" />
-          </a>
-        )}
-        {currentPage < totalPages && (
-          <a 
-            aria-label="Next page" 
-            href={`/guestbook?page=${currentPage + 1}`}
-          >
-            <Icon icon="arrowRight" />
-          </a>
-        )}
-      </div>
+      {currentPage > 1 && (
+        <a 
+          aria-label="Previous page" 
+          href={currentPage === 2 ? '/guestbook' : `/guestbook?page=${currentPage - 1}`}
+        >
+          <Icon icon="arrowLeft" />
+        </a>
+      )}
+      {currentPage < totalPages && (
+        <a 
+          aria-label="Next page" 
+          href={`/guestbook?page=${currentPage + 1}`}
+        >
+          <Icon icon="arrowRight" />
+        </a>
+      )}
     </div>
   </Center>
 </BaseLayout>
@@ -159,17 +173,10 @@ const description = "Leave a message in eva.town.";
 
   .pagination {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-    text-align: center;
-    padding-block-start: var(--space-xl);
-
-    .pages {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-s);
-    }
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-s);
+    padding-block-start: var(--space-m);
 
     a {
       cursor: pointer;
