@@ -55,7 +55,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
     "@biomejs/biome": "^1.9.4",
-    "@playwright/test": "^1.49.0",
+    "@playwright/test": "^1.48.2",
     "@radix-ui/colors": "^3.0.0",
     "@types/howler": "^2.2.12",
     "@types/node": "^22.10.1",
