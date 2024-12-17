@@ -1,5 +1,6 @@
 ---
-import { Guestbook as GuestbookDB, count, db, desc } from "astro:db";
+import { Guestbook as GuestbookDB, count, db, desc, eq } from "astro:db";
+import { not } from "astro:db";
 import { Icon } from "src/components/Icon/Icon";
 import Center from "../components/Center.astro";
 import Notecard from "../components/Notecard/Notecard.astro";
@@ -57,9 +58,12 @@ if (Astro.request.method === "POST") {
     typeof url === "string" &&
     typeof theme === "string"
   ) {
+    // Extremely basic spam filtering to protect against bots
+    const isSpam = content.includes("<a href") || content.includes("href=");
+
     await db
       .insert(GuestbookDB)
-      .values({ author, content, url, theme: Number.parseInt(theme) });
+      .values({ author, content, url, theme: Number.parseInt(theme), isSpam });
 
     return Astro.redirect("/guestbook");
   }
@@ -68,6 +72,7 @@ if (Astro.request.method === "POST") {
 const guestbook = await db
   .select()
   .from(GuestbookDB)
+  .where(not(eq(GuestbookDB.isSpam, true)))
   .orderBy(desc(GuestbookDB.timestamp))
   .limit(entriesPerPage)
   .offset(offset);
