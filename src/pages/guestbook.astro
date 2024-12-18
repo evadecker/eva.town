@@ -1,5 +1,14 @@
 ---
-import { Guestbook as GuestbookDB, count, db, desc } from "astro:db";
+import {
+  Guestbook as GuestbookDB,
+  count,
+  db,
+  desc,
+  eq,
+  isNull,
+  or,
+} from "astro:db";
+
 import { Icon } from "src/components/Icon/Icon";
 import Center from "../components/Center.astro";
 import Notecard from "../components/Notecard/Notecard.astro";
@@ -22,7 +31,10 @@ const baseEntriesPerPage = 24;
 const entriesPerPage =
   currentPage === 1 ? baseEntriesPerPage - 1 : baseEntriesPerPage;
 
-const entryCount = await db.select({ count: count() }).from(GuestbookDB);
+const entryCount = await db
+  .select({ count: count() })
+  .from(GuestbookDB)
+  .where(or(eq(GuestbookDB.isSpam, false), isNull(GuestbookDB.isSpam)));
 const totalEntries = entryCount[0].count;
 // Calculate total pages accounting for one less entry on first page
 const remainingEntries = Math.max(0, totalEntries - 1); // Subtract one for composer
@@ -57,9 +69,12 @@ if (Astro.request.method === "POST") {
     typeof url === "string" &&
     typeof theme === "string"
   ) {
+    // Extremely basic spam filtering to protect against bots
+    const isSpam = content.includes("<a href") || content.includes("href=");
+
     await db
       .insert(GuestbookDB)
-      .values({ author, content, url, theme: Number.parseInt(theme) });
+      .values({ author, content, url, theme: Number.parseInt(theme), isSpam });
 
     return Astro.redirect("/guestbook");
   }
@@ -68,6 +83,7 @@ if (Astro.request.method === "POST") {
 const guestbook = await db
   .select()
   .from(GuestbookDB)
+  .where(or(eq(GuestbookDB.isSpam, false), isNull(GuestbookDB.isSpam)))
   .orderBy(desc(GuestbookDB.timestamp))
   .limit(entriesPerPage)
   .offset(offset);

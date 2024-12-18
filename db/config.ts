@@ -8,6 +8,7 @@ const Guestbook = defineTable({
     url: column.text({ optional: true }),
     timestamp: column.date({ default: NOW }),
     theme: column.number(),
+    isSpam: column.boolean({ optional: true }),
   },
 });
 
