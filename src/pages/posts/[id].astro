@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 
 import ProseLayout from "../../layouts/ProseLayout.astro";
 
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const posts = await getCollection("posts");
 
   return posts.map((post, index) => ({
-    params: { slug: post.slug },
+    params: { id: post.id },
     props: {
       post,
       prev: posts[index - 1] ?? posts[posts.length - 1],
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   }));
 }
 const { post, prev, next } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const { data } = post;
 const { title, description, ogImage, datePublished, dateModified } = data;
@@ -39,7 +39,7 @@ const { title, description, ogImage, datePublished, dateModified } = data;
   <div class="pagination" slot="after-prose">
     {
       prev && (
-        <a href={prev.slug} class="prev">
+        <a href={prev.id} class="prev">
           <span class="label">Previous</span>
           <span class="title">{prev.data.title}</span>
         </a>
@@ -47,7 +47,7 @@ const { title, description, ogImage, datePublished, dateModified } = data;
     }
     {
       next && (
-        <a href={next.slug} class="next">
+        <a href={next.id} class="next">
           <span class="label">Next</span>
           <span class="title">{next.data.title}</span>
         </a>

@@ -4,7 +4,7 @@ import "../styles/theme.css";
 
 import { join } from "node:path";
 
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { AstroFont } from "astro-font";
 import LoadingIndicator from "astro-loading-indicator/component";
 
@@ -114,7 +114,7 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
     <link rel="manifest" href="/manifest.json" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{pageTitle}</title>
-    <ViewTransitions />
+    <ClientRouter />
     <LoadingIndicator color="var(--blue-9)" height="3px" threshold={600} />
     <script>
       import * as Fathom from "fathom-client";

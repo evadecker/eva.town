@@ -42,7 +42,7 @@ const dateModified = new Date("2024-05-17 10:02:38-04:00");
   <section id="badges" class="badge-section">
     <div class="badges">
       {
-        badges.data.map((badge) => (
+        badges?.data.map((badge) => (
           <a href={badge.url} target="_blank">
             <img src={badge.img.src} alt={badge.alt} style={`height: 31px`} />
           </a>

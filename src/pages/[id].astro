@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 
 import ProseLayout from "../layouts/ProseLayout.astro";
 
@@ -11,14 +11,14 @@ export async function getStaticPaths() {
   const pages = await getCollection("pages");
 
   return pages.map((page) => ({
-    params: { slug: page.slug },
+    params: { id: page.id },
     props: { page },
   }));
 }
 
 const { page } = Astro.props;
-const { data, render } = page;
-const { Content } = await render();
+const { data } = page;
+const { Content } = await render(page);
 ---
 
 <ProseLayout
