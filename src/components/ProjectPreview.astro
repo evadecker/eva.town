@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
+import { type CollectionEntry, render } from "astro:content";
 
 interface Props {
   project: CollectionEntry<"work">;
@@ -8,10 +8,10 @@ interface Props {
 
 const { project } = Astro.props;
 
-const { data, render } = project;
+const { data } = project;
 
 const { title, img, video, timeline } = data;
-const { Content } = await render();
+const { Content } = await render(project);
 ---
 
 <div class="project">

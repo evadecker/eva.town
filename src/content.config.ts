@@ -1,8 +1,9 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 export const collections = {
   posts: defineCollection({
-    type: "content",
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/posts" }),
     schema: ({ image }) =>
       z.object({
         title: z.string(),
@@ -27,7 +28,7 @@ export const collections = {
   }),
 
   pages: defineCollection({
-    type: "content",
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/pages" }),
     schema: ({ image }) =>
       z.object({
         title: z.string(),
@@ -41,7 +42,7 @@ export const collections = {
   }),
 
   work: defineCollection({
-    type: "content",
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/work" }),
     schema: ({ image }) =>
       z.object({
         title: z.string(),
@@ -68,7 +69,10 @@ export const collections = {
   }),
 
   experiments: defineCollection({
-    type: "data",
+    loader: glob({
+      pattern: "**/[^_]*.yml",
+      base: "./src/content/experiments",
+    }),
     schema: () =>
       z.object({
         title: z.string(),
@@ -86,7 +90,7 @@ export const collections = {
   }),
 
   webrings: defineCollection({
-    type: "data",
+    loader: glob({ pattern: "**/[^_]*.yml", base: "./src/content/webrings" }),
     schema: () =>
       z.object({
         title: z.string(),
@@ -99,7 +103,7 @@ export const collections = {
   }),
 
   badges: defineCollection({
-    type: "data",
+    loader: glob({ pattern: "**/[^_]*.yml", base: "./src/content/badges" }),
     schema: ({ image }) =>
       z
         .object({
@@ -111,7 +115,7 @@ export const collections = {
   }),
 
   now: defineCollection({
-    type: "content",
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/now" }),
     schema: () =>
       z.object({
         date: z.date(),

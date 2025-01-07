@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import dayjs from "dayjs";
 import { RelativeDate } from "src/components/RelativeDate/RelativeDate";
 import ProseLayout from "src/layouts/ProseLayout.astro";
@@ -17,7 +17,7 @@ const description = "What’s Eva up to?";
   <ul class="events">
     {
       events.map(async (event) => {
-        const { Content } = await event.render();
+        const { Content } = await render(event);
 
         return (
           <li class="event">
