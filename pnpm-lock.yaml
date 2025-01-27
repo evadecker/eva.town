@@ -48,8 +48,8 @@ importers:
         specifier: ^0.40.1
         version: 0.40.1(astro@5.1.7(@types/node@22.10.7)(rollup@4.31.0)(sass@1.83.4)(typescript@5.7.3)(yaml@2.6.0))
       astro-font:
-        specifier: ^0.1.81
-        version: 0.1.81
+        specifier: ^1.0.0
+        version: 1.0.0
       astro-loading-indicator:
         specifier: ^0.7.0
         version: 0.7.0(astro@5.1.7(@types/node@22.10.7)(rollup@4.31.0)(sass@1.83.4)(typescript@5.7.3)(yaml@2.6.0))
@@ -1242,8 +1242,8 @@ packages:
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0
 
-  astro-font@0.1.81:
-    resolution: {integrity: sha512-rbrv/+ZSYdgyjBlhkAqfCjMxqqo6iEwnSo/rAdDt/POILsF0ChxMFhefIIzKEukrRGtVjEj1lrLRYk+AdV9scQ==}
+  astro-font@1.0.0:
+    resolution: {integrity: sha512-g0Oobl1oBg/GHaAzA2HdIWjbQic19wfSswHvBO+N+wKgWCfCjh0ANiOA3UBzMgUHJ67wqfoM4NZTq9+parkhOw==}
 
   astro-loading-indicator@0.7.0:
     resolution: {integrity: sha512-oNSUYbHq8Aaol0zcVuBzGz+qrqKsviOvKl1xaaKo3DLkEef7HCzHQAgTgWv4lB1iYFWa5GaieQvlxBO4KjzKZg==}
@@ -4837,7 +4837,7 @@ snapshots:
       astro: 5.1.7(@types/node@22.10.7)(rollup@4.31.0)(sass@1.83.4)(typescript@5.7.3)(yaml@2.6.0)
       rehype-expressive-code: 0.40.1
 
-  astro-font@0.1.81: {}
+  astro-font@1.0.0: {}
 
   astro-loading-indicator@0.7.0(astro@5.1.7(@types/node@22.10.7)(rollup@4.31.0)(sass@1.83.4)(typescript@5.7.3)(yaml@2.6.0)):
     dependencies:
