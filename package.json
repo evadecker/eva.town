@@ -39,7 +39,7 @@
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
     "fathom-client": "^3.7.2",
-    "framer-motion": "^11.18.1",
+    "framer-motion": "^12.0.5",
     "howler": "^2.2.4",
     "markdown-it": "^14.1.0",
     "nanoid": "^5.0.9",
