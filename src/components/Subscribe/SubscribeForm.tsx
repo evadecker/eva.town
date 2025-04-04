@@ -1,34 +1,18 @@
 import "./subscribe.css";
 
 import classNames from "classnames";
-import * as Fathom from "fathom-client";
-import {
-  type ChangeEvent,
-  type FormEvent,
-  type FormEventHandler,
-  useEffect,
-  useState,
-} from "react";
-
+import { type ChangeEvent, useEffect, useState } from "react";
 import { isValidEmail } from "../../helpers/helpers";
 import { Icon } from "../Icon/Icon";
 import { Dialogue } from "./Dialogue/Dialogue";
 import { type EmoteType, emoteData } from "./Dialogue/Emote";
-
-interface SniperResponse {
-  url: string;
-  image: string;
-  provider_pretty: string;
-}
 
 type RemarkType =
   | "intro"
   | "someCharacters"
   | "deleting"
   | "validEmail"
-  | "submitting"
-  | "success"
-  | "error";
+  | "submitting";
 
 interface Remark {
   text: string[];
@@ -44,53 +28,21 @@ const remarks: Record<RemarkType, Remark> = {
       "hey bestie",
       "what’s up",
       "hey you",
-      "hey nerd",
       "you found me!",
       "welcome 2 my garden ✿",
-      "salutations",
-      "hi~ (❛‿❛✿̶̥̥)",
-      "oh hey",
-      "hiiieee",
-      "hello hello",
-      "hey dork",
-      "oh. hi",
-      "bonjour",
-      "good morning(??)",
-      "hello stranger",
-      "well hello!",
-      "wassup",
     ],
     emote: "happy",
   },
   someCharacters: {
     text: [
       "typing! incredible",
-      "we love to type",
-      "tap tap tap",
-      "typing is fun",
-      "you type so good",
       "clicky clack",
-      "type type type",
-      "click clack",
-      "tap tap",
-      "type type",
+      "you type so good",
     ],
     emote: "happy",
   },
   deleting: {
-    text: [
-      "deletinggg",
-      "goodbye",
-      "clear that box",
-      "sometimes people make mistakes",
-      "it’s ok to go back",
-      "DELETE",
-      "D E S T R O Y",
-      "the feminine urge to destroy",
-      "ᕙ(`▿´)ᕗ",
-      "lol bye",
-      "yes. that can go",
-    ],
+    text: ["deletinggg", "goodbye", "DELETE", "lol bye"],
     emote: "flushed",
   },
   validEmail: {
@@ -98,13 +50,6 @@ const remarks: Record<RemarkType, Remark> = {
       "nice email",
       "that’s a good email",
       "yup. that’s an email",
-      "what a good email",
-      "mmm… electronic mail",
-      "nice address you have there",
-      "congrats! it’s an email",
-      "looks like an email",
-      "i can’t believe it’s email",
-      "email! email! email!",
     ],
     emote: "playful",
   },
@@ -113,98 +58,57 @@ const remarks: Record<RemarkType, Remark> = {
       "taking off…",
       "subscribing…",
       "connecting wires…",
-      "reticulating splines…",
-      "plugging in…",
-      "counting down…",
-      "dialing up…",
     ],
     emote: "thinking",
   },
-  success: {
-    text: ["yeah! get ready for e-mail (eva-mail)"],
-    emote: "starstruck",
-  },
-  error: {
-    text: [
-      "computer says no",
-      "that didn’t work",
-      "it broke. idk",
-      "everything fell apart",
-      "try again?",
-      "oh no. computers",
-      "hm.. it broke. dang",
-      "that didn’t work. hm",
-      "something went wrong",
-    ],
-    emote: "sob",
-  },
 };
 
-const getRandomRemark = (remarks: string[]): string => {
-  return remarks[Math.floor(Math.random() * remarks.length)];
+const getRandomRemark = (texts: string[]) => {
+  return texts[Math.floor(Math.random() * texts.length)];
 };
 
 export const SubscribeForm = () => {
-  const [currentRemarkType, setCurrentRemarkType] = useState<RemarkType | null>(
-    null,
-  );
+  const [currentRemarkType, setCurrentRemarkType] = useState<RemarkType | null>(null);
   const [justDisplayedRemarks, setJustDisplayedRemarks] = useState(false);
-  const [recipientEmail, setRecipientEmail] = useState<string>("");
-
+  const [recipientEmail, setRecipientEmail] = useState("");
   const [currentText, setCurrentText] = useState<string | null>("");
   const [currentEmote, setCurrentEmote] = useState<EmoteType>("neutral");
+  const [isHoveringOrFocusingSubscribe, setIsHoveringOrFocusingSubscribe] = useState(false);
 
-  const [isHoveringOrFocusingSubscribe, setIsHoveringOrFocusingSubscribe] =
-    useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [sniperData, setSniperData] = useState<SniperResponse | null>(null);
+  const displayNewRemark = (type: RemarkType, options?: { force?: boolean }) => {
+    const shouldDisplay = options?.force || !justDisplayedRemarks;
 
-  const displayNewRemark = (
-    remarkType: RemarkType,
-    options?: { force?: boolean },
-  ) => {
-    const shouldDisplayNewRemark =
-      options?.force === true || !justDisplayedRemarks;
-
-    if (shouldDisplayNewRemark && remarkType !== currentRemarkType) {
-      setCurrentRemarkType(remarkType);
-      setCurrentText(getRandomRemark(remarks[remarkType].text));
-      setCurrentEmote(remarks[remarkType].emote);
+    if (shouldDisplay && type !== currentRemarkType) {
+      setCurrentRemarkType(type);
+      setCurrentText(getRandomRemark(remarks[type].text));
+      setCurrentEmote(remarks[type].emote);
     }
   };
 
   useEffect(() => {
     if (currentRemarkType) {
       setJustDisplayedRemarks(true);
-      setTimeout(() => {
-        setJustDisplayedRemarks(false);
-      }, REMARK_TIMEOUT);
+      setTimeout(() => setJustDisplayedRemarks(false), REMARK_TIMEOUT);
     }
   }, [currentRemarkType]);
 
   const handleFocus = () => {
-    if (currentRemarkType === null) {
+    if (!currentRemarkType) {
       displayNewRemark("intro");
     }
   };
 
-  const handleBlur = () => {
-    setCurrentEmote("neutral");
-  };
+  const handleBlur = () => setCurrentEmote("neutral");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
+    const value = e.target.value;
     setRecipientEmail(value);
 
     if (isValidEmail(value)) {
       displayNewRemark("validEmail", { force: true });
     }
 
-    if (
-      value.length === TRIGGER_SOME_CHARACTERS_DIALOGUE_AT_LENGTH &&
-      value.length > recipientEmail.length
-    ) {
+    if (value.length === TRIGGER_SOME_CHARACTERS_DIALOGUE_AT_LENGTH && value.length > recipientEmail.length) {
       displayNewRemark("someCharacters");
     }
 
@@ -213,140 +117,54 @@ export const SubscribeForm = () => {
     }
   };
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = (e: FormEvent) => {
-    e.preventDefault();
-
-    setIsSubmitting(true);
+  const handleSubmit = () => {
     displayNewRemark("submitting", { force: true });
-
-    const url =
-      "https://buttondown.email/api/emails/embed-subscribe/notesfromeva";
-    const data = new FormData(e.target as HTMLFormElement);
-
-    fetch(url, { method: "POST", body: data })
-      .then((response) => {
-        if (response.ok) {
-          setTimeout(() => {
-            displayNewRemark("success", { force: true });
-            setHasSubmitted(true);
-            setIsSubmitting(false);
-          }, 1500);
-        } else {
-          console.error(response);
-          displayNewRemark("error", { force: true });
-          setIsSubmitting(false);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-
-    const sender = "hey@evadecker.com";
-    const sniperUrl = `https://sniperl.ink/v1/render?recipient=${recipientEmail}&sender=${sender}`;
-
-    fetch(sniperUrl)
-      .then(async (response) => {
-        if (response.ok) {
-          await response.json().then((data) => {
-            setSniperData(data);
-          });
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
-  const handleEmoteClick = () => {
-    const emoteKeys = Object.keys(emoteData) as EmoteType[];
-    const currentEmoteIndex = emoteKeys.indexOf(currentEmote);
-    const nextEmote = emoteKeys[currentEmoteIndex + 1] || emoteKeys[0];
-    setCurrentEmote(nextEmote);
-    setCurrentText("");
-    setCurrentRemarkType(null);
-
-    Fathom.trackEvent("subscribe: click stamp");
+    // Let browser handle the form POST submission (no JS fetch)
   };
 
   return (
     <div className="subscribe">
       <div className="subscribe-content">
         <div className="subscribe-header">
-          <div>
-            <h2>Subscribe</h2>
-            <p>
-              I send emails a few times a year about design and web dev. Written
-              like notes to friends.
-            </p>
-          </div>
+          <h2>Subscribe</h2>
+          <p>I send emails a few times a year about design and web dev. Written like notes to friends.</p>
         </div>
-        <Dialogue
-          text={currentText}
-          emote={currentEmote}
-          onEmoteClick={handleEmoteClick}
-        />
+        <Dialogue text={currentText} emote={currentEmote} onEmoteClick={() => {}} />
       </div>
-      <form onSubmit={handleSubmit}>
-        {!hasSubmitted ? (
-          <div
-            className="inputWrapper"
-            aria-disabled={isSubmitting || hasSubmitted}
+
+      <form
+        action="https://buttondown.email/api/emails/embed-subscribe/notesfromeva"
+        method="POST"
+       
+        onSubmit={handleSubmit}
+      >
+        <input type="hidden" name="embed" value="1" />
+        <div className="inputWrapper">
+          <input
+            aria-label="Your email"
+            className="input"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your email"
+            value={recipientEmail}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            required
+          />
+          <button
+            type="submit"
+            className={classNames("iconButton")}
+            aria-label="Subscribe"
+            onFocus={() => setIsHoveringOrFocusingSubscribe(true)}
+            onBlur={() => setIsHoveringOrFocusingSubscribe(false)}
+            onMouseOver={() => setIsHoveringOrFocusingSubscribe(true)}
+            onMouseLeave={() => setIsHoveringOrFocusingSubscribe(false)}
           >
-            <input
-              aria-label="Your email"
-              className="input"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Your email"
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={recipientEmail}
-              disabled={isSubmitting || hasSubmitted}
-            />
-            <button
-              type="submit"
-              className={classNames("iconButton", {
-                loading: isSubmitting,
-              })}
-              disabled={isSubmitting || hasSubmitted}
-              aria-label="Subscribe"
-              onFocus={() => {
-                setIsHoveringOrFocusingSubscribe(true);
-              }}
-              onBlur={() => {
-                setIsHoveringOrFocusingSubscribe(false);
-              }}
-              onMouseOver={() => {
-                setIsHoveringOrFocusingSubscribe(true);
-              }}
-              onMouseLeave={() => {
-                setIsHoveringOrFocusingSubscribe(false);
-              }}
-            >
-              <Icon
-                icon={isSubmitting ? "loader" : "mailAdd"}
-                variant={isHoveringOrFocusingSubscribe ? "filled" : "line"}
-              />
-            </button>
-          </div>
-        ) : sniperData ? (
-          <a
-            href={sniperData.url}
-            className="sniperLink"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className="sniperLogo">
-              <img src={sniperData.image} alt={sniperData.provider_pretty} />
-            </div>
-            Open {sniperData.provider_pretty}
-            <Icon icon="arrowRight" />
-          </a>
-        ) : (
-          <div className="checkInbox">Check your inbox</div>
-        )}
+            <Icon icon="mailAdd" variant={isHoveringOrFocusingSubscribe ? "filled" : "line"} />
+          </button>
+        </div>
       </form>
     </div>
   );
