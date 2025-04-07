@@ -21,17 +21,17 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/db": "^0.14.9",
+    "@astrojs/db": "^0.14.10",
     "@astrojs/markdown-remark": "^6.3.1",
-    "@astrojs/mdx": "^4.2.2",
-    "@astrojs/netlify": "^6.2.4",
-    "@astrojs/react": "^4.2.2",
+    "@astrojs/mdx": "^4.2.3",
+    "@astrojs/netlify": "^6.2.5",
+    "@astrojs/react": "^4.2.3",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
     "@nanostores/react": "^0.8.4",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
-    "astro": "^5.5.5",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "astro": "^5.6.1",
     "astro-expressive-code": "^0.40.2",
     "astro-font": "^1.0.0",
     "astro-loading-indicator": "^0.7.0",
@@ -39,7 +39,7 @@
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
     "fathom-client": "^3.7.2",
-    "framer-motion": "^12.6.2",
+    "framer-motion": "^12.6.3",
     "howler": "^2.2.4",
     "markdown-it": "^14.1.0",
     "nanoid": "^5.1.5",
@@ -50,7 +50,7 @@
     "rehype-slug": "^6.0.0",
     "remark-imgattr": "^1.0.5",
     "sanitize-html": "^2.15.0",
-    "sharp": "^0.33.5"
+    "sharp": "^0.34.0"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
@@ -58,16 +58,16 @@
     "@playwright/test": "^1.51.1",
     "@radix-ui/colors": "^3.0.0",
     "@types/howler": "^2.2.12",
-    "@types/node": "^22.13.14",
+    "@types/node": "^22.14.0",
     "hastscript": "^9.0.1",
     "html-validate": "^9.5.2",
     "husky": "^9.1.7",
     "postcss-html": "^1.8.0",
-    "sass": "^1.86.0",
+    "sass": "^1.86.3",
     "stylelint": "^15.11.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-config-standard-scss": "^11.1.0",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   }
 }
