@@ -33,8 +33,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       '@nanostores/react':
-        specifier: ^0.8.4
-        version: 0.8.4(nanostores@0.11.4)(react@19.1.0)
+        specifier: ^1.0.0
+        version: 1.0.0(nanostores@0.11.4)(react@19.1.0)
       '@types/react':
         specifier: ^19.1.1
         version: 19.1.1
@@ -884,11 +884,11 @@ packages:
   '@mdx-js/mdx@3.1.0':
     resolution: {integrity: sha512-/QxEhPAvGwbQmy1Px8F899L5Uc2KZ6JtXwlCgJmjSTBedwOZkByYcBG4GceIGPXRDsmfxhHazuS+hlOShRLeDw==}
 
-  '@nanostores/react@0.8.4':
-    resolution: {integrity: sha512-EciHSzDXg7GmGODjegGG1VldPEinbAK+12/Uz5+MAdHmxf082Rl6eXqKFxAAu4pZAcr5dNTpv6wMfEe7XacjkQ==}
-    engines: {node: ^18.0.0 || >=20.0.0}
+  '@nanostores/react@1.0.0':
+    resolution: {integrity: sha512-eDduyNy+lbQJMg6XxZ/YssQqF6b4OXMFEZMYKPJCCmBevp1lg0g+4ZRi94qGHirMtsNfAWKNwsjOhC+q1gvC+A==}
+    engines: {node: ^20.0.0 || >=22.0.0}
     peerDependencies:
-      nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0
+      nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^1.0.0
       react: '>=18.0.0'
 
   '@neon-rs/load@0.0.4':
@@ -4526,7 +4526,7 @@ snapshots:
       - acorn
       - supports-color
 
-  '@nanostores/react@0.8.4(nanostores@0.11.4)(react@19.1.0)':
+  '@nanostores/react@1.0.0(nanostores@0.11.4)(react@19.1.0)':
     dependencies:
       nanostores: 0.11.4
       react: 19.1.0
