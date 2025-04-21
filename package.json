@@ -43,7 +43,7 @@
     "howler": "^2.2.4",
     "markdown-it": "^14.1.0",
     "nanoid": "^5.1.5",
-    "nanostores": "^0.11.4",
+    "nanostores": "^1.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "rehype-autolink-headings": "^7.1.0",
