@@ -13,6 +13,15 @@
 - img: ./queer-coded.gif
   alt: Queer Coded
   url: https://queercoded.dev/
+- img: ./lmnt.gif
+  alt: LMNT
+  url: https://lmnt.me/
+- img: ./bluesky.gif
+  alt: Follow me on Bluesky
+  url: https://bsky.app/profile/eva.town
+- img: ./made-by-hand.gif
+  alt: Made by Hand
+  url: /colophon
 - img: ./no-ai.svg
   alt: There's no AI here!
 - img: ./mac.gif
@@ -99,11 +108,6 @@
   alt: Click it Now!
 - img: ./welcome-hello-kitty.gif
   alt: Welcome Hello Kitty!
-- img: ./gundam-union.gif
-  alt: Gundam Union
-- img: ./home.gif
-  alt: Home
-  url: /
 - img: ./hunks.gif
   alt: 100% Hunks
 - img: ./bunner.gif
@@ -134,8 +138,6 @@
   alt: TV broadcast error
 - img: ./no-web3.gif
   alt: Say no to Web3! Keep the web Free
-- img: ./learn-html.gif
-  alt: HTML Learn it today!
 - img: ./powered-by-imagination.gif
   alt: This site is powered by imagination
 - img: ./pokemon.gif
