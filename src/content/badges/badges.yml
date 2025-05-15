@@ -1,8 +1,33 @@
 - img: ./eva-town.png
   alt: Eva Town
+  url: /about
+- img: ./damien.png
+  alt: damien.zone
+  url: https://damien.zone/
+- img: ./wavebeem.webp
+  alt: Wavebeem
+  url: https://wavebeem.com/
+- img: ./lex-feathers.gif
+  alt: Lex Feathers
+  url: https://lexfeathers.ca/
+- img: ./toronto-public-libra.gif
+  alt: Toronto Public Libra
+  url: https://danateagle.com/
+- img: ./absolute-realm.gif
+  alt: Absolute Realm
+  url: https://theabsoluterealm.com/
+- img: ./lmnt.gif
+  alt: LMNT
+  url: https://lmnt.me/
 - img: ./queer-coded.gif
   alt: Queer Coded
   url: https://queercoded.dev/
+- img: ./bluesky.gif
+  alt: Follow me on Bluesky
+  url: https://bsky.app/profile/eva.town
+- img: ./made-by-hand.gif
+  alt: Made by Hand
+  url: /colophon
 - img: ./no-ai.svg
   alt: There's no AI here!
 - img: ./mac.gif
@@ -33,8 +58,6 @@
   alt: 12oz 100% Whoop Ass
 - img: ./family.gif
   alt: Me and my family
-- img: ./get-paid.gif
-  alt: Get paid to surf the net
 - img: ./toad-mania.jpeg
   alt: Toad Mania
 - img: ./top-100-cats.gif
@@ -49,18 +72,12 @@
   alt: Sailor Moon
 - img: ./girl-gamers.gif
   alt: Girl Gamers
-- img: ./site-of-the-week.gif
-  alt: Site of the week
 - img: ./evangelion.gif
   alt: Evangelion
 - img: ./ban-time-travel.jpeg
   alt: Ban Time Travel "Now"
 - img: ./give-credit.gif
   alt: Give credit on the same page!
-- img: ./carp-net.gif
-  alt: Carp Net (Free) Click The Fish
-- img: ./harley-davidson.gif
-  alt: Harley Davidson
 - img: ./nothingness-awards.jpeg
   alt: nothingness awards
 - img: ./believe-dragons.gif
@@ -93,17 +110,10 @@
   alt: Click it Now!
 - img: ./welcome-hello-kitty.gif
   alt: Welcome Hello Kitty!
-- img: ./gundam-union.gif
-  alt: Gundam Union
-- img: ./home.gif
-  alt: Home
-  url: /
 - img: ./hunks.gif
   alt: 100% Hunks
 - img: ./bunner.gif
   alt: Bunner
-- img: ./hamtaro.gif
-  alt: Hamtaro
 - img: ./cheat-fan.gif
   alt: The Cheat Fan
 - img: ./bowsers-temple.gif
@@ -130,8 +140,6 @@
   alt: TV broadcast error
 - img: ./no-web3.gif
   alt: Say no to Web3! Keep the web Free
-- img: ./learn-html.gif
-  alt: HTML Learn it today!
 - img: ./powered-by-imagination.gif
   alt: This site is powered by imagination
 - img: ./pokemon.gif
