@@ -7,15 +7,21 @@
 - img: ./wavebeem.webp
   alt: Wavebeem
   url: https://wavebeem.com/
+- img: ./lex-feathers.gif
+  alt: Lex Feathers
+  url: https://lexfeathers.ca/
+- img: ./toronto-public-libra.gif
+  alt: Toronto Public Libra
+  url: https://danateagle.com/
 - img: ./absolute-realm.gif
   alt: Absolute Realm
   url: https://theabsoluterealm.com/
-- img: ./queer-coded.gif
-  alt: Queer Coded
-  url: https://queercoded.dev/
 - img: ./lmnt.gif
   alt: LMNT
   url: https://lmnt.me/
+- img: ./queer-coded.gif
+  alt: Queer Coded
+  url: https://queercoded.dev/
 - img: ./bluesky.gif
   alt: Follow me on Bluesky
   url: https://bsky.app/profile/eva.town
@@ -52,8 +58,6 @@
   alt: 12oz 100% Whoop Ass
 - img: ./family.gif
   alt: Me and my family
-- img: ./get-paid.gif
-  alt: Get paid to surf the net
 - img: ./toad-mania.jpeg
   alt: Toad Mania
 - img: ./top-100-cats.gif
@@ -68,8 +72,6 @@
   alt: Sailor Moon
 - img: ./girl-gamers.gif
   alt: Girl Gamers
-- img: ./site-of-the-week.gif
-  alt: Site of the week
 - img: ./evangelion.gif
   alt: Evangelion
 - img: ./ban-time-travel.jpeg
