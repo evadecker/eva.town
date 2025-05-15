@@ -1,5 +1,15 @@
 - img: ./eva-town.png
   alt: Eva Town
+  url: /about
+- img: ./damien.png
+  alt: damien.zone
+  url: https://damien.zone/
+- img: ./wavebeem.webp
+  alt: Wavebeem
+  url: https://wavebeem.com/
+- img: ./absolute-realm.gif
+  alt: Absolute Realm
+  url: https://theabsoluterealm.com/
 - img: ./queer-coded.gif
   alt: Queer Coded
   url: https://queercoded.dev/
@@ -57,10 +67,6 @@
   alt: Ban Time Travel "Now"
 - img: ./give-credit.gif
   alt: Give credit on the same page!
-- img: ./carp-net.gif
-  alt: Carp Net (Free) Click The Fish
-- img: ./harley-davidson.gif
-  alt: Harley Davidson
 - img: ./nothingness-awards.jpeg
   alt: nothingness awards
 - img: ./believe-dragons.gif
@@ -102,8 +108,6 @@
   alt: 100% Hunks
 - img: ./bunner.gif
   alt: Bunner
-- img: ./hamtaro.gif
-  alt: Hamtaro
 - img: ./cheat-fan.gif
   alt: The Cheat Fan
 - img: ./bowsers-temple.gif
