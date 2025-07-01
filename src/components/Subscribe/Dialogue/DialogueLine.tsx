@@ -1,4 +1,4 @@
-import { type Variants, motion } from "framer-motion";
+import { type Variants, motion } from "motion/react";
 import { nanoid } from "nanoid";
 
 const SPEED = 0.04;
