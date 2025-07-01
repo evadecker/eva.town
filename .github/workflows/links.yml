@@ -7,6 +7,10 @@ on:
     # Run once a week
     - cron: "0 0 * * 0"
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   link-checker:
     name: Check Link Validity
