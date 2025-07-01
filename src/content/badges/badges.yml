@@ -32,6 +32,9 @@
   alt: There's no AI here!
 - img: ./mac.gif
   alt: Made with Macintosh
+- img: ./sapphic-angels.png
+  alt: Sapphic Angels
+  url: https://sapphic.moe/webrings
 - img: ./smile.gif
   alt: Have a smile!
 - img: ./yu-gi-oh.gif
@@ -54,8 +57,6 @@
   alt: Best Hi-Colors
 - img: ./trillian.gif
   alt: Trillian - Get it now!
-- img: ./whoop-ass.jpeg
-  alt: 12oz 100% Whoop Ass
 - img: ./family.gif
   alt: Me and my family
 - img: ./toad-mania.jpeg

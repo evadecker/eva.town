@@ -3,7 +3,6 @@ import "./stickers.css";
 import { useStore } from "@nanostores/react";
 import { type MotionNodeDragHandlers, motion } from "motion/react";
 import { useEffect, useState } from "react";
-
 import { getRandomValueBetween } from "../../helpers";
 import { incrementTopZIndex, topZIndex } from "../../stores/sam";
 
