@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react";
 import classNames from "classnames";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import { clearSams, numSams } from "../../stores/sam";
