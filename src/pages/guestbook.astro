@@ -55,10 +55,10 @@ const offset = isFirstPage ? 0 : (currentPage - 1) * baseEntriesPerPage - 1;
 
 if (Astro.request.method === "POST") {
   const formData = await Astro.request.formData();
-  const author = formData.get("author");
-  const content = formData.get("content");
-  const url = formData.get("url");
-  const theme = formData.get("theme");
+  const author = formData.get("author") as string;
+  const content = formData.get("content") as string;
+  const url = formData.get("url") as string;
+  const theme = formData.get("theme") as string;
   const honeypot = formData.get("special");
 
   if (
@@ -72,9 +72,13 @@ if (Astro.request.method === "POST") {
     // Extremely basic spam filtering to protect against bots
     const isSpam = content.includes("<a href") || content.includes("href=");
 
-    await db
-      .insert(GuestbookDB)
-      .values({ author, content, url, theme: Number.parseInt(theme), isSpam });
+    await db.insert(GuestbookDB).values({
+      author,
+      content,
+      url: url || undefined,
+      theme: Number.parseInt(theme),
+      isSpam,
+    });
 
     return Astro.redirect("/guestbook");
   }
@@ -135,38 +139,50 @@ const pageText = `Viewing page ${currentPage} of ${totalPages}.`;
     }
   </div>
   <Center>
-    {isLastPage ? (
-      <div class="postscript">
-        You've reached the end!<br/><a
-          href="/posts/design-outside-the-computer"
-          data-fathom="explanation"
-          >Read how I made this guestbook.
-        </a>
-      </div>
+    {
+      isLastPage ? (
+        <div class="postscript">
+          You've reached the end!
+          <>
+            <br />
+            <a
+              href="/posts/design-outside-the-computer"
+              data-fathom="explanation"
+            >
+              Read how I made this guestbook.
+            </a>
+          </>
+        </div>
       ) : (
         <div class="postscript">
-          {totalEntriesText}<br/>
+          {totalEntriesText}
+          <br />
           {pageText}
         </div>
       )
     }
     <div class="pagination">
-      {currentPage > 1 && (
-        <a 
-          aria-label="Previous page" 
-          href={currentPage === 2 ? '/guestbook' : `/guestbook?page=${currentPage - 1}`}
-        >
-          <Icon icon="arrowLeft" />
-        </a>
-      )}
-      {currentPage < totalPages && (
-        <a 
-          aria-label="Next page" 
-          href={`/guestbook?page=${currentPage + 1}`}
-        >
-          <Icon icon="arrowRight" />
-        </a>
-      )}
+      {
+        currentPage > 1 && (
+          <a
+            aria-label="Previous page"
+            href={
+              currentPage === 2
+                ? "/guestbook"
+                : `/guestbook?page=${currentPage - 1}`
+            }
+          >
+            <Icon icon="arrowLeft" />
+          </a>
+        )
+      }
+      {
+        currentPage < totalPages && (
+          <a aria-label="Next page" href={`/guestbook?page=${currentPage + 1}`}>
+            <Icon icon="arrowRight" />
+          </a>
+        )
+      }
     </div>
   </Center>
 </BaseLayout>

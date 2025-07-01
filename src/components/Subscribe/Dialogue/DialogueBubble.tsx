@@ -1,6 +1,6 @@
 import "./dialogue.css";
 
-import { type Variants, motion } from "framer-motion";
+import { type Variants, motion } from "motion/react";
 import React from "react";
 
 import { DialogueLine } from "./DialogueLine";

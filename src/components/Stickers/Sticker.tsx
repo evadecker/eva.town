@@ -1,7 +1,7 @@
 import "./stickers.css";
 
 import { useStore } from "@nanostores/react";
-import { type DragHandlers, motion } from "framer-motion";
+import { type MotionNodeDragHandlers, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { getRandomValueBetween } from "../../helpers";
 import { incrementTopZIndex, topZIndex } from "../../stores/sam";
@@ -133,12 +133,12 @@ export const Sticker = ({ variant }: StickerProps) => {
   // Twist in animation
   const initialRotation = rotate + getRandomValueBetween(-20, 20);
 
-  const handleDragStart: DragHandlers["onDragStart"] = () => {
+  const handleDragStart: MotionNodeDragHandlers["onDragStart"] = () => {
     incrementTopZIndex();
     setZIndex($topZIndex);
   };
 
-  const handleDragEnd: DragHandlers["onDragEnd"] = (_, info) => {
+  const handleDragEnd: MotionNodeDragHandlers["onDragEnd"] = (_, info) => {
     const { x, y } = info.point;
     setX(x);
     setY(y);
