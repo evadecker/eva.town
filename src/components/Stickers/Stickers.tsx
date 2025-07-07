@@ -4,13 +4,18 @@ import { AnimatePresence } from "motion/react";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import { clearSams, numSams } from "../../stores/sam";
-import { Sticker, type StickerProps } from "./Sticker";
+import { Sticker, type StickerProps, variantsData } from "./Sticker";
 
 export const Stickers = () => {
   const [stickers, setStickers] = useState<StickerProps[]>([]);
   const [showShoo, setShowShoo] = useState(false);
   const [exiting, setExiting] = useState(false);
   const $numSams = useStore(numSams);
+
+  useEffect(() => {
+    // Preload first sticker
+    new Image().src = variantsData[0].srcSet;
+  }, []);
 
   useEffect(() => {
     if ($numSams === 0) {

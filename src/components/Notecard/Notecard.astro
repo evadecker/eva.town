@@ -1,6 +1,6 @@
 ---
 import { RelativeDate } from "../RelativeDate/RelativeDate";
-import { TOTAL_THEMES } from "./NotecardComposer";
+import { NOTECARD_THEMES } from "./NotecardComposer";
 
 interface Props {
   content: string;
@@ -14,7 +14,7 @@ const { content, url, author, timestamp, theme } = Astro.props;
 
 const rotation = `${Math.random() * 6 - 3}deg`;
 const translateX = `${Math.random() * 24 - 12}px`;
-const backgroundImage = `url(/images/notecards/notecard${theme <= TOTAL_THEMES ? theme : 1}.webp)`;
+const backgroundImage = `url(${NOTECARD_THEMES[theme].src})`;
 ---
 
 <div class="notecard">
