@@ -7,10 +7,14 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   position: relative;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  user-select: none;
+  z-index: -1;
 }
 
 .name,
