@@ -33,6 +33,7 @@
 }
 
 .stamp {
+  all: unset;
   position: relative;
   width: 40%;
   aspect-ratio: 1;
@@ -47,12 +48,6 @@
   transform: scale(0.95);
 }
 
-@media (hover: hover) {
-  .stamp:hover .stamp-border {
-    stroke: var(--gray-8);
-  }
-}
-
 .stamp-border {
   position: absolute;
   inset: 0;
@@ -60,6 +55,12 @@
   height: 100%;
   stroke: var(--gray-8);
   stroke-width: 1px;
+}
+
+@media (hover: hover) {
+  .stamp:hover .stamp-border {
+    stroke: var(--gray-9);
+  }
 }
 
 .emote {
