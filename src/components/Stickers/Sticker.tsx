@@ -13,7 +13,7 @@ interface VariantData {
   alt: string;
 }
 
-export const variantsData: VariantData[] = [
+export const STICKER_VARIANTS: VariantData[] = [
   {
     path: "M61.3881 320.98C60.1679 331.073 68.4008 343 82.4363 343C91.893 343 98.3821 336.272 102.265 327.708C106.84 317.616 98.299 289.48 102.265 282.446C107.092 273.883 129.03 267.227 137.345 271.742C144.666 275.718 146.51 299.278 154.427 305.995C162.359 312.723 174.56 307.913 180.051 295.903C183.737 287.84 170.595 262.873 174.56 257.368C177.949 252.664 235.57 266.237 245.331 271.742C251.561 275.255 250.517 288.257 256.923 293.762C263.329 299.267 281.631 304.772 290.173 305.995C298.714 307.218 312.746 300.796 318.847 300.796C324.948 300.796 340.2 320.675 347.216 315.781C351.346 312.901 347.216 286.728 345.691 278.165C344.166 269.601 353.282 247.488 342.318 228.527C312.66 177.236 241.19 99.5016 201.692 69.8028C189.49 60.6281 164.708 52.4775 135.192 57.5694C106.822 62.4633 64.9173 95.0192 58.3201 118.431C50.6761 145.557 61.3881 177.361 61.3881 217.518C61.3881 234.339 51.6269 250.64 51.0168 263.485C50.5288 273.761 60.7813 289.376 65.659 295.903C67.4874 298.349 62.3642 312.907 61.3881 320.98Z",
     srcSet: "/images/sam/sam1.webp",
@@ -111,13 +111,13 @@ export const Sticker = ({ variant }: StickerProps) => {
   // Pixel buffer to prevent stickers from going off the canvas when placed randomly
   const BUFFER = 200;
 
-  const totalVariants = variantsData.length;
+  const totalVariants = STICKER_VARIANTS.length;
   const currentVariant = variant % totalVariants;
   const nextVariant = (variant + 1) % totalVariants;
 
   useEffect(() => {
     // Preload next variant to display
-    new Image().src = variantsData[nextVariant].srcSet;
+    new Image().src = STICKER_VARIANTS[nextVariant].srcSet;
   }, [nextVariant]);
 
   const $topZIndex = useStore(topZIndex);
@@ -212,18 +212,18 @@ export const Sticker = ({ variant }: StickerProps) => {
       >
         <path
           className="stickerPath"
-          d={variantsData[currentVariant].path}
+          d={STICKER_VARIANTS[currentVariant].path}
           fill="white"
         />
       </svg>
       <picture className="stickerPicture">
         <source
-          srcSet={variantsData[currentVariant].srcSet}
+          srcSet={STICKER_VARIANTS[currentVariant].srcSet}
           type="image/webp"
         />
         <img
-          src={variantsData[currentVariant].src}
-          alt={variantsData[currentVariant].alt}
+          src={STICKER_VARIANTS[currentVariant].src}
+          alt={STICKER_VARIANTS[currentVariant].alt}
           draggable="false"
         />
       </picture>

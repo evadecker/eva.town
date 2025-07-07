@@ -4,7 +4,7 @@ import { AnimatePresence } from "motion/react";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import { clearSams, numSams } from "../../stores/sam";
-import { Sticker, type StickerProps, variantsData } from "./Sticker";
+import { STICKER_VARIANTS, Sticker, type StickerProps } from "./Sticker";
 
 export const Stickers = () => {
   const [stickers, setStickers] = useState<StickerProps[]>([]);
@@ -14,7 +14,7 @@ export const Stickers = () => {
 
   useEffect(() => {
     // Preload first sticker
-    new Image().src = variantsData[0].srcSet;
+    new Image().src = STICKER_VARIANTS[0].srcSet;
   }, []);
 
   useEffect(() => {
