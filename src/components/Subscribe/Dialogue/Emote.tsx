@@ -211,6 +211,7 @@ export const Emote = ({ emote, onEmoteClick }: EmoteProps) => {
       className="stamp"
       onClick={onEmoteClick}
       onKeyDown={onEmoteClick}
+      aria-label={`${emote} emote`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
