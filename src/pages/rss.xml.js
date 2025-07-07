@@ -2,6 +2,7 @@ import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
 import MarkdownIt from "markdown-it";
 import sanitizeHtml from "sanitize-html";
+
 const parser = new MarkdownIt();
 
 export async function GET(context) {
