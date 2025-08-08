@@ -25,7 +25,9 @@ const { url, title, description, datePublished, features } = Astro.props;
       </div>
     )
   }
-  <a href={url} class="title">{title}</a>
+  <h3 class="title">
+    <a href={url}>{title}</a>
+  </h3>
   <span class="description">{description}</span>
   {
     features && (

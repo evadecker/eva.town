@@ -22,9 +22,9 @@ const description = "What’s Eva up to?";
         return (
           <li class="event">
             <div class="dot" aria-hidden />
-            <span class="heading">
+            <h2 class="heading">
               <RelativeDate date={event.data.date} client:load />
-            </span>
+            </h2>
             <div class="line" aria-hidden />
             <div class="content">
               <Content />
@@ -35,7 +35,7 @@ const description = "What’s Eva up to?";
     }
     <li class="event">
       <div class="dot" aria-hidden></div>
-      <span class="heading">Awhile ago</span>
+      <h2 class="heading">Awhile ago</h2>
       <div class="content">
         <p>
           I discovered <a href="https://nownownow.com/"
@@ -91,6 +91,8 @@ const description = "What’s Eva up to?";
     }
 
     .heading {
+      all: unset;
+      font-size: var(--step-0);
       color: var(--gray-11);
       grid-area: heading;
     }
