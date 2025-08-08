@@ -14,6 +14,7 @@ const description = "What’s Eva up to?";
 ---
 
 <ProseLayout title={title} description={description}>
+  <h2 class="visually-hidden">Latest entries</h2>
   <ul class="events">
     {
       events.map(async (event) => {
@@ -91,6 +92,8 @@ const description = "What’s Eva up to?";
     }
 
     .heading {
+      all: unset;
+      font-size: var(--step-0);
       color: var(--gray-11);
       grid-area: heading;
     }

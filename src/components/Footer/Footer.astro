@@ -107,16 +107,16 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
 
     a {
       text-decoration: none;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--gray-12);
+        }
+      }
     }
 
     .emoji {
       transform: scale(1.5) translateY(0.04em);
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        color: var(--gray-12);
-      }
     }
   }
 

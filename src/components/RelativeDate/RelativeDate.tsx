@@ -5,11 +5,11 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 
-interface RelativeDateProps {
+interface RelativeDateProps extends React.HTMLAttributes<HTMLTimeElement> {
   date: Date | null;
 }
 
-export const RelativeDate = ({ date }: RelativeDateProps) => {
+export const RelativeDate = ({ date, ...props }: RelativeDateProps) => {
   dayjs.extend(utc);
   dayjs.extend(timezone); // Support 'z' to display timezone
   dayjs.extend(localizedFormat); // Support 'LLLL' to display full date
@@ -49,7 +49,7 @@ export const RelativeDate = ({ date }: RelativeDateProps) => {
   }
 
   return (
-    <time dateTime={dateTime} title={formattedTimestamp}>
+    <time dateTime={dateTime} title={formattedTimestamp} {...props}>
       {displayTime}
     </time>
   );
