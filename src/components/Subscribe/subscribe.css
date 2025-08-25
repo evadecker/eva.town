@@ -4,7 +4,7 @@
   margin-inline: auto;
   position: relative;
   max-width: 600px;
-  gap: var(--space-m);
+  gap: var(--space-l);
 }
 
 .subscribe-content {
@@ -27,7 +27,12 @@
   font-size: var(--step-1);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
+  margin-block-start: calc(-1 * var(--space-2xs));
   margin-block-end: var(--space-2xs);
+}
+
+.subscribe-header p {
+  text-wrap: balance;
 }
 
 .inputWrapper {
