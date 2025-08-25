@@ -58,7 +58,7 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
 
 <style lang="scss">
   footer {
-    font-size: var(--step--1);
+    font-size: var(--step-0);
     padding-block: var(--space-2xl);
     width: 100%;
     border-top: 1px solid var(--gray-6);
@@ -77,11 +77,13 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
 
   .links {
     display: flex;
+    align-items: flex-start;
     flex-flow: column wrap;
-    gap: var(--space-2xs);
+    margin-block-start: calc(var(--space-2xs) * -1);
 
     a {
       display: inline-block;
+      padding-block: 0.15em;
     }
 
     &:first-child {
@@ -102,7 +104,7 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
     color: var(--gray-11);
     display: flex;
     align-items: center;
-    gap: var(--space-s);
+    gap: var(--space-m);
     transition: background-color 0.2s ease-in-out;
 
     a {
@@ -116,7 +118,7 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
     }
 
     .emoji {
-      transform: scale(1.5) translateY(0.04em);
+      transform: scale(1.5) translateY(0.01em);
     }
   }
 
