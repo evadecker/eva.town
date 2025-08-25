@@ -275,8 +275,8 @@ export const SubscribeForm = () => {
           <div>
             <h2>Subscribe</h2>
             <p>
-              I send emails a few times a year about design and web dev. Written
-              like notes to friends.
+              Emails, a few times a year, about design and web dev. Written like
+              notes to friends.
             </p>
           </div>
         </div>
@@ -292,6 +292,7 @@ export const SubscribeForm = () => {
             className="inputWrapper"
             aria-disabled={isSubmitting || hasSubmitted}
           >
+            {/** biome-ignore lint/correctness/useUniqueElementIds: Subscribe form ID is not reused */}
             <input
               aria-label="Your email"
               className="input"
