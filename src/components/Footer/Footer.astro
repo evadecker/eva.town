@@ -79,11 +79,12 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
     display: flex;
     align-items: flex-start;
     flex-flow: column wrap;
-    margin-block-start: calc(var(--space-2xs) * -1);
+    --link-padding-block: 0.4em;
+    margin-block-start: calc(var(--link-padding-block) * -1);
 
     a {
       display: inline-block;
-      padding-block: 0.15em;
+      padding-block: var(--link-padding-block);
     }
 
     &:first-child {
