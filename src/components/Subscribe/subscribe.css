@@ -31,6 +31,10 @@
   margin-block-end: var(--space-2xs);
 }
 
+.subscribe-header p {
+  text-wrap: balance;
+}
+
 .inputWrapper {
   position: relative;
   width: 100%;
