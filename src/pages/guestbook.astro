@@ -76,7 +76,7 @@ if (Astro.request.method === "POST") {
       author,
       content,
       url: url || undefined,
-      theme: Number.parseInt(theme),
+      theme: Number.parseInt(theme, 10),
       isSpam,
     });
 
