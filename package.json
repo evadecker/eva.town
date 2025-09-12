@@ -33,7 +33,6 @@
     "@types/react-dom": "^19.1.9",
     "astro": "^5.13.5",
     "astro-expressive-code": "^0.41.3",
-    "astro-font": "^1.1.0",
     "astro-loading-indicator": "^0.7.0",
     "autoprefixer": "^10.4.21",
     "classnames": "^2.5.1",

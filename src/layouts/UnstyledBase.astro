@@ -2,9 +2,8 @@
 import "../styles/reset.css";
 import "../styles/theme.css";
 
+import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
-import { join } from "node:path";
-import { AstroFont } from "astro-font";
 import LoadingIndicator from "astro-loading-indicator/component";
 
 export interface Props {
@@ -33,46 +32,8 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Eva Decker`;
       media="(prefers-color-scheme: dark)"
       content="#111111"
     />
-    <AstroFont
-      config={[
-        {
-          name: "HEX Franklin",
-          src: [
-            {
-              style: "normal",
-              path: join(
-                process.cwd(),
-                "public",
-                "fonts",
-                "HEX_Franklin_v0.3_Variable.woff2"
-              ),
-            },
-          ],
-          display: "swap",
-          selector: "body",
-          fallback: "sans-serif",
-          cssVariable: "font-sans",
-        },
-        {
-          name: "MonoLisa",
-          src: [
-            {
-              style: "normal",
-              path: join(
-                process.cwd(),
-                "public",
-                "fonts",
-                "MonoLisaVariableNormal.woff2"
-              ),
-            },
-          ],
-          display: "swap",
-          selector: "code",
-          fallback: "monospace",
-          cssVariable: "font-mono",
-        },
-      ]}
-    />
+    <Font cssVariable="--font-sans" preload />
+    <Font cssVariable="--font-mono" />
     <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
     <link
       rel="icon"
