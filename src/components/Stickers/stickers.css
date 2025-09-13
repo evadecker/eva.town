@@ -50,11 +50,7 @@
 .shoo-wrapper {
   position: fixed;
   bottom: 0;
-  left: 0;
   right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
   z-index: 999;
   padding: var(--space-xl);
 }
@@ -62,39 +58,25 @@
 @keyframes shoo {
   0% {
     transform: rotate(0deg);
-    opacity: 1;
   }
   15%,
   30% {
-    transform: rotate(-7deg);
-    opacity: 1;
+    transform: rotate(-8deg);
   }
   45% {
-    transform: rotate(8deg);
+    transform: rotate(9deg);
   }
   60% {
-    transform: rotate(-9deg);
+    transform: rotate(-10deg);
   }
   75% {
-    transform: rotate(10deg);
+    transform: rotate(12deg);
   }
   90% {
-    transform: rotate(-9deg);
+    transform: rotate(-10deg);
   }
   100% {
-    transform: rotate(8deg);
-    opacity: 0;
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+    transform: rotate(9deg);
   }
 }
 
@@ -105,20 +87,23 @@
   border-radius: var(--radius-full);
   padding: var(--space-2xs) var(--space-m);
   font-weight: var(--font-weight-medium);
-  transition: scale 0.2s ease;
+  transition:
+    rotate 0.2s ease,
+    scale 0.2s ease;
   transform-origin: 50% 150%;
   cursor: pointer;
   pointer-events: auto;
   box-shadow: var(--shadow-m);
-  animation: slideUp 0.3s ease both;
 }
 
 [data-sam-shoo]:hover {
   scale: 1.15;
+  rotate: -4deg;
 }
 
 [data-sam-shoo]:active {
-  transform: scale(1.1) rotate(10deg);
+  rotate: 10deg;
+  scale: 1.1;
 }
 
 [data-sam-shoo].exiting {
