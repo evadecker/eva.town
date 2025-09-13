@@ -5,13 +5,6 @@ import SynthScreen from "./SynthScreen.astro";
 ---
 
 <script>
-  import { Howler } from "howler";
-  import { sounds } from "./sounds.ts";
-  import { unmute } from "./unmute";
-
-  Howler.autoUnlock = false;
-  Howler.volume(0.5);
-
   const STAFF_TYPE_PREFIX = "staff-";
   const NOTEHEAD_PREFIX = "note-";
 
@@ -38,20 +31,25 @@ import SynthScreen from "./SynthScreen.astro";
 
   export type NoteName = WhiteKey | BlackKey;
 
+  const synth: HTMLElement | null | undefined =
+    document.getElementById("synth");
+  const start: SVGElement | null | undefined = synth?.querySelector(".start");
+
   // Helpers -----------------------------------------------------//
   function randomIntFromInterval(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-  const numInstruments = sounds.instruments.length - 1;
-
   let timeout: NodeJS.Timeout;
 
-  function loadSynth() {
-    const synth: HTMLElement | null | undefined =
-      document.getElementById("synth");
-    const start: SVGElement | null | undefined = synth?.querySelector(".start");
+  async function loadSynth() {
+    const { Howler } = await import("howler");
+    const { sounds } = await import("./sounds.ts");
+    const { unmute } = await import("./unmute");
+
+    Howler.autoUnlock = false;
+    Howler.volume(0.5);
+
     const keys: NodeListOf<SVGGElement> | undefined =
       synth?.querySelectorAll(".synth-key");
     const instrumentIcons: NodeListOf<SVGGElement> | undefined =
@@ -68,6 +66,9 @@ import SynthScreen from "./SynthScreen.astro";
       synth?.querySelector(".instrument-next");
 
     // State -------------------------------------------------------//
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    const numInstruments = sounds.instruments.length - 1;
+
     let activeInstrument = 0;
     let isMouseDown = false;
     // let isTouching = false;
@@ -80,12 +81,6 @@ import SynthScreen from "./SynthScreen.astro";
         synth.dataset.enabled = "true";
         loadInstrumentSounds();
         setRandomInstrument(revealKeyboardLetters);
-      }
-    };
-
-    const preloadUISounds = () => {
-      for (const [_key, value] of Object.entries(sounds.ui)) {
-        value.howl.load();
       }
     };
 
@@ -173,7 +168,7 @@ import SynthScreen from "./SynthScreen.astro";
         const staffType = sounds.instruments[activeInstrument].staffType;
         const currentStaff = STAFF_TYPE_PREFIX + staffType;
         const currentNote: SVGElement | null = synth?.querySelector(
-          `.${currentStaff} .${NOTEHEAD_PREFIX}${noteName}`
+          `.${currentStaff} .${NOTEHEAD_PREFIX}${noteName}`,
         );
 
         if (currentNote) currentNote.style.display = "block";
@@ -532,31 +527,27 @@ import SynthScreen from "./SynthScreen.astro";
       unmute(audioContext, false, false);
     }
 
-    start?.addEventListener("click", () => {
-      startSynth();
-    });
+    startSynth();
 
-    preloadUISounds();
+    function unloadSynth() {
+      const unloadSounds = () => {
+        for (const [_key, value] of Object.entries(sounds.ui)) {
+          value.howl.unload();
+        }
+
+        for (const [_key, value] of Object.entries(sounds.instruments)) {
+          value.howl.unload();
+        }
+      };
+
+      clearTimeout(timeout);
+      unloadSounds();
+    }
+
+    document.addEventListener("beforeunload", unloadSynth);
   }
 
-  document.addEventListener("astro:page-load", loadSynth);
-
-  function unloadSynth() {
-    const unloadSounds = () => {
-      for (const [_key, value] of Object.entries(sounds.ui)) {
-        value.howl.unload();
-      }
-
-      for (const [_key, value] of Object.entries(sounds.instruments)) {
-        value.howl.unload();
-      }
-    };
-
-    clearTimeout(timeout);
-    unloadSounds();
-  }
-
-  document.addEventListener("beforeunload", unloadSynth);
+  start?.addEventListener("click", loadSynth);
 </script>
 
 <div

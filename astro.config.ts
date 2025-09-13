@@ -36,6 +36,32 @@ export default defineConfig({
       exclude: ["fsevents"],
     },
   },
+  experimental: {
+    fonts: [
+      {
+        provider: "local",
+        name: "HEX Franklin",
+        cssVariable: "--font-sans",
+        fallbacks: ["sans-serif"],
+        variants: [
+          {
+            src: ["./src/fonts/HEX_Franklin_v0.3_Variable.woff2"],
+          },
+        ],
+      },
+      {
+        provider: "local",
+        name: "MonoLisa",
+        cssVariable: "--font-mono",
+        fallbacks: ["monospace"],
+        variants: [
+          {
+            src: ["./src/fonts/MonoLisaVariableNormal.woff2"],
+          },
+        ],
+      },
+    ],
+  },
   redirects: {
     "/projects": "/",
     "/projects/genderswap": "/posts/genderswap",
