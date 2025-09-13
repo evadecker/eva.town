@@ -65,7 +65,7 @@ export const Stickers = () => {
                 transition: { duration: 0.2, delay: 0.45 },
               }}
             >
-              <m.button
+              <button
                 data-sam-shoo
                 onClick={handleShoo}
                 className={classNames({
@@ -74,7 +74,7 @@ export const Stickers = () => {
                 type="button"
               >
                 Shoo Sam
-              </m.button>
+              </button>
             </m.div>
           )}
         </AnimatePresence>
