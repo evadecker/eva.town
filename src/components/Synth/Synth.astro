@@ -527,9 +527,7 @@ import SynthScreen from "./SynthScreen.astro";
       unmute(audioContext, false, false);
     }
 
-    start?.addEventListener("click", () => {
-      startSynth();
-    });
+    startSynth();
 
     function unloadSynth() {
       const unloadSounds = () => {
@@ -549,7 +547,7 @@ import SynthScreen from "./SynthScreen.astro";
     document.addEventListener("beforeunload", unloadSynth);
   }
 
-  document.addEventListener("astro:page-load", loadSynth);
+  start?.addEventListener("click", loadSynth);
 </script>
 
 <div
