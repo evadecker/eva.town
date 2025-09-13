@@ -1,4 +1,5 @@
-import { motion, type Variants } from "motion/react";
+import type { Variants } from "motion/react";
+import * as m from "motion/react-m";
 import { nanoid } from "nanoid";
 
 const SPEED = 0.04;
@@ -49,13 +50,13 @@ const TypedCharacter = ({
   };
 
   return (
-    <motion.span
+    <m.span
       className="character"
       variants={characterVariants}
       style={{ animationDelay: `${index * speed + delay}s` }}
     >
       {character}
-    </motion.span>
+    </m.span>
   );
 };
 
