@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react";
 import classNames from "classnames";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, domMax, LazyMotion } from "motion/react";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import { clearSams, numSams } from "../../stores/sam";
@@ -47,25 +47,27 @@ export const Stickers = () => {
 
   return (
     <div className="stickers" style={{ viewTransitionName: "stickers" }}>
-      <AnimatePresence>
-        {stickers.map(({ id, variant }) => (
-          <Sticker key={id} id={id} variant={variant} />
-        ))}
-        {showShoo && (
-          <div className="shoo-wrapper">
-            <button
-              data-sam-shoo
-              onClick={handleShoo}
-              className={classNames({
-                exiting,
-              })}
-              type="button"
-            >
-              Shoo Sam
-            </button>
-          </div>
-        )}
-      </AnimatePresence>
+      <LazyMotion features={domMax} strict>
+        <AnimatePresence>
+          {stickers.map(({ id, variant }) => (
+            <Sticker key={id} id={id} variant={variant} />
+          ))}
+          {showShoo && (
+            <div className="shoo-wrapper">
+              <button
+                data-sam-shoo
+                onClick={handleShoo}
+                className={classNames({
+                  exiting,
+                })}
+                type="button"
+              >
+                Shoo Sam
+              </button>
+            </div>
+          )}
+        </AnimatePresence>
+      </LazyMotion>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import "./dialogue.css";
 
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, domAnimation, LazyMotion } from "motion/react";
 import React from "react";
 
 import { DialogueBubble } from "./DialogueBubble";
@@ -16,10 +16,12 @@ export const Dialogue = React.memo(
   ({ text, emote, onEmoteClick }: DialogueProps) => {
     return (
       <div className="dialogueContainer">
-        <AnimatePresence>
-          <DialogueBubble text={text} key="bubble" />
-          <Emote emote={emote} key="emote" onEmoteClick={onEmoteClick} />
-        </AnimatePresence>
+        <LazyMotion features={domAnimation} strict>
+          <AnimatePresence>
+            <DialogueBubble text={text} key="bubble" />
+            <Emote emote={emote} key="emote" onEmoteClick={onEmoteClick} />
+          </AnimatePresence>
+        </LazyMotion>
       </div>
     );
   },

@@ -1,6 +1,7 @@
 import "./dialogue.css";
 
-import { motion, type Variants } from "motion/react";
+import type { Variants } from "motion/react";
+import * as m from "motion/react-m";
 import React from "react";
 
 import { DialogueLine } from "./DialogueLine";
@@ -38,7 +39,7 @@ export const DialogueBubble = React.memo(({ text }: DialogueBubbleProps) => {
 
   return (
     text && (
-      <motion.div
+      <m.div
         layout
         variants={bubbleVariants}
         initial="initial"
@@ -46,7 +47,7 @@ export const DialogueBubble = React.memo(({ text }: DialogueBubbleProps) => {
         className="bubble"
       >
         <DialogueLine text={text} />
-      </motion.div>
+      </m.div>
     )
   );
 });

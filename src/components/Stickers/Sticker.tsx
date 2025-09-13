@@ -1,7 +1,8 @@
 import "./stickers.css";
 
 import { useStore } from "@nanostores/react";
-import { type MotionNodeDragHandlers, motion } from "motion/react";
+import type { MotionNodeDragHandlers } from "motion/react";
+import * as m from "motion/react-m";
 import { useEffect, useState } from "react";
 import { getRandomValueBetween } from "../../helpers";
 import { incrementTopZIndex, topZIndex } from "../../stores/sam";
@@ -172,7 +173,7 @@ export const Sticker = ({ variant }: StickerProps) => {
   };
 
   return (
-    <motion.div
+    <m.div
       className="sticker"
       initial={{ opacity: 0, x, y, scale: 2, rotate: initialRotation }}
       animate={{
@@ -227,6 +228,6 @@ export const Sticker = ({ variant }: StickerProps) => {
           draggable="false"
         />
       </picture>
-    </motion.div>
+    </m.div>
   );
 };
