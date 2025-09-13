@@ -30,25 +30,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <script>
   import * as Fathom from "fathom-client";
-  import { addSam, clearSams, numSams } from "../stores/sam";
+  import { addSam } from "../stores/sam";
 
   function setupSam() {
     const samButton = document.querySelector("[data-sam-button]");
     samButton?.addEventListener("click", () => addSam());
-
-    const shooButton = document.querySelector("[data-sam-shoo]");
-
-    if (shooButton) {
-      shooButton.addEventListener("click", () => {
-        clearSams();
-      });
-
-      numSams.subscribe((num) => {
-        num > 2
-          ? shooButton.classList.add("visible")
-          : shooButton.classList.remove("visible");
-      });
-    }
   }
 
   setupSam();

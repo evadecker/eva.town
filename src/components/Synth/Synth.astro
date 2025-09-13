@@ -31,9 +31,13 @@ import SynthScreen from "./SynthScreen.astro";
 
   export type NoteName = WhiteKey | BlackKey;
 
-  const synth: HTMLElement | null | undefined =
-    document.getElementById("synth");
-  const start: SVGElement | null | undefined = synth?.querySelector(".start");
+  function prepareLoadSynth() {
+    const synth: HTMLElement | null | undefined =
+      document.getElementById("synth");
+    const start: SVGElement | null | undefined = synth?.querySelector(".start");
+
+    start?.addEventListener("click", loadSynth);
+  }
 
   // Helpers -----------------------------------------------------//
   function randomIntFromInterval(min: number, max: number) {
@@ -50,6 +54,8 @@ import SynthScreen from "./SynthScreen.astro";
     Howler.autoUnlock = false;
     Howler.volume(0.5);
 
+    const synth: HTMLElement | null | undefined =
+      document.getElementById("synth");
     const keys: NodeListOf<SVGGElement> | undefined =
       synth?.querySelectorAll(".synth-key");
     const instrumentIcons: NodeListOf<SVGGElement> | undefined =
@@ -79,8 +85,15 @@ import SynthScreen from "./SynthScreen.astro";
 
       if (synth && synth.dataset.enabled !== "true") {
         synth.dataset.enabled = "true";
+        loadUISounds();
         loadInstrumentSounds();
         setRandomInstrument(revealKeyboardLetters);
+      }
+    };
+
+    const loadUISounds = () => {
+      for (const [_key, value] of Object.entries(sounds.ui)) {
+        value.howl.load();
       }
     };
 
@@ -544,10 +557,10 @@ import SynthScreen from "./SynthScreen.astro";
       unloadSounds();
     }
 
-    document.addEventListener("beforeunload", unloadSynth);
+    document.addEventListener("astro:before-swap", unloadSynth);
   }
 
-  start?.addEventListener("click", loadSynth);
+  document.addEventListener("astro:page-load", prepareLoadSynth);
 </script>
 
 <div
