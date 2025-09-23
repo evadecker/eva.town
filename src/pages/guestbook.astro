@@ -1,17 +1,7 @@
 ---
-import {
-  count,
-  db,
-  desc,
-  eq,
-  Guestbook as GuestbookDB,
-  isNull,
-  or,
-} from "astro:db";
-
-import { Icon } from "src/components/Icon/Icon";
-import Center from "../components/Center.astro";
-import Notecard from "../components/Notecard/Notecard.astro";
+import { db, Guestbook as GuestbookDB } from "astro:db";
+import GuestbookEntries from "../components/Guestbook/GuestbookEntries.astro";
+import GuestbookPagination from "../components/Guestbook/GuestbookPagination.astro";
 import { NotecardComposer } from "../components/Notecard/NotecardComposer";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -26,32 +16,7 @@ if (currentPage === 1 && Astro.url.searchParams.has("page")) {
   return Astro.redirect("/guestbook");
 }
 
-// Adjust entries per page based on whether we're on the first page
-const baseEntriesPerPage = 24;
-const entriesPerPage =
-  currentPage === 1 ? baseEntriesPerPage - 1 : baseEntriesPerPage;
-
-const entryCount = await db
-  .select({ count: count() })
-  .from(GuestbookDB)
-  .where(or(eq(GuestbookDB.isSpam, false), isNull(GuestbookDB.isSpam)));
-const totalEntries = entryCount[0].count;
-// Calculate total pages accounting for one less entry on first page
-const remainingEntries = Math.max(0, totalEntries - 1); // Subtract one for composer
-const totalPages = Math.max(
-  1,
-  Math.ceil(remainingEntries / baseEntriesPerPage),
-);
 const isFirstPage = currentPage === 1;
-const isLastPage = currentPage === totalPages;
-
-// Redirect if page number is invalid
-if (currentPage > totalPages) {
-  return Astro.redirect("/guestbook");
-}
-
-// Adjust offset calculation for pagination
-const offset = isFirstPage ? 0 : (currentPage - 1) * baseEntriesPerPage - 1;
 
 if (Astro.request.method === "POST") {
   const formData = await Astro.request.formData();
@@ -84,35 +49,8 @@ if (Astro.request.method === "POST") {
   }
 }
 
-const guestbook = await db
-  .select()
-  .from(GuestbookDB)
-  .where(or(eq(GuestbookDB.isSpam, false), isNull(GuestbookDB.isSpam)))
-  .orderBy(desc(GuestbookDB.timestamp))
-  .limit(entriesPerPage)
-  .offset(offset);
-
-if (guestbook.length === 0) {
-  return Astro.redirect("/guestbook");
-}
-
 const title = "Guestbook";
 const description = "Leave a message in eva.town.";
-
-const entriesSuffix = [
-  "messages so far.",
-  "little notes from across the globe.",
-  "entries (and counting).",
-  "notes from friends and strangers.",
-  "thoughts posted.",
-  "notes total.",
-  "messages as of now.",
-];
-
-const totalEntriesText = `${totalEntries} ${
-  entriesSuffix[Math.floor(Math.random() * entriesSuffix.length)]
-}`;
-const pageText = `Viewing page ${currentPage} of ${totalPages}.`;
 ---
 
 <BaseLayout
@@ -126,65 +64,9 @@ const pageText = `Viewing page ${currentPage} of ${totalPages}.`;
   <h1 class="visually-hidden">Guestbook</h1>
   <div class="notecards">
     {isFirstPage && <NotecardComposer client:load />}
-    {
-      guestbook.map(({ author, url, content, timestamp, theme }) => (
-        <Notecard
-          author={author}
-          url={url}
-          content={content}
-          timestamp={timestamp}
-          theme={theme}
-        />
-      ))
-    }
+    <GuestbookEntries currentPage={currentPage} />
   </div>
-  <Center>
-    {
-      isLastPage ? (
-        <div class="postscript">
-          You've reached the end!
-          <>
-            <br />
-            <a
-              href="/posts/design-outside-the-computer"
-              data-fathom="explanation"
-            >
-              Read how I made this guestbook.
-            </a>
-          </>
-        </div>
-      ) : (
-        <div class="postscript">
-          {totalEntriesText}
-          <br />
-          {pageText}
-        </div>
-      )
-    }
-    <div class="pagination">
-      {
-        currentPage > 1 && (
-          <a
-            aria-label="Previous page"
-            href={
-              currentPage === 2
-                ? "/guestbook"
-                : `/guestbook?page=${currentPage - 1}`
-            }
-          >
-            <Icon icon="arrowLeft" />
-          </a>
-        )
-      }
-      {
-        currentPage < totalPages && (
-          <a aria-label="Next page" href={`/guestbook?page=${currentPage + 1}`}>
-            <Icon icon="arrowRight" />
-          </a>
-        )
-      }
-    </div>
-  </Center>
+  <GuestbookPagination currentPage={currentPage} />
 </BaseLayout>
 
 <style lang="scss">
@@ -196,31 +78,6 @@ const pageText = `Viewing page ${currentPage} of ${totalPages}.`;
     gap: var(--space-2xl);
     padding: var(--space-xl);
     overflow: hidden;
-  }
-
-  .postscript {
-    text-align: center;
-    padding-block-start: var(--space-xl);
-  }
-
-  .pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-s);
-    padding-block-start: var(--space-m);
-
-    a {
-      cursor: pointer;
-      border-radius: var(--radius-full);
-      padding: var(--space-2xs) var(--space-m);
-      background-color: var(--gray-12);
-      color: var(--gray-1);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2xs);
-    }
   }
 </style>
 
