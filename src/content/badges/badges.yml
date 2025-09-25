@@ -1,6 +1,9 @@
 - img: ./eva-town.png
   alt: Eva Town
   url: /about
+- img: ./frontend-horse.png
+  alt: Frontend Horse
+  url: https://frontend.horse/
 - img: ./damien.png
   alt: damien.zone
   url: https://damien.zone/
@@ -120,8 +123,6 @@
   alt: The Cheat Fan
 - img: ./bowsers-temple.gif
   alt: Bowser's Temple
-- img: ./kitty.gif
-  alt: Kitty
 - img: ./what.gif
   alt: "?"
 - img: ./dogs-fan.jpeg
