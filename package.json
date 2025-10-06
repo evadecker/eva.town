@@ -29,8 +29,8 @@
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.6.0",
     "@nanostores/react": "^1.0.0",
-    "@types/react": "^19.1.15",
-    "@types/react-dom": "^19.1.9",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
     "astro": "^5.14.1",
     "astro-expressive-code": "^0.41.3",
     "astro-loading-indicator": "^0.7.0",
@@ -43,8 +43,8 @@
     "motion": "^12.23.22",
     "nanoid": "^5.1.6",
     "nanostores": "^1.0.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-imgattr": "^1.0.5",
@@ -53,13 +53,13 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
-    "@biomejs/biome": "^2.2.4",
+    "@biomejs/biome": "^2.2.5",
     "@playwright/test": "^1.55.1",
     "@radix-ui/colors": "^3.0.0",
     "@types/howler": "^2.2.12",
-    "@types/node": "^24.5.2",
+    "@types/node": "^24.7.0",
     "hastscript": "^9.0.1",
-    "html-validate": "^10.0.0",
+    "html-validate": "^10.1.0",
     "husky": "^9.1.7",
     "postcss-html": "^1.8.0",
     "sass": "^1.93.2",
@@ -67,6 +67,6 @@
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-config-standard-scss": "^11.1.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   }
 }
