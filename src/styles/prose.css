@@ -316,6 +316,6 @@
   text-align: center;
 
   &::before {
-    content: "a0⁕ ⁕ ⁕";
+    content: "⁕ ⁕ ⁕";
   }
 }
