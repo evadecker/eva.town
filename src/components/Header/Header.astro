@@ -1,7 +1,6 @@
 ---
 import Center from "../Center.astro";
 import { Icon } from "../Icon/Icon";
-import Logo from "./Logo.astro";
 
 const currentPath = Astro.url.pathname;
 const topLevelPath = currentPath.split("/")[1];
@@ -21,7 +20,7 @@ const navigation = [
 <header>
   <Center>
     <nav id="nav">
-      <Logo />
+      <h1><a href="/">Eva Decker</a></h1>
       <div class="links">
         {
           navigation.map((item) => (
@@ -111,11 +110,7 @@ const navigation = [
 <style>
   header {
     width: 100%;
-    padding-block: var(--space-s);
-    position: sticky;
-    background-color: var(--gray-1);
-    top: 0;
-    z-index: 10;
+    padding-block: var(--space-m);
   }
 
   nav {
@@ -123,13 +118,6 @@ const navigation = [
     align-items: center;
     justify-content: space-between;
     gap: var(--space-s);
-  }
-
-  .links {
-    display: flex;
-    align-items: stretch;
-    gap: var(--space-2xs);
-    margin-inline-end: calc(-1 * var(--space-s));
 
     a,
     button {
@@ -159,6 +147,22 @@ const navigation = [
         font-weight: var(--font-weight-bold);
       }
     }
+
+    h1 {
+      font-size: var(--step-0);
+      margin: 0;
+
+      a {
+        padding-inline: 0;
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-2xs);
+    margin-inline-end: calc(-1 * var(--space-s));
 
     button[data-theme-toggle] {
       justify-content: center;
