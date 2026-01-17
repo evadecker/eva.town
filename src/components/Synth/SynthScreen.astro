@@ -491,7 +491,7 @@
   </g>
 </Fragment>
 
-<style lang="scss">
+<style>
   @keyframes press-start {
     0%,
     20% {
@@ -523,13 +523,8 @@
     fill: var(--synth-lcd-dark);
   }
 
-  // Start button
   .start {
     cursor: pointer;
-
-    :global([data-enabled="true"]) & {
-      display: none;
-    }
 
     .lcd-base {
       fill: var(--synth-lcd-dark);
@@ -556,19 +551,23 @@
     }
   }
 
+  :global([data-enabled="true"]) .start {
+    display: none;
+  }
+
   .synth-randomize {
     display: none;
 
-    :global([data-loading="true"]) & {
-      display: none;
-    }
-
-    @media all and (pointer: coarse) {
+    @media (pointer: coarse) {
       display: none;
     }
   }
 
-  @media not all and (pointer: coarse) {
+  :global([data-loading="true"]) .synth-randomize {
+    display: none;
+  }
+
+  @media (pointer: coarse) {
     .synth-instrument:hover .instrument {
       display: none;
     }
@@ -582,15 +581,14 @@
     }
   }
 
-  // Default hidden state, overridden in JS
   .instrument,
   .notehead {
     display: none;
   }
 
-  .synth-instruments,
-  .synth-staff {
-    :global([data-enabled="false"]) & {
+  :global([data-enabled="false"]) {
+    .synth-instruments,
+    .synth-staff {
       display: none;
     }
   }

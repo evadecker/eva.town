@@ -48,7 +48,7 @@ const { timeline, roles, tech, website, repo, collaborators } = Astro.props;
           {collaborators.map((collaborator) =>
             // Condense whitespace
             // prettier-ignore
-            <li><a class="collaborator" href={collaborator.url} target="_blank"><Image src={collaborator.img} alt={`A photo of ${collaborator.name}`} class="avatar" />{collaborator.name}</a></li>
+            <li><a class="collaborator" href={collaborator.url} target="_blank"><Image src={collaborator.img} alt={`A photo of ${collaborator.name}`} class="avatar" />{collaborator.name}</a></li>,
           )}
         </ul>
       </ProjectInfoBlock>
@@ -93,7 +93,7 @@ const { timeline, roles, tech, website, repo, collaborators } = Astro.props;
   }
 </dl>
 
-<style lang="scss">
+<style>
   .project-info {
     display: flex;
     flex-direction: column;

@@ -582,8 +582,7 @@ import SynthScreen from "./SynthScreen.astro";
   </svg>
 </div>
 
-<style lang="scss">
-  // Theme
+<style>
   .synth {
     width: 100%;
     max-width: 540px;
@@ -600,18 +599,8 @@ import SynthScreen from "./SynthScreen.astro";
     --synth-lcd-dark: var(--gray-12);
     --synth-keyletter: var(--gray-12);
 
-    :global(.dark) & {
-      --synth-whitekey: var(--gray-12);
-      --synth-whitekey-pressed: white;
-      --synth-blackkey: var(--gray-1);
-      --synth-blackkey-pressed: var(--gray-4);
-      --synth-base: var(--gray-12);
-      --synth-stroke: var(--gray-1);
-      --synth-lcd-bg: var(--gray-12);
-      --synth-lcd-light: white;
-      --synth-lcd-medium: var(--gray-9);
-      --synth-lcd-dark: var(--gray-3);
-      --synth-keyletter: var(--gray-4);
+    svg {
+      overflow: visible;
     }
 
     &[data-loading="true"] {
@@ -623,9 +612,19 @@ import SynthScreen from "./SynthScreen.astro";
     &:focus-within {
       outline: none;
     }
+  }
 
-    svg {
-      overflow: visible;
-    }
+  :global(.dark) .synth {
+    --synth-whitekey: var(--gray-12);
+    --synth-whitekey-pressed: white;
+    --synth-blackkey: var(--gray-1);
+    --synth-blackkey-pressed: var(--gray-4);
+    --synth-base: var(--gray-12);
+    --synth-stroke: var(--gray-1);
+    --synth-lcd-bg: var(--gray-12);
+    --synth-lcd-light: white;
+    --synth-lcd-medium: var(--gray-9);
+    --synth-lcd-dark: var(--gray-3);
+    --synth-keyletter: var(--gray-4);
   }
 </style>
