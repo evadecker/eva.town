@@ -8,10 +8,6 @@ const topLevelPath = currentPath.split("/")[1];
 
 const navigation = [
   {
-    label: "Garden",
-    url: "/garden",
-  },
-  {
     label: "About",
     url: "/about",
   },
@@ -74,7 +70,7 @@ const navigation = [
     if (metaTheme !== null)
       metaTheme.setAttribute(
         "content",
-        theme === "dark" ? grayDark.gray1 : gray.gray1
+        theme === "dark" ? grayDark.gray1 : gray.gray1,
       );
   }
 

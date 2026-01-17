@@ -7,9 +7,8 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
   <Center>
     <div class="content">
       <div class="links">
-        <a href="/about" data-fathom="footer-link">About</a>
-        <a href="/webrings" data-fathom="footer-link">Webrings</a>
         <a href="/guestbook" data-fathom="footer-link">Guestbook</a>
+        <a href="/webrings" data-fathom="footer-link">Webrings</a>
         <a href="/rss.xml" data-fathom="footer-link">RSS</a>
         <a href="/colophon" data-fathom="footer-link">Colophon</a>
       </div>
@@ -28,11 +27,6 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
           href="https://github.com/evadecker"
           target="_blank"
           data-fathom="footer-link">GitHub</a
-        >
-        <a
-          href="https://hardcover.app/@evadecker"
-          target="_blank"
-          data-fathom="footer-link">Hardcover</a
         >
         <a
           href="https://linkedin.com/in/evadecker"
@@ -100,17 +94,12 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
     }
   }
 
-  .copyright {
-    color: var(--gray-11);
-  }
-
   .banner {
     grid-area: banner;
     color: var(--gray-11);
     display: flex;
     align-items: center;
-    gap: var(--space-m);
-    transition: background-color 0.2s ease-in-out;
+    gap: var(--space-s);
 
     a {
       text-decoration: none;
@@ -123,7 +112,7 @@ import { SubscribeForm } from "../Subscribe/SubscribeForm";
     }
 
     .emoji {
-      transform: scale(1.5) translateY(0.01em);
+      transform: scale(1.3) translateY(0.01em);
     }
   }
 

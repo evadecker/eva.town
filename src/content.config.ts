@@ -17,13 +17,6 @@ export const collections = {
           })
           .optional(),
         ogImage: image().optional(),
-        features: z
-          .object({
-            name: z.string(),
-            url: z.string().url(),
-          })
-          .array()
-          .optional(),
       }),
   }),
 
@@ -42,50 +35,17 @@ export const collections = {
   }),
 
   work: defineCollection({
-    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/work" }),
-    schema: ({ image }) =>
-      z.object({
-        title: z.string(),
-        timeline: z.object({
-          start: z.string(),
-          end: z.string(),
-        }),
-        img: z
-          .object({
-            src: image(),
-            alt: z.string(),
-          })
-          .array()
-          .optional(),
-        video: z
-          .object({
-            src: z.string(),
-            poster: z.string(),
-          })
-          .array()
-          .optional(),
-        ogImage: image().optional(),
-      }),
-  }),
-
-  experiments: defineCollection({
     loader: glob({
       pattern: "**/[^_]*.yml",
-      base: "./src/content/experiments",
+      base: "./src/content/work",
     }),
     schema: () =>
       z.object({
         title: z.string(),
-        datePublished: z.date(),
         description: z.string().optional(),
-        url: z.string(),
-        features: z
-          .object({
-            name: z.string(),
-            url: z.string().url(),
-          })
-          .array()
-          .optional(),
+        year: z.number(),
+        url: z.string().url().optional(),
+        category: z.string().array(),
       }),
   }),
 
