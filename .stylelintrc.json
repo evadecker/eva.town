@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-standard-scss",
-    "stylelint-config-html/astro"
-  ],
+  "extends": ["stylelint-config-standard", "stylelint-config-html/astro"],
   "ignoreFiles": ["dist/**/*"],
   "rules": {
     "custom-property-pattern": null,

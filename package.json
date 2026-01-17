@@ -12,7 +12,8 @@
     "preview": "astro preview",
     "check": "astro check && biome check",
     "check:fix": "astro check && biome check --write",
-    "stylelint": "npx stylelint '**/*.{css,scss,astro}'",
+    "stylelint": "npx stylelint '**/*.{css,astro}'",
+    "stylelint:fix": "npx stylelint '**/*.{css,astro}' --fix",
     "test": "playwright test",
     "prettier": "prettier --write .",
     "html-validate": "pnpm build && pnpm exec html-validate dist/*.html",
@@ -36,6 +37,7 @@
     "astro-loading-indicator": "^0.7.1",
     "autoprefixer": "^10.4.23",
     "classnames": "^2.5.1",
+    "cssnano": "^7.1.2",
     "dayjs": "^1.11.19",
     "fathom-client": "^3.7.2",
     "howler": "^2.2.4",
@@ -62,11 +64,9 @@
     "html-validate": "^10.5.0",
     "husky": "^9.1.7",
     "postcss-html": "^1.8.0",
-    "sass": "^1.97.2",
     "stylelint": "^15.11.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^34.0.0",
-    "stylelint-config-standard-scss": "^11.1.0",
     "typescript": "^5.9.3"
   }
 }
