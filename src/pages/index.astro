@@ -1,7 +1,25 @@
 ---
+import { getCollection } from "astro:content";
+
 import Center from "../components/Center.astro";
 import Synth from "../components/Synth/Synth.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const work = await getCollection("work");
+const posts = await getCollection("posts");
+
+const feed = work
+  .map((project) => project.data)
+  .concat(
+    posts.map((post) => ({
+      title: post.data.title,
+      description: post.data.description,
+      year: post.data.datePublished.getFullYear(),
+      url: `/posts/${post.id}`,
+      category: ["writing"],
+    })),
+  )
+  .sort((a, b) => b.year - a.year);
 ---
 
 <BaseLayout
@@ -24,6 +42,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="synth">
         <Synth />
       </div>
+    </section>
+    <section class="work">
+      <h2 class="visuallyhidden">Work</h2>
+      <ul class="work-list">
+        {
+          feed.map((project) => (
+            <li class="work-item">
+              <a href={project.url}>
+                <h3 class="work-title">{project.title}</h3>
+                <span class="work-category">
+                  {project.category.sort().join(", ")}
+                </span>
+                <span class="work-year">{project.year}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </section>
   </Center>
 </BaseLayout>
@@ -69,7 +105,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     display: flex;
     flex-direction: column;
     gap: var(--space-3xl);
-    padding-block-end: var(--space-3xl);
   }
 
   @keyframes rotate {
@@ -80,10 +115,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     100% {
       transform: rotate(360deg);
     }
-  }
-
-  .work {
-    padding-block: var(--space-3xl) var(--space-xl);
   }
 
   .intro {
@@ -115,6 +146,60 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     &:active {
       transform: scale(0.95);
+    }
+  }
+
+  .work {
+    padding-block: var(--space-2xl);
+  }
+
+  .work-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work-item {
+    .work-title {
+      grid-area: title;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .work-category {
+      grid-area: category;
+    }
+
+    .work-year {
+      grid-area: year;
+      font-variant-numeric: tabular-nums;
+    }
+
+    a {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      grid-template-areas: "title category year";
+      gap: var(--space-m);
+      text-decoration: none;
+      padding-block: var(--space-s);
+
+      * {
+        font-size: var(--step-0);
+        font-weight: var(--font-weight-normal);
+        line-height: var(--line-height-body);
+        transition: font-weight 0.2s ease-in-out;
+      }
+
+      &:hover * {
+        font-weight: var(--font-weight-bold);
+      }
+    }
+
+    &:not(:last-child) {
+      border-block-end: 1px solid var(--gray-4);
+      margin-block-end: -1px;
     }
   }
 </style>
