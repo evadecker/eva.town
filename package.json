@@ -13,6 +13,7 @@
     "check": "astro check && biome check",
     "check:fix": "astro check && biome check --write",
     "stylelint": "npx stylelint '**/*.{css,astro}'",
+    "stylelint:fix": "npx stylelint '**/*.{css,astro}' --fix",
     "test": "playwright test",
     "prettier": "prettier --write .",
     "html-validate": "pnpm build && pnpm exec html-validate dist/*.html",
