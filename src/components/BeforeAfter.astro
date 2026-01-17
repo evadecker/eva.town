@@ -53,7 +53,7 @@ const { before, after } = Astro.props;
         if (container && target)
           container.style.setProperty(
             "--position",
-            `${(target as HTMLInputElement).value}%`
+            `${(target as HTMLInputElement).value}%`,
           );
       });
     }
@@ -130,8 +130,6 @@ const { before, after } = Astro.props;
     inset: 0;
     cursor: col-resize;
     opacity: 0;
-
-    // Firefox
     width: 100%;
     height: 100%;
 
