@@ -17,6 +17,7 @@ export const collections = {
           })
           .optional(),
         ogImage: image().optional(),
+        type: z.enum(["post", "case-study"]).default("post"),
       }),
   }),
 
