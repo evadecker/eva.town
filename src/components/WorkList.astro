@@ -7,6 +7,7 @@ interface Props {
     title: string;
     description?: string;
     url: string;
+    urlText?: string;
     category: string;
     year: number;
     img?: {
@@ -43,8 +44,10 @@ const { items } = Astro.props;
           <div class="details-content">
             <div class="work-details">
               <p class="work-description">{item.description}</p>
-              <a href={item.url} class="work-url">
-                {item.url.split("//")[1] || item.url}
+              <a href={item.url} class="work-link">
+                {item.category === "writing" || item.category === "case study"
+                  ? "Read more"
+                  : item.urlText || "Visit"}
               </a>
             </div>
             {item.img && (
@@ -63,17 +66,27 @@ const { items } = Astro.props;
 
 <style>
   .work-list {
+    --inline-padding: var(--space-l);
     list-style: none;
     padding: 0;
+    margin-inline: calc(var(--inline-padding) * -1);
     display: flex;
     flex-direction: column;
+    gap: 1px;
   }
 
   .work-list li {
     position: relative;
 
-    & + li {
-      border-top: 1px solid var(--gray-5);
+    & + li::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: var(--inline-padding);
+      right: var(--inline-padding);
+      height: 1px;
+      background-color: var(--gray-5);
+      z-index: -1;
     }
   }
 
@@ -114,16 +127,22 @@ const { items } = Astro.props;
     display: flex;
     align-items: baseline;
     gap: var(--space-m);
+    border-radius: var(--radius-s);
+    padding-inline: var(--inline-padding);
     padding-block: var(--space-s);
     cursor: pointer;
     user-select: none;
+
+    &:focus-visible {
+      outline: var(--gray-12) solid 2px;
+    }
 
     .disclosure-icon {
       width: 1em;
       height: auto;
       color: var(--gray-10);
       position: absolute;
-      left: calc(-1 * var(--space-l));
+      left: 0;
       top: 50%;
       translate: 0 -50%;
       rotate: 0deg;
@@ -133,10 +152,10 @@ const { items } = Astro.props;
     }
 
     @media (width < 460px) {
-      padding-inline-end: var(--space-xl);
+      padding-inline-end: var(--space-2xl);
 
       .disclosure-icon {
-        right: 0;
+        right: var(--inline-padding);
         left: auto;
         rotate: -90deg;
         width: 1.4em;
@@ -194,6 +213,7 @@ const { items } = Astro.props;
   }
 
   .details-content {
+    padding-inline: var(--inline-padding);
     padding-block-end: var(--space-m);
     display: flex;
     flex-direction: column;
@@ -201,6 +221,7 @@ const { items } = Astro.props;
     width: 100%;
 
     img {
+      background-color: var(--gray-4);
       display: block;
       aspect-ratio: 1.91 / 1;
       border-radius: var(--radius-xs);
@@ -220,16 +241,23 @@ const { items } = Astro.props;
   .work-details {
     flex: 1;
     min-width: 0;
-    overflow-wrap: break-word;
-    white-space: normal;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
 
-    .work-description {
-      margin-block-end: var(--space-2xs);
-    }
+    .work-link {
+      text-decoration: none;
+      font-weight: var(--font-weight-bold);
+      padding: var(--space-2xs) var(--space-s);
+      border-radius: var(--radius-s);
+      background-color: var(--gray-3);
+      text-align: center;
 
-    .work-url {
-      color: var(--gray-11);
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--gray-4);
+        }
+      }
     }
   }
 </style>

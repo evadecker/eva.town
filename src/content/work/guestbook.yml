@@ -2,6 +2,7 @@ title: Guestbook
 description: A guestbook for eva.town.
 year: 2024
 url: https://eva.town/guestbook
+urlText: Visit and sign
 category: social web
 img:
   src: ./guestbook.png
