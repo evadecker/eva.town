@@ -2,8 +2,7 @@ title: Namesake
 description: Web app to aid with the legal name and gender marker change process in the U.S.
 year: 2024
 url: https://namesake.fyi
-category:
-  - website
+category: nonprofit
 img:
   src: ./namesake.png
   alt: A purple background with a snail on a flower. "Your name is yours to change."

@@ -2,9 +2,7 @@ title: Astro Photo Grid
 description: A minimal, single-page photo gallery for Astro.
 year: 2025
 url: https://github.com/evadecker/astro-photo-grid
-category:
-  - tool
-  - website
+category: site template
 img:
   src: ./astro-photo-grid.png
   alt: A horizontal masonry grid of nature photos on a black background.
