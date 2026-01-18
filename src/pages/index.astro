@@ -15,7 +15,7 @@ const feed = work
   }))
   .concat(
     posts.map((post) => ({
-      id: post.id,
+      id: `post-${post.id}`,
       title: post.data.title,
       description: post.data.description,
       year: post.data.datePublished.getFullYear(),
@@ -39,7 +39,8 @@ const feed = work
         <p>
           <strong><a href="/about">Eva Decker</a></strong> is a design engineer who
           likes playing piano and writing CSS. Currently living in NYC with <span
-            class="nowrap"><button data-sam-button>Samwise</button>.</span
+            class="nowrap"
+            ><button type="button" data-sam-button>Samwise</button>.</span
           >
         </p>
       </div>
