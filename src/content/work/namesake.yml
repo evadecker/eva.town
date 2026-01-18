@@ -4,3 +4,6 @@ year: 2024
 url: https://namesake.fyi
 category:
   - website
+img:
+  src: ./namesake.png
+  alt: A purple background with a snail on a flower. "Your name is yours to change."

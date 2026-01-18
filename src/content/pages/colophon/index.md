@@ -18,11 +18,11 @@ All code is open source and available on [GitHub](https://github.com/evadecker/e
 
 This site is built using [Astro](https://astro.build). Astro handles the content-heavy views (written in [MDX](https://mdxjs.com)), but for more interactive components I use [React](https://react.dev) and [TypeScript](https://www.typescriptlang.org). [Guestbook](/guestbook) entries are stored on [Turso](https://turso.tech/).
 
-Code is edited using [Cursor](https://www.cursor.com/) on a [MacBook Pro](https://www.apple.com/macbook-pro/). My terminal of choice is [Warp](https://www.warp.dev).
+Code is edited using [Cursor](https://cursor.com/) on a [MacBook Pro](https://www.apple.com/macbook-pro/). My terminal of choice is [Warp](https://www.warp.dev).
 
 End-to-end tests are written using [Playwright](https://playwright.dev), and I use [Polypane](https://polypane.app) to preview devices, test accessibility, and toggle user preferences like `prefers-reduced-motion`.
 
-Domain registration, hosting, and deployment are via [Netlify](https://netlify.com/). Email forwarding is through [ImprovMX](https://improvmx.com). I send occasional [newsletters](https://buttondown.email/notesfromeva) using [Buttondown](https://buttondown.email).
+Domain registration, hosting, and deployment are via [Netlify](https://netlify.com/). Email forwarding is through [ImprovMX](https://improvmx.com). I send occasional [newsletters](https://buttondown.com/notesfromeva) using [Buttondown](https://buttondown.com/).
 
 I shared more about the hardware I use on [Uses This](https://usesthis.com/interviews/eva.decker/).
 
@@ -43,7 +43,7 @@ I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consiste
 
 ## Sounds
 
-The toy synth uses samples from [Mixkit](https://mixkit.co/), [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/Samulis/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples/banjo), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://github.com/mtimkovich/hearthsounds), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
+The toy synth uses samples from [Mixkit](https://mixkit.co/), [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/sgossner/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples/banjo), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://github.com/mtimkovich/hearthsounds), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
 
 ## Energy
 

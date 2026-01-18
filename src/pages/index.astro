@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-
+import WorkList from "src/components/WorkList.astro";
 import Center from "../components/Center.astro";
 import Synth from "../components/Synth/Synth.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -9,14 +9,19 @@ const work = await getCollection("work");
 const posts = await getCollection("posts");
 
 const feed = work
-  .map((project) => project.data)
+  .map((project) => ({
+    id: project.id,
+    ...project.data,
+  }))
   .concat(
     posts.map((post) => ({
+      id: post.id,
       title: post.data.title,
       description: post.data.description,
       year: post.data.datePublished.getFullYear(),
       url: `/posts/${post.id}`,
       category: ["writing"],
+      img: post.data.img,
     })),
   )
   .sort((a, b) => b.year - a.year);
@@ -32,10 +37,9 @@ const feed = work
       <h1 class="visuallyhidden">Eva designs and builds for the web</h1>
       <div class="intro">
         <p>
-          <strong><a href="/about" class="inline-link">Eva Decker</a></strong> is
-          a design engineer who likes playing piano and writing CSS. Currently living
-          in NYC with <span class="nowrap"
-            ><a role="button" data-sam-button>Samwise</a>.</span
+          <strong><a href="/about">Eva Decker</a></strong> is a design engineer who
+          likes playing piano and writing CSS. Currently living in NYC with <span
+            class="nowrap"><button data-sam-button>Samwise</button>.</span
           >
         </p>
       </div>
@@ -45,21 +49,7 @@ const feed = work
     </section>
     <section class="work">
       <h2 class="visuallyhidden">Work</h2>
-      <ul class="work-list">
-        {
-          feed.map((project) => (
-            <li class="work-item">
-              <a href={project.url}>
-                <h3 class="work-title">{project.title}</h3>
-                <span class="work-category">
-                  {project.category.sort().join(", ")}
-                </span>
-                <span class="work-year">{project.year}</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <WorkList items={feed} />
     </section>
   </Center>
 </BaseLayout>
@@ -127,6 +117,31 @@ const feed = work
       letter-spacing: var(--letter-spacing-condensed);
       line-height: var(--line-height-tight);
     }
+
+    a,
+    button {
+      background: unset;
+      border: unset;
+      margin: unset;
+      line-height: unset;
+      display: unset;
+      padding: unset;
+      cursor: pointer;
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--gray-8);
+      text-underline-offset: max(0.1em, 2.5px);
+      transition:
+        text-decoration-color 0.2s ease-in-out,
+        font-weight 0.2s ease-in-out;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          font-weight: var(--font-weight-bold);
+          text-decoration-color: var(--gray-11);
+        }
+      }
+    }
   }
 
   .synth {
@@ -151,55 +166,5 @@ const feed = work
 
   .work {
     padding-block: var(--space-2xl);
-  }
-
-  .work-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .work-item {
-    .work-title {
-      grid-area: title;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .work-category {
-      grid-area: category;
-    }
-
-    .work-year {
-      grid-area: year;
-      font-variant-numeric: tabular-nums;
-    }
-
-    a {
-      display: grid;
-      grid-template-columns: 1fr auto auto;
-      grid-template-areas: "title category year";
-      gap: var(--space-m);
-      text-decoration: none;
-      padding-block: var(--space-s);
-
-      * {
-        font-size: var(--step-0);
-        font-weight: var(--font-weight-normal);
-        line-height: var(--line-height-body);
-        transition: font-weight 0.2s ease-in-out;
-      }
-
-      &:hover * {
-        font-weight: var(--font-weight-bold);
-      }
-    }
-
-    &:not(:last-child) {
-      border-block-end: 1px solid var(--gray-4);
-      margin-block-end: -1px;
-    }
   }
 </style>

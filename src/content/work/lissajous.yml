@@ -5,3 +5,6 @@ url: https://lissajous.eva.town
 category:
   - tool
   - website
+img:
+  src: ./lissajous.png
+  alt: An orange Lissajous curve on a dark gray grid.

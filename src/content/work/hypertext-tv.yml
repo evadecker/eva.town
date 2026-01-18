@@ -4,3 +4,6 @@ year: 2025
 url: https://hypertext.tv
 category:
   - website
+img:
+  src: ./hypertext-tv.png
+  alt: The Hypertext TV logo, HTTV for short.

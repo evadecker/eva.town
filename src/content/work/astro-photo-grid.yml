@@ -5,3 +5,6 @@ url: https://github.com/evadecker/astro-photo-grid
 category:
   - tool
   - website
+img:
+  src: ./astro-photo-grid.png
+  alt: A horizontal masonry grid of nature photos on a black background.
