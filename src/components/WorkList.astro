@@ -1,0 +1,344 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  items: Array<{
+    id: string;
+    title: string;
+    description?: string;
+    url: string;
+    category: string[];
+    year: number;
+    img?: {
+      src: ImageMetadata;
+      alt: string;
+    };
+  }>;
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="work-list">
+  {
+    items.map((item) => (
+      <li class="work-item">
+        <h3 class="work-title">
+          <a href={item.url}>{item.title}</a>
+        </h3>
+        <span class="work-category">{item.category.sort().join(", ")}</span>
+        <span class="work-year">{item.year}</span>
+        <div popover id={item.id} aria-hidden="true">
+          {item.img && (
+            <Image
+              class="work-img"
+              src={item.img.src}
+              alt={item.img.alt}
+              layout="constrained"
+            />
+          )}
+          <div class="work-description">
+            <strong>{item.title}</strong>
+            <p>{item.description}</p>
+            <span class="work-url">{item.url.split("//")[1] || item.url}</span>
+          </div>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .work-list {
+    list-style: none;
+    padding: 0;
+    margin-inline: calc(-1 * var(--space-s));
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas: "title category year";
+    gap: var(--space-m);
+    padding: var(--space-xs) var(--space-s);
+    border-radius: var(--radius-s);
+    position: relative;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--gray-3);
+      }
+    }
+
+    &:focus-within {
+      outline: var(--gray-12) solid 2px;
+      outline-offset: 2px;
+    }
+
+    .work-title {
+      grid-area: title;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: var(--step-0);
+      font-weight: var(--font-weight-normal);
+      line-height: var(--line-height-body);
+      transition: font-weight 0.2s ease-in-out;
+    }
+
+    .work-category {
+      grid-area: category;
+    }
+
+    .work-year {
+      grid-area: year;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .work-category,
+    .work-year {
+      color: var(--gray-11);
+    }
+
+    a {
+      position: static;
+      text-decoration: none;
+      outline: none;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    [popover] {
+      margin: 0;
+      inset: auto;
+      background-color: var(--gray-1);
+      color: var(--gray-12);
+      box-shadow: var(--shadow-m);
+      bottom: anchor(top);
+      left: anchor(left);
+      border: none;
+      padding: 0;
+      max-width: 36ch;
+      text-wrap: pretty;
+      border-radius: var(--radius-s);
+      font-size: var(--step--1);
+    }
+
+    .work-img {
+      aspect-ratio: 1.91 / 1;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .work-description {
+      display: flex;
+      flex-direction: column;
+      padding: var(--space-xs) var(--space-s);
+      overflow-wrap: break-word;
+    }
+
+    .work-url {
+      display: block;
+      color: var(--gray-11);
+    }
+  }
+
+  :global(.dark) [popover] {
+    background-color: var(--gray-2);
+  }
+</style>
+
+<script>
+  const cursor = { x: 0, y: 0 };
+  const popoverSelector = "[popover]:popover-open";
+  const padding = 8;
+  const offset = 12;
+  let activeMode: "pointer" | "keyboard" | null = null;
+  let activeItem: HTMLElement | null = null;
+  let anchorRect: DOMRect | null = null;
+  let isPointerActive = false;
+
+  const setPopoverFlip = (popover: HTMLElement) => {
+    const rect = popover.getBoundingClientRect();
+    const shouldFlipX =
+      activeMode === "keyboard"
+        ? false
+        : cursor.x + offset + rect.width + padding > window.innerWidth;
+    const shouldFlipY =
+      activeMode === "keyboard" && anchorRect
+        ? anchorRect.top - offset - rect.height < padding
+        : cursor.y + offset + rect.height + padding > window.innerHeight;
+
+    popover.dataset.flipX = shouldFlipX ? "true" : "false";
+    popover.dataset.flipY = shouldFlipY ? "true" : "false";
+  };
+
+  const positionOpenPopover = () => {
+    const popover = document.querySelector<HTMLElement>(popoverSelector);
+    if (!popover) return;
+
+    if (activeMode === "keyboard" && activeItem) {
+      anchorRect = activeItem.getBoundingClientRect();
+    }
+
+    if (popover.dataset.flipX == null || popover.dataset.flipY == null) {
+      setPopoverFlip(popover);
+    }
+
+    const rect = popover.getBoundingClientRect();
+    const maxLeft = window.innerWidth - rect.width - padding;
+    const maxTop = window.innerHeight - rect.height - padding;
+    const shouldFlipX = popover.dataset.flipX === "true";
+    const shouldFlipY = popover.dataset.flipY === "true";
+    const targetLeft =
+      activeMode === "keyboard" && anchorRect
+        ? anchorRect.left
+        : shouldFlipX
+          ? cursor.x - offset - rect.width
+          : cursor.x + offset;
+    const targetTop =
+      activeMode === "keyboard" && anchorRect
+        ? shouldFlipY
+          ? anchorRect.bottom + offset
+          : anchorRect.top - offset - rect.height
+        : shouldFlipY
+          ? cursor.y - offset - rect.height
+          : cursor.y + offset;
+    const left = Math.min(Math.max(padding, targetLeft), maxLeft);
+    const top = Math.min(Math.max(padding, targetTop), maxTop);
+    const scrollLeft = activeMode === "keyboard" ? window.scrollX : 0;
+    const scrollTop = activeMode === "keyboard" ? window.scrollY : 0;
+
+    popover.style.position = activeMode === "keyboard" ? "absolute" : "fixed";
+    popover.style.left = `${left + scrollLeft}px`;
+    popover.style.top = `${top + scrollTop}px`;
+    popover.style.right = "auto";
+    popover.style.bottom = "auto";
+  };
+
+  const openPopoverForItem = (
+    item: HTMLElement,
+    mode: "pointer" | "keyboard",
+    event?: PointerEvent,
+  ) => {
+    const popover = item.querySelector("[popover]") as
+      | (HTMLElement & { showPopover?: () => void; hidePopover?: () => void })
+      | null;
+    if (!popover) return;
+
+    if (event) {
+      cursor.x = event.clientX;
+      cursor.y = event.clientY;
+    }
+
+    activeMode = mode;
+    activeItem = item;
+    isPointerActive = mode === "pointer";
+    anchorRect = mode === "keyboard" ? item.getBoundingClientRect() : null;
+    if (popover.dataset.mode !== mode) {
+      delete popover.dataset.flipX;
+      delete popover.dataset.flipY;
+    }
+    popover.dataset.mode = mode;
+
+    document
+      .querySelectorAll("[popover]:popover-open")
+      .forEach((openPopover) => {
+        const opened = openPopover as HTMLElement & {
+          hidePopover?: () => void;
+        };
+        if (opened !== popover && typeof opened.hidePopover === "function") {
+          opened.hidePopover();
+        }
+      });
+
+    if (typeof popover.showPopover === "function") {
+      popover.showPopover();
+      requestAnimationFrame(() => {
+        setPopoverFlip(popover);
+        positionOpenPopover();
+      });
+    }
+  };
+
+  const closePopoverForItem = (item: HTMLElement) => {
+    const popover = item.querySelector("[popover]") as
+      | (HTMLElement & { hidePopover?: () => void })
+      | null;
+    if (!popover) return;
+    delete popover.dataset.flipX;
+    delete popover.dataset.flipY;
+    delete popover.dataset.mode;
+    if (activeItem === item) {
+      activeMode = null;
+      activeItem = null;
+      isPointerActive = false;
+      anchorRect = null;
+    }
+    if (typeof popover.hidePopover === "function") {
+      popover.hidePopover();
+    }
+  };
+
+  const bindWorkItemPopovers = (root: ParentNode = document) => {
+    root.querySelectorAll(".work-item").forEach((item) => {
+      if (!(item instanceof HTMLElement)) return;
+      if (item.dataset.popoverBound === "true") return;
+      item.dataset.popoverBound = "true";
+
+      item.addEventListener("pointerenter", (event) => {
+        if (activeMode === "keyboard" && activeItem) return;
+        openPopoverForItem(item, "pointer", event);
+      });
+      item.addEventListener("pointerleave", () => {
+        if (activeMode === "keyboard" && activeItem === item) return;
+        closePopoverForItem(item);
+      });
+
+      const link = item.querySelector("a");
+      if (link instanceof HTMLElement) {
+        link.addEventListener("focus", () =>
+          openPopoverForItem(item, "keyboard"),
+        );
+        link.addEventListener("blur", () => closePopoverForItem(item));
+      }
+    });
+  };
+
+  document.addEventListener("pointermove", (event) => {
+    if (!isPointerActive) return;
+    cursor.x = event.clientX;
+    cursor.y = event.clientY;
+    positionOpenPopover();
+  });
+
+  document.addEventListener("scroll", () => {
+    if (activeMode !== "keyboard") return;
+    if (!activeItem) return;
+    positionOpenPopover();
+  });
+
+  document.addEventListener(
+    "toggle",
+    (event) => {
+      if (
+        event.target instanceof HTMLElement &&
+        event.target.matches("[popover]")
+      ) {
+        requestAnimationFrame(positionOpenPopover);
+      }
+    },
+    true,
+  );
+
+  bindWorkItemPopovers();
+  document.addEventListener("astro:page-load", () => bindWorkItemPopovers());
+</script>

@@ -4,3 +4,7 @@ year: 2024
 url: https://hypersensitive.eva.town
 category:
   - art
+  - website
+img:
+  src: ./hypersensitive.png
+  alt: Vibrant blocks of text obscure the words, 'It's all going to be okay.'

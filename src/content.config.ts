@@ -39,13 +39,19 @@ export const collections = {
       pattern: "**/[^_]*.yml",
       base: "./src/content/work",
     }),
-    schema: () =>
+    schema: ({ image }) =>
       z.object({
         title: z.string(),
         description: z.string().optional(),
         year: z.number(),
-        url: z.string().url().optional(),
+        url: z.string().url(),
         category: z.string().array(),
+        img: z
+          .object({
+            src: image(),
+            alt: z.string(),
+          })
+          .optional(),
       }),
   }),
 

@@ -5,3 +5,6 @@ url: https://composed.eva.town
 category: 
   - art
   - exploration
+img:
+  src: ./composed.png
+  alt: Procedurally generated staff paper, angled, askew.

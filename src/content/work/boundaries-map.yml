@@ -5,3 +5,6 @@ url: https://boundaries.beta.nyc
 category:
   - tool
   - website
+img:
+  src: ./boundaries-map.png
+  alt: An interface displays two overlapping polygons on a map of New York City.

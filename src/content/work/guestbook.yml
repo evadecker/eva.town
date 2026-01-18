@@ -4,3 +4,6 @@ year: 2024
 url: https://eva.town/guestbook
 category:
   - website
+img:
+  src: ./guestbook.png
+  alt: A collection of hand-drawn postcards. The middle one has a flower drawn with a green highlighter.

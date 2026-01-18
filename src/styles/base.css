@@ -98,6 +98,12 @@ a {
   }
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: var(--gray-12) solid 2px;
+  outline-offset: 2px;
+}
+
 .nowrap {
   white-space: nowrap;
 }
