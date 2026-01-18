@@ -196,17 +196,20 @@ const { items } = Astro.props;
     gap: var(--space-m);
     width: 100%;
 
-    @media (width > 640px) {
-      flex-direction: row;
-    }
-
     img {
       display: block;
       aspect-ratio: 1.91 / 1;
       border-radius: var(--radius-xs);
-      width: 400px;
       height: auto;
       object-fit: cover;
+    }
+
+    @media (width > 640px) {
+      flex-direction: row;
+
+      img {
+        width: 400px;
+      }
     }
   }
 
