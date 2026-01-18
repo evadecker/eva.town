@@ -133,6 +133,8 @@ const { items } = Astro.props;
     }
 
     @media (width < 460px) {
+      padding-inline-end: var(--space-xl);
+
       .disclosure-icon {
         right: 0;
         left: auto;
@@ -160,6 +162,7 @@ const { items } = Astro.props;
       font-weight: inherit;
       line-height: inherit;
       transition: font-weight 0.15s ease-in-out;
+      max-width: 100%;
     }
 
     .work-year {
