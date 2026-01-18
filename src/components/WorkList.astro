@@ -22,27 +22,39 @@ const { items } = Astro.props;
 <ul class="work-list">
   {
     items.map((item) => (
-      <li class="work-item">
-        <h3 class="work-title">
-          <a href={item.url}>{item.title}</a>
-        </h3>
-        <span class="work-category">{item.category}</span>
-        <span class="work-year">{item.year}</span>
-        <div popover id={item.id} aria-hidden="true">
-          {item.img && (
-            <Image
-              class="work-img"
-              src={item.img.src}
-              alt={item.img.alt}
-              layout="constrained"
-            />
-          )}
-          <div class="work-description">
-            <strong>{item.title}</strong>
-            <p>{item.description}</p>
-            <span class="work-url">{item.url.split("//")[1] || item.url}</span>
+      <li>
+        <details name="work">
+          <summary>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="disclosure-icon"
+            >
+              <path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z" />
+            </svg>
+            <h3>{item.title}</h3>
+            <div class="work-meta">
+              <span class="work-category">{item.category}</span>
+              <time class="work-year">{item.year}</time>
+            </div>
+          </summary>
+          <div class="details-content">
+            <div class="work-details">
+              <p class="work-description">{item.description}</p>
+              <a href={item.url} class="work-url">
+                {item.url.split("//")[1] || item.url}
+              </a>
+            </div>
+            {item.img && (
+              <Image
+                src={item.img.src}
+                alt={item.img.alt}
+                layout="constrained"
+              />
+            )}
           </div>
-        </div>
+        </details>
       </li>
     ))
   }
@@ -52,48 +64,104 @@ const { items } = Astro.props;
   .work-list {
     list-style: none;
     padding: 0;
-    margin-inline: calc(-1 * var(--space-s));
     display: flex;
     flex-direction: column;
   }
 
-  .work-item {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    grid-template-areas: "title category year";
-    gap: var(--space-m);
-    padding: var(--space-xs) var(--space-s);
-    border-radius: var(--radius-s);
+  .work-list li {
     position: relative;
 
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--gray-3);
+    & + li {
+      border-top: 1px solid var(--gray-5);
+    }
+  }
+
+  details {
+    interpolate-size: allow-keywords;
+
+    &[open] > summary .disclosure-icon {
+      rotate: 90deg;
+      color: var(--gray-12);
+    }
+
+    &[open] > summary h3 {
+      font-weight: var(--font-weight-bold);
+      text-overflow: unset;
+      overflow: visible;
+      white-space: normal;
+    }
+
+    &::details-content {
+      overflow: hidden;
+      transition: content-visibility, block-size, opacity;
+      transition-duration: 0.2s;
+      content-visibility: hidden;
+      block-size: 0;
+      transition-behavior: allow-discrete;
+      opacity: 0;
+    }
+
+    &[open]::details-content {
+      block-size: auto;
+      content-visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  summary {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-m);
+    padding-block: var(--space-s);
+    cursor: pointer;
+    user-select: none;
+
+    .disclosure-icon {
+      width: 1em;
+      height: auto;
+      color: var(--gray-10);
+      position: absolute;
+      left: calc(-1 * var(--space-l));
+      top: 50%;
+      translate: 0 -50%;
+      rotate: 0deg;
+      transition: rotate, color;
+      transition-duration: 0.15s;
+      transition-timing-function: ease-in-out;
+    }
+
+    @media (width < 460px) {
+      .disclosure-icon {
+        right: 0;
+        left: auto;
+        rotate: -90deg;
+        width: 1.4em;
       }
     }
 
-    &:focus-within {
-      outline: var(--gray-12) solid 2px;
-      outline-offset: 2px;
+    @media (hover: hover) {
+      &:hover h3 {
+        font-weight: var(--font-weight-bold);
+      }
+
+      &:hover .disclosure-icon {
+        color: var(--gray-12);
+      }
     }
 
-    .work-title {
-      grid-area: title;
+    h3 {
+      flex: 1;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
-      font-size: var(--step-0);
-      font-weight: var(--font-weight-normal);
-      line-height: var(--line-height-body);
-      transition: font-weight 0.2s ease-in-out;
-    }
-
-    .work-category {
-      grid-area: category;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      transition: font-weight 0.15s ease-in-out;
     }
 
     .work-year {
-      grid-area: year;
       font-variant-numeric: tabular-nums;
     }
 
@@ -102,57 +170,60 @@ const { items } = Astro.props;
       color: var(--gray-11);
     }
 
-    a {
-      position: static;
-      text-decoration: none;
-      outline: none;
+    .work-meta {
+      display: flex;
+      gap: var(--space-s);
 
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        inset: 0;
+      @media (width < 460px) {
+        font-size: var(--step--1);
       }
     }
 
-    [popover] {
-      margin: 0;
-      inset: auto;
-      background-color: var(--gray-1);
-      color: var(--gray-12);
-      box-shadow: var(--shadow-m);
-      bottom: anchor(top);
-      left: anchor(left);
-      border: none;
-      padding: 0;
-      width: 36ch;
-      text-wrap: pretty;
-      border-radius: var(--radius-s);
-      font-size: var(--step--1);
-    }
-
-    .work-img {
-      aspect-ratio: 1.91 / 1;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .work-description {
-      display: flex;
+    @media (width < 460px) {
       flex-direction: column;
-      padding: var(--space-xs) var(--space-s);
-      overflow-wrap: break-word;
-    }
+      gap: 0;
 
-    .work-url {
-      display: block;
-      color: var(--gray-11);
+      .work-meta {
+        flex-direction: row-reverse;
+      }
     }
   }
 
-  :global(.dark) [popover] {
-    background-color: var(--gray-2);
+  .details-content {
+    padding-block-end: var(--space-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    width: 100%;
+
+    @media (width > 640px) {
+      flex-direction: row;
+    }
+
+    img {
+      display: block;
+      aspect-ratio: 1.91 / 1;
+      border-radius: var(--radius-xs);
+      width: 400px;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .work-details {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+
+    .work-description {
+      margin-block-end: var(--space-2xs);
+    }
+
+    .work-url {
+      color: var(--gray-11);
+    }
   }
 </style>
 

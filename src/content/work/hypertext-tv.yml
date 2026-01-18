@@ -2,7 +2,7 @@ title: Hypertext TV
 description: Daily programming for the handmade web, airing now.
 year: 2025
 url: https://hypertext.tv
-category: time-based explorable
+category: explorable
 img:
   src: ./hypertext-tv.png
   alt: The Hypertext TV logo, HTTV for short.
