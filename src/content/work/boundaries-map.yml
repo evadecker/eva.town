@@ -2,9 +2,7 @@ title: NYC Boundaries Map
 description: A map of New York City's various civic boundaries.
 year: 2022
 url: https://boundaries.beta.nyc
-category:
-  - tool
-  - website
+category: open data
 img:
   src: ./boundaries-map.png
   alt: An interface displays two overlapping polygons on a map of New York City.

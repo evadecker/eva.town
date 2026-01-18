@@ -46,7 +46,7 @@ export const collections = {
         description: z.string().optional(),
         year: z.number(),
         url: z.string().url(),
-        category: z.string().array(),
+        category: z.string(),
         img: z
           .object({
             src: image(),

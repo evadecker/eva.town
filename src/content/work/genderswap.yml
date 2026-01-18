@@ -2,8 +2,7 @@ title: Genderswap.fm
 description: Cataloguing gender-reversal in cover songs.
 year: 2023
 url: https://genderswap.fm
-category:
-  - website
+category: archive
 img:
   src: ./genderswap-fm.png
   alt: An interface showing pairs of albums side-by-side, each one a cover.

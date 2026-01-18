@@ -20,7 +20,7 @@ const feed = work
       description: post.data.description,
       year: post.data.datePublished.getFullYear(),
       url: `/posts/${post.id}`,
-      category: post.data.type === "case-study" ? ["case study"] : ["writing"],
+      category: post.data.type === "case-study" ? "case study" : "writing",
       img: post.data.img,
     })),
   )
