@@ -7,6 +7,7 @@ interface Props {
     title: string;
     description?: string;
     url: string;
+    urlText?: string;
     category: string;
     year: number;
     img?: {
@@ -22,27 +23,42 @@ const { items } = Astro.props;
 <ul class="work-list">
   {
     items.map((item) => (
-      <li class="work-item">
-        <h3 class="work-title">
-          <a href={item.url}>{item.title}</a>
-        </h3>
-        <span class="work-category">{item.category}</span>
-        <span class="work-year">{item.year}</span>
-        <div popover id={item.id} aria-hidden="true">
-          {item.img && (
-            <Image
-              class="work-img"
-              src={item.img.src}
-              alt={item.img.alt}
-              layout="constrained"
-            />
-          )}
-          <div class="work-description">
-            <strong>{item.title}</strong>
-            <p>{item.description}</p>
-            <span class="work-url">{item.url.split("//")[1] || item.url}</span>
+      <li>
+        <details name="work">
+          <summary aria-label={item.title}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="disclosure-icon"
+              role="presentation"
+            >
+              <path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z" />
+            </svg>
+            <h3>{item.title}</h3>
+            <div class="work-meta">
+              <span class="work-category">{item.category}</span>
+              <time class="work-year">{item.year}</time>
+            </div>
+          </summary>
+          <div class="details-content">
+            <div class="work-details">
+              <p class="work-description">{item.description}</p>
+              <a href={item.url} class="work-link">
+                {item.category === "writing" || item.category === "case study"
+                  ? "Read more"
+                  : item.urlText || "Visit"}
+              </a>
+            </div>
+            {item.img && (
+              <Image
+                src={item.img.src}
+                alt={item.img.alt}
+                layout="constrained"
+              />
+            )}
           </div>
-        </div>
+        </details>
       </li>
     ))
   }
@@ -50,50 +66,125 @@ const { items } = Astro.props;
 
 <style>
   .work-list {
+    --inline-padding: var(--space-l);
     list-style: none;
     padding: 0;
-    margin-inline: calc(-1 * var(--space-s));
+    margin-inline: calc(var(--inline-padding) * -1);
     display: flex;
     flex-direction: column;
+    gap: 1px;
   }
 
-  .work-item {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    grid-template-areas: "title category year";
-    gap: var(--space-m);
-    padding: var(--space-xs) var(--space-s);
-    border-radius: var(--radius-s);
+  .work-list li {
     position: relative;
 
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--gray-3);
+    & + li::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: var(--inline-padding);
+      right: var(--inline-padding);
+      height: 1px;
+      background-color: var(--gray-5);
+      z-index: -1;
+    }
+  }
+
+  details {
+    interpolate-size: allow-keywords;
+
+    &[open] > summary .disclosure-icon {
+      rotate: 90deg;
+      color: var(--gray-12);
+    }
+
+    &[open] > summary h3 {
+      font-weight: var(--font-weight-bold);
+      text-overflow: unset;
+      overflow: visible;
+      white-space: normal;
+    }
+
+    &::details-content {
+      overflow: hidden;
+      transition: content-visibility, block-size, opacity;
+      transition-duration: 0.2s;
+      content-visibility: hidden;
+      block-size: 0;
+      transition-behavior: allow-discrete;
+      opacity: 0;
+    }
+
+    &[open]::details-content {
+      block-size: auto;
+      content-visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  summary {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-m);
+    border-radius: var(--radius-s);
+    padding-inline: var(--inline-padding);
+    padding-block: var(--space-s);
+    cursor: pointer;
+    user-select: none;
+
+    &:focus-visible {
+      outline: var(--gray-12) solid 2px;
+    }
+
+    .disclosure-icon {
+      width: 1em;
+      height: auto;
+      color: var(--gray-10);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      translate: 0 -50%;
+      rotate: 0deg;
+      transition: rotate, color;
+      transition-duration: 0.15s;
+      transition-timing-function: ease-in-out;
+    }
+
+    @media (width < 460px) {
+      padding-inline-end: var(--space-2xl);
+
+      .disclosure-icon {
+        right: var(--inline-padding);
+        left: auto;
+        rotate: -90deg;
+        width: 1.4em;
       }
     }
 
-    &:focus-within {
-      outline: var(--gray-12) solid 2px;
-      outline-offset: 2px;
+    @media (hover: hover) {
+      &:hover h3 {
+        font-weight: var(--font-weight-bold);
+      }
+
+      &:hover .disclosure-icon {
+        color: var(--gray-12);
+      }
     }
 
-    .work-title {
-      grid-area: title;
+    h3 {
+      flex: 1;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
-      font-size: var(--step-0);
-      font-weight: var(--font-weight-normal);
-      line-height: var(--line-height-body);
-      transition: font-weight 0.2s ease-in-out;
-    }
-
-    .work-category {
-      grid-area: category;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      transition: font-weight 0.15s ease-in-out;
+      max-width: 100%;
     }
 
     .work-year {
-      grid-area: year;
       font-variant-numeric: tabular-nums;
     }
 
@@ -102,243 +193,71 @@ const { items } = Astro.props;
       color: var(--gray-11);
     }
 
-    a {
-      position: static;
-      text-decoration: none;
-      outline: none;
+    .work-meta {
+      display: flex;
+      gap: var(--space-s);
 
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        inset: 0;
+      @media (width < 460px) {
+        font-size: var(--step--1);
       }
     }
 
-    [popover] {
-      margin: 0;
-      inset: auto;
-      background-color: var(--gray-1);
-      color: var(--gray-12);
-      box-shadow: var(--shadow-m);
-      bottom: anchor(top);
-      left: anchor(left);
-      border: none;
-      padding: 0;
-      width: 36ch;
-      text-wrap: pretty;
-      border-radius: var(--radius-s);
-      font-size: var(--step--1);
-    }
+    @media (width < 460px) {
+      flex-direction: column;
+      gap: 0;
 
-    .work-img {
+      .work-meta {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .details-content {
+    padding-inline: var(--inline-padding);
+    padding-block-end: var(--space-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    width: 100%;
+
+    img {
+      background-color: var(--gray-4);
+      display: block;
       aspect-ratio: 1.91 / 1;
-      width: 100%;
+      border-radius: var(--radius-xs);
       height: auto;
       object-fit: cover;
     }
 
-    .work-description {
-      display: flex;
-      flex-direction: column;
-      padding: var(--space-xs) var(--space-s);
-      overflow-wrap: break-word;
-    }
+    @media (width > 640px) {
+      flex-direction: row;
 
-    .work-url {
-      display: block;
-      color: var(--gray-11);
+      img {
+        width: 400px;
+      }
     }
   }
 
-  :global(.dark) [popover] {
-    background-color: var(--gray-2);
+  .work-details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+
+    .work-link {
+      text-decoration: none;
+      font-weight: var(--font-weight-bold);
+      padding: var(--space-2xs) var(--space-s);
+      border-radius: var(--radius-s);
+      background-color: var(--gray-3);
+      text-align: center;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--gray-4);
+        }
+      }
+    }
   }
 </style>
-
-<script>
-  const cursor = { x: 0, y: 0 };
-  const popoverSelector = "[popover]:popover-open";
-  const padding = 8;
-  const offset = 12;
-  let activeMode: "pointer" | "keyboard" | null = null;
-  let activeItem: HTMLElement | null = null;
-  let anchorRect: DOMRect | null = null;
-  let isPointerActive = false;
-
-  const setPopoverFlip = (popover: HTMLElement) => {
-    const rect = popover.getBoundingClientRect();
-    const shouldFlipX =
-      activeMode === "keyboard"
-        ? false
-        : cursor.x + offset + rect.width + padding > window.innerWidth;
-    const shouldFlipY =
-      activeMode === "keyboard" && anchorRect
-        ? anchorRect.top - offset - rect.height < padding
-        : cursor.y + offset + rect.height + padding > window.innerHeight;
-
-    popover.dataset.flipX = shouldFlipX ? "true" : "false";
-    popover.dataset.flipY = shouldFlipY ? "true" : "false";
-  };
-
-  const positionOpenPopover = () => {
-    const popover = document.querySelector<HTMLElement>(popoverSelector);
-    if (!popover) return;
-
-    if (activeMode === "keyboard" && activeItem) {
-      anchorRect = activeItem.getBoundingClientRect();
-    }
-
-    if (popover.dataset.flipX == null || popover.dataset.flipY == null) {
-      setPopoverFlip(popover);
-    }
-
-    const rect = popover.getBoundingClientRect();
-    const maxLeft = window.innerWidth - rect.width - padding;
-    const maxTop = window.innerHeight - rect.height - padding;
-    const shouldFlipX = popover.dataset.flipX === "true";
-    const shouldFlipY = popover.dataset.flipY === "true";
-    const targetLeft =
-      activeMode === "keyboard" && anchorRect
-        ? anchorRect.left
-        : shouldFlipX
-          ? cursor.x - offset - rect.width
-          : cursor.x + offset;
-    const targetTop =
-      activeMode === "keyboard" && anchorRect
-        ? shouldFlipY
-          ? anchorRect.bottom + offset
-          : anchorRect.top - offset - rect.height
-        : shouldFlipY
-          ? cursor.y - offset - rect.height
-          : cursor.y + offset;
-    const left = Math.min(Math.max(padding, targetLeft), maxLeft);
-    const top = Math.min(Math.max(padding, targetTop), maxTop);
-    const scrollLeft = activeMode === "keyboard" ? window.scrollX : 0;
-    const scrollTop = activeMode === "keyboard" ? window.scrollY : 0;
-
-    popover.style.position = activeMode === "keyboard" ? "absolute" : "fixed";
-    popover.style.left = `${left + scrollLeft}px`;
-    popover.style.top = `${top + scrollTop}px`;
-    popover.style.right = "auto";
-    popover.style.bottom = "auto";
-  };
-
-  const openPopoverForItem = (
-    item: HTMLElement,
-    mode: "pointer" | "keyboard",
-    event?: PointerEvent,
-  ) => {
-    const popover = item.querySelector("[popover]") as
-      | (HTMLElement & { showPopover?: () => void; hidePopover?: () => void })
-      | null;
-    if (!popover) return;
-
-    if (event) {
-      cursor.x = event.clientX;
-      cursor.y = event.clientY;
-    }
-
-    activeMode = mode;
-    activeItem = item;
-    isPointerActive = mode === "pointer";
-    anchorRect = mode === "keyboard" ? item.getBoundingClientRect() : null;
-    if (popover.dataset.mode !== mode) {
-      delete popover.dataset.flipX;
-      delete popover.dataset.flipY;
-    }
-    popover.dataset.mode = mode;
-
-    document
-      .querySelectorAll("[popover]:popover-open")
-      .forEach((openPopover) => {
-        const opened = openPopover as HTMLElement & {
-          hidePopover?: () => void;
-        };
-        if (opened !== popover && typeof opened.hidePopover === "function") {
-          opened.hidePopover();
-        }
-      });
-
-    if (typeof popover.showPopover === "function") {
-      popover.showPopover();
-      requestAnimationFrame(() => {
-        setPopoverFlip(popover);
-        positionOpenPopover();
-      });
-    }
-  };
-
-  const closePopoverForItem = (item: HTMLElement) => {
-    const popover = item.querySelector("[popover]") as
-      | (HTMLElement & { hidePopover?: () => void })
-      | null;
-    if (!popover) return;
-    delete popover.dataset.flipX;
-    delete popover.dataset.flipY;
-    delete popover.dataset.mode;
-    if (activeItem === item) {
-      activeMode = null;
-      activeItem = null;
-      isPointerActive = false;
-      anchorRect = null;
-    }
-    if (typeof popover.hidePopover === "function") {
-      popover.hidePopover();
-    }
-  };
-
-  const bindWorkItemPopovers = (root: ParentNode = document) => {
-    root.querySelectorAll(".work-item").forEach((item) => {
-      if (!(item instanceof HTMLElement)) return;
-      if (item.dataset.popoverBound === "true") return;
-      item.dataset.popoverBound = "true";
-
-      item.addEventListener("pointerenter", (event) => {
-        if (activeMode === "keyboard" && activeItem) return;
-        openPopoverForItem(item, "pointer", event);
-      });
-      item.addEventListener("pointerleave", () => {
-        if (activeMode === "keyboard" && activeItem === item) return;
-        closePopoverForItem(item);
-      });
-
-      const link = item.querySelector("a");
-      if (link instanceof HTMLElement) {
-        link.addEventListener("focus", () =>
-          openPopoverForItem(item, "keyboard"),
-        );
-        link.addEventListener("blur", () => closePopoverForItem(item));
-      }
-    });
-  };
-
-  document.addEventListener("pointermove", (event) => {
-    if (!isPointerActive) return;
-    cursor.x = event.clientX;
-    cursor.y = event.clientY;
-    positionOpenPopover();
-  });
-
-  document.addEventListener("scroll", () => {
-    if (activeMode !== "keyboard") return;
-    if (!activeItem) return;
-    positionOpenPopover();
-  });
-
-  document.addEventListener(
-    "toggle",
-    (event) => {
-      if (
-        event.target instanceof HTMLElement &&
-        event.target.matches("[popover]")
-      ) {
-        requestAnimationFrame(positionOpenPopover);
-      }
-    },
-    true,
-  );
-
-  bindWorkItemPopovers();
-  document.addEventListener("astro:page-load", () => bindWorkItemPopovers());
-</script>
