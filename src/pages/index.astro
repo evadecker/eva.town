@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import WorkList from "src/components/WorkList.astro";
 import Center from "../components/Center.astro";
+import PhotoFeed from "../components/PhotoFeed.astro";
 import Synth from "../components/Synth/Synth.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -49,10 +50,16 @@ const feed = work
       </div>
     </section>
     <section class="work">
-      <h2 class="visuallyhidden">Work</h2>
+      <h2>Projects</h2>
       <WorkList items={feed} />
     </section>
   </Center>
+  <section class="photos">
+    <Center>
+      <h2>Latest photos</h2>
+    </Center>
+    <PhotoFeed />
+  </section>
 </BaseLayout>
 
 <script>
@@ -165,7 +172,17 @@ const feed = work
     }
   }
 
+  h2 {
+    font-size: var(--step-1);
+    margin-block-end: var(--space-m);
+  }
+
   .work {
     padding-block: var(--space-2xl);
+  }
+
+  .photos {
+    width: 100%;
+    padding-block-end: var(--space-2xl);
   }
 </style>

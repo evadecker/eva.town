@@ -1,5 +1,6 @@
 :root {
   interpolate-size: allow-keywords;
+  color-scheme: light dark;
 }
 
 html {
@@ -21,11 +22,13 @@ body {
   line-height: var(--line-height-body);
   text-rendering: optimizelegibility;
   font-synthesis: none;
+  color-scheme: light;
 }
 
 body.dark {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
 }
 
 ::selection {

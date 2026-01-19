@@ -21,6 +21,7 @@
     "check-links": "lychee --config .lychee.toml ."
   },
   "dependencies": {
+    "@ascorbic/feed-loader": "^2.0.1",
     "@astrojs/check": "^0.9.6",
     "@astrojs/db": "0.18.3",
     "@astrojs/markdown-remark": "^6.3.10",
