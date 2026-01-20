@@ -5,6 +5,8 @@ import GuestbookPagination from "../components/Guestbook/GuestbookPagination.ast
 import { NotecardComposer } from "../components/Notecard/NotecardComposer";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+export const prerender = false;
+
 // Get the current page from search params
 const currentPage = Number(Astro.url.searchParams.get("page")) || 1;
 
@@ -61,9 +63,9 @@ const description = "Leave a message in eva.town.";
   <h1 class="visually-hidden">Guestbook</h1>
   <div class="notecards">
     {isFirstPage && <NotecardComposer client:load />}
-    <GuestbookEntries currentPage={currentPage} />
+    <GuestbookEntries currentPage={currentPage} server:defer />
   </div>
-  <GuestbookPagination currentPage={currentPage} />
+  <GuestbookPagination currentPage={currentPage} server:defer />
 </BaseLayout>
 
 <style>
