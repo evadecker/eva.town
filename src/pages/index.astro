@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import GuestbookFeed from "src/components/Guestbook/GuestbookFeed.astro";
 import WorkList from "src/components/WorkList.astro";
 import Center from "../components/Center.astro";
 import PhotoFeed from "../components/PhotoFeed.astro";
@@ -33,8 +34,8 @@ const feed = work
   description="Eva is a designer and web developer based in NYC."
   includeFooter
 >
-  <Center>
-    <section class="home">
+  <section class="home">
+    <Center>
       <h1 class="visuallyhidden">Eva designs and builds for the web</h1>
       <div class="intro">
         <p>
@@ -48,17 +49,25 @@ const feed = work
       <div class="synth">
         <Synth />
       </div>
-    </section>
-    <section class="work">
+    </Center>
+  </section>
+  <section>
+    <Center>
       <h2>Projects</h2>
       <WorkList items={feed} />
-    </section>
-  </Center>
-  <section class="photos">
+    </Center>
+  </section>
+  <section>
     <Center>
-      <h2>Latest photos</h2>
+      <h2>Latest <a href="https://glass.photo/evadecker">photos</a></h2>
     </Center>
     <PhotoFeed />
+  </section>
+  <section>
+    <Center>
+      <h2>From the <a href="/guestbook">guestbook</a></h2>
+    </Center>
+    <GuestbookFeed />
   </section>
 </BaseLayout>
 
@@ -116,7 +125,7 @@ const feed = work
   }
 
   .intro {
-    padding-block-start: var(--space-2xl);
+    padding-block: var(--space-2xl);
     text-wrap: balance;
     user-select: none;
 
@@ -172,17 +181,13 @@ const feed = work
     }
   }
 
+  section {
+    width: 100%;
+    padding-block-end: var(--space-3xl);
+  }
+
   h2 {
     font-size: var(--step-1);
     margin-block-end: var(--space-m);
-  }
-
-  .work {
-    padding-block: var(--space-2xl);
-  }
-
-  .photos {
-    width: 100%;
-    padding-block-end: var(--space-2xl);
   }
 </style>
