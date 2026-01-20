@@ -12,7 +12,7 @@ const limitedEntries = entries.slice(0, LIMIT);
 const photos = limitedEntries.map((entry) => entry.data);
 ---
 
-<Carousel>
+<Carousel spacing="tight">
   {
     photos.map((photo) => (
       <CarouselItem>
