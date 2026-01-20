@@ -292,6 +292,7 @@ export const SubscribeForm = () => {
             <input
               aria-label="Your email"
               className="input"
+              autoComplete="email"
               type="email"
               id="email"
               name="email"

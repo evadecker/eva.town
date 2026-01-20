@@ -203,6 +203,7 @@ export const NotecardComposer = () => {
           </label>
           <textarea
             className={styles.content}
+            id="content"
             name="content"
             placeholder="Leave a message, write a poem, draw some ASCII art..."
             required
@@ -225,6 +226,7 @@ export const NotecardComposer = () => {
           <input
             className={styles.name}
             type="text"
+            id="author"
             name="author"
             placeholder="Your name"
             required
@@ -238,13 +240,14 @@ export const NotecardComposer = () => {
           <input
             className={styles.url}
             type="url"
+            id="url"
             name="url"
             placeholder="URL (optional)"
             autoComplete="off"
             data-1p-ignore
           />
           <label htmlFor="special" hidden>
-            <input name="special" aria-hidden />
+            <input id="special" name="special" aria-hidden />
           </label>
         </div>
         <div className={styles.controls}>
@@ -264,7 +267,7 @@ export const NotecardComposer = () => {
                   <path d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z" />
                 </svg>
               </button>
-              <label htmlFor="theme">Style</label>
+              <div aria-hidden>Style</div>
               <input type="hidden" name="theme" value={selectedTheme} />
               <button
                 type="button"
