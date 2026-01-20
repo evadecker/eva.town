@@ -1,0 +1,37 @@
+---
+import CarouselItem from "./CarouselItem.astro";
+import { Icon } from "./Icon/Icon";
+
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+---
+
+<CarouselItem>
+  <a href={url} class="carousel-button"><slot /><Icon icon="arrowRight" /></a>
+</CarouselItem>
+
+<style>
+  .carousel-button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    height: auto;
+    margin-inline-start: var(--space-l);
+    padding: var(--space-s) var(--space-m) var(--space-s) var(--space-l);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-single);
+    text-decoration: none;
+    background-color: var(--gray-3);
+    transition: background-color 0.2s ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--gray-4);
+      }
+    }
+  }
+</style>
