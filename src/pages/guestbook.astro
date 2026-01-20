@@ -5,9 +5,6 @@ import GuestbookPagination from "../components/Guestbook/GuestbookPagination.ast
 import { NotecardComposer } from "../components/Notecard/NotecardComposer";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-// Server-render page
-export const prerender = false;
-
 // Get the current page from search params
 const currentPage = Number(Astro.url.searchParams.get("page")) || 1;
 
