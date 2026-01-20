@@ -6,6 +6,7 @@
     "element-permitted-content": "off",
     "no-autoplay": "off",
     "no-inline-style": "off",
+    "no-trailing-whitespace": "off",
     "prefer-native-element": [
       "error",
       {
