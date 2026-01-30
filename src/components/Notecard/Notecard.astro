@@ -5,11 +5,12 @@ import { NOTECARD_THEMES } from "./NotecardComposer";
 interface Props {
   content: string;
   url?: string | null;
-  author: string;
-  timestamp: Date;
+  author?: string;
+  timestamp?: Date;
   theme: number;
   small?: boolean;
   randomTranslate?: boolean;
+  loading?: boolean;
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   theme,
   small = false,
   randomTranslate = false,
+  loading = false,
 } = Astro.props;
 
 const rotation = `${Math.random() * 6 - 3}deg`;
@@ -27,23 +29,29 @@ const translateX = randomTranslate ? `${Math.random() * 24 - 12}px` : 0;
 const backgroundImage = `url(${NOTECARD_THEMES[theme].src})`;
 ---
 
-<div class:list={["notecard", { small }]}>
+<div class:list={["notecard", { small, loading }]}>
   <pre class="content">{content}</pre>
   <div class="credit">
-    <div class="author">
-      {
-        url ? (
-          <a href={url} rel="external" data-fathom="author-link">
-            {author}
-          </a>
-        ) : (
-          author
-        )
-      }
-    </div>
-    <div class="date">
-      <RelativeDate date={timestamp} />
-    </div>
+    {
+      author && (
+        <div class="author">
+          {url ? (
+            <a href={url} rel="external" data-fathom="author-link">
+              {author}
+            </a>
+          ) : (
+            author
+          )}
+        </div>
+      )
+    }
+    {
+      timestamp && (
+        <div class="date">
+          <RelativeDate date={timestamp} />
+        </div>
+      )
+    }
   </div>
 </div>
 
@@ -64,6 +72,10 @@ const backgroundImage = `url(${NOTECARD_THEMES[theme].src})`;
 
     &.small {
       font-size: 0.8em;
+    }
+
+    &.loading {
+      opacity: 0.5;
     }
   }
 

@@ -1,44 +1,31 @@
 ---
-import { getCollection } from "astro:content";
 import Carousel from "../Carousel.astro";
 import CarouselButton from "../CarouselButton.astro";
 import CarouselItem from "../CarouselItem.astro";
-
-const LIMIT = 12;
-
-const entries = await getCollection("photos");
-const limitedEntries = entries.slice(0, LIMIT);
-
-const photos = limitedEntries.map((entry) => entry.data);
+import PhotoItems from "./PhotoItems.astro";
 ---
 
 <Carousel spacing="tight">
-  {
-    photos.map((photo) => (
-      <CarouselItem>
-        <a href={photo.url}>
-          <img src={photo.image?.url} alt={photo.title} />
-        </a>
-      </CarouselItem>
-    ))
-  }
+  <PhotoItems server:defer>
+    <Fragment slot="fallback">
+      {
+        Array.from({ length: 8 }).map(() => (
+          <CarouselItem>
+            <div class="skeleton" />
+          </CarouselItem>
+        ))
+      }
+    </Fragment>
+  </PhotoItems>
   <CarouselButton url="https://glass.photo/evadecker"
     >See all photos</CarouselButton
   >
 </Carousel>
 
 <style>
-  a {
-    display: block;
-    height: 220px;
-    width: auto;
-  }
-
-  img {
-    display: block;
-    height: 100%;
-    width: auto;
-    object-fit: cover;
+  .skeleton {
     background-color: var(--gray-3);
+    height: 220px;
+    aspect-ratio: 5 / 3;
   }
 </style>

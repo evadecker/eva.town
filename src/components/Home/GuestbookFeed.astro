@@ -1,34 +1,22 @@
 ---
-import { db, desc, eq, Guestbook as GuestbookDB, isNull, or } from "astro:db";
 import Carousel from "../Carousel.astro";
 import CarouselButton from "../CarouselButton.astro";
 import CarouselItem from "../CarouselItem.astro";
 import Notecard from "../Notecard/Notecard.astro";
-
-const LIMIT = 8;
-
-const guestbook = await db
-  .select()
-  .from(GuestbookDB)
-  .where(or(eq(GuestbookDB.isSpam, false), isNull(GuestbookDB.isSpam)))
-  .orderBy(desc(GuestbookDB.timestamp))
-  .limit(LIMIT);
+import GuestbookItems from "./GuestbookItems.astro";
 ---
 
 <Carousel>
-  {
-    guestbook.map(({ author, url, content, timestamp, theme }) => (
-      <CarouselItem>
-        <Notecard
-          author={author}
-          url={url}
-          content={content}
-          timestamp={timestamp}
-          theme={theme}
-          small
-        />
-      </CarouselItem>
-    ))
-  }
+  <GuestbookItems server:defer>
+    <Fragment slot="fallback">
+      {
+        Array.from({ length: 8 }).map(() => (
+          <CarouselItem>
+            <Notecard content="" theme={1} small loading />
+          </CarouselItem>
+        ))
+      }
+    </Fragment>
+  </GuestbookItems>
   <CarouselButton url="/guestbook">See all messages</CarouselButton>
 </Carousel>
