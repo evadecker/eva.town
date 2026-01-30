@@ -2,6 +2,7 @@
 import { db, Guestbook as GuestbookDB } from "astro:db";
 import GuestbookEntries from "../components/Guestbook/GuestbookEntries.astro";
 import GuestbookPagination from "../components/Guestbook/GuestbookPagination.astro";
+import Notecard from "../components/Notecard/Notecard.astro";
 import { NotecardComposer } from "../components/Notecard/NotecardComposer";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -63,7 +64,15 @@ const description = "Leave a message in eva.town.";
   <h1 class="visually-hidden">Guestbook</h1>
   <div class="notecards">
     {isFirstPage && <NotecardComposer client:load />}
-    <GuestbookEntries currentPage={currentPage} server:defer />
+    <GuestbookEntries currentPage={currentPage} server:defer>
+      <Fragment slot="fallback">
+        {
+          Array.from({ length: 24 }).map(() => (
+            <Notecard theme={1} content="" loading />
+          ))
+        }
+      </Fragment>
+    </GuestbookEntries>
   </div>
   <GuestbookPagination currentPage={currentPage} server:defer />
 </BaseLayout>

@@ -61,133 +61,135 @@ const feed = work
     <Center>
       <h2>Latest <a href="https://glass.photo/evadecker">photos</a></h2>
     </Center>
-    <PhotoFeed server:defer />
+    <PhotoFeed />
   </section>
   <section>
     <Center>
       <h2>From the <a href="/guestbook">guestbook</a></h2>
     </Center>
-    <GuestbookFeed server:defer />
+    <GuestbookFeed />
   </section>
-</BaseLayout>
 
-<script>
-  import * as Fathom from "fathom-client";
-  import { addSam } from "../stores/sam";
+  <script>
+    import * as Fathom from "fathom-client";
+    import { addSam } from "../stores/sam";
 
-  function setupSam() {
-    const samButton = document.querySelector("[data-sam-button]");
-    samButton?.addEventListener("click", () => addSam());
-  }
+    function setupSam() {
+      const samButton = document.querySelector("[data-sam-button]");
+      samButton?.addEventListener("click", () => addSam());
+    }
 
-  setupSam();
+    setupSam();
 
-  document.addEventListener("astro:after-swap", () => setupSam());
+    document.addEventListener("astro:after-swap", () => setupSam());
 
-  document.addEventListener("astro:page-load", () => {
-    document
-      .querySelector("[data-sam-button]")
-      ?.addEventListener("click", () => {
-        Fathom.trackEvent("stickers: add sam");
-      });
+    document.addEventListener("astro:page-load", () => {
+      document
+        .querySelector("[data-sam-button]")
+        ?.addEventListener("click", () => {
+          Fathom.trackEvent("stickers: add sam");
+        });
 
-    document.querySelector("[data-sam-shoo]")?.addEventListener("click", () => {
-      Fathom.trackEvent("stickers: shoo sam");
+      document
+        .querySelector("[data-sam-shoo]")
+        ?.addEventListener("click", () => {
+          Fathom.trackEvent("stickers: shoo sam");
+        });
     });
-  });
-</script>
+  </script>
 
-<style>
-  .visuallyhidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
-
-  .home {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3xl);
-  }
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
+  <style>
+    .visuallyhidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
     }
 
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  .intro {
-    padding-block: var(--space-2xl);
-    text-wrap: balance;
-    user-select: none;
-
-    p {
-      font-size: var(--step-4);
-      letter-spacing: var(--letter-spacing-condensed);
-      line-height: var(--line-height-tight);
+    .home {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3xl);
     }
 
-    a,
-    button {
-      background: unset;
-      border: unset;
-      margin: unset;
-      line-height: unset;
-      display: unset;
-      padding: unset;
-      cursor: pointer;
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-color: var(--gray-8);
-      text-underline-offset: max(0.1em, 2.5px);
-      transition:
-        text-decoration-color 0.2s ease-in-out,
-        font-weight 0.2s ease-in-out;
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
 
-      @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          font-weight: var(--font-weight-bold);
-          text-decoration-color: var(--gray-11);
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .intro {
+      padding-block: var(--space-2xl);
+      text-wrap: balance;
+      user-select: none;
+
+      p {
+        font-size: var(--step-4);
+        letter-spacing: var(--letter-spacing-condensed);
+        line-height: var(--line-height-tight);
+      }
+
+      a,
+      button {
+        background: unset;
+        border: unset;
+        margin: unset;
+        line-height: unset;
+        display: unset;
+        padding: unset;
+        cursor: pointer;
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: var(--gray-8);
+        text-underline-offset: max(0.1em, 2.5px);
+        transition:
+          text-decoration-color 0.2s ease-in-out,
+          font-weight 0.2s ease-in-out;
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            font-weight: var(--font-weight-bold);
+            text-decoration-color: var(--gray-11);
+          }
         }
       }
     }
-  }
 
-  .synth {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .synth {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    @media (width > 640px) {
-      background: var(--gray-3);
-      border-radius: var(--radius-m);
-      padding: var(--space-xl) var(--space-l);
+      @media (width > 640px) {
+        background: var(--gray-3);
+        border-radius: var(--radius-m);
+        padding: var(--space-xl) var(--space-l);
+      }
     }
-  }
 
-  [data-sam-button] {
-    cursor: pointer;
+    [data-sam-button] {
+      cursor: pointer;
 
-    &:active {
-      transform: scale(0.95);
+      &:active {
+        transform: scale(0.95);
+      }
     }
-  }
 
-  section {
-    width: 100%;
-    padding-block-end: var(--space-3xl);
-  }
+    section {
+      width: 100%;
+      padding-block-end: var(--space-3xl);
+    }
 
-  h2 {
-    font-size: var(--step-1);
-    margin-block-end: var(--space-m);
-  }
-</style>
+    h2 {
+      font-size: var(--step-1);
+      margin-block-end: var(--space-m);
+    }
+  </style>
+</BaseLayout>

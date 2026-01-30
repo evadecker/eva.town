@@ -4,7 +4,7 @@ import mdx from "@astrojs/mdx";
 import netlify from "@astrojs/netlify";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
@@ -49,26 +49,30 @@ export default defineConfig({
   experimental: {
     fonts: [
       {
-        provider: "local",
+        provider: fontProviders.local(),
         name: "HEX Franklin",
         cssVariable: "--font-sans",
         fallbacks: ["sans-serif"],
-        variants: [
-          {
-            src: ["./src/fonts/HEX_Franklin_v0.3_Variable.woff2"],
-          },
-        ],
+        options: {
+          variants: [
+            {
+              src: ["./src/fonts/HEX_Franklin_v0.3_Variable.woff2"],
+            },
+          ],
+        },
       },
       {
-        provider: "local",
+        provider: fontProviders.local(),
         name: "MonoLisa",
         cssVariable: "--font-mono",
         fallbacks: ["monospace"],
-        variants: [
-          {
-            src: ["./src/fonts/MonoLisaVariableNormal.woff2"],
-          },
-        ],
+        options: {
+          variants: [
+            {
+              src: ["./src/fonts/MonoLisaVariableNormal.woff2"],
+            },
+          ],
+        },
       },
     ],
   },
