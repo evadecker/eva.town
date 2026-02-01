@@ -56,16 +56,6 @@ const backgroundImage = `url(${NOTECARD_THEMES[theme].src})`;
 </div>
 
 <style define:vars={{ background: backgroundImage, rotation, translateX }}>
-  @keyframes loading {
-    0% {
-      opacity: 0.2;
-    }
-
-    100% {
-      opacity: 0.5;
-    }
-  }
-
   .notecard {
     aspect-ratio: 4 / 3;
     font-family: var(--font-mono);
