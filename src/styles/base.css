@@ -23,6 +23,7 @@ body {
   text-rendering: optimizelegibility;
   font-synthesis: none;
   color-scheme: light;
+  will-change: transform;
 }
 
 body.dark {
