@@ -42,7 +42,7 @@
     "dayjs": "^1.11.19",
     "fathom-client": "^3.7.2",
     "howler": "^2.2.4",
-    "markdown-it": "^14.1.0",
+    "markdown-it": "^14.1.1",
     "motion": "^12.25.0",
     "nanoid": "^5.1.6",
     "nanostores": "^1.1.0",
