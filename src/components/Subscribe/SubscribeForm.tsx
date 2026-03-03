@@ -4,8 +4,8 @@ import classNames from "classnames";
 import * as Fathom from "fathom-client";
 import {
   type ChangeEvent,
-  type FormEvent,
-  type FormEventHandler,
+  type SubmitEvent,
+  type SubmitEventHandler,
   useEffect,
   useState,
 } from "react";
@@ -213,7 +213,9 @@ export const SubscribeForm = () => {
     }
   };
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = (e: FormEvent) => {
+  const handleSubmit: SubmitEventHandler<HTMLFormElement> = (
+    e: SubmitEvent,
+  ) => {
     e.preventDefault();
 
     setIsSubmitting(true);
