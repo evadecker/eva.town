@@ -47,7 +47,7 @@ export const collections = {
         title: z.string(),
         description: z.string().optional(),
         year: z.number(),
-        url: z.string().url(),
+        url: z.url(),
         urlText: z.string().optional(),
         category: z.string(),
         img: z
@@ -65,9 +65,9 @@ export const collections = {
       z.object({
         title: z.string(),
         description: z.string(),
-        url: z.string().url(),
-        prev: z.string().url(),
-        next: z.string().url(),
+        url: z.url(),
+        prev: z.url(),
+        next: z.url(),
         color: z.string(), // Radix color
       }),
   }),
