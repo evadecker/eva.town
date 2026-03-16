@@ -24,7 +24,7 @@
     "@ascorbic/feed-loader": "^2.0.1",
     "@astrojs/check": "^0.9.6",
     "@astrojs/db": "0.19.0",
-    "@astrojs/markdown-remark": "^6.3.10",
+    "@astrojs/markdown-remark": "^7.0.0",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/netlify": "^6.6.4",
     "@astrojs/react": "^4.4.2",
