@@ -27,7 +27,7 @@
     "@astrojs/markdown-remark": "^6.3.10",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/netlify": "^6.6.4",
-    "@astrojs/react": "^4.4.2",
+    "@astrojs/react": "^5.0.0",
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "@nanostores/react": "^1.0.0",
