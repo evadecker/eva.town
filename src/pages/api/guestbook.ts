@@ -13,19 +13,12 @@ const SPAM_FILTER_STRINGS = ["<a href", "href="];
 // 2 minutes
 const DUPLICATE_WINDOW_MS = 2 * 60 * 1000;
 
-const jsonResponse = (body: object, status: number) =>
-  new Response(JSON.stringify(body), {
-    status,
-    headers: { "Content-Type": "application/json" },
-  });
-
-export const ALL: APIRoute = () =>
-  jsonResponse({ error: "Method not allowed" }, 405);
-
-export const POST: APIRoute = async ({ request }) => {
+export const POST = (async ({ request }) => {
   const formData = await request.formData().catch(() => null);
   if (!formData) {
-    return jsonResponse({ error: "Invalid request" }, 400);
+    return new Response(JSON.stringify({ error: "Invalid request" }), {
+      status: 400,
+    });
   }
 
   const rawAuthor = formData.get("author");
@@ -42,17 +35,23 @@ export const POST: APIRoute = async ({ request }) => {
     typeof url !== "string" ||
     typeof theme !== "string"
   ) {
-    return jsonResponse({ error: "Invalid request" }, 400);
+    return new Response(JSON.stringify({ error: "Invalid request" }), {
+      status: 400,
+    });
   }
 
   const author = rawAuthor.trim();
   if (!author || author.length > AUTHOR_MAX_LENGTH) {
-    return jsonResponse({ error: "Invalid request" }, 400);
+    return new Response(JSON.stringify({ error: "Invalid request" }), {
+      status: 400,
+    });
   }
 
   const themeNum = Number.parseInt(theme, 10);
   if (Number.isNaN(themeNum) || themeNum < THEME_MIN || themeNum > THEME_MAX) {
-    return jsonResponse({ error: "Invalid request" }, 400);
+    return new Response(JSON.stringify({ error: "Invalid request" }), {
+      status: 400,
+    });
   }
 
   const cutoff = new Date(Date.now() - DUPLICATE_WINDOW_MS);
@@ -69,7 +68,9 @@ export const POST: APIRoute = async ({ request }) => {
     .limit(1);
 
   if (existing.length > 0) {
-    return jsonResponse({ error: "Duplicate submission" }, 409);
+    return new Response(JSON.stringify({ error: "Duplicate submission" }), {
+      status: 409,
+    });
   }
 
   const isSpam = SPAM_FILTER_STRINGS.some((str) => content.includes(str));
@@ -82,5 +83,11 @@ export const POST: APIRoute = async ({ request }) => {
     isSpam,
   });
 
-  return jsonResponse({ success: true }, 201);
-};
+  return new Response(JSON.stringify({ success: true }), { status: 201 });
+}) satisfies APIRoute;
+
+export const ALL = (() => {
+  return new Response(JSON.stringify({ error: "Method not allowed" }), {
+    status: 405,
+  });
+}) satisfies APIRoute;

@@ -143,8 +143,6 @@ export const NotecardComposer = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const NOT_ENOUGH_ROOM = "There's not enough room for that.";
-
   const totalThemes = Object.keys(NOTECARD_THEMES).length;
 
   const getNextThemeIndex = (currentIndex: number) => {
@@ -174,11 +172,11 @@ export const NotecardComposer = () => {
       e.target.value.length > 140
     ) {
       setContentValue(contentValue);
-      setErrorMessage(NOT_ENOUGH_ROOM);
+      setErrorMessage("There's not enough room for that.");
       Fathom.trackEvent("guestbook: show textarea warning");
     } else {
       setContentValue(e.target.value);
-      if (errorMessage === NOT_ENOUGH_ROOM) setErrorMessage(null);
+      setErrorMessage(null);
     }
   };
 
