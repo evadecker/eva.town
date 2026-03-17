@@ -10,10 +10,9 @@ const THEME_MAX = 37;
 // Dumb spam filtering. (Is it dumb if it works?)
 const SPAM_FILTER_STRINGS = ["<a href", "href="];
 
-// 2 minutes
-const DUPLICATE_WINDOW_MS = 2 * 60 * 1000;
+const RATE_LIMIT_MS = 24 * 60 * 60 * 1000; // 1 day
 
-export const POST = (async ({ request }) => {
+export const POST = (async ({ request, clientAddress }) => {
   const formData = await request.formData().catch(() => null);
   if (!formData) {
     return new Response(JSON.stringify({ error: "Invalid request" }), {
@@ -54,23 +53,25 @@ export const POST = (async ({ request }) => {
     });
   }
 
-  const cutoff = new Date(Date.now() - DUPLICATE_WINDOW_MS);
-  const existing = await db
-    .select({ id: GuestbookDB.id })
-    .from(GuestbookDB)
-    .where(
-      and(
-        eq(GuestbookDB.author, author),
-        eq(GuestbookDB.content, content),
-        gte(GuestbookDB.timestamp, cutoff),
-      ),
-    )
-    .limit(1);
+  if (clientAddress) {
+    const cutoff = new Date(Date.now() - RATE_LIMIT_MS);
+    const recent = await db
+      .select({ id: GuestbookDB.id })
+      .from(GuestbookDB)
+      .where(
+        and(
+          eq(GuestbookDB.ip, clientAddress),
+          gte(GuestbookDB.timestamp, cutoff),
+        ),
+      )
+      .limit(1);
 
-  if (existing.length > 0) {
-    return new Response(JSON.stringify({ error: "Duplicate submission" }), {
-      status: 409,
-    });
+    if (recent.length > 0) {
+      return new Response(
+        JSON.stringify({ error: "Only one submission per day" }),
+        { status: 429 },
+      );
+    }
   }
 
   const isSpam = SPAM_FILTER_STRINGS.some((str) => content.includes(str));
@@ -81,6 +82,7 @@ export const POST = (async ({ request }) => {
     url: url || undefined,
     theme: themeNum,
     isSpam,
+    ip: clientAddress || undefined,
   });
 
   return new Response(JSON.stringify({ success: true }), { status: 201 });
