@@ -12,7 +12,7 @@ ogImage: ./img1200.webp
 
 I designed and built this site myself. It's a home to share things I'm exploring and things I've built. It's a place for me to learn in public.
 
-All code is open source and available on [GitHub](https://github.com/evadecker/ky.fyi). The first commit was December 5, 2018, but the earliest version of this site dates back to 2015, an era when I eschewed versioning and uploaded files manually via <abbr title="File Transfer Protocol">FTP</abbr>. I've grown a lot since then—and the technology around me has grown, too.
+All code is open source and available on [GitHub](https://github.com/kydecker/ky.fyi). The first commit was December 5, 2018, but the earliest version of this site dates back to 2015, an era when I eschewed versioning and uploaded files manually via <abbr title="File Transfer Protocol">FTP</abbr>. I've grown a lot since then—and the technology around me has grown, too.
 
 ## Technology
 
@@ -56,7 +56,7 @@ As of September 12, 2025, [carbon results for ky.fyi](https://www.websitecarbon.
 
 ## Accessibility
 
-This site aims to conform to the Level AA accessibility standards outlined in the [WCAG 2.2 specification](https://www.w3.org/TR/WCAG22/). If you experience an issue with accessing any part of this site, please [file an issue](https://github.com/evadecker/ky.fyi/issues) and I’ll do my best to correct it.
+This site aims to conform to the Level AA accessibility standards outlined in the [WCAG 2.2 specification](https://www.w3.org/TR/WCAG22/). If you experience an issue with accessing any part of this site, please [file an issue](https://github.com/kydecker/ky.fyi/issues) and I’ll do my best to correct it.
 
 ## Privacy
 
@@ -64,4 +64,4 @@ I collect basic, fully-anonymized page view analytics using [Fathom](https://use
 
 ## Notice an issue?
 
-If you spot a typo, encounter a broken feature, or have a recommendation for an improvement, [file an issue on GitHub](https://github.com/evadecker/ky.fyi/issues).
+If you spot a typo, encounter a broken feature, or have a recommendation for an improvement, [file an issue on GitHub](https://github.com/kydecker/ky.fyi/issues).

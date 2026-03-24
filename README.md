@@ -1,4 +1,4 @@
-![Ky designs and builds things for the web.](https://raw.githubusercontent.com/evadecker/ky.fyi/main/public/og/default.png)
+![Ky designs and builds things for the web.](https://raw.githubusercontent.com/kydecker/ky.fyi/main/public/og/default.png)
 
 <div align="center">
 
@@ -29,17 +29,17 @@ Other scripts in `package.json` can also be run with `pnpm`.
 
 ## Link Checking
 
-[![Check Links](https://github.com/evadecker/ky.fyi/actions/workflows/links.yml/badge.svg)](https://github.com/evadecker/ky.fyi/actions/workflows/links.yml)
+[![Check Links](https://github.com/kydecker/ky.fyi/actions/workflows/links.yml/badge.svg)](https://github.com/kydecker/ky.fyi/actions/workflows/links.yml)
 
-A weekly [GitHub workflow](https://github.com/evadecker/ky.fyi/actions/workflows/links.yml) scans the site for broken links and will open an issue if one is found.
+A weekly [GitHub workflow](https://github.com/kydecker/ky.fyi/actions/workflows/links.yml) scans the site for broken links and will open an issue if one is found.
 
 ## Accessibility
 
-[![CI](https://github.com/evadecker/ky.fyi/actions/workflows/ci.yml/badge.svg)](https://github.com/evadecker/ky.fyi/actions/workflows/ci.yml)
+[![CI](https://github.com/kydecker/ky.fyi/actions/workflows/ci.yml/badge.svg)](https://github.com/kydecker/ky.fyi/actions/workflows/ci.yml)
 
 Every pull request is tested for automatically-detectable accessibility issues and HTML5 compliance.
 
-This site aims to conform to the Level AA accessibility standards outlined in the [WCAG 2.2 specification](https://www.w3.org/TR/WCAG22/). If you experience an issue with accessing any part of this site, please [file an issue](https://github.com/evadecker/ky.fyi/issues) and I’ll do my best to correct it.
+This site aims to conform to the Level AA accessibility standards outlined in the [WCAG 2.2 specification](https://www.w3.org/TR/WCAG22/). If you experience an issue with accessing any part of this site, please [file an issue](https://github.com/kydecker/ky.fyi/issues) and I’ll do my best to correct it.
 
 ## Notes To Self
 

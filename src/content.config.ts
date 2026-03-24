@@ -93,7 +93,7 @@ export const collections = {
 
   photos: defineCollection({
     loader: feedLoader({
-      url: "https://glass.photo/evadecker/rss",
+      url: "https://glass.photo/kydecker/rss",
     }),
   }),
 };
