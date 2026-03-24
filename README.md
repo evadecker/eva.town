@@ -1,12 +1,6 @@
-![Ky designs and builds things for the web.](https://raw.githubusercontent.com/kydecker/ky.fyi/main/public/og/default.png)
-
-<div align="center">
+# Ky Decker
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1454513e-f8a3-468f-9f62-933c9225d8c2/deploy-status)](https://app.netlify.com/sites/eva-town/deploys) [![RSS](https://img.shields.io/badge/RSS-gray?logo=rss&logoColor=white&labelColor=eb7817)](https://ky.fyi/rss.xml)
-
-</div>
-
-# Ky Decker
 
 This is the source code for [ky.fyi](https://ky.fyi), designed, coded, and written by Ky's me! It's a place for me to share notes and learn in public. I try to update things regularly.
 
