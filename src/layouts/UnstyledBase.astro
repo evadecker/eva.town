@@ -4,7 +4,6 @@ import "../styles/theme.css";
 
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
-import LoadingIndicator from "astro-loading-indicator/component";
 
 export interface Props {
   title: string;
@@ -75,7 +74,6 @@ const pageTitle = Astro.url.pathname === "/" ? title : `${title} · Ky Decker`;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{pageTitle}</title>
     <ClientRouter />
-    <LoadingIndicator color="var(--blue-9)" height="3px" threshold={600} />
     <script>
       import * as Fathom from "fathom-client";
       Fathom.load("WKFTECUZ");
