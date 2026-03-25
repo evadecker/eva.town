@@ -14,7 +14,7 @@ test("includes correct social links", async ({ page }) => {
   );
   await expect(linkedInLink).toHaveAttribute(
     "href",
-    "https://linkedin.com/in/kydecker",
+    "https://linkedin.com/in/kyfyi",
   );
 });
 
