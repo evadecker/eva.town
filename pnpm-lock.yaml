@@ -50,9 +50,6 @@ importers:
       astro-expressive-code:
         specifier: ^0.41.7
         version: 0.41.7(astro@5.18.0(@netlify/blobs@10.7.4)(@types/node@25.5.0)(jiti@2.6.1)(rollup@4.60.0)(sass@1.97.2)(typescript@5.9.3)(yaml@2.8.3))
-      astro-loading-indicator:
-        specifier: ^0.8.0
-        version: 0.8.0(astro@5.18.0(@netlify/blobs@10.7.4)(@types/node@25.5.0)(jiti@2.6.1)(rollup@4.60.0)(sass@1.97.2)(typescript@5.9.3)(yaml@2.8.3))
       autoprefixer:
         specifier: ^10.4.27
         version: 10.4.27(postcss@8.5.8)
@@ -2024,11 +2021,6 @@ packages:
     resolution: {integrity: sha512-hUpogGc6DdAd+I7pPXsctyYPRBJDK7Q7d06s4cyP0Vz3OcbziP3FNzN0jZci1BpCvLn9675DvS7B9ctKKX64JQ==}
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0 || ^6.0.0-beta
-
-  astro-loading-indicator@0.8.0:
-    resolution: {integrity: sha512-huqaHbSCe8KLWnogxu9yNDybtVyp9OhJhU9LA5GwzBo8g4CcAQWcwjurleV+OpJAK2qNL2gO/V5ocPltvCC7Dg==}
-    peerDependencies:
-      astro: ^4.0.0 || ^5.0.0 || ^6.0.0
 
   astro@5.18.0:
     resolution: {integrity: sha512-CHiohwJIS4L0G6/IzE1Fx3dgWqXBCXus/od0eGUfxrZJD2um2pE7ehclMmgL/fXqbU7NfE1Ze2pq34h2QaA6iQ==}
@@ -8050,10 +8042,6 @@ snapshots:
     dependencies:
       astro: 5.18.0(@netlify/blobs@10.7.4)(@types/node@25.5.0)(jiti@2.6.1)(rollup@4.60.0)(sass@1.97.2)(typescript@5.9.3)(yaml@2.8.3)
       rehype-expressive-code: 0.41.7
-
-  astro-loading-indicator@0.8.0(astro@5.18.0(@netlify/blobs@10.7.4)(@types/node@25.5.0)(jiti@2.6.1)(rollup@4.60.0)(sass@1.97.2)(typescript@5.9.3)(yaml@2.8.3)):
-    dependencies:
-      astro: 5.18.0(@netlify/blobs@10.7.4)(@types/node@25.5.0)(jiti@2.6.1)(rollup@4.60.0)(sass@1.97.2)(typescript@5.9.3)(yaml@2.8.3)
 
   astro@5.18.0(@netlify/blobs@10.7.4)(@types/node@25.5.0)(jiti@2.6.1)(rollup@4.60.0)(sass@1.97.2)(typescript@5.9.3)(yaml@2.8.3):
     dependencies:
