@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import GuestbookFeed from "src/components/Home/GuestbookFeed.astro";
-import PhotoFeed from "src/components/Home/PhotoFeed.astro";
 import WorkList from "src/components/Home/WorkList.astro";
 import Center from "../components/Center.astro";
 import Synth from "../components/Synth/Synth.astro";
@@ -56,12 +55,6 @@ const feed = work
       <h2>Projects</h2>
       <WorkList items={feed} />
     </Center>
-  </section>
-  <section>
-    <Center>
-      <h2>Latest <a href="https://glass.photo/kydecker">photos</a></h2>
-    </Center>
-    <PhotoFeed />
   </section>
   <section>
     <Center>
