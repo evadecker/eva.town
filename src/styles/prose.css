@@ -81,12 +81,8 @@
   }
 }
 
-.prose h2 {
+.prose :not(hr) + h2:not(:first-child) {
   margin-top: var(--space-2xl);
-}
-
-.prose h2:first-child {
-  margin-top: 0;
 }
 
 .prose h3 {
