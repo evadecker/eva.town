@@ -30,7 +30,7 @@ I shared more about the hardware I use on [Uses This](https://usesthis.com/inter
 
 Text is set in [HEX Franklin Variable](https://hex.xyz/HEX_Franklin/) with code in [`MonoLisa`](https://www.monolisa.dev/). Typography is scaled using a lot of math and a [fluid type scale](https://utopia.fyi/blog/designing-with-fluid-type-scales) by [Utopia](https://utopia.fyi/type/calculator/), meaning that font sizes will interpolate between mobile and desktop to optimize for the current browser width.
 
-Type inspiration can be found anywhere, from comic art and video games to [bodega window displays](https://www.are.na/eva-decker/nyc-bodega-art), but I often return to a handful of resources:
+Type inspiration can be found anywhere, from comic art and video games to [bodega window displays](https://www.are.na/ky-decker/nyc-bodega-art), but I often return to a handful of resources:
 
 - [_The Elements of Typographic Style_](https://bookshop.org/a/97627/9780881792126) by Robert Bringhurst
 - [Butterick’s Practical Typography](https://practicaltypography.com)
@@ -43,7 +43,7 @@ I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consiste
 
 ## Sounds
 
-The toy synth uses samples from [Mixkit](https://mixkit.co/), [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/sgossner/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples/banjo), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://github.com/mtimkovich/hearthsounds), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
+The toy synth uses samples from [Mixkit](https://mixkit.co/), [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/sgossner/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://github.com/mtimkovich/hearthsounds), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
 
 ## Energy
 
