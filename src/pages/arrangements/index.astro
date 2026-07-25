@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import LilyPond from "astro-lilypond/component";
+import ProseLayout from "../../layouts/ProseLayout.astro";
+
+const title = "Arrangements";
+const description = "Play these notes at a piano.";
+
+const scores = await getCollection("scores");
+---
+
+<ProseLayout title={title} description={description}>
+  <p>
+    Below are some piano arrangements I've written. All music was typeset using <a
+      href="https://lilypond.org">LilyPond</a
+    >, a text-based music engraving language. Scores are displayed here using <a
+      href="https://lilypond.ky.fyi">astro-lilypond</a
+    >, an open source Astro integration I built.
+  </p>
+  {
+    scores.map((score) => (
+      <>
+        <h2>
+          <a href={`/arrangements/${score.id}`}>
+            {score.data.title}
+            {score.data.subtitle && ` (${score.data.subtitle})`}
+          </a>
+        </h2>
+        {score.data.composer && (
+          <span class="composer">By {score.data.composer}</span>
+        )}
+        <div class="score">
+          <LilyPond content={score.data} />
+        </div>
+      </>
+    ))
+  }
+</ProseLayout>
+
+<style>
+  .composer {
+    display: block;
+    margin-block-start: var(--space-2xs);
+  }
+
+  .score {
+    [data-lilypond-group] {
+      padding: var(--space-l) 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-s);
+
+      @media (width > 600px) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+</style>

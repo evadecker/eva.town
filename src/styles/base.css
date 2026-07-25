@@ -120,3 +120,28 @@ button:focus-visible {
   white-space: nowrap;
   width: 1px;
 }
+
+[data-lilypond-image] {
+  background-color: #fff;
+}
+
+ol[data-lilypond-group] {
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    flex-shrink: 0;
+    margin: 0;
+
+    &::before {
+      all: unset;
+      content: "";
+    }
+  }
+
+  img {
+    width: 100%;
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
