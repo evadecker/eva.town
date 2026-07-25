@@ -6,3 +6,5 @@ allowBuilds:
   sharp: true
   simple-git-hooks: true
   workerd: true
+minimumReleaseAgeExclude:
+  - astro-lilypond

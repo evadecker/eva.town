@@ -246,6 +246,9 @@ importers:
       astro-expressive-code:
         specifier: ^0.44.0
         version: 0.44.0(astro@7.0.6(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@26.1.0)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.0)(yaml@2.9.0))
+      astro-lilypond:
+        specifier: ^0.11.1
+        version: 0.11.1(astro@7.0.6(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@26.1.0)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.0)(yaml@2.9.0))
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -2364,6 +2367,11 @@ packages:
     resolution: {integrity: sha512-b1wN/ZvbJprzxlGKIpIes2kQrCY5KRLwys2tWbZAZyjGZcW5ZtgneZnBwzNRiBna9/48d4mQl19KLjcRuhO1hw==}
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0 || ^6.0.0-beta || ^7.0.0
+
+  astro-lilypond@0.11.1:
+    resolution: {integrity: sha512-tXCmbPdzEgPTkwE1BRa5oSsGjSt/L3lmzc5p+65oDNe1ia3d1fONeBl4GCmZIXGdiG10XUOiycicEE4G3+/ccQ==}
+    peerDependencies:
+      astro: '>=7.0.0'
 
   astro@7.0.6:
     resolution: {integrity: sha512-Myw0sFia+zs/Y0yqfZEsUYXfDPh3ELcLf1f0Q/qQzVXBh/af1qO62WNT+P89DCcfGVV51nMoQhEfkBYqJmoUOQ==}
@@ -5857,6 +5865,11 @@ snapshots:
       astro: 7.0.6(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@26.1.0)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.0)(yaml@2.9.0)
       rehype-expressive-code: 0.44.0
       url-extras: 0.1.0
+
+  astro-lilypond@0.11.1(astro@7.0.6(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@26.1.0)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.0)(yaml@2.9.0)):
+    dependencies:
+      astro: 7.0.6(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@26.1.0)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.0)(yaml@2.9.0)
+      unist-util-visit: 5.1.0
 
   astro@7.0.6(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@26.1.0)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.0)(yaml@2.9.0):
     dependencies:

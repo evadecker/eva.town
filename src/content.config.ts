@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import { lilypondLoader } from "astro-lilypond/loader";
 
 export const collections = {
   posts: defineCollection({
@@ -103,5 +104,9 @@ export const collections = {
         description: z.string(),
         urls: z.array(z.url()),
       }),
+  }),
+
+  scores: defineCollection({
+    loader: lilypondLoader({ base: "./src/content/scores" }),
   }),
 };
