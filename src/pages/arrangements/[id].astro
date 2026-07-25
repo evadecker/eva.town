@@ -1,0 +1,49 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import LilyPond from "astro-lilypond/component";
+import ProseLayout from "../../layouts/ProseLayout.astro";
+
+export async function getStaticPaths() {
+  const scores = await getCollection("scores");
+
+  return scores.map((score) => ({
+    params: { id: score.id },
+    props: { score },
+  }));
+}
+
+interface Props {
+  score: CollectionEntry<"scores">;
+}
+
+const { score } = Astro.props;
+const { title, composer, arranger } = score.data;
+
+const description = [
+  composer && `By ${composer}`,
+  arranger && `Arranged by ${arranger}`,
+]
+  .filter(Boolean)
+  .join(". ");
+---
+
+<ProseLayout title={title} description={description}>
+  <LilyPond content={score.data} />
+  <hr />
+  <a href="/arrangements">Back to all arrangements</a>
+</ProseLayout>
+
+<style>
+  :global(ol[data-lilypond-group]) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  :global(img[data-lilypond-image]) {
+    max-inline-size: 100%;
+  }
+</style>

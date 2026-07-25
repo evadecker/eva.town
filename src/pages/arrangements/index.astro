@@ -4,7 +4,7 @@ import LilyPond from "astro-lilypond/component";
 import ProseLayout from "../../layouts/ProseLayout.astro";
 
 const title = "Arrangements";
-const description = "You can play these notes at a piano.";
+const description = "Play these notes at a piano.";
 
 const scores = await getCollection("scores");
 ---
@@ -21,8 +21,10 @@ const scores = await getCollection("scores");
     scores.map((score) => (
       <>
         <h2>
-          {score.data.title}
-          {score.data.subtitle && ` (${score.data.subtitle})`}
+          <a href={`/arrangements/${score.id}`}>
+            {score.data.title}
+            {score.data.subtitle && ` (${score.data.subtitle})`}
+          </a>
         </h2>
         {score.data.composer && (
           <span class="composer">By {score.data.composer}</span>
