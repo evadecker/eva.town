@@ -33,6 +33,22 @@ jobs:
           node-version: 24
           cache: "pnpm"
 
+      - name: Cache LilyPond
+        id: cache-lilypond
+        uses: actions/cache@v6
+        with:
+          path: ~/lilypond-2.26.0
+          key: lilypond-2.26.0-linux-x86_64
+
+      - name: Install LilyPond
+        if: steps.cache-lilypond.outputs.cache-hit != 'true'
+        run: |
+          curl -sL -o /tmp/lilypond.tar.gz "https://gitlab.com/lilypond/lilypond/-/releases/v2.26.0/downloads/lilypond-2.26.0-linux-x86_64.tar.gz"
+          tar xzf /tmp/lilypond.tar.gz -C "$HOME"
+
+      - name: Add LilyPond to PATH
+        run: echo "$HOME/lilypond-2.26.0/bin" >> "$GITHUB_PATH"
+
       - name: Install dependencies
         run: pnpm i
 
@@ -56,6 +72,22 @@ jobs:
         with:
           node-version: 24
           cache: "pnpm"
+
+      - name: Cache LilyPond
+        id: cache-lilypond
+        uses: actions/cache@v6
+        with:
+          path: ~/lilypond-2.26.0
+          key: lilypond-2.26.0-linux-x86_64
+
+      - name: Install LilyPond
+        if: steps.cache-lilypond.outputs.cache-hit != 'true'
+        run: |
+          curl -sL -o /tmp/lilypond.tar.gz "https://gitlab.com/lilypond/lilypond/-/releases/v2.26.0/downloads/lilypond-2.26.0-linux-x86_64.tar.gz"
+          tar xzf /tmp/lilypond.tar.gz -C "$HOME"
+
+      - name: Add LilyPond to PATH
+        run: echo "$HOME/lilypond-2.26.0/bin" >> "$GITHUB_PATH"
 
       - name: Install dependencies
         run: pnpm i
