@@ -44,11 +44,12 @@ const scores = await getCollection("scores");
   }
 
   .score {
-    [data-lilypond-group] {
+    ol[data-lilypond-group] {
       padding: var(--space-l) 0;
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--space-s);
+      list-style-type: none;
 
       @media (width > 600px) {
         grid-template-columns: 1fr 1fr;
