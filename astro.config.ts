@@ -5,6 +5,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig, fontProviders } from "astro/config";
 import expressiveCode from "astro-expressive-code";
+import lilypond from "astro-lilypond";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import imgAttr from "remark-imgattr";
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
@@ -14,6 +15,7 @@ export default defineConfig({
   site: "https://ky.fyi",
   prefetch: true,
   integrations: [
+    lilypond(),
     react(),
     expressiveCode({
       styleOverrides: {
