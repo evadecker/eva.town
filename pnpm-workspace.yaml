@@ -8,3 +8,4 @@ allowBuilds:
   workerd: true
 minimumReleaseAgeExclude:
   - astro-lilypond
+  - astro-emit-asset@0.1.4
