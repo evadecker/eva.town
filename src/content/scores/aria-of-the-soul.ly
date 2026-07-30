@@ -7,7 +7,7 @@
   subtitle = \markup { \bold "Velvet Room Theme" }
   subsubtitle = \markup { \italic \raise #0.5 "from Persona" }
   composer = "Shoji Meguro"
-  arranger = "Arr. Ky Decker"
+  arranger = "Ky Decker"
   tagline = ##f
 }
 

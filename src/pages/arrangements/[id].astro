@@ -1,6 +1,6 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import LilyPond from "astro-lilypond/component";
+import { getCollection } from "astro:content";
+import { type LilypondScore, render } from "astro-lilypond";
 import ProseLayout from "../../layouts/ProseLayout.astro";
 
 export async function getStaticPaths() {
@@ -8,16 +8,19 @@ export async function getStaticPaths() {
 
   return scores.map((score) => ({
     params: { id: score.id },
-    props: { score },
+    props: { score: score.data },
   }));
 }
 
 interface Props {
-  score: CollectionEntry<"scores">;
+  score: LilypondScore;
 }
 
 const { score } = Astro.props;
-const { title, composer, arranger } = score.data;
+
+const { Score, meta, pdf } = await render(score, { pdf: true });
+
+const { title, composer, arranger } = meta;
 
 const description = [
   composer && `By ${composer}`,
@@ -27,23 +30,42 @@ const description = [
   .join(". ");
 ---
 
-<ProseLayout title={title} description={description}>
-  <LilyPond content={score.data} />
-  <hr />
-  <a href="/arrangements">Back to all arrangements</a>
+<ProseLayout
+  title={title ?? "Untitled"}
+  description={description ?? "A score by Ky Decker"}
+>
+  <div class="links">
+    <a href="/arrangements" slot="after-prose">Back to all arrangements</a>
+    {
+      pdf && (
+        <a href={pdf.src} download>
+          Download PDF
+        </a>
+      )
+    }
+  </div>
+  <Score class="score" />
 </ProseLayout>
 
-<style is:global>
-  ol[data-lilypond-group] {
+<style>
+  .links {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-l);
+    width: 100%;
+    padding-block-end: var(--space-xl);
+  }
+
+  :global(ol[data-lilypond-group]) {
     display: flex;
     flex-direction: column;
     gap: var(--space-l);
     list-style: none;
     padding: 0;
-    margin: 0;
-  }
+    margin: 0 !important;
 
-  img[data-lilypond-image] {
-    max-inline-size: 100%;
+    img {
+      max-inline-size: 100%;
+    }
   }
 </style>

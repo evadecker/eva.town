@@ -1,12 +1,17 @@
 ---
 import { getCollection } from "astro:content";
-import LilyPond from "astro-lilypond/component";
+import { renderAll } from "astro-lilypond";
 import ProseLayout from "../../layouts/ProseLayout.astro";
 
 const title = "Arrangements";
 const description = "Play these notes at a piano to make okay sounds.";
 
 const scores = await getCollection("scores");
+const rendered = await renderAll(
+  scores.map((score) => score.data),
+  { pdf: true },
+);
+const entries = scores.map((score, i) => ({ score, ...rendered[i] }));
 ---
 
 <ProseLayout title={title} description={description}>
@@ -18,20 +23,25 @@ const scores = await getCollection("scores");
     >, an open source Astro integration I built.
   </p>
   {
-    scores.map((score) => (
+    entries.map(({ score, Score, pdf }) => (
       <>
         <h2>
           <a href={`/arrangements/${score.id}`}>
-            {score.data.title}
-            {score.data.subtitle && ` (${score.data.subtitle})`}
+            {score.data.meta.title}
+            {score.data.meta.subtitle && ` (${score.data.meta.subtitle})`}
           </a>
         </h2>
-        {score.data.composer && (
-          <span class="composer">By {score.data.composer}</span>
+        {score.data.meta.composer && (
+          <span class="composer">By {score.data.meta.composer}</span>
         )}
         <div class="score">
-          <LilyPond content={score.data} />
+          <Score />
         </div>
+        {pdf && (
+          <a href={pdf.src} download>
+            Download PDF
+          </a>
+        )}
       </>
     ))
   }
