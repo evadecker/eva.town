@@ -23,17 +23,15 @@ const entries = scores.map((score, i) => ({ score, ...rendered[i] }));
     >, an open source Astro integration I built.
   </p>
   {
-    entries.map(({ score, Score, pdf }) => (
+    entries.map(({ meta, score, Score, pdf }) => (
       <>
         <h2>
           <a href={`/arrangements/${score.id}`}>
-            {score.data.meta.title}
-            {score.data.meta.subtitle && ` (${score.data.meta.subtitle})`}
+            {meta.title}
+            {meta.subtitle && ` (${meta.subtitle})`}
           </a>
         </h2>
-        {score.data.meta.composer && (
-          <span class="composer">By {score.data.meta.composer}</span>
-        )}
+        {meta.composer && <span class="composer">By {meta.composer}</span>}
         <div class="score">
           <Score />
         </div>
