@@ -24,44 +24,47 @@ const entries = scores.map((score, i) => ({ score, ...rendered[i] }));
   </p>
   {
     entries.map(({ meta, score, Score, pdf }) => (
-      <>
+      <section>
         <h2>
           <a href={`/arrangements/${score.id}`}>
             {meta.title}
             {meta.subtitle && ` (${meta.subtitle})`}
           </a>
         </h2>
-        {meta.composer && <span class="composer">By {meta.composer}</span>}
-        <div class="score">
-          <Score />
-        </div>
-        {pdf && (
-          <a href={pdf.src} download>
-            Download PDF
-          </a>
-        )}
-      </>
+        <span class="meta">
+          {meta.composer && <span>By {meta.composer}</span>}
+          {pdf && (
+            <a href={pdf.src} download>
+              Download PDF
+            </a>
+          )}
+        </span>
+        <Score />
+      </section>
     ))
   }
 </ProseLayout>
 
 <style>
-  .composer {
-    display: block;
-    margin-block-start: var(--space-2xs);
+  section {
+    padding-block-start: var(--space-2xl);
   }
 
-  .score {
-    ol[data-lilypond-group] {
-      padding: var(--space-l) 0;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-s);
-      list-style-type: none;
+  .meta {
+    margin-block-start: var(--space-2xs);
+    display: flex;
+    gap: var(--space-xs);
+  }
 
-      @media (width > 600px) {
-        grid-template-columns: 1fr 1fr;
-      }
+  :global(ol[data-lilypond-group]) {
+    padding: var(--space-l) 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-s);
+    list-style-type: none;
+
+    @media (width > 600px) {
+      grid-template-columns: 1fr 1fr;
     }
   }
 </style>
