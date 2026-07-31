@@ -24,7 +24,7 @@ const { Score, meta, pdf } = await render(score, { pdf: true });
 const { title, composer, arranger } = meta;
 
 const description = [
-  composer && `By ${composer}`,
+  composer && `Composed by ${composer}`,
   arranger && `Arranged by ${arranger}`,
 ]
   .filter(Boolean)
