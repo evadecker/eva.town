@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { type LilypondScore, render } from "astro-lilypond";
+import { Icon } from "../../components/Icon/Icon";
 import ProseLayout from "../../layouts/ProseLayout.astro";
 
 export async function getStaticPaths() {
@@ -35,7 +36,9 @@ const description = [
   description={description ?? "A score by Ky Decker"}
 >
   <div class="links">
-    <a href="/arrangements" slot="after-prose">Back to all arrangements</a>
+    <a href="/arrangements" slot="after-prose"
+      ><Icon icon="arrowLeft" />All arrangements</a
+    >
     {
       pdf && (
         <a href={pdf.src} download>
@@ -51,9 +54,17 @@ const description = [
   .links {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: var(--space-l);
     width: 100%;
     padding-block-end: var(--space-xl);
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      white-space: nowrap;
+    }
   }
 
   :global(ol[data-lilypond-group]) {
