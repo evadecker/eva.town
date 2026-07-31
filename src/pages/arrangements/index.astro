@@ -22,38 +22,60 @@ const entries = scores.map((score, i) => ({ score, ...rendered[i] }));
       href="https://lilypond.ky.fyi">astro-lilypond</a
     >, an open source Astro integration I built.
   </p>
-  {
-    entries.map(({ meta, score, Score, pdf }) => (
-      <section>
-        <h2>
-          <a href={`/arrangements/${score.id}`}>
+  <section class="arrangements-grid">
+    {
+      entries.map(({ meta, score, Score }) => (
+        <a href={`/arrangements/${score.id}`} class="arrangement">
+          <h2>
             {meta.title}
             {meta.subtitle && ` (${meta.subtitle})`}
-          </a>
-        </h2>
-        <span class="meta">
-          {meta.composer && <span>By {meta.composer}</span>}
-          {pdf && (
-            <a href={pdf.src} download>
-              Download PDF
-            </a>
-          )}
-        </span>
-        <Score />
-      </section>
-    ))
-  }
+          </h2>
+          <Score pageLimit={1} />
+        </a>
+      ))
+    }
+  </section>
 </ProseLayout>
 
 <style>
-  section {
-    padding-block-start: var(--space-2xl);
+  .arrangements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    padding-block: var(--space-2xl);
   }
 
-  .meta {
-    margin-block-start: var(--space-2xs);
+  .arrangement {
     display: flex;
-    gap: var(--space-xs);
+    flex-direction: column;
+    gap: var(--space-m);
+    text-decoration: none;
+
+    h2 {
+      font-size: var(--step-0);
+      margin-block: 0 !important;
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      img {
+        outline: var(--gray-12) solid 2px;
+        outline-offset: 4px;
+      }
+    }
+
+    @media (hover: hover) {
+      img {
+        transition: transform 0.15s ease;
+      }
+
+      &:hover {
+        img {
+          transform: translateY(-5px);
+        }
+      }
+    }
   }
 
   :global(ol[data-lilypond-group]) {
