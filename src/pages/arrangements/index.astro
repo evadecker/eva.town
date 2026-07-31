@@ -1,17 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import { renderAll } from "astro-lilypond";
+import { Score } from "astro-lilypond";
 import ProseLayout from "../../layouts/ProseLayout.astro";
 
 const title = "Arrangements";
 const description = "Play these notes at a piano to make okay sounds.";
 
 const scores = await getCollection("scores");
-const rendered = await renderAll(
-  scores.map((score) => score.data),
-  { pdf: true },
-);
-const entries = scores.map((score, i) => ({ score, ...rendered[i] }));
 ---
 
 <ProseLayout title={title} description={description}>
@@ -24,15 +19,15 @@ const entries = scores.map((score, i) => ({ score, ...rendered[i] }));
   </p>
   <section class="arrangements-grid">
     {
-      entries.map(({ meta, score, pageCount, Score }) => (
+      scores.map((score) => (
         <a href={`/arrangements/${score.id}`} class="arrangement">
-          <Score pageLimit={1} />
+          <Score content={score.data} pageLimit={1} />
           <div>
             <h2>
-              {meta.title}
-              {meta.subtitle && ` (${meta.subtitle})`}
+              {score.data.meta.title}
+              {score.data.meta.subtitle && ` (${score.data.meta.subtitle})`}
             </h2>
-            <span>{pageCount} pages</span>
+            <span>Composed by {score.data.meta.composer}</span>
           </div>
         </a>
       ))

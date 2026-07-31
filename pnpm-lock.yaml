@@ -247,8 +247,8 @@ importers:
         specifier: ^0.44.1
         version: 0.44.1(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0))
       astro-lilypond:
-        specifier: ^0.15.0
-        version: 0.15.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0))
+        specifier: ^0.16.0
+        version: 0.16.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0))
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -2380,8 +2380,8 @@ packages:
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0 || ^6.0.0-beta || ^7.0.0
 
-  astro-lilypond@0.15.0:
-    resolution: {integrity: sha512-93Xbv/5b0M1sUIPfyaKTdKl9XnXyRundbRmDlk/4Xz1O79gLmY+5Kb6Ob3szFvPXChygTQk0Y/HNW5dGdnZ4ng==}
+  astro-lilypond@0.16.0:
+    resolution: {integrity: sha512-YeDeJNxjplXZ68vk83KH+7D4vdygHmq/wntU4r308kGqo5yKsqxNRqZbsJOv/2CxwPMciDe1N624UpBgmL4fUQ==}
     peerDependencies:
       astro: '>=7.0.0'
 
@@ -5884,7 +5884,7 @@ snapshots:
       rehype-expressive-code: 0.44.1
       url-extras: 0.1.0
 
-  astro-lilypond@0.15.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0)):
+  astro-lilypond@0.16.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0)):
     dependencies:
       astro: 7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0)
       astro-emit-asset: 0.1.4(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0))
