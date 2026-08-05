@@ -12,22 +12,22 @@ export interface Props {
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
 
-  return posts.map((post, index) => ({
-    params: { id: post.id },
-    props: {
-      post,
-      prev: posts[index - 1] ?? posts[posts.length - 1],
-      next: posts[index + 1] ?? posts[0],
-    },
-  }));
+  return posts
+    .sort((a, b) => (a.data.datePublished < b.data.datePublished ? -1 : 1))
+    .map((post, index) => ({
+      params: { id: post.id },
+      props: {
+        post,
+        prev: posts[index - 1],
+        next: posts[index + 1],
+      },
+    }));
 }
 const { post, prev, next } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await render(post);
 
 const { data } = post;
 const { title, description, previewImage, datePublished } = data;
-
-console.log(remarkPluginFrontmatter);
 ---
 
 <ProseLayout
