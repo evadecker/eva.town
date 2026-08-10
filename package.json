@@ -48,7 +48,7 @@
     "@types/react-dom": "^19.2.4",
     "astro": "7.1.6",
     "astro-expressive-code": "^0.44.1",
-    "astro-lilypond": "^0.16.1",
+    "astro-lilypond": "^1.0.0",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.21",
     "drizzle-orm": "^0.45.2",
