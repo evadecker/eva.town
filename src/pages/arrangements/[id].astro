@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { type LilypondScore, render } from "astro-lilypond";
+import { getScore, type LilypondScore } from "astro-lilypond";
 import { Icon } from "../../components/Icon/Icon";
 import ProseLayout from "../../layouts/ProseLayout.astro";
 
@@ -19,7 +19,7 @@ interface Props {
 
 const { score } = Astro.props;
 
-const { Score, meta, pdf } = await render(score, { pdf: true });
+const { Score, meta, pdf } = await getScore(score, { pdf: true });
 
 const { title, composer, arranger } = meta;
 
