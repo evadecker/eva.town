@@ -55,7 +55,7 @@
     "fathom-client": "^3.7.2",
     "howler": "^2.2.4",
     "markdown-it": "^15.0.0",
-    "motion": "^12.43.0",
+    "motion": "^13.0.0",
     "nanoid": "^6.0.0",
     "nanostores": "^1.4.2",
     "react": "^19.2.8",
