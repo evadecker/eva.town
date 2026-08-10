@@ -247,8 +247,8 @@ importers:
         specifier: ^0.44.1
         version: 0.44.1(astro@7.1.6(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0))
       astro-lilypond:
-        specifier: ^0.16.1
-        version: 0.16.1(astro@7.1.6(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0))
+        specifier: ^1.1.2
+        version: 1.1.2(@astrojs/markdown-remark@7.2.2)(astro@7.1.6(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0))
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -2378,10 +2378,15 @@ packages:
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0 || ^6.0.0-beta || ^7.0.0
 
-  astro-lilypond@0.16.1:
-    resolution: {integrity: sha512-V/E4nvc+7GjMoAp4ZrLAMsWnFivgrf4cuc2JRY+dcNzsatVEthCzHTmNzzY2/JUs+eeZmTKG40/JGJmwXZsVYQ==}
+  astro-lilypond@1.1.2:
+    resolution: {integrity: sha512-WnXn8OkfFFUjyA0Q+JTyeoikiCJZSRpDfSo77UedxnUNGURPY2eBlY/hlQGBVlp0HBhOjOQMb+x+j5xIcrq36A==}
+    engines: {node: '>=22.12.0'}
     peerDependencies:
+      '@astrojs/markdown-remark': '>=7.0.0'
       astro: '>=7.0.0'
+    peerDependenciesMeta:
+      '@astrojs/markdown-remark':
+        optional: true
 
   astro@7.1.6:
     resolution: {integrity: sha512-83x9rYbHazMaZkYrAFRVZXSQx2moFkz0F7cjTDUF3GWfS0a3p2vZXG1ZdhV86rStHApQCodBJW+XTD37xISIrQ==}
@@ -5889,11 +5894,13 @@ snapshots:
       rehype-expressive-code: 0.44.1
       url-extras: 0.1.0
 
-  astro-lilypond@0.16.1(astro@7.1.6(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0)):
+  astro-lilypond@1.1.2(@astrojs/markdown-remark@7.2.2)(astro@7.1.6(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0)):
     dependencies:
       astro: 7.1.6(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0)
       astro-emit-asset: 0.1.4(astro@7.1.6(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0))
       unist-util-visit: 5.1.0
+    optionalDependencies:
+      '@astrojs/markdown-remark': 7.2.2
 
   astro@7.1.6(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.3)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.61.1)(tsx@4.23.1)(yaml@2.9.0):
     dependencies:
