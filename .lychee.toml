@@ -31,13 +31,24 @@ scheme = ["https"]
 # When links are available using HTTPS, treat HTTP links as errors.
 require_https = true
 
+# Base URL or website root directory to check relative URLs.
+base_url = "/"
+
+# Root path to use when checking absolute local links, must be an absolute path
+root_dir = "dist/client"
+
 # Enable the checking of fragments in links (anchor links).
 include_fragments = "full"
 
 #############################  Exclusions  ##########################
 
 # Exclude URLs and mail addresses from checking (supports regex).
-exclude = ['^https://www\.linkedin\.com', '^https://bookshop\.org', '^https://vimeo\.com']
+exclude = [
+  '^https://www\.linkedin\.com',
+  '^https://bookshop\.org',
+  '^https://vimeo\.com',
+  '^https://www\.pianosinsideout\.com'
+]
 
 # Check mail addresses
 include_mail = true
