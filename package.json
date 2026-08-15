@@ -64,7 +64,7 @@
     "remark-imgattr": "^1.1.1",
     "sanitize-html": "^2.17.6",
     "sharp": "^0.35.3",
-    "wrangler": "^4.118.0"
+    "wrangler": "^4.120.1"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.12.1",
