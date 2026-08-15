@@ -67,7 +67,7 @@
     "wrangler": "^4.120.1"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.12.1",
+    "@axe-core/playwright": "^4.13.0",
     "@biomejs/biome": "^2.5.8",
     "@playwright/test": "^1.62.1",
     "@types/howler": "^2.2.13",
