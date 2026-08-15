@@ -19,8 +19,9 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "pnpm dev",
+    command: process.env.CI ? "pnpm build:only && pnpm preview" : "pnpm dev",
     url: "http://localhost:4321",
     reuseExistingServer: !process.env.CI,
+    timeout: process.env.CI ? 120_000 : undefined,
   },
 });
