@@ -323,7 +323,7 @@ importers:
         specifier: ^9.0.1
         version: 9.0.1
       knip:
-        specifier: ^6.32.1
+        specifier: ^6.32.2
         version: 6.32.2
       nano-staged:
         specifier: ^1.0.2
