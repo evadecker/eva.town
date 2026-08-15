@@ -79,7 +79,7 @@
     "nano-staged": "^1.0.2",
     "postcss-html": "^2.0.0",
     "simple-git-hooks": "^2.13.1",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "bugs": {
     "url": "https://github.com/kydecker/ky.fyi/issues"
