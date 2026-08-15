@@ -56,7 +56,7 @@
     "howler": "^2.2.4",
     "markdown-it": "^15.0.0",
     "motion": "^13.0.0",
-    "nanoid": "^6.0.0",
+    "nanoid": "^6.0.1",
     "nanostores": "^1.4.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
