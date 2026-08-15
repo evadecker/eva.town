@@ -96,16 +96,6 @@ export const collections = {
       }),
   }),
 
-  walks: defineCollection({
-    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/walks" }),
-    schema: () =>
-      z.object({
-        title: z.string(),
-        description: z.string(),
-        urls: z.array(z.url()),
-      }),
-  }),
-
   scores: defineCollection({
     loader: lilypondLoader({ base: "./src/content/scores" }),
   }),
