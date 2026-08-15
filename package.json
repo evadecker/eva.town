@@ -21,7 +21,7 @@
     "check": "astro check && biome check",
     "check:fix": "astro check && biome check --write",
     "test": "playwright test",
-    "check-links": "lychee --config .lychee.toml .",
+    "check-links": "astro build && lychee --config .lychee.toml .",
     "knip": "knip",
     "deploy": "wrangler deploy",
     "versions-upload": "wrangler versions upload"

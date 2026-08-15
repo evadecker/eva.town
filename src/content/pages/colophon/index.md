@@ -45,7 +45,7 @@ I use [Radix Colors](https://www.radix-ui.com/colors) to apply palettes consiste
 
 ## Sounds
 
-The toy synth uses samples from [Mixkit](https://mixkit.co/), [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/sgossner/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://www.philharmonia.co.uk/explore/sound_samples), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://github.com/mtimkovich/hearthsounds), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
+The toy synth uses samples from [Mixkit](https://mixkit.co/), [Bolder Sounds](https://www.boldersounds.com/index.php?main_page=product_music_info&products_id=71), [Freesound](https://freesound.org/people/sgossner/packs/21029/), [Soundpacks](https://soundpacks.com/free-sound-packs/xylophone-samples-pack/), [Philharmonia Orchestra Sound Samples](https://philharmonia.co.uk/resources/sound-samples/), [Precisionsound](https://store.precisionsound.net/shop/peruvian-ocarina/), [HearthSounds](https://github.com/mtimkovich/hearthsounds), and [The Mushroom Kingdom](https://themushroomkingdom.net/media/smw/wav).
 
 ## Energy
 
