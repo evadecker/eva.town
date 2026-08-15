@@ -38,7 +38,7 @@ base_url = "https://ky.fyi"
 root_dir = "/dist"
 
 # Enable the checking of fragments in links (anchor links).
-include_fragments = true
+include_fragments = "full"
 
 #############################  Exclusions  ##########################
 
