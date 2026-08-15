@@ -302,7 +302,7 @@ importers:
         specifier: ^4.12.1
         version: 4.12.1(playwright-core@1.62.1)
       '@biomejs/biome':
-        specifier: ^2.5.7
+        specifier: ^2.5.8
         version: 2.5.8
       '@playwright/test':
         specifier: ^1.62.1
