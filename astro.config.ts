@@ -54,6 +54,7 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  session: false,
   fonts: [
     {
       provider: fontProviders.local(),
