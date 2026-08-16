@@ -295,7 +295,7 @@ importers:
         specifier: ^0.35.3
         version: 0.35.3(@types/node@26.2.0)
       wrangler:
-        specifier: ^4.120.1
+        specifier: ^4.122.0
         version: 4.123.0
     devDependencies:
       '@axe-core/playwright':
