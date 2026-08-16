@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
-    "@astrojs/cloudflare": "14.2.0",
+    "@astrojs/cloudflare": "14.2.1",
     "@astrojs/markdown-remark": "^7.2.2",
     "@astrojs/mdx": "7.0.5",
     "@astrojs/react": "6.0.2",
@@ -46,7 +46,7 @@
     "@nanostores/react": "^1.1.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
-    "astro": "7.2.0",
+    "astro": "7.2.1",
     "astro-expressive-code": "^0.44.1",
     "astro-lilypond": "^1.1.2",
     "classnames": "^2.5.1",
