@@ -17,6 +17,12 @@ max_concurrency = 14
 
 #############################  Requests  ############################
 
+# Website timeout from connect to response finished
+timeout = 20
+
+# Minimum wait time in seconds between retries of failed requests
+retry_wait_time = 5
+
 # Comma-separated list of accepted status codes for valid links.
 accept = ["100..=103", "200..=204", "403", "429"]
 
