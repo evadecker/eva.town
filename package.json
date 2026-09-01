@@ -45,7 +45,7 @@
     "@libsql/client": "^0.17.4",
     "@nanostores/react": "^1.1.0",
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
+    "@types/react-dom": "^19.2.5",
     "astro": "7.2.1",
     "astro-expressive-code": "^0.44.1",
     "astro-lilypond": "^1.1.2",
