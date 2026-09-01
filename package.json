@@ -75,7 +75,7 @@
     "dotenv": "^17.4.2",
     "drizzle-kit": "^0.31.10",
     "hastscript": "^9.0.1",
-    "knip": "^6.32.3",
+    "knip": "^6.33.0",
     "nano-staged": "^1.0.2",
     "postcss-html": "^2.0.0",
     "simple-git-hooks": "^2.13.1",
