@@ -57,7 +57,7 @@
     "markdown-it": "^15.0.1",
     "motion": "^13.1.1",
     "nanoid": "^6.0.1",
-    "nanostores": "^1.4.2",
+    "nanostores": "^1.5.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "rehype-autolink-headings": "^7.1.0",
