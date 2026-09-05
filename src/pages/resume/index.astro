@@ -1,0 +1,270 @@
+---
+import { getCollection, render } from "astro:content";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import { siteInfo } from "../../constants/site-info";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/prose.css";
+
+dayjs.extend(utc);
+
+const title = "Resume";
+const description =
+  "Experience, education, and skills of Ky Decker, design engineer.";
+const intro =
+  "Designer who codes. Over a decade of experience building websites, apps, and design systems, with an emphasis on accessibility, clarity, and resilience.";
+
+const jobs = await getCollection("jobs");
+
+const sortedJobs = [...jobs].sort((a, b) => {
+  const aEnd = a.data.dates.to ?? new Date();
+  const bEnd = b.data.dates.to ?? new Date();
+  return dayjs(bEnd).diff(dayjs(aEnd));
+});
+
+const renderedJobs = await Promise.all(
+  sortedJobs.map(async (job) => ({ job, ...(await render(job)) })),
+);
+
+function formatRange(from: Date, to?: Date) {
+  const start = dayjs.utc(from).format("MMM YYYY");
+  const end = to ? dayjs.utc(to).format("MMM YYYY") : "Present";
+  return `${start}\u200a–\u200a${end}`;
+}
+
+const skillGroups = await getCollection("skills");
+---
+
+<BaseLayout title={title} description={description} includeHeader={false}>
+  <div class="prose">
+    <header class="intro">
+      <h1>{siteInfo.name}</h1>
+      <p>{intro}</p>
+      <ul class="inline-list">
+        <li>they/them</li>
+        <li>
+          <a href="/">ky.fyi</a>
+        </li>
+        <li>
+          <a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>
+        </li>
+        <li>
+          <a href="/downloads/ky-decker-resume.pdf">Download PDF</a>
+        </li>
+      </ul>
+    </header>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="content">
+        <ol class="jobs">
+          {
+            renderedJobs.map(({ job, Content }) => (
+              <li>
+                <div class="entry">
+                  <a href={job.data.url} rel="external">
+                    <h3>{job.data.company}</h3>
+                  </a>
+                  <header>
+                    <strong class="role">{job.data.role}</strong>
+                    <span class="dates">
+                      {formatRange(job.data.dates.from, job.data.dates.to)}
+                    </span>
+                  </header>
+                  <div class="description">
+                    <Content />
+                  </div>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="content">
+        <div class="entry">
+          <h3>UNC Greensboro</h3>
+          <p>
+            Bachelor of Arts in Music; Computer Science minor. Summa cum laude.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="content">
+        {
+          skillGroups.map((group) => (
+            <div class="entry">
+              <h3>{group.data.title}</h3>
+              <ul class="inline-list">
+                {group.data.skills.map((skill) => (
+                  <li>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+    <footer>
+      <a href="/">Back to website</a>
+    </footer>
+  </div>
+</BaseLayout>
+
+<style>
+  .intro {
+    padding-block: var(--space-3xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+
+    h1 {
+      margin: 0;
+      line-height: var(--line-height-display);
+    }
+
+    p {
+      font-size: var(--step-2);
+      line-height: var(--line-height-tight);
+      text-wrap: pretty;
+      margin: 0;
+    }
+  }
+
+  ul.inline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--space-2xs);
+
+    li {
+      position: static;
+    }
+
+    li::before {
+      content: none;
+    }
+
+    li:not(:last-child)::after {
+      content: "·";
+      margin-inline-start: var(--space-2xs);
+      color: var(--gray-8);
+    }
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    align-items: baseline;
+    gap: var(--space-l);
+    margin-block-end: var(--space-3xl);
+
+    > h2 {
+      font-size: var(--step-1);
+      text-align: left;
+      margin: 0;
+      position: sticky;
+      top: var(--space-l);
+    }
+
+    @media (width < 640px) {
+      grid-template-columns: 1fr;
+      gap: var(--space-s);
+
+      > h2 {
+        position: static;
+        font-size: var(--step-2);
+        margin-block-end: var(--space-s);
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    min-width: 0;
+  }
+
+  ol.jobs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+
+    li::before {
+      content: none;
+    }
+  }
+
+  .entry {
+    display: flex;
+    flex-direction: column;
+
+    p,
+    ul {
+      margin: 0;
+    }
+
+    > a {
+      text-decoration: none;
+    }
+
+    > header {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--space-m);
+
+      @media (width < 640px) {
+        display: contents;
+      }
+
+      .role {
+        font-weight: var(--font-weight-medium);
+      }
+
+      .dates {
+        color: var(--gray-11);
+        font-variant-numeric: tabular-nums;
+      }
+    }
+  }
+
+  li > .entry {
+    align-items: flex-start;
+  }
+
+  h3 {
+    font-size: var(--step-0);
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--line-height-normal);
+    margin: 0;
+  }
+
+  .description {
+    hyphens: auto;
+    :global(ul li)::before {
+      content: "→";
+      font-family: var(--font-system);
+      transform: none;
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding-block-end: var(--space-2xl);
+  }
+</style>

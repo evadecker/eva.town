@@ -99,4 +99,27 @@ export const collections = {
   scores: defineCollection({
     loader: lilypondLoader({ base: "./src/content/scores" }),
   }),
+
+  jobs: defineCollection({
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/jobs" }),
+    schema: () =>
+      z.object({
+        company: z.string(),
+        url: z.url(),
+        role: z.string(),
+        dates: z.object({
+          from: z.date(),
+          to: z.date().optional(), // Omit date for "now"
+        }),
+      }),
+  }),
+
+  skills: defineCollection({
+    loader: glob({ pattern: "**/[^_]*.yml", base: "./src/content/skills" }),
+    schema: () =>
+      z.object({
+        title: z.string(),
+        skills: z.array(z.string()),
+      }),
+  }),
 };
