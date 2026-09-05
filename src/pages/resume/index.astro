@@ -112,7 +112,7 @@ const skillGroups = await getCollection("skills");
       </div>
     </section>
     <footer>
-      <a href="/">Back to website</a>
+      <a href="/" class="back">Back to ky.fyi</a>
     </footer>
   </div>
 </BaseLayout>
@@ -266,5 +266,21 @@ const skillGroups = await getCollection("skills");
     display: flex;
     justify-content: space-between;
     padding-block-end: var(--space-2xl);
+
+    .back {
+      border: 1px solid var(--gray-6);
+      padding: var(--space-2xs) var(--space-s);
+      border-radius: var(--radius-s);
+      text-decoration: none;
+    }
+
+    .back::before {
+      content: "←";
+      font-family: var(--font-system);
+      font-weight: var(--font-weight-normal);
+      color: var(--gray-11);
+      margin-inline-end: var(--space-xs);
+      text-decoration: none;
+    }
   }
 </style>
