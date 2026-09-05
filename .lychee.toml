@@ -17,8 +17,14 @@ max_concurrency = 14
 
 #############################  Requests  ############################
 
+# Website timeout from connect to response finished
+timeout = 20
+
+# Minimum wait time in seconds between retries of failed requests
+retry_wait_time = 5
+
 # Comma-separated list of accepted status codes for valid links.
-accept = ["100..=103", "200..=204", "429"]
+accept = ["100..=103", "200..=204", "403", "429"]
 
 # Proceed for server connections considered insecure (invalid TLS).
 insecure = false
@@ -32,18 +38,23 @@ scheme = ["https"]
 require_https = true
 
 # Base URL or website root directory to check relative URLs.
-base_url = "https://ky.fyi"
+base_url = "/"
 
 # Root path to use when checking absolute local links, must be an absolute path
-root_dir = "/dist"
+root_dir = "dist/client"
 
 # Enable the checking of fragments in links (anchor links).
-include_fragments = true
+include_fragments = "full"
 
 #############################  Exclusions  ##########################
 
 # Exclude URLs and mail addresses from checking (supports regex).
-exclude = ['^https://www\.linkedin\.com', '^https://bookshop\.org', '^https://vimeo\.com']
+exclude = [
+  '^https://www\.linkedin\.com',
+  '^https://bookshop\.org',
+  '^https://vimeo\.com',
+  '^https://www\.pianosinsideout\.com'
+]
 
 # Check mail addresses
 include_mail = true
