@@ -90,7 +90,7 @@ export default defineConfig({
     "/projects/boundaries-map": "/posts/boundaries-map",
     "/projects/commonplace": "/posts/commonplace",
     "/friends": "/webrings",
-    "/resume": "/downloads/ky-decker-resume.pdf",
+    "/cv": "/resume",
     "/downloads/eva-decker-resume.pdf": "/downloads/ky-decker-resume.pdf",
     "/subscribe": "/",
   },
