@@ -29,7 +29,7 @@ const renderedJobs = await Promise.all(
 function formatRange(from: Date, to?: Date) {
   const start = dayjs.utc(from).format("MMM YYYY");
   const end = to ? dayjs.utc(to).format("MMM YYYY") : "Present";
-  return `${start}\u2009–\u2009${end}`;
+  return `${start}\u200a–\u200a${end}`;
 }
 
 const skillGroups = await getCollection("skills");
@@ -88,8 +88,7 @@ const skillGroups = await getCollection("skills");
         <div class="entry">
           <h3>UNC Greensboro</h3>
           <p>
-            Bachelor of Arts in Music; Computer Science minor.<br />Summa cum
-            laude.
+            Bachelor of Arts in Music; Computer Science minor. Summa cum laude.
           </p>
         </div>
       </div>
@@ -228,6 +227,10 @@ const skillGroups = await getCollection("skills");
       align-items: baseline;
       gap: var(--space-m);
 
+      @media (width < 640px) {
+        display: contents;
+      }
+
       .role {
         font-weight: var(--font-weight-medium);
       }
@@ -250,10 +253,13 @@ const skillGroups = await getCollection("skills");
     margin: 0;
   }
 
-  .description :global(ul li)::before {
-    content: "→";
-    font-family: var(--font-system);
-    transform: none;
+  .description {
+    hyphens: auto;
+    :global(ul li)::before {
+      content: "→";
+      font-family: var(--font-system);
+      transform: none;
+    }
   }
 
   footer {
