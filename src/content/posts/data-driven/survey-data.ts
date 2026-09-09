@@ -126,7 +126,6 @@ export const questions: Question[] = [
   },
 ];
 
-// The six 1-5 rating categories; the 1-10 overall rating is tracked separately below.
 export const scorecard: ScorecardCategory[] = [
   {
     id: "meeting_feature_needs",
@@ -208,6 +207,9 @@ export const scorecard: ScorecardCategory[] = [
     },
   },
 ];
+
+export const categoryById: Record<string, ScorecardCategory> =
+  Object.fromEntries(scorecard.map((category) => [category.id, category]));
 
 export const overallRating: ScorecardCategory = {
   id: "overall_rating",

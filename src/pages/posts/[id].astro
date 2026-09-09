@@ -39,22 +39,18 @@ const { title, description, previewImage, datePublished } = data;
 >
   <Content />
   <div class="pagination" slot="after-prose">
-    {
-      prev && (
-        <a href={prev.id} class="prev">
-          <span class="label">Previous</span>
-          <span class="title">{prev.data.title}</span>
-        </a>
-      )
-    }
-    {
-      next && (
-        <a href={next.id} class="next">
-          <span class="label">Next</span>
-          <span class="title">{next.data.title}</span>
-        </a>
-      )
-    }
+    {prev && (
+      <a href={prev.id} class="prev">
+        <span class="label">Previous</span>
+        <span class="title">{prev.data.title}</span>
+      </a>
+    )}
+    {next && (
+      <a href={next.id} class="next">
+        <span class="label">Next</span>
+        <span class="title">{next.data.title}</span>
+      </a>
+    )}
   </div>
 </ProseLayout>
 
@@ -84,10 +80,6 @@ const { title, description, previewImage, datePublished } = data;
         .label::before {
           content: "← ";
           font-family: var(--font-system);
-        }
-
-        @media (width < 600px) {
-          display: none;
         }
       }
 
