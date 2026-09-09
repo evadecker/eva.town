@@ -9,8 +9,6 @@
   /* Override default Expressive Code inline padding */
   --ec-codePadInl: var(--gutter);
   --ec-codePadBlk: 1.25rem;
-
-  text-wrap: pretty;
 }
 
 .prose,
@@ -43,12 +41,15 @@
   text-underline-offset: 0.1em;
 }
 
+.prose h1,
 .prose h2,
 .prose h3,
 .prose h4,
 .prose h5,
 .prose h6 {
+  text-wrap: pretty;
   scroll-margin-top: var(--space-3xl);
+  clear: both;
 }
 
 .prose h2 a,
@@ -83,10 +84,10 @@
   margin-top: var(--space-3xl);
 }
 
-.prose h2 + p,
-.prose h3 + p,
-.prose h4 + p {
-  margin-top: var(--space-m);
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin-block-end: var(--space-m);
 }
 
 .prose h3 {
@@ -213,6 +214,7 @@
 .prose > figure {
   margin-block-start: var(--space-2xl);
   grid-column: full;
+  clear: both;
 }
 
 .prose > figure + *:not(h2) {
@@ -240,7 +242,8 @@
   margin-inline: auto;
 }
 
-.prose figure.popout > *:not(figcaption) {
+.prose figure.popout > *:not(figcaption),
+.prose > .sticky-pair.popout {
   grid-column: popout;
 
   @media (width < 860px) {
@@ -248,7 +251,8 @@
   }
 }
 
-.prose figure.feature > *:not(figcaption) {
+.prose figure.feature > *:not(figcaption),
+.prose > .sticky-pair.feature {
   grid-column: feature;
 
   @media (width < 860px) {
@@ -256,7 +260,8 @@
   }
 }
 
-.prose figure.full > *:not(figcaption) {
+.prose figure.full > *:not(figcaption),
+.prose > .sticky-pair.full {
   grid-column: full;
 }
 
@@ -291,6 +296,28 @@
 .prose .two-col figure {
   break-inside: avoid;
   margin-block-end: var(--space-xl);
+}
+
+.prose .float {
+  clear: both;
+  margin: unset;
+  margin-block-end: var(--space-l);
+
+  &.left {
+    @media (width > 400px) {
+      float: left;
+      margin-inline-end: var(--space-2xl);
+      max-width: 50%;
+    }
+  }
+
+  &.right {
+    @media (width > 400px) {
+      float: right;
+      margin-inline-start: var(--space-2xl);
+      max-width: 50%;
+    }
+  }
 }
 
 .prose hr {

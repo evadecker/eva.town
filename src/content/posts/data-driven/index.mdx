@@ -1,0 +1,183 @@
+---
+title: Building data-driven design systems
+description: How I scaled Scribe's design system to help serve over 6 million users.
+datePublished: 2026-09-08 08:00:00-04:00
+previewImage:
+  image: ./data-driven.png
+  alt: A collection of charts showing trends over time for a design system.
+---
+
+import ProjectInfo from "../../../components/ProjectInfo.astro";
+import RatingDistributionChart from "./RatingDistributionChart.astro";
+import { categoryById, overallRating } from "./survey-data";
+
+import tony from "./tony.jpeg";
+import emily from "./emily.jpeg";
+import namchi from "./namchi.jpeg";
+
+<ProjectInfo
+  collaborators={[
+    {
+      name: "Tony Gines",
+      url: "https://www.tonygines.com",
+      img: tony,
+    },
+    {
+      name: "Emily Moreton",
+      url: "https://moreton.org",
+      img: emily,
+    },
+    {
+      name: "Nam-Chi Van",
+      url: "https://www.linkedin.com/in/namchivan/",
+      img: namchi,
+    }
+  ]}
+  timeline={{
+    start: "June 2024",
+    end: "April 2026",
+  }}
+  tech={["React", "Tailwind", "Storybook", "Astro", "Starlight", "Omlet", "Figma"]}
+  roles={["Strategy", "Research", "Design", "Engineering"]}
+/>
+
+## Background
+
+In June 2024, I joined [Scribe](https://scribe.com) as its first (and only) Design Engineer. Scribe's VP of Design, [Tony Gines](https://www.tonygines.com/), had hired me to take the existing design system and improve its consistency, polish, and accessibility.
+
+Scribe is a tool—commonly used through a [browser extension](https://scribe.com/install/install-extension)—which allows recording clicks and keystrokes to automatically generate step-by-step guides. It's commonly used for creating things like product tutorials and standard operating procedures (SOPs), and is used by over 600,000 businesses, including [94% of the Fortune 500](https://scribe.com/customers).
+
+### The problem
+
+Scribe's design system, called Stylus, was beginning to show cracks. The system was built on a solid foundation using [Radix UI](https://www.radix-ui.com) and [Tailwind](https://tailwindcss.com). But as the company expanded, without a dedicated maintainer, issues had emerged:
+
+- **Fragmented documentation** made it unclear what capabilities the system had and how it was intended to be used.
+- **Low adoption** meant that teams often defaulted to building new, one-off components, rather than contributing back to the system.
+- **Inconsistent component APIs** and a lack of strategy around tokens caused inconsistencies that affected the user experience and damaged trust.
+- **Accessibility issues**—like low-contrast text, missing focus rings, and unclickable checkbox labels—prevented certain users from accessing Scribe altogether.
+
+I had built [previous design systems](/posts/commonplace) and I knew how to address these problems. But I wanted to go a step further and quantify how much the design system improved over time. I wanted to foster a practice of regularly assessing the state of the design system, soliciting feedback and critique from every user.
+
+## Taking a pulse: design system surveys
+
+The month I joined, I wrote and sent a survey sent to every engineer, designer, and product manager. I would administer and synthesize this same survey every six months during my tenure.
+
+In the survey, I asked participants to rate six statements (like "Stylus documentation helps answer most questions that arise.") on a 5-point [Likert scale](https://en.wikipedia.org/wiki/Likert_scale), plus rate overall quality on a scale of ten. Low ratings prompted open-ended feedback that fed directly into design system priorities.
+
+<figure class="popout">
+  ![Respondents asked for greater consistency for prop names across components and allowing more components to use element slots over string props to allow for greater customization and composability. Overall, satisfaction remains high.
+  Responses: What would help Stylus components work more predictably?
+  Some components like the table would be better with stronger defaults or more behaviors implemented (e.g., sticky header row, right aligning/locale formatting numeric columns)
+  Components are fairly predictable / easy to parse
+  Generally incorporating warning and error states, and expanding components to take in Elements rather than only strings
+  Tables (for example) has multiple versions
+  Having all the props be the same across stylus components (like size, variant, etc)
+  I'm neutral because I haven't used Stylus enough to get much signal either way.](./predictability-response.png)(quality:100)
+<figcaption>
+  **Survey results.** One part of a much larger Notion doc which synthesized all data alongside open-ended responses. Here, team members request various ways to make the system more predictable.
+</figcaption>
+</figure>
+
+## Results, 18 months later
+
+Here are the trends that emerged from four surveys, collected over nearly two years, along with some of the actions that drove the changes and free responses from survey participants.
+
+### Meeting feature needs
+
+<div>
+
+<RatingDistributionChart class="float right" category={categoryById.meeting_feature_needs} />
+
+The share of people using existing components for most new features increased by 10% thanks to **improved teamwide communication** about design system updates, **better documentation**, and **preemptive updates to support new product features** (for example, I led the addition of dark mode support across our design system to anticipate the launch of a new product feature that prominently used dark colors).
+
+> "This is probably one of the best looking component libraries i've ever worked with"
+
+</div>
+
+### Predictability
+
+<div>
+
+<RatingDistributionChart class="float right" category={categoryById.predictability} />
+
+12% more people reported that components work the way they expect—often thanks to changes stemming from prior survey feedback! **Consolidating Tailwind configs** into a single source of truth helped considerably, along with **favoring composition instead of configuration** for complex components.
+
+> "Stylus is great to use, enjoy that ai coding tools have no problem using our design system, appreciate all the great work!"
+
+</div>
+
+### Naming
+
+<div>
+
+<RatingDistributionChart class="float right" category={categoryById.naming} />
+
+11% said names were more understandable, compared to the start. I worked to extract and **reuse shared prop types** and **extend (rather than redeclare) native HTML props**, and **establish global naming patterns** like prefixing boolean props with `is`, `has`, or `should`.
+
+> "Thanks for constant improvements to an already excellently defined design system"
+
+</div>
+
+### Saving time
+
+<div>
+
+<RatingDistributionChart class="float right" category={categoryById.saving_time} />
+
+Time savings held roughly steady across the four surveys. While I made progress in many areas, some metrics were good from the start.
+
+> "I cannot tell you how much time Stylus saves me!! And any time I've had an issue and brought it up Ky is super speedy at proposing and making a fix, 10/10."
+
+</div>
+
+### Documentation
+
+<div>
+
+<RatingDistributionChart class="float right" category={categoryById.documentation} />
+
+I led writing and publishing **public, reader-friendly docs** using [Starlight](https://starlight.astro.build), which significantly increased team members' ability to answer questions about the design system. Since docs existed as Markdown in the codebase, this also **improved agentic access** for developers using LLMs. I minimized drift by **automatically populating API reference** tables based on JSDoc comments and TypeScript types and **cross-linking resources** from Figma to code to the docs and back.
+
+> "The new docs are gamechanger! I reference them every day."
+
+</div>
+
+### Collaboration
+
+<div>
+
+<RatingDistributionChart class="float right" category={categoryById.aiding_collaboration} />
+
+Sentiments around collaboration improved by about 20% owing to **reduced discrepencies between Figma and code**, and a culture of **encouraging new contributions** to the design system from folks across all teams.
+
+> "Adoption and product / design alignment are quite strong here at scribe and its made using the library super easy. Keep it up!"
+
+> "This is one of the better component libraries and collaborative experience between design engineers and product engineers Ive seen making development much quicker! Its a great dev experience being able to consume from our stylus library but also having the ability to dig into components to make suggestions / changes with quick review turn around."
+
+> "Reviews are always constructive and quickly guide or enable an engineer to help improve the library."
+
+</div>
+
+### Overall
+
+<div>
+
+<RatingDistributionChart class="float right" category={overallRating} min={5} />
+
+Survey feedback is important, but it skews toward developer experience over end user experience. To counter this, I made sure to **supplement internal surveys with user-centeric metrics**, like performance testing with [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), accessibility testing with [Playwright](https://playwright.dev), and [axe-core](https://github.com/dequelabs/axe-core) and visual regression testing with [Chromatic](https://www.chromatic.com).
+
+I supplemented the sentiment-driven survey data with quantitative data from [Omlet](https://omlet.dev), a tool which runs static analysis on a codebase to determine how many times a component is used, how many times a prop is used, and chart coverage over time. Thanks to insights from Omlet and a lot of deleted code, **component coverage increased from 37% to 52% over 6 months**.
+
+> "Keep crushing it! So appreciate your work"
+
+> "Y'all deserve ALL the kudos"
+
+</div>
+
+## Reflections
+
+Building a design system is a perpetual fight against entropy—the tendency of any sufficiently complex system to devolve into chaos. Taking a regular pulse helps the team stay focused on building what's important.
+
+I'm proud of how I was able to help shape Scribe's design system and team culture. It wouldn't have been possible without the contributions and feedback of all my teammates along the way!
+
+A design system is never done, but we can always push ourselves a little further on the road to "better". Here's to measuring—and acting on—what matters.

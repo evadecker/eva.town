@@ -9,5 +9,5 @@ dates:
 
 Led the design and implementation of multiple product features for health history, documentation, and planning for Cityblock's health teams. Built and scaled a design system.
 
-- [Case study: Building Cityblock's design system](/posts/commonplace)
+- [Case study: Building Commonplace](/posts/commonplace)
 - [Trauma-informed design practices](/posts/trauma-informed-design)

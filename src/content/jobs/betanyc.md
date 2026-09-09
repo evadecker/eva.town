@@ -9,4 +9,4 @@ dates:
 
 Redesigned and rebuilt an improved, mobile-friendly version of the [NYC Boundaries Map](https://boundaries.beta.nyc) using Svelte, Tailwind, and Mapbox. Conducted user interviews and ran usability studies to evaluate changes.
 
-- [Case study: Mapping NYC](/posts/boundaries-map)
+- [Case study: Mapping where districts start and end](/posts/boundaries-map)

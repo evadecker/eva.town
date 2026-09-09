@@ -1,0 +1,390 @@
+---
+import * as Plot from "@observablehq/plot";
+import { parseHTML } from "linkedom";
+import { type ScorecardCategory, surveys } from "./survey-data";
+
+const { document: plotDocument } = parseHTML(
+  "<html><head></head><body></body></html>",
+);
+
+type Raw = { date: Date; rating: number };
+
+interface Props {
+  category: ScorecardCategory;
+  min?: number;
+  width?: number;
+  height?: number;
+  class?: string;
+}
+
+const {
+  category,
+  min = 1,
+  width: WIDTH = 420,
+  height: HEIGHT = 300,
+  class: className,
+} = Astro.props;
+
+const { statement: title, ratings, counts, scale: max } = category;
+
+const raw: Raw[] = [];
+for (const survey of surveys) {
+  const values = counts[survey.id];
+  const date = new Date(survey.date);
+  ratings.forEach((rating, i) => {
+    for (let k = 0; k < values[i]; k++)
+      raw.push({ date, rating: Number(rating) });
+  });
+}
+
+const averageRatingOn = (date: Date) => {
+  const points = raw.filter((point) => point.date.getTime() === date.getTime());
+  return points.reduce((sum, point) => sum + point.rating, 0) / points.length;
+};
+
+const surveyDates: Date[] = surveys.map((survey) => new Date(survey.date));
+const firstDate = surveyDates[0];
+const lastDate = surveyDates[surveyDates.length - 1];
+
+const startAvg = averageRatingOn(firstDate);
+const endAvg = averageRatingOn(lastDate);
+const percentChange = ((endAvg - startAvg) / startAvg) * 100;
+const nearestPercent = Math.abs(Math.round(percentChange));
+
+// Nudge a trailing 9 up (e.g. 39% -> 40%).
+const roundedPercent =
+  nearestPercent % 10 === 9 ? nearestPercent + 1 : nearestPercent;
+
+const monthsSpan =
+  (lastDate.getFullYear() - firstDate.getFullYear()) * 12 +
+  (lastDate.getMonth() - firstDate.getMonth());
+
+const STEADY_THRESHOLD = 1;
+const direction =
+  percentChange > 0 && roundedPercent >= 1
+    ? "Up"
+    : percentChange < 0 && roundedPercent > STEADY_THRESHOLD
+      ? "Down"
+      : "Steady";
+const changePrefix =
+  direction === "Steady" ? "Steady" : `${direction} ${roundedPercent}%`;
+
+const meanLabel = (values: number[]) =>
+  (values.reduce((a, b) => a + b, 0) / values.length).toFixed(1);
+
+const ratingRows = Array.from({ length: max - min + 1 }, (_, i) => i + min);
+const gridPoints = surveyDates.flatMap((date) =>
+  ratingRows.map((rating) => ({ date, rating })),
+);
+
+const plot = Plot.plot({
+  document: plotDocument,
+  width: WIDTH,
+  height: HEIGHT,
+  marginTop: 0,
+  marginLeft: 0,
+  marginRight: 0,
+  r: { range: [2, 20] },
+  x: {
+    type: "utc",
+    domain: [firstDate, lastDate],
+    insetLeft: 48,
+    insetRight: 48,
+  },
+  y: {
+    domain: [min, max],
+    axis: null,
+    insetTop: 32,
+    insetBottom: 32,
+  },
+  marks: [
+    Plot.axisX({
+      ticks: surveyDates,
+      fontSize: 14,
+      stroke: "var(--gray-7)",
+      fill: "var(--gray-11)",
+    }),
+    Plot.axisY({
+      ticks: ratingRows,
+      tickFormat: "d",
+      anchor: "left",
+      label: null,
+      fontSize: 14,
+      stroke: "var(--gray-7)",
+      fill: "var(--gray-11)",
+    }),
+    Plot.frame({ stroke: "var(--gray-6)" }),
+
+    // Dot grid at every possible (date, rating) position.
+    Plot.dot(gridPoints, {
+      x: "date",
+      y: "rating",
+      r: 1,
+      fill: "var(--gray-6)",
+    }),
+
+    // Respondent counts per date/rating, sized by count.
+    Plot.dot(
+      raw,
+      Plot.group(
+        { r: "count" },
+        { x: "date", y: "rating", fill: "var(--gray-5)" },
+      ),
+    ),
+
+    // Mean rating per date: trend line, point, and value label.
+    Plot.lineY(
+      raw,
+      Plot.groupX(
+        { y: "mean" },
+        { x: "date", y: "rating", curve: "catmull-rom" },
+      ),
+    ),
+    Plot.dot(
+      raw,
+      Plot.groupX(
+        { y: "mean" },
+        { x: "date", y: "rating", r: 3, fill: "currentColor" },
+      ),
+    ),
+    Plot.text(
+      raw,
+      Plot.groupX(
+        { y: "mean", text: meanLabel },
+        {
+          x: "date",
+          y: "rating",
+          text: "rating",
+          dy: -16,
+          fontSize: "16",
+          fontWeight: "bold",
+          fill: "var(--gray-12)",
+        },
+      ),
+    ),
+  ],
+});
+
+// Tag the mean trend line, dot, and label marks so they can be animated in
+// on scroll. Mark order in the DOM mirrors the `marks` array above: the mean
+// dot is the last of the three "dot" groups (grid, respondent count, mean).
+const dotGroups = [...plot.querySelectorAll('g[aria-label="dot"]')];
+const meanDotGroup = dotGroups[dotGroups.length - 1];
+const meanCircles = meanDotGroup
+  ? [...meanDotGroup.querySelectorAll("circle")]
+  : [];
+meanCircles.forEach((circle, i) => {
+  circle.setAttribute("class", "mean-dot");
+  circle.setAttribute("style", `--i:${i}`);
+});
+
+// Grid and respondent-count dots grow/fade in, staggered by each dot's own
+// x position (not index) so the sweep reads left-to-right regardless of how
+// many dots share a date, plus a secondary bottom-to-top stagger within each
+// column so a column's dots don't all pop in at once.
+const plotStart = 54; // matches x.insetLeft above
+const plotEnd = WIDTH - 54; // matches x.insetRight above
+const SWEEP_MS = 900;
+const BASE_DELAY_MS = 0;
+const delayFor = (cx: number) => {
+  const t = Math.min(1, Math.max(0, (cx - plotStart) / (plotEnd - plotStart)));
+  return Math.round(BASE_DELAY_MS + t * SWEEP_MS);
+};
+
+const bgCircles = dotGroups
+  .slice(0, 2)
+  .flatMap((group) => [...group.querySelectorAll("circle")]);
+const cyValues = bgCircles.map((circle) =>
+  Number.parseFloat(circle.getAttribute("cy") ?? "0"),
+);
+const minCy = Math.min(...cyValues);
+const maxCy = Math.max(...cyValues);
+const ROW_SWEEP_MS = 200;
+const rowDelayFor = (cy: number) => {
+  const span = maxCy - minCy || 1;
+  // Larger cy is visually lower (SVG y grows downward), so bottom rows
+  // (large cy) get the smallest extra delay and top rows the largest.
+  const t = Math.min(1, Math.max(0, (maxCy - cy) / span));
+  return Math.round(t * ROW_SWEEP_MS);
+};
+
+for (const circle of bgCircles) {
+  const r = circle.getAttribute("r") ?? "0";
+  const cx = Number.parseFloat(circle.getAttribute("cx") ?? "0");
+  const cy = Number.parseFloat(circle.getAttribute("cy") ?? "0");
+  circle.setAttribute("class", "bg-dot");
+  circle.setAttribute(
+    "style",
+    `--target-r:${r}px;--delay:${delayFor(cx) + rowDelayFor(cy)}ms`,
+  );
+}
+
+const linePath = plot.querySelector('g[aria-label="line"] path');
+// pathLength normalizes stroke-dasharray/-dashoffset to [0, 1] so the
+// draw-in animation doesn't need the path's real, JS-measured length.
+linePath?.setAttribute("pathlength", "1");
+linePath?.setAttribute("class", "mean-line");
+
+const labelGroup = plot.querySelector('g[aria-label="text"]');
+const meanLabels = labelGroup ? [...labelGroup.querySelectorAll("text")] : [];
+meanLabels.forEach((text, i) => {
+  text.setAttribute("class", "mean-label");
+  text.setAttribute("style", `--i:${i}`);
+});
+
+plot.setAttributeNS(
+  "http://www.w3.org/2000/xmlns/",
+  "xmlns",
+  "http://www.w3.org/2000/svg",
+);
+plot.setAttributeNS(
+  "http://www.w3.org/2000/xmlns/",
+  "xmlns:xlink",
+  "http://www.w3.org/1999/xlink",
+);
+
+const chartMarkup = plot.outerHTML;
+---
+
+<div class:list={["rating-chart", className]}>
+  <h3 class="title">{title}</h3>
+  <p class="change">
+    <span
+      class:list={[
+        "change-value",
+        {
+          positive: direction === "Up",
+          negative: direction === "Down",
+          steady: direction === "Steady",
+        },
+      ]}
+    >
+      {changePrefix}
+    </span>
+    {` over ${monthsSpan} months`}
+  </p>
+  <div class="plot" set:html={chartMarkup} />
+</div>
+
+<style>
+  .rating-chart {
+    .title {
+      font-size: var(--step-0);
+      font-weight: var(--font-weight-medium);
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    .change {
+      font-size: var(--step--1);
+      font-variant-numeric: tabular-nums;
+      color: var(--gray-11);
+      margin: var(--space-2xs) 0 var(--space-m);
+    }
+
+    .change-value {
+      font-weight: var(--font-weight-medium);
+      color: var(--gray-12);
+
+      &.positive {
+        color: var(--green-11);
+      }
+
+      &.negative {
+        color: var(--red-11);
+      }
+
+      &.steady {
+        color: var(--gray-11);
+      }
+    }
+
+    :global(svg) {
+      display: block;
+      overflow: visible;
+    }
+
+    :global(.mean-line) {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      transition: stroke-dashoffset 1s ease-out;
+      transition-delay: 350ms;
+    }
+
+    :global(.mean-dot) {
+      opacity: 0;
+      transition: opacity 0.4s ease-out;
+      transition-delay: calc(var(--i, 0) * 150ms + 300ms);
+    }
+
+    :global(.mean-label) {
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      transition-delay: calc(var(--i, 0) * 150ms + 550ms);
+    }
+
+    :global(.bg-dot) {
+      r: 0;
+      opacity: 0;
+      transition:
+        r 0.4s ease-out,
+        opacity 0.4s ease-out;
+      transition-delay: var(--delay, 0ms);
+    }
+
+    &.in-view {
+      :global(.mean-line) {
+        stroke-dashoffset: 0;
+      }
+
+      :global(.mean-dot),
+      :global(.mean-label) {
+        opacity: 1;
+      }
+
+      :global(.bg-dot) {
+        r: var(--target-r);
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rating-chart {
+      :global(.mean-line),
+      :global(.mean-dot),
+      :global(.mean-label),
+      :global(.bg-dot) {
+        transition: none;
+        opacity: 1;
+        stroke-dashoffset: 0;
+      }
+
+      :global(.bg-dot) {
+        r: var(--target-r);
+      }
+    }
+  }
+</style>
+
+<script>
+  function initRatingCharts() {
+    const charts = document.querySelectorAll(".rating-chart:not(.in-view)");
+    if (!charts.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.7 },
+    );
+
+    for (const chart of charts) observer.observe(chart);
+  }
+
+  document.addEventListener("astro:page-load", initRatingCharts);
+</script>
