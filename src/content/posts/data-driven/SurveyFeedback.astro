@@ -10,21 +10,18 @@ const QUOTES: string[] = [
   "I cannot tell you how much time Stylus saves me!! And any time I've had an issue and brought it up Ky is super speedy at proposing and making a fix, 10/10.",
   "Its a great dev experience being able to consume from our stylus library but also having the ability to dig into components to make suggestions / changes with quick review turn around.",
   "Adoption and product / design alignment are quite strong here at scribe and its made using the library super easy. Keep it up!",
-  "Keep crushing it!",
-  "So appreciate your work!",
+  "Keep crushing it! So appreciate your work",
   "Y'all deserve ALL the kudos ❤️",
 ];
 ---
 
 <figure class="feature survey-feedback">
   <div class="columns">
-    {
-      QUOTES.map((quote) => (
-        <blockquote class="card">
-          <p>{quote}</p>
-        </blockquote>
-      ))
-    }
+    {QUOTES.map((quote) => (
+      <blockquote class="card">
+        <p>{quote}</p>
+      </blockquote>
+    ))}
   </div>
 </figure>
 
@@ -50,7 +47,7 @@ const QUOTES: string[] = [
     .card {
       margin: 0;
       margin-bottom: var(--space-l);
-      padding: var(--space-m);
+      padding: var(--gutter);
       background-color: var(--gray-3);
       display: inline-block;
       break-inside: avoid;
