@@ -16,7 +16,7 @@ const QUOTES: string[] = [
 ];
 ---
 
-<figure class="feature survey-feedback not-content">
+<figure class="feature survey-feedback">
   <div class="columns">
     {
       QUOTES.map((quote) => (
@@ -54,6 +54,7 @@ const QUOTES: string[] = [
       background-color: var(--gray-3);
       display: inline-block;
       break-inside: avoid;
+      border: none;
 
       p {
         margin: 0;
