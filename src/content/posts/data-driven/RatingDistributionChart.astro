@@ -70,7 +70,7 @@ const changePrefix =
   direction === "Steady" ? "Steady" : `${direction} ${roundedPercent}%`;
 
 const meanLabel = (values: number[]) =>
-  (values.reduce((a, b) => a + b, 0) / values.length).toFixed(2);
+  (values.reduce((a, b) => a + b, 0) / values.length).toFixed(1);
 
 const ratingRows = Array.from({ length: max - min + 1 }, (_, i) => i + min);
 const gridPoints = surveyDates.flatMap((date) =>
@@ -155,7 +155,7 @@ const plot = Plot.plot({
           x: "date",
           y: "rating",
           text: "rating",
-          dy: -14,
+          dy: -16,
           fontSize: "16",
           fontWeight: "bold",
           fill: "var(--gray-12)",
