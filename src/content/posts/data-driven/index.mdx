@@ -51,10 +51,10 @@ Scribe is a tool—commonly used through a [browser extension](https://scribe.co
 
 Scribe's design system, called Stylus, was beginning to show cracks. The system was built on a solid foundation using [Radix UI](https://www.radix-ui.com) and [Tailwind](https://tailwindcss.com). But as the company expanded, without a dedicated maintainer, issues had emerged:
 
-- **Fragmented documentation** made it unclear what capabilities the system had and how it was intended to be used
-- **Low adoption** meant that teams often defaulted to building new, one-off components, rather than contributing back to the system
-- **Inconsistent component APIs** and a lack of strategy around tokens caused inconsistencies that affected the user experience and damaged trust
-- **Accessibility issues**—like low-contrast text, missing focus rings, and unclickable checkbox labels—prevented certain users from accessing Scribe altogether
+- **Fragmented documentation** made it unclear what capabilities the system had and how it was intended to be used.
+- **Low adoption** meant that teams often defaulted to building new, one-off components, rather than contributing back to the system.
+- **Inconsistent component APIs** and a lack of strategy around tokens caused inconsistencies that affected the user experience and damaged trust.
+- **Accessibility issues**—like low-contrast text, missing focus rings, and unclickable checkbox labels—prevented certain users from accessing Scribe altogether.
 
 I had built [previous design systems](/posts/commonplace) and I knew how to address these problems. But I wanted to go a step further and quantify how much the design system improved over time. I wanted to foster a practice of regularly assessing the state of the design system, soliciting feedback and critique from every user.
 
@@ -64,10 +64,17 @@ The month I joined, I wrote and sent a survey sent to every engineer, designer, 
 
 In the survey, I asked participants to rate six statements (like "Stylus documentation helps answer most questions that arise.") on a 5-point [Likert scale](https://en.wikipedia.org/wiki/Likert_scale), plus rate overall quality on a scale of ten. Low ratings prompted open-ended feedback that fed directly into design system priorities.
 
-<figure>
-[Example survey question image]
+<figure class="popout">
+  ![Respondents asked for greater consistency for prop names across components and allowing more components to use element slots over string props to allow for greater customization and composability. Overall, satisfaction remains high.
+  Responses: What would help Stylus components work more predictably?
+  Some components like the table would be better with stronger defaults or more behaviors implemented (e.g., sticky header row, right aligning/locale formatting numeric columns)
+  Components are fairly predictable / easy to parse
+  Generally incorporating warning and error states, and expanding components to take in Elements rather than only strings
+  Tables (for example) has multiple versions
+  Having all the props be the same across stylus components (like size, variant, etc)
+  I'm neutral because I haven't used Stylus enough to get much signal either way.](./predictability-response.png)(quality:100)
 <figcaption>
-  Survey questions asked respondents to rate statements from 1 (strongly disagree) to 5 (strongly agree).
+  **Survey results.** One part of a much larger Notion doc which synthesized all data alongside open-ended responses. Here, team members request various ways to make the system more predictable.
 </figcaption>
 </figure>
 
@@ -87,7 +94,7 @@ The share of people using existing components for most new features increased by
 
 </div>
 
-### Consistency
+### Predictability
 
 <div>
 
