@@ -181,6 +181,20 @@
   margin-bottom: 0;
 }
 
+.prose .not-content ul,
+.prose .not-content ol {
+  padding-left: 0;
+}
+
+.prose .not-content li::before {
+  content: none;
+}
+
+.prose .not-content blockquote {
+  border-left: none;
+  padding-left: 0;
+}
+
 .prose blockquote cite {
   display: block;
   font-style: normal;

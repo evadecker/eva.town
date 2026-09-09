@@ -1,0 +1,65 @@
+---
+const QUOTES: string[] = [
+  "Stylus is great to use, enjoy that ai coding tools have no problem using our design system, appreciate all the great work!",
+  "The new docs are gamechanger! I reference them every day.",
+  "This is probably one of the best looking component libraries i've ever worked with <3",
+  "The documentation is generally great! Components generally easy to use!",
+  "Reviews are always constructive and quickly guide or enable an engineer to help improve the library.",
+  "Thanks for constant improvements to an already excellently defined design system",
+  "This is one of the better component libraries and collaborative experience between design engineers and product engineers Ive seen making development much quicker!",
+  "I cannot tell you how much time Stylus saves me!! And any time I've had an issue and brought it up Ky is super speedy at proposing and making a fix, 10/10.",
+  "Its a great dev experience being able to consume from our stylus library but also having the ability to dig into components to make suggestions / changes with quick review turn around.",
+  "Adoption and product / design alignment are quite strong here at scribe and its made using the library super easy. Keep it up!",
+  "Keep crushing it!",
+  "So appreciate your work!",
+  "Y'all deserve ALL the kudos ❤️",
+];
+---
+
+<figure class="feature survey-feedback not-content">
+  <div class="columns">
+    {
+      QUOTES.map((quote) => (
+        <blockquote class="card">
+          <p>{quote}</p>
+        </blockquote>
+      ))
+    }
+  </div>
+</figure>
+
+<style>
+  .survey-feedback {
+    margin-block: var(--space-2xl);
+    padding-inline: var(--gutter);
+
+    .columns {
+      columns: 3;
+      column-gap: var(--space-l);
+      column-fill: auto;
+
+      @media (width < 900px) {
+        columns: 2;
+      }
+
+      @media (width < 560px) {
+        columns: 1;
+      }
+    }
+
+    .card {
+      margin: 0;
+      margin-bottom: var(--space-l);
+      padding: var(--space-m);
+      background-color: var(--gray-3);
+      display: inline-block;
+      break-inside: avoid;
+
+      p {
+        margin: 0;
+        font-size: var(--step--1);
+        color: var(--gray-12);
+      }
+    }
+  }
+</style>
