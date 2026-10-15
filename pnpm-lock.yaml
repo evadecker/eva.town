@@ -231,7 +231,7 @@ importers:
         specifier: ^4.13.0
         version: 4.13.0(playwright-core@1.63.0)
       '@biomejs/biome':
-        specifier: ^2.5.14
+        specifier: ^2.5.15
         version: 2.5.15
       '@playwright/test':
         specifier: ^1.63.0
